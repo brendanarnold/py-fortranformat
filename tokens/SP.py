@@ -1,0 +1,2 @@
+class SP(object):
+    pass

@@ -1,0 +1,2 @@
+class SS(object):
+    pass

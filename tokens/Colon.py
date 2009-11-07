@@ -1,0 +1,2 @@
+class Colon(object):
+    pass

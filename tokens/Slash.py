@@ -1,0 +1,2 @@
+class Slash(object):
+    pass

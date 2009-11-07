@@ -1,0 +1,2 @@
+class BN(object):
+    pass
