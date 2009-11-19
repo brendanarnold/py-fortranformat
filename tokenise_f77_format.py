@@ -7,6 +7,10 @@ and return a list of parsed token objects
 '''
 
 from tokens import *
+from exceptions import InvalidFortranFormat
+
+NUMS = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+F77_EDIT_DESCRIPTORS = ['I', 'F', 'E', 'D', 'G', 'L', 'A', 'H', 'T', 'TL', 'TR', 'X', '/', ':', 'S', 'SP', 'SS', 'P', 'BN', 'BZ']
 
 def tokenise_f77_format(format):
     '''
@@ -26,7 +30,7 @@ def tokenise_f77_format(format):
         'escape' : False,
         'skip_chars' : 0,
     }
-    for i in range(len(format)):
+    for i in xrange(len(format)):
         # If necessary to skip a character, do so
         if flag['skip_chars'] > 0:
             flag['skip_chars'] = flag['skip_char'] - 1
@@ -53,11 +57,38 @@ def tokenise_f77_format(format):
         if flag['quoted'] == True:
             string_buffer = string_buffer + c
             continue
+        # Test if signed/unsigned integer
+        if c in ['-', '+'] + NUMS:
+            int_str = read_int(format[i:])
+            tokens.append(int_str)
+            flag['skip_chars'] = len(int_str) - 1
+            continue
+        if c+c_next in F77_EDIT_DESCRIPTORS:
+            tokens.append(c+c_next)
+            flag['skip_chars'] = 1
+            continue
+        if c in F77_EDIT_DESCRIPTORS:
+            tokens.append(c)
+            continue
         # Throw away spaces and commas
         if c in [' ', ',']:
             continue
-        # Test if signed/unsigned integer
-        if c in ['-', '+', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0']:
-            sring_buffer = string_buffer + c
+        # TODO: Pick up from here ...
 
-        # TODO: This is a lot of work
+
+
+def read_int(str, is_signed=True):
+    '''Continues reading in a signed/un-signed integer from a string until it ceases to be an integer'''
+    for i, c in enumerate(str):
+        if c in ['+', '-']:
+            if i != 0 or is_signed == False:
+                raise InvalidFortranFormat('Parsed an invalid integer')
+        elif c not in NUMS:
+            i = i - 1
+            break
+    int_str = str[:i+1]
+    if int_str in ['+', '-']:
+        raise InvalidFortranFormat('Parsed an invalid integer')
+    else:
+        return int_str
+
