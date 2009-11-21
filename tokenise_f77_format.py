@@ -8,9 +8,8 @@ and return a list of parsed token objects
 
 from tokens import *
 from exceptions import InvalidFortranFormat
+from CONSTANTS import *
 
-NUMS = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
-F77_EDIT_DESCRIPTORS = ['I', 'F', 'E', 'D', 'G', 'L', 'A', 'H', 'T', 'TL', 'TR', 'X', '/', ':', 'S', 'SP', 'SS', 'P', 'BN', 'BZ']
 
 def tokenise_f77_format(format):
     '''
@@ -58,36 +57,38 @@ def tokenise_f77_format(format):
             string_buffer = string_buffer + c
             continue
         # Test if signed/unsigned integer
-        if c in ['-', '+'] + NUMS:
+        if c in SIGNS + NUMS:
             int_str = read_int(format[i:])
             tokens.append(int_str)
             flag['skip_chars'] = len(int_str) - 1
             continue
+        # Add a double character token
         if c+c_next in F77_EDIT_DESCRIPTORS:
             tokens.append(c+c_next)
             flag['skip_chars'] = 1
             continue
-        if c in F77_EDIT_DESCRIPTORS:
+        # Add a single character token
+        if c in F77_EDIT_DESCRIPTORS + ['.', '(', ')', ':', '/']:
             tokens.append(c)
             continue
         # Throw away spaces and commas
         if c in [' ', ',']:
             continue
-        # TODO: Pick up from here ...
 
+    
 
 
 def read_int(str, is_signed=True):
     '''Continues reading in a signed/un-signed integer from a string until it ceases to be an integer'''
     for i, c in enumerate(str):
-        if c in ['+', '-']:
+        if c in SIGNS:
             if i != 0 or is_signed == False:
                 raise InvalidFortranFormat('Parsed an invalid integer')
         elif c not in NUMS:
             i = i - 1
             break
     int_str = str[:i+1]
-    if int_str in ['+', '-']:
+    if int_str in SIGNS:
         raise InvalidFortranFormat('Parsed an invalid integer')
     else:
         return int_str
