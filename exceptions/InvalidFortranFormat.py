@@ -1,2 +1,0 @@
-class InvalidFortranFormat(Exception):
-    pass

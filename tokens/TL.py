@@ -1,2 +1,0 @@
-class TL(object):
-    pass

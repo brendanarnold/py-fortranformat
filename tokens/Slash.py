@@ -1,2 +1,0 @@
-class Slash(object):
-    pass

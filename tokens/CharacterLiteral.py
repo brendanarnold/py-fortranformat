@@ -1,2 +1,0 @@
-class CharacterLiteral(object):
-    pass

@@ -1,2 +1,0 @@
-class F(object):
-    pass

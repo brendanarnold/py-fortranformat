@@ -1,0 +1,2 @@
+class FortranRecordWriter(object):
+    pass

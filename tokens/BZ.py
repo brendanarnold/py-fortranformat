@@ -1,2 +1,0 @@
-class BZ(object):
-    pass
