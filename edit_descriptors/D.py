@@ -7,3 +7,8 @@ class D(object):
         pass
     def output(self, var=None):
         pass
+    def __repr__(self):
+        return '<D repeat=' + str(self.repeat) + \
+                ' width=' + str(self.width) + \
+                ' decimal_places=' + str(self.decimal_places) + \
+                '>'

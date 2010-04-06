@@ -9,3 +9,6 @@ class BN(object):
         state['ignore_blanks'] = True
         # No effect on ouptut
         return (record, state)
+    def __repr__(self):
+        return '<BN>'
+

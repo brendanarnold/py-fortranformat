@@ -5,3 +5,7 @@ class P(object):
         pass
     def output(self, var=None):
         pass
+    def __repr__(self):
+        return '<P scale=' + str(self.scale) + \
+                '>'
+    

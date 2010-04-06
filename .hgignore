@@ -1,2 +1,4 @@
 glob:*.pyc
 glob:*.out
+glob:*.swp
+glob:parsetab.py

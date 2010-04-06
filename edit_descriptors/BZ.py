@@ -9,3 +9,6 @@ class BZ(object):
         state['ignore_blanks'] = False
         # No effect on ouptut
         return (record, state)
+    def __repr__(self):
+        return '<BZ>'
+

@@ -5,3 +5,6 @@ class SP(object):
         pass
     def output(self, var=None):
         pass
+    def __repr__(self):
+        return '<SP>'
+    

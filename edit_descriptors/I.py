@@ -7,3 +7,9 @@ class I(object):
         pass
     def output(self, var=None):
         pass
+    def __repr__(self):
+        return '<I repeat=' + str(self.repeat) + \
+                ' width=' + str(self.width) + \
+                ' padding=' + str(self.padding) + \
+                '>'
+    

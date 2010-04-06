@@ -25,3 +25,8 @@ class A(object):
             record = record[:position] + char_string + record[final_position:]
         state['position'] = final_position
         return (record, state)
+    def __repr__(self):
+        return '<A repeat=' + str(self.repeat) + \
+                ' width=' + str(self.width) + \
+                '>'
+    

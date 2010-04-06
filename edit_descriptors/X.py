@@ -5,3 +5,5 @@ class X(object):
         pass
     def output(self, var=None):
         pass
+    def __repr__(self):
+        return '<X num_chars=' + str(self.num_chars) + '>'

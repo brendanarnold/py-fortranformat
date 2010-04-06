@@ -26,4 +26,6 @@ class StringLiteral(object):
         state['position'] = final_position
         state['repeat_val'] = True
         return (record, state)
+    def __repr__(self):
+        return '<StringLiteral char_string=' + str(self.char_string) + '>'
         
