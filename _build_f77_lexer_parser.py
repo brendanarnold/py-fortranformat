@@ -60,34 +60,18 @@ def _build_f77_lexer_parser():
         
 
     # == Now build the parser ==
-
-    def p_combine_formats(p):
-        '''
-        format : format format
-        '''
-        p[0] = p[1] + p[2]
     
-    def p_subformat(p):
-        'format : OPEN_PARENS format CLOSE_PARENS'
+    def p_bracketed_edit_descriptors(p):
+        '''
+        edit_descriptors : OPEN_PARENS edit_descriptors CLOSE_PARENS
+        '''
         p[0] = p[2]
 
-    def p_repeated_format(p):
+    def p_repeated_edit_descriptors(p):
         '''
-        format : NUMBER OPEN_PARENS format CLOSE_PARENS
+        edit_descriptors : NUMBER OPEN_PARENS edit_descriptors CLOSE_PARENS
         '''
         p[0] = p[1]*p[3]
-
-
-    def p_format(p):
-        '''
-        format : edit_descriptors
-        '''
-        p[0] = p[1]
-
-
-    def p_edit_descriptors(p):
-        'edit_descriptors : edit_descriptors edit_descriptor'
-        p[0] = p[1] + [p[2]]
 
     def p_separators(p):
         '''
@@ -95,13 +79,15 @@ def _build_f77_lexer_parser():
         '''
         p[0] = p[1]
 
-    def p_gen_edit_descriptors(p):
-        'edit_descriptors : edit_descriptor'
-        p[0] = [p[1]]
+    def p_combine_edit_descriptors(p):
+        '''
+        edit_descriptors : edit_descriptors edit_descriptors
+        '''
+        p[0] = p[1] + p[2]
 
     def p_rep_suffixed_dot_opt_exp_edit_descriptor(p):
         '''
-        edit_descriptor : NUMBER REP_SUFFIXED_DOT_OPT_EXP_EDITDESC NUMBER DOT NUMBER REP_SUFFIXED_DOT_OPT_EXP_EDITDESC NUMBER
+        edit_descriptors : NUMBER REP_SUFFIXED_DOT_OPT_EXP_EDITDESC NUMBER DOT NUMBER REP_SUFFIXED_DOT_OPT_EXP_EDITDESC NUMBER
                         | NUMBER REP_SUFFIXED_DOT_OPT_EXP_EDITDESC NUMBER DOT NUMBER
                         | REP_SUFFIXED_DOT_OPT_EXP_EDITDESC NUMBER DOT NUMBER REP_SUFFIXED_DOT_OPT_EXP_EDITDESC NUMBER
                         | REP_SUFFIXED_DOT_OPT_EXP_EDITDESC NUMBER DOT NUMBER
@@ -110,166 +96,174 @@ def _build_f77_lexer_parser():
             # Has repeat, #.# and exp#
             if p[6].upper() != 'E':
                 raise SyntaxError("Exponents needs to be specified with 'E'")
-            p[0] = get_token(p[2])
-            p[0].repeat = p[1]
-            p[0].width = p[3]
-            p[0].decimal_places = p[5]
-            p[0].exponent = p[7]
+            tok = get_token(p[2])
+            tok.repeat = p[1]
+            tok.width = p[3]
+            tok.decimal_places = p[5]
+            tok.exponent = p[7]
         if len(p) == 7:
             # No repeat, #.# and exp#
             if p[5].upper() != 'E':
                 raise SyntaxError("Exponents needs to be specified with 'E'")
-            p[0] = get_token(p[1])
-            p[0].repeat = 1
-            p[0].width = p[2]
-            p[0].decimal_places = p[4]
-            p[0].exponent = p[6]
+            tok = get_token(p[1])
+            tok.repeat = 1
+            tok.width = p[2]
+            tok.decimal_places = p[4]
+            tok.exponent = p[6]
         if len(p) == 6:
             # Has repeat and #.#
-            p[0] = get_token(p[2])
-            p[0].repeat = p[1]
-            p[0].width = p[3]
-            p[0].decimal_places = p[5]
+            tok = get_token(p[2])
+            tok.repeat = p[1]
+            tok.width = p[3]
+            tok.decimal_places = p[5]
         if len(p) == 5:
             # Has no repeat and #.#
-            p[0] = get_token(p[1])
-            p[0].repeat = 1
-            p[0].width = p[2]
-            p[0].decimal_places = p[4]
+            tok = get_token(p[1])
+            tok.repeat = 1
+            tok.width = p[2]
+            tok.decimal_places = p[4]
+        p[0] = [tok]
 
     def p_rep_suffixed_opt_dot_edit_descriptor(p):
         '''
-        edit_descriptor : NUMBER REP_SUFFIXED_OPT_DOT_EDITDESC NUMBER DOT NUMBER
+        edit_descriptors : NUMBER REP_SUFFIXED_OPT_DOT_EDITDESC NUMBER DOT NUMBER
                         | NUMBER REP_SUFFIXED_OPT_DOT_EDITDESC NUMBER
                         | REP_SUFFIXED_OPT_DOT_EDITDESC NUMBER DOT NUMBER
                         | REP_SUFFIXED_OPT_DOT_EDITDESC NUMBER
         '''
         if len(p) == 6:
             # Has repeat and #.#
-            p[0] = get_token(p[2])
-            p[0].repeat = p[1]
-            p[0].width = p[3]
-            p[0].padding = p[5]
+            tok = get_token(p[2])
+            tok.repeat = p[1]
+            tok.width = p[3]
+            tok.padding = p[5]
         if len(p) == 5:
             # No repeat and #.#
-            p[0] = get_token(p[1])
-            p[0].repeat = 1
-            p[0].width = p[2]
-            p[0].padding = p[4]
+            tok = get_token(p[1])
+            tok.repeat = 1
+            tok.width = p[2]
+            tok.padding = p[4]
         if len(p) == 4:
             # Has repeat and #
-            p[0] = get_token(p[2])
-            p[0].repeat = p[1] 
-            p[0].width = p[3]
+            tok = get_token(p[2])
+            tok.repeat = p[1] 
+            tok.width = p[3]
         if len(p) == 3:
             # Has no repeat and #
-            p[0] = get_token(p[1])
-            p[0].repeat = 1
-            p[0].width = p[2]
+            tok = get_token(p[1])
+            tok.repeat = 1
+            tok.width = p[2]
+        p[0] = [tok]
 
 
     def p_rep_opt_suffixed_edit_descriptor(p):
         '''
-        edit_descriptor : NUMBER REP_OPT_SUFFIXED_EDITDESC NUMBER
+        edit_descriptors : NUMBER REP_OPT_SUFFIXED_EDITDESC NUMBER
                         | NUMBER REP_OPT_SUFFIXED_EDITDESC
                         | REP_OPT_SUFFIXED_EDITDESC NUMBER
                         | REP_OPT_SUFFIXED_EDITDESC
         '''
         if len(p) == 4:
             # Has repeat and width
-            p[0] = get_token(p[2])
-            p[0].repeat = p[1]
-            p[0].width = p[3]
+            tok = get_token(p[2])
+            tok.repeat = p[1]
+            tok.width = p[3]
         if len(p) == 3:
             if type(p[1]) == int:
                 # Has repeat only
-                p[0] = get_token(p[2])
-                p[0].repeat = p[1]
+                tok = get_token(p[2])
+                tok.repeat = p[1]
             else:
                 # Has width only
-                p[0] = get_token(p[1])
-                p[0].repeat = 1
-                p[0].width = p[2]
+                tok = get_token(p[1])
+                tok.repeat = 1
+                tok.width = p[2]
         if len(p) == 2:
             # Has neither repeat nor width
-            p[0].repeat = 1
+            tok = get_token(p[1])
+            tok.repeat = 1
+        p[0] = [tok]
 
 
     def p_rep_suffixed_dot_edit_descriptor(p):
         '''
-        edit_descriptor : NUMBER REP_SUFFIXED_DOT_EDITDESC NUMBER DOT NUMBER
+        edit_descriptors : NUMBER REP_SUFFIXED_DOT_EDITDESC NUMBER DOT NUMBER
                         | REP_SUFFIXED_DOT_EDITDESC NUMBER DOT NUMBER
         '''
         if len(p) == 6:
             # Has repeat
-            p[0] = get_token(p[2])
-            p[0].repeat = p[1]
-            p[0].width = p[3]
-            p[0].decimal_places = p[5]
+            tok = get_token(p[2])
+            tok.repeat = p[1]
+            tok.width = p[3]
+            tok.decimal_places = p[5]
         elif len(p) == 5:
             # No repeat, set to 1
-            p[0] = get_token(p[1])
-            p[0].repeat = 1
-            p[0].width = p[2]
-            p[0].decimal_places = p[4]
-        else:
-            raise SyntaxError()
+            tok = get_token(p[1])
+            tok.repeat = 1
+            tok.width = p[2]
+            tok.decimal_places = p[4]
+        p[0] = [tok]
 
     def p_rep_suffixed_edit_descriptor(p):
         '''
-        edit_descriptor : NUMBER REP_SUFFIXED_EDITDESC NUMBER
+        edit_descriptors : NUMBER REP_SUFFIXED_EDITDESC NUMBER
                         | REP_SUFFIXED_EDITDESC NUMBER
         '''
         if len(p) == 4:
             # Has repeat
-            p[0] = get_token(p[2])
-            p[0].repeat = p[1]
-            p[0].width = p[3]
+            tok = get_token(p[2])
+            tok.repeat = p[1]
+            tok.width = p[3]
         elif len(p) == 3:
             # No repeat, set to 1
-            p[0] = get_token(p[1])
-            p[0].repeat = 1
-            p[0].width = p[2]
-        else:
-            raise SyntaxError()
+            tok = get_token(p[1])
+            tok.repeat = 1
+            tok.width = p[2]
+        p[0] = [tok]
 
     def p_suffixed_edit_descriptor(p):
         '''
-        edit_descriptor : SUFFIXED_EDITDESC NUMBER
+        edit_descriptors : SUFFIXED_EDITDESC NUMBER
         '''
-        p[0] = get_token(p[1])
-        p[0].num_chars = p[2]
+        tok = get_token(p[1])
+        tok.num_chars = p[2]
+        p[0] = [tok]
 
     def p_prefixed_edit_descriptor(p):
         '''
-        edit_descriptor : NUMBER PREFIXED_EDITDESC
+        edit_descriptors : NUMBER PREFIXED_EDITDESC
         '''
         if p[2] == 'X':
-            p[0] = X()
-            p[0].num_chars = p[1]
+            tok = X()
+            tok.num_chars = p[1]
         elif p[2] == 'P':
-            p[0] = P()
-            p[0].scale = p[1]
+            tok = P()
+            tok.scale = p[1]
+        p[0] = [tok]
 
     def p_edit_descriptor(p):
         '''
-        edit_descriptor : EDITDESC
+        edit_descriptors : EDITDESC
         '''
-        p[0] = get_token(p[1])
+        tok = get_token(p[1])
+        p[0] = [tok]
 
     def p_string_literal(p):
         '''
-        edit_descriptor : STRING_LITERAL
+        edit_descriptors : STRING_LITERAL
         '''
-        p[0] = p[1][1:-1]
+        tok = StringLiteral()
+        tok.char_string = p[1][1:-1]
+        p[0] = [tok]
 
     def p_h_edit_descriptor(p):
         '''
-        edit_descriptor : H_EDIT_DESCRIPTOR
+        edit_descriptors : H_EDIT_DESCRIPTOR
         '''
-        p[0] = H()
-        p[0].char_string = p[1]
-        p[0].width = len(p[1])
+        tok = H()
+        tok.char_string = p[1]
+        tok.width = len(p[1])
+        p[0] = [tok]
 
     def p_error(p):
         print "Syntax error at '%s'" % p.value
