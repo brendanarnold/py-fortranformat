@@ -8,7 +8,7 @@ class A(object):
             # Since the length of the input string is unknown from the format
             # alone, the width must be specified separately
             # TODO: Work out warning/error system
-            raise Exception()
+            raise SyntaxError('Cannot determine length of string for input')
         final_position = position + self.width
         value = record[position:final_position]
         state['position'] = final_position

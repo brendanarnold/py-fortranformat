@@ -96,8 +96,8 @@ def _build_f77_lexer_parser():
             # Has repeat, #.# and exp#
             if p[6].upper() != 'E':
                 raise SyntaxError("Exponents needs to be specified with 'E'")
+            repeat = p[1]
             tok = get_token(p[2])
-            tok.repeat = p[1]
             tok.width = p[3]
             tok.decimal_places = p[5]
             tok.exponent = p[7]
@@ -105,24 +105,24 @@ def _build_f77_lexer_parser():
             # No repeat, #.# and exp#
             if p[5].upper() != 'E':
                 raise SyntaxError("Exponents needs to be specified with 'E'")
+            repeat = 1
             tok = get_token(p[1])
-            tok.repeat = 1
             tok.width = p[2]
             tok.decimal_places = p[4]
             tok.exponent = p[6]
         if len(p) == 6:
             # Has repeat and #.#
+            repeat = p[1]
             tok = get_token(p[2])
-            tok.repeat = p[1]
             tok.width = p[3]
             tok.decimal_places = p[5]
         if len(p) == 5:
             # Has no repeat and #.#
+            repeat = 1
             tok = get_token(p[1])
-            tok.repeat = 1
             tok.width = p[2]
             tok.decimal_places = p[4]
-        p[0] = [tok]
+        p[0] = repeat * [tok]
 
     def p_rep_suffixed_opt_dot_edit_descriptor(p):
         '''
@@ -133,27 +133,27 @@ def _build_f77_lexer_parser():
         '''
         if len(p) == 6:
             # Has repeat and #.#
+            repeat = p[1]
             tok = get_token(p[2])
-            tok.repeat = p[1]
             tok.width = p[3]
             tok.padding = p[5]
         if len(p) == 5:
             # No repeat and #.#
+            repeat = 1
             tok = get_token(p[1])
-            tok.repeat = 1
             tok.width = p[2]
             tok.padding = p[4]
         if len(p) == 4:
             # Has repeat and #
+            repeat = p[1]
             tok = get_token(p[2])
-            tok.repeat = p[1] 
             tok.width = p[3]
         if len(p) == 3:
             # Has no repeat and #
+            repeat = 1
             tok = get_token(p[1])
-            tok.repeat = 1
             tok.width = p[2]
-        p[0] = [tok]
+        p[0] = repeat * [tok]
 
 
     def p_rep_opt_suffixed_edit_descriptor(p):
@@ -165,24 +165,24 @@ def _build_f77_lexer_parser():
         '''
         if len(p) == 4:
             # Has repeat and width
+            repeat = p[1]
             tok = get_token(p[2])
-            tok.repeat = p[1]
             tok.width = p[3]
         if len(p) == 3:
             if type(p[1]) == int:
                 # Has repeat only
+                repeat = p[1]
                 tok = get_token(p[2])
-                tok.repeat = p[1]
             else:
                 # Has width only
+                repeat = 1
                 tok = get_token(p[1])
-                tok.repeat = 1
                 tok.width = p[2]
         if len(p) == 2:
             # Has neither repeat nor width
+            repeat = 1
             tok = get_token(p[1])
-            tok.repeat = 1
-        p[0] = [tok]
+        p[0] = repeat * [tok]
 
 
     def p_rep_suffixed_dot_edit_descriptor(p):
@@ -192,17 +192,17 @@ def _build_f77_lexer_parser():
         '''
         if len(p) == 6:
             # Has repeat
+            repeat = p[1]
             tok = get_token(p[2])
-            tok.repeat = p[1]
             tok.width = p[3]
             tok.decimal_places = p[5]
         elif len(p) == 5:
             # No repeat, set to 1
+            repeat = 1
             tok = get_token(p[1])
-            tok.repeat = 1
             tok.width = p[2]
             tok.decimal_places = p[4]
-        p[0] = [tok]
+        p[0] = repeat * [tok]
 
     def p_rep_suffixed_edit_descriptor(p):
         '''
@@ -211,15 +211,15 @@ def _build_f77_lexer_parser():
         '''
         if len(p) == 4:
             # Has repeat
+            repeat = p[1]
             tok = get_token(p[2])
-            tok.repeat = p[1]
             tok.width = p[3]
         elif len(p) == 3:
             # No repeat, set to 1
+            repeat = 1
             tok = get_token(p[1])
-            tok.repeat = 1
             tok.width = p[2]
-        p[0] = [tok]
+        p[0] = repeat * [tok]
 
     def p_suffixed_edit_descriptor(p):
         '''
@@ -269,9 +269,9 @@ def _build_f77_lexer_parser():
         print "Syntax error at '%s'" % p.value
 
     # == Compile the parser ==
-    parser = yacc.yacc()
+    parser = yacc.yacc(write_tables=0)
     # == Return the lexer/parser
-    return (lexer, parser)
+    return parser
 
 
 def get_token(name):
