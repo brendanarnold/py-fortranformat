@@ -1,0 +1,18 @@
+FORMAT:(A)
+INPUT:'The quick brown fox jumps the lazy dog.'
+The quick brown fox jumps the lazy dog.
+FORMAT:(A10)
+INPUT:'The quick brown fox jumps the lazy dog.'
+The quick 
+FORMAT:(A1)
+INPUT:'The quick brown fox jumps the lazy dog.'
+T
+FORMAT:(A)
+INPUT:'ABC'
+ABC
+FORMAT:(A10)
+INPUT:'ABC'
+       ABC
+FORMAT:(A1)
+INPUT:'ABC'
+A

@@ -1,0 +1,9 @@
+FORMAT:('The quick brown fox jumps the lazy dog.')
+INPUT:
+The quick brown fox jumps the lazy dog.
+FORMAT:('Wouldn''t it be nice? - said Alice')
+INPUT:
+Wouldn't it be nice? - said Alice
+FORMAT:('''')
+INPUT:
+'
