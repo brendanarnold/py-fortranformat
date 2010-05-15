@@ -3,8 +3,8 @@ class FortranRecordReader(object):
     Generate a reader object for FORTRAN format strings
     '''
     def __init__(self, format=None, version='f77'):
-        self.format = format
         self.version = version
+        self.format = format
         self._parser = None
         self._edit_descriptors = []
 
@@ -59,7 +59,8 @@ class FortranRecordReader(object):
 
     def set_format(self, format):
         self._format = format
-        self._edit_descriptors = self._parser(format)
+        self._edit_descriptors = self._parser.parse(format)
+        print self._edit_descriptors
 
     format = property(get_format, set_format)
 
@@ -69,10 +70,12 @@ class FortranRecordReader(object):
     def set_version(self, version):
         self._version = version
         if self.version == 'f77':
-            from _build_f77_lexer_parser import _build_f77_lexer_parser
-            self._parser = _build_f77_lexer_parser()
-##             from _input_from_f77_tokens import _input_from_f77_tokens
-##             self._input_from_tokens = _input_from_f77_tokens
+            from f77._parser import _build_parser
+            self._parser = _build_parser()
+            from f77._input import _input
+            self._input = _input
+            from f77._output import _output
+            self._output = _output
         elif self.version == 'f90':
             # TODO version f90
             pass
