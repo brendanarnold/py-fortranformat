@@ -1,6 +1,6 @@
 from utility_functions import *
 
-def _input_from_f77_tokens(edit_descriptors):
+def _input(edit_descriptors):
     position = 0
     ignore_blanks = True,
     scale = 0

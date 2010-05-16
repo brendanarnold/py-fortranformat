@@ -42,35 +42,30 @@ F['filestem'] = 'f-edit-descriptor-output'
 
 E = dict()
 E['formats'] = [
-  "E1.0", "E2.0", "E3.0", "E4.0", "E5.0", "E10.0",
   "E1.1", "E2.1", "E3.1", "E4.1", "E5.1", "E10.1",
   "E2.2", "E3.2", "E4.2", "E5.2", "E10.2",
   "E3.3", "E4.3", "E5.3", "E10.3",
   "E4.4", "E5.4", "E10.4",
   "E5.5", "E10.5",
   "E10.10",
-  "E1.0E1", "E2.0E1", "E3.0E1", "E4.0E1", "E5.0E1", "E10.0E1",
   "E1.1E1", "E2.1E1", "E3.1E1", "E4.1E1", "E5.1E1", "E10.1E1",
   "E2.2E1", "E3.2E1", "E4.2E1", "E5.2E1", "E10.2E1",
   "E3.3E1", "E4.3E1", "E5.3E1", "E10.3E1",
   "E4.4E1", "E5.4E1", "E10.4E1",
   "E5.5E1", "E10.5E1",
   "E10.10E1",
-  "E1.0E3", "E2.0E3", "E3.0E3", "E4.0E3", "E5.0E3", "E10.0E3",
   "E1.1E3", "E2.1E3", "E3.1E3", "E4.1E3", "E5.1E3", "E10.1E3",
   "E2.2E3", "E3.2E3", "E4.2E3", "E5.2E3", "E10.2E3",
   "E3.3E3", "E4.3E3", "E5.3E3", "E10.3E3",
   "E4.4E3", "E5.4E3", "E10.4E3",
   "E5.5E3", "E10.5E3",
   "E10.10E3",
-  "E1.0E4", "E2.0E4", "E3.0E4", "E4.0E4", "E5.0E4", "E10.0E4",
   "E1.1E4", "E2.1E4", "E3.1E4", "E4.1E4", "E5.1E4", "E10.1E4",
   "E2.2E4", "E3.2E4", "E4.2E4", "E5.2E4", "E10.2E4",
   "E3.3E4", "E4.3E4", "E5.3E4", "E10.3E4",
   "E4.4E4", "E5.4E4", "E10.4E4",
   "E5.5E4", "E10.5E4",
   "E10.10E4",
-  "E1.0E5", "E2.0E5", "E3.0E5", "E4.0E5", "E5.0E5", "E10.0E5",
   "E1.1E5", "E2.1E5", "E3.1E5", "E4.1E5", "E5.1E5", "E10.1E5",
   "E2.2E5", "E3.2E5", "E4.2E5", "E5.2E5", "E10.2E5",
   "E3.3E5", "E4.3E5", "E5.3E5", "E10.3E5",
@@ -89,6 +84,90 @@ E['name'] = 'e'
 E['filestem'] = 'e-edit-descriptor-output'
 
 
+D = dict()
+D['formats'] = [
+  "D1.1", "D2.1", "D3.1", "D4.1", "D5.1", "D10.1",
+  "D2.2", "D3.2", "D4.2", "D5.2", "D10.2",
+  "D3.3", "D4.3", "D5.3", "D10.3",
+  "D4.4", "D5.4", "D10.4",
+  "D5.5", "D10.5",
+  "D10.10",
+]
+D['inputs'] = [
+  "3.", "-3.", "10.", "-10.", "100.", "-100.", "1000.", "-1000.",
+  "10000.", "-10000.", "100000.", "-100000.", "123456789.",
+  "0.1", "-0.1", "0.01", "-0.01", "0.001", "-0.001", "0.0001",
+  "-0.0001",
+  "-1.96e-16", "3.14159"
+]
+D['name'] = 'd'
+D['filestem'] = 'd-edit-descriptor-output'
+
+# L Edit descriptor
+L = dict()
+L['formats'] = [
+  "L1", "L2", "L3", "L4", "L5", "L6", "L7", "L8", "L9", "L10"
+]
+L['inputs'] = [
+  ".TRUE.", ".FALSE."
+]
+L['name'] = 'l'
+L['filestem'] = 'l-edit-descriptor-output'
+
+# G Edit descriptor
+G = dict()
+G['formats'] = [
+  "G1.1", "G2.1", "G3.1", "G4.1", "G5.1", "G10.1",
+  "G2.2", "G3.2", "G4.2", "G5.2", "G10.2",
+  "G3.3", "G4.3", "G5.3", "G10.3",
+  "G4.4", "G5.4", "G10.4",
+  "G5.5", "G10.5",
+  "G10.10",
+  "G1.1E1", "G2.1E1", "G3.1E1", "G4.1E1", "G5.1E1", "G10.1E1",
+  "G2.2E1", "G3.2E1", "G4.2E1", "G5.2E1", "G10.2E1",
+  "G3.3E1", "G4.3E1", "G5.3E1", "G10.3E1",
+  "G4.4E1", "G5.4E1", "G10.4E1",
+  "G5.5E1", "G10.5E1",
+  "G10.10E1",
+  "G1.1E3", "G2.1E3", "G3.1E3", "G4.1E3", "G5.1E3", "G10.1E3",
+  "G2.2E3", "G3.2E3", "G4.2E3", "G5.2E3", "G10.2E3",
+  "G3.3E3", "G4.3E3", "G5.3E3", "G10.3E3",
+  "G4.4E3", "G5.4E3", "G10.4E3",
+  "G5.5E3", "G10.5E3",
+  "G10.10E3",
+  "G1.1E4", "G2.1E4", "G3.1E4", "G4.1E4", "G5.1E4", "G10.1E4",
+  "G2.2E4", "G3.2E4", "G4.2E4", "G5.2E4", "G10.2E4",
+  "G3.3E4", "G4.3E4", "G5.3E4", "G10.3E4",
+  "G4.4E4", "G5.4E4", "G10.4E4",
+  "G5.5E4", "G10.5E4",
+  "G10.10E4",
+  "G1.1E5", "G2.1E5", "G3.1E5", "G4.1E5", "G5.1E5", "G10.1E5",
+  "G2.2E5", "G3.2E5", "G4.2E5", "G5.2E5", "G10.2E5",
+  "G3.3E5", "G4.3E5", "G5.3E5", "G10.3E5",
+  "G4.4E5", "G5.4E5", "G10.4E5",
+  "G5.5E5", "G10.5E5",
+  "G10.10E5"
+]
+G['inputs'] = [
+  "3.", "-3.", "10.", "-10.", "100.", "-100.", "1000.", "-1000.",
+  "10000.", "-10000.", "100000.", "-100000.", "123456789.",
+  "0.1", "-0.1", "0.01", "-0.01", "0.001", "-0.001", "0.0001",
+  "-0.0001",
+  "-1.96e-16", "3.14159"
+]
+G['name'] = 'g'
+G['filestem'] = 'g-edit-descriptor-output'
+
+A = dict()
+A['formats'] = [
+  "'The quick brown fox jumps the lazy dog.'",
+  "'\"It doesn''t matter anyway\" - said Alice'",
+  "''''''"
+]
+A['inputs'] = [""]
+A['name'] = 'a'
+A['filestem'] = 'a-edit-descriptor-output'
+
 
 
 def gen_test(formats, inputs, name):
@@ -106,7 +185,12 @@ def gen_test(formats, inputs, name):
         format_str = format_str + buff[:72] + '\n'
         # Construct the WRITE statements
         for inp in inputs:
-            buff = "      WRITE (1, %d) 'FORMAT:(%s)', 'INPUT:%s', %s" % (lbl, fmt, inp, inp)
+            # Quote the input so FORTRAN displays correctly
+            quoted_fmt = fmt.replace("'", "''")
+            if inp == '':
+                buff = "      WRITE (1, %d) 'FORMAT:(%s)', 'INPUT:'" % (lbl, quoted_fmt)
+            else:
+                buff = "      WRITE (1, %d) 'FORMAT:(%s)', 'INPUT:%s', %s" % (lbl, quoted_fmt, inp, inp)
             # Continue the lines if necessary
             while len(buff) > 72:
                 write_str = write_str + buff[:72] + '\n'
@@ -116,7 +200,7 @@ def gen_test(formats, inputs, name):
     out = ""
     out = out + "      PROGRAM %sEDIT\n" % name
     out = out + "\n"
-    out = out + "      OPEN(UNIT=1, FILE='%s-edit-descriptor-ouptut.test')\n" % name
+    out = out + "      OPEN(UNIT=1, FILE='%s-edit-descriptor-output.test')\n" % name
     out = out + "\n"
     out = out + write_str
     out = out + "\n"
@@ -132,7 +216,8 @@ if __name__ == '__main__':
     import sys
     import os
     compile_str = sys.argv[1]
-    for edit_desc in [I, F, E]:
+    for edit_desc in [A]:
+##     for edit_desc in [L, F, E, G, D, I, A]:
         stem = edit_desc['filestem']
         fh = open(edit_desc['filestem'] + '.f', 'w')
         print 'Generating %s tests ...' % edit_desc['name'].upper()

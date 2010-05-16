@@ -1,6 +1,6 @@
 import math
 import itertools
-from fortranformat.f77.tokens import *
+from tokens import *
 
 def _output(tokens, values):
     '''

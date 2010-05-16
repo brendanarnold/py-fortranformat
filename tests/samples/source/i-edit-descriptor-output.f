@@ -1,6 +1,6 @@
       PROGRAM iEDIT
 
-      OPEN(UNIT=1, FILE='i-edit-descriptor-ouptut.test')
+      OPEN(UNIT=1, FILE='i-edit-descriptor-output.test')
 
       WRITE (1, 100) 'FORMAT:(I1)', 'INPUT:0', 0
       WRITE (1, 100) 'FORMAT:(I1)', 'INPUT:-0', -0

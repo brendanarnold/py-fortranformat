@@ -1,6 +1,6 @@
       PROGRAM fEDIT
 
-      OPEN(UNIT=1, FILE='f-edit-descriptor-ouptut.test')
+      OPEN(UNIT=1, FILE='f-edit-descriptor-output.test')
 
       WRITE (1, 100) 'FORMAT:(F1.0)', 'INPUT:3.', 3.
       WRITE (1, 100) 'FORMAT:(F1.0)', 'INPUT:-3.', -3.

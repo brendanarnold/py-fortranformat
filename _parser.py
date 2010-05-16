@@ -1,9 +1,9 @@
 import ply.lex as lex
 import ply.yacc as yacc
-from edit_descriptors import *
+from tokens import *
 import re
 
-def _build_f77_lexer_parser():
+def _build_parser():
     # == Build a lexer ==
     # Define a category of tokens here
     tokens = (
@@ -20,7 +20,7 @@ def _build_f77_lexer_parser():
         'REP_SUFFIXED_DOT_OPT_EXP_EDITDESC',
         'NUMBER',
         'DOT',
-        'STRING_LITERAL',
+        'APOSTROPHE',
         'H_EDIT_DESCRIPTOR',
     )
     # Define what each category of tokens contains
@@ -45,7 +45,7 @@ def _build_f77_lexer_parser():
     t_REP_OPT_SUFFIXED_EDITDESC = 'A'
     t_REP_SUFFIXED_OPT_DOT_EDITDESC = 'I'
     t_REP_SUFFIXED_DOT_OPT_EXP_EDITDESC = 'E|G'
-    t_STRING_LITERAL = r"'(''|[^'])*'"
+    t_APOSTROPHE = r"'(''|[^'])*'"
     t_OPEN_PARENS = r'\('
     t_CLOSE_PARENS = r'\)'
     t_DOT = r'\.'
@@ -248,11 +248,11 @@ def _build_f77_lexer_parser():
         tok = get_token(p[1])
         p[0] = [tok]
 
-    def p_string_literal(p):
+    def p_apostrophe(p):
         '''
-        edit_descriptors : STRING_LITERAL
+        edit_descriptors : APOSTROPHE
         '''
-        tok = StringLiteral()
+        tok = Apostrophe()
         tok.char_string = p[1][1:-1]
         p[0] = [tok]
 
