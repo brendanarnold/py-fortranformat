@@ -1,6 +1,6 @@
 import ply.lex as lex
 import ply.yacc as yacc
-from tokens import *
+from _tokens import *
 import re
 
 def _build_parser():

@@ -1,6 +1,6 @@
 import math
 import itertools
-from tokens import *
+from _tokens import *
 
 def _output(tokens, values):
     '''
@@ -11,7 +11,7 @@ def _output(tokens, values):
     record = ''
     state = {
         'position' : 0,
-        'scale' : 10**0,
+        'scale' : 1,
         'incl_plus' : False,
         'collapse_blanks' : False,
         'halt_if_no_vals' : False,
@@ -25,9 +25,9 @@ def _output(tokens, values):
     num_repeatable = 0
     overflow_tokens = None
     for token in tokens:
-        if isinstance(token, SubFormat):
+        if isinstance(token, FormatGroup):
             overflow_tokens = token
-        elif token.is_repeatable:
+        elif _is_repeatable(token):
             num_repeatable += 1
     if overflow_tokens is None:
         overflow_tokens = tokens
@@ -43,58 +43,78 @@ def _output(tokens, values):
     # if the overflow is needed we will know that the extra values can e dealt
     # with - see Section 13.3 F77 Spec.
     for token in overflow_tokens:
-        if token.is_repeatable:
+        if _is_repeatable(token) and (not isinstance(token, FormatGroup)):
             repeat_in_overflow = True
-    for token in tokens:
-        if isinstance(token, (S, SS)):
-            state['incl_plus'] = False
-        if isinstance(token, (SP)):
-            state['incl_plus'] = True
-        elif isinstance(token, P):
-            state['scale'] = token.scale
-        elif isinstance(token, BN):
-            state['collapse_blanks'] = True
-        elif isinstance(token, BZ):
-            state['collapse_blanks'] = False
-        elif isinstance(token, Colon):
-            state['halt_if_no_vals'] = True
-        elif isinstance(token, Slash):
-            state['position'], out = _write_string(record, '\n', state['position'])
-        elif isinstance(token, (X, TR)):
-            state['position'] = state['position'] + token.num_chars
-        elif isinstance(token, TL):
-            state['position'] = state['position'] - token.num_chars
-        elif isinstance(token, T):
-            state['position'] = token.num_chars
-        elif isinstance(token, I):
-            val = values.pop()
-            sub_string = _compose_i_string(token, state, val)
-            state['position'], record = _write_string(record, sub_string, state['position'])
-        elif isinstance(token, F):
-            val = values.pop()
-            sub_string = _compose_f_string(token, state, val)
-            state['position'], record = _write_string(record, sub_string, state['position'])
-        elif isinstance(token, (E, D)):
-            val = values.pop()
-            sub_string = _compose_f_string(token, state, val)
-            state['position'], record = _write_string(record, sub_string, state['position'])
-        elif isinstance(token, G):
-            val = values.pop()
-            sub_string = _compose_f_string(token, state, val)
-            state['position'], record = _write_string(record, sub_string, state['position'])
-        elif isinstance(token, L):
-            val = values.pop()
-            sub_string = _compose_l_string(token, state, val)
-            state['position'], record = _write_string(record, sub_string, state['position'])
-        elif isinstance(token, A):
-            val = values.pop()
-            sub_string = _compose_a_string(token, state, val)
-            state['position'], record = _write_string(record, sub_string, state['position'])
-        elif isinstance(token, (StringLiteral, H)):
-            sub_string = token.char_string
+    tokens.reverse() # Allow to 'pop' tokens from list
+    overflow_tokens = itertools.cycle(overflow_tokens)
+    use_overflow = False
+    # Continue until out of tokens or values
+    while True:
+        # No more tokens, no more values, stop output, 
+        # TODO: this will cut short an overflow token section - is this right?
+        if len(tokens) == len(values) == 0:
+            break
+        # Take a token off the queue if there is any
+        if len(tokens) > 0:
+            token = tokens.pop()
+        else:
+            # Take from overflow tokens if there is a value requiring token
+            assert(len(values) > 0)
+            if repeat_in_overflow == True:
+                token = overflow_tokens.next()
+            else:
+                # Is values in queue, but no tokens and no overflow tokens that
+                # output a value
+                # TODO: Does it stop gracefully or raise error?
+                break
+        # Check if token requires a value
+        if isinstance(token, (I, F, E, D, G, L, A, B, EN, ES, O, Z)):
+            if len(values) > 0:
+                val = values.pop()
+            else:
+                # Is a token that requires a value but no value
+                # TODO: Does it stop gracefully or raise error?
+                break   
+            if isinstance(token, I):
+                sub_string = _compose_i_string(token, state, val)
+            elif isinstance(token, F):
+                sub_string = _compose_f_string(token, state, val)
+            elif isinstance(token, (E, D)):
+                sub_string = _compose_f_string(token, state, val)
+            elif isinstance(token, G):
+                sub_string = _compose_f_string(token, state, val)
+            elif isinstance(token, L):
+                sub_string = _compose_l_string(token, state, val)
+            elif isinstance(token, A):
+                sub_string = _compose_a_string(token, state, val)
             state['position'], record = _write_string(record, sub_string, state['position'])
         else:
-            raise ValueError('Unrecognised token: %s' % token)
+            # Token does not require a value
+            if isinstance(token, (S, SS)):
+                state['incl_plus'] = False
+            if isinstance(token, (SP)):
+                state['incl_plus'] = True
+            elif isinstance(token, P):
+                state['scale'] = token.scale
+            elif isinstance(token, BN):
+                state['collapse_blanks'] = True
+            elif isinstance(token, BZ):
+                state['collapse_blanks'] = False
+            elif isinstance(token, Colon):
+                state['halt_if_no_vals'] = True
+            elif isinstance(token, Slash):
+                state['position'], record = _write_string(record, '\n', state['position'])
+            elif isinstance(token, (X, TR)):
+                state['position'] = state['position'] + token.num_chars
+            elif isinstance(token, TL):
+                state['position'] = state['position'] - token.num_chars
+            elif isinstance(token, T):
+                state['position'] = token.num_chars
+            elif isinstance(token, (StringLiteral, H)):
+                sub_string = token.char_string
+                state['position'], record = _write_string(record, sub_string, state['position'])
+    # Output the final record
+    return record
 
 
 def _compose_a_string(token, state, val):
@@ -119,7 +139,7 @@ def _compose_l_string(token, state, val):
     # Single T or F
     if val == True:
         sub_string = 'T'
-    else
+    else:
         sub_string = 'F'
     # Now pad to the specified width
     sub_string = sub_string.rjust(token.width)
@@ -171,7 +191,7 @@ def _compose_ed_string(token, state, val):
     else:
         type = 'E'
     return _compose_ed_string_without_token(token.width, token.decimal_places, \
-      token.exponent, type, state, val):
+      token.exponent, type, state, val)
 
 def _compose_ed_string_without_token(w, d, e, type, state, val):
     # F77 spec 13.5.9.2.2 covers E,D editing
@@ -224,7 +244,7 @@ def _compose_ed_string_without_token(w, d, e, type, state, val):
 
 def _compose_f_string(token, state, val):
     # A wrapper to allow the routine to be called from E, D editing routine
-    return _compose_f_string_without_token(token.width, token.decimal_places, state, val):
+    return _compose_f_string_without_token(token.width, token.decimal_places, state, val)
 
 def _compose_f_string_without_token(w, d, state, val):
     # F77 spec 13.5.9.2.1 covers F editing
@@ -258,7 +278,7 @@ def _compose_f_string_without_token(w, d, state, val):
         if val == 0:
             sub_string.strip('.')
     # See if the number still overflows
-    if len(sub_str) > w:
+    if len(sub_string) > w:
         sub_string = '*' * w
     # Check that it now conforms
     assert(len(sub_string) <= w)
@@ -273,48 +293,42 @@ def _compose_i_string(token, state, val):
         val = int(val)
     except ValueError:
         raise ValueError("Cannot convert '%s' to a integer" % str(val))
-    if val < 0:
-        len_digits = len(str(val)) - 1
-    else:
-        len_digits = len(str(val))
-    sign = _get_sign(val, state['incl_plus'])
-    len_num = len(sign + len_digits)
+    # Get the basic string without sign etc.
+    int_string = '%d' % int(round(math.fabs(val)))
+    # Pad if necessary
+    if token.min_digits is not None:
+        int_string = int_string.rjust(token.min_digits, '0')
+        # Weird case where if zero width specified and is zero, can have zero space
+        if (val == 0) and (token.min_digits == 0):
+            int_string = ''
+    # prepend the sign
+    int_string = _get_sign(val, state['incl_plus']) + int_string
     # Fill the field with blanks if the number takes more room than the width
     # See F77 spec 13.5.9 remark 5.
-    if len_num > token.width:
-        null_field = True
+    if len(int_string) > token.width:
+        int_string = '*' * token.width
     else:
-        if token.padding is None:
-            # Width pads with blanks
-            fmt = sign + '%' + str(token.width) + 'd'
-            return fmt % val
-        else:
-            # Width pads with blanks and padding pads with zeros with leading sign
-            if len_digits <= token.padding <= len_num <= token.width:
-                fmt = sign + '%.' + str(token.padding) + 'd'
-                return (fmt % val).rjust(token.width)
-            else:
-                null_field = True
-    if null_field == True:
-        return '*' * token.width
+        int_string = int_string.rjust(token.width, ' ')
+    return int_string
 
 def _get_sign(val, incl_plus):
     if val >= 0:
         if incl_plus == True:
             return '+'
         else:
-            return =''
+            return ''
     else:
-        return = '-'
+        return '-'
 
 def _expand_tokens(tokens):
     edit_descriptors = []
     for token in tokens:
-        if isinstance(token, SubFormat):
+        if isinstance(token, FormatGroup):
             repeated_format = token.repeat * token.edit_descriptors
             edit_descriptors.extend(expand_tokens(repeated_format))
         else:
             edit_descriptors.append(token)
+    return edit_descriptors
 
 def _write_string(record, sub_string, pos):
     new_pos = pos + len(sub_string)
@@ -328,3 +342,16 @@ def _write_string(record, sub_string, pos):
     elif pos < len(record):
         out = record[:pos] + sub_string + record[new_pos:]
     return (new_pos, out)
+
+def _is_repeatable(token):
+    # Is the edit descriptor specified as repeatable?
+    return isinstance(token, (A, B, D, O, L, I, G, E, F, EN, ES, Z, FormatGroup))
+
+# Allow for self testing
+if __name__ == '__main__':
+    from _parser import _build_parser
+    parser = _build_parser()
+    import pdb
+    tokens = parser.parse('D9.3')
+    vals = [3.14159]
+    print _output(tokens, vals)

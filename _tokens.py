@@ -1,4 +1,4 @@
-# All the tokens defined in the F77 specification
+# All the tokens defined in the F77 specification unless specified
 
 class A(object):
     def __init__(self):
@@ -20,6 +20,10 @@ class B(object):
         self.repeat = None
         self.width = None
         self.min_digits = None
+    def __repr__(self):
+        return '<B repeat=' + str(self.repeat) + \
+                ' width=' + str(self.width) + \
+                ' min_digits=' + str(self.min_digits) + '>'
     
 class BN(object):
     def __init__(self):
@@ -146,7 +150,7 @@ class O(object):
         self.width = None
         self.min_digits = None
     def __repr__(self):
-        return '<I repeat=' + str(self.repeat) + \
+        return '<O repeat=' + str(self.repeat) + \
                 ' width=' + str(self.width) + \
                 ' min_digits=' + str(self.min_digits) + '>'
 
