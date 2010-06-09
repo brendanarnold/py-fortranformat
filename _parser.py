@@ -1,278 +1,126 @@
-import ply.lex as lex
-import ply.yacc as yacc
-from _tokens import *
-import re
+from _edit_descriptors import *
 
-def _build_parser():
-    # == Build a lexer ==
-    # Define a category of tokens here
-    tokens = (
-        'OPEN_PARENS',
-        'CLOSE_PARENS',
-        'SEPERATOR',
-        'EDITDESC',
-        'PREFIXED_EDITDESC',
-        'SUFFIXED_EDITDESC',
-        'REP_SUFFIXED_EDITDESC',
-        'REP_SUFFIXED_DOT_EDITDESC',
-        'REP_OPT_SUFFIXED_EDITDESC',
-        'REP_SUFFIXED_OPT_DOT_EDITDESC',
-        'REP_SUFFIXED_DOT_OPT_EXP_EDITDESC',
-        'NUMBER',
-        'DOT',
-        'APOSTROPHE',
-        'H_EDIT_DESCRIPTOR',
-    )
-    # Define what each category of tokens contains
-    # Functions are matched depending on the order they are defined
+# Some lexer tokens to look out for
+DIGITS = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+SIGNS = ['+', '-']
+COMMA = [',']
+DOT = ['.']
+WHITESPACE = [' ', '\t', '\n']
+QUOTE_CHARS = ['"', "'"]
+DOUBLE_EDIT_DESCRIPTORS = ['EN', 'ES', 'TR', 'TL', 'BN', 'BZ', 'SP', 'SS']
+SINGLE_EDIT_DESCRIPTORS = ['A', 'B', 'D', 'E', 'F', 'G', 'H', 'I', 'L', 'O', 'Z']
+LEFT_PARENS = ['(']
+RIGHT_PARENS = [')']
 
-    # This is a hack - see http://stackoverflow.com/questions/2216843/
-    def t_H_EDIT_DESCRIPTOR(t):
-        r'97[Hh].{97}|96[Hh].{96}|95[Hh].{95}|94[Hh].{94}|93[Hh].{93}|92[Hh].{92}|91[Hh].{91}|90[Hh].{90}|89[Hh].{89}|88[Hh].{88}|87[Hh].{87}|86[Hh].{86}|85[Hh].{85}|84[Hh].{84}|83[Hh].{83}|82[Hh].{82}|81[Hh].{81}|80[Hh].{80}|79[Hh].{79}|78[Hh].{78}|77[Hh].{77}|76[Hh].{76}|75[Hh].{75}|74[Hh].{74}|73[Hh].{73}|72[Hh].{72}|71[Hh].{71}|70[Hh].{70}|69[Hh].{69}|68[Hh].{68}|67[Hh].{67}|66[Hh].{66}|65[Hh].{65}|64[Hh].{64}|63[Hh].{63}|62[Hh].{62}|61[Hh].{61}|60[Hh].{60}|59[Hh].{59}|58[Hh].{58}|57[Hh].{57}|56[Hh].{56}|55[Hh].{55}|54[Hh].{54}|53[Hh].{53}|52[Hh].{52}|51[Hh].{51}|50[Hh].{50}|49[Hh].{49}|48[Hh].{48}|47[Hh].{47}|46[Hh].{46}|45[Hh].{45}|44[Hh].{44}|43[Hh].{43}|42[Hh].{42}|41[Hh].{41}|40[Hh].{40}|39[Hh].{39}|38[Hh].{38}|37[Hh].{37}|36[Hh].{36}|35[Hh].{35}|34[Hh].{34}|33[Hh].{33}|32[Hh].{32}|31[Hh].{31}|30[Hh].{30}|29[Hh].{29}|28[Hh].{28}|27[Hh].{27}|26[Hh].{26}|25[Hh].{25}|24[Hh].{24}|23[Hh].{23}|22[Hh].{22}|21[Hh].{21}|20[Hh].{20}|19[Hh].{19}|18[Hh].{18}|17[Hh].{17}|16[Hh].{16}|15[Hh].{15}|14[Hh].{14}|13[Hh].{13}|12[Hh].{12}|11[Hh].{11}|10[Hh].{10}|9[Hh].{9}|8[Hh].{8}|7[Hh].{7}|6[Hh].{6}|5[Hh].{5}|4[Hh].{4}|3[Hh].{3}|2[Hh].{2}|1[Hh].{1}|0[Hh].{0}'
-        matches = re.search(r'(\d+)[Hh](.*)', t.value)
-        t.value = matches.group(2)
-        return t
-    def t_NUMBER(t):
-        r'-?\d+'
-        t.value = int(t.value)
-        return t
-    # Regexes strings are matched with longest first
-    t_EDITDESC = r'SP|SS|BN|BZ|[S:/]'
-    t_PREFIXED_EDITDESC = r'X|P'
-    t_SUFFIXED_EDITDESC = r'T|TL|TR'
-    t_REP_SUFFIXED_EDITDESC = 'L'
-    t_REP_SUFFIXED_DOT_EDITDESC = 'F|D'
-    t_REP_OPT_SUFFIXED_EDITDESC = 'A'
-    t_REP_SUFFIXED_OPT_DOT_EDITDESC = 'I'
-    t_REP_SUFFIXED_DOT_OPT_EXP_EDITDESC = 'E|G'
-    t_APOSTROPHE = r"'(''|[^'])*'"
-    t_OPEN_PARENS = r'\('
-    t_CLOSE_PARENS = r'\)'
-    t_DOT = r'\.'
-    t_SEPERATOR = r','
-    # Define which characters to be ignored
-    t_ignore = ' \t'
-    # Define what to do if a non-parseable sequence is found
-    def t_error(t):
-        raise TypeError('')
-    # Create the lexer
-    lexer = lex.lex(reflags=re.IGNORECASE)
-        
-
-    # == Now build the parser ==
-    
-    def p_bracketed_edit_descriptors(p):
-        '''
-        edit_descriptors : OPEN_PARENS edit_descriptors CLOSE_PARENS
-        '''
-        p[0] = p[2]
-
-    def p_repeated_edit_descriptors(p):
-        '''
-        edit_descriptors : NUMBER OPEN_PARENS edit_descriptors CLOSE_PARENS
-        '''
-        p[0] = p[1]*p[3]
-
-    def p_separators(p):
-        '''
-        edit_descriptors : edit_descriptors SEPERATOR
-        '''
-        p[0] = p[1]
-
-    def p_combine_edit_descriptors(p):
-        '''
-        edit_descriptors : edit_descriptors edit_descriptors
-        '''
-        p[0] = p[1] + p[2]
-
-    def p_rep_suffixed_dot_opt_exp_edit_descriptor(p):
-        '''
-        edit_descriptors : NUMBER REP_SUFFIXED_DOT_OPT_EXP_EDITDESC NUMBER DOT NUMBER REP_SUFFIXED_DOT_OPT_EXP_EDITDESC NUMBER
-                        | NUMBER REP_SUFFIXED_DOT_OPT_EXP_EDITDESC NUMBER DOT NUMBER
-                        | REP_SUFFIXED_DOT_OPT_EXP_EDITDESC NUMBER DOT NUMBER REP_SUFFIXED_DOT_OPT_EXP_EDITDESC NUMBER
-                        | REP_SUFFIXED_DOT_OPT_EXP_EDITDESC NUMBER DOT NUMBER
-        '''
-        if len(p) == 8:
-            # Has repeat, #.# and exp#
-            if p[6].upper() != 'E':
-                raise SyntaxError("Exponents needs to be specified with 'E'")
-            repeat = p[1]
-            tok = get_token(p[2])
-            tok.width = p[3]
-            tok.decimal_places = p[5]
-            tok.exponent = p[7]
-        if len(p) == 7:
-            # No repeat, #.# and exp#
-            if p[5].upper() != 'E':
-                raise SyntaxError("Exponents needs to be specified with 'E'")
-            repeat = 1
-            tok = get_token(p[1])
-            tok.width = p[2]
-            tok.decimal_places = p[4]
-            tok.exponent = p[6]
-        if len(p) == 6:
-            # Has repeat and #.#
-            repeat = p[1]
-            tok = get_token(p[2])
-            tok.width = p[3]
-            tok.decimal_places = p[5]
-        if len(p) == 5:
-            # Has no repeat and #.#
-            repeat = 1
-            tok = get_token(p[1])
-            tok.width = p[2]
-            tok.decimal_places = p[4]
-        p[0] = repeat * [tok]
-
-    def p_rep_suffixed_opt_dot_edit_descriptor(p):
-        '''
-        edit_descriptors : NUMBER REP_SUFFIXED_OPT_DOT_EDITDESC NUMBER DOT NUMBER
-                        | NUMBER REP_SUFFIXED_OPT_DOT_EDITDESC NUMBER
-                        | REP_SUFFIXED_OPT_DOT_EDITDESC NUMBER DOT NUMBER
-                        | REP_SUFFIXED_OPT_DOT_EDITDESC NUMBER
-        '''
-        if len(p) == 6:
-            # Has repeat and #.#
-            repeat = p[1]
-            tok = get_token(p[2])
-            tok.width = p[3]
-            tok.padding = p[5]
-        if len(p) == 5:
-            # No repeat and #.#
-            repeat = 1
-            tok = get_token(p[1])
-            tok.width = p[2]
-            tok.padding = p[4]
-        if len(p) == 4:
-            # Has repeat and #
-            repeat = p[1]
-            tok = get_token(p[2])
-            tok.width = p[3]
-        if len(p) == 3:
-            # Has no repeat and #
-            repeat = 1
-            tok = get_token(p[1])
-            tok.width = p[2]
-        p[0] = repeat * [tok]
-
-
-    def p_rep_opt_suffixed_edit_descriptor(p):
-        '''
-        edit_descriptors : NUMBER REP_OPT_SUFFIXED_EDITDESC NUMBER
-                        | NUMBER REP_OPT_SUFFIXED_EDITDESC
-                        | REP_OPT_SUFFIXED_EDITDESC NUMBER
-                        | REP_OPT_SUFFIXED_EDITDESC
-        '''
-        if len(p) == 4:
-            # Has repeat and width
-            repeat = p[1]
-            tok = get_token(p[2])
-            tok.width = p[3]
-        if len(p) == 3:
-            if type(p[1]) == int:
-                # Has repeat only
-                repeat = p[1]
-                tok = get_token(p[2])
+def _lexer(format):
+    '''L the FORTRAN format statement into tokens'''
+    tokens = []
+    s = -1
+    while True:
+        # Get the next set of characters
+        s = s + 1
+        c0, c1, c2 = _get_chars(format, s)
+        # If at end of format, end it all - aieee!
+        if c0 is None:
+            break
+        # Skip whitespace
+        elif c0 in WHITESPACE:
+            continue
+        # Read in a quoted string
+        elif c0 in QUOTE_CHARS:
+            buff = ''
+            delim = c0
+            while True:
+                s = s + 1
+                c0, c1, c2 = _get_chars(format, s)
+                # Check if an escaped delimiter
+                if (c0 == delim) and (c1 == delim):
+                    s = s + 1
+                    buff = buff + delim
+                elif (c0 == delim):
+                    break
+                elif c0 is None:
+                    # Premature end of format
+                    raise InvalidFormat('Premature end of quoted string in format')
+                else:
+                    buff = buff + c0
+            tokens.append(Token('QUOTED_STRING', buff))
+        # Read in an integer
+        elif c0 in DIGITS + SIGNS:
+            buff = c0
+            while True:
+                s = s + 1
+                c0, c1, c2 = _get_chars(format, s)
+                if (c0 not in DIGITS) or (c0 is None):
+                    break
+                else:
+                    buff = buff + c0
+            val = int(buff)
+            if buff[0] in SIGNS:
+                tokens.append(Token('SIGNED_INT', val))
             else:
-                # Has width only
-                repeat = 1
-                tok = get_token(p[1])
-                tok.width = p[2]
-        if len(p) == 2:
-            # Has neither repeat nor width
-            repeat = 1
-            tok = get_token(p[1])
-        p[0] = repeat * [tok]
+                tokens.append(Token('UNSIGNED_INT', val))
+        # Read in a comma
+        elif c0 in COMMA:
+            tokens.append(Token('COMMA', None))
+        # Read in a dot
+        elif c0 in DOT:
+            tokens.append(Token('DOT', None))
+        # Read in double lettered edit descriptors
+        elif (c0 + c1).upper() in DOUBLE_EDIT_DESCRIPTORS:
+            tokens.append(Token('EDIT_DESCRIPTOR', (c0 + c1).upper()))
+            s = s + 1
+        # Read in single lettered edit descriptors
+        elif c0.upper() in SINGLE_EDIT_DESCRIPTORS:
+            tokens.append(Token('EDIT_DESCRIPTOR', c0.upper()))
+        # Read in left parens
+        elif c0 in LEFT_PARENS:
+            tokens.append(Token('LEFT_PARENS', None))
+        # Read in right parens
+        elif c0 in RIGHT_PARENS:
+            tokens.append(Token('RIGHT_PARENS', None))
+        else:
+            raise InvalidFormat('Character %c not recognised' % c0)
+    return tokens
 
+def _parser(tokens):
+    # TODO:
+    pass
 
-    def p_rep_suffixed_dot_edit_descriptor(p):
-        '''
-        edit_descriptors : NUMBER REP_SUFFIXED_DOT_EDITDESC NUMBER DOT NUMBER
-                        | REP_SUFFIXED_DOT_EDITDESC NUMBER DOT NUMBER
-        '''
-        if len(p) == 6:
-            # Has repeat
-            repeat = p[1]
-            tok = get_token(p[2])
-            tok.width = p[3]
-            tok.decimal_places = p[5]
-        elif len(p) == 5:
-            # No repeat, set to 1
-            repeat = 1
-            tok = get_token(p[1])
-            tok.width = p[2]
-            tok.decimal_places = p[4]
-        p[0] = repeat * [tok]
+def _get_chars(format, s):
+    try:
+        c0 = format[s]
+    except IndexError:
+        c0 = None
+    try:
+        c1 = format[s+1]
+    except IndexError:
+        c1 = None
+    try:
+        c2 = format[s+2]
+    except IndexError:
+        c2 = None
+    return (c0, c1, c2)
 
-    def p_rep_suffixed_edit_descriptor(p):
-        '''
-        edit_descriptors : NUMBER REP_SUFFIXED_EDITDESC NUMBER
-                        | REP_SUFFIXED_EDITDESC NUMBER
-        '''
-        if len(p) == 4:
-            # Has repeat
-            repeat = p[1]
-            tok = get_token(p[2])
-            tok.width = p[3]
-        elif len(p) == 3:
-            # No repeat, set to 1
-            repeat = 1
-            tok = get_token(p[1])
-            tok.width = p[2]
-        p[0] = repeat * [tok]
+class InvalidFormat(Exception):
+    def __init__(self, value):
+        self.value = value
+    def __str__(self):
+        return repr(self.value)
 
-    def p_suffixed_edit_descriptor(p):
-        '''
-        edit_descriptors : SUFFIXED_EDITDESC NUMBER
-        '''
-        tok = get_token(p[1])
-        tok.num_chars = p[2]
-        p[0] = [tok]
+class Token(object):
+    def __init__(self, type, value):
+        self.type = type
+        self.value = value
+    def __repr__(self):
+        return "\n  Token: type=%s,\tvalue=%s" % (self.type, str(self.value))
 
-    def p_prefixed_edit_descriptor(p):
-        '''
-        edit_descriptors : NUMBER PREFIXED_EDITDESC
-        '''
-        if p[2] == 'X':
-            tok = X()
-            tok.num_chars = p[1]
-        elif p[2] == 'P':
-            tok = P()
-            tok.scale = p[1]
-        p[0] = [tok]
-
-    def p_edit_descriptor(p):
-        '''
-        edit_descriptors : EDITDESC
-        '''
-        tok = get_token(p[1])
-        p[0] = [tok]
-
-    def p_apostrophe(p):
-        '''
-        edit_descriptors : APOSTROPHE
-        '''
-        tok = Apostrophe()
-        tok.char_string = p[1][1:-1]
-        p[0] = [tok]
-
-    def p_h_edit_descriptor(p):
-        '''
-        edit_descriptors : H_EDIT_DESCRIPTOR
-        '''
-        tok = H()
-        tok.char_string = p[1]
-        tok.width = len(p[1])
-        p[0] = [tok]
-
-    def p_error(p):
-        print "Syntax error at '%s'" % p.value
-
-    # == Compile the parser ==
-    parser = yacc.yacc(write_tables=0)
-    # == Return the lexer/parser
-    return parser
-
+class ParserState(object):
+    '''Struct-like object to store state'''
+    def __init__(self):
+        self.quoted = False
+        self.pos = 0
+        self.new_token = True
 
 def get_token(name):
     name = name.upper()
@@ -319,4 +167,6 @@ def get_token(name):
     else:
         return None
 
+if __name__ == '__main__':
+    print _lexer("'df'' \"g\"ggg',(3 )I4 ")
 
