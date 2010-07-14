@@ -1,3 +1,77 @@
+
+from _exceptions import *
+
+# Categorise the edit descriptors depnding on how they should be parsed
+
+ED1 = ['BN', 'BZ', 'SP', 'SS', 'S'] # Of form X only
+ED2 = ['X'] # Of form nX only
+ED3 = ['T', 'TR', 'TL', 'L'] # Of form Xn only
+ED4 = ['A'] # Of form X or Xn
+ED5 = ['D', 'F'] # Of form Xn.m only
+ED6 = ['B', 'I', 'O', 'Z'] # Of form Xn or Xn.m
+ED7 = ['E', 'EN', 'ES', 'G'] # Of form Xn.m or Xn.mEe
+ED8 = ['P'] # Of form kX only, where k is a signed integer, may omit comma if followed by Type 5 or 7 edit descriptor
+ED9 = [':'] # Of form X only, may omit comma either side
+ED10 = ['/'] # Of form X only, may omit following comma and leading comma if no repeat
+REPEATABLE_ED = ['L', 'A', 'D', 'F', 'B', 'I', 'O', 'Z', 'E', 'EN', 'ES', 'G', '/']
+ALL_ED = ED1 + ED2 + ED3 + ED4 + ED5 + ED6 + ED7 + ED8 + ED9 + ED10
+
+def get_edit_descriptor_obj(name):
+    '''Returns a new object instance from a string'''
+    name = name.upper()
+    if name == 'A':
+        return A()
+    elif name == 'B':
+        return B()
+    elif name == 'BN':
+        return BN()
+    elif name == 'BZ':
+        return BZ()
+    elif name == ':':
+        return Colon()
+    elif name == 'D':
+        return D()
+    elif name == 'E':
+        return E()
+    elif name == 'EN':
+        return EN()
+    elif name == 'ES':
+        return ES()
+    elif name == 'F':
+        return F()
+    elif name == 'G':
+        return G()
+    elif name == 'H':
+        return H()
+    elif name == 'I':
+        return I()
+    elif name == 'L':
+        return L()
+    elif name == 'O':
+        return O()
+    elif name == 'P':
+        return P()
+    elif name =='S':
+        return S()
+    elif name == '/':
+        return Slash()
+    elif name == 'SP':
+        return SP()
+    elif name == 'SS':
+        return SS()
+    elif name == 'T':
+        return T()
+    elif name == 'TL':
+        return TL()
+    elif name == 'TR':
+        return TR()
+    elif name == 'X':
+        return X()
+    elif name == 'Z':
+        return Z()
+    else:
+        raise InvalidFormat('Expected an edit descriptor, got %s' % name)
+
 # All the tokens defined in the F77 specification unless specified
 
 class A(object):
@@ -8,11 +82,11 @@ class A(object):
         return '<A repeat=' + str(self.repeat) + \
                 ' width=' + str(self.width) + '>'
 
-class Apostrophe(object):
-    def __init__(self):
-        self.char_string = None
+class QuotedString(object):
+    def __init__(self, char_string=None):
+        self.char_string = char_string
     def __repr__(self):
-        return '<Apostrophe char_string=' + str(self.char_string) + '>'
+        return '<QuotedString char_string=' + str(self.char_string) + '>'
 
 # Only in F95
 class B(object):
