@@ -9,7 +9,7 @@ DOT = ['.']
 WHITESPACE = [' ', '\t', '\n']
 QUOTE_CHARS = ['"', "'"]
 DOUBLE_EDIT_DESCRIPTORS = ['EN', 'ES', 'TR', 'TL', 'BN', 'BZ', 'SP', 'SS']
-SINGLE_EDIT_DESCRIPTORS = ['A', 'B', 'D', 'E', 'F', 'G', 'I', 'L', 'O', 'Z', ':', '/']
+SINGLE_EDIT_DESCRIPTORS = ['A', 'B', 'D', 'E', 'F', 'G', 'I', 'L', 'O', 'P', 'S', 'T', 'X', 'Z', ':', '/']
 H_EDIT_DESCRIPTOR = ['H']
 LEFT_PARENS = ['(']
 RIGHT_PARENS = [')']
@@ -164,7 +164,13 @@ class Token(object):
     def __repr__(self):
         return "\n  Token: type=%s,\tvalue=%s" % (self.type, str(self.value))
 
+# Do some testing when run as a module
 
 if __name__ == '__main__':
-    print lexer("BZ")
-
+    import doctest
+    import os
+    globs = {'lexer' : lexer}
+    # Need to normalize whitespace since pasting into VIM converts tabs to
+    # spaces
+    doctest.testfile(os.path.join('tests', 'lexer_test.txt'), \
+        globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)

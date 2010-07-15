@@ -299,6 +299,6 @@ def _read_ed10(tokens):
 
 if __name__ == '__main__':
     from _lexer import lexer
-    tokens = lexer('EN3.4E56')
+    tokens = lexer('2(EN3.4E56)')
     eds = parser(tokens)
     print eds

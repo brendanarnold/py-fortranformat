@@ -1,0 +1,112 @@
+>>> lexer('4i4')
+[
+  Token: type=UINT,     value=4,
+  Token: type=ED6,      value=I,
+  Token: type=UINT,     value=4]
+>>> lexer('(4i4)')
+[
+  Token: type=LEFT_PARENS,      value=None,
+  Token: type=UINT,     value=4,
+  Token: type=ED6,      value=I,
+  Token: type=UINT,     value=4,
+  Token: type=RIGHT_PARENS,     value=None]
+>>> lexer('4(i4)')
+[
+  Token: type=UINT,     value=4,
+  Token: type=LEFT_PARENS,      value=None,
+  Token: type=ED6,      value=I,
+  Token: type=UINT,     value=4,
+  Token: type=RIGHT_PARENS,     value=None]
+>>> lexer('4(4i4)')
+[
+  Token: type=UINT,     value=4,
+  Token: type=LEFT_PARENS,      value=None,
+  Token: type=UINT,     value=4,
+  Token: type=ED6,      value=I,
+  Token: type=UINT,     value=4,
+  Token: type=RIGHT_PARENS,     value=None]
+>>> lexer('2(i4,3(i4))')
+[
+  Token: type=UINT,     value=2,
+  Token: type=LEFT_PARENS,      value=None,
+  Token: type=ED6,      value=I,
+  Token: type=UINT,     value=4,
+  Token: type=COMMA,    value=None,
+  Token: type=UINT,     value=3,
+  Token: type=LEFT_PARENS,      value=None,
+  Token: type=ED6,      value=I,
+  Token: type=UINT,     value=4,
+  Token: type=RIGHT_PARENS,     value=None,
+  Token: type=RIGHT_PARENS,     value=None]
+>>> lexer('()')
+[
+  Token: type=LEFT_PARENS,      value=None,
+  Token: type=RIGHT_PARENS,     value=None]
+>>> lexer('3()')
+[
+  Token: type=UINT,     value=3,
+  Token: type=LEFT_PARENS,      value=None,
+  Token: type=RIGHT_PARENS,     value=None]
+>>> lexer('(A,B,BN,BZ,:,D,E,EN,ES,F,G,I,L,O,P,S,/,SP,SS,T,TL,TR,X,Z),I1.1,\'foo\',"bar",3Hbaz')
+[
+  Token: type=LEFT_PARENS,      value=None,
+  Token: type=ED4,      value=A,
+  Token: type=COMMA,    value=None,
+  Token: type=ED6,      value=B,
+  Token: type=COMMA,    value=None,
+  Token: type=ED1,      value=BN,
+  Token: type=COMMA,    value=None,
+  Token: type=ED1,      value=BZ,
+  Token: type=COMMA,    value=None,
+  Token: type=ED9,      value=:,
+  Token: type=COMMA,    value=None,
+  Token: type=ED5,      value=D,
+  Token: type=COMMA,    value=None,
+  Token: type=ED7,      value=E,
+  Token: type=COMMA,    value=None,
+  Token: type=ED7,      value=EN,
+  Token: type=COMMA,    value=None,
+  Token: type=ED7,      value=ES,
+  Token: type=COMMA,    value=None,
+  Token: type=ED5,      value=F,
+  Token: type=COMMA,    value=None,
+  Token: type=ED7,      value=G,
+  Token: type=COMMA,    value=None,
+  Token: type=ED6,      value=I,
+  Token: type=COMMA,    value=None,
+  Token: type=ED3,      value=L,
+  Token: type=COMMA,    value=None,
+  Token: type=ED6,      value=O,
+  Token: type=COMMA,    value=None,
+  Token: type=ED8,      value=P,
+  Token: type=COMMA,    value=None,
+  Token: type=ED1,      value=S,
+  Token: type=COMMA,    value=None,
+  Token: type=ED10,     value=/,
+  Token: type=COMMA,    value=None,
+  Token: type=ED1,      value=SP,
+  Token: type=COMMA,    value=None,
+  Token: type=ED1,      value=SS,
+  Token: type=COMMA,    value=None,
+  Token: type=ED3,      value=T,
+  Token: type=COMMA,    value=None,
+  Token: type=ED3,      value=TL,
+  Token: type=COMMA,    value=None,
+  Token: type=ED3,      value=TR,
+  Token: type=COMMA,    value=None,
+  Token: type=ED2,      value=X,
+  Token: type=COMMA,    value=None,
+  Token: type=ED6,      value=Z,
+  Token: type=RIGHT_PARENS,     value=None,
+  Token: type=COMMA,    value=None,
+  Token: type=ED6,      value=I,
+  Token: type=UINT,     value=1,
+  Token: type=DOT,      value=None,
+  Token: type=UINT,     value=1,
+  Token: type=COMMA,    value=None,
+  Token: type=QUOTED_STRING,    value=foo,
+  Token: type=COMMA,    value=None,
+  Token: type=QUOTED_STRING,    value=bar,
+  Token: type=COMMA,    value=None,
+  Token: type=QUOTED_STRING,    value=baz]
+
