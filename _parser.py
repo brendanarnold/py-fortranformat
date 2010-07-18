@@ -179,7 +179,7 @@ def _read_quoted_string(tokens):
     type_string = ",".join([t.type for t in tokens])
     if type_string != "QUOTED_STRING":
         raise InvalidFormat('Token %s has invalid neighbouring token' % tokens[0])
-    ed = get_edit_descriptor_obj(tokens[0].type)   
+    ed = QuotedString()  
     ed.char_string = tokens[0].value
     return ed
 
@@ -270,7 +270,7 @@ def _read_ed8(tokens):
     # by Type 5 or 7 edit descriptor
     type_string = ",".join([t.type for t in tokens])
     if type_string in ["UINT,ED8", "INT,ED8"]:
-        ed = get_edit_descriptor_obj(tokens[0].value)
+        ed = get_edit_descriptor_obj(tokens[1].value)
         ed.scale = tokens[0].value
     else:
         raise InvalidFormat('%s has invalid neighbouring token' % tokens[0])
@@ -298,7 +298,11 @@ def _read_ed10(tokens):
 # Run some tests if run as a script
 
 if __name__ == '__main__':
+    import doctest
+    import os
     from _lexer import lexer
-    tokens = lexer('2(EN3.4E56)')
-    eds = parser(tokens)
-    print eds
+    globs = {'lexer' : lexer, 'parser' : parser}
+    # Need to normalize whitespace since pasting into VIM converts tabs to
+    # spaces
+    doctest.testfile(os.path.join('tests', 'parser_test.txt'), \
+        globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)

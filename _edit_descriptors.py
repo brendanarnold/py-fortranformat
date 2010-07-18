@@ -242,9 +242,10 @@ class S(object):
     
 class Slash(object):
     def __init__(self):
+        self.repeat = None
         pass
     def __repr__(self):
-        return '<Slash>'
+        return '<Slash repeat=' + str(self.repeat) + '>'
     
 class SP(object):
     def __init__(self):
