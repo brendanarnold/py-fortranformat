@@ -18,7 +18,7 @@ SLASH = '/'
 
 
 def lexer(format):
-    '''L the FORTRAN format statement into tokens'''
+    '''Lex the FORTRAN format statement into tokens'''
     tokens = []
     s = -1
     h_chars = None

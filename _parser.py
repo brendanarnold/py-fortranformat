@@ -4,6 +4,19 @@ from _exceptions import *
 import pdb
 
 def parser(tokens, version=None):
+    # Parse the full edit descriptors
+    eds = _parse_tokens(tokens, reversion=False, version=None)
+    # Parse the edit descriptors used for the reversion of format control 
+    # (F95 format 12.2.2)
+    reversion_eds = _parse_tokens(tokens, reversion=True, version=None)
+    return eds, reversion_eds
+
+def _parse_tokens(tokens, reversion=False, version=None):
+    # Remove outer parens is there are any
+    tokens = _remove_outer_parens(tokens)
+    # Get only the reversion tokens
+    if reversion == True:
+        tokens = _get_reversion_tokens(tokens)
     # First expand the parentheses
     tokens = _expand_parens(tokens)
     # Split on commas
@@ -25,11 +38,12 @@ def parser(tokens, version=None):
                 ed_type = token.type
                 ed_value = token.value
                 break
+        # TODO: something more responsible here ...
         if ed_type is None:
             continue
         # If repeatable and first token is repeat number then cache
         repeat = None
-        if ed_value in REPEATABLE_ED and (token_set[0].type == 'UINT'):
+        if ed_value in REPEATABLE_EDS and (token_set[0].type == 'UINT'):
             repeat = token_set[0].value
             token_set = token_set[1:]
         # Process the edit descriptor
@@ -171,6 +185,34 @@ def _split_on_ed8(token_sets):
             raise InvalidFormat('P edit descriptor in invalid position')
     return new_token_sets
 
+# Function to extract only the tokens for the reversion of control
+
+def _get_reversion_tokens(tokens):
+    reversion_tokens = []
+    # Easier to work backwards
+    nesting = None
+    for token in tokens[::-1]:
+        # End of loop condition
+        if (nesting is not None) and (nesting < 1):
+            # Parens may have a repeat number
+            if token.type == 'UINT':
+                reversion_tokens.append(token)
+            break
+        # Read till the first right parens
+        if token.type == 'RIGHT_PARENS':
+            if nesting is None:
+                nesting = 1
+            else:
+                nesting = nesting + 1
+        elif token.type == 'LEFT_PARENS':
+            if nesting is None:
+                raise InvalidFormat('Unbalanced parens in format')
+            else:
+                nesting = nesting - 1
+        reversion_tokens.append(token)
+    # Tokens are in reverse order
+    reversion_tokens.reverse()
+    return reversion_tokens
 
 # The functions that read particular edit descriptors sequences
 
@@ -293,6 +335,15 @@ def _read_ed10(tokens):
     else:
         raise InvalidFormat('%s has invalid neighbouring token' % tokens[0])
     return ed
+
+
+# Functions that pre-process the token list
+
+def _remove_outer_parens(tokens):
+    # Finally, remove outer parens is there are any
+    if (tokens[0].type == 'LEFT_PARENS') and (tokens[-1].type == 'RIGHT_PARENS'):
+        tokens = tokens[1:-1]
+    return tokens
 
 
 # Run some tests if run as a script

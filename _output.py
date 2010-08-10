@@ -1,6 +1,6 @@
 import math
 import itertools
-from _tokens import *
+from _edit_descriptors import *
 
 def _output(tokens, values):
     '''

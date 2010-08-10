@@ -13,7 +13,8 @@ ED7 = ['E', 'EN', 'ES', 'G'] # Of form Xn.m or Xn.mEe
 ED8 = ['P'] # Of form kX only, where k is a signed integer, may omit comma if followed by Type 5 or 7 edit descriptor
 ED9 = [':'] # Of form X only, may omit comma either side
 ED10 = ['/'] # Of form X only, may omit following comma and leading comma if no repeat
-REPEATABLE_ED = ['L', 'A', 'D', 'F', 'B', 'I', 'O', 'Z', 'E', 'EN', 'ES', 'G', '/']
+REPEATABLE_EDS = ['L', 'A', 'D', 'F', 'B', 'I', 'O', 'Z', 'E', 'EN', 'ES', 'G', '/']
+NON_REVERSION_EDS = ['P', 'S', 'SP', 'SS', 'BN', 'BZ']
 ALL_ED = ED1 + ED2 + ED3 + ED4 + ED5 + ED6 + ED7 + ED8 + ED9 + ED10
 
 def get_edit_descriptor_obj(name):

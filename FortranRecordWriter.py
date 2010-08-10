@@ -1,5 +1,5 @@
-from _output import _output
-from _parser import _parser
+from _output import output
+from _parser import parser
 
 class FortranRecordWriter(object):
     '''
@@ -8,7 +8,7 @@ class FortranRecordWriter(object):
     def __init__(self, format, version=None):
         self.version = version
         self.format = format
-        self._parser = _parser
+        self._parser = parser
         self._edit_descriptors = []
         self._parse_format()
 
@@ -27,6 +27,7 @@ class FortranRecordWriter(object):
 
     def get_format(self):
         return self._format
+
     def set_format(self, format):
         self._format = format
         self._parse_format()
