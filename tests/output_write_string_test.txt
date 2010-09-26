@@ -1,0 +1,11 @@
+>>> record = '12345'
+>>> sub_string = 'abc'
+>>> pos = 0
+>>> _write_string(record, sub_string, pos)
+(3, 'abc45')
+>>> pos = 2
+>>> _write_string(record, sub_string, pos)
+(5, '12abc')
+>>> pos = 7
+>>> _write_string(record, sub_string, pos)
+(10, '12345  abc')

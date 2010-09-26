@@ -296,12 +296,12 @@ def _read_ed7(tokens):
     if type_string == "ED7,UINT,DOT,UINT":
         ed = get_edit_descriptor_obj(tokens[0].value)
         ed.width = tokens[1].value
-        ed.min_digits = tokens[3].value
+        ed.decimal_places = tokens[3].value
         ed.exponent = None
     elif type_string in ['ED7,UINT,DOT,UINT,ED7,UINT', 'ED7,UINT,DOT,UINT,ED7,INT']:
         ed = get_edit_descriptor_obj(tokens[0].value)
         ed.width = tokens[1].value
-        ed.min_digits = tokens[3].value
+        ed.decimal_places = tokens[3].value
         ed.exponent = tokens[5].value
     else:
         raise InvalidFormat('%s has invalid neighbouring token' % tokens[0])

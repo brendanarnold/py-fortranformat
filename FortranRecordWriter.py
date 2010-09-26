@@ -10,6 +10,7 @@ class FortranRecordWriter(object):
         self.format = format
         self._parser = parser
         self._edit_descriptors = []
+        self._overflow_edit_descriptors = []
         self._parse_format()
 
     def __eq__(self, other):
@@ -23,7 +24,7 @@ class FortranRecordWriter(object):
         Pass a list of values correspoding to the FORTRAN format specified
         to generate a string
         '''
-        return _output(self.edit_descriptors)
+        return _output(self.edit_descriptors, self._overflow_edit_descriptors, values)
 
     def get_format(self):
         return self._format
@@ -41,7 +42,7 @@ class FortranRecordWriter(object):
     version = property(get_version, set_version)
 
     def _parse_format(self):
-        self._edit_descriptors = self._parser(self.format, self.version)
+        self._edit_descriptors, self._overflow_edit_descriptors = self._parser(self.format, self.version)
 
 
 if __name__ == '__main__':

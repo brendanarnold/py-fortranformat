@@ -1,21 +1,6 @@
 
 from _exceptions import *
 
-# Categorise the edit descriptors depnding on how they should be parsed
-
-ED1 = ['BN', 'BZ', 'SP', 'SS', 'S'] # Of form X only
-ED2 = ['X'] # Of form nX only
-ED3 = ['T', 'TR', 'TL', 'L'] # Of form Xn only
-ED4 = ['A'] # Of form X or Xn
-ED5 = ['D', 'F'] # Of form Xn.m only
-ED6 = ['B', 'I', 'O', 'Z'] # Of form Xn or Xn.m
-ED7 = ['E', 'EN', 'ES', 'G'] # Of form Xn.m or Xn.mEe
-ED8 = ['P'] # Of form kX only, where k is a signed integer, may omit comma if followed by Type 5 or 7 edit descriptor
-ED9 = [':'] # Of form X only, may omit comma either side
-ED10 = ['/'] # Of form X only, may omit following comma and leading comma if no repeat
-REPEATABLE_EDS = ['L', 'A', 'D', 'F', 'B', 'I', 'O', 'Z', 'E', 'EN', 'ES', 'G', '/']
-NON_REVERSION_EDS = ['P', 'S', 'SP', 'SS', 'BN', 'BZ']
-ALL_ED = ED1 + ED2 + ED3 + ED4 + ED5 + ED6 + ED7 + ED8 + ED9 + ED10
 
 def get_edit_descriptor_obj(name):
     '''Returns a new object instance from a string'''
@@ -294,4 +279,21 @@ class Z(object):
         return '<Z repeat=' + str(self.repeat) + \
                 ' width=' + str(self.width) + \
                 ' min_digits=' + str(self.min_digits) + '>'
+
+# Categorise the edit descriptors depnding on how they should be parsed
+
+ED1 = ['BN', 'BZ', 'SP', 'SS', 'S'] # Of form X only
+ED2 = ['X'] # Of form nX only
+ED3 = ['T', 'TR', 'TL', 'L'] # Of form Xn only
+ED4 = ['A'] # Of form X or Xn
+ED5 = ['D', 'F'] # Of form Xn.m only
+ED6 = ['B', 'I', 'O', 'Z'] # Of form Xn or Xn.m
+ED7 = ['E', 'EN', 'ES', 'G'] # Of form Xn.m or Xn.mEe
+ED8 = ['P'] # Of form kX only, where k is a signed integer, may omit comma if followed by Type 5 or 7 edit descriptor
+ED9 = [':'] # Of form X only, may omit comma either side
+ED10 = ['/'] # Of form X only, may omit following comma and leading comma if no repeat
+REPEATABLE_EDS = ['L', 'A', 'D', 'F', 'B', 'I', 'O', 'Z', 'E', 'EN', 'ES', 'G', '/']
+OUTPUT_EDS = (L, A, D, F, B, I, O, Z, E, EN, ES, G)
+NON_REVERSION_EDS = (P, S, SP, SS, BN, BZ)
+ALL_ED = ED1 + ED2 + ED3 + ED4 + ED5 + ED6 + ED7 + ED8 + ED9 + ED10
 

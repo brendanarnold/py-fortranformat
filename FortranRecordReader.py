@@ -1,5 +1,5 @@
-from _input import _input
-from _parser import _parser
+from _input import input
+from _parser import parser
 
 class FortranRecordReader(object):
     '''
@@ -8,7 +8,7 @@ class FortranRecordReader(object):
     def __init__(self, format, version=None):
         self.version = version
         self.format = format
-        self._parser = _parser
+        self._parser = parser
         self._edit_descriptors = []
         self._parse_format()
 
@@ -31,7 +31,7 @@ class FortranRecordReader(object):
         Pass a string representing a FORTRAN record to obtain the relevent
         values
         '''
-        return _input(self.edit_descriptors)
+        return input(self.edit_descriptors)
 
     def get_format(self):
         return self._format

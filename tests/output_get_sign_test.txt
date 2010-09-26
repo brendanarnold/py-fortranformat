@@ -1,0 +1,19 @@
+>>> incl_plus = True
+>>> val = 1
+>>> _get_sign(val, incl_plus)
+'+'
+>>> incl_plus = False
+>>> _get_sign(val, incl_plus)
+''
+>>> val = -1
+>>> _get_sign(val, incl_plus)
+'-'
+>>> incl_plus = True
+>>> _get_sign(val, incl_plus)
+'-'
+>>> val = 0
+>>> _get_sign(val, incl_plus)
+'+'
+>>> incl_plus = False
+>>> _get_sign(val, incl_plus)
+''

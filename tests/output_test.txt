@@ -1,0 +1,380 @@
+>>> eds, reversion_eds = parser(lexer('''(A)'''))
+>>> vals = ["'The quick brown fox jumps the lazy dog.'"]
+>>> output(eds, reversion_eds, vals)
+'The quick brown fox jumps the lazy dog.'
+>>> eds, reversion_eds = parser(lexer('''(A10)'''))
+>>> vals = ["'The quick brown fox jumps the lazy dog.'"]
+>>> output(eds, reversion_eds, vals)
+'The quick '
+>>> eds, reversion_eds = parser(lexer('''(A1)'''))
+>>> vals = ["'The quick brown fox jumps the lazy dog.'"]
+>>> output(eds, reversion_eds, vals)
+'T'
+>>> eds, reversion_eds = parser(lexer('''(A)'''))
+>>> vals = ["'ABC'"]
+>>> output(eds, reversion_eds, vals)
+'ABC'
+>>> eds, reversion_eds = parser(lexer('''(A10)'''))
+>>> vals = ["'ABC'"]
+>>> output(eds, reversion_eds, vals)
+'       ABC'
+>>> eds, reversion_eds = parser(lexer('''('The quick brown fox jumps the lazy dog.')'''))
+>>> vals = ['']
+>>> output(eds, reversion_eds, vals)
+'The quick brown fox jumps the lazy dog.'
+>>> eds, reversion_eds = parser(lexer('''('Wouldn''t it be nice? - said Alice')'''))
+>>> vals = ['']
+>>> output(eds, reversion_eds, vals)
+'Wouldn't it be nice? - said Alice'
+>>> eds, reversion_eds = parser(lexer('''(E1.1)'''))
+>>> vals = ['0.0']
+>>> output(eds, reversion_eds, vals)
+'*'
+>>> eds, reversion_eds = parser(lexer('''(E2.1)'''))
+>>> vals = ['0.0']
+>>> output(eds, reversion_eds, vals)
+'**'
+>>> eds, reversion_eds = parser(lexer('''(E2.2)'''))
+>>> vals = ['0.0']
+>>> output(eds, reversion_eds, vals)
+'**'
+>>> eds, reversion_eds = parser(lexer('''(E3.1)'''))
+>>> vals = ['0.0']
+>>> output(eds, reversion_eds, vals)
+'***'
+>>> eds, reversion_eds = parser(lexer('''(E3.2)'''))
+>>> vals = ['0.0']
+>>> output(eds, reversion_eds, vals)
+'***'
+>>> eds, reversion_eds = parser(lexer('''(E3.3)'''))
+>>> vals = ['0.0']
+>>> output(eds, reversion_eds, vals)
+'***'
+>>> eds, reversion_eds = parser(lexer('''(E2.1E2)'''))
+>>> vals = ['0.0']
+>>> output(eds, reversion_eds, vals)
+'**'
+>>> eds, reversion_eds = parser(lexer('''(E3.1E1)'''))
+>>> vals = ['0.0']
+>>> output(eds, reversion_eds, vals)
+'***'
+>>> eds, reversion_eds = parser(lexer('''(E4.1E1)'''))
+>>> vals = ['0.0']
+>>> output(eds, reversion_eds, vals)
+'****'
+>>> eds, reversion_eds = parser(lexer('''(E5.1E1)'''))
+>>> vals = ['0.0']
+>>> output(eds, reversion_eds, vals)
+'.0E+0'
+>>> eds, reversion_eds = parser(lexer('''(E6.1E1)'''))
+>>> vals = ['0.0']
+>>> output(eds, reversion_eds, vals)
+'0.0E+0'
+>>> eds, reversion_eds = parser(lexer('''(E7.1E1)'''))
+>>> vals = ['0.0']
+>>> output(eds, reversion_eds, vals)
+' 0.0E+0'
+>>> eds, reversion_eds = parser(lexer('''(E8.1E1)'''))
+>>> vals = ['0.0']
+>>> output(eds, reversion_eds, vals)
+'  0.0E+0'
+>>> eds, reversion_eds = parser(lexer('''(F1.0)'''))
+>>> vals = ['0.0']
+>>> output(eds, reversion_eds, vals)
+'0'
+>>> eds, reversion_eds = parser(lexer('''(F1.1)'''))
+>>> vals = ['0.0']
+>>> output(eds, reversion_eds, vals)
+'0'
+>>> eds, reversion_eds = parser(lexer('''(F3.0)'''))
+>>> vals = ['0.0']
+>>> output(eds, reversion_eds, vals)
+' 0.'
+>>> eds, reversion_eds = parser(lexer('''(F3.1)'''))
+>>> vals = ['0.0']
+>>> output(eds, reversion_eds, vals)
+'0.0'
+>>> eds, reversion_eds = parser(lexer('''(F3.2)'''))
+>>> vals = ['0.0']
+>>> output(eds, reversion_eds, vals)
+'.00'
+>>> eds, reversion_eds = parser(lexer('''(F1.0)'''))
+>>> vals = ['-0.0']
+>>> output(eds, reversion_eds, vals)
+'0'
+>>> eds, reversion_eds = parser(lexer('''(F1.1)'''))
+>>> vals = ['-0.0']
+>>> output(eds, reversion_eds, vals)
+'0'
+>>> eds, reversion_eds = parser(lexer('''(F3.0)'''))
+>>> vals = ['-0.0']
+>>> output(eds, reversion_eds, vals)
+'-0.'
+>>> eds, reversion_eds = parser(lexer('''(F3.1)'''))
+>>> vals = ['-0.0']
+>>> output(eds, reversion_eds, vals)
+'-.0'
+>>> eds, reversion_eds = parser(lexer('''(F3.2)'''))
+>>> vals = ['-0.0']
+>>> output(eds, reversion_eds, vals)
+'***'
+>>> eds, reversion_eds = parser(lexer('''(F1.0)'''))
+>>> vals = ['-0.1']
+>>> output(eds, reversion_eds, vals)
+'0'
+>>> eds, reversion_eds = parser(lexer('''(F1.1)'''))
+>>> vals = ['-0.1']
+>>> output(eds, reversion_eds, vals)
+'*'
+>>> eds, reversion_eds = parser(lexer('''(F3.0)'''))
+>>> vals = ['-0.1']
+>>> output(eds, reversion_eds, vals)
+'-0.'
+>>> eds, reversion_eds = parser(lexer('''(F3.1)'''))
+>>> vals = ['-0.1']
+>>> output(eds, reversion_eds, vals)
+'-.1'
+>>> eds, reversion_eds = parser(lexer('''(F3.2)'''))
+>>> vals = ['-0.1']
+>>> output(eds, reversion_eds, vals)
+'***'
+>>> eds, reversion_eds = parser(lexer('''(F1.0)'''))
+>>> vals = ['0.1']
+>>> output(eds, reversion_eds, vals)
+'0'
+>>> eds, reversion_eds = parser(lexer('''(F1.1)'''))
+>>> vals = ['0.1']
+>>> output(eds, reversion_eds, vals)
+'*'
+>>> eds, reversion_eds = parser(lexer('''(F3.0)'''))
+>>> vals = ['0.1']
+>>> output(eds, reversion_eds, vals)
+' 0.'
+>>> eds, reversion_eds = parser(lexer('''(F3.1)'''))
+>>> vals = ['0.1']
+>>> output(eds, reversion_eds, vals)
+'0.1'
+>>> eds, reversion_eds = parser(lexer('''(F3.2)'''))
+>>> vals = ['0.1']
+>>> output(eds, reversion_eds, vals)
+'.10'
+>>> eds, reversion_eds = parser(lexer('''(F1.0)'''))
+>>> vals = ['1.0']
+>>> output(eds, reversion_eds, vals)
+'*'
+>>> eds, reversion_eds = parser(lexer('''(F1.1)'''))
+>>> vals = ['1.0']
+>>> output(eds, reversion_eds, vals)
+'*'
+>>> eds, reversion_eds = parser(lexer('''(F3.0)'''))
+>>> vals = ['1.0']
+>>> output(eds, reversion_eds, vals)
+' 1.'
+>>> eds, reversion_eds = parser(lexer('''(F3.1)'''))
+>>> vals = ['1.0']
+>>> output(eds, reversion_eds, vals)
+'1.0'
+>>> eds, reversion_eds = parser(lexer('''(F3.2)'''))
+>>> vals = ['1.0']
+>>> output(eds, reversion_eds, vals)
+'***'
+>>> eds, reversion_eds = parser(lexer('''(F1.0)'''))
+>>> vals = ['1.1']
+>>> output(eds, reversion_eds, vals)
+'*'
+>>> eds, reversion_eds = parser(lexer('''(F1.1)'''))
+>>> vals = ['1.1']
+>>> output(eds, reversion_eds, vals)
+'*'
+>>> eds, reversion_eds = parser(lexer('''(F3.0)'''))
+>>> vals = ['1.1']
+>>> output(eds, reversion_eds, vals)
+' 1.'
+>>> eds, reversion_eds = parser(lexer('''(F3.1)'''))
+>>> vals = ['1.1']
+>>> output(eds, reversion_eds, vals)
+'1.1'
+>>> eds, reversion_eds = parser(lexer('''(F3.2)'''))
+>>> vals = ['1.1']
+>>> output(eds, reversion_eds, vals)
+'***'
+>>> eds, reversion_eds = parser(lexer('''(F1.0)'''))
+>>> vals = ['1.1E1']
+>>> output(eds, reversion_eds, vals)
+'*'
+>>> eds, reversion_eds = parser(lexer('''(F1.1)'''))
+>>> vals = ['1.1E1']
+>>> output(eds, reversion_eds, vals)
+'*'
+>>> eds, reversion_eds = parser(lexer('''(F3.0)'''))
+>>> vals = ['1.1E1']
+>>> output(eds, reversion_eds, vals)
+'11.'
+>>> eds, reversion_eds = parser(lexer('''(F3.1)'''))
+>>> vals = ['1.1E1']
+>>> output(eds, reversion_eds, vals)
+'***'
+>>> eds, reversion_eds = parser(lexer('''(F3.2)'''))
+>>> vals = ['1.1E1']
+>>> output(eds, reversion_eds, vals)
+'***'
+>>> eds, reversion_eds = parser(lexer('''(F4.0)'''))
+>>> vals = ['1.1E1']
+>>> output(eds, reversion_eds, vals)
+' 11.'
+>>> eds, reversion_eds = parser(lexer('''(F5.0)'''))
+>>> vals = ['1.1E1']
+>>> output(eds, reversion_eds, vals)
+'  11.'
+>>> eds, reversion_eds = parser(lexer('''(F6.0)'''))
+>>> vals = ['1.1E1']
+>>> output(eds, reversion_eds, vals)
+'   11.'
+>>> eds, reversion_eds = parser(lexer('''(F7.0)'''))
+>>> vals = ['1.1E1']
+>>> output(eds, reversion_eds, vals)
+'    11.'
+>>> eds, reversion_eds = parser(lexer('''(F1.0)'''))
+>>> vals = ['1.1E2']
+>>> output(eds, reversion_eds, vals)
+'*'
+>>> eds, reversion_eds = parser(lexer('''(F1.1)'''))
+>>> vals = ['1.1E2']
+>>> output(eds, reversion_eds, vals)
+'*'
+>>> eds, reversion_eds = parser(lexer('''(F3.0)'''))
+>>> vals = ['1.1E2']
+>>> output(eds, reversion_eds, vals)
+'***'
+>>> eds, reversion_eds = parser(lexer('''(F3.1)'''))
+>>> vals = ['1.1E2']
+>>> output(eds, reversion_eds, vals)
+'***'
+>>> eds, reversion_eds = parser(lexer('''(F3.2)'''))
+>>> vals = ['1.1E2']
+>>> output(eds, reversion_eds, vals)
+'***'
+>>> eds, reversion_eds = parser(lexer('''(F4.0)'''))
+>>> vals = ['1.1E2']
+>>> output(eds, reversion_eds, vals)
+'110.'
+>>> eds, reversion_eds = parser(lexer('''(F5.0)'''))
+>>> vals = ['1.1E2']
+>>> output(eds, reversion_eds, vals)
+' 110.'
+>>> eds, reversion_eds = parser(lexer('''(F6.0)'''))
+>>> vals = ['1.1E2']
+>>> output(eds, reversion_eds, vals)
+'  110.'
+>>> eds, reversion_eds = parser(lexer('''(F7.0)'''))
+>>> vals = ['1.1E2']
+>>> output(eds, reversion_eds, vals)
+'   110.'
+>>> eds, reversion_eds = parser(lexer('''(F1.0)'''))
+>>> vals = ['1.1E10']
+>>> output(eds, reversion_eds, vals)
+'*'
+>>> eds, reversion_eds = parser(lexer('''(F1.1)'''))
+>>> vals = ['1.1E10']
+>>> output(eds, reversion_eds, vals)
+'*'
+>>> eds, reversion_eds = parser(lexer('''(F3.0)'''))
+>>> vals = ['1.1E10']
+>>> output(eds, reversion_eds, vals)
+'***'
+>>> eds, reversion_eds = parser(lexer('''(F3.1)'''))
+>>> vals = ['1.1E10']
+>>> output(eds, reversion_eds, vals)
+'***'
+>>> eds, reversion_eds = parser(lexer('''(F3.2)'''))
+>>> vals = ['1.1E10']
+>>> output(eds, reversion_eds, vals)
+'***'
+>>> eds, reversion_eds = parser(lexer('''(F4.0)'''))
+>>> vals = ['1.1E10']
+>>> output(eds, reversion_eds, vals)
+'****'
+>>> eds, reversion_eds = parser(lexer('''(F5.0)'''))
+>>> vals = ['1.1E10']
+>>> output(eds, reversion_eds, vals)
+'*****'
+>>> eds, reversion_eds = parser(lexer('''(F6.0)'''))
+>>> vals = ['1.1E10']
+>>> output(eds, reversion_eds, vals)
+'******'
+>>> eds, reversion_eds = parser(lexer('''(L1)'''))
+>>> vals = [True]
+>>> output(eds, reversion_eds, vals)
+'T'
+>>> eds, reversion_eds = parser(lexer('''(L2)'''))
+>>> vals = [True]
+>>> output(eds, reversion_eds, vals)
+' T'
+>>> eds, reversion_eds = parser(lexer('''(L3)'''))
+>>> vals = [True]
+>>> output(eds, reversion_eds, vals)
+'  T'
+>>> eds, reversion_eds = parser(lexer('''(L4)'''))
+>>> vals = [True]
+>>> output(eds, reversion_eds, vals)
+'   T'
+>>> eds, reversion_eds = parser(lexer('''(L5)'''))
+>>> vals = [True]
+>>> output(eds, reversion_eds, vals)
+'    T'
+>>> eds, reversion_eds = parser(lexer('''(L6)'''))
+>>> vals = [True]
+>>> output(eds, reversion_eds, vals)
+'     T'
+>>> eds, reversion_eds = parser(lexer('''(L7)'''))
+>>> vals = [True]
+>>> output(eds, reversion_eds, vals)
+'      T'
+>>> eds, reversion_eds = parser(lexer('''(L8)'''))
+>>> vals = [True]
+>>> output(eds, reversion_eds, vals)
+'       T'
+>>> eds, reversion_eds = parser(lexer('''(L9)'''))
+>>> vals = [True]
+>>> output(eds, reversion_eds, vals)
+'        T'
+>>> eds, reversion_eds = parser(lexer('''(L10)'''))
+>>> vals = [True]
+>>> output(eds, reversion_eds, vals)
+'         T'
+>>> eds, reversion_eds = parser(lexer('''(L1)'''))
+>>> vals = [False]
+>>> output(eds, reversion_eds, vals)
+'F'
+>>> eds, reversion_eds = parser(lexer('''(L2)'''))
+>>> vals = [False]
+>>> output(eds, reversion_eds, vals)
+' F'
+>>> eds, reversion_eds = parser(lexer('''(L3)'''))
+>>> vals = [False]
+>>> output(eds, reversion_eds, vals)
+'  F'
+>>> eds, reversion_eds = parser(lexer('''(L4)'''))
+>>> vals = [False]
+>>> output(eds, reversion_eds, vals)
+'   F'
+>>> eds, reversion_eds = parser(lexer('''(L5)'''))
+>>> vals = [False]
+>>> output(eds, reversion_eds, vals)
+'    F'
+>>> eds, reversion_eds = parser(lexer('''(L6)'''))
+>>> vals = [False]
+>>> output(eds, reversion_eds, vals)
+'     F'
+>>> eds, reversion_eds = parser(lexer('''(L7)'''))
+>>> vals = [False]
+>>> output(eds, reversion_eds, vals)
+'      F'
+>>> eds, reversion_eds = parser(lexer('''(L8)'''))
+>>> vals = [False]
+>>> output(eds, reversion_eds, vals)
+'       F'
+>>> eds, reversion_eds = parser(lexer('''(L9)'''))
+>>> vals = [False]
+>>> output(eds, reversion_eds, vals)
+'        F'
