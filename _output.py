@@ -11,7 +11,7 @@ def output(eds, reversion_eds, values):
     record = ''
     state = {
         'position' : 0,
-        'scale' : 1,
+        'scale' : 0,
         'incl_plus' : False,
         'collapse_blanks' : False,
         'halt_if_no_vals' : False,
@@ -60,19 +60,19 @@ def output(eds, reversion_eds, values):
                 # TODO: Does it stop gracefully or raise error?
                 break   
             if isinstance(ed, I):
-                sub_string = _compose_i_string(ed, state, val)
+                sub_string = _compose_i_string(ed.width, ed.min_digits, state, val)
             elif isinstance(ed, F):
-                sub_string = _compose_f_string(ed, state, val)
+                sub_string = _compose_f_string(ed.width, ed.decimal_places, state, val)
             elif isinstance(ed, E):
-                sub_string = _compose_e_string(ed, state, val)
+                sub_string = _compose_e_string(ed.width, ed.decimal_places, ed.exponent, state, val)
             elif isinstance(ed, D):
-                sub_string = _compose_d_string(ed, state, val)
+                sub_string = _compose_d_string(ed.width, ed.decimal_places, state, val)
             elif isinstance(ed, G):
-                sub_string = _compose_g_string(ed, state, val)
+                sub_string = _compose_g_string(ed.width, ed.decimal_places, ed.exponent, state, val)
             elif isinstance(ed, L):
-                sub_string = _compose_l_string(ed, state, val)
+                sub_string = _compose_l_string(ed.width, state, val)
             elif isinstance(ed, A):
-                sub_string = _compose_a_string(ed, state, val)
+                sub_string = _compose_a_string(ed.width, state, val)
             state['position'], record = _write_string(record, sub_string, state['position'])
         else:
             # Token does not require a value
@@ -103,10 +103,9 @@ def output(eds, reversion_eds, values):
     return record
 
 
-def _compose_a_string(ed, state, val):
+def _compose_a_string(w, state, val):
     # F77 spec 13.5.11 covers A editing
     val = str(val)
-    w = ed.width
     if w is None:
         output = val
     elif w >= len(val):
@@ -116,7 +115,7 @@ def _compose_a_string(ed, state, val):
     return output
 
 
-def _compose_l_string(ed, state, val):
+def _compose_l_string(w, state, val):
     # F77 spec 13.5.10 covers L editing
     try:
         val = bool(val)
@@ -128,10 +127,10 @@ def _compose_l_string(ed, state, val):
     else:
         sub_string = 'F'
     # Now pad to the specified width
-    sub_string = sub_string.rjust(ed.width)
+    sub_string = sub_string.rjust(w)
     return sub_string
 
-def _compose_g_string(ed, state, val): # Hahaha!
+def _compose_g_string(w, d, e, state, val): # Hahaha!
     # F77 spec 13.5.9.2.3 covers G editing
     # Be Pythonic in what values to accept, if it looks like a float, then
     # so be it
@@ -139,14 +138,13 @@ def _compose_g_string(ed, state, val): # Hahaha!
         val = float(val)
     except ValueError:
         raise ValueError("Cannot convert '%s' to a float" % str(val))
-    w = ed.width
-    d = ed.decimal_places
-    e = ed.exponent
     N = math.fabs(val)
-    # G editing is either E of F editing depending on magnitude of val
-    if (N < 0.1) or (N >= 10**d):
+    # G editing is either E of F editing depending on the value
+    if not (((d > 0) and (N == 0)) or \
+            (N >= (0.1 - 0.5 / 10**(d+1))) or \
+            (N < (10**d - 0.5)) ):
         # Output exponential format
-        output = _compose_ed_string_without_ed(w, d, e, 'E', state, val)
+        output = _compose_e_string(w, d, e, state, val)
     else:
         # Output a plain decimal number
         if e is None:
@@ -154,29 +152,27 @@ def _compose_g_string(ed, state, val): # Hahaha!
         else:
             n = e + 2
         flt_w = w - n
-        flt_d = d - int(math.ceil(math.log10(N)))
         # Scale factor is ignored
         flt_state = state.copy()
         flt_state['scale'] = 0
-        output = _compose_ed_string_without_ed(flt_w, flt_d, flt_state, val)
+        output = _compose_f_string(flt_w, d, flt_state, val)
         # Retry with scale factor if is out of range
-        if output[0] == '*':
-            output = _compose_ed_string_without_ed(flt_w, flt_d, state, val)
+        if '*' in output:
+            output = _compose_f_string(flt_w, d, state, val)
         # If still short then append asterixes to make up width
-        if output[0] == '*':
+        if '*' in output:
             output = output + ('*' * n)
         else:
             output = output + (' ' * n)
+    # Finally if the string is blank, fill with asterixes
+    if (output.strip() == '') and (w > 0):
+        output = w * '*'
     return output
 
-def _compose_d_string(ed, state, val):
-    # TODO:
-    return ''
+def _compose_d_string(w, d, state, val):
+    return _compose_e_string(w, d, 4, state, val, exp_char='D')
 
-def _compose_e_string(ed, state, val):
-    w = ed.width
-    d = ed.decimal_places
-    e = ed.exponent
+def _compose_e_string(w, d, e, state, val, exp_char='E'):
     # F77 spec 13.5.9.2.2 covers E editing
     sub_asterix = False
     # Be Pythonic in what values to accept, if it looks like a float, then
@@ -194,10 +190,10 @@ def _compose_e_string(ed, state, val):
     exp_int = exp_int - k
     # Build the exponent string
     if e is None:
-        e = 3
-    fmt = '%+0' + str(e) + 'd'
-    exp_str = 'E' + fmt % exp_int
-    if len(exp_str) > (e + 1):
+        e = 2
+    fmt = '%+0' + str(e+1) + 'd' 
+    exp_str = exp_char + fmt % exp_int
+    if len(exp_str) > (e + 2):
         sub_asterix = True
     # Calculate the width of the exponent string
     # Adjust the value according to the scale factor
@@ -213,7 +209,9 @@ def _compose_e_string(ed, state, val):
         # TODO what to do here?
         sub_asterix = True
         sig_d = d
-    sig_str = _compose_f_string_without_ed(sig_w, sig_d, state, sig_val)
+    sig_str = _compose_f_string(sig_w, sig_d, state, sig_val)
+    if ('*' in sig_str) or (sig_str == ''):
+        sub_asterix = True
     output = sig_str + exp_str
     # If it sub_asterix, then return asterixes
     if (len(output) > w) or (sub_asterix == True):
@@ -221,11 +219,7 @@ def _compose_e_string(ed, state, val):
     return output
 
 
-def _compose_f_string(ed, state, val):
-    # A wrapper to allow the routine to be called from E, D editing routine
-    return _compose_f_string_without_ed(ed.width, ed.decimal_places, state, val)
-
-def _compose_f_string_without_ed(w, d, state, val):
+def _compose_f_string(w, d, state, val):
     # F77 spec 13.5.9.2.1 covers F editing
     # TODO: Python float format beyond numbers 9e49 outputs exponential
     # notation - this function does not as yet deal with this
@@ -252,18 +246,18 @@ def _compose_f_string_without_ed(w, d, state, val):
         if (-1.0 < val <= 0) and (d == 0):
             sub_string = sub_string.replace('-', '', 1)
         # See if can remove leading zero
-        if 0 < val < 1.0:
+        if 0 <= val < 1.0:
             sub_string = sub_string.lstrip('0')
         if val == 0:
-            sub_string.strip('.')
+            sub_string = sub_string.strip('.')
     # See if the number still fits
     if len(sub_string) > w:
         sub_string = '*' * w
     # Check that it now conforms
-    assert(len(sub_string) <= w)
+##     assert(len(sub_string) <= w)
     return sub_string
 
-def _compose_i_string(ed, state, val):
+def _compose_i_string(w, d, state, val):
     # F77 spec 13.5.9.1 covers integer editing 
     null_field = False
     # Be Pythonic in what values to accept, if it looks like an integer, then
@@ -275,19 +269,19 @@ def _compose_i_string(ed, state, val):
     # Get the basic string without sign etc.
     int_string = '%d' % int(round(math.fabs(val)))
     # Pad if necessary
-    if ed.min_digits is not None:
-        int_string = int_string.rjust(ed.min_digits, '0')
+    if d is not None:
+        int_string = int_string.rjust(d, '0')
         # Weird case where if zero width specified and is zero, can have zero space
-        if (val == 0) and (ed.min_digits == 0):
+        if (val == 0) and (d == 0):
             int_string = ''
     # prepend the sign
     int_string = _get_sign(val, state['incl_plus']) + int_string
     # Fill the field with blanks if the number takes more room than the width
     # See F77 spec 13.5.9 remark 5.
-    if len(int_string) > ed.width:
-        int_string = '*' * ed.width
+    if len(int_string) > w:
+        int_string = '*' * w
     else:
-        int_string = int_string.rjust(ed.width, ' ')
+        int_string = int_string.rjust(w, ' ')
     return int_string
 
 def _get_sign(val, incl_plus):
