@@ -140,9 +140,10 @@ def _compose_g_string(w, d, e, state, val): # Hahaha!
         raise ValueError("Cannot convert '%s' to a float" % str(val))
     N = math.fabs(val)
     # G editing is either E of F editing depending on the value
+    max_N = 10**d - 0.5
+    min_N = 0.1 - 0.5 * 10**(-d-1)
     if not (((d > 0) and (N == 0)) or \
-            (N >= (0.1 - 0.5 / 10**(d+1))) or \
-            (N < (10**d - 0.5)) ):
+	    (min_N <= N < max_N)):
         # Output exponential format
         output = _compose_e_string(w, d, e, state, val)
     else:
@@ -159,7 +160,7 @@ def _compose_g_string(w, d, e, state, val): # Hahaha!
         # Retry with scale factor if is out of range
         if '*' in output:
             output = _compose_f_string(flt_w, d, state, val)
-        # If still short then append asterixes to make up width
+        # If still short then append asterixes or blanks to make up width
         if '*' in output:
             output = output + ('*' * n)
         else:
@@ -170,7 +171,7 @@ def _compose_g_string(w, d, e, state, val): # Hahaha!
     return output
 
 def _compose_d_string(w, d, state, val):
-    return _compose_e_string(w, d, 4, state, val, exp_char='D')
+    return _compose_e_string(w, d, 2, state, val, exp_char='D')
 
 def _compose_e_string(w, d, e, state, val, exp_char='E'):
     # F77 spec 13.5.9.2.2 covers E editing
