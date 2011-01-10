@@ -2,3 +2,6 @@ glob:*.pyc
 glob:*.out
 glob:*.swp
 glob:parsetab.py
+glob:*.DS_Store
+glob:*.Trashes
+glob:*tags
