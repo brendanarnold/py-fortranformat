@@ -207,7 +207,7 @@ def _compose_float_string(w, e, d, state, val, ftype):
     # write the tmp value to the string buffer
     # sprintf seems to allow negative number of decimal places, need to correct for this
     if ndigits == 0:
-        fmt = '%+-#' + str(MIN_FIELD_WIDTH) + '.' + str(ndigits) + 'e'
+        fmt = '%+-#' + str(MIN_FIELD_WIDTH) + 'e'
     else:
         fmt = '%+-#' + str(MIN_FIELD_WIDTH) + '.' + str(ndigits - 1) + 'e'
     buff = fmt % tmp
@@ -392,7 +392,7 @@ def _output_float(w, d, e, state, ft, buff, sign_bit, zero_flag, ndigits, edigit
     # Round the value
     if (nbefore + nafter) == 0:
         ndigits = 0
-        if (nzero_real == d) and (digits[0] >= '5'): # n.b. character comparison not very pythonic!
+        if (nzero_real == d) and (int(digits[0]) >= 5): # n.b. character comparison not very pythonic!
             # We rounded to zero but shouldn't have
             nzero = nzero - 1
             nafter = 1
@@ -401,13 +401,14 @@ def _output_float(w, d, e, state, ft, buff, sign_bit, zero_flag, ndigits, edigit
     elif (nbefore + nafter) < ndigits:
         ndigits = nbefore + nafter
         i = ndigits
-        if digits[i] >= '5':
+        if int(digits[i]) >= 5:
             # Propagate the carry
             i = i - 1
-            ints = '1234567890'
+            incs = {'0' : '1', '1' : '2', '2' : '3', '3' : '4', '4' : '5', '5' : '6', '6' : '7', '7' : '8', '8' : '9'}
             while i >= 0:
-                if digits[i] != '9':
-                    digits = _swapchar(digits, i, ints[int(digits[i])])
+                if int(digits[i]) != 9:
+                    digits = _swapchar(digits, i, incs[digits[i]])
+                    break
                 else:
                     digits = _swapchar(digits, i, '0')
                 i = i - 1
@@ -767,7 +768,7 @@ if __name__ == '__main__':
         '_get_sign' : _get_sign,
         'parser' : parser,
         'lexer' : lexer,
-        'output' : output
+        'output' : output,
     }
     # need to normalize whitespace since pasting into vim converts tabs to
     # spaces
