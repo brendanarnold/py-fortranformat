@@ -175,15 +175,16 @@ def _compose_float_string(w, e, d, state, val, ftype):
         w = int(round(w))
     # ==== write_float ==== (function)
     edigits = 4 # Largest number of exponent digits expected
-    if (ftype in ['F', 'EN', 'G', 'D', 'E']) and (state['scale'] != 0):
+    if (ftype in ['F', 'EN', 'G']) or \
+        ((ftype in ['D', 'E']) and (state['scale'] != 0)):
         # Convert with full possible precision
         ndigits = MIN_FIELD_WIDTH - 4 - edigits
     else:
         # Otherwise convert knowing what the required precision is (i.e. knowing d)
         if ftype == 'ES':
-            ndigits = d + 2
+            ndigits = d + 2 # TODO: Changed this
         else:
-            ndigits = d + 1
+            ndigits = d + 1 # TODO: Changed this
         if ndigits > (MIN_FIELD_WIDTH - 4 - edigits):
             ndigits = MIN_FIELD_WIDTH - 4 - edigits
     # ==== WRITE_FLOAT ==== (macro)
@@ -192,12 +193,12 @@ def _compose_float_string(w, e, d, state, val, ftype):
         sign_bit = '-' in str(val)
     else:
         sign_bit = val < 0
-    tmp = abs(val)
     # handle the nan and inf cases
-    if math.isnan(tmp):
+    if math.isnan(val):
         return _compose_nan_string(w, ed)
-    if math.isinf(tmp):
+    if math.isinf(val):
         return _compose_inf_string(w, ed, sign_bit)
+    tmp = abs(val)
     # Round the input if the input is less than 1
     if (ftype == 'F') and (d == state['scale']) and (d == 0):
         if tmp < 1.0:
@@ -206,7 +207,7 @@ def _compose_float_string(w, e, d, state, val, ftype):
     # === DTOA === (macro)
     # write the tmp value to the string buffer
     # sprintf seems to allow negative number of decimal places, need to correct for this
-    if ndigits == 0:
+    if ndigits <= 0:
         fmt = '%+-#' + str(MIN_FIELD_WIDTH) + 'e'
     else:
         fmt = '%+-#' + str(MIN_FIELD_WIDTH) + '.' + str(ndigits - 1) + 'e'
@@ -250,28 +251,6 @@ def _compose_float_string(w, e, d, state, val, ftype):
             while tmp >= high(mag, d):
                 mag = mag + 1
             assert(low(mag, d) <= tmp < high(mag, d))
-            # mid = 0
-            # low = 0
-            # high = d + 1
-            # lbound = 0
-            # ubound = d + 1
-            # while low <= high:
-            #     mid = low + high / 2
-            #     temp = ((10 ** mid) - 5 * (10 ** (mid - d - 1))) / 10.0
-            #     if tmp < temp:
-            #         ubound = mid
-            #         if ubound == (lbound + 1):
-            #             break
-            #         high = mid - 1
-            #     elif tmp > temp:
-            #         lbound = mid
-            #         if ubound == (lbound + 1):
-            #             mid = mid + 1
-            #             break
-            #         low = mid + 1
-            #     else:
-            #         mid = mid + 1
-            #         break
             if e < 0:
                 nb = 4
             else:
