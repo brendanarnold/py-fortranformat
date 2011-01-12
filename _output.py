@@ -3,7 +3,7 @@ import itertools
 from _edit_descriptors import *
 import misc
 
-SIGN_ZERO = True # Show a sign at all for zero?
+SIGN_ZERO = False # Show a sign at all for zero?
 OPTIONAL_PLUS = False # If not specified, show the plus sign?
 MIN_FIELD_WIDTH = 46
 DECIMAL_CHAR = '.'
@@ -182,9 +182,9 @@ def _compose_float_string(w, e, d, state, val, ftype):
     else:
         # Otherwise convert knowing what the required precision is (i.e. knowing d)
         if ftype == 'ES':
-            ndigits = d + 2 # TODO: Changed this
+            ndigits = d + 2 # CHANGED: was 'd + 1'
         else:
-            ndigits = d + 1 # TODO: Changed this
+            ndigits = d + 1 # CHANGED: was 'd'
         if ndigits > (MIN_FIELD_WIDTH - 4 - edigits):
             ndigits = MIN_FIELD_WIDTH - 4 - edigits
     # ==== WRITE_FLOAT ==== (macro)
@@ -307,8 +307,8 @@ def _output_float(w, d, e, state, ft, buff, sign_bit, zero_flag, ndigits, edigit
         if w == 0:
             w = d + 2
         # This case does not include a decimal point
-        if (w == 1) and (ftype == 'F'):
-            return '0'
+        if (w == 1) and (ft == 'F'):
+            return '.' # CHANGED: Was '0'
     # Normalise the digits
     digits = buff[1] + buff[3:]
     # Find out where to place the decimal point
