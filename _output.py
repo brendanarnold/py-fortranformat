@@ -182,9 +182,9 @@ def _compose_float_string(w, e, d, state, val, ftype):
     else:
         # Otherwise convert knowing what the required precision is (i.e. knowing d)
         if ftype == 'ES':
-            ndigits = d + 2 # CHANGED: was 'd + 1'
+            ndigits = d + 1
         else:
-            ndigits = d + 1 # CHANGED: was 'd'
+            ndigits = d
         if ndigits > (MIN_FIELD_WIDTH - 4 - edigits):
             ndigits = MIN_FIELD_WIDTH - 4 - edigits
     # ==== WRITE_FLOAT ==== (macro)
@@ -309,7 +309,7 @@ def _output_float(w, d, e, state, ft, buff, sign_bit, zero_flag, ndigits, edigit
         # This case does not include a decimal point
         if (w == 1) and (ft == 'F'):
             return '.' # CHANGED: Was '0'
-    # Normalise the digits
+    # Get rid of the decimal and the initial sign i.e. normalise the digits
     digits = buff[1] + buff[3:]
     # Find out where to place the decimal point
     if ft == 'F':
@@ -383,10 +383,10 @@ def _output_float(w, d, e, state, ft, buff, sign_bit, zero_flag, ndigits, edigit
         if int(digits[i]) >= 5:
             # Propagate the carry
             i = i - 1
-            incs = {'0' : '1', '1' : '2', '2' : '3', '3' : '4', '4' : '5', '5' : '6', '6' : '7', '7' : '8', '8' : '9'}
             while i >= 0:
-                if int(digits[i]) != 9:
-                    digits = _swapchar(digits, i, incs[digits[i]])
+                digit = int(digits[i])
+                if digit != 9:
+                    digits = _swapchar(digits, i, str(digit + 1))
                     break
                 else:
                     digits = _swapchar(digits, i, '0')
