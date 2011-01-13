@@ -1,3 +1,7 @@
+# call with
+# python gen_tests.py 'COMPILER %s -o %s'
+# where first %s is the input file and the second is the output 
+
 I = dict()
 I['formats'] = [
   "I1", "I2", "I3", "I4", "I5", "I6", "I7", "I8", "I9", "I10",
@@ -168,7 +172,91 @@ A['inputs'] = [""]
 A['name'] = 'a'
 A['filestem'] = 'a-edit-descriptor-output'
 
+EN = dict()
+EN['formats'] = [
+  "EN1.1", "EN2.1", "EN3.1", "EN4.1", "EN5.1", "EN10.1",
+  "EN2.2", "EN3.2", "EN4.2", "EN5.2", "EN10.2",
+  "EN3.3", "EN4.3", "EN5.3", "EN10.3",
+  "EN4.4", "EN5.4", "EN10.4",
+  "EN5.5", "EN10.5",
+  "EN10.10",
+  "EN1.1E1", "EN2.1E1", "EN3.1E1", "EN4.1E1", "EN5.1E1", "EN10.1E1",
+  "EN2.2E1", "EN3.2E1", "EN4.2E1", "EN5.2E1", "EN10.2E1",
+  "EN3.3E1", "EN4.3E1", "EN5.3E1", "EN10.3E1",
+  "EN4.4E1", "EN5.4E1", "EN10.4E1",
+  "EN5.5E1", "EN10.5E1",
+  "EN10.10E1",
+  "EN1.1E3", "EN2.1E3", "EN3.1E3", "EN4.1E3", "EN5.1E3", "EN10.1E3",
+  "EN2.2E3", "EN3.2E3", "EN4.2E3", "EN5.2E3", "EN10.2E3",
+  "EN3.3E3", "EN4.3E3", "EN5.3E3", "EN10.3E3",
+  "EN4.4E3", "EN5.4E3", "EN10.4E3",
+  "EN5.5E3", "EN10.5E3",
+  "EN10.10E3",
+  "EN1.1E4", "EN2.1E4", "EN3.1E4", "EN4.1E4", "EN5.1E4", "EN10.1E4",
+  "EN2.2E4", "EN3.2E4", "EN4.2E4", "EN5.2E4", "EN10.2E4",
+  "EN3.3E4", "EN4.3E4", "EN5.3E4", "EN10.3E4",
+  "EN4.4E4", "EN5.4E4", "EN10.4E4",
+  "EN5.5E4", "EN10.5E4",
+  "EN10.10E4",
+  "EN1.1E5", "EN2.1E5", "EN3.1E5", "EN4.1E5", "EN5.1E5", "EN10.1E5",
+  "EN2.2E5", "EN3.2E5", "EN4.2E5", "EN5.2E5", "EN10.2E5",
+  "EN3.3E5", "EN4.3E5", "EN5.3E5", "EN10.3E5",
+  "EN4.4E5", "EN5.4E5", "EN10.4E5",
+  "EN5.5E5", "EN10.5E5",
+  "EN10.10E5"
+]
+EN['inputs'] = [
+  "3.", "-3.", "10.", "-10.", "100.", "-100.", "1000.", "-1000.",
+  "10000.", "-10000.", "100000.", "-100000.", "123456789.",
+  "0.1", "-0.1", "0.01", "-0.01", "0.001", "-0.001", "0.0001",
+  "-0.0001",
+  "-1.96e-16", "3.14159"
+]
+EN['name'] = 'en'
+EN['filestem'] = 'en-edit-descriptor-output'
 
+ES = dict()
+ES['formats'] = [
+  "ES1.1", "ES2.1", "ES3.1", "ES4.1", "ES5.1", "ES10.1",
+  "ES2.2", "ES3.2", "ES4.2", "ES5.2", "ES10.2",
+  "ES3.3", "ES4.3", "ES5.3", "ES10.3",
+  "ES4.4", "ES5.4", "ES10.4",
+  "ES5.5", "ES10.5",
+  "ES10.10",
+  "ES1.1E1", "ES2.1E1", "ES3.1E1", "ES4.1E1", "ES5.1E1", "ES10.1E1",
+  "ES2.2E1", "ES3.2E1", "ES4.2E1", "ES5.2E1", "ES10.2E1",
+  "ES3.3E1", "ES4.3E1", "ES5.3E1", "ES10.3E1",
+  "ES4.4E1", "ES5.4E1", "ES10.4E1",
+  "ES5.5E1", "ES10.5E1",
+  "ES10.10E1",
+  "ES1.1E3", "ES2.1E3", "ES3.1E3", "ES4.1E3", "ES5.1E3", "ES10.1E3",
+  "ES2.2E3", "ES3.2E3", "ES4.2E3", "ES5.2E3", "ES10.2E3",
+  "ES3.3E3", "ES4.3E3", "ES5.3E3", "ES10.3E3",
+  "ES4.4E3", "ES5.4E3", "ES10.4E3",
+  "ES5.5E3", "ES10.5E3",
+  "ES10.10E3",
+  "ES1.1E4", "ES2.1E4", "ES3.1E4", "ES4.1E4", "ES5.1E4", "ES10.1E4",
+  "ES2.2E4", "ES3.2E4", "ES4.2E4", "ES5.2E4", "ES10.2E4",
+  "ES3.3E4", "ES4.3E4", "ES5.3E4", "ES10.3E4",
+  "ES4.4E4", "ES5.4E4", "ES10.4E4",
+  "ES5.5E4", "ES10.5E4",
+  "ES10.10E4",
+  "ES1.1E5", "ES2.1E5", "ES3.1E5", "ES4.1E5", "ES5.1E5", "ES10.1E5",
+  "ES2.2E5", "ES3.2E5", "ES4.2E5", "ES5.2E5", "ES10.2E5",
+  "ES3.3E5", "ES4.3E5", "ES5.3E5", "ES10.3E5",
+  "ES4.4E5", "ES5.4E5", "ES10.4E5",
+  "ES5.5E5", "ES10.5E5",
+  "ES10.10E5"
+]
+ES['inputs'] = [
+  "3.", "-3.", "10.", "-10.", "100.", "-100.", "1000.", "-1000.",
+  "10000.", "-10000.", "100000.", "-100000.", "123456789.",
+  "0.1", "-0.1", "0.01", "-0.01", "0.001", "-0.001", "0.0001",
+  "-0.0001",
+  "-1.96e-16", "3.14159"
+]
+ES['name'] = 'es'
+ES['filestem'] = 'es-edit-descriptor-output'
 
 def gen_test(formats, inputs, name):
     lbl = 0
@@ -216,8 +304,8 @@ if __name__ == '__main__':
     import sys
     import os
     compile_str = sys.argv[1]
-    for edit_desc in [A]:
-##     for edit_desc in [L, F, E, G, D, I, A]:
+    # for edit_desc in [A]:
+    for edit_desc in [L, F, E, G, D, I, A, EN, ES]:
         stem = edit_desc['filestem']
         fh = open(edit_desc['filestem'] + '.f', 'w')
         print 'Generating %s tests ...' % edit_desc['name'].upper()
@@ -228,4 +316,4 @@ if __name__ == '__main__':
         os.system(compile_str % (stem + '.f', stem + '.exe'))
         print '  FORTRAN compiled'
         print '  Executing %s ...' % (stem + '.exe')
-        os.system(stem + '.exe')
+        os.system('./' + stem + '.exe')

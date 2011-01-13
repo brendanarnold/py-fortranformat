@@ -88,6 +88,16 @@ def output(eds, reversion_eds, values):
                 e = ed.exponent
                 d = ed.decimal_places
                 sub_string = _compose_float_string(w, e, d, state, val, 'G')
+            elif isinstance(ed, EN):
+                w = ed.width
+                e = ed.exponent
+                d = ed.decimal_places
+                sub_string = _compose_float_string(w, e, d, state, val, 'EN')
+            elif isinstance(ed, ES):
+                w = ed.width
+                e = ed.exponent
+                d = ed.decimal_places
+                sub_string = _compose_float_string(w, e, d, state, val, 'ES')
             elif isinstance(ed, L):
                 sub_string = _compose_l_string(ed.width, state, val)
             elif isinstance(ed, A):

@@ -1,8 +1,10 @@
 import os
 
 SAMPLE_DIRECTORIES = (
-    os.path.join('..', 'ifort', '9,1'),
-##     os.path.join('..', 'gfortran', '4-4-0'),
+    # os.path.join('..', 'ifort', '9,1'),
+    # os.path.join('..', 'gfortran', '4-4-0'),
+    # os.path.join('..', 'gfortran', '4-3-0_osx_intel'),
+    os.path.join('..', 'gfortran', '4-4-1_osx_intel'),
 )
 
 OUTPUT_DOCTEST_FILENAME = os.path.join('..', '..', 'output_test.txt')
