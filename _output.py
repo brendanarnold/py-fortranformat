@@ -746,7 +746,7 @@ def _write_string(record, sub_string, pos):
 
 # allow for self testing
 if __name__ == '__main__':
-    from IPython.Debugger import Tracer; here = Tracer()
+    # from IPython.Debugger import Tracer; here = Tracer()
     import doctest
     import os
     from _parser import parser
