@@ -1,9 +1,0 @@
-FORMAT:('The quick brown fox jumps the lazy dog.')
-INPUT:
-The quick brown fox jumps the lazy dog.
-FORMAT:('"It doesn''t matter anyway" - said Alice')
-INPUT:
-"It doesn't matter anyway" - said Alice
-FORMAT:('''''')
-INPUT:
-''

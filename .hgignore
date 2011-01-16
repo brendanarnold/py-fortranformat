@@ -5,3 +5,7 @@ glob:parsetab.py
 glob:*.DS_Store
 glob:*.Trashes
 glob:*tags
+glob:*.exe
+glob:*.test
+glob:*.f
+glob:tests/samples/source/*.txt
