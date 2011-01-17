@@ -480,7 +480,7 @@ def write_fortran_source(formats, inputs, name):
         fmt_inp_pairs = itertools.izip(enumerate(formats), inputs)
     else:
         # Generate all the combinations
-        fmt_inp_pairs = itertools.product(enumerate(formats), inputs)
+        fmt_inp_pairs = product(enumerate(formats), inputs)
     # Output the start of the source file
     fh.write("      PROGRAM %sEDIT\n\n\n" % name.upper().replace('-', '_'))
     for fmt_tup, inp in fmt_inp_pairs:
@@ -544,7 +544,7 @@ def gen_tests():
     return names
         
 def names():
-    '''Generates a list fo all the names'''
+    '''Generates a list of all the names'''
     names = []
     for ed in EDS:
         ed = globals()[ed]
@@ -557,13 +557,23 @@ def names():
             out_name = out_ed['name']
             yield mod_name + '-' + out_name
 
+
+def product(*args, **kwds):
+    '''Substitute for itertools.product which does not appear in Python 2.3'''
+    pools = map(tuple, args) * kwds.get('repeat', 1)
+    result = [[]]
+    for pool in pools:
+        result = [x + [y] for x in result for y in pool]
+    for prod in result:
+        yield tuple(prod)
+
 if __name__ == '__main__':
     import sys
     compile_str = sys.argv[1]
-    # gen_tests()
-    # compile_tests(compile_str)
-    # execute_tests()
-    # write_py_source()
+    gen_tests()
+    compile_tests(compile_str)
+    execute_tests()
+    write_py_source()
     output_calling_code()
 
 
