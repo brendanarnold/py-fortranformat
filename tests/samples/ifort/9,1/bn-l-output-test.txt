@@ -1,0 +1,76 @@
+>>> eds, reversion_eds = parser(lexer('''(BN, L1)'''))
+>>> vals = [True]
+>>> print output(eds, reversion_eds, vals)
+T
+>>> eds, reversion_eds = parser(lexer('''(BN, L1)'''))
+>>> vals = [False]
+>>> print output(eds, reversion_eds, vals)
+F
+>>> eds, reversion_eds = parser(lexer('''(BN, L2)'''))
+>>> vals = [True]
+>>> print output(eds, reversion_eds, vals)
+ T
+>>> eds, reversion_eds = parser(lexer('''(BN, L2)'''))
+>>> vals = [False]
+>>> print output(eds, reversion_eds, vals)
+ F
+>>> eds, reversion_eds = parser(lexer('''(BN, L3)'''))
+>>> vals = [True]
+>>> print output(eds, reversion_eds, vals)
+  T
+>>> eds, reversion_eds = parser(lexer('''(BN, L3)'''))
+>>> vals = [False]
+>>> print output(eds, reversion_eds, vals)
+  F
+>>> eds, reversion_eds = parser(lexer('''(BN, L4)'''))
+>>> vals = [True]
+>>> print output(eds, reversion_eds, vals)
+   T
+>>> eds, reversion_eds = parser(lexer('''(BN, L4)'''))
+>>> vals = [False]
+>>> print output(eds, reversion_eds, vals)
+   F
+>>> eds, reversion_eds = parser(lexer('''(BN, L5)'''))
+>>> vals = [True]
+>>> print output(eds, reversion_eds, vals)
+    T
+>>> eds, reversion_eds = parser(lexer('''(BN, L5)'''))
+>>> vals = [False]
+>>> print output(eds, reversion_eds, vals)
+    F
+>>> eds, reversion_eds = parser(lexer('''(BN, L6)'''))
+>>> vals = [True]
+>>> print output(eds, reversion_eds, vals)
+     T
+>>> eds, reversion_eds = parser(lexer('''(BN, L6)'''))
+>>> vals = [False]
+>>> print output(eds, reversion_eds, vals)
+     F
+>>> eds, reversion_eds = parser(lexer('''(BN, L7)'''))
+>>> vals = [True]
+>>> print output(eds, reversion_eds, vals)
+      T
+>>> eds, reversion_eds = parser(lexer('''(BN, L7)'''))
+>>> vals = [False]
+>>> print output(eds, reversion_eds, vals)
+      F
+>>> eds, reversion_eds = parser(lexer('''(BN, L8)'''))
+>>> vals = [True]
+>>> print output(eds, reversion_eds, vals)
+       T
+>>> eds, reversion_eds = parser(lexer('''(BN, L8)'''))
+>>> vals = [False]
+>>> print output(eds, reversion_eds, vals)
+       F
+>>> eds, reversion_eds = parser(lexer('''(BN, L9)'''))
+>>> vals = [True]
+>>> print output(eds, reversion_eds, vals)
+        T
+>>> eds, reversion_eds = parser(lexer('''(BN, L9)'''))
+>>> vals = [False]
+>>> print output(eds, reversion_eds, vals)
+        F
+>>> eds, reversion_eds = parser(lexer('''(BN, L10)'''))
+>>> vals = [True]
+>>> print output(eds, reversion_eds, vals)
+         T
