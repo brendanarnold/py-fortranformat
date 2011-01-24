@@ -5,6 +5,7 @@
 import itertools
 import os
 
+
 # MODIFIER_EDS = ['SP']
 # OUTPUT_EDS = ['F']
 EDS = ['BN', 'BZ', 'Slash', 'SP', 'SS', 'T', 'TL', 'TR', 'X', 'Colon', 'A', 'B', 'D', 'EN', 'ES', 'E', 'F', 'G', 'I', 'L', 'O', 'Z']
@@ -412,7 +413,7 @@ def output_calling_code():
     for name in names():
         doctest_filename = DOCTEST_FILESTEM % name
         snippet = '''        doctest.testfile(os.path.join(TEST_PATH, '%s'), \\
-            globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)''' % doctest_filename
+            globs=globs)''' % doctest_filename
         print snippet
         
 
@@ -429,15 +430,18 @@ def write_py_source():
             if line.startswith('FORMAT:'):
                 if (fmt is not None) and (inpt is not None) and (result is not None):
                     result = result[:-1]
-                    inpt = inpt.split(',')
+                    # inpt = inpt.split(',')
                     inpt = str(inpt)
-                    inpt = inpt.replace("'", '')
+                    if inpt[0] == inpt[-1] == "'":
+                        inpt = "'" + inpt[1:-1].replace("''", "\\'") + "'"
+                    else:
+                        inpt = inpt.replace("''", "\\'")
                     inpt = inpt.replace(".TRUE.", 'True')
                     inpt = inpt.replace(".FALSE.", 'False')
                     out = '''>>> eds, reversion_eds = parser(lexer(\'\'\'%s\'\'\'))
->>> vals = %s
->>> print output(eds, reversion_eds, vals)
-%s
+>>> vals = [%s]
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[%s]
 ''' % (fmt, inpt, result)
                     out_fh.write(out)
                     fmt = inpt = result = None
@@ -446,6 +450,12 @@ def write_py_source():
             elif line.startswith('INPUT:'):
                 inpt = line[6:-1]
             elif (fmt is not None) and (inpt is not None):
+                # If line is empty, input doctests <BLANKLINE> statement
+                if line[:-1] == '':
+                    if (result is not None) and (len(result) > 0):
+                        line = '<BLANKLINE>\n'
+                    else:
+                        line = '\n'
                 if result is None:
                     result = line
                 else:
@@ -569,12 +579,12 @@ def product(*args, **kwds):
 
 if __name__ == '__main__':
     import sys
-    compile_str = sys.argv[1]
-    gen_tests()
-    compile_tests(compile_str)
-    execute_tests()
+    # compile_str = sys.argv[1]
+    # gen_tests()
+    # compile_tests(compile_str)
+    # execute_tests()
     write_py_source()
-    output_calling_code()
+    # output_calling_code()
 
 
 # Note: test comma-less p use

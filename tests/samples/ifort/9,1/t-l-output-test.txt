@@ -1,1036 +1,1036 @@
 >>> eds, reversion_eds = parser(lexer('''(T1, L1)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[T]
 >>> eds, reversion_eds = parser(lexer('''(T1, L1)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[F]
 >>> eds, reversion_eds = parser(lexer('''(T1, L2)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
- T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[ T]
 >>> eds, reversion_eds = parser(lexer('''(T1, L2)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
- F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[ F]
 >>> eds, reversion_eds = parser(lexer('''(T1, L3)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-  T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[  T]
 >>> eds, reversion_eds = parser(lexer('''(T1, L3)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-  F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[  F]
 >>> eds, reversion_eds = parser(lexer('''(T1, L4)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-   T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[   T]
 >>> eds, reversion_eds = parser(lexer('''(T1, L4)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-   F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[   F]
 >>> eds, reversion_eds = parser(lexer('''(T1, L5)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-    T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[    T]
 >>> eds, reversion_eds = parser(lexer('''(T1, L5)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-    F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[    F]
 >>> eds, reversion_eds = parser(lexer('''(T1, L6)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-     T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[     T]
 >>> eds, reversion_eds = parser(lexer('''(T1, L6)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-     F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[     F]
 >>> eds, reversion_eds = parser(lexer('''(T1, L7)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-      T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[      T]
 >>> eds, reversion_eds = parser(lexer('''(T1, L7)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-      F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[      F]
 >>> eds, reversion_eds = parser(lexer('''(T1, L8)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-       T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[       T]
 >>> eds, reversion_eds = parser(lexer('''(T1, L8)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-       F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[       F]
 >>> eds, reversion_eds = parser(lexer('''(T1, L9)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-        T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[        T]
 >>> eds, reversion_eds = parser(lexer('''(T1, L9)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-        F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[        F]
 >>> eds, reversion_eds = parser(lexer('''(T1, L10)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-         T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[         T]
 >>> eds, reversion_eds = parser(lexer('''(T1, L10)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-         F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[         F]
 >>> eds, reversion_eds = parser(lexer('''(T2, L1)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
- T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[ T]
 >>> eds, reversion_eds = parser(lexer('''(T2, L1)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
- F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[ F]
 >>> eds, reversion_eds = parser(lexer('''(T2, L2)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-  T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[  T]
 >>> eds, reversion_eds = parser(lexer('''(T2, L2)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-  F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[  F]
 >>> eds, reversion_eds = parser(lexer('''(T2, L3)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-   T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[   T]
 >>> eds, reversion_eds = parser(lexer('''(T2, L3)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-   F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[   F]
 >>> eds, reversion_eds = parser(lexer('''(T2, L4)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-    T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[    T]
 >>> eds, reversion_eds = parser(lexer('''(T2, L4)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-    F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[    F]
 >>> eds, reversion_eds = parser(lexer('''(T2, L5)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-     T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[     T]
 >>> eds, reversion_eds = parser(lexer('''(T2, L5)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-     F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[     F]
 >>> eds, reversion_eds = parser(lexer('''(T2, L6)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-      T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[      T]
 >>> eds, reversion_eds = parser(lexer('''(T2, L6)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-      F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[      F]
 >>> eds, reversion_eds = parser(lexer('''(T2, L7)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-       T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[       T]
 >>> eds, reversion_eds = parser(lexer('''(T2, L7)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-       F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[       F]
 >>> eds, reversion_eds = parser(lexer('''(T2, L8)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-        T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[        T]
 >>> eds, reversion_eds = parser(lexer('''(T2, L8)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-        F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[        F]
 >>> eds, reversion_eds = parser(lexer('''(T2, L9)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-         T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[         T]
 >>> eds, reversion_eds = parser(lexer('''(T2, L9)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-         F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[         F]
 >>> eds, reversion_eds = parser(lexer('''(T2, L10)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-          T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[          T]
 >>> eds, reversion_eds = parser(lexer('''(T2, L10)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-          F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[          F]
 >>> eds, reversion_eds = parser(lexer('''(T3, L1)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-  T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[  T]
 >>> eds, reversion_eds = parser(lexer('''(T3, L1)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-  F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[  F]
 >>> eds, reversion_eds = parser(lexer('''(T3, L2)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-   T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[   T]
 >>> eds, reversion_eds = parser(lexer('''(T3, L2)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-   F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[   F]
 >>> eds, reversion_eds = parser(lexer('''(T3, L3)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-    T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[    T]
 >>> eds, reversion_eds = parser(lexer('''(T3, L3)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-    F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[    F]
 >>> eds, reversion_eds = parser(lexer('''(T3, L4)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-     T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[     T]
 >>> eds, reversion_eds = parser(lexer('''(T3, L4)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-     F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[     F]
 >>> eds, reversion_eds = parser(lexer('''(T3, L5)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-      T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[      T]
 >>> eds, reversion_eds = parser(lexer('''(T3, L5)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-      F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[      F]
 >>> eds, reversion_eds = parser(lexer('''(T3, L6)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-       T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[       T]
 >>> eds, reversion_eds = parser(lexer('''(T3, L6)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-       F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[       F]
 >>> eds, reversion_eds = parser(lexer('''(T3, L7)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-        T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[        T]
 >>> eds, reversion_eds = parser(lexer('''(T3, L7)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-        F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[        F]
 >>> eds, reversion_eds = parser(lexer('''(T3, L8)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-         T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[         T]
 >>> eds, reversion_eds = parser(lexer('''(T3, L8)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-         F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[         F]
 >>> eds, reversion_eds = parser(lexer('''(T3, L9)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-          T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[          T]
 >>> eds, reversion_eds = parser(lexer('''(T3, L9)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-          F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[          F]
 >>> eds, reversion_eds = parser(lexer('''(T3, L10)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-           T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[           T]
 >>> eds, reversion_eds = parser(lexer('''(T3, L10)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-           F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[           F]
 >>> eds, reversion_eds = parser(lexer('''(T4, L1)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-   T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[   T]
 >>> eds, reversion_eds = parser(lexer('''(T4, L1)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-   F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[   F]
 >>> eds, reversion_eds = parser(lexer('''(T4, L2)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-    T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[    T]
 >>> eds, reversion_eds = parser(lexer('''(T4, L2)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-    F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[    F]
 >>> eds, reversion_eds = parser(lexer('''(T4, L3)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-     T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[     T]
 >>> eds, reversion_eds = parser(lexer('''(T4, L3)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-     F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[     F]
 >>> eds, reversion_eds = parser(lexer('''(T4, L4)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-      T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[      T]
 >>> eds, reversion_eds = parser(lexer('''(T4, L4)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-      F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[      F]
 >>> eds, reversion_eds = parser(lexer('''(T4, L5)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-       T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[       T]
 >>> eds, reversion_eds = parser(lexer('''(T4, L5)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-       F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[       F]
 >>> eds, reversion_eds = parser(lexer('''(T4, L6)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-        T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[        T]
 >>> eds, reversion_eds = parser(lexer('''(T4, L6)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-        F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[        F]
 >>> eds, reversion_eds = parser(lexer('''(T4, L7)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-         T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[         T]
 >>> eds, reversion_eds = parser(lexer('''(T4, L7)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-         F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[         F]
 >>> eds, reversion_eds = parser(lexer('''(T4, L8)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-          T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[          T]
 >>> eds, reversion_eds = parser(lexer('''(T4, L8)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-          F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[          F]
 >>> eds, reversion_eds = parser(lexer('''(T4, L9)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-           T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[           T]
 >>> eds, reversion_eds = parser(lexer('''(T4, L9)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-           F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[           F]
 >>> eds, reversion_eds = parser(lexer('''(T4, L10)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-            T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[            T]
 >>> eds, reversion_eds = parser(lexer('''(T4, L10)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-            F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[            F]
 >>> eds, reversion_eds = parser(lexer('''(T5, L1)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-    T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[    T]
 >>> eds, reversion_eds = parser(lexer('''(T5, L1)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-    F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[    F]
 >>> eds, reversion_eds = parser(lexer('''(T5, L2)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-     T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[     T]
 >>> eds, reversion_eds = parser(lexer('''(T5, L2)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-     F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[     F]
 >>> eds, reversion_eds = parser(lexer('''(T5, L3)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-      T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[      T]
 >>> eds, reversion_eds = parser(lexer('''(T5, L3)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-      F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[      F]
 >>> eds, reversion_eds = parser(lexer('''(T5, L4)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-       T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[       T]
 >>> eds, reversion_eds = parser(lexer('''(T5, L4)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-       F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[       F]
 >>> eds, reversion_eds = parser(lexer('''(T5, L5)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-        T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[        T]
 >>> eds, reversion_eds = parser(lexer('''(T5, L5)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-        F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[        F]
 >>> eds, reversion_eds = parser(lexer('''(T5, L6)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-         T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[         T]
 >>> eds, reversion_eds = parser(lexer('''(T5, L6)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-         F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[         F]
 >>> eds, reversion_eds = parser(lexer('''(T5, L7)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-          T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[          T]
 >>> eds, reversion_eds = parser(lexer('''(T5, L7)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-          F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[          F]
 >>> eds, reversion_eds = parser(lexer('''(T5, L8)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-           T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[           T]
 >>> eds, reversion_eds = parser(lexer('''(T5, L8)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-           F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[           F]
 >>> eds, reversion_eds = parser(lexer('''(T5, L9)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-            T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[            T]
 >>> eds, reversion_eds = parser(lexer('''(T5, L9)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-            F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[            F]
 >>> eds, reversion_eds = parser(lexer('''(T5, L10)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-             T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[             T]
 >>> eds, reversion_eds = parser(lexer('''(T5, L10)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-             F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[             F]
 >>> eds, reversion_eds = parser(lexer('''(T6, L1)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-     T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[     T]
 >>> eds, reversion_eds = parser(lexer('''(T6, L1)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-     F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[     F]
 >>> eds, reversion_eds = parser(lexer('''(T6, L2)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-      T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[      T]
 >>> eds, reversion_eds = parser(lexer('''(T6, L2)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-      F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[      F]
 >>> eds, reversion_eds = parser(lexer('''(T6, L3)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-       T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[       T]
 >>> eds, reversion_eds = parser(lexer('''(T6, L3)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-       F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[       F]
 >>> eds, reversion_eds = parser(lexer('''(T6, L4)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-        T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[        T]
 >>> eds, reversion_eds = parser(lexer('''(T6, L4)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-        F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[        F]
 >>> eds, reversion_eds = parser(lexer('''(T6, L5)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-         T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[         T]
 >>> eds, reversion_eds = parser(lexer('''(T6, L5)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-         F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[         F]
 >>> eds, reversion_eds = parser(lexer('''(T6, L6)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-          T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[          T]
 >>> eds, reversion_eds = parser(lexer('''(T6, L6)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-          F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[          F]
 >>> eds, reversion_eds = parser(lexer('''(T6, L7)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-           T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[           T]
 >>> eds, reversion_eds = parser(lexer('''(T6, L7)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-           F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[           F]
 >>> eds, reversion_eds = parser(lexer('''(T6, L8)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-            T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[            T]
 >>> eds, reversion_eds = parser(lexer('''(T6, L8)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-            F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[            F]
 >>> eds, reversion_eds = parser(lexer('''(T6, L9)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-             T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[             T]
 >>> eds, reversion_eds = parser(lexer('''(T6, L9)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-             F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[             F]
 >>> eds, reversion_eds = parser(lexer('''(T6, L10)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-              T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[              T]
 >>> eds, reversion_eds = parser(lexer('''(T6, L10)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-              F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[              F]
 >>> eds, reversion_eds = parser(lexer('''(T7, L1)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-      T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[      T]
 >>> eds, reversion_eds = parser(lexer('''(T7, L1)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-      F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[      F]
 >>> eds, reversion_eds = parser(lexer('''(T7, L2)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-       T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[       T]
 >>> eds, reversion_eds = parser(lexer('''(T7, L2)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-       F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[       F]
 >>> eds, reversion_eds = parser(lexer('''(T7, L3)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-        T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[        T]
 >>> eds, reversion_eds = parser(lexer('''(T7, L3)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-        F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[        F]
 >>> eds, reversion_eds = parser(lexer('''(T7, L4)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-         T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[         T]
 >>> eds, reversion_eds = parser(lexer('''(T7, L4)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-         F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[         F]
 >>> eds, reversion_eds = parser(lexer('''(T7, L5)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-          T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[          T]
 >>> eds, reversion_eds = parser(lexer('''(T7, L5)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-          F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[          F]
 >>> eds, reversion_eds = parser(lexer('''(T7, L6)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-           T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[           T]
 >>> eds, reversion_eds = parser(lexer('''(T7, L6)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-           F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[           F]
 >>> eds, reversion_eds = parser(lexer('''(T7, L7)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-            T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[            T]
 >>> eds, reversion_eds = parser(lexer('''(T7, L7)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-            F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[            F]
 >>> eds, reversion_eds = parser(lexer('''(T7, L8)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-             T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[             T]
 >>> eds, reversion_eds = parser(lexer('''(T7, L8)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-             F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[             F]
 >>> eds, reversion_eds = parser(lexer('''(T7, L9)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-              T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[              T]
 >>> eds, reversion_eds = parser(lexer('''(T7, L9)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-              F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[              F]
 >>> eds, reversion_eds = parser(lexer('''(T7, L10)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-               T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[               T]
 >>> eds, reversion_eds = parser(lexer('''(T7, L10)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-               F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[               F]
 >>> eds, reversion_eds = parser(lexer('''(T8, L1)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-       T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[       T]
 >>> eds, reversion_eds = parser(lexer('''(T8, L1)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-       F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[       F]
 >>> eds, reversion_eds = parser(lexer('''(T8, L2)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-        T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[        T]
 >>> eds, reversion_eds = parser(lexer('''(T8, L2)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-        F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[        F]
 >>> eds, reversion_eds = parser(lexer('''(T8, L3)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-         T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[         T]
 >>> eds, reversion_eds = parser(lexer('''(T8, L3)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-         F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[         F]
 >>> eds, reversion_eds = parser(lexer('''(T8, L4)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-          T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[          T]
 >>> eds, reversion_eds = parser(lexer('''(T8, L4)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-          F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[          F]
 >>> eds, reversion_eds = parser(lexer('''(T8, L5)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-           T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[           T]
 >>> eds, reversion_eds = parser(lexer('''(T8, L5)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-           F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[           F]
 >>> eds, reversion_eds = parser(lexer('''(T8, L6)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-            T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[            T]
 >>> eds, reversion_eds = parser(lexer('''(T8, L6)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-            F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[            F]
 >>> eds, reversion_eds = parser(lexer('''(T8, L7)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-             T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[             T]
 >>> eds, reversion_eds = parser(lexer('''(T8, L7)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-             F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[             F]
 >>> eds, reversion_eds = parser(lexer('''(T8, L8)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-              T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[              T]
 >>> eds, reversion_eds = parser(lexer('''(T8, L8)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-              F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[              F]
 >>> eds, reversion_eds = parser(lexer('''(T8, L9)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-               T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[               T]
 >>> eds, reversion_eds = parser(lexer('''(T8, L9)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-               F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[               F]
 >>> eds, reversion_eds = parser(lexer('''(T8, L10)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-                T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                T]
 >>> eds, reversion_eds = parser(lexer('''(T8, L10)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-                F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                F]
 >>> eds, reversion_eds = parser(lexer('''(T9, L1)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-        T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[        T]
 >>> eds, reversion_eds = parser(lexer('''(T9, L1)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-        F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[        F]
 >>> eds, reversion_eds = parser(lexer('''(T9, L2)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-         T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[         T]
 >>> eds, reversion_eds = parser(lexer('''(T9, L2)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-         F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[         F]
 >>> eds, reversion_eds = parser(lexer('''(T9, L3)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-          T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[          T]
 >>> eds, reversion_eds = parser(lexer('''(T9, L3)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-          F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[          F]
 >>> eds, reversion_eds = parser(lexer('''(T9, L4)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-           T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[           T]
 >>> eds, reversion_eds = parser(lexer('''(T9, L4)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-           F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[           F]
 >>> eds, reversion_eds = parser(lexer('''(T9, L5)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-            T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[            T]
 >>> eds, reversion_eds = parser(lexer('''(T9, L5)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-            F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[            F]
 >>> eds, reversion_eds = parser(lexer('''(T9, L6)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-             T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[             T]
 >>> eds, reversion_eds = parser(lexer('''(T9, L6)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-             F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[             F]
 >>> eds, reversion_eds = parser(lexer('''(T9, L7)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-              T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[              T]
 >>> eds, reversion_eds = parser(lexer('''(T9, L7)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-              F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[              F]
 >>> eds, reversion_eds = parser(lexer('''(T9, L8)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-               T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[               T]
 >>> eds, reversion_eds = parser(lexer('''(T9, L8)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-               F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[               F]
 >>> eds, reversion_eds = parser(lexer('''(T9, L9)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-                T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                T]
 >>> eds, reversion_eds = parser(lexer('''(T9, L9)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-                F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                F]
 >>> eds, reversion_eds = parser(lexer('''(T9, L10)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-                 T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                 T]
 >>> eds, reversion_eds = parser(lexer('''(T9, L10)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-                 F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                 F]
 >>> eds, reversion_eds = parser(lexer('''(T10, L1)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-         T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[         T]
 >>> eds, reversion_eds = parser(lexer('''(T10, L1)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-         F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[         F]
 >>> eds, reversion_eds = parser(lexer('''(T10, L2)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-          T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[          T]
 >>> eds, reversion_eds = parser(lexer('''(T10, L2)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-          F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[          F]
 >>> eds, reversion_eds = parser(lexer('''(T10, L3)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-           T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[           T]
 >>> eds, reversion_eds = parser(lexer('''(T10, L3)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-           F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[           F]
 >>> eds, reversion_eds = parser(lexer('''(T10, L4)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-            T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[            T]
 >>> eds, reversion_eds = parser(lexer('''(T10, L4)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-            F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[            F]
 >>> eds, reversion_eds = parser(lexer('''(T10, L5)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-             T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[             T]
 >>> eds, reversion_eds = parser(lexer('''(T10, L5)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-             F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[             F]
 >>> eds, reversion_eds = parser(lexer('''(T10, L6)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-              T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[              T]
 >>> eds, reversion_eds = parser(lexer('''(T10, L6)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-              F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[              F]
 >>> eds, reversion_eds = parser(lexer('''(T10, L7)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-               T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[               T]
 >>> eds, reversion_eds = parser(lexer('''(T10, L7)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-               F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[               F]
 >>> eds, reversion_eds = parser(lexer('''(T10, L8)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-                T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                T]
 >>> eds, reversion_eds = parser(lexer('''(T10, L8)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-                F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                F]
 >>> eds, reversion_eds = parser(lexer('''(T10, L9)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-                 T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                 T]
 >>> eds, reversion_eds = parser(lexer('''(T10, L9)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-                 F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                 F]
 >>> eds, reversion_eds = parser(lexer('''(T10, L10)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-                  T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                  T]
 >>> eds, reversion_eds = parser(lexer('''(T10, L10)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-                  F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                  F]
 >>> eds, reversion_eds = parser(lexer('''(T25, L1)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-                        T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                        T]
 >>> eds, reversion_eds = parser(lexer('''(T25, L1)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-                        F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                        F]
 >>> eds, reversion_eds = parser(lexer('''(T25, L2)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-                         T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                         T]
 >>> eds, reversion_eds = parser(lexer('''(T25, L2)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-                         F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                         F]
 >>> eds, reversion_eds = parser(lexer('''(T25, L3)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-                          T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                          T]
 >>> eds, reversion_eds = parser(lexer('''(T25, L3)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-                          F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                          F]
 >>> eds, reversion_eds = parser(lexer('''(T25, L4)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-                           T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                           T]
 >>> eds, reversion_eds = parser(lexer('''(T25, L4)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-                           F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                           F]
 >>> eds, reversion_eds = parser(lexer('''(T25, L5)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-                            T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                            T]
 >>> eds, reversion_eds = parser(lexer('''(T25, L5)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-                            F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                            F]
 >>> eds, reversion_eds = parser(lexer('''(T25, L6)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-                             T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                             T]
 >>> eds, reversion_eds = parser(lexer('''(T25, L6)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-                             F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                             F]
 >>> eds, reversion_eds = parser(lexer('''(T25, L7)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-                              T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                              T]
 >>> eds, reversion_eds = parser(lexer('''(T25, L7)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-                              F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                              F]
 >>> eds, reversion_eds = parser(lexer('''(T25, L8)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-                               T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                               T]
 >>> eds, reversion_eds = parser(lexer('''(T25, L8)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-                               F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                               F]
 >>> eds, reversion_eds = parser(lexer('''(T25, L9)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-                                T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                T]
 >>> eds, reversion_eds = parser(lexer('''(T25, L9)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-                                F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                F]
 >>> eds, reversion_eds = parser(lexer('''(T25, L10)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-                                 T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                 T]
 >>> eds, reversion_eds = parser(lexer('''(T25, L10)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-                                 F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                 F]
 >>> eds, reversion_eds = parser(lexer('''(T50, L1)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-                                                 T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                 T]
 >>> eds, reversion_eds = parser(lexer('''(T50, L1)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-                                                 F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                 F]
 >>> eds, reversion_eds = parser(lexer('''(T50, L2)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-                                                  T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                  T]
 >>> eds, reversion_eds = parser(lexer('''(T50, L2)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-                                                  F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                  F]
 >>> eds, reversion_eds = parser(lexer('''(T50, L3)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-                                                   T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                   T]
 >>> eds, reversion_eds = parser(lexer('''(T50, L3)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-                                                   F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                   F]
 >>> eds, reversion_eds = parser(lexer('''(T50, L4)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-                                                    T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                    T]
 >>> eds, reversion_eds = parser(lexer('''(T50, L4)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-                                                    F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                    F]
 >>> eds, reversion_eds = parser(lexer('''(T50, L5)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-                                                     T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                     T]
 >>> eds, reversion_eds = parser(lexer('''(T50, L5)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-                                                     F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                     F]
 >>> eds, reversion_eds = parser(lexer('''(T50, L6)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-                                                      T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                      T]
 >>> eds, reversion_eds = parser(lexer('''(T50, L6)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-                                                      F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                      F]
 >>> eds, reversion_eds = parser(lexer('''(T50, L7)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-                                                       T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                       T]
 >>> eds, reversion_eds = parser(lexer('''(T50, L7)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-                                                       F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                       F]
 >>> eds, reversion_eds = parser(lexer('''(T50, L8)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-                                                        T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                        T]
 >>> eds, reversion_eds = parser(lexer('''(T50, L8)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-                                                        F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                        F]
 >>> eds, reversion_eds = parser(lexer('''(T50, L9)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-                                                         T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                         T]
 >>> eds, reversion_eds = parser(lexer('''(T50, L9)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-                                                         F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                         F]
 >>> eds, reversion_eds = parser(lexer('''(T50, L10)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-                                                          T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                          T]
 >>> eds, reversion_eds = parser(lexer('''(T50, L10)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-                                                          F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                          F]
 >>> eds, reversion_eds = parser(lexer('''(T100, L1)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-                                                                                                   T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                                                                   T]
 >>> eds, reversion_eds = parser(lexer('''(T100, L1)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-                                                                                                   F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                                                                   F]
 >>> eds, reversion_eds = parser(lexer('''(T100, L2)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-                                                                                                    T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                                                                    T]
 >>> eds, reversion_eds = parser(lexer('''(T100, L2)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-                                                                                                    F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                                                                    F]
 >>> eds, reversion_eds = parser(lexer('''(T100, L3)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-                                                                                                     T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                                                                     T]
 >>> eds, reversion_eds = parser(lexer('''(T100, L3)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-                                                                                                     F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                                                                     F]
 >>> eds, reversion_eds = parser(lexer('''(T100, L4)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-                                                                                                      T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                                                                      T]
 >>> eds, reversion_eds = parser(lexer('''(T100, L4)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-                                                                                                      F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                                                                      F]
 >>> eds, reversion_eds = parser(lexer('''(T100, L5)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-                                                                                                       T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                                                                       T]
 >>> eds, reversion_eds = parser(lexer('''(T100, L5)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-                                                                                                       F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                                                                       F]
 >>> eds, reversion_eds = parser(lexer('''(T100, L6)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-                                                                                                        T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                                                                        T]
 >>> eds, reversion_eds = parser(lexer('''(T100, L6)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-                                                                                                        F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                                                                        F]
 >>> eds, reversion_eds = parser(lexer('''(T100, L7)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-                                                                                                         T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                                                                         T]
 >>> eds, reversion_eds = parser(lexer('''(T100, L7)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-                                                                                                         F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                                                                         F]
 >>> eds, reversion_eds = parser(lexer('''(T100, L8)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-                                                                                                          T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                                                                          T]
 >>> eds, reversion_eds = parser(lexer('''(T100, L8)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-                                                                                                          F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                                                                          F]
 >>> eds, reversion_eds = parser(lexer('''(T100, L9)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-                                                                                                           T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                                                                           T]
 >>> eds, reversion_eds = parser(lexer('''(T100, L9)'''))
 >>> vals = [False]
->>> print output(eds, reversion_eds, vals)
-                                                                                                           F
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                                                                           F]
 >>> eds, reversion_eds = parser(lexer('''(T100, L10)'''))
 >>> vals = [True]
->>> print output(eds, reversion_eds, vals)
-                                                                                                            T
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[                                                                                                            T]

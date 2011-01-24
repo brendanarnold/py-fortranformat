@@ -9,6 +9,7 @@ OPTIONAL_PLUS = False # If not specified, show the plus sign?
 MIN_FIELD_WIDTH = 46
 DECIMAL_CHAR = '.'
 G0_NO_BLANKS = False
+NO_LEADING_BLANK = False
 
 
 def output(eds, reversion_eds, values):
@@ -125,6 +126,7 @@ def output(eds, reversion_eds, values):
             elif isinstance(ed, P):
                 state['scale'] = ed.scale
             elif isinstance(ed, BN):
+                # This is moot since for output, this does not do anything
                 state['collapse_blanks'] = True
             elif isinstance(ed, BZ):
                 state['collapse_blanks'] = False
@@ -137,7 +139,7 @@ def output(eds, reversion_eds, values):
             elif isinstance(ed, TL):
                 state['position'] = state['position'] - ed.num_chars
             elif isinstance(ed, T):
-                state['position'] = ed.num_chars
+                state['position'] = ed.num_chars - 1
             elif isinstance(ed, QuotedString):
                 sub_string = ed.char_string
                 state['position'], record = _write_string(record, sub_string, state['position'])
@@ -331,7 +333,10 @@ def _output_float(w, d, e, state, ft, buff, sign_bit, zero_flag, ndigits, edigit
             w = d + 2
         # This case does not include a decimal point
         if (w == 1) and (ft == 'F'):
-            return '.' # CHANGED: Was '0'
+            if state['incl_plus']:
+                return '*' # This is ifort behaviour
+            else:
+                return '.' # CHANGED: Was '0'
     # Get rid of the decimal and the initial sign i.e. normalise the digits
     digits = buff[1] + buff[3:]
     # Find out where to place the decimal point
@@ -488,7 +493,7 @@ def _output_float(w, d, e, state, ft, buff, sign_bit, zero_flag, ndigits, edigit
         leadzero = False
     out = ''
     # Pad to full field width
-    if (nblanks > 0) and not state['collapse_blanks']: # dtp->u.p.no_leading_blank
+    if (nblanks > 0) and not NO_LEADING_BLANK: # dtp->u.p.no_leading_blank
         out = out + ' ' * nblanks
     # Attach the sign
     out = out + sign
@@ -528,7 +533,8 @@ def _output_float(w, d, e, state, ft, buff, sign_bit, zero_flag, ndigits, edigit
             edigits = edigits - 1
         fmt = '%+0' + str(edigits) + 'd'
         tmp_buff = fmt % ex
-        if not state['collapse_blanks']:
+        # if not state['collapse_blanks']:
+        if NO_LEADING_BLANK:
             tmp_buf = tmp_buff + (nblanks * ' ')
         out = out + tmp_buff
     return out
@@ -581,7 +587,7 @@ def _compose_l_string(w, state, val):
     return sub_string
 
 
-def _compose_i_string(w, d, state, val):
+def _compose_i_string(w, m, state, val):
     # f77 spec 13.5.9.1 covers integer editing 
     null_field = False
     # be pythonic in what values to accept, if it looks like an integer, then
@@ -593,13 +599,14 @@ def _compose_i_string(w, d, state, val):
     # get the basic string without sign etc.
     int_string = '%d' % int(round(math.fabs(val)))
     # pad if necessary
-    if d is not None:
-        int_string = int_string.rjust(d, '0')
+    if m is not None:
+        int_string = int_string.rjust(m, '0')
         # weird case where if zero width specified and is zero, can have zero space
-        if (val == 0) and (d == 0):
+        if (val == 0) and (m == 0):
             int_string = ''
     # prepend the sign
-    int_string = _get_sign(val, state['incl_plus']) + int_string
+    if int_string != '':
+        int_string = _get_sign(val, state['incl_plus']) + int_string
     # fill the field with blanks if the number takes more room than the width
     # see f77 spec 13.5.9 remark 5.
     if len(int_string) > w:
@@ -693,7 +700,8 @@ if __name__ == '__main__':
     from _parser import parser
     from _lexer import lexer
     FULL_DEBUG = True
-    TEST_PATH = os.path.join('tests', 'samples', 'gfortran', '4-4-1_osx_intel')
+    TEST_PATH = os.path.join('tests', 'samples', 'ifort', '9,1')
+    # TEST_PATH = os.path.join('tests', 'samples', 'source')
     globs = {
         '_write_string' : _write_string,
         '_get_sign' : _get_sign,
@@ -711,312 +719,311 @@ if __name__ == '__main__':
             globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
         # Automatically generated tests
         # doctest.testfile(os.path.join(TEST_PATH, 'bn-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'bz-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'slash-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'sp-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'ss-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 't-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'tl-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'tr-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'x-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'colon-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'a-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
-        doctest.testfile(os.path.join(TEST_PATH, 'b-output-test.txt'), \
-            globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
+        # doctest.testfile(os.path.join(TEST_PATH, 'b-output-test.txt'), \
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'd-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'en-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'es-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'e-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'f-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'g-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'i-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'l-output-test.txt'), \
-            # globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
-        doctest.testfile(os.path.join(TEST_PATH, 'o-output-test.txt'), \
-            globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
-        doctest.testfile(os.path.join(TEST_PATH, 'z-output-test.txt'), \
-            globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
+        # doctest.testfile(os.path.join(TEST_PATH, 'o-output-test.txt'), \
+        #     globs=globs)
+        # doctest.testfile(os.path.join(TEST_PATH, 'z-output-test.txt'), \
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'bn-a-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'bn-b-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'bn-d-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'bn-en-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'bn-es-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'bn-e-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'bn-f-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'bn-g-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'bn-i-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'bn-l-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'bn-o-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'bn-z-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'bn-slash-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'bz-a-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'bz-b-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'bz-d-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'bz-en-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'bz-es-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'bz-e-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'bz-f-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'bz-g-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'bz-i-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'bz-l-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'bz-o-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'bz-z-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'bz-slash-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'slash-a-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'slash-b-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'slash-d-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'slash-en-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'slash-es-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'slash-e-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'slash-f-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'slash-g-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'slash-i-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'slash-l-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'slash-o-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'slash-z-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'slash-slash-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'sp-a-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'sp-b-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'sp-d-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'sp-en-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'sp-es-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'sp-e-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'sp-f-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'sp-g-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'sp-i-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'sp-l-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'sp-o-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'sp-z-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'sp-slash-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'ss-a-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'ss-b-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'ss-d-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'ss-en-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'ss-es-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'ss-e-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'ss-f-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'ss-g-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'ss-i-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'ss-l-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'ss-o-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'ss-z-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'ss-slash-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 't-a-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 't-b-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 't-d-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 't-en-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 't-es-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 't-e-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 't-f-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 't-g-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 't-i-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 't-l-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 't-o-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 't-z-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 't-slash-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'tl-a-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'tl-b-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'tl-d-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'tl-en-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'tl-es-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'tl-e-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'tl-f-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'tl-g-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'tl-i-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'tl-l-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'tl-o-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'tl-z-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'tl-slash-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'tr-a-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'tr-b-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'tr-d-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'tr-en-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'tr-es-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'tr-e-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'tr-f-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'tr-g-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'tr-i-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'tr-l-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'tr-o-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'tr-z-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'tr-slash-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'x-a-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'x-b-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'x-d-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'x-en-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'x-es-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'x-e-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'x-f-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'x-g-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'x-i-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'x-l-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'x-o-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'x-z-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'x-slash-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'colon-a-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'colon-b-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'colon-d-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'colon-en-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'colon-es-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'colon-e-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'colon-f-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'colon-g-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'colon-i-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'colon-l-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'colon-o-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'colon-z-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
         # doctest.testfile(os.path.join(TEST_PATH, 'colon-slash-output-test.txt'), \
-        #     globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+        #     globs=globs)
     else:
-        e, res = parser(lexer('''(G10.5E5)'''))
-        vals = [-0.0001]
-        here()
+        e, res = parser(lexer('''(3B10.0)'''))
+        vals = [-0]
         print "[" + output(e, res, vals) + "]"
 

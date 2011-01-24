@@ -1,205 +1,205 @@
 >>> eds, reversion_eds = parser(lexer('''(/, A)'''))
->>> vals = ["The quick brown fox jumps the lazy dog."]
->>> print output(eds, reversion_eds, vals)
-
-The quick brown fox jumps the lazy dog.
+>>> vals = ['The quick brown fox jumps the lazy dog.']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+The quick brown fox jumps the lazy dog.]
 >>> eds, reversion_eds = parser(lexer('''(/, A)'''))
->>> vals = [\"It doesn\\t matter anyway" - said Alice\]
->>> print output(eds, reversion_eds, vals)
-
-"It doesn't matter anyway" - said Alice
+>>> vals = ['"It doesn\'t matter anyway" - said Alice']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+"It doesn't matter anyway" - said Alice]
 >>> eds, reversion_eds = parser(lexer('''(/, A)'''))
->>> vals = [""]
->>> print output(eds, reversion_eds, vals)
-
-''
+>>> vals = ['\'\'']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+'']
 >>> eds, reversion_eds = parser(lexer('''(/, A1)'''))
->>> vals = ["The quick brown fox jumps the lazy dog."]
->>> print output(eds, reversion_eds, vals)
-
-T
+>>> vals = ['The quick brown fox jumps the lazy dog.']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+T]
 >>> eds, reversion_eds = parser(lexer('''(/, A1)'''))
->>> vals = [\"It doesn\\t matter anyway" - said Alice\]
->>> print output(eds, reversion_eds, vals)
-
-"
+>>> vals = ['"It doesn\'t matter anyway" - said Alice']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+"]
 >>> eds, reversion_eds = parser(lexer('''(/, A1)'''))
->>> vals = [""]
->>> print output(eds, reversion_eds, vals)
-
-'
+>>> vals = ['\'\'']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+']
 >>> eds, reversion_eds = parser(lexer('''(/, A2)'''))
->>> vals = ["The quick brown fox jumps the lazy dog."]
->>> print output(eds, reversion_eds, vals)
-
-Th
+>>> vals = ['The quick brown fox jumps the lazy dog.']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+Th]
 >>> eds, reversion_eds = parser(lexer('''(/, A2)'''))
->>> vals = [\"It doesn\\t matter anyway" - said Alice\]
->>> print output(eds, reversion_eds, vals)
-
-"I
+>>> vals = ['"It doesn\'t matter anyway" - said Alice']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+"I]
 >>> eds, reversion_eds = parser(lexer('''(/, A2)'''))
->>> vals = [""]
->>> print output(eds, reversion_eds, vals)
-
-''
+>>> vals = ['\'\'']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+'']
 >>> eds, reversion_eds = parser(lexer('''(/, A3)'''))
->>> vals = ["The quick brown fox jumps the lazy dog."]
->>> print output(eds, reversion_eds, vals)
-
-The
+>>> vals = ['The quick brown fox jumps the lazy dog.']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+The]
 >>> eds, reversion_eds = parser(lexer('''(/, A3)'''))
->>> vals = [\"It doesn\\t matter anyway" - said Alice\]
->>> print output(eds, reversion_eds, vals)
-
-"It
+>>> vals = ['"It doesn\'t matter anyway" - said Alice']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+"It]
 >>> eds, reversion_eds = parser(lexer('''(/, A3)'''))
->>> vals = [""]
->>> print output(eds, reversion_eds, vals)
-
- ''
+>>> vals = ['\'\'']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+ '']
 >>> eds, reversion_eds = parser(lexer('''(/, A4)'''))
->>> vals = ["The quick brown fox jumps the lazy dog."]
->>> print output(eds, reversion_eds, vals)
-
-The 
+>>> vals = ['The quick brown fox jumps the lazy dog.']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+The ]
 >>> eds, reversion_eds = parser(lexer('''(/, A4)'''))
->>> vals = [\"It doesn\\t matter anyway" - said Alice\]
->>> print output(eds, reversion_eds, vals)
-
-"It 
+>>> vals = ['"It doesn\'t matter anyway" - said Alice']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+"It ]
 >>> eds, reversion_eds = parser(lexer('''(/, A4)'''))
->>> vals = [""]
->>> print output(eds, reversion_eds, vals)
-
-  ''
+>>> vals = ['\'\'']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+  '']
 >>> eds, reversion_eds = parser(lexer('''(/, A5)'''))
->>> vals = ["The quick brown fox jumps the lazy dog."]
->>> print output(eds, reversion_eds, vals)
-
-The q
+>>> vals = ['The quick brown fox jumps the lazy dog.']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+The q]
 >>> eds, reversion_eds = parser(lexer('''(/, A5)'''))
->>> vals = [\"It doesn\\t matter anyway" - said Alice\]
->>> print output(eds, reversion_eds, vals)
-
-"It d
+>>> vals = ['"It doesn\'t matter anyway" - said Alice']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+"It d]
 >>> eds, reversion_eds = parser(lexer('''(/, A5)'''))
->>> vals = [""]
->>> print output(eds, reversion_eds, vals)
-
-   ''
+>>> vals = ['\'\'']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+   '']
 >>> eds, reversion_eds = parser(lexer('''(/, A6)'''))
->>> vals = ["The quick brown fox jumps the lazy dog."]
->>> print output(eds, reversion_eds, vals)
-
-The qu
+>>> vals = ['The quick brown fox jumps the lazy dog.']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+The qu]
 >>> eds, reversion_eds = parser(lexer('''(/, A6)'''))
->>> vals = [\"It doesn\\t matter anyway" - said Alice\]
->>> print output(eds, reversion_eds, vals)
-
-"It do
+>>> vals = ['"It doesn\'t matter anyway" - said Alice']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+"It do]
 >>> eds, reversion_eds = parser(lexer('''(/, A6)'''))
->>> vals = [""]
->>> print output(eds, reversion_eds, vals)
-
-    ''
+>>> vals = ['\'\'']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+    '']
 >>> eds, reversion_eds = parser(lexer('''(/, A7)'''))
->>> vals = ["The quick brown fox jumps the lazy dog."]
->>> print output(eds, reversion_eds, vals)
-
-The qui
+>>> vals = ['The quick brown fox jumps the lazy dog.']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+The qui]
 >>> eds, reversion_eds = parser(lexer('''(/, A7)'''))
->>> vals = [\"It doesn\\t matter anyway" - said Alice\]
->>> print output(eds, reversion_eds, vals)
-
-"It doe
+>>> vals = ['"It doesn\'t matter anyway" - said Alice']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+"It doe]
 >>> eds, reversion_eds = parser(lexer('''(/, A7)'''))
->>> vals = [""]
->>> print output(eds, reversion_eds, vals)
-
-     ''
+>>> vals = ['\'\'']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+     '']
 >>> eds, reversion_eds = parser(lexer('''(/, A8)'''))
->>> vals = ["The quick brown fox jumps the lazy dog."]
->>> print output(eds, reversion_eds, vals)
-
-The quic
+>>> vals = ['The quick brown fox jumps the lazy dog.']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+The quic]
 >>> eds, reversion_eds = parser(lexer('''(/, A8)'''))
->>> vals = [\"It doesn\\t matter anyway" - said Alice\]
->>> print output(eds, reversion_eds, vals)
-
-"It does
+>>> vals = ['"It doesn\'t matter anyway" - said Alice']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+"It does]
 >>> eds, reversion_eds = parser(lexer('''(/, A8)'''))
->>> vals = [""]
->>> print output(eds, reversion_eds, vals)
-
-      ''
+>>> vals = ['\'\'']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+      '']
 >>> eds, reversion_eds = parser(lexer('''(/, A9)'''))
->>> vals = ["The quick brown fox jumps the lazy dog."]
->>> print output(eds, reversion_eds, vals)
-
-The quick
+>>> vals = ['The quick brown fox jumps the lazy dog.']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+The quick]
 >>> eds, reversion_eds = parser(lexer('''(/, A9)'''))
->>> vals = [\"It doesn\\t matter anyway" - said Alice\]
->>> print output(eds, reversion_eds, vals)
-
-"It doesn
+>>> vals = ['"It doesn\'t matter anyway" - said Alice']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+"It doesn]
 >>> eds, reversion_eds = parser(lexer('''(/, A9)'''))
->>> vals = [""]
->>> print output(eds, reversion_eds, vals)
-
-       ''
+>>> vals = ['\'\'']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+       '']
 >>> eds, reversion_eds = parser(lexer('''(/, A10)'''))
->>> vals = ["The quick brown fox jumps the lazy dog."]
->>> print output(eds, reversion_eds, vals)
-
-The quick 
+>>> vals = ['The quick brown fox jumps the lazy dog.']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+The quick ]
 >>> eds, reversion_eds = parser(lexer('''(/, A10)'''))
->>> vals = [\"It doesn\\t matter anyway" - said Alice\]
->>> print output(eds, reversion_eds, vals)
-
-"It doesn'
+>>> vals = ['"It doesn\'t matter anyway" - said Alice']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+"It doesn']
 >>> eds, reversion_eds = parser(lexer('''(/, A10)'''))
->>> vals = [""]
->>> print output(eds, reversion_eds, vals)
-
-        ''
+>>> vals = ['\'\'']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+        '']
 >>> eds, reversion_eds = parser(lexer('''(/, A25)'''))
->>> vals = ["The quick brown fox jumps the lazy dog."]
->>> print output(eds, reversion_eds, vals)
-
-The quick brown fox jumps
+>>> vals = ['The quick brown fox jumps the lazy dog.']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+The quick brown fox jumps]
 >>> eds, reversion_eds = parser(lexer('''(/, A25)'''))
->>> vals = [\"It doesn\\t matter anyway" - said Alice\]
->>> print output(eds, reversion_eds, vals)
-
-"It doesn't matter anyway
+>>> vals = ['"It doesn\'t matter anyway" - said Alice']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+"It doesn't matter anyway]
 >>> eds, reversion_eds = parser(lexer('''(/, A25)'''))
->>> vals = [""]
->>> print output(eds, reversion_eds, vals)
-
-                       ''
+>>> vals = ['\'\'']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+                       '']
 >>> eds, reversion_eds = parser(lexer('''(/, A50)'''))
->>> vals = ["The quick brown fox jumps the lazy dog."]
->>> print output(eds, reversion_eds, vals)
-
-           The quick brown fox jumps the lazy dog.
+>>> vals = ['The quick brown fox jumps the lazy dog.']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+           The quick brown fox jumps the lazy dog.]
 >>> eds, reversion_eds = parser(lexer('''(/, A50)'''))
->>> vals = [\"It doesn\\t matter anyway" - said Alice\]
->>> print output(eds, reversion_eds, vals)
-
-           "It doesn't matter anyway" - said Alice
+>>> vals = ['"It doesn\'t matter anyway" - said Alice']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+           "It doesn't matter anyway" - said Alice]
 >>> eds, reversion_eds = parser(lexer('''(/, A50)'''))
->>> vals = [""]
->>> print output(eds, reversion_eds, vals)
-
-                                                ''
+>>> vals = ['\'\'']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+                                                '']
 >>> eds, reversion_eds = parser(lexer('''(/, A100)'''))
->>> vals = ["The quick brown fox jumps the lazy dog."]
->>> print output(eds, reversion_eds, vals)
-
-                                                             The quick brown fox jumps the lazy dog.
+>>> vals = ['The quick brown fox jumps the lazy dog.']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+                                                             The quick brown fox jumps the lazy dog.]
 >>> eds, reversion_eds = parser(lexer('''(/, A100)'''))
->>> vals = [\"It doesn\\t matter anyway" - said Alice\]
->>> print output(eds, reversion_eds, vals)
-
-                                                             "It doesn't matter anyway" - said Alice
+>>> vals = ['"It doesn\'t matter anyway" - said Alice']
+>>> print '[' + output(eds, reversion_eds, vals) + ']'
+[
+                                                             "It doesn't matter anyway" - said Alice]
