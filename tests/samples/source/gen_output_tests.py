@@ -15,6 +15,7 @@ SOURCE_FILESTEM = '%s-ed-output.f'
 EXECUTABLE_FILESTEM = '%s-ed-output.exe'
 RESULT_FILESTEM = '%s-ed-output.test'
 DOCTEST_FILESTEM = '%s-output-test.txt'
+BUILD_DIR = r'build-output-tests'
 
 I = dict()
 I['formats'] = [
@@ -481,9 +482,9 @@ def execute_tests():
         os.system('%s > %s' % (executable_file, result_file))
 
 def write_fortran_source(formats, inputs, name):
-    filename = SOURCE_FILESTEM % name    
+    filename = os.path.join(BUILD_DIR, SOURCE_FILESTEM % name)
     print 'Generating %s ...' % filename
-    fh = open(SOURCE_FILESTEM % name, 'w')
+    fh = open(filename, 'w')
     if name == 'special':
         # Generate one-to-one
         assert(len(inputs) == len(formats))
@@ -580,10 +581,10 @@ def product(*args, **kwds):
 if __name__ == '__main__':
     import sys
     # compile_str = sys.argv[1]
-    # gen_tests()
+    gen_tests()
     # compile_tests(compile_str)
     # execute_tests()
-    write_py_source()
+    # write_py_source()
     # output_calling_code()
 
 

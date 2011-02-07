@@ -20,7 +20,7 @@ def read_fortran_float(substring, ignore_blanks=False, scale=0):
         end_position = len(m.group(0))
     float_num = float(m.group(0))
     # If exponent is not specified then scale (F77 Spec 13.5.7.1)
-    if (m.group(1) == '') and (scale != 0)):
+    if (m.group(1) == '') and (scale != 0):
         float_num = float_num * 10**scale
     return (float_num, end_position)
 

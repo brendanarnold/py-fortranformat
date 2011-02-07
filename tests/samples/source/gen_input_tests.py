@@ -668,8 +668,8 @@ if __name__ == '__main__':
     # gen_tests()
     # compile_tests(compile_str)
     # execute_tests()
-    write_py_source()
-    # output_calling_code()
+    # write_py_source()
+    output_calling_code()
 
 
 # Note: test comma-less p use

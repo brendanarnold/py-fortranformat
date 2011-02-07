@@ -71,6 +71,9 @@ class A(object):
 class QuotedString(object):
     def __init__(self, char_string=None):
         self.char_string = char_string
+    def get_width(self):
+        return len(self.char_string)
+    width = property(get_width)
     def __repr__(self):
         return '<QuotedString char_string=' + str(self.char_string) + '>'
 
