@@ -652,6 +652,14 @@ def filenames():
     #         out_name = out_ed['name']
     #         yield mod_name + '-' + out_name
 
+def next(iter, default):
+    '''In case are using older version of Python'''
+    try:
+        item = iter.next()
+    except StopIteration:
+        item = default
+    return item
+
 
 def product(*args, **kwds):
     '''Substitute for itertools.product which does not appear in Python 2.3'''
@@ -664,10 +672,10 @@ def product(*args, **kwds):
 
 if __name__ == '__main__':
     import sys
-    # compile_str = sys.argv[1]
-    # gen_tests()
-    # compile_tests(compile_str)
-    # execute_tests()
+    compile_str = sys.argv[1]
+    gen_tests()
+    compile_tests(compile_str)
+    execute_tests()
     write_py_source()
     # output_calling_code()
 
