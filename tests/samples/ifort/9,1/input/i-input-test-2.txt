@@ -1,0 +1,3822 @@
+>>> i = I()
+>>> i.width = 30
+>>> a = A()
+>>> e = E()
+>>> e.width = 30
+>>> e.decimal_places = 16
+>>> e.exponent = 4
+>>> eds, reversion_eds = parser(lexer('''(I5.5)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         -1000]
+>>> eds, reversion_eds = parser(lexer('''(I5.5)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         10000]
+>>> eds, reversion_eds = parser(lexer('''(I5.5)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         -1000]
+>>> eds, reversion_eds = parser(lexer('''(I5.5)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         12345]
+>>> eds, reversion_eds = parser(lexer('''(I5.5)'''))
+>>> inp = [''' 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(I5.5)'''))
+>>> inp = ['''- 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(I5.5)'''))
+>>> inp = ['''-   001''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(I5.5)'''))
+>>> inp = ['''12  012''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           120]
+>>> eds, reversion_eds = parser(lexer('''(I6.5)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(I6.5)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(I6.5)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(I6.5)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(I6.5)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(I6.5)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -3]
+>>> eds, reversion_eds = parser(lexer('''(I6.5)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(I6.5)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(I6.5)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(I6.5)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          -100]
+>>> eds, reversion_eds = parser(lexer('''(I6.5)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          1000]
+>>> eds, reversion_eds = parser(lexer('''(I6.5)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         -1000]
+>>> eds, reversion_eds = parser(lexer('''(I6.5)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         10000]
+>>> eds, reversion_eds = parser(lexer('''(I6.5)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                        -10000]
+>>> eds, reversion_eds = parser(lexer('''(I6.5)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                        100000]
+>>> eds, reversion_eds = parser(lexer('''(I6.5)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                        -10000]
+>>> eds, reversion_eds = parser(lexer('''(I6.5)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                        123456]
+>>> eds, reversion_eds = parser(lexer('''(I6.5)'''))
+>>> inp = [''' 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(I6.5)'''))
+>>> inp = ['''- 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(I6.5)'''))
+>>> inp = ['''-   001''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(I6.5)'''))
+>>> inp = ['''12  012''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          1201]
+>>> eds, reversion_eds = parser(lexer('''(I7.5)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(I7.5)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(I7.5)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(I7.5)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(I7.5)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(I7.5)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -3]
+>>> eds, reversion_eds = parser(lexer('''(I7.5)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(I7.5)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(I7.5)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(I7.5)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          -100]
+>>> eds, reversion_eds = parser(lexer('''(I7.5)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          1000]
+>>> eds, reversion_eds = parser(lexer('''(I7.5)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         -1000]
+>>> eds, reversion_eds = parser(lexer('''(I7.5)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         10000]
+>>> eds, reversion_eds = parser(lexer('''(I7.5)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                        -10000]
+>>> eds, reversion_eds = parser(lexer('''(I7.5)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                        100000]
+>>> eds, reversion_eds = parser(lexer('''(I7.5)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                       -100000]
+>>> eds, reversion_eds = parser(lexer('''(I7.5)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                       1234567]
+>>> eds, reversion_eds = parser(lexer('''(I7.5)'''))
+>>> inp = [''' 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(I7.5)'''))
+>>> inp = ['''- 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(I7.5)'''))
+>>> inp = ['''-   001''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(I7.5)'''))
+>>> inp = ['''12  012''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         12012]
+>>> eds, reversion_eds = parser(lexer('''(I8.5)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(I8.5)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(I8.5)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(I8.5)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(I8.5)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(I8.5)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -3]
+>>> eds, reversion_eds = parser(lexer('''(I8.5)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(I8.5)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(I8.5)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(I8.5)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          -100]
+>>> eds, reversion_eds = parser(lexer('''(I8.5)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          1000]
+>>> eds, reversion_eds = parser(lexer('''(I8.5)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         -1000]
+>>> eds, reversion_eds = parser(lexer('''(I8.5)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         10000]
+>>> eds, reversion_eds = parser(lexer('''(I8.5)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                        -10000]
+>>> eds, reversion_eds = parser(lexer('''(I8.5)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                        100000]
+>>> eds, reversion_eds = parser(lexer('''(I8.5)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                       -100000]
+>>> eds, reversion_eds = parser(lexer('''(I8.5)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                      12345678]
+>>> eds, reversion_eds = parser(lexer('''(I8.5)'''))
+>>> inp = [''' 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(I8.5)'''))
+>>> inp = ['''- 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(I8.5)'''))
+>>> inp = ['''-   001''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(I8.5)'''))
+>>> inp = ['''12  012''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         12012]
+>>> eds, reversion_eds = parser(lexer('''(I9.5)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(I9.5)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(I9.5)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(I9.5)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(I9.5)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(I9.5)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -3]
+>>> eds, reversion_eds = parser(lexer('''(I9.5)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(I9.5)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(I9.5)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(I9.5)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          -100]
+>>> eds, reversion_eds = parser(lexer('''(I9.5)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          1000]
+>>> eds, reversion_eds = parser(lexer('''(I9.5)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         -1000]
+>>> eds, reversion_eds = parser(lexer('''(I9.5)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         10000]
+>>> eds, reversion_eds = parser(lexer('''(I9.5)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                        -10000]
+>>> eds, reversion_eds = parser(lexer('''(I9.5)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                        100000]
+>>> eds, reversion_eds = parser(lexer('''(I9.5)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                       -100000]
+>>> eds, reversion_eds = parser(lexer('''(I9.5)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                     123456789]
+>>> eds, reversion_eds = parser(lexer('''(I9.5)'''))
+>>> inp = [''' 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(I9.5)'''))
+>>> inp = ['''- 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(I9.5)'''))
+>>> inp = ['''-   001''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(I9.5)'''))
+>>> inp = ['''12  012''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         12012]
+>>> eds, reversion_eds = parser(lexer('''(I10.5)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(I10.5)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(I10.5)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(I10.5)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(I10.5)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(I10.5)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -3]
+>>> eds, reversion_eds = parser(lexer('''(I10.5)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(I10.5)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(I10.5)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(I10.5)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          -100]
+>>> eds, reversion_eds = parser(lexer('''(I10.5)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          1000]
+>>> eds, reversion_eds = parser(lexer('''(I10.5)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         -1000]
+>>> eds, reversion_eds = parser(lexer('''(I10.5)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         10000]
+>>> eds, reversion_eds = parser(lexer('''(I10.5)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                        -10000]
+>>> eds, reversion_eds = parser(lexer('''(I10.5)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                        100000]
+>>> eds, reversion_eds = parser(lexer('''(I10.5)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                       -100000]
+>>> eds, reversion_eds = parser(lexer('''(I10.5)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                     123456789]
+>>> eds, reversion_eds = parser(lexer('''(I10.5)'''))
+>>> inp = [''' 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(I10.5)'''))
+>>> inp = ['''- 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(I10.5)'''))
+>>> inp = ['''-   001''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(I10.5)'''))
+>>> inp = ['''12  012''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         12012]
+>>> eds, reversion_eds = parser(lexer('''(1I1)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I1)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I1)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1I1)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I1)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(1I1)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I1)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1I1)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I1)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1I1)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I1)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1I1)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I1)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1I1)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I1)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1I1)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I1)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1I1)'''))
+>>> inp = [''' 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I1)'''))
+>>> inp = ['''- 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I1)'''))
+>>> inp = ['''-   001''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I1)'''))
+>>> inp = ['''12  012''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1I2)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I2)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I2)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1I2)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(1I2)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(1I2)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -3]
+>>> eds, reversion_eds = parser(lexer('''(1I2)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(1I2)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(1I2)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(1I2)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(1I2)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(1I2)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(1I2)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(1I2)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(1I2)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(1I2)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(1I2)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            12]
+>>> eds, reversion_eds = parser(lexer('''(1I2)'''))
+>>> inp = [''' 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I2)'''))
+>>> inp = ['''- 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I2)'''))
+>>> inp = ['''-   001''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I2)'''))
+>>> inp = ['''12  012''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            12]
+>>> eds, reversion_eds = parser(lexer('''(1I3)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I3)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I3)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1I3)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(1I3)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(1I3)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -3]
+>>> eds, reversion_eds = parser(lexer('''(1I3)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(1I3)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(1I3)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(1I3)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(1I3)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(1I3)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(1I3)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(1I3)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(1I3)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(1I3)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(1I3)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           123]
+>>> eds, reversion_eds = parser(lexer('''(1I3)'''))
+>>> inp = [''' 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I3)'''))
+>>> inp = ['''- 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I3)'''))
+>>> inp = ['''-   001''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I3)'''))
+>>> inp = ['''12  012''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            12]
+>>> eds, reversion_eds = parser(lexer('''(1I5)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I5)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I5)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1I5)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(1I5)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(1I5)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -3]
+>>> eds, reversion_eds = parser(lexer('''(1I5)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(1I5)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(1I5)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(1I5)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          -100]
+>>> eds, reversion_eds = parser(lexer('''(1I5)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          1000]
+>>> eds, reversion_eds = parser(lexer('''(1I5)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         -1000]
+>>> eds, reversion_eds = parser(lexer('''(1I5)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         10000]
+>>> eds, reversion_eds = parser(lexer('''(1I5)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         -1000]
+>>> eds, reversion_eds = parser(lexer('''(1I5)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         10000]
+>>> eds, reversion_eds = parser(lexer('''(1I5)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         -1000]
+>>> eds, reversion_eds = parser(lexer('''(1I5)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         12345]
+>>> eds, reversion_eds = parser(lexer('''(1I5)'''))
+>>> inp = [''' 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I5)'''))
+>>> inp = ['''- 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I5)'''))
+>>> inp = ['''-   001''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I5)'''))
+>>> inp = ['''12  012''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           120]
+>>> eds, reversion_eds = parser(lexer('''(1I10)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I10)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I10)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1I10)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(1I10)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(1I10)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -3]
+>>> eds, reversion_eds = parser(lexer('''(1I10)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(1I10)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(1I10)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(1I10)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          -100]
+>>> eds, reversion_eds = parser(lexer('''(1I10)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          1000]
+>>> eds, reversion_eds = parser(lexer('''(1I10)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         -1000]
+>>> eds, reversion_eds = parser(lexer('''(1I10)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         10000]
+>>> eds, reversion_eds = parser(lexer('''(1I10)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                        -10000]
+>>> eds, reversion_eds = parser(lexer('''(1I10)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                        100000]
+>>> eds, reversion_eds = parser(lexer('''(1I10)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                       -100000]
+>>> eds, reversion_eds = parser(lexer('''(1I10)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                     123456789]
+>>> eds, reversion_eds = parser(lexer('''(1I10)'''))
+>>> inp = [''' 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I10)'''))
+>>> inp = ['''- 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I10)'''))
+>>> inp = ['''-   001''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(1I10)'''))
+>>> inp = ['''12  012''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         12012]
+>>> eds, reversion_eds = parser(lexer('''(2I1)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(2I1)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(2I1)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(2I1)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(2I1)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(2I1)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(2I1)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(2I1)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(2I1)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(2I1)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(2I1)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(2I1)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(2I1)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(2I1)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(2I1)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(2I1)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(2I1)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(2I1)'''))
+>>> inp = [''' 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(2I1)'''))
+>>> inp = ['''- 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(2I1)'''))
+>>> inp = ['''-   001''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(2I1)'''))
+>>> inp = ['''12  012''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(2I2)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(2I2)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(2I2)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(2I2)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(2I2)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(2I2)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -3]
+>>> eds, reversion_eds = parser(lexer('''(2I2)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(2I2)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(2I2)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(2I2)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(2I2)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(2I2)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(2I2)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(2I2)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(2I2)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(2I2)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(2I2)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            12]
+>>> eds, reversion_eds = parser(lexer('''(2I2)'''))
+>>> inp = [''' 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(2I2)'''))
+>>> inp = ['''- 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(2I2)'''))
+>>> inp = ['''-   001''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(2I2)'''))
+>>> inp = ['''12  012''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            12]
+>>> eds, reversion_eds = parser(lexer('''(2I3)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(2I3)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(2I3)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(2I3)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(2I3)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(2I3)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -3]
+>>> eds, reversion_eds = parser(lexer('''(2I3)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(2I3)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(2I3)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(2I3)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(2I3)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(2I3)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(2I3)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(2I3)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(2I3)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(2I3)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(2I3)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           123]
+>>> eds, reversion_eds = parser(lexer('''(2I3)'''))
+>>> inp = [''' 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(2I3)'''))
+>>> inp = ['''- 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(2I3)'''))
+>>> inp = ['''-   001''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(2I3)'''))
+>>> inp = ['''12  012''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            12]
+>>> eds, reversion_eds = parser(lexer('''(2I5)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(2I5)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(2I5)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(2I5)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(2I5)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(2I5)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -3]
+>>> eds, reversion_eds = parser(lexer('''(2I5)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(2I5)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(2I5)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(2I5)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          -100]
+>>> eds, reversion_eds = parser(lexer('''(2I5)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          1000]
+>>> eds, reversion_eds = parser(lexer('''(2I5)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         -1000]
+>>> eds, reversion_eds = parser(lexer('''(2I5)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         10000]
+>>> eds, reversion_eds = parser(lexer('''(2I5)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         -1000]
+>>> eds, reversion_eds = parser(lexer('''(2I5)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         10000]
+>>> eds, reversion_eds = parser(lexer('''(2I5)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         -1000]
+>>> eds, reversion_eds = parser(lexer('''(2I5)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         12345]
+>>> eds, reversion_eds = parser(lexer('''(2I5)'''))
+>>> inp = [''' 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(2I5)'''))
+>>> inp = ['''- 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(2I5)'''))
+>>> inp = ['''-   001''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(2I5)'''))
+>>> inp = ['''12  012''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           120]
+>>> eds, reversion_eds = parser(lexer('''(2I10)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(2I10)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(2I10)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(2I10)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(2I10)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(2I10)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -3]
+>>> eds, reversion_eds = parser(lexer('''(2I10)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(2I10)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(2I10)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(2I10)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          -100]
+>>> eds, reversion_eds = parser(lexer('''(2I10)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          1000]
+>>> eds, reversion_eds = parser(lexer('''(2I10)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         -1000]
+>>> eds, reversion_eds = parser(lexer('''(2I10)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         10000]
+>>> eds, reversion_eds = parser(lexer('''(2I10)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                        -10000]
+>>> eds, reversion_eds = parser(lexer('''(2I10)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                        100000]
+>>> eds, reversion_eds = parser(lexer('''(2I10)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                       -100000]
+>>> eds, reversion_eds = parser(lexer('''(2I10)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                     123456789]
+>>> eds, reversion_eds = parser(lexer('''(2I10)'''))
+>>> inp = [''' 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(2I10)'''))
+>>> inp = ['''- 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(2I10)'''))
+>>> inp = ['''-   001''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(2I10)'''))
+>>> inp = ['''12  012''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         12012]
+>>> eds, reversion_eds = parser(lexer('''(3I1)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I1)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I1)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3I1)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I1)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(3I1)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I1)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3I1)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I1)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3I1)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I1)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3I1)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I1)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3I1)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I1)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3I1)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I1)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3I1)'''))
+>>> inp = [''' 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I1)'''))
+>>> inp = ['''- 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I1)'''))
+>>> inp = ['''-   001''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I1)'''))
+>>> inp = ['''12  012''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3I2)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I2)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I2)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3I2)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(3I2)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(3I2)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -3]
+>>> eds, reversion_eds = parser(lexer('''(3I2)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(3I2)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(3I2)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(3I2)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(3I2)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(3I2)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(3I2)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(3I2)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(3I2)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(3I2)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(3I2)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            12]
+>>> eds, reversion_eds = parser(lexer('''(3I2)'''))
+>>> inp = [''' 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I2)'''))
+>>> inp = ['''- 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I2)'''))
+>>> inp = ['''-   001''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I2)'''))
+>>> inp = ['''12  012''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            12]
+>>> eds, reversion_eds = parser(lexer('''(3I3)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I3)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I3)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3I3)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(3I3)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(3I3)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -3]
+>>> eds, reversion_eds = parser(lexer('''(3I3)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(3I3)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(3I3)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(3I3)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(3I3)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(3I3)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(3I3)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(3I3)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(3I3)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(3I3)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(3I3)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           123]
+>>> eds, reversion_eds = parser(lexer('''(3I3)'''))
+>>> inp = [''' 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I3)'''))
+>>> inp = ['''- 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I3)'''))
+>>> inp = ['''-   001''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I3)'''))
+>>> inp = ['''12  012''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            12]
+>>> eds, reversion_eds = parser(lexer('''(3I5)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I5)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I5)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3I5)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(3I5)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(3I5)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -3]
+>>> eds, reversion_eds = parser(lexer('''(3I5)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(3I5)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(3I5)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(3I5)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          -100]
+>>> eds, reversion_eds = parser(lexer('''(3I5)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          1000]
+>>> eds, reversion_eds = parser(lexer('''(3I5)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         -1000]
+>>> eds, reversion_eds = parser(lexer('''(3I5)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         10000]
+>>> eds, reversion_eds = parser(lexer('''(3I5)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         -1000]
+>>> eds, reversion_eds = parser(lexer('''(3I5)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         10000]
+>>> eds, reversion_eds = parser(lexer('''(3I5)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         -1000]
+>>> eds, reversion_eds = parser(lexer('''(3I5)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         12345]
+>>> eds, reversion_eds = parser(lexer('''(3I5)'''))
+>>> inp = [''' 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I5)'''))
+>>> inp = ['''- 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I5)'''))
+>>> inp = ['''-   001''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I5)'''))
+>>> inp = ['''12  012''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           120]
+>>> eds, reversion_eds = parser(lexer('''(3I10)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I10)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I10)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3I10)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(3I10)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(3I10)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -3]
+>>> eds, reversion_eds = parser(lexer('''(3I10)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(3I10)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(3I10)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(3I10)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          -100]
+>>> eds, reversion_eds = parser(lexer('''(3I10)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          1000]
+>>> eds, reversion_eds = parser(lexer('''(3I10)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         -1000]
+>>> eds, reversion_eds = parser(lexer('''(3I10)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         10000]
+>>> eds, reversion_eds = parser(lexer('''(3I10)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                        -10000]
+>>> eds, reversion_eds = parser(lexer('''(3I10)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                        100000]
+>>> eds, reversion_eds = parser(lexer('''(3I10)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                       -100000]
+>>> eds, reversion_eds = parser(lexer('''(3I10)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                     123456789]
+>>> eds, reversion_eds = parser(lexer('''(3I10)'''))
+>>> inp = [''' 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I10)'''))
+>>> inp = ['''- 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I10)'''))
+>>> inp = ['''-   001''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(3I10)'''))
+>>> inp = ['''12  012''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         12012]
+>>> eds, reversion_eds = parser(lexer('''(1I1.0)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I1.0)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I1.0)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1I1.0)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I1.0)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(1I1.0)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I1.0)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1I1.0)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I1.0)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1I1.0)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I1.0)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1I1.0)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I1.0)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1I1.0)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I1.0)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1I1.0)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I1.0)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1I1.0)'''))
+>>> inp = [''' 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I1.0)'''))
+>>> inp = ['''- 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I1.0)'''))
+>>> inp = ['''-   001''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I1.0)'''))
+>>> inp = ['''12  012''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1I2.0)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I2.0)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I2.0)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1I2.0)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(1I2.0)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(1I2.0)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -3]
+>>> eds, reversion_eds = parser(lexer('''(1I2.0)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(1I2.0)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(1I2.0)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(1I2.0)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(1I2.0)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(1I2.0)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(1I2.0)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(1I2.0)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(1I2.0)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(1I2.0)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(1I2.0)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            12]
+>>> eds, reversion_eds = parser(lexer('''(1I2.0)'''))
+>>> inp = [''' 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I2.0)'''))
+>>> inp = ['''- 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I2.0)'''))
+>>> inp = ['''-   001''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I2.0)'''))
+>>> inp = ['''12  012''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            12]
+>>> eds, reversion_eds = parser(lexer('''(1I3.0)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I3.0)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I3.0)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1I3.0)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(1I3.0)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(1I3.0)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -3]
+>>> eds, reversion_eds = parser(lexer('''(1I3.0)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(1I3.0)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(1I3.0)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(1I3.0)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(1I3.0)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(1I3.0)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(1I3.0)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(1I3.0)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(1I3.0)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(1I3.0)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(1I3.0)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           123]
+>>> eds, reversion_eds = parser(lexer('''(1I3.0)'''))
+>>> inp = [''' 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I3.0)'''))
+>>> inp = ['''- 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I3.0)'''))
+>>> inp = ['''-   001''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I3.0)'''))
+>>> inp = ['''12  012''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            12]
+>>> eds, reversion_eds = parser(lexer('''(1I5.0)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I5.0)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I5.0)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1I5.0)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(1I5.0)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(1I5.0)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -3]
+>>> eds, reversion_eds = parser(lexer('''(1I5.0)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(1I5.0)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(1I5.0)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(1I5.0)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          -100]
+>>> eds, reversion_eds = parser(lexer('''(1I5.0)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          1000]
+>>> eds, reversion_eds = parser(lexer('''(1I5.0)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         -1000]
+>>> eds, reversion_eds = parser(lexer('''(1I5.0)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         10000]
+>>> eds, reversion_eds = parser(lexer('''(1I5.0)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         -1000]
+>>> eds, reversion_eds = parser(lexer('''(1I5.0)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         10000]
+>>> eds, reversion_eds = parser(lexer('''(1I5.0)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         -1000]
+>>> eds, reversion_eds = parser(lexer('''(1I5.0)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         12345]
+>>> eds, reversion_eds = parser(lexer('''(1I5.0)'''))
+>>> inp = [''' 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I5.0)'''))
+>>> inp = ['''- 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I5.0)'''))
+>>> inp = ['''-   001''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I5.0)'''))
+>>> inp = ['''12  012''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           120]
+>>> eds, reversion_eds = parser(lexer('''(1I10.0)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I10.0)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I10.0)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1I10.0)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(1I10.0)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(1I10.0)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -3]
+>>> eds, reversion_eds = parser(lexer('''(1I10.0)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(1I10.0)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(1I10.0)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(1I10.0)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          -100]
+>>> eds, reversion_eds = parser(lexer('''(1I10.0)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          1000]
+>>> eds, reversion_eds = parser(lexer('''(1I10.0)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         -1000]
+>>> eds, reversion_eds = parser(lexer('''(1I10.0)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         10000]
+>>> eds, reversion_eds = parser(lexer('''(1I10.0)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                        -10000]
+>>> eds, reversion_eds = parser(lexer('''(1I10.0)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                        100000]
+>>> eds, reversion_eds = parser(lexer('''(1I10.0)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                       -100000]
+>>> eds, reversion_eds = parser(lexer('''(1I10.0)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                     123456789]
+>>> eds, reversion_eds = parser(lexer('''(1I10.0)'''))
+>>> inp = [''' 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I10.0)'''))
+>>> inp = ['''- 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I10.0)'''))
+>>> inp = ['''-   001''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(1I10.0)'''))
+>>> inp = ['''12  012''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         12012]
+>>> eds, reversion_eds = parser(lexer('''(1I3.3)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I3.3)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I3.3)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1I3.3)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(1I3.3)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(1I3.3)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -3]
+>>> eds, reversion_eds = parser(lexer('''(1I3.3)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(1I3.3)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(1I3.3)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(1I3.3)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(1I3.3)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(1I3.3)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(1I3.3)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(1I3.3)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(1I3.3)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(1I3.3)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(1I3.3)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           123]
+>>> eds, reversion_eds = parser(lexer('''(1I3.3)'''))
+>>> inp = [''' 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I3.3)'''))
+>>> inp = ['''- 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I3.3)'''))
+>>> inp = ['''-   001''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I3.3)'''))
+>>> inp = ['''12  012''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            12]
+>>> eds, reversion_eds = parser(lexer('''(1I5.3)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I5.3)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I5.3)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1I5.3)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(1I5.3)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(1I5.3)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -3]
+>>> eds, reversion_eds = parser(lexer('''(1I5.3)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(1I5.3)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(1I5.3)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(1I5.3)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          -100]
+>>> eds, reversion_eds = parser(lexer('''(1I5.3)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          1000]
+>>> eds, reversion_eds = parser(lexer('''(1I5.3)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         -1000]
+>>> eds, reversion_eds = parser(lexer('''(1I5.3)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         10000]
+>>> eds, reversion_eds = parser(lexer('''(1I5.3)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         -1000]
+>>> eds, reversion_eds = parser(lexer('''(1I5.3)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         10000]
+>>> eds, reversion_eds = parser(lexer('''(1I5.3)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         -1000]
+>>> eds, reversion_eds = parser(lexer('''(1I5.3)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         12345]
+>>> eds, reversion_eds = parser(lexer('''(1I5.3)'''))
+>>> inp = [''' 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I5.3)'''))
+>>> inp = ['''- 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I5.3)'''))
+>>> inp = ['''-   001''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I5.3)'''))
+>>> inp = ['''12  012''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           120]
+>>> eds, reversion_eds = parser(lexer('''(1I10.3)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I10.3)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I10.3)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1I10.3)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(1I10.3)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(1I10.3)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -3]
+>>> eds, reversion_eds = parser(lexer('''(1I10.3)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(1I10.3)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(1I10.3)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(1I10.3)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          -100]
+>>> eds, reversion_eds = parser(lexer('''(1I10.3)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          1000]
+>>> eds, reversion_eds = parser(lexer('''(1I10.3)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         -1000]
+>>> eds, reversion_eds = parser(lexer('''(1I10.3)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         10000]
+>>> eds, reversion_eds = parser(lexer('''(1I10.3)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                        -10000]
+>>> eds, reversion_eds = parser(lexer('''(1I10.3)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                        100000]
+>>> eds, reversion_eds = parser(lexer('''(1I10.3)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                       -100000]
+>>> eds, reversion_eds = parser(lexer('''(1I10.3)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                     123456789]
+>>> eds, reversion_eds = parser(lexer('''(1I10.3)'''))
+>>> inp = [''' 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I10.3)'''))
+>>> inp = ['''- 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1I10.3)'''))
+>>> inp = ['''-   001''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(1I10.3)'''))
+>>> inp = ['''12  012''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         12012]
+>>> eds, reversion_eds = parser(lexer('''(3I1.0)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I1.0)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I1.0)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3I1.0)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I1.0)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(3I1.0)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I1.0)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3I1.0)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I1.0)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3I1.0)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I1.0)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3I1.0)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I1.0)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3I1.0)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I1.0)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3I1.0)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I1.0)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3I1.0)'''))
+>>> inp = [''' 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I1.0)'''))
+>>> inp = ['''- 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I1.0)'''))
+>>> inp = ['''-   001''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I1.0)'''))
+>>> inp = ['''12  012''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3I2.0)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I2.0)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I2.0)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3I2.0)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(3I2.0)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(3I2.0)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -3]
+>>> eds, reversion_eds = parser(lexer('''(3I2.0)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(3I2.0)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(3I2.0)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(3I2.0)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(3I2.0)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(3I2.0)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(3I2.0)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(3I2.0)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(3I2.0)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(3I2.0)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(3I2.0)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            12]
+>>> eds, reversion_eds = parser(lexer('''(3I2.0)'''))
+>>> inp = [''' 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I2.0)'''))
+>>> inp = ['''- 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I2.0)'''))
+>>> inp = ['''-   001''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I2.0)'''))
+>>> inp = ['''12  012''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            12]
+>>> eds, reversion_eds = parser(lexer('''(3I3.0)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I3.0)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I3.0)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3I3.0)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(3I3.0)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(3I3.0)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -3]
+>>> eds, reversion_eds = parser(lexer('''(3I3.0)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(3I3.0)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(3I3.0)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(3I3.0)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(3I3.0)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(3I3.0)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(3I3.0)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(3I3.0)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(3I3.0)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(3I3.0)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(3I3.0)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           123]
+>>> eds, reversion_eds = parser(lexer('''(3I3.0)'''))
+>>> inp = [''' 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I3.0)'''))
+>>> inp = ['''- 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I3.0)'''))
+>>> inp = ['''-   001''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I3.0)'''))
+>>> inp = ['''12  012''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            12]
+>>> eds, reversion_eds = parser(lexer('''(3I5.0)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I5.0)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I5.0)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3I5.0)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(3I5.0)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(3I5.0)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -3]
+>>> eds, reversion_eds = parser(lexer('''(3I5.0)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(3I5.0)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(3I5.0)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(3I5.0)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          -100]
+>>> eds, reversion_eds = parser(lexer('''(3I5.0)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          1000]
+>>> eds, reversion_eds = parser(lexer('''(3I5.0)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         -1000]
+>>> eds, reversion_eds = parser(lexer('''(3I5.0)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         10000]
+>>> eds, reversion_eds = parser(lexer('''(3I5.0)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         -1000]
+>>> eds, reversion_eds = parser(lexer('''(3I5.0)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         10000]
+>>> eds, reversion_eds = parser(lexer('''(3I5.0)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         -1000]
+>>> eds, reversion_eds = parser(lexer('''(3I5.0)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         12345]
+>>> eds, reversion_eds = parser(lexer('''(3I5.0)'''))
+>>> inp = [''' 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I5.0)'''))
+>>> inp = ['''- 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I5.0)'''))
+>>> inp = ['''-   001''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I5.0)'''))
+>>> inp = ['''12  012''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           120]
+>>> eds, reversion_eds = parser(lexer('''(3I10.0)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I10.0)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I10.0)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3I10.0)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(3I10.0)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(3I10.0)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -3]
+>>> eds, reversion_eds = parser(lexer('''(3I10.0)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(3I10.0)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(3I10.0)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(3I10.0)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          -100]
+>>> eds, reversion_eds = parser(lexer('''(3I10.0)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          1000]
+>>> eds, reversion_eds = parser(lexer('''(3I10.0)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         -1000]
+>>> eds, reversion_eds = parser(lexer('''(3I10.0)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         10000]
+>>> eds, reversion_eds = parser(lexer('''(3I10.0)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                        -10000]
+>>> eds, reversion_eds = parser(lexer('''(3I10.0)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                        100000]
+>>> eds, reversion_eds = parser(lexer('''(3I10.0)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                       -100000]
+>>> eds, reversion_eds = parser(lexer('''(3I10.0)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                     123456789]
+>>> eds, reversion_eds = parser(lexer('''(3I10.0)'''))
+>>> inp = [''' 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I10.0)'''))
+>>> inp = ['''- 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I10.0)'''))
+>>> inp = ['''-   001''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(3I10.0)'''))
+>>> inp = ['''12  012''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         12012]
+>>> eds, reversion_eds = parser(lexer('''(3I3.3)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I3.3)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I3.3)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3I3.3)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(3I3.3)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(3I3.3)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -3]
+>>> eds, reversion_eds = parser(lexer('''(3I3.3)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(3I3.3)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(3I3.3)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(3I3.3)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(3I3.3)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(3I3.3)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(3I3.3)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(3I3.3)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(3I3.3)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(3I3.3)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(3I3.3)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           123]
+>>> eds, reversion_eds = parser(lexer('''(3I3.3)'''))
+>>> inp = [''' 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I3.3)'''))
+>>> inp = ['''- 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I3.3)'''))
+>>> inp = ['''-   001''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I3.3)'''))
+>>> inp = ['''12  012''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            12]
+>>> eds, reversion_eds = parser(lexer('''(3I5.3)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I5.3)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I5.3)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3I5.3)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(3I5.3)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(3I5.3)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -3]
+>>> eds, reversion_eds = parser(lexer('''(3I5.3)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(3I5.3)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(3I5.3)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(3I5.3)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          -100]
+>>> eds, reversion_eds = parser(lexer('''(3I5.3)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          1000]
+>>> eds, reversion_eds = parser(lexer('''(3I5.3)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         -1000]
+>>> eds, reversion_eds = parser(lexer('''(3I5.3)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         10000]
+>>> eds, reversion_eds = parser(lexer('''(3I5.3)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         -1000]
+>>> eds, reversion_eds = parser(lexer('''(3I5.3)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         10000]
+>>> eds, reversion_eds = parser(lexer('''(3I5.3)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         -1000]
+>>> eds, reversion_eds = parser(lexer('''(3I5.3)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         12345]
+>>> eds, reversion_eds = parser(lexer('''(3I5.3)'''))
+>>> inp = [''' 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I5.3)'''))
+>>> inp = ['''- 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I5.3)'''))
+>>> inp = ['''-   001''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I5.3)'''))
+>>> inp = ['''12  012''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           120]
+>>> eds, reversion_eds = parser(lexer('''(3I10.3)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I10.3)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I10.3)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3I10.3)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]
+>>> eds, reversion_eds = parser(lexer('''(3I10.3)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(3I10.3)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -3]
+>>> eds, reversion_eds = parser(lexer('''(3I10.3)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(3I10.3)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           -10]
+>>> eds, reversion_eds = parser(lexer('''(3I10.3)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           100]
+>>> eds, reversion_eds = parser(lexer('''(3I10.3)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          -100]
+>>> eds, reversion_eds = parser(lexer('''(3I10.3)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          1000]
+>>> eds, reversion_eds = parser(lexer('''(3I10.3)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         -1000]
+>>> eds, reversion_eds = parser(lexer('''(3I10.3)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         10000]
+>>> eds, reversion_eds = parser(lexer('''(3I10.3)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                        -10000]
+>>> eds, reversion_eds = parser(lexer('''(3I10.3)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                        100000]
+>>> eds, reversion_eds = parser(lexer('''(3I10.3)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                       -100000]
+>>> eds, reversion_eds = parser(lexer('''(3I10.3)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                     123456789]
+>>> eds, reversion_eds = parser(lexer('''(3I10.3)'''))
+>>> inp = [''' 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I10.3)'''))
+>>> inp = ['''- 0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3I10.3)'''))
+>>> inp = ['''-   001''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            -1]

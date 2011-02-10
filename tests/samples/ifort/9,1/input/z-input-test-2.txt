@@ -1,0 +1,4944 @@
+>>> i = I()
+>>> i.width = 30
+>>> a = A()
+>>> e = E()
+>>> e.width = 30
+>>> e.decimal_places = 16
+>>> e.exponent = 4
+>>> eds, reversion_eds = parser(lexer('''(Z9.3)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          4096]
+>>> eds, reversion_eds = parser(lexer('''(Z9.3)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z9.3)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         65536]
+>>> eds, reversion_eds = parser(lexer('''(Z9.3)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z9.3)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                       1048576]
+>>> eds, reversion_eds = parser(lexer('''(Z9.3)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z9.3)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z9.3)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(Z9.3)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(Z9.3)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          4095]
+>>> eds, reversion_eds = parser(lexer('''(Z9.3)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         43563]
+>>> eds, reversion_eds = parser(lexer('''(Z9.3)'''))
+>>> inp = ['''A.''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z10.3)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(Z10.3)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z10.3)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(Z10.3)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z10.3)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(Z10.3)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z10.3)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(Z10.3)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z10.3)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(Z10.3)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z10.3)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          4096]
+>>> eds, reversion_eds = parser(lexer('''(Z10.3)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z10.3)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         65536]
+>>> eds, reversion_eds = parser(lexer('''(Z10.3)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z10.3)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                       1048576]
+>>> eds, reversion_eds = parser(lexer('''(Z10.3)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z10.3)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z10.3)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(Z10.3)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(Z10.3)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          4095]
+>>> eds, reversion_eds = parser(lexer('''(Z10.3)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         43563]
+>>> eds, reversion_eds = parser(lexer('''(Z10.3)'''))
+>>> inp = ['''A.''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z5.5)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(Z5.5)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z5.5)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(Z5.5)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z5.5)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(Z5.5)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z5.5)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(Z5.5)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z5.5)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(Z5.5)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z5.5)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          4096]
+>>> eds, reversion_eds = parser(lexer('''(Z5.5)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z5.5)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         65536]
+>>> eds, reversion_eds = parser(lexer('''(Z5.5)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z5.5)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         65536]
+>>> eds, reversion_eds = parser(lexer('''(Z5.5)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z5.5)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         74565]
+>>> eds, reversion_eds = parser(lexer('''(Z5.5)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(Z5.5)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(Z5.5)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(Z5.5)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          2722]
+>>> eds, reversion_eds = parser(lexer('''(Z5.5)'''))
+>>> inp = ['''A.''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z6.5)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(Z6.5)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z6.5)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(Z6.5)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z6.5)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(Z6.5)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z6.5)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(Z6.5)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z6.5)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(Z6.5)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z6.5)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          4096]
+>>> eds, reversion_eds = parser(lexer('''(Z6.5)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z6.5)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         65536]
+>>> eds, reversion_eds = parser(lexer('''(Z6.5)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z6.5)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                       1048576]
+>>> eds, reversion_eds = parser(lexer('''(Z6.5)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z6.5)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                       1193046]
+>>> eds, reversion_eds = parser(lexer('''(Z6.5)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(Z6.5)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(Z6.5)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          4095]
+>>> eds, reversion_eds = parser(lexer('''(Z6.5)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         43563]
+>>> eds, reversion_eds = parser(lexer('''(Z6.5)'''))
+>>> inp = ['''A.''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z7.5)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(Z7.5)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z7.5)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(Z7.5)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z7.5)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(Z7.5)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z7.5)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(Z7.5)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z7.5)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(Z7.5)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z7.5)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          4096]
+>>> eds, reversion_eds = parser(lexer('''(Z7.5)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z7.5)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         65536]
+>>> eds, reversion_eds = parser(lexer('''(Z7.5)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z7.5)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                       1048576]
+>>> eds, reversion_eds = parser(lexer('''(Z7.5)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z7.5)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                      19088743]
+>>> eds, reversion_eds = parser(lexer('''(Z7.5)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(Z7.5)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(Z7.5)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          4095]
+>>> eds, reversion_eds = parser(lexer('''(Z7.5)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         43563]
+>>> eds, reversion_eds = parser(lexer('''(Z7.5)'''))
+>>> inp = ['''A.''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z8.5)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(Z8.5)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z8.5)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(Z8.5)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z8.5)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(Z8.5)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z8.5)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(Z8.5)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z8.5)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(Z8.5)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z8.5)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          4096]
+>>> eds, reversion_eds = parser(lexer('''(Z8.5)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z8.5)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         65536]
+>>> eds, reversion_eds = parser(lexer('''(Z8.5)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z8.5)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                       1048576]
+>>> eds, reversion_eds = parser(lexer('''(Z8.5)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z8.5)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                     305419896]
+>>> eds, reversion_eds = parser(lexer('''(Z8.5)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(Z8.5)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(Z8.5)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          4095]
+>>> eds, reversion_eds = parser(lexer('''(Z8.5)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         43563]
+>>> eds, reversion_eds = parser(lexer('''(Z8.5)'''))
+>>> inp = ['''A.''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z9.5)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(Z9.5)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z9.5)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(Z9.5)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z9.5)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(Z9.5)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z9.5)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(Z9.5)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z9.5)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(Z9.5)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z9.5)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          4096]
+>>> eds, reversion_eds = parser(lexer('''(Z9.5)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z9.5)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         65536]
+>>> eds, reversion_eds = parser(lexer('''(Z9.5)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z9.5)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                       1048576]
+>>> eds, reversion_eds = parser(lexer('''(Z9.5)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z9.5)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z9.5)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(Z9.5)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(Z9.5)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          4095]
+>>> eds, reversion_eds = parser(lexer('''(Z9.5)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         43563]
+>>> eds, reversion_eds = parser(lexer('''(Z9.5)'''))
+>>> inp = ['''A.''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z10.5)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(Z10.5)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z10.5)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(Z10.5)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z10.5)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(Z10.5)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z10.5)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(Z10.5)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z10.5)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(Z10.5)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z10.5)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          4096]
+>>> eds, reversion_eds = parser(lexer('''(Z10.5)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z10.5)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         65536]
+>>> eds, reversion_eds = parser(lexer('''(Z10.5)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z10.5)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                       1048576]
+>>> eds, reversion_eds = parser(lexer('''(Z10.5)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z10.5)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(Z10.5)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(Z10.5)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(Z10.5)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          4095]
+>>> eds, reversion_eds = parser(lexer('''(Z10.5)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         43563]
+>>> eds, reversion_eds = parser(lexer('''(Z10.5)'''))
+>>> inp = ['''A.''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z1)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1Z1)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z1)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1Z1)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z1)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(1Z1)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z1)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1Z1)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z1)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1Z1)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z1)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1Z1)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z1)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1Z1)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z1)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1Z1)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z1)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1Z1)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(1Z1)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(1Z1)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1Z1)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(1Z1)'''))
+>>> inp = ['''A.''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(1Z2)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1Z2)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z2)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1Z2)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z2)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(1Z2)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z2)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(1Z2)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z2)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(1Z2)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z2)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(1Z2)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z2)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(1Z2)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z2)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(1Z2)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z2)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            18]
+>>> eds, reversion_eds = parser(lexer('''(1Z2)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(1Z2)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(1Z2)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(1Z2)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(1Z2)'''))
+>>> inp = ['''A.''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z3)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1Z3)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z3)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1Z3)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z3)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(1Z3)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z3)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(1Z3)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z3)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(1Z3)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z3)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(1Z3)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z3)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(1Z3)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z3)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(1Z3)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z3)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           291]
+>>> eds, reversion_eds = parser(lexer('''(1Z3)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(1Z3)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(1Z3)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(1Z3)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           170]
+>>> eds, reversion_eds = parser(lexer('''(1Z3)'''))
+>>> inp = ['''A.''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z5)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1Z5)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z5)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1Z5)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z5)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(1Z5)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z5)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(1Z5)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z5)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(1Z5)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z5)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          4096]
+>>> eds, reversion_eds = parser(lexer('''(1Z5)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z5)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         65536]
+>>> eds, reversion_eds = parser(lexer('''(1Z5)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z5)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         65536]
+>>> eds, reversion_eds = parser(lexer('''(1Z5)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z5)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         74565]
+>>> eds, reversion_eds = parser(lexer('''(1Z5)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(1Z5)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(1Z5)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(1Z5)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          2722]
+>>> eds, reversion_eds = parser(lexer('''(1Z5)'''))
+>>> inp = ['''A.''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z10)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1Z10)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z10)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1Z10)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z10)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(1Z10)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z10)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(1Z10)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z10)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(1Z10)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z10)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          4096]
+>>> eds, reversion_eds = parser(lexer('''(1Z10)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z10)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         65536]
+>>> eds, reversion_eds = parser(lexer('''(1Z10)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z10)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                       1048576]
+>>> eds, reversion_eds = parser(lexer('''(1Z10)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z10)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z10)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(1Z10)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(1Z10)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          4095]
+>>> eds, reversion_eds = parser(lexer('''(1Z10)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         43563]
+>>> eds, reversion_eds = parser(lexer('''(1Z10)'''))
+>>> inp = ['''A.''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z1)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(2Z1)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z1)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(2Z1)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z1)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(2Z1)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z1)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(2Z1)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z1)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(2Z1)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z1)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(2Z1)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z1)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(2Z1)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z1)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(2Z1)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z1)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(2Z1)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(2Z1)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(2Z1)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(2Z1)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(2Z1)'''))
+>>> inp = ['''A.''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(2Z2)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(2Z2)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z2)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(2Z2)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z2)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(2Z2)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z2)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(2Z2)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z2)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(2Z2)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z2)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(2Z2)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z2)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(2Z2)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z2)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(2Z2)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z2)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            18]
+>>> eds, reversion_eds = parser(lexer('''(2Z2)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(2Z2)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(2Z2)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(2Z2)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(2Z2)'''))
+>>> inp = ['''A.''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z3)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(2Z3)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z3)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(2Z3)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z3)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(2Z3)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z3)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(2Z3)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z3)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(2Z3)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z3)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(2Z3)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z3)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(2Z3)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z3)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(2Z3)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z3)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           291]
+>>> eds, reversion_eds = parser(lexer('''(2Z3)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(2Z3)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(2Z3)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(2Z3)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           170]
+>>> eds, reversion_eds = parser(lexer('''(2Z3)'''))
+>>> inp = ['''A.''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z5)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(2Z5)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z5)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(2Z5)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z5)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(2Z5)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z5)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(2Z5)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z5)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(2Z5)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z5)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          4096]
+>>> eds, reversion_eds = parser(lexer('''(2Z5)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z5)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         65536]
+>>> eds, reversion_eds = parser(lexer('''(2Z5)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z5)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         65536]
+>>> eds, reversion_eds = parser(lexer('''(2Z5)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z5)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         74565]
+>>> eds, reversion_eds = parser(lexer('''(2Z5)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(2Z5)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(2Z5)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(2Z5)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          2722]
+>>> eds, reversion_eds = parser(lexer('''(2Z5)'''))
+>>> inp = ['''A.''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z10)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(2Z10)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z10)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(2Z10)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z10)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(2Z10)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z10)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(2Z10)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z10)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(2Z10)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z10)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          4096]
+>>> eds, reversion_eds = parser(lexer('''(2Z10)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z10)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         65536]
+>>> eds, reversion_eds = parser(lexer('''(2Z10)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z10)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                       1048576]
+>>> eds, reversion_eds = parser(lexer('''(2Z10)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z10)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(2Z10)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(2Z10)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(2Z10)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          4095]
+>>> eds, reversion_eds = parser(lexer('''(2Z10)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         43563]
+>>> eds, reversion_eds = parser(lexer('''(2Z10)'''))
+>>> inp = ['''A.''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z1)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3Z1)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z1)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3Z1)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z1)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(3Z1)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z1)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3Z1)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z1)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3Z1)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z1)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3Z1)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z1)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3Z1)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z1)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3Z1)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z1)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3Z1)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(3Z1)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(3Z1)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3Z1)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(3Z1)'''))
+>>> inp = ['''A.''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(3Z2)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3Z2)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z2)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3Z2)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z2)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(3Z2)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z2)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(3Z2)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z2)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(3Z2)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z2)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(3Z2)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z2)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(3Z2)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z2)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(3Z2)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z2)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            18]
+>>> eds, reversion_eds = parser(lexer('''(3Z2)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(3Z2)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(3Z2)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(3Z2)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(3Z2)'''))
+>>> inp = ['''A.''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z3)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3Z3)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z3)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3Z3)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z3)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(3Z3)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z3)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(3Z3)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z3)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(3Z3)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z3)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(3Z3)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z3)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(3Z3)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z3)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(3Z3)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z3)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           291]
+>>> eds, reversion_eds = parser(lexer('''(3Z3)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(3Z3)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(3Z3)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(3Z3)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           170]
+>>> eds, reversion_eds = parser(lexer('''(3Z3)'''))
+>>> inp = ['''A.''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z5)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3Z5)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z5)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3Z5)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z5)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(3Z5)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z5)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(3Z5)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z5)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(3Z5)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z5)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          4096]
+>>> eds, reversion_eds = parser(lexer('''(3Z5)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z5)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         65536]
+>>> eds, reversion_eds = parser(lexer('''(3Z5)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z5)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         65536]
+>>> eds, reversion_eds = parser(lexer('''(3Z5)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z5)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         74565]
+>>> eds, reversion_eds = parser(lexer('''(3Z5)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(3Z5)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(3Z5)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(3Z5)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          2722]
+>>> eds, reversion_eds = parser(lexer('''(3Z5)'''))
+>>> inp = ['''A.''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z10)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3Z10)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z10)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3Z10)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z10)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(3Z10)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z10)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(3Z10)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z10)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(3Z10)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z10)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          4096]
+>>> eds, reversion_eds = parser(lexer('''(3Z10)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z10)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         65536]
+>>> eds, reversion_eds = parser(lexer('''(3Z10)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z10)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                       1048576]
+>>> eds, reversion_eds = parser(lexer('''(3Z10)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z10)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z10)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(3Z10)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(3Z10)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          4095]
+>>> eds, reversion_eds = parser(lexer('''(3Z10)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         43563]
+>>> eds, reversion_eds = parser(lexer('''(3Z10)'''))
+>>> inp = ['''A.''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z1.0)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1Z1.0)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z1.0)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1Z1.0)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z1.0)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(1Z1.0)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z1.0)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1Z1.0)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z1.0)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1Z1.0)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z1.0)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1Z1.0)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z1.0)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1Z1.0)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z1.0)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1Z1.0)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z1.0)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1Z1.0)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(1Z1.0)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(1Z1.0)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1Z1.0)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(1Z1.0)'''))
+>>> inp = ['''A.''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(1Z2.0)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1Z2.0)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z2.0)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1Z2.0)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z2.0)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(1Z2.0)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z2.0)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(1Z2.0)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z2.0)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(1Z2.0)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z2.0)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(1Z2.0)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z2.0)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(1Z2.0)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z2.0)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(1Z2.0)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z2.0)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            18]
+>>> eds, reversion_eds = parser(lexer('''(1Z2.0)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(1Z2.0)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(1Z2.0)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(1Z2.0)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(1Z2.0)'''))
+>>> inp = ['''A.''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.0)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.0)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.0)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.0)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.0)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.0)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.0)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.0)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.0)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.0)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.0)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.0)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.0)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.0)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.0)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.0)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.0)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           291]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.0)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.0)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.0)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.0)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           170]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.0)'''))
+>>> inp = ['''A.''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.0)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.0)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.0)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.0)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.0)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.0)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.0)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.0)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.0)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.0)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.0)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          4096]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.0)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.0)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         65536]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.0)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.0)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         65536]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.0)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.0)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         74565]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.0)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.0)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.0)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.0)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          2722]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.0)'''))
+>>> inp = ['''A.''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.0)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.0)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.0)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.0)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.0)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.0)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.0)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.0)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.0)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.0)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.0)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          4096]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.0)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.0)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         65536]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.0)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.0)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                       1048576]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.0)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.0)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.0)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.0)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.0)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          4095]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.0)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         43563]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.0)'''))
+>>> inp = ['''A.''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.3)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.3)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.3)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.3)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.3)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.3)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.3)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.3)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.3)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.3)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.3)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.3)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.3)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.3)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.3)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.3)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.3)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           291]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.3)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.3)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.3)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.3)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           170]
+>>> eds, reversion_eds = parser(lexer('''(1Z3.3)'''))
+>>> inp = ['''A.''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.3)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.3)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.3)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.3)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.3)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.3)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.3)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.3)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.3)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.3)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.3)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          4096]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.3)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.3)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         65536]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.3)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.3)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         65536]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.3)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.3)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         74565]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.3)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.3)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.3)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.3)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          2722]
+>>> eds, reversion_eds = parser(lexer('''(1Z5.3)'''))
+>>> inp = ['''A.''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.3)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.3)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.3)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.3)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.3)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.3)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.3)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.3)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.3)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.3)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.3)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          4096]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.3)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.3)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         65536]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.3)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.3)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                       1048576]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.3)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.3)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.3)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.3)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.3)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          4095]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.3)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         43563]
+>>> eds, reversion_eds = parser(lexer('''(1Z10.3)'''))
+>>> inp = ['''A.''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z1.0)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3Z1.0)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z1.0)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3Z1.0)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z1.0)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(3Z1.0)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z1.0)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3Z1.0)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z1.0)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3Z1.0)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z1.0)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3Z1.0)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z1.0)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3Z1.0)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z1.0)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3Z1.0)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z1.0)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3Z1.0)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(3Z1.0)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(3Z1.0)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3Z1.0)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(3Z1.0)'''))
+>>> inp = ['''A.''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(3Z2.0)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3Z2.0)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z2.0)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3Z2.0)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z2.0)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(3Z2.0)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z2.0)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(3Z2.0)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z2.0)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(3Z2.0)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z2.0)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(3Z2.0)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z2.0)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(3Z2.0)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z2.0)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(3Z2.0)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z2.0)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            18]
+>>> eds, reversion_eds = parser(lexer('''(3Z2.0)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(3Z2.0)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(3Z2.0)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(3Z2.0)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            10]
+>>> eds, reversion_eds = parser(lexer('''(3Z2.0)'''))
+>>> inp = ['''A.''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.0)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.0)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.0)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.0)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.0)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.0)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.0)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.0)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.0)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.0)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.0)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.0)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.0)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.0)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.0)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.0)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.0)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           291]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.0)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.0)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.0)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.0)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           170]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.0)'''))
+>>> inp = ['''A.''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.0)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.0)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.0)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.0)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.0)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.0)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.0)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.0)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.0)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.0)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.0)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          4096]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.0)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.0)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         65536]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.0)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.0)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         65536]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.0)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.0)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         74565]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.0)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.0)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.0)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.0)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          2722]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.0)'''))
+>>> inp = ['''A.''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.0)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.0)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.0)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.0)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.0)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.0)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.0)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.0)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.0)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.0)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.0)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          4096]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.0)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.0)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         65536]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.0)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.0)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                       1048576]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.0)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.0)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.0)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.0)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.0)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          4095]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.0)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         43563]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.0)'''))
+>>> inp = ['''A.''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.3)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.3)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.3)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.3)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.3)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.3)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.3)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.3)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.3)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.3)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.3)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.3)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.3)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.3)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.3)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.3)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.3)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           291]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.3)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.3)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.3)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.3)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           170]
+>>> eds, reversion_eds = parser(lexer('''(3Z3.3)'''))
+>>> inp = ['''A.''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.3)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.3)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.3)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.3)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.3)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.3)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.3)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.3)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.3)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.3)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.3)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          4096]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.3)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.3)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         65536]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.3)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.3)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         65536]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.3)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.3)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         74565]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.3)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.3)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.3)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.3)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          2722]
+>>> eds, reversion_eds = parser(lexer('''(3Z5.3)'''))
+>>> inp = ['''A.''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.3)'''))
+>>> inp = ['''0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             0]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.3)'''))
+>>> inp = ['''-0''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.3)'''))
+>>> inp = ['''1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             1]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.3)'''))
+>>> inp = ['''-1''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.3)'''))
+>>> inp = ['''3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                             3]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.3)'''))
+>>> inp = ['''-3''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.3)'''))
+>>> inp = ['''10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            16]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.3)'''))
+>>> inp = ['''-10''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.3)'''))
+>>> inp = ['''100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           256]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.3)'''))
+>>> inp = ['''-100''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.3)'''))
+>>> inp = ['''1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          4096]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.3)'''))
+>>> inp = ['''-1000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.3)'''))
+>>> inp = ['''10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         65536]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.3)'''))
+>>> inp = ['''-10000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.3)'''))
+>>> inp = ['''100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                       1048576]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.3)'''))
+>>> inp = ['''-100000''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.3)'''))
+>>> inp = ['''123456789''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[Traceback (most recent call last):
+...
+ValueError]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.3)'''))
+>>> inp = ['''ff''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                           255]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.3)'''))
+>>> inp = ['''F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                            15]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.3)'''))
+>>> inp = [''' F F F''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                          4095]
+>>> eds, reversion_eds = parser(lexer('''(3Z10.3)'''))
+>>> inp = ['''A a 2B''']
+>>> val = input(eds, reversion_eds, inp)
+>>> print '[' + output([i], [i], val) + ']'
+[                         43563]

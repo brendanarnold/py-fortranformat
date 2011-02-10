@@ -1,0 +1,7 @@
+>>> i = I()
+>>> i.width = 30
+>>> a = A()
+>>> e = E()
+>>> e.width = 30
+>>> e.decimal_places = 16
+>>> e.exponent = 4
