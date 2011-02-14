@@ -297,6 +297,7 @@ ED9 = [':'] # Of form X only, may omit comma either side
 ED10 = ['/'] # Of form X only, may omit following comma and leading comma if no repeat
 REPEATABLE_EDS = ['L', 'A', 'D', 'F', 'B', 'I', 'O', 'Z', 'E', 'EN', 'ES', 'G', '/']
 OUTPUT_EDS = (L, A, D, F, B, I, O, Z, E, EN, ES, G)
+CONTROL_EDS = (BN, BZ, P, SP, SS, S, X, T, TR, TL, Colon, Slash)
 NON_REVERSION_EDS = (P, S, SP, SS, BN, BZ)
 ALL_ED = ED1 + ED2 + ED3 + ED4 + ED5 + ED6 + ED7 + ED8 + ED9 + ED10
 

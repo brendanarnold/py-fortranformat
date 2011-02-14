@@ -450,10 +450,7 @@ def write_py_source():
                     # inpt = inpt.split(',')
                     inpt = str(inpt)
                     # Escape the quotes
-                    if inpt[0] == inpt[-1] == "'":
-                        inpt = "'" + inpt[1:-1].replace("''", "\\'") + "'"
-                    else:
-                        inpt = inpt.replace("''", "\\'")
+                    inpt = inpt.replace("'", "\\'")
                     # TODO: Make this more general so can handle more than two
                     # edit descriptors
                     eds = name.split('-')
@@ -464,18 +461,25 @@ def write_py_source():
                     if ed in ['i', 'o', 'z', 'b', 'l']:
                         # Read into an integer
                         out_ed = 'i'
+                        py_fmt = '%30d'
                     elif name in ['f', 'e', 'd', 'es', 'en', 'g']:
                         # Read into a double precision float
                         out_ed = 'e'
+                        py_fmt = '%30.16f'
                     else:
                         # Read into a character array
                         out_ed = 'a'
+                        py_fmt = '%-1000s'
                     out = '''>>> eds, reversion_eds = parser(lexer(\'\'\'%s\'\'\'))
->>> inp = [\'\'\'%s\'\'\']
+>>> inp = \'\'\'%s\'\'\'
 >>> val = input(eds, reversion_eds, inp)
->>> print '[' + output([%s], [%s], val) + ']'
+>>> out_vals = output([%s], [%s], val)
+>>> if len(out_vals): 
+...     print '[%s]' %% out_vals[0]
+... else:
+...     print '[]'
 [%s]
-''' % (fmt, inpt, out_ed, out_ed, result)
+''' % (fmt, inpt, out_ed, out_ed, py_fmt, result)
                     out_fh.write(out)
                     fmt = inpt = result = None
                 # Now read in new format
@@ -672,10 +676,10 @@ def product(*args, **kwds):
 
 if __name__ == '__main__':
     import sys
-    compile_str = sys.argv[1]
-    gen_tests()
-    compile_tests(compile_str)
-    execute_tests()
+    # compile_str = sys.argv[1]
+    # gen_tests()
+    # compile_tests(compile_str)
+    # execute_tests()
     write_py_source()
     # output_calling_code()
 
