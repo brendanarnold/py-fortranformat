@@ -26,15 +26,29 @@ def input(eds, reversion_eds, records, num_vals=None):
         'incl_plus' : False,
         'collapse_blanks' : True,
         'halt_if_no_vals' : False,
+        'exception_on_fail' : True,
     }
     
     # Assume one-to-one correspondance between edit descriptors and output
     # values if number of output values is not defined 
+    num_out_eds = 0
+    for ed in eds:
+        if ed in OUTPUT_EDS:
+            num_out_eds += 1
+    num_rev_out_eds = 0
     if num_vals is None:
-        num_vals = 0
-        for ed in eds:
-            if ed in OUTPUT_EDS:
-                num_vals += 1
+        num_vals = num_out_eds
+    for ed in reversion_eds:
+        if ed in OUTPUT_EDS:
+            num_rev_out_eds += 1
+    
+    # Will loop forever is no output edit descriptors
+    if (num_out_eds == 0) and (num_vals > 0):
+        return []
+    # Will loop forever if no output eds in reversion format and is more values
+    # requested than in the format
+    if (num_vals > num_out_eds) and (num_rev_out_eds == 0):
+        raise ValueError('Not enough output edit descriptors in reversion format to output %d values' % num_vals)
 
     # May need to process multiple records, down to a higher function to supply
     # appropriate string for format
@@ -52,7 +66,7 @@ def input(eds, reversion_eds, records, num_vals=None):
         ed_ind += 1
         # Signal to stop when Colon edit descriptor or end of format or end of
         # reversion format reached. Also not to output any more data
-        if num_vals >= len(vals):
+        if len(vals) >= num_vals:
             finish_up = True
         # Select the appropriate edit descriptor
         if ed_ind < len(eds):
@@ -106,8 +120,12 @@ def input(eds, reversion_eds, records, num_vals=None):
                 raise NotImplemented('Cannot guess width of character input for A edit descriptor, please supply the width')
             substr, state = _get_substr(ed.width, record, state)
             if isinstance(ed, (Z, O, B, I)):
-                if ('-' in substr) and not PROC_ALLOW_NEG_BOZ and not isinstance(ed, I):
-                    raise ValueError('Negative numbers not permitted for binary, octal or hex')
+                if ('-' in substr) and (not PROC_ALLOW_NEG_BOZ) and isinstance(ed, (Z, O, B)):
+                    if state['exception_on_fail']:
+                        raise ValueError('Negative numbers not permitted for binary, octal or hex')
+                    else:
+                        vals.append(None)
+                        continue
                 if isinstance(ed, Z):
                     base = 16
                 elif isinstance(ed, I):
@@ -123,6 +141,7 @@ def input(eds, reversion_eds, records, num_vals=None):
                     if state['exception_on_fail']:
                         raise ValueError('%s is not a valid input for one of integer, octal, hex or binary' % substr)
                     else:
+                        vals.append(None)
                         continue
                 vals.append(val)
             elif isinstance(ed, A):
@@ -139,7 +158,7 @@ def input(eds, reversion_eds, records, num_vals=None):
                     if state['exception_on_fail']:
                         raise ValueError('%s is not a valid boolean input' % substr)
                     else:
-                        continue
+                        vals.append(None)
             elif isinstance(ed, (E, D, EN, ES)):
                 teststr = _interpret_blanks(substr, state)
                 # Python only understands 'E' as an exponential letter
@@ -149,11 +168,11 @@ def input(eds, reversion_eds, records, num_vals=None):
                     teststr = teststr[0] + teststr[1:].replace('+', 'E+').replace('-', 'E-')
                 try:
                     val = float(teststr)
-                    
                 except ValueError:
                     if state['exception_on_fail']:
                         raise ValueError('%s is not a valid input as for an E, ES, EN or D edit descriptor' % substr)
                     else:
+                        vals.append(None)
                         continue
                 # Special cases: insert a decimal if none specified
                 if ('.' not in teststr) and (ed.decimal_places is not None):
@@ -165,7 +184,7 @@ def input(eds, reversion_eds, records, num_vals=None):
             elif isinstance(ed, G):
                 # Difficult to know what wanted since do not know type of input variable
                 raise NotImplemented('G edit descriptor not implemented for input as cannot guess input type from predifined variable: Use Aw edit descriptor instead and process the string manually')
-    return vals
+    return vals[:num_vals]
 
 def _interpret_blanks(substr, state):
     # Save leading blanks
@@ -204,7 +223,8 @@ if __name__ == '__main__':
     from _parser import parser
     from _lexer import lexer
     from _output import output
-    TEST_PATH = os.path.join('tests', 'samples', 'gfortran', '4-2-1_osx_intel', 'input')
+    # TEST_PATH = os.path.join('tests', 'samples', 'gfortran', '4-2-1_osx_intel', 'input')
+    TEST_PATH = os.path.join('tests', 'samples', 'source')
     globs = {
         'A' : A,
         'E' : E,
@@ -214,26 +234,26 @@ if __name__ == '__main__':
         'input' : input,
         'output' : output,
     }
-    doctest.testfile(os.path.join(TEST_PATH, 'bn-input-test-1.txt'), \
-        globs=globs)
-    doctest.testfile(os.path.join(TEST_PATH, 'bz-input-test-1.txt'), \
-        globs=globs)
-    doctest.testfile(os.path.join(TEST_PATH, 'slash-input-test-1.txt'), \
-        globs=globs)
-    doctest.testfile(os.path.join(TEST_PATH, 'sp-input-test-1.txt'), \
-        globs=globs)
-    doctest.testfile(os.path.join(TEST_PATH, 'ss-input-test-1.txt'), \
-        globs=globs)
-    doctest.testfile(os.path.join(TEST_PATH, 't-input-test-1.txt'), \
-        globs=globs)
-    doctest.testfile(os.path.join(TEST_PATH, 'tl-input-test-1.txt'), \
-        globs=globs)
-    doctest.testfile(os.path.join(TEST_PATH, 'tr-input-test-1.txt'), \
-        globs=globs)
-    doctest.testfile(os.path.join(TEST_PATH, 'x-input-test-1.txt'), \
-        globs=globs)
-    doctest.testfile(os.path.join(TEST_PATH, 'colon-input-test-1.txt'), \
-        globs=globs)
+    # doctest.testfile(os.path.join(TEST_PATH, 'bn-input-test-1.txt'), \
+    #     globs=globs)
+    # doctest.testfile(os.path.join(TEST_PATH, 'bz-input-test-1.txt'), \
+    #     globs=globs)
+    # doctest.testfile(os.path.join(TEST_PATH, 'slash-input-test-1.txt'), \
+    #     globs=globs)
+    # doctest.testfile(os.path.join(TEST_PATH, 'sp-input-test-1.txt'), \
+    #     globs=globs)
+    # doctest.testfile(os.path.join(TEST_PATH, 'ss-input-test-1.txt'), \
+    #     globs=globs)
+    # doctest.testfile(os.path.join(TEST_PATH, 't-input-test-1.txt'), \
+    #     globs=globs)
+    # doctest.testfile(os.path.join(TEST_PATH, 'tl-input-test-1.txt'), \
+    #     globs=globs)
+    # doctest.testfile(os.path.join(TEST_PATH, 'tr-input-test-1.txt'), \
+    #     globs=globs)
+    # doctest.testfile(os.path.join(TEST_PATH, 'x-input-test-1.txt'), \
+    #     globs=globs)
+    # doctest.testfile(os.path.join(TEST_PATH, 'colon-input-test-1.txt'), \
+    #     globs=globs)
     # doctest.testfile(os.path.join(TEST_PATH, 'a-input-test-1.txt'), \
     #     globs=globs)
     doctest.testfile(os.path.join(TEST_PATH, 'b-input-test-1.txt'), \

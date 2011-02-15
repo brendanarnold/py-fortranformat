@@ -440,6 +440,11 @@ def write_py_source():
 >>> e.width = 30
 >>> e.decimal_places = 16
 >>> e.exponent = 4
+>>> def print_val(val, ed):
+...     if len(val):
+...         print '[' + output([ed], [ed], val[0]) + ']'
+...     else:
+...         print '[]'
 ''')
         fmt = inpt = result = None
         for line in in_fh:
@@ -470,16 +475,21 @@ def write_py_source():
                         # Read into a character array
                         out_ed = 'a'
                         py_fmt = '%-1000s'
-                    out = '''>>> eds, reversion_eds = parser(lexer(\'\'\'%s\'\'\'))
+                    if result == 'ERR':
+                        out = '''>>> eds, reversion_eds = parser(lexer(\'\'\'%s\'\'\'))
 >>> inp = \'\'\'%s\'\'\'
->>> val = input(eds, reversion_eds, inp)
->>> out_vals = output([%s], [%s], val)
->>> if len(out_vals): 
-...     print '[%s]' %% out_vals[0]
-... else:
-...     print '[]'
+>>> val = input(eds, reversion_eds, inp, num_vals=1)
+Traceback (most recent call last):
+...
+ValueError
+''' % (fmt, inpt)
+                    else:
+                        out = '''>>> eds, reversion_eds = parser(lexer(\'\'\'%s\'\'\'))
+>>> inp = \'\'\'%s\'\'\'
+>>> val = input(eds, reversion_eds, inp, num_vals=1)
+>>> print_val(val, %s)
 [%s]
-''' % (fmt, inpt, out_ed, out_ed, py_fmt, result)
+''' % (fmt, inpt, out_ed, result)
                     out_fh.write(out)
                     fmt = inpt = result = None
                 # Now read in new format
@@ -493,12 +503,6 @@ def write_py_source():
                         line = '<BLANKLINE>\n'
                     else:
                         line = '\n'
-                # If is an Error (FORTRAN written to output 'ERR') then result is a ValueError
-                if line[:-1] == 'ERR':
-                    line = '''Traceback (most recent call last):
-...
-ValueError
-'''
                 # Assign to result if not already declared, otherwise append
                 if result is None:
                     result = line
