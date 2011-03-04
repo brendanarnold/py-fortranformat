@@ -14,7 +14,7 @@ OUTPUT_EDS = ['A', 'B', 'D', 'EN', 'ES', 'E', 'F', 'G', 'I', 'L', 'O', 'Z', 'Sla
 SOURCE_FILESTEM = '%s-ed-input-%d.f'
 EXECUTABLE_FILESTEM = '%s-ed-input-%d.exe'
 RESULT_FILESTEM = '%s-ed-input-%d.test'
-DOCTEST_FILESTEM = '%s-input-test-%d.txt'
+DOCTEST_FILESTEM = '%s-input-test-%d.pytest'
 BUILD_DIR = r'build-input-tests'
 BATCH_SIZE = 1000 # Batch up tests to avoid 'out of memory' errors on compilation
 

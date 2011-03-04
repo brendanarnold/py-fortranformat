@@ -1,2 +1,0 @@
-class FormatGroup(object):
-    pass

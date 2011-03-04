@@ -14,7 +14,7 @@ OUTPUT_EDS = ['A', 'B', 'D', 'EN', 'ES', 'E', 'F', 'G', 'I', 'L', 'O', 'Z', 'Sla
 SOURCE_FILESTEM = '%s-ed-output.f'
 EXECUTABLE_FILESTEM = '%s-ed-output.exe'
 RESULT_FILESTEM = '%s-ed-output.test'
-DOCTEST_FILESTEM = '%s-output-test.txt'
+DOCTEST_FILESTEM = '%s-output-test.pytest'
 BUILD_DIR = r'build-output-tests'
 
 I = dict()
