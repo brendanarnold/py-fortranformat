@@ -35,6 +35,9 @@ def output(eds, reversion_eds, values):
         if isinstance(ed, OUTPUT_EDS):
             reversion_contains_output_ed = True
             break
+    # Get full list of edit descriptors
+    eds = misc.expand_edit_descriptors(eds)
+    reversion_eds = misc.expand_edit_descriptors(reversion_eds)
     # use iterators
     get_ed = misc.has_next_iterator(eds)
     get_value = misc.has_next_iterator(values)
@@ -219,9 +222,10 @@ def _compose_float_string(w, e, d, state, val, ftype):
     else:
         sign_bit = val < 0
     # handle the nan and inf cases
-    if math.isnan(val):
+    if type(val) is float and val != val :
         return _compose_nan_string(w, ed)
-    if math.isinf(val):
+    Infinity = 1e1000000
+    if x in (-Infinity, Infinity):
         return _compose_inf_string(w, ed, sign_bit)
     tmp = abs(val)
     # Round the input if the input is less than 1
@@ -718,310 +722,310 @@ if __name__ == '__main__':
         doctest.testfile(os.path.join('tests', 'output_get_sign_test.txt'), \
             globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
         # Automatically generated tests
-        # doctest.testfile(os.path.join(TEST_PATH, 'bn-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'bz-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'slash-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'sp-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'ss-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 't-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'tl-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'tr-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'x-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'colon-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'a-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'b-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'd-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'en-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'es-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'e-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'f-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'g-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'i-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'l-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'o-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'z-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'bn-a-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'bn-b-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'bn-d-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'bn-en-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'bn-es-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'bn-e-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'bn-f-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'bn-g-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'bn-i-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'bn-l-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'bn-o-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'bn-z-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'bn-slash-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'bz-a-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'bz-b-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'bz-d-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'bz-en-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'bz-es-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'bz-e-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'bz-f-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'bz-g-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'bz-i-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'bz-l-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'bz-o-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'bz-z-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'bz-slash-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'slash-a-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'slash-b-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'slash-d-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'slash-en-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'slash-es-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'slash-e-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'slash-f-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'slash-g-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'slash-i-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'slash-l-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'slash-o-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'slash-z-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'slash-slash-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'sp-a-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'sp-b-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'sp-d-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'sp-en-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'sp-es-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'sp-e-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'sp-f-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'sp-g-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'sp-i-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'sp-l-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'sp-o-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'sp-z-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'sp-slash-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'ss-a-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'ss-b-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'ss-d-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'ss-en-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'ss-es-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'ss-e-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'ss-f-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'ss-g-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'ss-i-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'ss-l-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'ss-o-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'ss-z-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'ss-slash-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 't-a-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 't-b-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 't-d-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 't-en-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 't-es-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 't-e-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 't-f-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 't-g-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 't-i-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 't-l-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 't-o-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 't-z-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 't-slash-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'tl-a-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'tl-b-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'tl-d-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'tl-en-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'tl-es-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'tl-e-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'tl-f-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'tl-g-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'tl-i-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'tl-l-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'tl-o-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'tl-z-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'tl-slash-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'tr-a-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'tr-b-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'tr-d-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'tr-en-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'tr-es-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'tr-e-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'tr-f-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'tr-g-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'tr-i-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'tr-l-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'tr-o-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'tr-z-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'tr-slash-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'x-a-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'x-b-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'x-d-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'x-en-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'x-es-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'x-e-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'x-f-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'x-g-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'x-i-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'x-l-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'x-o-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'x-z-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'x-slash-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'colon-a-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'colon-b-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'colon-d-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'colon-en-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'colon-es-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'colon-e-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'colon-f-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'colon-g-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'colon-i-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'colon-l-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'colon-o-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'colon-z-output-test.txt'), \
-        #     globs=globs)
-        # doctest.testfile(os.path.join(TEST_PATH, 'colon-slash-output-test.txt'), \
-        #     globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'bn-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'bz-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'slash-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'sp-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'ss-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 't-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'tl-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'tr-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'x-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'colon-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'a-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'b-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'd-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'en-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'es-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'e-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'f-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'g-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'i-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'l-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'o-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'z-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'bn-a-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'bn-b-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'bn-d-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'bn-en-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'bn-es-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'bn-e-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'bn-f-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'bn-g-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'bn-i-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'bn-l-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'bn-o-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'bn-z-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'bn-slash-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'bz-a-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'bz-b-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'bz-d-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'bz-en-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'bz-es-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'bz-e-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'bz-f-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'bz-g-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'bz-i-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'bz-l-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'bz-o-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'bz-z-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'bz-slash-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'slash-a-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'slash-b-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'slash-d-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'slash-en-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'slash-es-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'slash-e-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'slash-f-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'slash-g-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'slash-i-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'slash-l-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'slash-o-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'slash-z-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'slash-slash-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'sp-a-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'sp-b-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'sp-d-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'sp-en-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'sp-es-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'sp-e-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'sp-f-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'sp-g-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'sp-i-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'sp-l-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'sp-o-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'sp-z-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'sp-slash-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'ss-a-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'ss-b-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'ss-d-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'ss-en-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'ss-es-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'ss-e-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'ss-f-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'ss-g-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'ss-i-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'ss-l-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'ss-o-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'ss-z-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'ss-slash-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 't-a-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 't-b-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 't-d-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 't-en-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 't-es-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 't-e-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 't-f-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 't-g-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 't-i-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 't-l-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 't-o-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 't-z-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 't-slash-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'tl-a-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'tl-b-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'tl-d-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'tl-en-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'tl-es-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'tl-e-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'tl-f-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'tl-g-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'tl-i-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'tl-l-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'tl-o-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'tl-z-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'tl-slash-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'tr-a-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'tr-b-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'tr-d-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'tr-en-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'tr-es-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'tr-e-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'tr-f-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'tr-g-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'tr-i-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'tr-l-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'tr-o-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'tr-z-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'tr-slash-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'x-a-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'x-b-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'x-d-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'x-en-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'x-es-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'x-e-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'x-f-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'x-g-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'x-i-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'x-l-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'x-o-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'x-z-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'x-slash-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'colon-a-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'colon-b-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'colon-d-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'colon-en-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'colon-es-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'colon-e-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'colon-f-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'colon-g-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'colon-i-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'colon-l-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'colon-o-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'colon-z-output-test.txt'), \
+            globs=globs)
+        doctest.testfile(os.path.join(TEST_PATH, 'colon-slash-output-test.txt'), \
+            globs=globs)
     else:
         e, res = parser(lexer('''(3B10.0)'''))
         vals = [-0]

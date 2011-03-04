@@ -1,0 +1,780 @@
+FORMAT:(T1, L1)
+INPUT:.TRUE.
+T
+FORMAT:(T1, L1)
+INPUT:.FALSE.
+F
+FORMAT:(T1, L2)
+INPUT:.TRUE.
+ T
+FORMAT:(T1, L2)
+INPUT:.FALSE.
+ F
+FORMAT:(T1, L3)
+INPUT:.TRUE.
+  T
+FORMAT:(T1, L3)
+INPUT:.FALSE.
+  F
+FORMAT:(T1, L4)
+INPUT:.TRUE.
+   T
+FORMAT:(T1, L4)
+INPUT:.FALSE.
+   F
+FORMAT:(T1, L5)
+INPUT:.TRUE.
+    T
+FORMAT:(T1, L5)
+INPUT:.FALSE.
+    F
+FORMAT:(T1, L6)
+INPUT:.TRUE.
+     T
+FORMAT:(T1, L6)
+INPUT:.FALSE.
+     F
+FORMAT:(T1, L7)
+INPUT:.TRUE.
+      T
+FORMAT:(T1, L7)
+INPUT:.FALSE.
+      F
+FORMAT:(T1, L8)
+INPUT:.TRUE.
+       T
+FORMAT:(T1, L8)
+INPUT:.FALSE.
+       F
+FORMAT:(T1, L9)
+INPUT:.TRUE.
+        T
+FORMAT:(T1, L9)
+INPUT:.FALSE.
+        F
+FORMAT:(T1, L10)
+INPUT:.TRUE.
+         T
+FORMAT:(T1, L10)
+INPUT:.FALSE.
+         F
+FORMAT:(T2, L1)
+INPUT:.TRUE.
+ T
+FORMAT:(T2, L1)
+INPUT:.FALSE.
+ F
+FORMAT:(T2, L2)
+INPUT:.TRUE.
+  T
+FORMAT:(T2, L2)
+INPUT:.FALSE.
+  F
+FORMAT:(T2, L3)
+INPUT:.TRUE.
+   T
+FORMAT:(T2, L3)
+INPUT:.FALSE.
+   F
+FORMAT:(T2, L4)
+INPUT:.TRUE.
+    T
+FORMAT:(T2, L4)
+INPUT:.FALSE.
+    F
+FORMAT:(T2, L5)
+INPUT:.TRUE.
+     T
+FORMAT:(T2, L5)
+INPUT:.FALSE.
+     F
+FORMAT:(T2, L6)
+INPUT:.TRUE.
+      T
+FORMAT:(T2, L6)
+INPUT:.FALSE.
+      F
+FORMAT:(T2, L7)
+INPUT:.TRUE.
+       T
+FORMAT:(T2, L7)
+INPUT:.FALSE.
+       F
+FORMAT:(T2, L8)
+INPUT:.TRUE.
+        T
+FORMAT:(T2, L8)
+INPUT:.FALSE.
+        F
+FORMAT:(T2, L9)
+INPUT:.TRUE.
+         T
+FORMAT:(T2, L9)
+INPUT:.FALSE.
+         F
+FORMAT:(T2, L10)
+INPUT:.TRUE.
+          T
+FORMAT:(T2, L10)
+INPUT:.FALSE.
+          F
+FORMAT:(T3, L1)
+INPUT:.TRUE.
+  T
+FORMAT:(T3, L1)
+INPUT:.FALSE.
+  F
+FORMAT:(T3, L2)
+INPUT:.TRUE.
+   T
+FORMAT:(T3, L2)
+INPUT:.FALSE.
+   F
+FORMAT:(T3, L3)
+INPUT:.TRUE.
+    T
+FORMAT:(T3, L3)
+INPUT:.FALSE.
+    F
+FORMAT:(T3, L4)
+INPUT:.TRUE.
+     T
+FORMAT:(T3, L4)
+INPUT:.FALSE.
+     F
+FORMAT:(T3, L5)
+INPUT:.TRUE.
+      T
+FORMAT:(T3, L5)
+INPUT:.FALSE.
+      F
+FORMAT:(T3, L6)
+INPUT:.TRUE.
+       T
+FORMAT:(T3, L6)
+INPUT:.FALSE.
+       F
+FORMAT:(T3, L7)
+INPUT:.TRUE.
+        T
+FORMAT:(T3, L7)
+INPUT:.FALSE.
+        F
+FORMAT:(T3, L8)
+INPUT:.TRUE.
+         T
+FORMAT:(T3, L8)
+INPUT:.FALSE.
+         F
+FORMAT:(T3, L9)
+INPUT:.TRUE.
+          T
+FORMAT:(T3, L9)
+INPUT:.FALSE.
+          F
+FORMAT:(T3, L10)
+INPUT:.TRUE.
+           T
+FORMAT:(T3, L10)
+INPUT:.FALSE.
+           F
+FORMAT:(T4, L1)
+INPUT:.TRUE.
+   T
+FORMAT:(T4, L1)
+INPUT:.FALSE.
+   F
+FORMAT:(T4, L2)
+INPUT:.TRUE.
+    T
+FORMAT:(T4, L2)
+INPUT:.FALSE.
+    F
+FORMAT:(T4, L3)
+INPUT:.TRUE.
+     T
+FORMAT:(T4, L3)
+INPUT:.FALSE.
+     F
+FORMAT:(T4, L4)
+INPUT:.TRUE.
+      T
+FORMAT:(T4, L4)
+INPUT:.FALSE.
+      F
+FORMAT:(T4, L5)
+INPUT:.TRUE.
+       T
+FORMAT:(T4, L5)
+INPUT:.FALSE.
+       F
+FORMAT:(T4, L6)
+INPUT:.TRUE.
+        T
+FORMAT:(T4, L6)
+INPUT:.FALSE.
+        F
+FORMAT:(T4, L7)
+INPUT:.TRUE.
+         T
+FORMAT:(T4, L7)
+INPUT:.FALSE.
+         F
+FORMAT:(T4, L8)
+INPUT:.TRUE.
+          T
+FORMAT:(T4, L8)
+INPUT:.FALSE.
+          F
+FORMAT:(T4, L9)
+INPUT:.TRUE.
+           T
+FORMAT:(T4, L9)
+INPUT:.FALSE.
+           F
+FORMAT:(T4, L10)
+INPUT:.TRUE.
+            T
+FORMAT:(T4, L10)
+INPUT:.FALSE.
+            F
+FORMAT:(T5, L1)
+INPUT:.TRUE.
+    T
+FORMAT:(T5, L1)
+INPUT:.FALSE.
+    F
+FORMAT:(T5, L2)
+INPUT:.TRUE.
+     T
+FORMAT:(T5, L2)
+INPUT:.FALSE.
+     F
+FORMAT:(T5, L3)
+INPUT:.TRUE.
+      T
+FORMAT:(T5, L3)
+INPUT:.FALSE.
+      F
+FORMAT:(T5, L4)
+INPUT:.TRUE.
+       T
+FORMAT:(T5, L4)
+INPUT:.FALSE.
+       F
+FORMAT:(T5, L5)
+INPUT:.TRUE.
+        T
+FORMAT:(T5, L5)
+INPUT:.FALSE.
+        F
+FORMAT:(T5, L6)
+INPUT:.TRUE.
+         T
+FORMAT:(T5, L6)
+INPUT:.FALSE.
+         F
+FORMAT:(T5, L7)
+INPUT:.TRUE.
+          T
+FORMAT:(T5, L7)
+INPUT:.FALSE.
+          F
+FORMAT:(T5, L8)
+INPUT:.TRUE.
+           T
+FORMAT:(T5, L8)
+INPUT:.FALSE.
+           F
+FORMAT:(T5, L9)
+INPUT:.TRUE.
+            T
+FORMAT:(T5, L9)
+INPUT:.FALSE.
+            F
+FORMAT:(T5, L10)
+INPUT:.TRUE.
+             T
+FORMAT:(T5, L10)
+INPUT:.FALSE.
+             F
+FORMAT:(T6, L1)
+INPUT:.TRUE.
+     T
+FORMAT:(T6, L1)
+INPUT:.FALSE.
+     F
+FORMAT:(T6, L2)
+INPUT:.TRUE.
+      T
+FORMAT:(T6, L2)
+INPUT:.FALSE.
+      F
+FORMAT:(T6, L3)
+INPUT:.TRUE.
+       T
+FORMAT:(T6, L3)
+INPUT:.FALSE.
+       F
+FORMAT:(T6, L4)
+INPUT:.TRUE.
+        T
+FORMAT:(T6, L4)
+INPUT:.FALSE.
+        F
+FORMAT:(T6, L5)
+INPUT:.TRUE.
+         T
+FORMAT:(T6, L5)
+INPUT:.FALSE.
+         F
+FORMAT:(T6, L6)
+INPUT:.TRUE.
+          T
+FORMAT:(T6, L6)
+INPUT:.FALSE.
+          F
+FORMAT:(T6, L7)
+INPUT:.TRUE.
+           T
+FORMAT:(T6, L7)
+INPUT:.FALSE.
+           F
+FORMAT:(T6, L8)
+INPUT:.TRUE.
+            T
+FORMAT:(T6, L8)
+INPUT:.FALSE.
+            F
+FORMAT:(T6, L9)
+INPUT:.TRUE.
+             T
+FORMAT:(T6, L9)
+INPUT:.FALSE.
+             F
+FORMAT:(T6, L10)
+INPUT:.TRUE.
+              T
+FORMAT:(T6, L10)
+INPUT:.FALSE.
+              F
+FORMAT:(T7, L1)
+INPUT:.TRUE.
+      T
+FORMAT:(T7, L1)
+INPUT:.FALSE.
+      F
+FORMAT:(T7, L2)
+INPUT:.TRUE.
+       T
+FORMAT:(T7, L2)
+INPUT:.FALSE.
+       F
+FORMAT:(T7, L3)
+INPUT:.TRUE.
+        T
+FORMAT:(T7, L3)
+INPUT:.FALSE.
+        F
+FORMAT:(T7, L4)
+INPUT:.TRUE.
+         T
+FORMAT:(T7, L4)
+INPUT:.FALSE.
+         F
+FORMAT:(T7, L5)
+INPUT:.TRUE.
+          T
+FORMAT:(T7, L5)
+INPUT:.FALSE.
+          F
+FORMAT:(T7, L6)
+INPUT:.TRUE.
+           T
+FORMAT:(T7, L6)
+INPUT:.FALSE.
+           F
+FORMAT:(T7, L7)
+INPUT:.TRUE.
+            T
+FORMAT:(T7, L7)
+INPUT:.FALSE.
+            F
+FORMAT:(T7, L8)
+INPUT:.TRUE.
+             T
+FORMAT:(T7, L8)
+INPUT:.FALSE.
+             F
+FORMAT:(T7, L9)
+INPUT:.TRUE.
+              T
+FORMAT:(T7, L9)
+INPUT:.FALSE.
+              F
+FORMAT:(T7, L10)
+INPUT:.TRUE.
+               T
+FORMAT:(T7, L10)
+INPUT:.FALSE.
+               F
+FORMAT:(T8, L1)
+INPUT:.TRUE.
+       T
+FORMAT:(T8, L1)
+INPUT:.FALSE.
+       F
+FORMAT:(T8, L2)
+INPUT:.TRUE.
+        T
+FORMAT:(T8, L2)
+INPUT:.FALSE.
+        F
+FORMAT:(T8, L3)
+INPUT:.TRUE.
+         T
+FORMAT:(T8, L3)
+INPUT:.FALSE.
+         F
+FORMAT:(T8, L4)
+INPUT:.TRUE.
+          T
+FORMAT:(T8, L4)
+INPUT:.FALSE.
+          F
+FORMAT:(T8, L5)
+INPUT:.TRUE.
+           T
+FORMAT:(T8, L5)
+INPUT:.FALSE.
+           F
+FORMAT:(T8, L6)
+INPUT:.TRUE.
+            T
+FORMAT:(T8, L6)
+INPUT:.FALSE.
+            F
+FORMAT:(T8, L7)
+INPUT:.TRUE.
+             T
+FORMAT:(T8, L7)
+INPUT:.FALSE.
+             F
+FORMAT:(T8, L8)
+INPUT:.TRUE.
+              T
+FORMAT:(T8, L8)
+INPUT:.FALSE.
+              F
+FORMAT:(T8, L9)
+INPUT:.TRUE.
+               T
+FORMAT:(T8, L9)
+INPUT:.FALSE.
+               F
+FORMAT:(T8, L10)
+INPUT:.TRUE.
+                T
+FORMAT:(T8, L10)
+INPUT:.FALSE.
+                F
+FORMAT:(T9, L1)
+INPUT:.TRUE.
+        T
+FORMAT:(T9, L1)
+INPUT:.FALSE.
+        F
+FORMAT:(T9, L2)
+INPUT:.TRUE.
+         T
+FORMAT:(T9, L2)
+INPUT:.FALSE.
+         F
+FORMAT:(T9, L3)
+INPUT:.TRUE.
+          T
+FORMAT:(T9, L3)
+INPUT:.FALSE.
+          F
+FORMAT:(T9, L4)
+INPUT:.TRUE.
+           T
+FORMAT:(T9, L4)
+INPUT:.FALSE.
+           F
+FORMAT:(T9, L5)
+INPUT:.TRUE.
+            T
+FORMAT:(T9, L5)
+INPUT:.FALSE.
+            F
+FORMAT:(T9, L6)
+INPUT:.TRUE.
+             T
+FORMAT:(T9, L6)
+INPUT:.FALSE.
+             F
+FORMAT:(T9, L7)
+INPUT:.TRUE.
+              T
+FORMAT:(T9, L7)
+INPUT:.FALSE.
+              F
+FORMAT:(T9, L8)
+INPUT:.TRUE.
+               T
+FORMAT:(T9, L8)
+INPUT:.FALSE.
+               F
+FORMAT:(T9, L9)
+INPUT:.TRUE.
+                T
+FORMAT:(T9, L9)
+INPUT:.FALSE.
+                F
+FORMAT:(T9, L10)
+INPUT:.TRUE.
+                 T
+FORMAT:(T9, L10)
+INPUT:.FALSE.
+                 F
+FORMAT:(T10, L1)
+INPUT:.TRUE.
+         T
+FORMAT:(T10, L1)
+INPUT:.FALSE.
+         F
+FORMAT:(T10, L2)
+INPUT:.TRUE.
+          T
+FORMAT:(T10, L2)
+INPUT:.FALSE.
+          F
+FORMAT:(T10, L3)
+INPUT:.TRUE.
+           T
+FORMAT:(T10, L3)
+INPUT:.FALSE.
+           F
+FORMAT:(T10, L4)
+INPUT:.TRUE.
+            T
+FORMAT:(T10, L4)
+INPUT:.FALSE.
+            F
+FORMAT:(T10, L5)
+INPUT:.TRUE.
+             T
+FORMAT:(T10, L5)
+INPUT:.FALSE.
+             F
+FORMAT:(T10, L6)
+INPUT:.TRUE.
+              T
+FORMAT:(T10, L6)
+INPUT:.FALSE.
+              F
+FORMAT:(T10, L7)
+INPUT:.TRUE.
+               T
+FORMAT:(T10, L7)
+INPUT:.FALSE.
+               F
+FORMAT:(T10, L8)
+INPUT:.TRUE.
+                T
+FORMAT:(T10, L8)
+INPUT:.FALSE.
+                F
+FORMAT:(T10, L9)
+INPUT:.TRUE.
+                 T
+FORMAT:(T10, L9)
+INPUT:.FALSE.
+                 F
+FORMAT:(T10, L10)
+INPUT:.TRUE.
+                  T
+FORMAT:(T10, L10)
+INPUT:.FALSE.
+                  F
+FORMAT:(T25, L1)
+INPUT:.TRUE.
+                        T
+FORMAT:(T25, L1)
+INPUT:.FALSE.
+                        F
+FORMAT:(T25, L2)
+INPUT:.TRUE.
+                         T
+FORMAT:(T25, L2)
+INPUT:.FALSE.
+                         F
+FORMAT:(T25, L3)
+INPUT:.TRUE.
+                          T
+FORMAT:(T25, L3)
+INPUT:.FALSE.
+                          F
+FORMAT:(T25, L4)
+INPUT:.TRUE.
+                           T
+FORMAT:(T25, L4)
+INPUT:.FALSE.
+                           F
+FORMAT:(T25, L5)
+INPUT:.TRUE.
+                            T
+FORMAT:(T25, L5)
+INPUT:.FALSE.
+                            F
+FORMAT:(T25, L6)
+INPUT:.TRUE.
+                             T
+FORMAT:(T25, L6)
+INPUT:.FALSE.
+                             F
+FORMAT:(T25, L7)
+INPUT:.TRUE.
+                              T
+FORMAT:(T25, L7)
+INPUT:.FALSE.
+                              F
+FORMAT:(T25, L8)
+INPUT:.TRUE.
+                               T
+FORMAT:(T25, L8)
+INPUT:.FALSE.
+                               F
+FORMAT:(T25, L9)
+INPUT:.TRUE.
+                                T
+FORMAT:(T25, L9)
+INPUT:.FALSE.
+                                F
+FORMAT:(T25, L10)
+INPUT:.TRUE.
+                                 T
+FORMAT:(T25, L10)
+INPUT:.FALSE.
+                                 F
+FORMAT:(T50, L1)
+INPUT:.TRUE.
+                                                 T
+FORMAT:(T50, L1)
+INPUT:.FALSE.
+                                                 F
+FORMAT:(T50, L2)
+INPUT:.TRUE.
+                                                  T
+FORMAT:(T50, L2)
+INPUT:.FALSE.
+                                                  F
+FORMAT:(T50, L3)
+INPUT:.TRUE.
+                                                   T
+FORMAT:(T50, L3)
+INPUT:.FALSE.
+                                                   F
+FORMAT:(T50, L4)
+INPUT:.TRUE.
+                                                    T
+FORMAT:(T50, L4)
+INPUT:.FALSE.
+                                                    F
+FORMAT:(T50, L5)
+INPUT:.TRUE.
+                                                     T
+FORMAT:(T50, L5)
+INPUT:.FALSE.
+                                                     F
+FORMAT:(T50, L6)
+INPUT:.TRUE.
+                                                      T
+FORMAT:(T50, L6)
+INPUT:.FALSE.
+                                                      F
+FORMAT:(T50, L7)
+INPUT:.TRUE.
+                                                       T
+FORMAT:(T50, L7)
+INPUT:.FALSE.
+                                                       F
+FORMAT:(T50, L8)
+INPUT:.TRUE.
+                                                        T
+FORMAT:(T50, L8)
+INPUT:.FALSE.
+                                                        F
+FORMAT:(T50, L9)
+INPUT:.TRUE.
+                                                         T
+FORMAT:(T50, L9)
+INPUT:.FALSE.
+                                                         F
+FORMAT:(T50, L10)
+INPUT:.TRUE.
+                                                          T
+FORMAT:(T50, L10)
+INPUT:.FALSE.
+                                                          F
+FORMAT:(T100, L1)
+INPUT:.TRUE.
+                                                                                                   T
+FORMAT:(T100, L1)
+INPUT:.FALSE.
+                                                                                                   F
+FORMAT:(T100, L2)
+INPUT:.TRUE.
+                                                                                                    T
+FORMAT:(T100, L2)
+INPUT:.FALSE.
+                                                                                                    F
+FORMAT:(T100, L3)
+INPUT:.TRUE.
+                                                                                                     T
+FORMAT:(T100, L3)
+INPUT:.FALSE.
+                                                                                                     F
+FORMAT:(T100, L4)
+INPUT:.TRUE.
+                                                                                                      T
+FORMAT:(T100, L4)
+INPUT:.FALSE.
+                                                                                                      F
+FORMAT:(T100, L5)
+INPUT:.TRUE.
+                                                                                                       T
+FORMAT:(T100, L5)
+INPUT:.FALSE.
+                                                                                                       F
+FORMAT:(T100, L6)
+INPUT:.TRUE.
+                                                                                                        T
+FORMAT:(T100, L6)
+INPUT:.FALSE.
+                                                                                                        F
+FORMAT:(T100, L7)
+INPUT:.TRUE.
+                                                                                                         T
+FORMAT:(T100, L7)
+INPUT:.FALSE.
+                                                                                                         F
+FORMAT:(T100, L8)
+INPUT:.TRUE.
+                                                                                                          T
+FORMAT:(T100, L8)
+INPUT:.FALSE.
+                                                                                                          F
+FORMAT:(T100, L9)
+INPUT:.TRUE.
+                                                                                                           T
+FORMAT:(T100, L9)
+INPUT:.FALSE.
+                                                                                                           F
+FORMAT:(T100, L10)
+INPUT:.TRUE.
+                                                                                                            T
+FORMAT:(T100, L10)
+INPUT:.FALSE.
+                                                                                                            F

@@ -1,11 +1,11 @@
 glob:*.pyc
 glob:*.out
 glob:*.swp
-glob:parsetab.py
 glob:*.DS_Store
 glob:*.Trashes
 glob:*tags
 glob:*.exe
-glob:*.test
 glob:*.f
-glob:tests/samples/source/*.txt
+glob:tests/autogen/build-input-tests/*
+glob:tests/autogen/build-output-tests/*
+glob:*.pytest

@@ -26,3 +26,12 @@ class has_next_iterator(object):
       else: self._has_next = True
     return self._has_next
 
+
+def expand_edit_descriptors(eds):
+    expanded_eds = []
+    for ed in eds:
+        if hasattr(ed, 'repeat') and (ed.repeat is not None):
+            expanded_eds.extend(ed.repeat * [ed])
+        else:
+            expanded_eds.append(ed)
+    return expanded_eds

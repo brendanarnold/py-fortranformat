@@ -1,0 +1,1638 @@
+FORMAT:(TR1, A)
+INPUT:'The quick brown fox jumps the lazy dog.'
+ The quick brown fox jumps the lazy dog.
+FORMAT:(TR1, A)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+ "It doesn't matter anyway" - said Alice
+FORMAT:(TR1, A)
+INPUT:''''''
+ ''
+FORMAT:(TR1, A1)
+INPUT:'The quick brown fox jumps the lazy dog.'
+ T
+FORMAT:(TR1, A1)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+ "
+FORMAT:(TR1, A1)
+INPUT:''''''
+ '
+FORMAT:(TR1, A2)
+INPUT:'The quick brown fox jumps the lazy dog.'
+ Th
+FORMAT:(TR1, A2)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+ "I
+FORMAT:(TR1, A2)
+INPUT:''''''
+ ''
+FORMAT:(TR1, A3)
+INPUT:'The quick brown fox jumps the lazy dog.'
+ The
+FORMAT:(TR1, A3)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+ "It
+FORMAT:(TR1, A3)
+INPUT:''''''
+  ''
+FORMAT:(TR1, A4)
+INPUT:'The quick brown fox jumps the lazy dog.'
+ The 
+FORMAT:(TR1, A4)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+ "It 
+FORMAT:(TR1, A4)
+INPUT:''''''
+   ''
+FORMAT:(TR1, A5)
+INPUT:'The quick brown fox jumps the lazy dog.'
+ The q
+FORMAT:(TR1, A5)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+ "It d
+FORMAT:(TR1, A5)
+INPUT:''''''
+    ''
+FORMAT:(TR1, A6)
+INPUT:'The quick brown fox jumps the lazy dog.'
+ The qu
+FORMAT:(TR1, A6)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+ "It do
+FORMAT:(TR1, A6)
+INPUT:''''''
+     ''
+FORMAT:(TR1, A7)
+INPUT:'The quick brown fox jumps the lazy dog.'
+ The qui
+FORMAT:(TR1, A7)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+ "It doe
+FORMAT:(TR1, A7)
+INPUT:''''''
+      ''
+FORMAT:(TR1, A8)
+INPUT:'The quick brown fox jumps the lazy dog.'
+ The quic
+FORMAT:(TR1, A8)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+ "It does
+FORMAT:(TR1, A8)
+INPUT:''''''
+       ''
+FORMAT:(TR1, A9)
+INPUT:'The quick brown fox jumps the lazy dog.'
+ The quick
+FORMAT:(TR1, A9)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+ "It doesn
+FORMAT:(TR1, A9)
+INPUT:''''''
+        ''
+FORMAT:(TR1, A10)
+INPUT:'The quick brown fox jumps the lazy dog.'
+ The quick 
+FORMAT:(TR1, A10)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+ "It doesn'
+FORMAT:(TR1, A10)
+INPUT:''''''
+         ''
+FORMAT:(TR1, A25)
+INPUT:'The quick brown fox jumps the lazy dog.'
+ The quick brown fox jumps
+FORMAT:(TR1, A25)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+ "It doesn't matter anyway
+FORMAT:(TR1, A25)
+INPUT:''''''
+                        ''
+FORMAT:(TR1, A50)
+INPUT:'The quick brown fox jumps the lazy dog.'
+            The quick brown fox jumps the lazy dog.
+FORMAT:(TR1, A50)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+            "It doesn't matter anyway" - said Alice
+FORMAT:(TR1, A50)
+INPUT:''''''
+                                                 ''
+FORMAT:(TR1, A100)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                              The quick brown fox jumps the lazy dog.
+FORMAT:(TR1, A100)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                              "It doesn't matter anyway" - said Alice
+FORMAT:(TR1, A100)
+INPUT:''''''
+                                                                                                   ''
+FORMAT:(TR2, A)
+INPUT:'The quick brown fox jumps the lazy dog.'
+  The quick brown fox jumps the lazy dog.
+FORMAT:(TR2, A)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+  "It doesn't matter anyway" - said Alice
+FORMAT:(TR2, A)
+INPUT:''''''
+  ''
+FORMAT:(TR2, A1)
+INPUT:'The quick brown fox jumps the lazy dog.'
+  T
+FORMAT:(TR2, A1)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+  "
+FORMAT:(TR2, A1)
+INPUT:''''''
+  '
+FORMAT:(TR2, A2)
+INPUT:'The quick brown fox jumps the lazy dog.'
+  Th
+FORMAT:(TR2, A2)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+  "I
+FORMAT:(TR2, A2)
+INPUT:''''''
+  ''
+FORMAT:(TR2, A3)
+INPUT:'The quick brown fox jumps the lazy dog.'
+  The
+FORMAT:(TR2, A3)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+  "It
+FORMAT:(TR2, A3)
+INPUT:''''''
+   ''
+FORMAT:(TR2, A4)
+INPUT:'The quick brown fox jumps the lazy dog.'
+  The 
+FORMAT:(TR2, A4)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+  "It 
+FORMAT:(TR2, A4)
+INPUT:''''''
+    ''
+FORMAT:(TR2, A5)
+INPUT:'The quick brown fox jumps the lazy dog.'
+  The q
+FORMAT:(TR2, A5)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+  "It d
+FORMAT:(TR2, A5)
+INPUT:''''''
+     ''
+FORMAT:(TR2, A6)
+INPUT:'The quick brown fox jumps the lazy dog.'
+  The qu
+FORMAT:(TR2, A6)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+  "It do
+FORMAT:(TR2, A6)
+INPUT:''''''
+      ''
+FORMAT:(TR2, A7)
+INPUT:'The quick brown fox jumps the lazy dog.'
+  The qui
+FORMAT:(TR2, A7)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+  "It doe
+FORMAT:(TR2, A7)
+INPUT:''''''
+       ''
+FORMAT:(TR2, A8)
+INPUT:'The quick brown fox jumps the lazy dog.'
+  The quic
+FORMAT:(TR2, A8)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+  "It does
+FORMAT:(TR2, A8)
+INPUT:''''''
+        ''
+FORMAT:(TR2, A9)
+INPUT:'The quick brown fox jumps the lazy dog.'
+  The quick
+FORMAT:(TR2, A9)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+  "It doesn
+FORMAT:(TR2, A9)
+INPUT:''''''
+         ''
+FORMAT:(TR2, A10)
+INPUT:'The quick brown fox jumps the lazy dog.'
+  The quick 
+FORMAT:(TR2, A10)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+  "It doesn'
+FORMAT:(TR2, A10)
+INPUT:''''''
+          ''
+FORMAT:(TR2, A25)
+INPUT:'The quick brown fox jumps the lazy dog.'
+  The quick brown fox jumps
+FORMAT:(TR2, A25)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+  "It doesn't matter anyway
+FORMAT:(TR2, A25)
+INPUT:''''''
+                         ''
+FORMAT:(TR2, A50)
+INPUT:'The quick brown fox jumps the lazy dog.'
+             The quick brown fox jumps the lazy dog.
+FORMAT:(TR2, A50)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+             "It doesn't matter anyway" - said Alice
+FORMAT:(TR2, A50)
+INPUT:''''''
+                                                  ''
+FORMAT:(TR2, A100)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                               The quick brown fox jumps the lazy dog.
+FORMAT:(TR2, A100)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                               "It doesn't matter anyway" - said Alice
+FORMAT:(TR2, A100)
+INPUT:''''''
+                                                                                                    ''
+FORMAT:(TR3, A)
+INPUT:'The quick brown fox jumps the lazy dog.'
+   The quick brown fox jumps the lazy dog.
+FORMAT:(TR3, A)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+   "It doesn't matter anyway" - said Alice
+FORMAT:(TR3, A)
+INPUT:''''''
+   ''
+FORMAT:(TR3, A1)
+INPUT:'The quick brown fox jumps the lazy dog.'
+   T
+FORMAT:(TR3, A1)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+   "
+FORMAT:(TR3, A1)
+INPUT:''''''
+   '
+FORMAT:(TR3, A2)
+INPUT:'The quick brown fox jumps the lazy dog.'
+   Th
+FORMAT:(TR3, A2)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+   "I
+FORMAT:(TR3, A2)
+INPUT:''''''
+   ''
+FORMAT:(TR3, A3)
+INPUT:'The quick brown fox jumps the lazy dog.'
+   The
+FORMAT:(TR3, A3)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+   "It
+FORMAT:(TR3, A3)
+INPUT:''''''
+    ''
+FORMAT:(TR3, A4)
+INPUT:'The quick brown fox jumps the lazy dog.'
+   The 
+FORMAT:(TR3, A4)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+   "It 
+FORMAT:(TR3, A4)
+INPUT:''''''
+     ''
+FORMAT:(TR3, A5)
+INPUT:'The quick brown fox jumps the lazy dog.'
+   The q
+FORMAT:(TR3, A5)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+   "It d
+FORMAT:(TR3, A5)
+INPUT:''''''
+      ''
+FORMAT:(TR3, A6)
+INPUT:'The quick brown fox jumps the lazy dog.'
+   The qu
+FORMAT:(TR3, A6)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+   "It do
+FORMAT:(TR3, A6)
+INPUT:''''''
+       ''
+FORMAT:(TR3, A7)
+INPUT:'The quick brown fox jumps the lazy dog.'
+   The qui
+FORMAT:(TR3, A7)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+   "It doe
+FORMAT:(TR3, A7)
+INPUT:''''''
+        ''
+FORMAT:(TR3, A8)
+INPUT:'The quick brown fox jumps the lazy dog.'
+   The quic
+FORMAT:(TR3, A8)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+   "It does
+FORMAT:(TR3, A8)
+INPUT:''''''
+         ''
+FORMAT:(TR3, A9)
+INPUT:'The quick brown fox jumps the lazy dog.'
+   The quick
+FORMAT:(TR3, A9)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+   "It doesn
+FORMAT:(TR3, A9)
+INPUT:''''''
+          ''
+FORMAT:(TR3, A10)
+INPUT:'The quick brown fox jumps the lazy dog.'
+   The quick 
+FORMAT:(TR3, A10)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+   "It doesn'
+FORMAT:(TR3, A10)
+INPUT:''''''
+           ''
+FORMAT:(TR3, A25)
+INPUT:'The quick brown fox jumps the lazy dog.'
+   The quick brown fox jumps
+FORMAT:(TR3, A25)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+   "It doesn't matter anyway
+FORMAT:(TR3, A25)
+INPUT:''''''
+                          ''
+FORMAT:(TR3, A50)
+INPUT:'The quick brown fox jumps the lazy dog.'
+              The quick brown fox jumps the lazy dog.
+FORMAT:(TR3, A50)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+              "It doesn't matter anyway" - said Alice
+FORMAT:(TR3, A50)
+INPUT:''''''
+                                                   ''
+FORMAT:(TR3, A100)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                                The quick brown fox jumps the lazy dog.
+FORMAT:(TR3, A100)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                                "It doesn't matter anyway" - said Alice
+FORMAT:(TR3, A100)
+INPUT:''''''
+                                                                                                     ''
+FORMAT:(TR4, A)
+INPUT:'The quick brown fox jumps the lazy dog.'
+    The quick brown fox jumps the lazy dog.
+FORMAT:(TR4, A)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+    "It doesn't matter anyway" - said Alice
+FORMAT:(TR4, A)
+INPUT:''''''
+    ''
+FORMAT:(TR4, A1)
+INPUT:'The quick brown fox jumps the lazy dog.'
+    T
+FORMAT:(TR4, A1)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+    "
+FORMAT:(TR4, A1)
+INPUT:''''''
+    '
+FORMAT:(TR4, A2)
+INPUT:'The quick brown fox jumps the lazy dog.'
+    Th
+FORMAT:(TR4, A2)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+    "I
+FORMAT:(TR4, A2)
+INPUT:''''''
+    ''
+FORMAT:(TR4, A3)
+INPUT:'The quick brown fox jumps the lazy dog.'
+    The
+FORMAT:(TR4, A3)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+    "It
+FORMAT:(TR4, A3)
+INPUT:''''''
+     ''
+FORMAT:(TR4, A4)
+INPUT:'The quick brown fox jumps the lazy dog.'
+    The 
+FORMAT:(TR4, A4)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+    "It 
+FORMAT:(TR4, A4)
+INPUT:''''''
+      ''
+FORMAT:(TR4, A5)
+INPUT:'The quick brown fox jumps the lazy dog.'
+    The q
+FORMAT:(TR4, A5)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+    "It d
+FORMAT:(TR4, A5)
+INPUT:''''''
+       ''
+FORMAT:(TR4, A6)
+INPUT:'The quick brown fox jumps the lazy dog.'
+    The qu
+FORMAT:(TR4, A6)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+    "It do
+FORMAT:(TR4, A6)
+INPUT:''''''
+        ''
+FORMAT:(TR4, A7)
+INPUT:'The quick brown fox jumps the lazy dog.'
+    The qui
+FORMAT:(TR4, A7)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+    "It doe
+FORMAT:(TR4, A7)
+INPUT:''''''
+         ''
+FORMAT:(TR4, A8)
+INPUT:'The quick brown fox jumps the lazy dog.'
+    The quic
+FORMAT:(TR4, A8)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+    "It does
+FORMAT:(TR4, A8)
+INPUT:''''''
+          ''
+FORMAT:(TR4, A9)
+INPUT:'The quick brown fox jumps the lazy dog.'
+    The quick
+FORMAT:(TR4, A9)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+    "It doesn
+FORMAT:(TR4, A9)
+INPUT:''''''
+           ''
+FORMAT:(TR4, A10)
+INPUT:'The quick brown fox jumps the lazy dog.'
+    The quick 
+FORMAT:(TR4, A10)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+    "It doesn'
+FORMAT:(TR4, A10)
+INPUT:''''''
+            ''
+FORMAT:(TR4, A25)
+INPUT:'The quick brown fox jumps the lazy dog.'
+    The quick brown fox jumps
+FORMAT:(TR4, A25)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+    "It doesn't matter anyway
+FORMAT:(TR4, A25)
+INPUT:''''''
+                           ''
+FORMAT:(TR4, A50)
+INPUT:'The quick brown fox jumps the lazy dog.'
+               The quick brown fox jumps the lazy dog.
+FORMAT:(TR4, A50)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+               "It doesn't matter anyway" - said Alice
+FORMAT:(TR4, A50)
+INPUT:''''''
+                                                    ''
+FORMAT:(TR4, A100)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                                 The quick brown fox jumps the lazy dog.
+FORMAT:(TR4, A100)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                                 "It doesn't matter anyway" - said Alice
+FORMAT:(TR4, A100)
+INPUT:''''''
+                                                                                                      ''
+FORMAT:(TR5, A)
+INPUT:'The quick brown fox jumps the lazy dog.'
+     The quick brown fox jumps the lazy dog.
+FORMAT:(TR5, A)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+     "It doesn't matter anyway" - said Alice
+FORMAT:(TR5, A)
+INPUT:''''''
+     ''
+FORMAT:(TR5, A1)
+INPUT:'The quick brown fox jumps the lazy dog.'
+     T
+FORMAT:(TR5, A1)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+     "
+FORMAT:(TR5, A1)
+INPUT:''''''
+     '
+FORMAT:(TR5, A2)
+INPUT:'The quick brown fox jumps the lazy dog.'
+     Th
+FORMAT:(TR5, A2)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+     "I
+FORMAT:(TR5, A2)
+INPUT:''''''
+     ''
+FORMAT:(TR5, A3)
+INPUT:'The quick brown fox jumps the lazy dog.'
+     The
+FORMAT:(TR5, A3)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+     "It
+FORMAT:(TR5, A3)
+INPUT:''''''
+      ''
+FORMAT:(TR5, A4)
+INPUT:'The quick brown fox jumps the lazy dog.'
+     The 
+FORMAT:(TR5, A4)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+     "It 
+FORMAT:(TR5, A4)
+INPUT:''''''
+       ''
+FORMAT:(TR5, A5)
+INPUT:'The quick brown fox jumps the lazy dog.'
+     The q
+FORMAT:(TR5, A5)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+     "It d
+FORMAT:(TR5, A5)
+INPUT:''''''
+        ''
+FORMAT:(TR5, A6)
+INPUT:'The quick brown fox jumps the lazy dog.'
+     The qu
+FORMAT:(TR5, A6)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+     "It do
+FORMAT:(TR5, A6)
+INPUT:''''''
+         ''
+FORMAT:(TR5, A7)
+INPUT:'The quick brown fox jumps the lazy dog.'
+     The qui
+FORMAT:(TR5, A7)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+     "It doe
+FORMAT:(TR5, A7)
+INPUT:''''''
+          ''
+FORMAT:(TR5, A8)
+INPUT:'The quick brown fox jumps the lazy dog.'
+     The quic
+FORMAT:(TR5, A8)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+     "It does
+FORMAT:(TR5, A8)
+INPUT:''''''
+           ''
+FORMAT:(TR5, A9)
+INPUT:'The quick brown fox jumps the lazy dog.'
+     The quick
+FORMAT:(TR5, A9)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+     "It doesn
+FORMAT:(TR5, A9)
+INPUT:''''''
+            ''
+FORMAT:(TR5, A10)
+INPUT:'The quick brown fox jumps the lazy dog.'
+     The quick 
+FORMAT:(TR5, A10)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+     "It doesn'
+FORMAT:(TR5, A10)
+INPUT:''''''
+             ''
+FORMAT:(TR5, A25)
+INPUT:'The quick brown fox jumps the lazy dog.'
+     The quick brown fox jumps
+FORMAT:(TR5, A25)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+     "It doesn't matter anyway
+FORMAT:(TR5, A25)
+INPUT:''''''
+                            ''
+FORMAT:(TR5, A50)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                The quick brown fox jumps the lazy dog.
+FORMAT:(TR5, A50)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                "It doesn't matter anyway" - said Alice
+FORMAT:(TR5, A50)
+INPUT:''''''
+                                                     ''
+FORMAT:(TR5, A100)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                                  The quick brown fox jumps the lazy dog.
+FORMAT:(TR5, A100)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                                  "It doesn't matter anyway" - said Alice
+FORMAT:(TR5, A100)
+INPUT:''''''
+                                                                                                       ''
+FORMAT:(TR6, A)
+INPUT:'The quick brown fox jumps the lazy dog.'
+      The quick brown fox jumps the lazy dog.
+FORMAT:(TR6, A)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+      "It doesn't matter anyway" - said Alice
+FORMAT:(TR6, A)
+INPUT:''''''
+      ''
+FORMAT:(TR6, A1)
+INPUT:'The quick brown fox jumps the lazy dog.'
+      T
+FORMAT:(TR6, A1)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+      "
+FORMAT:(TR6, A1)
+INPUT:''''''
+      '
+FORMAT:(TR6, A2)
+INPUT:'The quick brown fox jumps the lazy dog.'
+      Th
+FORMAT:(TR6, A2)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+      "I
+FORMAT:(TR6, A2)
+INPUT:''''''
+      ''
+FORMAT:(TR6, A3)
+INPUT:'The quick brown fox jumps the lazy dog.'
+      The
+FORMAT:(TR6, A3)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+      "It
+FORMAT:(TR6, A3)
+INPUT:''''''
+       ''
+FORMAT:(TR6, A4)
+INPUT:'The quick brown fox jumps the lazy dog.'
+      The 
+FORMAT:(TR6, A4)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+      "It 
+FORMAT:(TR6, A4)
+INPUT:''''''
+        ''
+FORMAT:(TR6, A5)
+INPUT:'The quick brown fox jumps the lazy dog.'
+      The q
+FORMAT:(TR6, A5)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+      "It d
+FORMAT:(TR6, A5)
+INPUT:''''''
+         ''
+FORMAT:(TR6, A6)
+INPUT:'The quick brown fox jumps the lazy dog.'
+      The qu
+FORMAT:(TR6, A6)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+      "It do
+FORMAT:(TR6, A6)
+INPUT:''''''
+          ''
+FORMAT:(TR6, A7)
+INPUT:'The quick brown fox jumps the lazy dog.'
+      The qui
+FORMAT:(TR6, A7)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+      "It doe
+FORMAT:(TR6, A7)
+INPUT:''''''
+           ''
+FORMAT:(TR6, A8)
+INPUT:'The quick brown fox jumps the lazy dog.'
+      The quic
+FORMAT:(TR6, A8)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+      "It does
+FORMAT:(TR6, A8)
+INPUT:''''''
+            ''
+FORMAT:(TR6, A9)
+INPUT:'The quick brown fox jumps the lazy dog.'
+      The quick
+FORMAT:(TR6, A9)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+      "It doesn
+FORMAT:(TR6, A9)
+INPUT:''''''
+             ''
+FORMAT:(TR6, A10)
+INPUT:'The quick brown fox jumps the lazy dog.'
+      The quick 
+FORMAT:(TR6, A10)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+      "It doesn'
+FORMAT:(TR6, A10)
+INPUT:''''''
+              ''
+FORMAT:(TR6, A25)
+INPUT:'The quick brown fox jumps the lazy dog.'
+      The quick brown fox jumps
+FORMAT:(TR6, A25)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+      "It doesn't matter anyway
+FORMAT:(TR6, A25)
+INPUT:''''''
+                             ''
+FORMAT:(TR6, A50)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                 The quick brown fox jumps the lazy dog.
+FORMAT:(TR6, A50)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                 "It doesn't matter anyway" - said Alice
+FORMAT:(TR6, A50)
+INPUT:''''''
+                                                      ''
+FORMAT:(TR6, A100)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                                   The quick brown fox jumps the lazy dog.
+FORMAT:(TR6, A100)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                                   "It doesn't matter anyway" - said Alice
+FORMAT:(TR6, A100)
+INPUT:''''''
+                                                                                                        ''
+FORMAT:(TR7, A)
+INPUT:'The quick brown fox jumps the lazy dog.'
+       The quick brown fox jumps the lazy dog.
+FORMAT:(TR7, A)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+       "It doesn't matter anyway" - said Alice
+FORMAT:(TR7, A)
+INPUT:''''''
+       ''
+FORMAT:(TR7, A1)
+INPUT:'The quick brown fox jumps the lazy dog.'
+       T
+FORMAT:(TR7, A1)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+       "
+FORMAT:(TR7, A1)
+INPUT:''''''
+       '
+FORMAT:(TR7, A2)
+INPUT:'The quick brown fox jumps the lazy dog.'
+       Th
+FORMAT:(TR7, A2)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+       "I
+FORMAT:(TR7, A2)
+INPUT:''''''
+       ''
+FORMAT:(TR7, A3)
+INPUT:'The quick brown fox jumps the lazy dog.'
+       The
+FORMAT:(TR7, A3)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+       "It
+FORMAT:(TR7, A3)
+INPUT:''''''
+        ''
+FORMAT:(TR7, A4)
+INPUT:'The quick brown fox jumps the lazy dog.'
+       The 
+FORMAT:(TR7, A4)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+       "It 
+FORMAT:(TR7, A4)
+INPUT:''''''
+         ''
+FORMAT:(TR7, A5)
+INPUT:'The quick brown fox jumps the lazy dog.'
+       The q
+FORMAT:(TR7, A5)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+       "It d
+FORMAT:(TR7, A5)
+INPUT:''''''
+          ''
+FORMAT:(TR7, A6)
+INPUT:'The quick brown fox jumps the lazy dog.'
+       The qu
+FORMAT:(TR7, A6)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+       "It do
+FORMAT:(TR7, A6)
+INPUT:''''''
+           ''
+FORMAT:(TR7, A7)
+INPUT:'The quick brown fox jumps the lazy dog.'
+       The qui
+FORMAT:(TR7, A7)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+       "It doe
+FORMAT:(TR7, A7)
+INPUT:''''''
+            ''
+FORMAT:(TR7, A8)
+INPUT:'The quick brown fox jumps the lazy dog.'
+       The quic
+FORMAT:(TR7, A8)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+       "It does
+FORMAT:(TR7, A8)
+INPUT:''''''
+             ''
+FORMAT:(TR7, A9)
+INPUT:'The quick brown fox jumps the lazy dog.'
+       The quick
+FORMAT:(TR7, A9)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+       "It doesn
+FORMAT:(TR7, A9)
+INPUT:''''''
+              ''
+FORMAT:(TR7, A10)
+INPUT:'The quick brown fox jumps the lazy dog.'
+       The quick 
+FORMAT:(TR7, A10)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+       "It doesn'
+FORMAT:(TR7, A10)
+INPUT:''''''
+               ''
+FORMAT:(TR7, A25)
+INPUT:'The quick brown fox jumps the lazy dog.'
+       The quick brown fox jumps
+FORMAT:(TR7, A25)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+       "It doesn't matter anyway
+FORMAT:(TR7, A25)
+INPUT:''''''
+                              ''
+FORMAT:(TR7, A50)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                  The quick brown fox jumps the lazy dog.
+FORMAT:(TR7, A50)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                  "It doesn't matter anyway" - said Alice
+FORMAT:(TR7, A50)
+INPUT:''''''
+                                                       ''
+FORMAT:(TR7, A100)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                                    The quick brown fox jumps the lazy dog.
+FORMAT:(TR7, A100)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                                    "It doesn't matter anyway" - said Alice
+FORMAT:(TR7, A100)
+INPUT:''''''
+                                                                                                         ''
+FORMAT:(TR8, A)
+INPUT:'The quick brown fox jumps the lazy dog.'
+        The quick brown fox jumps the lazy dog.
+FORMAT:(TR8, A)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+        "It doesn't matter anyway" - said Alice
+FORMAT:(TR8, A)
+INPUT:''''''
+        ''
+FORMAT:(TR8, A1)
+INPUT:'The quick brown fox jumps the lazy dog.'
+        T
+FORMAT:(TR8, A1)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+        "
+FORMAT:(TR8, A1)
+INPUT:''''''
+        '
+FORMAT:(TR8, A2)
+INPUT:'The quick brown fox jumps the lazy dog.'
+        Th
+FORMAT:(TR8, A2)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+        "I
+FORMAT:(TR8, A2)
+INPUT:''''''
+        ''
+FORMAT:(TR8, A3)
+INPUT:'The quick brown fox jumps the lazy dog.'
+        The
+FORMAT:(TR8, A3)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+        "It
+FORMAT:(TR8, A3)
+INPUT:''''''
+         ''
+FORMAT:(TR8, A4)
+INPUT:'The quick brown fox jumps the lazy dog.'
+        The 
+FORMAT:(TR8, A4)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+        "It 
+FORMAT:(TR8, A4)
+INPUT:''''''
+          ''
+FORMAT:(TR8, A5)
+INPUT:'The quick brown fox jumps the lazy dog.'
+        The q
+FORMAT:(TR8, A5)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+        "It d
+FORMAT:(TR8, A5)
+INPUT:''''''
+           ''
+FORMAT:(TR8, A6)
+INPUT:'The quick brown fox jumps the lazy dog.'
+        The qu
+FORMAT:(TR8, A6)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+        "It do
+FORMAT:(TR8, A6)
+INPUT:''''''
+            ''
+FORMAT:(TR8, A7)
+INPUT:'The quick brown fox jumps the lazy dog.'
+        The qui
+FORMAT:(TR8, A7)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+        "It doe
+FORMAT:(TR8, A7)
+INPUT:''''''
+             ''
+FORMAT:(TR8, A8)
+INPUT:'The quick brown fox jumps the lazy dog.'
+        The quic
+FORMAT:(TR8, A8)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+        "It does
+FORMAT:(TR8, A8)
+INPUT:''''''
+              ''
+FORMAT:(TR8, A9)
+INPUT:'The quick brown fox jumps the lazy dog.'
+        The quick
+FORMAT:(TR8, A9)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+        "It doesn
+FORMAT:(TR8, A9)
+INPUT:''''''
+               ''
+FORMAT:(TR8, A10)
+INPUT:'The quick brown fox jumps the lazy dog.'
+        The quick 
+FORMAT:(TR8, A10)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+        "It doesn'
+FORMAT:(TR8, A10)
+INPUT:''''''
+                ''
+FORMAT:(TR8, A25)
+INPUT:'The quick brown fox jumps the lazy dog.'
+        The quick brown fox jumps
+FORMAT:(TR8, A25)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+        "It doesn't matter anyway
+FORMAT:(TR8, A25)
+INPUT:''''''
+                               ''
+FORMAT:(TR8, A50)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                   The quick brown fox jumps the lazy dog.
+FORMAT:(TR8, A50)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                   "It doesn't matter anyway" - said Alice
+FORMAT:(TR8, A50)
+INPUT:''''''
+                                                        ''
+FORMAT:(TR8, A100)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                                     The quick brown fox jumps the lazy dog.
+FORMAT:(TR8, A100)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                                     "It doesn't matter anyway" - said Alice
+FORMAT:(TR8, A100)
+INPUT:''''''
+                                                                                                          ''
+FORMAT:(TR9, A)
+INPUT:'The quick brown fox jumps the lazy dog.'
+         The quick brown fox jumps the lazy dog.
+FORMAT:(TR9, A)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+         "It doesn't matter anyway" - said Alice
+FORMAT:(TR9, A)
+INPUT:''''''
+         ''
+FORMAT:(TR9, A1)
+INPUT:'The quick brown fox jumps the lazy dog.'
+         T
+FORMAT:(TR9, A1)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+         "
+FORMAT:(TR9, A1)
+INPUT:''''''
+         '
+FORMAT:(TR9, A2)
+INPUT:'The quick brown fox jumps the lazy dog.'
+         Th
+FORMAT:(TR9, A2)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+         "I
+FORMAT:(TR9, A2)
+INPUT:''''''
+         ''
+FORMAT:(TR9, A3)
+INPUT:'The quick brown fox jumps the lazy dog.'
+         The
+FORMAT:(TR9, A3)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+         "It
+FORMAT:(TR9, A3)
+INPUT:''''''
+          ''
+FORMAT:(TR9, A4)
+INPUT:'The quick brown fox jumps the lazy dog.'
+         The 
+FORMAT:(TR9, A4)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+         "It 
+FORMAT:(TR9, A4)
+INPUT:''''''
+           ''
+FORMAT:(TR9, A5)
+INPUT:'The quick brown fox jumps the lazy dog.'
+         The q
+FORMAT:(TR9, A5)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+         "It d
+FORMAT:(TR9, A5)
+INPUT:''''''
+            ''
+FORMAT:(TR9, A6)
+INPUT:'The quick brown fox jumps the lazy dog.'
+         The qu
+FORMAT:(TR9, A6)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+         "It do
+FORMAT:(TR9, A6)
+INPUT:''''''
+             ''
+FORMAT:(TR9, A7)
+INPUT:'The quick brown fox jumps the lazy dog.'
+         The qui
+FORMAT:(TR9, A7)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+         "It doe
+FORMAT:(TR9, A7)
+INPUT:''''''
+              ''
+FORMAT:(TR9, A8)
+INPUT:'The quick brown fox jumps the lazy dog.'
+         The quic
+FORMAT:(TR9, A8)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+         "It does
+FORMAT:(TR9, A8)
+INPUT:''''''
+               ''
+FORMAT:(TR9, A9)
+INPUT:'The quick brown fox jumps the lazy dog.'
+         The quick
+FORMAT:(TR9, A9)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+         "It doesn
+FORMAT:(TR9, A9)
+INPUT:''''''
+                ''
+FORMAT:(TR9, A10)
+INPUT:'The quick brown fox jumps the lazy dog.'
+         The quick 
+FORMAT:(TR9, A10)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+         "It doesn'
+FORMAT:(TR9, A10)
+INPUT:''''''
+                 ''
+FORMAT:(TR9, A25)
+INPUT:'The quick brown fox jumps the lazy dog.'
+         The quick brown fox jumps
+FORMAT:(TR9, A25)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+         "It doesn't matter anyway
+FORMAT:(TR9, A25)
+INPUT:''''''
+                                ''
+FORMAT:(TR9, A50)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                    The quick brown fox jumps the lazy dog.
+FORMAT:(TR9, A50)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                    "It doesn't matter anyway" - said Alice
+FORMAT:(TR9, A50)
+INPUT:''''''
+                                                         ''
+FORMAT:(TR9, A100)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                                      The quick brown fox jumps the lazy dog.
+FORMAT:(TR9, A100)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                                      "It doesn't matter anyway" - said Alice
+FORMAT:(TR9, A100)
+INPUT:''''''
+                                                                                                           ''
+FORMAT:(TR10, A)
+INPUT:'The quick brown fox jumps the lazy dog.'
+          The quick brown fox jumps the lazy dog.
+FORMAT:(TR10, A)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+          "It doesn't matter anyway" - said Alice
+FORMAT:(TR10, A)
+INPUT:''''''
+          ''
+FORMAT:(TR10, A1)
+INPUT:'The quick brown fox jumps the lazy dog.'
+          T
+FORMAT:(TR10, A1)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+          "
+FORMAT:(TR10, A1)
+INPUT:''''''
+          '
+FORMAT:(TR10, A2)
+INPUT:'The quick brown fox jumps the lazy dog.'
+          Th
+FORMAT:(TR10, A2)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+          "I
+FORMAT:(TR10, A2)
+INPUT:''''''
+          ''
+FORMAT:(TR10, A3)
+INPUT:'The quick brown fox jumps the lazy dog.'
+          The
+FORMAT:(TR10, A3)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+          "It
+FORMAT:(TR10, A3)
+INPUT:''''''
+           ''
+FORMAT:(TR10, A4)
+INPUT:'The quick brown fox jumps the lazy dog.'
+          The 
+FORMAT:(TR10, A4)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+          "It 
+FORMAT:(TR10, A4)
+INPUT:''''''
+            ''
+FORMAT:(TR10, A5)
+INPUT:'The quick brown fox jumps the lazy dog.'
+          The q
+FORMAT:(TR10, A5)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+          "It d
+FORMAT:(TR10, A5)
+INPUT:''''''
+             ''
+FORMAT:(TR10, A6)
+INPUT:'The quick brown fox jumps the lazy dog.'
+          The qu
+FORMAT:(TR10, A6)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+          "It do
+FORMAT:(TR10, A6)
+INPUT:''''''
+              ''
+FORMAT:(TR10, A7)
+INPUT:'The quick brown fox jumps the lazy dog.'
+          The qui
+FORMAT:(TR10, A7)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+          "It doe
+FORMAT:(TR10, A7)
+INPUT:''''''
+               ''
+FORMAT:(TR10, A8)
+INPUT:'The quick brown fox jumps the lazy dog.'
+          The quic
+FORMAT:(TR10, A8)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+          "It does
+FORMAT:(TR10, A8)
+INPUT:''''''
+                ''
+FORMAT:(TR10, A9)
+INPUT:'The quick brown fox jumps the lazy dog.'
+          The quick
+FORMAT:(TR10, A9)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+          "It doesn
+FORMAT:(TR10, A9)
+INPUT:''''''
+                 ''
+FORMAT:(TR10, A10)
+INPUT:'The quick brown fox jumps the lazy dog.'
+          The quick 
+FORMAT:(TR10, A10)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+          "It doesn'
+FORMAT:(TR10, A10)
+INPUT:''''''
+                  ''
+FORMAT:(TR10, A25)
+INPUT:'The quick brown fox jumps the lazy dog.'
+          The quick brown fox jumps
+FORMAT:(TR10, A25)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+          "It doesn't matter anyway
+FORMAT:(TR10, A25)
+INPUT:''''''
+                                 ''
+FORMAT:(TR10, A50)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                     The quick brown fox jumps the lazy dog.
+FORMAT:(TR10, A50)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                     "It doesn't matter anyway" - said Alice
+FORMAT:(TR10, A50)
+INPUT:''''''
+                                                          ''
+FORMAT:(TR10, A100)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                                       The quick brown fox jumps the lazy dog.
+FORMAT:(TR10, A100)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                                       "It doesn't matter anyway" - said Alice
+FORMAT:(TR10, A100)
+INPUT:''''''
+                                                                                                            ''
+FORMAT:(TR25, A)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                         The quick brown fox jumps the lazy dog.
+FORMAT:(TR25, A)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                         "It doesn't matter anyway" - said Alice
+FORMAT:(TR25, A)
+INPUT:''''''
+                         ''
+FORMAT:(TR25, A1)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                         T
+FORMAT:(TR25, A1)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                         "
+FORMAT:(TR25, A1)
+INPUT:''''''
+                         '
+FORMAT:(TR25, A2)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                         Th
+FORMAT:(TR25, A2)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                         "I
+FORMAT:(TR25, A2)
+INPUT:''''''
+                         ''
+FORMAT:(TR25, A3)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                         The
+FORMAT:(TR25, A3)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                         "It
+FORMAT:(TR25, A3)
+INPUT:''''''
+                          ''
+FORMAT:(TR25, A4)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                         The 
+FORMAT:(TR25, A4)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                         "It 
+FORMAT:(TR25, A4)
+INPUT:''''''
+                           ''
+FORMAT:(TR25, A5)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                         The q
+FORMAT:(TR25, A5)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                         "It d
+FORMAT:(TR25, A5)
+INPUT:''''''
+                            ''
+FORMAT:(TR25, A6)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                         The qu
+FORMAT:(TR25, A6)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                         "It do
+FORMAT:(TR25, A6)
+INPUT:''''''
+                             ''
+FORMAT:(TR25, A7)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                         The qui
+FORMAT:(TR25, A7)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                         "It doe
+FORMAT:(TR25, A7)
+INPUT:''''''
+                              ''
+FORMAT:(TR25, A8)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                         The quic
+FORMAT:(TR25, A8)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                         "It does
+FORMAT:(TR25, A8)
+INPUT:''''''
+                               ''
+FORMAT:(TR25, A9)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                         The quick
+FORMAT:(TR25, A9)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                         "It doesn
+FORMAT:(TR25, A9)
+INPUT:''''''
+                                ''
+FORMAT:(TR25, A10)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                         The quick 
+FORMAT:(TR25, A10)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                         "It doesn'
+FORMAT:(TR25, A10)
+INPUT:''''''
+                                 ''
+FORMAT:(TR25, A25)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                         The quick brown fox jumps
+FORMAT:(TR25, A25)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                         "It doesn't matter anyway
+FORMAT:(TR25, A25)
+INPUT:''''''
+                                                ''
+FORMAT:(TR25, A50)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                    The quick brown fox jumps the lazy dog.
+FORMAT:(TR25, A50)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                    "It doesn't matter anyway" - said Alice
+FORMAT:(TR25, A50)
+INPUT:''''''
+                                                                         ''
+FORMAT:(TR25, A100)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                                                      The quick brown fox jumps the lazy dog.
+FORMAT:(TR25, A100)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                                                      "It doesn't matter anyway" - said Alice
+FORMAT:(TR25, A100)
+INPUT:''''''
+                                                                                                                           ''
+FORMAT:(TR50, A)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                  The quick brown fox jumps the lazy dog.
+FORMAT:(TR50, A)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                  "It doesn't matter anyway" - said Alice
+FORMAT:(TR50, A)
+INPUT:''''''
+                                                  ''
+FORMAT:(TR50, A1)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                  T
+FORMAT:(TR50, A1)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                  "
+FORMAT:(TR50, A1)
+INPUT:''''''
+                                                  '
+FORMAT:(TR50, A2)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                  Th
+FORMAT:(TR50, A2)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                  "I
+FORMAT:(TR50, A2)
+INPUT:''''''
+                                                  ''
+FORMAT:(TR50, A3)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                  The
+FORMAT:(TR50, A3)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                  "It
+FORMAT:(TR50, A3)
+INPUT:''''''
+                                                   ''
+FORMAT:(TR50, A4)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                  The 
+FORMAT:(TR50, A4)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                  "It 
+FORMAT:(TR50, A4)
+INPUT:''''''
+                                                    ''
+FORMAT:(TR50, A5)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                  The q
+FORMAT:(TR50, A5)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                  "It d
+FORMAT:(TR50, A5)
+INPUT:''''''
+                                                     ''
+FORMAT:(TR50, A6)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                  The qu
+FORMAT:(TR50, A6)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                  "It do
+FORMAT:(TR50, A6)
+INPUT:''''''
+                                                      ''
+FORMAT:(TR50, A7)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                  The qui
+FORMAT:(TR50, A7)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                  "It doe
+FORMAT:(TR50, A7)
+INPUT:''''''
+                                                       ''
+FORMAT:(TR50, A8)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                  The quic
+FORMAT:(TR50, A8)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                  "It does
+FORMAT:(TR50, A8)
+INPUT:''''''
+                                                        ''
+FORMAT:(TR50, A9)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                  The quick
+FORMAT:(TR50, A9)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                  "It doesn
+FORMAT:(TR50, A9)
+INPUT:''''''
+                                                         ''
+FORMAT:(TR50, A10)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                  The quick 
+FORMAT:(TR50, A10)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                  "It doesn'
+FORMAT:(TR50, A10)
+INPUT:''''''
+                                                          ''
+FORMAT:(TR50, A25)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                  The quick brown fox jumps
+FORMAT:(TR50, A25)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                  "It doesn't matter anyway
+FORMAT:(TR50, A25)
+INPUT:''''''
+                                                                         ''
+FORMAT:(TR50, A50)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                             The quick brown fox jumps the lazy dog.
+FORMAT:(TR50, A50)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                             "It doesn't matter anyway" - said Alice
+FORMAT:(TR50, A50)
+INPUT:''''''
+                                                                                                  ''
+FORMAT:(TR50, A100)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                                                                               The quick brown fox jumps the lazy dog.
+FORMAT:(TR50, A100)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                                                                               "It doesn't matter anyway" - said Alice
+FORMAT:(TR50, A100)
+INPUT:''''''
+                                                                                                                                                    ''
+FORMAT:(TR100, A)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                                                                    The quick brown fox jumps the lazy dog.
+FORMAT:(TR100, A)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                                                                    "It doesn't matter anyway" - said Alice
+FORMAT:(TR100, A)
+INPUT:''''''
+                                                                                                    ''
+FORMAT:(TR100, A1)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                                                                    T
+FORMAT:(TR100, A1)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                                                                    "
+FORMAT:(TR100, A1)
+INPUT:''''''
+                                                                                                    '
+FORMAT:(TR100, A2)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                                                                    Th
+FORMAT:(TR100, A2)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                                                                    "I
+FORMAT:(TR100, A2)
+INPUT:''''''
+                                                                                                    ''
+FORMAT:(TR100, A3)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                                                                    The
+FORMAT:(TR100, A3)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                                                                    "It
+FORMAT:(TR100, A3)
+INPUT:''''''
+                                                                                                     ''
+FORMAT:(TR100, A4)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                                                                    The 
+FORMAT:(TR100, A4)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                                                                    "It 
+FORMAT:(TR100, A4)
+INPUT:''''''
+                                                                                                      ''
+FORMAT:(TR100, A5)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                                                                    The q
+FORMAT:(TR100, A5)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                                                                    "It d
+FORMAT:(TR100, A5)
+INPUT:''''''
+                                                                                                       ''
+FORMAT:(TR100, A6)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                                                                    The qu
+FORMAT:(TR100, A6)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                                                                    "It do
+FORMAT:(TR100, A6)
+INPUT:''''''
+                                                                                                        ''
+FORMAT:(TR100, A7)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                                                                    The qui
+FORMAT:(TR100, A7)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                                                                    "It doe
+FORMAT:(TR100, A7)
+INPUT:''''''
+                                                                                                         ''
+FORMAT:(TR100, A8)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                                                                    The quic
+FORMAT:(TR100, A8)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                                                                    "It does
+FORMAT:(TR100, A8)
+INPUT:''''''
+                                                                                                          ''
+FORMAT:(TR100, A9)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                                                                    The quick
+FORMAT:(TR100, A9)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                                                                    "It doesn
+FORMAT:(TR100, A9)
+INPUT:''''''
+                                                                                                           ''
+FORMAT:(TR100, A10)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                                                                    The quick 
+FORMAT:(TR100, A10)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                                                                    "It doesn'
+FORMAT:(TR100, A10)
+INPUT:''''''
+                                                                                                            ''
+FORMAT:(TR100, A25)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                                                                    The quick brown fox jumps
+FORMAT:(TR100, A25)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                                                                    "It doesn't matter anyway
+FORMAT:(TR100, A25)
+INPUT:''''''
+                                                                                                                           ''
+FORMAT:(TR100, A50)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                                                                               The quick brown fox jumps the lazy dog.
+FORMAT:(TR100, A50)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                                                                               "It doesn't matter anyway" - said Alice
+FORMAT:(TR100, A50)
+INPUT:''''''
+                                                                                                                                                    ''
+FORMAT:(TR100, A100)
+INPUT:'The quick brown fox jumps the lazy dog.'
+                                                                                                                                                                 The quick brown fox jumps the lazy dog.
+FORMAT:(TR100, A100)
+INPUT:'"It doesn''t matter anyway" - said Alice'
+                                                                                                                                                                 "It doesn't matter anyway" - said Alice
+FORMAT:(TR100, A100)
+INPUT:''''''
+                                                                                                                                                                                                      ''
