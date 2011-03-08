@@ -1,7 +1,6 @@
 from _lexer import Token
 from _edit_descriptors import *
 from _exceptions import *
-import pdb
 
 def parser(tokens, version=None):
     # Parse the full edit descriptors

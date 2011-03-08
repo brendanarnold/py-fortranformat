@@ -1,7 +1,7 @@
 import math
 import itertools
 from _edit_descriptors import *
-import misc
+from _misc import expand_edit_descriptors, has_next_iterator
 import sys
 
 SIGN_ZERO = False # Show a sign at all for zero?
@@ -36,11 +36,11 @@ def output(eds, reversion_eds, values):
             reversion_contains_output_ed = True
             break
     # Get full list of edit descriptors
-    eds = misc.expand_edit_descriptors(eds)
-    reversion_eds = misc.expand_edit_descriptors(reversion_eds)
+    eds = expand_edit_descriptors(eds)
+    reversion_eds = expand_edit_descriptors(reversion_eds)
     # use iterators
-    get_ed = misc.has_next_iterator(eds)
-    get_value = misc.has_next_iterator(values)
+    get_ed = has_next_iterator(eds)
+    get_value = has_next_iterator(values)
     get_reversion_ed = itertools.cycle(reversion_eds)
     # continue until out of edit descriptors or values
     while True:
@@ -1029,5 +1029,5 @@ if __name__ == '__main__':
     else:
         e, res = parser(lexer('''(3B10.0)'''))
         vals = [-0]
-        print "[" + output(e, res, vals) + "]"
+        #print "[" + output(e, res, vals) + "]"
 

@@ -1,6 +1,6 @@
 from _edit_descriptors import *
 import re
-import misc
+from _misc import expand_edit_descriptors, has_next_iterator
 
 WIDTH_OPTIONAL_EDS = [A]
 NON_WIDTH_EDS = [BN, BZ, P, SP, SS, S, X, T, TR, TL, Colon, Slash]
@@ -31,8 +31,8 @@ def input(eds, reversion_eds, records, num_vals=None):
     }
     
     # Expand repeated edit decriptors
-    eds = misc.expand_edit_descriptors(eds)
-    reversion_eds = misc.expand_edit_descriptors(reversion_eds)
+    eds = expand_edit_descriptors(eds)
+    reversion_eds = expand_edit_descriptors(reversion_eds)
     # Assume one-to-one correspondance between edit descriptors and output
     # values if number of output values is not defined 
     num_out_eds = 0

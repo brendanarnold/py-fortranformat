@@ -9,3 +9,4 @@ glob:*.f
 glob:tests/autogen/build-input-tests/*
 glob:tests/autogen/build-output-tests/*
 glob:*.pytest
+glob:*.bak

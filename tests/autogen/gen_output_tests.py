@@ -580,10 +580,10 @@ def product(*args, **kwds):
 
 if __name__ == '__main__':
     import sys
-    # compile_str = sys.argv[1]
+    compile_str = sys.argv[1]
     gen_tests()
-    # compile_tests(compile_str)
-    # execute_tests()
+    compile_tests(compile_str)
+    execute_tests()
     # write_py_source()
     # output_calling_code()
 

@@ -502,6 +502,8 @@ class %sEditDescriptorBatch%dTestCase(unittest.TestCase):
                 else:
                     result = result + line
         in_fh.close()
+        # Write the calling code
+        out_fh.write('''\n\nif __name__ == '__main__':\n    unittest.main()''')
         out_fh.close()
 
 
@@ -673,7 +675,7 @@ def product(*args, **kwds):
 
 if __name__ == '__main__':
     import sys
-    # compile_str = sys.argv[1]
+    compile_str = sys.argv[1]
     # gen_tests()
     # compile_tests(compile_str)
     # execute_tests()
