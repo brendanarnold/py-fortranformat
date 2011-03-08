@@ -150,7 +150,7 @@ def input(eds, reversion_eds, records, num_vals=None):
                     continue
             vals.append(val)
         elif isinstance(ed, A):
-            vals.append(substr.rjust(PROC_PAD_CHAR))
+            vals.append(substr.rjust(ed.width, PROC_PAD_CHAR))
         elif isinstance(ed, L):
             # Remove preceding whitespace and take the first two letters as
             # uppercase for testing

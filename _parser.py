@@ -347,12 +347,12 @@ def _remove_outer_parens(tokens):
 
 # Run some tests if run as a script
 
-if __name__ == '__main__':
-    import doctest
-    import os
-    from _lexer import lexer
-    globs = {'lexer' : lexer, 'parser' : parser}
-    # Need to normalize whitespace since pasting into VIM converts tabs to
-    # spaces
-    doctest.testfile(os.path.join('tests', 'parser_test.txt'), \
-        globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+#if __name__ == '__main__':
+#    import doctest
+#    import os
+#    from _lexer import lexer
+#    globs = {'lexer' : lexer, 'parser' : parser}
+#    # Need to normalize whitespace since pasting into VIM converts tabs to
+#    # spaces
+#    doctest.testfile(os.path.join('tests', 'parser_test.txt'), \
+#        globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)

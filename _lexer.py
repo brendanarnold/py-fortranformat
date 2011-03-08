@@ -166,11 +166,11 @@ class Token(object):
 
 # Do some testing when run as a module
 
-if __name__ == '__main__':
-    import doctest
-    import os
-    globs = {'lexer' : lexer}
-    # Need to normalize whitespace since pasting into VIM converts tabs to
-    # spaces
-    doctest.testfile(os.path.join('tests', 'lexer_test.txt'), \
-        globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
+#if __name__ == '__main__':
+#    import doctest
+#    import os
+#    globs = {'lexer' : lexer}
+#    # Need to normalize whitespace since pasting into VIM converts tabs to
+#    # spaces
+#    doctest.testfile(os.path.join('tests', 'lexer_test.txt'), \
+#        globs=globs, optionflags=doctest.NORMALIZE_WHITESPACE)
