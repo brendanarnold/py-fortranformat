@@ -14,9 +14,12 @@ OUTPUT_EDS = ['A', 'B', 'D', 'EN', 'ES', 'E', 'F', 'G', 'I', 'L', 'O', 'Z', 'Sla
 SOURCE_FILESTEM = '%s-ed-input-%d.f'
 EXECUTABLE_FILESTEM = '%s-ed-input-%d.exe'
 RESULT_FILESTEM = '%s-ed-input-%d.test'
-DOCTEST_FILESTEM = '%s-input-test-%d.pytest'
+DOCTEST_FILESTEM = '%s-input-test-%d.py'
 BUILD_DIR = r'build-input-tests'
 BATCH_SIZE = 1000 # Batch up tests to avoid 'out of memory' errors on compilation
+
+
+
 
 I = dict()
 I['formats'] = [
@@ -426,83 +429,73 @@ def output_calling_code():
         
 
 def write_py_source():
-    '''Converts the test output to a doctestable text file'''
+    '''Converts the tests outputs to nosetestable files'''
     for batch, name in filenames():
         doctest_filename = DOCTEST_FILESTEM % (name, batch)
         filename = os.path.join(BUILD_DIR, RESULT_FILESTEM % (name, batch))
         out_fh = open(doctest_filename, 'w')
         print 'Pythonising %s into %s ...' % (filename, doctest_filename)
         in_fh = open(filename, 'r')
-        out_fh.write('''>>> i = I()
->>> i.width = 30
->>> a = A()
->>> e = E()
->>> e.width = 30
->>> e.decimal_places = 16
->>> e.exponent = 4
->>> def print_val(val, ed):
-...     if len(val):
-...         print '[' + output([ed], [ed], val[0]) + ']'
-...     else:
-...         print '[]'
-''')
+        out_fh.write('''
+import sys
+import os
+import unittest
+
+sys.path.append(os.path.join('..', '..'))
+
+from _input import input as _input
+from _lexer import lexer as _lexer
+from _parser import parser as _parser
+import unittest
+
+class %sEditDescriptorBatch%dTestCase(unittest.TestCase):
+''' % (name.upper(), batch))
+        test_num = 0
         fmt = inpt = result = None
         for line in in_fh:
             if line.startswith('FORMAT:'):
                 if (fmt is not None) and (inpt is not None) and (result is not None):
                     # Output test
+                    test_num += 1
+                    # Remove endline
                     result = result[:-1]
-                    # inpt = inpt.split(',')
                     inpt = str(inpt)
                     # Escape the quotes
                     inpt = inpt.replace("'", "\\'")
-                    # TODO: Make this more general so can handle more than two
-                    # edit descriptors
-                    eds = name.split('-')
-                    if len(eds) > 1:
-                        ed = eds[1]
-                    else:
-                        ed = eds[0]
-                    if ed in ['i', 'o', 'z', 'b', 'l']:
-                        # Read into an integer
-                        out_ed = 'i'
-                        py_fmt = '%30d'
-                    elif name in ['f', 'e', 'd', 'es', 'en', 'g']:
-                        # Read into a double precision float
-                        out_ed = 'e'
-                        py_fmt = '%30.16f'
-                    else:
-                        # Read into a character array
-                        out_ed = 'a'
-                        py_fmt = '%-1000s'
+                    result = result.replace("'", "\\'")
+                    fmt = fmt.replace("'", "\\'")
+                    # Convert if necessary
                     if result == 'ERR':
-                        out = '''>>> eds, reversion_eds = parser(lexer(\'\'\'%s\'\'\'))
->>> inp = \'\'\'%s\'\'\'
->>> val = input(eds, reversion_eds, inp, num_vals=1)
-Traceback (most recent call last):
-...
-ValueError
-''' % (fmt, inpt)
+                        result = "\'\'\'" + result + "\'\'\'"
                     else:
-                        out = '''>>> eds, reversion_eds = parser(lexer(\'\'\'%s\'\'\'))
->>> inp = \'\'\'%s\'\'\'
->>> val = input(eds, reversion_eds, inp, num_vals=1)
->>> print_val(val, %s)
-[%s]
-''' % (fmt, inpt, out_ed, result)
+                        if name in ['f', 'e', 'd', 'en', 'es', 'g']:
+                            result = ('%30.16e' % float(result)).strip()
+                        elif name in ['i', 'b', 'z', 'o']:
+                            result = ('%30d' % int(result)).strip()
+                        elif name in ['l']:
+                            result = str(bool(int(result)))
+                        else:
+                            result = "\'\'\'" + result.ljust(1000) + "\'\'\'"
+                    out = '''
+    def test_%s_ed_input_%d(self):
+        inp = \'\'\'%s\'\'\'
+        fmt = \'\'\'%s\'\'\'
+        result = [%s]
+        eds, rev_eds = _parser(_lexer(fmt))
+''' % (name, test_num, inpt, fmt, result)
+                    # May result in error in Fortran code
+                    if result == 'ERR':
+                        out += '        self.assertRaises(ValueError, _input(eds, rev_eds, inp))\n'
+                    else:
+                        out += '        self.assertEqual(result, _input(eds, rev_eds, inp))\n'
                     out_fh.write(out)
+                    # Reset the values for next test
                     fmt = inpt = result = None
                 # Now read in new format
                 fmt = line[7:-1]
             elif line.startswith('INPUT:'):
                 inpt = line[6:-1]
             elif (fmt is not None) and (inpt is not None):
-                # If line is empty, input doctests <BLANKLINE> statement
-                if line[:-1] == '':
-                    if (result is not None) and (len(result) > 0):
-                        line = '<BLANKLINE>\n'
-                    else:
-                        line = '\n'
                 # Assign to result if not already declared, otherwise append
                 if result is None:
                     result = line
@@ -594,7 +587,7 @@ def write_fortran_source(formats, inputs, name):
             lines.append("""        WRITE (*, '(A, /, A, /, A)') 'FORMAT:(%s)', 'INPUT:%s', 'ERR'""" % (quoted_fmt, quoted_inp))
             lines.append("""      ELSE""")
             lines.append("""        WRITE (*, '(A, /, A, /, %s)') 'FORMAT:(%s)', 'INPUT:%s', %s""" % (out_fmt, quoted_fmt, quoted_inp, inp_var))
-            lines.append("""      ENDIF""")
+            lines.append("""      ENDIF\n""")
             errlbl += 1
             # Continue the lines if necessary
             for line in lines:
