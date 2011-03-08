@@ -484,7 +484,7 @@ class %sEditDescriptorBatch%dTestCase(unittest.TestCase):
         eds, rev_eds = _parser(_lexer(fmt))
 ''' % (name, test_num, inpt, fmt, result)
                     # May result in error in Fortran code
-                    if result == 'ERR':
+                    if result == '\'\'\'ERR\'\'\'':
                         out += '        self.assertRaises(ValueError, _input(eds, rev_eds, inp))\n'
                     else:
                         out += '        self.assertEqual(result, _input(eds, rev_eds, inp))\n'
