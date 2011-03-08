@@ -125,7 +125,6 @@ def input(eds, reversion_eds, records, num_vals=None):
             raise NotImplemented('Cannot guess width of character input for A edit descriptor, please supply the width')
         substr, state = _get_substr(ed.width, record, state)
         if isinstance(ed, (Z, O, B, I)):
-            print 'here'
             if ('-' in substr) and (not PROC_ALLOW_NEG_BOZ) and isinstance(ed, (Z, O, B)):
                 if state['exception_on_fail']:
                     raise ValueError('Negative numbers not permitted for binary, octal or hex')
@@ -223,97 +222,3 @@ def _next(it, default=None):
     return val
 
 
-if __name__ == '__main__':
-    import doctest
-    import os
-    from _parser import parser
-    from _lexer import lexer
-    from _output import output
-    # TEST_PATH = os.path.join('tests', 'samples', 'gfortran', '4-2-1_osx_intel', 'input')
-    TEST_PATH = os.path.join('tests', 'samples', 'source')
-    globs = {
-        'A' : A,
-        'E' : E,
-        'I' : I,
-        'parser' : parser,
-        'lexer' : lexer,
-        'input' : input,
-        'output' : output,
-    }
-    # doctest.testfile(os.path.join(TEST_PATH, 'bn-input-test-1.txt'), \
-    #     globs=globs)
-    # doctest.testfile(os.path.join(TEST_PATH, 'bz-input-test-1.txt'), \
-    #     globs=globs)
-    # doctest.testfile(os.path.join(TEST_PATH, 'slash-input-test-1.txt'), \
-    #     globs=globs)
-    # doctest.testfile(os.path.join(TEST_PATH, 'sp-input-test-1.txt'), \
-    #     globs=globs)
-    # doctest.testfile(os.path.join(TEST_PATH, 'ss-input-test-1.txt'), \
-    #     globs=globs)
-    # doctest.testfile(os.path.join(TEST_PATH, 't-input-test-1.txt'), \
-    #     globs=globs)
-    # doctest.testfile(os.path.join(TEST_PATH, 'tl-input-test-1.txt'), \
-    #     globs=globs)
-    # doctest.testfile(os.path.join(TEST_PATH, 'tr-input-test-1.txt'), \
-    #     globs=globs)
-    # doctest.testfile(os.path.join(TEST_PATH, 'x-input-test-1.txt'), \
-    #     globs=globs)
-    # doctest.testfile(os.path.join(TEST_PATH, 'colon-input-test-1.txt'), \
-    #     globs=globs)
-    # doctest.testfile(os.path.join(TEST_PATH, 'a-input-test-1.txt'), \
-    #     globs=globs)
-    doctest.testfile(os.path.join(TEST_PATH, 'b-input-test-1.txt'), \
-        globs=globs)
-    # doctest.testfile(os.path.join(TEST_PATH, 'b-input-test-2.txt'), \
-    #     globs=globs)
-    # doctest.testfile(os.path.join(TEST_PATH, 'd-input-test-1.txt'), \
-    #     globs=globs)
-    # doctest.testfile(os.path.join(TEST_PATH, 'en-input-test-1.txt'), \
-    #     globs=globs)
-    # doctest.testfile(os.path.join(TEST_PATH, 'en-input-test-2.txt'), \
-    #     globs=globs)
-    # doctest.testfile(os.path.join(TEST_PATH, 'en-input-test-3.txt'), \
-    #     globs=globs)
-    # doctest.testfile(os.path.join(TEST_PATH, 'en-input-test-4.txt'), \
-    #     globs=globs)
-    # doctest.testfile(os.path.join(TEST_PATH, 'es-input-test-1.txt'), \
-    #     globs=globs)
-    # doctest.testfile(os.path.join(TEST_PATH, 'es-input-test-2.txt'), \
-    #     globs=globs)
-    # doctest.testfile(os.path.join(TEST_PATH, 'es-input-test-3.txt'), \
-    #     globs=globs)
-    # doctest.testfile(os.path.join(TEST_PATH, 'es-input-test-4.txt'), \
-    #     globs=globs)
-    # doctest.testfile(os.path.join(TEST_PATH, 'e-input-test-1.txt'), \
-    #     globs=globs)
-    # doctest.testfile(os.path.join(TEST_PATH, 'e-input-test-2.txt'), \
-    #     globs=globs)
-    # doctest.testfile(os.path.join(TEST_PATH, 'e-input-test-3.txt'), \
-    #     globs=globs)
-    # doctest.testfile(os.path.join(TEST_PATH, 'e-input-test-4.txt'), \
-    #     globs=globs)
-    # doctest.testfile(os.path.join(TEST_PATH, 'f-input-test-1.txt'), \
-    #     globs=globs)
-    # doctest.testfile(os.path.join(TEST_PATH, 'g-input-test-1.txt'), \
-    #     globs=globs)
-    # doctest.testfile(os.path.join(TEST_PATH, 'g-input-test-2.txt'), \
-    #     globs=globs)
-    # doctest.testfile(os.path.join(TEST_PATH, 'g-input-test-3.txt'), \
-    #     globs=globs)
-    # doctest.testfile(os.path.join(TEST_PATH, 'g-input-test-4.txt'), \
-    #     globs=globs)
-    # doctest.testfile(os.path.join(TEST_PATH, 'i-input-test-1.txt'), \
-    #     globs=globs)
-    # doctest.testfile(os.path.join(TEST_PATH, 'i-input-test-2.txt'), \
-    #     globs=globs)
-    # doctest.testfile(os.path.join(TEST_PATH, 'l-input-test-1.txt'), \
-    #     globs=globs)
-    # doctest.testfile(os.path.join(TEST_PATH, 'o-input-test-1.txt'), \
-    #     globs=globs)
-    # doctest.testfile(os.path.join(TEST_PATH, 'o-input-test-2.txt'), \
-    #     globs=globs)
-    # doctest.testfile(os.path.join(TEST_PATH, 'z-input-test-1.txt'), \
-    #     globs=globs)
-    # doctest.testfile(os.path.join(TEST_PATH, 'z-input-test-2.txt'), \
-    #     globs=globs)
-    
