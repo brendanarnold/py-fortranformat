@@ -422,7 +422,7 @@ def write_py_source():
     '''Converts the test output to a doctestable text file'''
     for name in names():
         doctest_filename = DOCTEST_FILESTEM % name
-        filename = RESULT_FILESTEM % name
+        filename = os.path.join(BUILD_DIR, RESULT_FILESTEM % name)
         out_fh = open(doctest_filename, 'w')
         print 'Pythonising %s into %s ...' % (filename, doctest_filename)
         in_fh = open(filename, 'r')
@@ -468,16 +468,16 @@ def write_py_source():
 def compile_tests(compile_str):
     '''Compiles the tests'''
     for name in names():
-        infile = SOURCE_FILESTEM % name
-        outfile = EXECUTABLE_FILESTEM % name
+        infile = os.path.join(BUILD_DIR, SOURCE_FILESTEM % name)
+        outfile = os.path.join(BUILD_DIR, EXECUTABLE_FILESTEM % name)
         print 'Compiling %s to %s ...' % (infile, outfile)
         os.system(compile_str % (infile, outfile))
 
 def execute_tests():
     '''Executes the compiled tests and directs the output to .test files'''
     for name in names():
-        executable_file = os.path.join('.', EXECUTABLE_FILESTEM % name)
-        result_file = os.path.join('.', RESULT_FILESTEM % name)
+        executable_file = os.path.join(BUILD_DIR, EXECUTABLE_FILESTEM % name)
+        result_file = os.path.join(BUILD_DIR, RESULT_FILESTEM % name)
         print 'Executing %s > %s' % (executable_file, result_file)
         os.system('%s > %s' % (executable_file, result_file))
 
