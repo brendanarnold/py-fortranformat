@@ -1,0 +1,9660 @@
+FORMAT:(/, G1.1)
+INPUT:3.
+
+3.    
+FORMAT:(/, G1.1)
+INPUT:-3.
+
+-3.    
+FORMAT:(/, G1.1)
+INPUT:10.
+
+*
+FORMAT:(/, G1.1)
+INPUT:-10.
+
+*
+FORMAT:(/, G1.1)
+INPUT:100.
+
+*
+FORMAT:(/, G1.1)
+INPUT:-100.
+
+*
+FORMAT:(/, G1.1)
+INPUT:1000.
+
+*
+FORMAT:(/, G1.1)
+INPUT:-1000.
+
+*
+FORMAT:(/, G1.1)
+INPUT:10000.
+
+*
+FORMAT:(/, G1.1)
+INPUT:-10000.
+
+*
+FORMAT:(/, G1.1)
+INPUT:100000.
+
+*
+FORMAT:(/, G1.1)
+INPUT:-100000.
+
+*
+FORMAT:(/, G1.1)
+INPUT:123456789.
+
+*
+FORMAT:(/, G1.1)
+INPUT:0.1
+
+.1    
+FORMAT:(/, G1.1)
+INPUT:-0.1
+
+-.1    
+FORMAT:(/, G1.1)
+INPUT:0.01
+
+*
+FORMAT:(/, G1.1)
+INPUT:-0.01
+
+*
+FORMAT:(/, G1.1)
+INPUT:0.001
+
+*
+FORMAT:(/, G1.1)
+INPUT:-0.001
+
+*
+FORMAT:(/, G1.1)
+INPUT:0.0001
+
+*
+FORMAT:(/, G1.1)
+INPUT:-0.0001
+
+*
+FORMAT:(/, G1.1)
+INPUT:-1.96e-16
+
+*
+FORMAT:(/, G1.1)
+INPUT:3.14159
+
+3.    
+FORMAT:(/, G2.1)
+INPUT:3.
+
+3.    
+FORMAT:(/, G2.1)
+INPUT:-3.
+
+-3.    
+FORMAT:(/, G2.1)
+INPUT:10.
+
+**
+FORMAT:(/, G2.1)
+INPUT:-10.
+
+**
+FORMAT:(/, G2.1)
+INPUT:100.
+
+**
+FORMAT:(/, G2.1)
+INPUT:-100.
+
+**
+FORMAT:(/, G2.1)
+INPUT:1000.
+
+**
+FORMAT:(/, G2.1)
+INPUT:-1000.
+
+**
+FORMAT:(/, G2.1)
+INPUT:10000.
+
+**
+FORMAT:(/, G2.1)
+INPUT:-10000.
+
+**
+FORMAT:(/, G2.1)
+INPUT:100000.
+
+**
+FORMAT:(/, G2.1)
+INPUT:-100000.
+
+**
+FORMAT:(/, G2.1)
+INPUT:123456789.
+
+**
+FORMAT:(/, G2.1)
+INPUT:0.1
+
+.1    
+FORMAT:(/, G2.1)
+INPUT:-0.1
+
+-.1    
+FORMAT:(/, G2.1)
+INPUT:0.01
+
+**
+FORMAT:(/, G2.1)
+INPUT:-0.01
+
+**
+FORMAT:(/, G2.1)
+INPUT:0.001
+
+**
+FORMAT:(/, G2.1)
+INPUT:-0.001
+
+**
+FORMAT:(/, G2.1)
+INPUT:0.0001
+
+**
+FORMAT:(/, G2.1)
+INPUT:-0.0001
+
+**
+FORMAT:(/, G2.1)
+INPUT:-1.96e-16
+
+**
+FORMAT:(/, G2.1)
+INPUT:3.14159
+
+3.    
+FORMAT:(/, G3.1)
+INPUT:3.
+
+3.    
+FORMAT:(/, G3.1)
+INPUT:-3.
+
+-3.    
+FORMAT:(/, G3.1)
+INPUT:10.
+
+***
+FORMAT:(/, G3.1)
+INPUT:-10.
+
+***
+FORMAT:(/, G3.1)
+INPUT:100.
+
+***
+FORMAT:(/, G3.1)
+INPUT:-100.
+
+***
+FORMAT:(/, G3.1)
+INPUT:1000.
+
+***
+FORMAT:(/, G3.1)
+INPUT:-1000.
+
+***
+FORMAT:(/, G3.1)
+INPUT:10000.
+
+***
+FORMAT:(/, G3.1)
+INPUT:-10000.
+
+***
+FORMAT:(/, G3.1)
+INPUT:100000.
+
+***
+FORMAT:(/, G3.1)
+INPUT:-100000.
+
+***
+FORMAT:(/, G3.1)
+INPUT:123456789.
+
+***
+FORMAT:(/, G3.1)
+INPUT:0.1
+
+.1    
+FORMAT:(/, G3.1)
+INPUT:-0.1
+
+-.1    
+FORMAT:(/, G3.1)
+INPUT:0.01
+
+***
+FORMAT:(/, G3.1)
+INPUT:-0.01
+
+***
+FORMAT:(/, G3.1)
+INPUT:0.001
+
+***
+FORMAT:(/, G3.1)
+INPUT:-0.001
+
+***
+FORMAT:(/, G3.1)
+INPUT:0.0001
+
+***
+FORMAT:(/, G3.1)
+INPUT:-0.0001
+
+***
+FORMAT:(/, G3.1)
+INPUT:-1.96e-16
+
+***
+FORMAT:(/, G3.1)
+INPUT:3.14159
+
+3.    
+FORMAT:(/, G4.1)
+INPUT:3.
+
+3.    
+FORMAT:(/, G4.1)
+INPUT:-3.
+
+-3.    
+FORMAT:(/, G4.1)
+INPUT:10.
+
+****
+FORMAT:(/, G4.1)
+INPUT:-10.
+
+****
+FORMAT:(/, G4.1)
+INPUT:100.
+
+****
+FORMAT:(/, G4.1)
+INPUT:-100.
+
+****
+FORMAT:(/, G4.1)
+INPUT:1000.
+
+****
+FORMAT:(/, G4.1)
+INPUT:-1000.
+
+****
+FORMAT:(/, G4.1)
+INPUT:10000.
+
+****
+FORMAT:(/, G4.1)
+INPUT:-10000.
+
+****
+FORMAT:(/, G4.1)
+INPUT:100000.
+
+****
+FORMAT:(/, G4.1)
+INPUT:-100000.
+
+****
+FORMAT:(/, G4.1)
+INPUT:123456789.
+
+****
+FORMAT:(/, G4.1)
+INPUT:0.1
+
+.1    
+FORMAT:(/, G4.1)
+INPUT:-0.1
+
+-.1    
+FORMAT:(/, G4.1)
+INPUT:0.01
+
+****
+FORMAT:(/, G4.1)
+INPUT:-0.01
+
+****
+FORMAT:(/, G4.1)
+INPUT:0.001
+
+****
+FORMAT:(/, G4.1)
+INPUT:-0.001
+
+****
+FORMAT:(/, G4.1)
+INPUT:0.0001
+
+****
+FORMAT:(/, G4.1)
+INPUT:-0.0001
+
+****
+FORMAT:(/, G4.1)
+INPUT:-1.96e-16
+
+****
+FORMAT:(/, G4.1)
+INPUT:3.14159
+
+3.    
+FORMAT:(/, G5.1)
+INPUT:3.
+
+*    
+FORMAT:(/, G5.1)
+INPUT:-3.
+
+*    
+FORMAT:(/, G5.1)
+INPUT:10.
+
+*****
+FORMAT:(/, G5.1)
+INPUT:-10.
+
+*****
+FORMAT:(/, G5.1)
+INPUT:100.
+
+*****
+FORMAT:(/, G5.1)
+INPUT:-100.
+
+*****
+FORMAT:(/, G5.1)
+INPUT:1000.
+
+*****
+FORMAT:(/, G5.1)
+INPUT:-1000.
+
+*****
+FORMAT:(/, G5.1)
+INPUT:10000.
+
+*****
+FORMAT:(/, G5.1)
+INPUT:-10000.
+
+*****
+FORMAT:(/, G5.1)
+INPUT:100000.
+
+*****
+FORMAT:(/, G5.1)
+INPUT:-100000.
+
+*****
+FORMAT:(/, G5.1)
+INPUT:123456789.
+
+*****
+FORMAT:(/, G5.1)
+INPUT:0.1
+
+*    
+FORMAT:(/, G5.1)
+INPUT:-0.1
+
+*    
+FORMAT:(/, G5.1)
+INPUT:0.01
+
+*****
+FORMAT:(/, G5.1)
+INPUT:-0.01
+
+*****
+FORMAT:(/, G5.1)
+INPUT:0.001
+
+*****
+FORMAT:(/, G5.1)
+INPUT:-0.001
+
+*****
+FORMAT:(/, G5.1)
+INPUT:0.0001
+
+*****
+FORMAT:(/, G5.1)
+INPUT:-0.0001
+
+*****
+FORMAT:(/, G5.1)
+INPUT:-1.96e-16
+
+*****
+FORMAT:(/, G5.1)
+INPUT:3.14159
+
+*    
+FORMAT:(/, G10.1)
+INPUT:3.
+
+    3.    
+FORMAT:(/, G10.1)
+INPUT:-3.
+
+   -3.    
+FORMAT:(/, G10.1)
+INPUT:10.
+
+   0.1E+02
+FORMAT:(/, G10.1)
+INPUT:-10.
+
+  -0.1E+02
+FORMAT:(/, G10.1)
+INPUT:100.
+
+   0.1E+03
+FORMAT:(/, G10.1)
+INPUT:-100.
+
+  -0.1E+03
+FORMAT:(/, G10.1)
+INPUT:1000.
+
+   0.1E+04
+FORMAT:(/, G10.1)
+INPUT:-1000.
+
+  -0.1E+04
+FORMAT:(/, G10.1)
+INPUT:10000.
+
+   0.1E+05
+FORMAT:(/, G10.1)
+INPUT:-10000.
+
+  -0.1E+05
+FORMAT:(/, G10.1)
+INPUT:100000.
+
+   0.1E+06
+FORMAT:(/, G10.1)
+INPUT:-100000.
+
+  -0.1E+06
+FORMAT:(/, G10.1)
+INPUT:123456789.
+
+   0.1E+09
+FORMAT:(/, G10.1)
+INPUT:0.1
+
+   0.1    
+FORMAT:(/, G10.1)
+INPUT:-0.1
+
+  -0.1    
+FORMAT:(/, G10.1)
+INPUT:0.01
+
+   0.1E-01
+FORMAT:(/, G10.1)
+INPUT:-0.01
+
+  -0.1E-01
+FORMAT:(/, G10.1)
+INPUT:0.001
+
+   0.1E-02
+FORMAT:(/, G10.1)
+INPUT:-0.001
+
+  -0.1E-02
+FORMAT:(/, G10.1)
+INPUT:0.0001
+
+   0.1E-03
+FORMAT:(/, G10.1)
+INPUT:-0.0001
+
+  -0.1E-03
+FORMAT:(/, G10.1)
+INPUT:-1.96e-16
+
+  -0.2E-15
+FORMAT:(/, G10.1)
+INPUT:3.14159
+
+    3.    
+FORMAT:(/, G2.2)
+INPUT:3.
+
+3.0    
+FORMAT:(/, G2.2)
+INPUT:-3.
+
+-3.0    
+FORMAT:(/, G2.2)
+INPUT:10.
+
+10.    
+FORMAT:(/, G2.2)
+INPUT:-10.
+
+-10.    
+FORMAT:(/, G2.2)
+INPUT:100.
+
+**
+FORMAT:(/, G2.2)
+INPUT:-100.
+
+**
+FORMAT:(/, G2.2)
+INPUT:1000.
+
+**
+FORMAT:(/, G2.2)
+INPUT:-1000.
+
+**
+FORMAT:(/, G2.2)
+INPUT:10000.
+
+**
+FORMAT:(/, G2.2)
+INPUT:-10000.
+
+**
+FORMAT:(/, G2.2)
+INPUT:100000.
+
+**
+FORMAT:(/, G2.2)
+INPUT:-100000.
+
+**
+FORMAT:(/, G2.2)
+INPUT:123456789.
+
+**
+FORMAT:(/, G2.2)
+INPUT:0.1
+
+.10    
+FORMAT:(/, G2.2)
+INPUT:-0.1
+
+-.10    
+FORMAT:(/, G2.2)
+INPUT:0.01
+
+**
+FORMAT:(/, G2.2)
+INPUT:-0.01
+
+**
+FORMAT:(/, G2.2)
+INPUT:0.001
+
+**
+FORMAT:(/, G2.2)
+INPUT:-0.001
+
+**
+FORMAT:(/, G2.2)
+INPUT:0.0001
+
+**
+FORMAT:(/, G2.2)
+INPUT:-0.0001
+
+**
+FORMAT:(/, G2.2)
+INPUT:-1.96e-16
+
+**
+FORMAT:(/, G2.2)
+INPUT:3.14159
+
+3.1    
+FORMAT:(/, G3.2)
+INPUT:3.
+
+3.0    
+FORMAT:(/, G3.2)
+INPUT:-3.
+
+-3.0    
+FORMAT:(/, G3.2)
+INPUT:10.
+
+10.    
+FORMAT:(/, G3.2)
+INPUT:-10.
+
+-10.    
+FORMAT:(/, G3.2)
+INPUT:100.
+
+***
+FORMAT:(/, G3.2)
+INPUT:-100.
+
+***
+FORMAT:(/, G3.2)
+INPUT:1000.
+
+***
+FORMAT:(/, G3.2)
+INPUT:-1000.
+
+***
+FORMAT:(/, G3.2)
+INPUT:10000.
+
+***
+FORMAT:(/, G3.2)
+INPUT:-10000.
+
+***
+FORMAT:(/, G3.2)
+INPUT:100000.
+
+***
+FORMAT:(/, G3.2)
+INPUT:-100000.
+
+***
+FORMAT:(/, G3.2)
+INPUT:123456789.
+
+***
+FORMAT:(/, G3.2)
+INPUT:0.1
+
+.10    
+FORMAT:(/, G3.2)
+INPUT:-0.1
+
+-.10    
+FORMAT:(/, G3.2)
+INPUT:0.01
+
+***
+FORMAT:(/, G3.2)
+INPUT:-0.01
+
+***
+FORMAT:(/, G3.2)
+INPUT:0.001
+
+***
+FORMAT:(/, G3.2)
+INPUT:-0.001
+
+***
+FORMAT:(/, G3.2)
+INPUT:0.0001
+
+***
+FORMAT:(/, G3.2)
+INPUT:-0.0001
+
+***
+FORMAT:(/, G3.2)
+INPUT:-1.96e-16
+
+***
+FORMAT:(/, G3.2)
+INPUT:3.14159
+
+3.1    
+FORMAT:(/, G4.2)
+INPUT:3.
+
+3.0    
+FORMAT:(/, G4.2)
+INPUT:-3.
+
+-3.0    
+FORMAT:(/, G4.2)
+INPUT:10.
+
+10.    
+FORMAT:(/, G4.2)
+INPUT:-10.
+
+-10.    
+FORMAT:(/, G4.2)
+INPUT:100.
+
+****
+FORMAT:(/, G4.2)
+INPUT:-100.
+
+****
+FORMAT:(/, G4.2)
+INPUT:1000.
+
+****
+FORMAT:(/, G4.2)
+INPUT:-1000.
+
+****
+FORMAT:(/, G4.2)
+INPUT:10000.
+
+****
+FORMAT:(/, G4.2)
+INPUT:-10000.
+
+****
+FORMAT:(/, G4.2)
+INPUT:100000.
+
+****
+FORMAT:(/, G4.2)
+INPUT:-100000.
+
+****
+FORMAT:(/, G4.2)
+INPUT:123456789.
+
+****
+FORMAT:(/, G4.2)
+INPUT:0.1
+
+.10    
+FORMAT:(/, G4.2)
+INPUT:-0.1
+
+-.10    
+FORMAT:(/, G4.2)
+INPUT:0.01
+
+****
+FORMAT:(/, G4.2)
+INPUT:-0.01
+
+****
+FORMAT:(/, G4.2)
+INPUT:0.001
+
+****
+FORMAT:(/, G4.2)
+INPUT:-0.001
+
+****
+FORMAT:(/, G4.2)
+INPUT:0.0001
+
+****
+FORMAT:(/, G4.2)
+INPUT:-0.0001
+
+****
+FORMAT:(/, G4.2)
+INPUT:-1.96e-16
+
+****
+FORMAT:(/, G4.2)
+INPUT:3.14159
+
+3.1    
+FORMAT:(/, G5.2)
+INPUT:3.
+
+*    
+FORMAT:(/, G5.2)
+INPUT:-3.
+
+*    
+FORMAT:(/, G5.2)
+INPUT:10.
+
+*    
+FORMAT:(/, G5.2)
+INPUT:-10.
+
+*    
+FORMAT:(/, G5.2)
+INPUT:100.
+
+*****
+FORMAT:(/, G5.2)
+INPUT:-100.
+
+*****
+FORMAT:(/, G5.2)
+INPUT:1000.
+
+*****
+FORMAT:(/, G5.2)
+INPUT:-1000.
+
+*****
+FORMAT:(/, G5.2)
+INPUT:10000.
+
+*****
+FORMAT:(/, G5.2)
+INPUT:-10000.
+
+*****
+FORMAT:(/, G5.2)
+INPUT:100000.
+
+*****
+FORMAT:(/, G5.2)
+INPUT:-100000.
+
+*****
+FORMAT:(/, G5.2)
+INPUT:123456789.
+
+*****
+FORMAT:(/, G5.2)
+INPUT:0.1
+
+*    
+FORMAT:(/, G5.2)
+INPUT:-0.1
+
+*    
+FORMAT:(/, G5.2)
+INPUT:0.01
+
+*****
+FORMAT:(/, G5.2)
+INPUT:-0.01
+
+*****
+FORMAT:(/, G5.2)
+INPUT:0.001
+
+*****
+FORMAT:(/, G5.2)
+INPUT:-0.001
+
+*****
+FORMAT:(/, G5.2)
+INPUT:0.0001
+
+*****
+FORMAT:(/, G5.2)
+INPUT:-0.0001
+
+*****
+FORMAT:(/, G5.2)
+INPUT:-1.96e-16
+
+*****
+FORMAT:(/, G5.2)
+INPUT:3.14159
+
+*    
+FORMAT:(/, G10.2)
+INPUT:3.
+
+   3.0    
+FORMAT:(/, G10.2)
+INPUT:-3.
+
+  -3.0    
+FORMAT:(/, G10.2)
+INPUT:10.
+
+   10.    
+FORMAT:(/, G10.2)
+INPUT:-10.
+
+  -10.    
+FORMAT:(/, G10.2)
+INPUT:100.
+
+  0.10E+03
+FORMAT:(/, G10.2)
+INPUT:-100.
+
+ -0.10E+03
+FORMAT:(/, G10.2)
+INPUT:1000.
+
+  0.10E+04
+FORMAT:(/, G10.2)
+INPUT:-1000.
+
+ -0.10E+04
+FORMAT:(/, G10.2)
+INPUT:10000.
+
+  0.10E+05
+FORMAT:(/, G10.2)
+INPUT:-10000.
+
+ -0.10E+05
+FORMAT:(/, G10.2)
+INPUT:100000.
+
+  0.10E+06
+FORMAT:(/, G10.2)
+INPUT:-100000.
+
+ -0.10E+06
+FORMAT:(/, G10.2)
+INPUT:123456789.
+
+  0.12E+09
+FORMAT:(/, G10.2)
+INPUT:0.1
+
+  0.10    
+FORMAT:(/, G10.2)
+INPUT:-0.1
+
+ -0.10    
+FORMAT:(/, G10.2)
+INPUT:0.01
+
+  0.10E-01
+FORMAT:(/, G10.2)
+INPUT:-0.01
+
+ -0.10E-01
+FORMAT:(/, G10.2)
+INPUT:0.001
+
+  0.10E-02
+FORMAT:(/, G10.2)
+INPUT:-0.001
+
+ -0.10E-02
+FORMAT:(/, G10.2)
+INPUT:0.0001
+
+  0.10E-03
+FORMAT:(/, G10.2)
+INPUT:-0.0001
+
+ -0.10E-03
+FORMAT:(/, G10.2)
+INPUT:-1.96e-16
+
+ -0.20E-15
+FORMAT:(/, G10.2)
+INPUT:3.14159
+
+   3.1    
+FORMAT:(/, G3.3)
+INPUT:3.
+
+3.00    
+FORMAT:(/, G3.3)
+INPUT:-3.
+
+-3.00    
+FORMAT:(/, G3.3)
+INPUT:10.
+
+10.0    
+FORMAT:(/, G3.3)
+INPUT:-10.
+
+-10.0    
+FORMAT:(/, G3.3)
+INPUT:100.
+
+100.    
+FORMAT:(/, G3.3)
+INPUT:-100.
+
+-100.    
+FORMAT:(/, G3.3)
+INPUT:1000.
+
+***
+FORMAT:(/, G3.3)
+INPUT:-1000.
+
+***
+FORMAT:(/, G3.3)
+INPUT:10000.
+
+***
+FORMAT:(/, G3.3)
+INPUT:-10000.
+
+***
+FORMAT:(/, G3.3)
+INPUT:100000.
+
+***
+FORMAT:(/, G3.3)
+INPUT:-100000.
+
+***
+FORMAT:(/, G3.3)
+INPUT:123456789.
+
+***
+FORMAT:(/, G3.3)
+INPUT:0.1
+
+.100    
+FORMAT:(/, G3.3)
+INPUT:-0.1
+
+-.100    
+FORMAT:(/, G3.3)
+INPUT:0.01
+
+***
+FORMAT:(/, G3.3)
+INPUT:-0.01
+
+***
+FORMAT:(/, G3.3)
+INPUT:0.001
+
+***
+FORMAT:(/, G3.3)
+INPUT:-0.001
+
+***
+FORMAT:(/, G3.3)
+INPUT:0.0001
+
+***
+FORMAT:(/, G3.3)
+INPUT:-0.0001
+
+***
+FORMAT:(/, G3.3)
+INPUT:-1.96e-16
+
+***
+FORMAT:(/, G3.3)
+INPUT:3.14159
+
+3.14    
+FORMAT:(/, G4.3)
+INPUT:3.
+
+3.00    
+FORMAT:(/, G4.3)
+INPUT:-3.
+
+-3.00    
+FORMAT:(/, G4.3)
+INPUT:10.
+
+10.0    
+FORMAT:(/, G4.3)
+INPUT:-10.
+
+-10.0    
+FORMAT:(/, G4.3)
+INPUT:100.
+
+100.    
+FORMAT:(/, G4.3)
+INPUT:-100.
+
+-100.    
+FORMAT:(/, G4.3)
+INPUT:1000.
+
+****
+FORMAT:(/, G4.3)
+INPUT:-1000.
+
+****
+FORMAT:(/, G4.3)
+INPUT:10000.
+
+****
+FORMAT:(/, G4.3)
+INPUT:-10000.
+
+****
+FORMAT:(/, G4.3)
+INPUT:100000.
+
+****
+FORMAT:(/, G4.3)
+INPUT:-100000.
+
+****
+FORMAT:(/, G4.3)
+INPUT:123456789.
+
+****
+FORMAT:(/, G4.3)
+INPUT:0.1
+
+.100    
+FORMAT:(/, G4.3)
+INPUT:-0.1
+
+-.100    
+FORMAT:(/, G4.3)
+INPUT:0.01
+
+****
+FORMAT:(/, G4.3)
+INPUT:-0.01
+
+****
+FORMAT:(/, G4.3)
+INPUT:0.001
+
+****
+FORMAT:(/, G4.3)
+INPUT:-0.001
+
+****
+FORMAT:(/, G4.3)
+INPUT:0.0001
+
+****
+FORMAT:(/, G4.3)
+INPUT:-0.0001
+
+****
+FORMAT:(/, G4.3)
+INPUT:-1.96e-16
+
+****
+FORMAT:(/, G4.3)
+INPUT:3.14159
+
+3.14    
+FORMAT:(/, G5.3)
+INPUT:3.
+
+*    
+FORMAT:(/, G5.3)
+INPUT:-3.
+
+*    
+FORMAT:(/, G5.3)
+INPUT:10.
+
+*    
+FORMAT:(/, G5.3)
+INPUT:-10.
+
+*    
+FORMAT:(/, G5.3)
+INPUT:100.
+
+*    
+FORMAT:(/, G5.3)
+INPUT:-100.
+
+*    
+FORMAT:(/, G5.3)
+INPUT:1000.
+
+*****
+FORMAT:(/, G5.3)
+INPUT:-1000.
+
+*****
+FORMAT:(/, G5.3)
+INPUT:10000.
+
+*****
+FORMAT:(/, G5.3)
+INPUT:-10000.
+
+*****
+FORMAT:(/, G5.3)
+INPUT:100000.
+
+*****
+FORMAT:(/, G5.3)
+INPUT:-100000.
+
+*****
+FORMAT:(/, G5.3)
+INPUT:123456789.
+
+*****
+FORMAT:(/, G5.3)
+INPUT:0.1
+
+*    
+FORMAT:(/, G5.3)
+INPUT:-0.1
+
+*    
+FORMAT:(/, G5.3)
+INPUT:0.01
+
+*****
+FORMAT:(/, G5.3)
+INPUT:-0.01
+
+*****
+FORMAT:(/, G5.3)
+INPUT:0.001
+
+*****
+FORMAT:(/, G5.3)
+INPUT:-0.001
+
+*****
+FORMAT:(/, G5.3)
+INPUT:0.0001
+
+*****
+FORMAT:(/, G5.3)
+INPUT:-0.0001
+
+*****
+FORMAT:(/, G5.3)
+INPUT:-1.96e-16
+
+*****
+FORMAT:(/, G5.3)
+INPUT:3.14159
+
+*    
+FORMAT:(/, G10.3)
+INPUT:3.
+
+  3.00    
+FORMAT:(/, G10.3)
+INPUT:-3.
+
+ -3.00    
+FORMAT:(/, G10.3)
+INPUT:10.
+
+  10.0    
+FORMAT:(/, G10.3)
+INPUT:-10.
+
+ -10.0    
+FORMAT:(/, G10.3)
+INPUT:100.
+
+  100.    
+FORMAT:(/, G10.3)
+INPUT:-100.
+
+ -100.    
+FORMAT:(/, G10.3)
+INPUT:1000.
+
+ 0.100E+04
+FORMAT:(/, G10.3)
+INPUT:-1000.
+
+-0.100E+04
+FORMAT:(/, G10.3)
+INPUT:10000.
+
+ 0.100E+05
+FORMAT:(/, G10.3)
+INPUT:-10000.
+
+-0.100E+05
+FORMAT:(/, G10.3)
+INPUT:100000.
+
+ 0.100E+06
+FORMAT:(/, G10.3)
+INPUT:-100000.
+
+-0.100E+06
+FORMAT:(/, G10.3)
+INPUT:123456789.
+
+ 0.123E+09
+FORMAT:(/, G10.3)
+INPUT:0.1
+
+ 0.100    
+FORMAT:(/, G10.3)
+INPUT:-0.1
+
+-0.100    
+FORMAT:(/, G10.3)
+INPUT:0.01
+
+ 0.100E-01
+FORMAT:(/, G10.3)
+INPUT:-0.01
+
+-0.100E-01
+FORMAT:(/, G10.3)
+INPUT:0.001
+
+ 0.100E-02
+FORMAT:(/, G10.3)
+INPUT:-0.001
+
+-0.100E-02
+FORMAT:(/, G10.3)
+INPUT:0.0001
+
+ 0.100E-03
+FORMAT:(/, G10.3)
+INPUT:-0.0001
+
+-0.100E-03
+FORMAT:(/, G10.3)
+INPUT:-1.96e-16
+
+-0.196E-15
+FORMAT:(/, G10.3)
+INPUT:3.14159
+
+  3.14    
+FORMAT:(/, G4.4)
+INPUT:3.
+
+3.000    
+FORMAT:(/, G4.4)
+INPUT:-3.
+
+-3.000    
+FORMAT:(/, G4.4)
+INPUT:10.
+
+10.00    
+FORMAT:(/, G4.4)
+INPUT:-10.
+
+-10.00    
+FORMAT:(/, G4.4)
+INPUT:100.
+
+100.0    
+FORMAT:(/, G4.4)
+INPUT:-100.
+
+-100.0    
+FORMAT:(/, G4.4)
+INPUT:1000.
+
+1000.    
+FORMAT:(/, G4.4)
+INPUT:-1000.
+
+-1000.    
+FORMAT:(/, G4.4)
+INPUT:10000.
+
+****
+FORMAT:(/, G4.4)
+INPUT:-10000.
+
+****
+FORMAT:(/, G4.4)
+INPUT:100000.
+
+****
+FORMAT:(/, G4.4)
+INPUT:-100000.
+
+****
+FORMAT:(/, G4.4)
+INPUT:123456789.
+
+****
+FORMAT:(/, G4.4)
+INPUT:0.1
+
+.1000    
+FORMAT:(/, G4.4)
+INPUT:-0.1
+
+-.1000    
+FORMAT:(/, G4.4)
+INPUT:0.01
+
+****
+FORMAT:(/, G4.4)
+INPUT:-0.01
+
+****
+FORMAT:(/, G4.4)
+INPUT:0.001
+
+****
+FORMAT:(/, G4.4)
+INPUT:-0.001
+
+****
+FORMAT:(/, G4.4)
+INPUT:0.0001
+
+****
+FORMAT:(/, G4.4)
+INPUT:-0.0001
+
+****
+FORMAT:(/, G4.4)
+INPUT:-1.96e-16
+
+****
+FORMAT:(/, G4.4)
+INPUT:3.14159
+
+3.142    
+FORMAT:(/, G5.4)
+INPUT:3.
+
+*    
+FORMAT:(/, G5.4)
+INPUT:-3.
+
+*    
+FORMAT:(/, G5.4)
+INPUT:10.
+
+*    
+FORMAT:(/, G5.4)
+INPUT:-10.
+
+*    
+FORMAT:(/, G5.4)
+INPUT:100.
+
+*    
+FORMAT:(/, G5.4)
+INPUT:-100.
+
+*    
+FORMAT:(/, G5.4)
+INPUT:1000.
+
+*    
+FORMAT:(/, G5.4)
+INPUT:-1000.
+
+*    
+FORMAT:(/, G5.4)
+INPUT:10000.
+
+*****
+FORMAT:(/, G5.4)
+INPUT:-10000.
+
+*****
+FORMAT:(/, G5.4)
+INPUT:100000.
+
+*****
+FORMAT:(/, G5.4)
+INPUT:-100000.
+
+*****
+FORMAT:(/, G5.4)
+INPUT:123456789.
+
+*****
+FORMAT:(/, G5.4)
+INPUT:0.1
+
+*    
+FORMAT:(/, G5.4)
+INPUT:-0.1
+
+*    
+FORMAT:(/, G5.4)
+INPUT:0.01
+
+*****
+FORMAT:(/, G5.4)
+INPUT:-0.01
+
+*****
+FORMAT:(/, G5.4)
+INPUT:0.001
+
+*****
+FORMAT:(/, G5.4)
+INPUT:-0.001
+
+*****
+FORMAT:(/, G5.4)
+INPUT:0.0001
+
+*****
+FORMAT:(/, G5.4)
+INPUT:-0.0001
+
+*****
+FORMAT:(/, G5.4)
+INPUT:-1.96e-16
+
+*****
+FORMAT:(/, G5.4)
+INPUT:3.14159
+
+*    
+FORMAT:(/, G10.4)
+INPUT:3.
+
+ 3.000    
+FORMAT:(/, G10.4)
+INPUT:-3.
+
+-3.000    
+FORMAT:(/, G10.4)
+INPUT:10.
+
+ 10.00    
+FORMAT:(/, G10.4)
+INPUT:-10.
+
+-10.00    
+FORMAT:(/, G10.4)
+INPUT:100.
+
+ 100.0    
+FORMAT:(/, G10.4)
+INPUT:-100.
+
+-100.0    
+FORMAT:(/, G10.4)
+INPUT:1000.
+
+ 1000.    
+FORMAT:(/, G10.4)
+INPUT:-1000.
+
+-1000.    
+FORMAT:(/, G10.4)
+INPUT:10000.
+
+0.1000E+05
+FORMAT:(/, G10.4)
+INPUT:-10000.
+
+-.1000E+05
+FORMAT:(/, G10.4)
+INPUT:100000.
+
+0.1000E+06
+FORMAT:(/, G10.4)
+INPUT:-100000.
+
+-.1000E+06
+FORMAT:(/, G10.4)
+INPUT:123456789.
+
+0.1235E+09
+FORMAT:(/, G10.4)
+INPUT:0.1
+
+0.1000    
+FORMAT:(/, G10.4)
+INPUT:-0.1
+
+-.1000    
+FORMAT:(/, G10.4)
+INPUT:0.01
+
+0.1000E-01
+FORMAT:(/, G10.4)
+INPUT:-0.01
+
+-.1000E-01
+FORMAT:(/, G10.4)
+INPUT:0.001
+
+0.1000E-02
+FORMAT:(/, G10.4)
+INPUT:-0.001
+
+-.1000E-02
+FORMAT:(/, G10.4)
+INPUT:0.0001
+
+0.1000E-03
+FORMAT:(/, G10.4)
+INPUT:-0.0001
+
+-.1000E-03
+FORMAT:(/, G10.4)
+INPUT:-1.96e-16
+
+-.1960E-15
+FORMAT:(/, G10.4)
+INPUT:3.14159
+
+ 3.142    
+FORMAT:(/, G5.5)
+INPUT:3.
+
+*    
+FORMAT:(/, G5.5)
+INPUT:-3.
+
+*    
+FORMAT:(/, G5.5)
+INPUT:10.
+
+*    
+FORMAT:(/, G5.5)
+INPUT:-10.
+
+*    
+FORMAT:(/, G5.5)
+INPUT:100.
+
+*    
+FORMAT:(/, G5.5)
+INPUT:-100.
+
+*    
+FORMAT:(/, G5.5)
+INPUT:1000.
+
+*    
+FORMAT:(/, G5.5)
+INPUT:-1000.
+
+*    
+FORMAT:(/, G5.5)
+INPUT:10000.
+
+*    
+FORMAT:(/, G5.5)
+INPUT:-10000.
+
+*    
+FORMAT:(/, G5.5)
+INPUT:100000.
+
+*****
+FORMAT:(/, G5.5)
+INPUT:-100000.
+
+*****
+FORMAT:(/, G5.5)
+INPUT:123456789.
+
+*****
+FORMAT:(/, G5.5)
+INPUT:0.1
+
+*    
+FORMAT:(/, G5.5)
+INPUT:-0.1
+
+*    
+FORMAT:(/, G5.5)
+INPUT:0.01
+
+*****
+FORMAT:(/, G5.5)
+INPUT:-0.01
+
+*****
+FORMAT:(/, G5.5)
+INPUT:0.001
+
+*****
+FORMAT:(/, G5.5)
+INPUT:-0.001
+
+*****
+FORMAT:(/, G5.5)
+INPUT:0.0001
+
+*****
+FORMAT:(/, G5.5)
+INPUT:-0.0001
+
+*****
+FORMAT:(/, G5.5)
+INPUT:-1.96e-16
+
+*****
+FORMAT:(/, G5.5)
+INPUT:3.14159
+
+*    
+FORMAT:(/, G10.5)
+INPUT:3.
+
+3.0000    
+FORMAT:(/, G10.5)
+INPUT:-3.
+
+******    
+FORMAT:(/, G10.5)
+INPUT:10.
+
+10.000    
+FORMAT:(/, G10.5)
+INPUT:-10.
+
+******    
+FORMAT:(/, G10.5)
+INPUT:100.
+
+100.00    
+FORMAT:(/, G10.5)
+INPUT:-100.
+
+******    
+FORMAT:(/, G10.5)
+INPUT:1000.
+
+1000.0    
+FORMAT:(/, G10.5)
+INPUT:-1000.
+
+******    
+FORMAT:(/, G10.5)
+INPUT:10000.
+
+10000.    
+FORMAT:(/, G10.5)
+INPUT:-10000.
+
+******    
+FORMAT:(/, G10.5)
+INPUT:100000.
+
+.10000E+06
+FORMAT:(/, G10.5)
+INPUT:-100000.
+
+**********
+FORMAT:(/, G10.5)
+INPUT:123456789.
+
+.12346E+09
+FORMAT:(/, G10.5)
+INPUT:0.1
+
+.10000    
+FORMAT:(/, G10.5)
+INPUT:-0.1
+
+******    
+FORMAT:(/, G10.5)
+INPUT:0.01
+
+.10000E-01
+FORMAT:(/, G10.5)
+INPUT:-0.01
+
+**********
+FORMAT:(/, G10.5)
+INPUT:0.001
+
+.10000E-02
+FORMAT:(/, G10.5)
+INPUT:-0.001
+
+**********
+FORMAT:(/, G10.5)
+INPUT:0.0001
+
+.10000E-03
+FORMAT:(/, G10.5)
+INPUT:-0.0001
+
+**********
+FORMAT:(/, G10.5)
+INPUT:-1.96e-16
+
+**********
+FORMAT:(/, G10.5)
+INPUT:3.14159
+
+3.1416    
+FORMAT:(/, G10.10)
+INPUT:3.
+
+******    
+FORMAT:(/, G10.10)
+INPUT:-3.
+
+******    
+FORMAT:(/, G10.10)
+INPUT:10.
+
+******    
+FORMAT:(/, G10.10)
+INPUT:-10.
+
+******    
+FORMAT:(/, G10.10)
+INPUT:100.
+
+******    
+FORMAT:(/, G10.10)
+INPUT:-100.
+
+******    
+FORMAT:(/, G10.10)
+INPUT:1000.
+
+******    
+FORMAT:(/, G10.10)
+INPUT:-1000.
+
+******    
+FORMAT:(/, G10.10)
+INPUT:10000.
+
+******    
+FORMAT:(/, G10.10)
+INPUT:-10000.
+
+******    
+FORMAT:(/, G10.10)
+INPUT:100000.
+
+******    
+FORMAT:(/, G10.10)
+INPUT:-100000.
+
+******    
+FORMAT:(/, G10.10)
+INPUT:123456789.
+
+******    
+FORMAT:(/, G10.10)
+INPUT:0.1
+
+******    
+FORMAT:(/, G10.10)
+INPUT:-0.1
+
+******    
+FORMAT:(/, G10.10)
+INPUT:0.01
+
+**********
+FORMAT:(/, G10.10)
+INPUT:-0.01
+
+**********
+FORMAT:(/, G10.10)
+INPUT:0.001
+
+**********
+FORMAT:(/, G10.10)
+INPUT:-0.001
+
+**********
+FORMAT:(/, G10.10)
+INPUT:0.0001
+
+**********
+FORMAT:(/, G10.10)
+INPUT:-0.0001
+
+**********
+FORMAT:(/, G10.10)
+INPUT:-1.96e-16
+
+**********
+FORMAT:(/, G10.10)
+INPUT:3.14159
+
+******    
+FORMAT:(/, G1.1E1)
+INPUT:3.
+
+3.   
+FORMAT:(/, G1.1E1)
+INPUT:-3.
+
+-3.   
+FORMAT:(/, G1.1E1)
+INPUT:10.
+
+*
+FORMAT:(/, G1.1E1)
+INPUT:-10.
+
+*
+FORMAT:(/, G1.1E1)
+INPUT:100.
+
+*
+FORMAT:(/, G1.1E1)
+INPUT:-100.
+
+*
+FORMAT:(/, G1.1E1)
+INPUT:1000.
+
+*
+FORMAT:(/, G1.1E1)
+INPUT:-1000.
+
+*
+FORMAT:(/, G1.1E1)
+INPUT:10000.
+
+*
+FORMAT:(/, G1.1E1)
+INPUT:-10000.
+
+*
+FORMAT:(/, G1.1E1)
+INPUT:100000.
+
+*
+FORMAT:(/, G1.1E1)
+INPUT:-100000.
+
+*
+FORMAT:(/, G1.1E1)
+INPUT:123456789.
+
+*
+FORMAT:(/, G1.1E1)
+INPUT:0.1
+
+.1   
+FORMAT:(/, G1.1E1)
+INPUT:-0.1
+
+-.1   
+FORMAT:(/, G1.1E1)
+INPUT:0.01
+
+*
+FORMAT:(/, G1.1E1)
+INPUT:-0.01
+
+*
+FORMAT:(/, G1.1E1)
+INPUT:0.001
+
+*
+FORMAT:(/, G1.1E1)
+INPUT:-0.001
+
+*
+FORMAT:(/, G1.1E1)
+INPUT:0.0001
+
+*
+FORMAT:(/, G1.1E1)
+INPUT:-0.0001
+
+*
+FORMAT:(/, G1.1E1)
+INPUT:-1.96e-16
+
+*
+FORMAT:(/, G1.1E1)
+INPUT:3.14159
+
+3.   
+FORMAT:(/, G2.1E1)
+INPUT:3.
+
+3.   
+FORMAT:(/, G2.1E1)
+INPUT:-3.
+
+-3.   
+FORMAT:(/, G2.1E1)
+INPUT:10.
+
+**
+FORMAT:(/, G2.1E1)
+INPUT:-10.
+
+**
+FORMAT:(/, G2.1E1)
+INPUT:100.
+
+**
+FORMAT:(/, G2.1E1)
+INPUT:-100.
+
+**
+FORMAT:(/, G2.1E1)
+INPUT:1000.
+
+**
+FORMAT:(/, G2.1E1)
+INPUT:-1000.
+
+**
+FORMAT:(/, G2.1E1)
+INPUT:10000.
+
+**
+FORMAT:(/, G2.1E1)
+INPUT:-10000.
+
+**
+FORMAT:(/, G2.1E1)
+INPUT:100000.
+
+**
+FORMAT:(/, G2.1E1)
+INPUT:-100000.
+
+**
+FORMAT:(/, G2.1E1)
+INPUT:123456789.
+
+**
+FORMAT:(/, G2.1E1)
+INPUT:0.1
+
+.1   
+FORMAT:(/, G2.1E1)
+INPUT:-0.1
+
+-.1   
+FORMAT:(/, G2.1E1)
+INPUT:0.01
+
+**
+FORMAT:(/, G2.1E1)
+INPUT:-0.01
+
+**
+FORMAT:(/, G2.1E1)
+INPUT:0.001
+
+**
+FORMAT:(/, G2.1E1)
+INPUT:-0.001
+
+**
+FORMAT:(/, G2.1E1)
+INPUT:0.0001
+
+**
+FORMAT:(/, G2.1E1)
+INPUT:-0.0001
+
+**
+FORMAT:(/, G2.1E1)
+INPUT:-1.96e-16
+
+**
+FORMAT:(/, G2.1E1)
+INPUT:3.14159
+
+3.   
+FORMAT:(/, G3.1E1)
+INPUT:3.
+
+3.   
+FORMAT:(/, G3.1E1)
+INPUT:-3.
+
+-3.   
+FORMAT:(/, G3.1E1)
+INPUT:10.
+
+***
+FORMAT:(/, G3.1E1)
+INPUT:-10.
+
+***
+FORMAT:(/, G3.1E1)
+INPUT:100.
+
+***
+FORMAT:(/, G3.1E1)
+INPUT:-100.
+
+***
+FORMAT:(/, G3.1E1)
+INPUT:1000.
+
+***
+FORMAT:(/, G3.1E1)
+INPUT:-1000.
+
+***
+FORMAT:(/, G3.1E1)
+INPUT:10000.
+
+***
+FORMAT:(/, G3.1E1)
+INPUT:-10000.
+
+***
+FORMAT:(/, G3.1E1)
+INPUT:100000.
+
+***
+FORMAT:(/, G3.1E1)
+INPUT:-100000.
+
+***
+FORMAT:(/, G3.1E1)
+INPUT:123456789.
+
+***
+FORMAT:(/, G3.1E1)
+INPUT:0.1
+
+.1   
+FORMAT:(/, G3.1E1)
+INPUT:-0.1
+
+-.1   
+FORMAT:(/, G3.1E1)
+INPUT:0.01
+
+***
+FORMAT:(/, G3.1E1)
+INPUT:-0.01
+
+***
+FORMAT:(/, G3.1E1)
+INPUT:0.001
+
+***
+FORMAT:(/, G3.1E1)
+INPUT:-0.001
+
+***
+FORMAT:(/, G3.1E1)
+INPUT:0.0001
+
+***
+FORMAT:(/, G3.1E1)
+INPUT:-0.0001
+
+***
+FORMAT:(/, G3.1E1)
+INPUT:-1.96e-16
+
+***
+FORMAT:(/, G3.1E1)
+INPUT:3.14159
+
+3.   
+FORMAT:(/, G4.1E1)
+INPUT:3.
+
+*   
+FORMAT:(/, G4.1E1)
+INPUT:-3.
+
+*   
+FORMAT:(/, G4.1E1)
+INPUT:10.
+
+****
+FORMAT:(/, G4.1E1)
+INPUT:-10.
+
+****
+FORMAT:(/, G4.1E1)
+INPUT:100.
+
+****
+FORMAT:(/, G4.1E1)
+INPUT:-100.
+
+****
+FORMAT:(/, G4.1E1)
+INPUT:1000.
+
+****
+FORMAT:(/, G4.1E1)
+INPUT:-1000.
+
+****
+FORMAT:(/, G4.1E1)
+INPUT:10000.
+
+****
+FORMAT:(/, G4.1E1)
+INPUT:-10000.
+
+****
+FORMAT:(/, G4.1E1)
+INPUT:100000.
+
+****
+FORMAT:(/, G4.1E1)
+INPUT:-100000.
+
+****
+FORMAT:(/, G4.1E1)
+INPUT:123456789.
+
+****
+FORMAT:(/, G4.1E1)
+INPUT:0.1
+
+*   
+FORMAT:(/, G4.1E1)
+INPUT:-0.1
+
+*   
+FORMAT:(/, G4.1E1)
+INPUT:0.01
+
+****
+FORMAT:(/, G4.1E1)
+INPUT:-0.01
+
+****
+FORMAT:(/, G4.1E1)
+INPUT:0.001
+
+****
+FORMAT:(/, G4.1E1)
+INPUT:-0.001
+
+****
+FORMAT:(/, G4.1E1)
+INPUT:0.0001
+
+****
+FORMAT:(/, G4.1E1)
+INPUT:-0.0001
+
+****
+FORMAT:(/, G4.1E1)
+INPUT:-1.96e-16
+
+****
+FORMAT:(/, G4.1E1)
+INPUT:3.14159
+
+*   
+FORMAT:(/, G5.1E1)
+INPUT:3.
+
+3.   
+FORMAT:(/, G5.1E1)
+INPUT:-3.
+
+**   
+FORMAT:(/, G5.1E1)
+INPUT:10.
+
+.1E+2
+FORMAT:(/, G5.1E1)
+INPUT:-10.
+
+*****
+FORMAT:(/, G5.1E1)
+INPUT:100.
+
+.1E+3
+FORMAT:(/, G5.1E1)
+INPUT:-100.
+
+*****
+FORMAT:(/, G5.1E1)
+INPUT:1000.
+
+.1E+4
+FORMAT:(/, G5.1E1)
+INPUT:-1000.
+
+*****
+FORMAT:(/, G5.1E1)
+INPUT:10000.
+
+.1E+5
+FORMAT:(/, G5.1E1)
+INPUT:-10000.
+
+*****
+FORMAT:(/, G5.1E1)
+INPUT:100000.
+
+.1E+6
+FORMAT:(/, G5.1E1)
+INPUT:-100000.
+
+*****
+FORMAT:(/, G5.1E1)
+INPUT:123456789.
+
+.1E+9
+FORMAT:(/, G5.1E1)
+INPUT:0.1
+
+.1   
+FORMAT:(/, G5.1E1)
+INPUT:-0.1
+
+**   
+FORMAT:(/, G5.1E1)
+INPUT:0.01
+
+.1E-1
+FORMAT:(/, G5.1E1)
+INPUT:-0.01
+
+*****
+FORMAT:(/, G5.1E1)
+INPUT:0.001
+
+.1E-2
+FORMAT:(/, G5.1E1)
+INPUT:-0.001
+
+*****
+FORMAT:(/, G5.1E1)
+INPUT:0.0001
+
+.1E-3
+FORMAT:(/, G5.1E1)
+INPUT:-0.0001
+
+*****
+FORMAT:(/, G5.1E1)
+INPUT:-1.96e-16
+
+*****
+FORMAT:(/, G5.1E1)
+INPUT:3.14159
+
+3.   
+FORMAT:(/, G10.1E1)
+INPUT:3.
+
+     3.   
+FORMAT:(/, G10.1E1)
+INPUT:-3.
+
+    -3.   
+FORMAT:(/, G10.1E1)
+INPUT:10.
+
+    0.1E+2
+FORMAT:(/, G10.1E1)
+INPUT:-10.
+
+   -0.1E+2
+FORMAT:(/, G10.1E1)
+INPUT:100.
+
+    0.1E+3
+FORMAT:(/, G10.1E1)
+INPUT:-100.
+
+   -0.1E+3
+FORMAT:(/, G10.1E1)
+INPUT:1000.
+
+    0.1E+4
+FORMAT:(/, G10.1E1)
+INPUT:-1000.
+
+   -0.1E+4
+FORMAT:(/, G10.1E1)
+INPUT:10000.
+
+    0.1E+5
+FORMAT:(/, G10.1E1)
+INPUT:-10000.
+
+   -0.1E+5
+FORMAT:(/, G10.1E1)
+INPUT:100000.
+
+    0.1E+6
+FORMAT:(/, G10.1E1)
+INPUT:-100000.
+
+   -0.1E+6
+FORMAT:(/, G10.1E1)
+INPUT:123456789.
+
+    0.1E+9
+FORMAT:(/, G10.1E1)
+INPUT:0.1
+
+    0.1   
+FORMAT:(/, G10.1E1)
+INPUT:-0.1
+
+   -0.1   
+FORMAT:(/, G10.1E1)
+INPUT:0.01
+
+    0.1E-1
+FORMAT:(/, G10.1E1)
+INPUT:-0.01
+
+   -0.1E-1
+FORMAT:(/, G10.1E1)
+INPUT:0.001
+
+    0.1E-2
+FORMAT:(/, G10.1E1)
+INPUT:-0.001
+
+   -0.1E-2
+FORMAT:(/, G10.1E1)
+INPUT:0.0001
+
+    0.1E-3
+FORMAT:(/, G10.1E1)
+INPUT:-0.0001
+
+   -0.1E-3
+FORMAT:(/, G10.1E1)
+INPUT:-1.96e-16
+
+**********
+FORMAT:(/, G10.1E1)
+INPUT:3.14159
+
+     3.   
+FORMAT:(/, G2.2E1)
+INPUT:3.
+
+3.0   
+FORMAT:(/, G2.2E1)
+INPUT:-3.
+
+-3.0   
+FORMAT:(/, G2.2E1)
+INPUT:10.
+
+10.   
+FORMAT:(/, G2.2E1)
+INPUT:-10.
+
+-10.   
+FORMAT:(/, G2.2E1)
+INPUT:100.
+
+**
+FORMAT:(/, G2.2E1)
+INPUT:-100.
+
+**
+FORMAT:(/, G2.2E1)
+INPUT:1000.
+
+**
+FORMAT:(/, G2.2E1)
+INPUT:-1000.
+
+**
+FORMAT:(/, G2.2E1)
+INPUT:10000.
+
+**
+FORMAT:(/, G2.2E1)
+INPUT:-10000.
+
+**
+FORMAT:(/, G2.2E1)
+INPUT:100000.
+
+**
+FORMAT:(/, G2.2E1)
+INPUT:-100000.
+
+**
+FORMAT:(/, G2.2E1)
+INPUT:123456789.
+
+**
+FORMAT:(/, G2.2E1)
+INPUT:0.1
+
+.10   
+FORMAT:(/, G2.2E1)
+INPUT:-0.1
+
+-.10   
+FORMAT:(/, G2.2E1)
+INPUT:0.01
+
+**
+FORMAT:(/, G2.2E1)
+INPUT:-0.01
+
+**
+FORMAT:(/, G2.2E1)
+INPUT:0.001
+
+**
+FORMAT:(/, G2.2E1)
+INPUT:-0.001
+
+**
+FORMAT:(/, G2.2E1)
+INPUT:0.0001
+
+**
+FORMAT:(/, G2.2E1)
+INPUT:-0.0001
+
+**
+FORMAT:(/, G2.2E1)
+INPUT:-1.96e-16
+
+**
+FORMAT:(/, G2.2E1)
+INPUT:3.14159
+
+3.1   
+FORMAT:(/, G3.2E1)
+INPUT:3.
+
+3.0   
+FORMAT:(/, G3.2E1)
+INPUT:-3.
+
+-3.0   
+FORMAT:(/, G3.2E1)
+INPUT:10.
+
+10.   
+FORMAT:(/, G3.2E1)
+INPUT:-10.
+
+-10.   
+FORMAT:(/, G3.2E1)
+INPUT:100.
+
+***
+FORMAT:(/, G3.2E1)
+INPUT:-100.
+
+***
+FORMAT:(/, G3.2E1)
+INPUT:1000.
+
+***
+FORMAT:(/, G3.2E1)
+INPUT:-1000.
+
+***
+FORMAT:(/, G3.2E1)
+INPUT:10000.
+
+***
+FORMAT:(/, G3.2E1)
+INPUT:-10000.
+
+***
+FORMAT:(/, G3.2E1)
+INPUT:100000.
+
+***
+FORMAT:(/, G3.2E1)
+INPUT:-100000.
+
+***
+FORMAT:(/, G3.2E1)
+INPUT:123456789.
+
+***
+FORMAT:(/, G3.2E1)
+INPUT:0.1
+
+.10   
+FORMAT:(/, G3.2E1)
+INPUT:-0.1
+
+-.10   
+FORMAT:(/, G3.2E1)
+INPUT:0.01
+
+***
+FORMAT:(/, G3.2E1)
+INPUT:-0.01
+
+***
+FORMAT:(/, G3.2E1)
+INPUT:0.001
+
+***
+FORMAT:(/, G3.2E1)
+INPUT:-0.001
+
+***
+FORMAT:(/, G3.2E1)
+INPUT:0.0001
+
+***
+FORMAT:(/, G3.2E1)
+INPUT:-0.0001
+
+***
+FORMAT:(/, G3.2E1)
+INPUT:-1.96e-16
+
+***
+FORMAT:(/, G3.2E1)
+INPUT:3.14159
+
+3.1   
+FORMAT:(/, G4.2E1)
+INPUT:3.
+
+*   
+FORMAT:(/, G4.2E1)
+INPUT:-3.
+
+*   
+FORMAT:(/, G4.2E1)
+INPUT:10.
+
+*   
+FORMAT:(/, G4.2E1)
+INPUT:-10.
+
+*   
+FORMAT:(/, G4.2E1)
+INPUT:100.
+
+****
+FORMAT:(/, G4.2E1)
+INPUT:-100.
+
+****
+FORMAT:(/, G4.2E1)
+INPUT:1000.
+
+****
+FORMAT:(/, G4.2E1)
+INPUT:-1000.
+
+****
+FORMAT:(/, G4.2E1)
+INPUT:10000.
+
+****
+FORMAT:(/, G4.2E1)
+INPUT:-10000.
+
+****
+FORMAT:(/, G4.2E1)
+INPUT:100000.
+
+****
+FORMAT:(/, G4.2E1)
+INPUT:-100000.
+
+****
+FORMAT:(/, G4.2E1)
+INPUT:123456789.
+
+****
+FORMAT:(/, G4.2E1)
+INPUT:0.1
+
+*   
+FORMAT:(/, G4.2E1)
+INPUT:-0.1
+
+*   
+FORMAT:(/, G4.2E1)
+INPUT:0.01
+
+****
+FORMAT:(/, G4.2E1)
+INPUT:-0.01
+
+****
+FORMAT:(/, G4.2E1)
+INPUT:0.001
+
+****
+FORMAT:(/, G4.2E1)
+INPUT:-0.001
+
+****
+FORMAT:(/, G4.2E1)
+INPUT:0.0001
+
+****
+FORMAT:(/, G4.2E1)
+INPUT:-0.0001
+
+****
+FORMAT:(/, G4.2E1)
+INPUT:-1.96e-16
+
+****
+FORMAT:(/, G4.2E1)
+INPUT:3.14159
+
+*   
+FORMAT:(/, G5.2E1)
+INPUT:3.
+
+**   
+FORMAT:(/, G5.2E1)
+INPUT:-3.
+
+**   
+FORMAT:(/, G5.2E1)
+INPUT:10.
+
+**   
+FORMAT:(/, G5.2E1)
+INPUT:-10.
+
+**   
+FORMAT:(/, G5.2E1)
+INPUT:100.
+
+*****
+FORMAT:(/, G5.2E1)
+INPUT:-100.
+
+*****
+FORMAT:(/, G5.2E1)
+INPUT:1000.
+
+*****
+FORMAT:(/, G5.2E1)
+INPUT:-1000.
+
+*****
+FORMAT:(/, G5.2E1)
+INPUT:10000.
+
+*****
+FORMAT:(/, G5.2E1)
+INPUT:-10000.
+
+*****
+FORMAT:(/, G5.2E1)
+INPUT:100000.
+
+*****
+FORMAT:(/, G5.2E1)
+INPUT:-100000.
+
+*****
+FORMAT:(/, G5.2E1)
+INPUT:123456789.
+
+*****
+FORMAT:(/, G5.2E1)
+INPUT:0.1
+
+**   
+FORMAT:(/, G5.2E1)
+INPUT:-0.1
+
+**   
+FORMAT:(/, G5.2E1)
+INPUT:0.01
+
+*****
+FORMAT:(/, G5.2E1)
+INPUT:-0.01
+
+*****
+FORMAT:(/, G5.2E1)
+INPUT:0.001
+
+*****
+FORMAT:(/, G5.2E1)
+INPUT:-0.001
+
+*****
+FORMAT:(/, G5.2E1)
+INPUT:0.0001
+
+*****
+FORMAT:(/, G5.2E1)
+INPUT:-0.0001
+
+*****
+FORMAT:(/, G5.2E1)
+INPUT:-1.96e-16
+
+*****
+FORMAT:(/, G5.2E1)
+INPUT:3.14159
+
+**   
+FORMAT:(/, G10.2E1)
+INPUT:3.
+
+    3.0   
+FORMAT:(/, G10.2E1)
+INPUT:-3.
+
+   -3.0   
+FORMAT:(/, G10.2E1)
+INPUT:10.
+
+    10.   
+FORMAT:(/, G10.2E1)
+INPUT:-10.
+
+   -10.   
+FORMAT:(/, G10.2E1)
+INPUT:100.
+
+   0.10E+3
+FORMAT:(/, G10.2E1)
+INPUT:-100.
+
+  -0.10E+3
+FORMAT:(/, G10.2E1)
+INPUT:1000.
+
+   0.10E+4
+FORMAT:(/, G10.2E1)
+INPUT:-1000.
+
+  -0.10E+4
+FORMAT:(/, G10.2E1)
+INPUT:10000.
+
+   0.10E+5
+FORMAT:(/, G10.2E1)
+INPUT:-10000.
+
+  -0.10E+5
+FORMAT:(/, G10.2E1)
+INPUT:100000.
+
+   0.10E+6
+FORMAT:(/, G10.2E1)
+INPUT:-100000.
+
+  -0.10E+6
+FORMAT:(/, G10.2E1)
+INPUT:123456789.
+
+   0.12E+9
+FORMAT:(/, G10.2E1)
+INPUT:0.1
+
+   0.10   
+FORMAT:(/, G10.2E1)
+INPUT:-0.1
+
+  -0.10   
+FORMAT:(/, G10.2E1)
+INPUT:0.01
+
+   0.10E-1
+FORMAT:(/, G10.2E1)
+INPUT:-0.01
+
+  -0.10E-1
+FORMAT:(/, G10.2E1)
+INPUT:0.001
+
+   0.10E-2
+FORMAT:(/, G10.2E1)
+INPUT:-0.001
+
+  -0.10E-2
+FORMAT:(/, G10.2E1)
+INPUT:0.0001
+
+   0.10E-3
+FORMAT:(/, G10.2E1)
+INPUT:-0.0001
+
+  -0.10E-3
+FORMAT:(/, G10.2E1)
+INPUT:-1.96e-16
+
+**********
+FORMAT:(/, G10.2E1)
+INPUT:3.14159
+
+    3.1   
+FORMAT:(/, G3.3E1)
+INPUT:3.
+
+3.00   
+FORMAT:(/, G3.3E1)
+INPUT:-3.
+
+-3.00   
+FORMAT:(/, G3.3E1)
+INPUT:10.
+
+10.0   
+FORMAT:(/, G3.3E1)
+INPUT:-10.
+
+-10.0   
+FORMAT:(/, G3.3E1)
+INPUT:100.
+
+100.   
+FORMAT:(/, G3.3E1)
+INPUT:-100.
+
+-100.   
+FORMAT:(/, G3.3E1)
+INPUT:1000.
+
+***
+FORMAT:(/, G3.3E1)
+INPUT:-1000.
+
+***
+FORMAT:(/, G3.3E1)
+INPUT:10000.
+
+***
+FORMAT:(/, G3.3E1)
+INPUT:-10000.
+
+***
+FORMAT:(/, G3.3E1)
+INPUT:100000.
+
+***
+FORMAT:(/, G3.3E1)
+INPUT:-100000.
+
+***
+FORMAT:(/, G3.3E1)
+INPUT:123456789.
+
+***
+FORMAT:(/, G3.3E1)
+INPUT:0.1
+
+.100   
+FORMAT:(/, G3.3E1)
+INPUT:-0.1
+
+-.100   
+FORMAT:(/, G3.3E1)
+INPUT:0.01
+
+***
+FORMAT:(/, G3.3E1)
+INPUT:-0.01
+
+***
+FORMAT:(/, G3.3E1)
+INPUT:0.001
+
+***
+FORMAT:(/, G3.3E1)
+INPUT:-0.001
+
+***
+FORMAT:(/, G3.3E1)
+INPUT:0.0001
+
+***
+FORMAT:(/, G3.3E1)
+INPUT:-0.0001
+
+***
+FORMAT:(/, G3.3E1)
+INPUT:-1.96e-16
+
+***
+FORMAT:(/, G3.3E1)
+INPUT:3.14159
+
+3.14   
+FORMAT:(/, G4.3E1)
+INPUT:3.
+
+*   
+FORMAT:(/, G4.3E1)
+INPUT:-3.
+
+*   
+FORMAT:(/, G4.3E1)
+INPUT:10.
+
+*   
+FORMAT:(/, G4.3E1)
+INPUT:-10.
+
+*   
+FORMAT:(/, G4.3E1)
+INPUT:100.
+
+*   
+FORMAT:(/, G4.3E1)
+INPUT:-100.
+
+*   
+FORMAT:(/, G4.3E1)
+INPUT:1000.
+
+****
+FORMAT:(/, G4.3E1)
+INPUT:-1000.
+
+****
+FORMAT:(/, G4.3E1)
+INPUT:10000.
+
+****
+FORMAT:(/, G4.3E1)
+INPUT:-10000.
+
+****
+FORMAT:(/, G4.3E1)
+INPUT:100000.
+
+****
+FORMAT:(/, G4.3E1)
+INPUT:-100000.
+
+****
+FORMAT:(/, G4.3E1)
+INPUT:123456789.
+
+****
+FORMAT:(/, G4.3E1)
+INPUT:0.1
+
+*   
+FORMAT:(/, G4.3E1)
+INPUT:-0.1
+
+*   
+FORMAT:(/, G4.3E1)
+INPUT:0.01
+
+****
+FORMAT:(/, G4.3E1)
+INPUT:-0.01
+
+****
+FORMAT:(/, G4.3E1)
+INPUT:0.001
+
+****
+FORMAT:(/, G4.3E1)
+INPUT:-0.001
+
+****
+FORMAT:(/, G4.3E1)
+INPUT:0.0001
+
+****
+FORMAT:(/, G4.3E1)
+INPUT:-0.0001
+
+****
+FORMAT:(/, G4.3E1)
+INPUT:-1.96e-16
+
+****
+FORMAT:(/, G4.3E1)
+INPUT:3.14159
+
+*   
+FORMAT:(/, G5.3E1)
+INPUT:3.
+
+**   
+FORMAT:(/, G5.3E1)
+INPUT:-3.
+
+**   
+FORMAT:(/, G5.3E1)
+INPUT:10.
+
+**   
+FORMAT:(/, G5.3E1)
+INPUT:-10.
+
+**   
+FORMAT:(/, G5.3E1)
+INPUT:100.
+
+**   
+FORMAT:(/, G5.3E1)
+INPUT:-100.
+
+**   
+FORMAT:(/, G5.3E1)
+INPUT:1000.
+
+*****
+FORMAT:(/, G5.3E1)
+INPUT:-1000.
+
+*****
+FORMAT:(/, G5.3E1)
+INPUT:10000.
+
+*****
+FORMAT:(/, G5.3E1)
+INPUT:-10000.
+
+*****
+FORMAT:(/, G5.3E1)
+INPUT:100000.
+
+*****
+FORMAT:(/, G5.3E1)
+INPUT:-100000.
+
+*****
+FORMAT:(/, G5.3E1)
+INPUT:123456789.
+
+*****
+FORMAT:(/, G5.3E1)
+INPUT:0.1
+
+**   
+FORMAT:(/, G5.3E1)
+INPUT:-0.1
+
+**   
+FORMAT:(/, G5.3E1)
+INPUT:0.01
+
+*****
+FORMAT:(/, G5.3E1)
+INPUT:-0.01
+
+*****
+FORMAT:(/, G5.3E1)
+INPUT:0.001
+
+*****
+FORMAT:(/, G5.3E1)
+INPUT:-0.001
+
+*****
+FORMAT:(/, G5.3E1)
+INPUT:0.0001
+
+*****
+FORMAT:(/, G5.3E1)
+INPUT:-0.0001
+
+*****
+FORMAT:(/, G5.3E1)
+INPUT:-1.96e-16
+
+*****
+FORMAT:(/, G5.3E1)
+INPUT:3.14159
+
+**   
+FORMAT:(/, G10.3E1)
+INPUT:3.
+
+   3.00   
+FORMAT:(/, G10.3E1)
+INPUT:-3.
+
+  -3.00   
+FORMAT:(/, G10.3E1)
+INPUT:10.
+
+   10.0   
+FORMAT:(/, G10.3E1)
+INPUT:-10.
+
+  -10.0   
+FORMAT:(/, G10.3E1)
+INPUT:100.
+
+   100.   
+FORMAT:(/, G10.3E1)
+INPUT:-100.
+
+  -100.   
+FORMAT:(/, G10.3E1)
+INPUT:1000.
+
+  0.100E+4
+FORMAT:(/, G10.3E1)
+INPUT:-1000.
+
+ -0.100E+4
+FORMAT:(/, G10.3E1)
+INPUT:10000.
+
+  0.100E+5
+FORMAT:(/, G10.3E1)
+INPUT:-10000.
+
+ -0.100E+5
+FORMAT:(/, G10.3E1)
+INPUT:100000.
+
+  0.100E+6
+FORMAT:(/, G10.3E1)
+INPUT:-100000.
+
+ -0.100E+6
+FORMAT:(/, G10.3E1)
+INPUT:123456789.
+
+  0.123E+9
+FORMAT:(/, G10.3E1)
+INPUT:0.1
+
+  0.100   
+FORMAT:(/, G10.3E1)
+INPUT:-0.1
+
+ -0.100   
+FORMAT:(/, G10.3E1)
+INPUT:0.01
+
+  0.100E-1
+FORMAT:(/, G10.3E1)
+INPUT:-0.01
+
+ -0.100E-1
+FORMAT:(/, G10.3E1)
+INPUT:0.001
+
+  0.100E-2
+FORMAT:(/, G10.3E1)
+INPUT:-0.001
+
+ -0.100E-2
+FORMAT:(/, G10.3E1)
+INPUT:0.0001
+
+  0.100E-3
+FORMAT:(/, G10.3E1)
+INPUT:-0.0001
+
+ -0.100E-3
+FORMAT:(/, G10.3E1)
+INPUT:-1.96e-16
+
+**********
+FORMAT:(/, G10.3E1)
+INPUT:3.14159
+
+   3.14   
+FORMAT:(/, G4.4E1)
+INPUT:3.
+
+*   
+FORMAT:(/, G4.4E1)
+INPUT:-3.
+
+*   
+FORMAT:(/, G4.4E1)
+INPUT:10.
+
+*   
+FORMAT:(/, G4.4E1)
+INPUT:-10.
+
+*   
+FORMAT:(/, G4.4E1)
+INPUT:100.
+
+*   
+FORMAT:(/, G4.4E1)
+INPUT:-100.
+
+*   
+FORMAT:(/, G4.4E1)
+INPUT:1000.
+
+*   
+FORMAT:(/, G4.4E1)
+INPUT:-1000.
+
+*   
+FORMAT:(/, G4.4E1)
+INPUT:10000.
+
+****
+FORMAT:(/, G4.4E1)
+INPUT:-10000.
+
+****
+FORMAT:(/, G4.4E1)
+INPUT:100000.
+
+****
+FORMAT:(/, G4.4E1)
+INPUT:-100000.
+
+****
+FORMAT:(/, G4.4E1)
+INPUT:123456789.
+
+****
+FORMAT:(/, G4.4E1)
+INPUT:0.1
+
+*   
+FORMAT:(/, G4.4E1)
+INPUT:-0.1
+
+*   
+FORMAT:(/, G4.4E1)
+INPUT:0.01
+
+****
+FORMAT:(/, G4.4E1)
+INPUT:-0.01
+
+****
+FORMAT:(/, G4.4E1)
+INPUT:0.001
+
+****
+FORMAT:(/, G4.4E1)
+INPUT:-0.001
+
+****
+FORMAT:(/, G4.4E1)
+INPUT:0.0001
+
+****
+FORMAT:(/, G4.4E1)
+INPUT:-0.0001
+
+****
+FORMAT:(/, G4.4E1)
+INPUT:-1.96e-16
+
+****
+FORMAT:(/, G4.4E1)
+INPUT:3.14159
+
+*   
+FORMAT:(/, G5.4E1)
+INPUT:3.
+
+**   
+FORMAT:(/, G5.4E1)
+INPUT:-3.
+
+**   
+FORMAT:(/, G5.4E1)
+INPUT:10.
+
+**   
+FORMAT:(/, G5.4E1)
+INPUT:-10.
+
+**   
+FORMAT:(/, G5.4E1)
+INPUT:100.
+
+**   
+FORMAT:(/, G5.4E1)
+INPUT:-100.
+
+**   
+FORMAT:(/, G5.4E1)
+INPUT:1000.
+
+**   
+FORMAT:(/, G5.4E1)
+INPUT:-1000.
+
+**   
+FORMAT:(/, G5.4E1)
+INPUT:10000.
+
+*****
+FORMAT:(/, G5.4E1)
+INPUT:-10000.
+
+*****
+FORMAT:(/, G5.4E1)
+INPUT:100000.
+
+*****
+FORMAT:(/, G5.4E1)
+INPUT:-100000.
+
+*****
+FORMAT:(/, G5.4E1)
+INPUT:123456789.
+
+*****
+FORMAT:(/, G5.4E1)
+INPUT:0.1
+
+**   
+FORMAT:(/, G5.4E1)
+INPUT:-0.1
+
+**   
+FORMAT:(/, G5.4E1)
+INPUT:0.01
+
+*****
+FORMAT:(/, G5.4E1)
+INPUT:-0.01
+
+*****
+FORMAT:(/, G5.4E1)
+INPUT:0.001
+
+*****
+FORMAT:(/, G5.4E1)
+INPUT:-0.001
+
+*****
+FORMAT:(/, G5.4E1)
+INPUT:0.0001
+
+*****
+FORMAT:(/, G5.4E1)
+INPUT:-0.0001
+
+*****
+FORMAT:(/, G5.4E1)
+INPUT:-1.96e-16
+
+*****
+FORMAT:(/, G5.4E1)
+INPUT:3.14159
+
+**   
+FORMAT:(/, G10.4E1)
+INPUT:3.
+
+  3.000   
+FORMAT:(/, G10.4E1)
+INPUT:-3.
+
+ -3.000   
+FORMAT:(/, G10.4E1)
+INPUT:10.
+
+  10.00   
+FORMAT:(/, G10.4E1)
+INPUT:-10.
+
+ -10.00   
+FORMAT:(/, G10.4E1)
+INPUT:100.
+
+  100.0   
+FORMAT:(/, G10.4E1)
+INPUT:-100.
+
+ -100.0   
+FORMAT:(/, G10.4E1)
+INPUT:1000.
+
+  1000.   
+FORMAT:(/, G10.4E1)
+INPUT:-1000.
+
+ -1000.   
+FORMAT:(/, G10.4E1)
+INPUT:10000.
+
+ 0.1000E+5
+FORMAT:(/, G10.4E1)
+INPUT:-10000.
+
+-0.1000E+5
+FORMAT:(/, G10.4E1)
+INPUT:100000.
+
+ 0.1000E+6
+FORMAT:(/, G10.4E1)
+INPUT:-100000.
+
+-0.1000E+6
+FORMAT:(/, G10.4E1)
+INPUT:123456789.
+
+ 0.1235E+9
+FORMAT:(/, G10.4E1)
+INPUT:0.1
+
+ 0.1000   
+FORMAT:(/, G10.4E1)
+INPUT:-0.1
+
+-0.1000   
+FORMAT:(/, G10.4E1)
+INPUT:0.01
+
+ 0.1000E-1
+FORMAT:(/, G10.4E1)
+INPUT:-0.01
+
+-0.1000E-1
+FORMAT:(/, G10.4E1)
+INPUT:0.001
+
+ 0.1000E-2
+FORMAT:(/, G10.4E1)
+INPUT:-0.001
+
+-0.1000E-2
+FORMAT:(/, G10.4E1)
+INPUT:0.0001
+
+ 0.1000E-3
+FORMAT:(/, G10.4E1)
+INPUT:-0.0001
+
+-0.1000E-3
+FORMAT:(/, G10.4E1)
+INPUT:-1.96e-16
+
+**********
+FORMAT:(/, G10.4E1)
+INPUT:3.14159
+
+  3.142   
+FORMAT:(/, G5.5E1)
+INPUT:3.
+
+**   
+FORMAT:(/, G5.5E1)
+INPUT:-3.
+
+**   
+FORMAT:(/, G5.5E1)
+INPUT:10.
+
+**   
+FORMAT:(/, G5.5E1)
+INPUT:-10.
+
+**   
+FORMAT:(/, G5.5E1)
+INPUT:100.
+
+**   
+FORMAT:(/, G5.5E1)
+INPUT:-100.
+
+**   
+FORMAT:(/, G5.5E1)
+INPUT:1000.
+
+**   
+FORMAT:(/, G5.5E1)
+INPUT:-1000.
+
+**   
+FORMAT:(/, G5.5E1)
+INPUT:10000.
+
+**   
+FORMAT:(/, G5.5E1)
+INPUT:-10000.
+
+**   
+FORMAT:(/, G5.5E1)
+INPUT:100000.
+
+*****
+FORMAT:(/, G5.5E1)
+INPUT:-100000.
+
+*****
+FORMAT:(/, G5.5E1)
+INPUT:123456789.
+
+*****
+FORMAT:(/, G5.5E1)
+INPUT:0.1
+
+**   
+FORMAT:(/, G5.5E1)
+INPUT:-0.1
+
+**   
+FORMAT:(/, G5.5E1)
+INPUT:0.01
+
+*****
+FORMAT:(/, G5.5E1)
+INPUT:-0.01
+
+*****
+FORMAT:(/, G5.5E1)
+INPUT:0.001
+
+*****
+FORMAT:(/, G5.5E1)
+INPUT:-0.001
+
+*****
+FORMAT:(/, G5.5E1)
+INPUT:0.0001
+
+*****
+FORMAT:(/, G5.5E1)
+INPUT:-0.0001
+
+*****
+FORMAT:(/, G5.5E1)
+INPUT:-1.96e-16
+
+*****
+FORMAT:(/, G5.5E1)
+INPUT:3.14159
+
+**   
+FORMAT:(/, G10.5E1)
+INPUT:3.
+
+ 3.0000   
+FORMAT:(/, G10.5E1)
+INPUT:-3.
+
+-3.0000   
+FORMAT:(/, G10.5E1)
+INPUT:10.
+
+ 10.000   
+FORMAT:(/, G10.5E1)
+INPUT:-10.
+
+-10.000   
+FORMAT:(/, G10.5E1)
+INPUT:100.
+
+ 100.00   
+FORMAT:(/, G10.5E1)
+INPUT:-100.
+
+-100.00   
+FORMAT:(/, G10.5E1)
+INPUT:1000.
+
+ 1000.0   
+FORMAT:(/, G10.5E1)
+INPUT:-1000.
+
+-1000.0   
+FORMAT:(/, G10.5E1)
+INPUT:10000.
+
+ 10000.   
+FORMAT:(/, G10.5E1)
+INPUT:-10000.
+
+-10000.   
+FORMAT:(/, G10.5E1)
+INPUT:100000.
+
+0.10000E+6
+FORMAT:(/, G10.5E1)
+INPUT:-100000.
+
+-.10000E+6
+FORMAT:(/, G10.5E1)
+INPUT:123456789.
+
+0.12346E+9
+FORMAT:(/, G10.5E1)
+INPUT:0.1
+
+0.10000   
+FORMAT:(/, G10.5E1)
+INPUT:-0.1
+
+-.10000   
+FORMAT:(/, G10.5E1)
+INPUT:0.01
+
+0.10000E-1
+FORMAT:(/, G10.5E1)
+INPUT:-0.01
+
+-.10000E-1
+FORMAT:(/, G10.5E1)
+INPUT:0.001
+
+0.10000E-2
+FORMAT:(/, G10.5E1)
+INPUT:-0.001
+
+-.10000E-2
+FORMAT:(/, G10.5E1)
+INPUT:0.0001
+
+0.10000E-3
+FORMAT:(/, G10.5E1)
+INPUT:-0.0001
+
+-.10000E-3
+FORMAT:(/, G10.5E1)
+INPUT:-1.96e-16
+
+**********
+FORMAT:(/, G10.5E1)
+INPUT:3.14159
+
+ 3.1416   
+FORMAT:(/, G10.10E1)
+INPUT:3.
+
+*******   
+FORMAT:(/, G10.10E1)
+INPUT:-3.
+
+*******   
+FORMAT:(/, G10.10E1)
+INPUT:10.
+
+*******   
+FORMAT:(/, G10.10E1)
+INPUT:-10.
+
+*******   
+FORMAT:(/, G10.10E1)
+INPUT:100.
+
+*******   
+FORMAT:(/, G10.10E1)
+INPUT:-100.
+
+*******   
+FORMAT:(/, G10.10E1)
+INPUT:1000.
+
+*******   
+FORMAT:(/, G10.10E1)
+INPUT:-1000.
+
+*******   
+FORMAT:(/, G10.10E1)
+INPUT:10000.
+
+*******   
+FORMAT:(/, G10.10E1)
+INPUT:-10000.
+
+*******   
+FORMAT:(/, G10.10E1)
+INPUT:100000.
+
+*******   
+FORMAT:(/, G10.10E1)
+INPUT:-100000.
+
+*******   
+FORMAT:(/, G10.10E1)
+INPUT:123456789.
+
+*******   
+FORMAT:(/, G10.10E1)
+INPUT:0.1
+
+*******   
+FORMAT:(/, G10.10E1)
+INPUT:-0.1
+
+*******   
+FORMAT:(/, G10.10E1)
+INPUT:0.01
+
+**********
+FORMAT:(/, G10.10E1)
+INPUT:-0.01
+
+**********
+FORMAT:(/, G10.10E1)
+INPUT:0.001
+
+**********
+FORMAT:(/, G10.10E1)
+INPUT:-0.001
+
+**********
+FORMAT:(/, G10.10E1)
+INPUT:0.0001
+
+**********
+FORMAT:(/, G10.10E1)
+INPUT:-0.0001
+
+**********
+FORMAT:(/, G10.10E1)
+INPUT:-1.96e-16
+
+**********
+FORMAT:(/, G10.10E1)
+INPUT:3.14159
+
+*******   
+FORMAT:(/, G1.1E3)
+INPUT:3.
+
+3.     
+FORMAT:(/, G1.1E3)
+INPUT:-3.
+
+-3.     
+FORMAT:(/, G1.1E3)
+INPUT:10.
+
+*
+FORMAT:(/, G1.1E3)
+INPUT:-10.
+
+*
+FORMAT:(/, G1.1E3)
+INPUT:100.
+
+*
+FORMAT:(/, G1.1E3)
+INPUT:-100.
+
+*
+FORMAT:(/, G1.1E3)
+INPUT:1000.
+
+*
+FORMAT:(/, G1.1E3)
+INPUT:-1000.
+
+*
+FORMAT:(/, G1.1E3)
+INPUT:10000.
+
+*
+FORMAT:(/, G1.1E3)
+INPUT:-10000.
+
+*
+FORMAT:(/, G1.1E3)
+INPUT:100000.
+
+*
+FORMAT:(/, G1.1E3)
+INPUT:-100000.
+
+*
+FORMAT:(/, G1.1E3)
+INPUT:123456789.
+
+*
+FORMAT:(/, G1.1E3)
+INPUT:0.1
+
+.1     
+FORMAT:(/, G1.1E3)
+INPUT:-0.1
+
+-.1     
+FORMAT:(/, G1.1E3)
+INPUT:0.01
+
+*
+FORMAT:(/, G1.1E3)
+INPUT:-0.01
+
+*
+FORMAT:(/, G1.1E3)
+INPUT:0.001
+
+*
+FORMAT:(/, G1.1E3)
+INPUT:-0.001
+
+*
+FORMAT:(/, G1.1E3)
+INPUT:0.0001
+
+*
+FORMAT:(/, G1.1E3)
+INPUT:-0.0001
+
+*
+FORMAT:(/, G1.1E3)
+INPUT:-1.96e-16
+
+*
+FORMAT:(/, G1.1E3)
+INPUT:3.14159
+
+3.     
+FORMAT:(/, G2.1E3)
+INPUT:3.
+
+3.     
+FORMAT:(/, G2.1E3)
+INPUT:-3.
+
+-3.     
+FORMAT:(/, G2.1E3)
+INPUT:10.
+
+**
+FORMAT:(/, G2.1E3)
+INPUT:-10.
+
+**
+FORMAT:(/, G2.1E3)
+INPUT:100.
+
+**
+FORMAT:(/, G2.1E3)
+INPUT:-100.
+
+**
+FORMAT:(/, G2.1E3)
+INPUT:1000.
+
+**
+FORMAT:(/, G2.1E3)
+INPUT:-1000.
+
+**
+FORMAT:(/, G2.1E3)
+INPUT:10000.
+
+**
+FORMAT:(/, G2.1E3)
+INPUT:-10000.
+
+**
+FORMAT:(/, G2.1E3)
+INPUT:100000.
+
+**
+FORMAT:(/, G2.1E3)
+INPUT:-100000.
+
+**
+FORMAT:(/, G2.1E3)
+INPUT:123456789.
+
+**
+FORMAT:(/, G2.1E3)
+INPUT:0.1
+
+.1     
+FORMAT:(/, G2.1E3)
+INPUT:-0.1
+
+-.1     
+FORMAT:(/, G2.1E3)
+INPUT:0.01
+
+**
+FORMAT:(/, G2.1E3)
+INPUT:-0.01
+
+**
+FORMAT:(/, G2.1E3)
+INPUT:0.001
+
+**
+FORMAT:(/, G2.1E3)
+INPUT:-0.001
+
+**
+FORMAT:(/, G2.1E3)
+INPUT:0.0001
+
+**
+FORMAT:(/, G2.1E3)
+INPUT:-0.0001
+
+**
+FORMAT:(/, G2.1E3)
+INPUT:-1.96e-16
+
+**
+FORMAT:(/, G2.1E3)
+INPUT:3.14159
+
+3.     
+FORMAT:(/, G3.1E3)
+INPUT:3.
+
+3.     
+FORMAT:(/, G3.1E3)
+INPUT:-3.
+
+-3.     
+FORMAT:(/, G3.1E3)
+INPUT:10.
+
+***
+FORMAT:(/, G3.1E3)
+INPUT:-10.
+
+***
+FORMAT:(/, G3.1E3)
+INPUT:100.
+
+***
+FORMAT:(/, G3.1E3)
+INPUT:-100.
+
+***
+FORMAT:(/, G3.1E3)
+INPUT:1000.
+
+***
+FORMAT:(/, G3.1E3)
+INPUT:-1000.
+
+***
+FORMAT:(/, G3.1E3)
+INPUT:10000.
+
+***
+FORMAT:(/, G3.1E3)
+INPUT:-10000.
+
+***
+FORMAT:(/, G3.1E3)
+INPUT:100000.
+
+***
+FORMAT:(/, G3.1E3)
+INPUT:-100000.
+
+***
+FORMAT:(/, G3.1E3)
+INPUT:123456789.
+
+***
+FORMAT:(/, G3.1E3)
+INPUT:0.1
+
+.1     
+FORMAT:(/, G3.1E3)
+INPUT:-0.1
+
+-.1     
+FORMAT:(/, G3.1E3)
+INPUT:0.01
+
+***
+FORMAT:(/, G3.1E3)
+INPUT:-0.01
+
+***
+FORMAT:(/, G3.1E3)
+INPUT:0.001
+
+***
+FORMAT:(/, G3.1E3)
+INPUT:-0.001
+
+***
+FORMAT:(/, G3.1E3)
+INPUT:0.0001
+
+***
+FORMAT:(/, G3.1E3)
+INPUT:-0.0001
+
+***
+FORMAT:(/, G3.1E3)
+INPUT:-1.96e-16
+
+***
+FORMAT:(/, G3.1E3)
+INPUT:3.14159
+
+3.     
+FORMAT:(/, G4.1E3)
+INPUT:3.
+
+3.     
+FORMAT:(/, G4.1E3)
+INPUT:-3.
+
+-3.     
+FORMAT:(/, G4.1E3)
+INPUT:10.
+
+****
+FORMAT:(/, G4.1E3)
+INPUT:-10.
+
+****
+FORMAT:(/, G4.1E3)
+INPUT:100.
+
+****
+FORMAT:(/, G4.1E3)
+INPUT:-100.
+
+****
+FORMAT:(/, G4.1E3)
+INPUT:1000.
+
+****
+FORMAT:(/, G4.1E3)
+INPUT:-1000.
+
+****
+FORMAT:(/, G4.1E3)
+INPUT:10000.
+
+****
+FORMAT:(/, G4.1E3)
+INPUT:-10000.
+
+****
+FORMAT:(/, G4.1E3)
+INPUT:100000.
+
+****
+FORMAT:(/, G4.1E3)
+INPUT:-100000.
+
+****
+FORMAT:(/, G4.1E3)
+INPUT:123456789.
+
+****
+FORMAT:(/, G4.1E3)
+INPUT:0.1
+
+.1     
+FORMAT:(/, G4.1E3)
+INPUT:-0.1
+
+-.1     
+FORMAT:(/, G4.1E3)
+INPUT:0.01
+
+****
+FORMAT:(/, G4.1E3)
+INPUT:-0.01
+
+****
+FORMAT:(/, G4.1E3)
+INPUT:0.001
+
+****
+FORMAT:(/, G4.1E3)
+INPUT:-0.001
+
+****
+FORMAT:(/, G4.1E3)
+INPUT:0.0001
+
+****
+FORMAT:(/, G4.1E3)
+INPUT:-0.0001
+
+****
+FORMAT:(/, G4.1E3)
+INPUT:-1.96e-16
+
+****
+FORMAT:(/, G4.1E3)
+INPUT:3.14159
+
+3.     
+FORMAT:(/, G5.1E3)
+INPUT:3.
+
+3.     
+FORMAT:(/, G5.1E3)
+INPUT:-3.
+
+-3.     
+FORMAT:(/, G5.1E3)
+INPUT:10.
+
+*****
+FORMAT:(/, G5.1E3)
+INPUT:-10.
+
+*****
+FORMAT:(/, G5.1E3)
+INPUT:100.
+
+*****
+FORMAT:(/, G5.1E3)
+INPUT:-100.
+
+*****
+FORMAT:(/, G5.1E3)
+INPUT:1000.
+
+*****
+FORMAT:(/, G5.1E3)
+INPUT:-1000.
+
+*****
+FORMAT:(/, G5.1E3)
+INPUT:10000.
+
+*****
+FORMAT:(/, G5.1E3)
+INPUT:-10000.
+
+*****
+FORMAT:(/, G5.1E3)
+INPUT:100000.
+
+*****
+FORMAT:(/, G5.1E3)
+INPUT:-100000.
+
+*****
+FORMAT:(/, G5.1E3)
+INPUT:123456789.
+
+*****
+FORMAT:(/, G5.1E3)
+INPUT:0.1
+
+.1     
+FORMAT:(/, G5.1E3)
+INPUT:-0.1
+
+-.1     
+FORMAT:(/, G5.1E3)
+INPUT:0.01
+
+*****
+FORMAT:(/, G5.1E3)
+INPUT:-0.01
+
+*****
+FORMAT:(/, G5.1E3)
+INPUT:0.001
+
+*****
+FORMAT:(/, G5.1E3)
+INPUT:-0.001
+
+*****
+FORMAT:(/, G5.1E3)
+INPUT:0.0001
+
+*****
+FORMAT:(/, G5.1E3)
+INPUT:-0.0001
+
+*****
+FORMAT:(/, G5.1E3)
+INPUT:-1.96e-16
+
+*****
+FORMAT:(/, G5.1E3)
+INPUT:3.14159
+
+3.     
+FORMAT:(/, G10.1E3)
+INPUT:3.
+
+   3.     
+FORMAT:(/, G10.1E3)
+INPUT:-3.
+
+  -3.     
+FORMAT:(/, G10.1E3)
+INPUT:10.
+
+  0.1E+002
+FORMAT:(/, G10.1E3)
+INPUT:-10.
+
+ -0.1E+002
+FORMAT:(/, G10.1E3)
+INPUT:100.
+
+  0.1E+003
+FORMAT:(/, G10.1E3)
+INPUT:-100.
+
+ -0.1E+003
+FORMAT:(/, G10.1E3)
+INPUT:1000.
+
+  0.1E+004
+FORMAT:(/, G10.1E3)
+INPUT:-1000.
+
+ -0.1E+004
+FORMAT:(/, G10.1E3)
+INPUT:10000.
+
+  0.1E+005
+FORMAT:(/, G10.1E3)
+INPUT:-10000.
+
+ -0.1E+005
+FORMAT:(/, G10.1E3)
+INPUT:100000.
+
+  0.1E+006
+FORMAT:(/, G10.1E3)
+INPUT:-100000.
+
+ -0.1E+006
+FORMAT:(/, G10.1E3)
+INPUT:123456789.
+
+  0.1E+009
+FORMAT:(/, G10.1E3)
+INPUT:0.1
+
+  0.1     
+FORMAT:(/, G10.1E3)
+INPUT:-0.1
+
+ -0.1     
+FORMAT:(/, G10.1E3)
+INPUT:0.01
+
+  0.1E-001
+FORMAT:(/, G10.1E3)
+INPUT:-0.01
+
+ -0.1E-001
+FORMAT:(/, G10.1E3)
+INPUT:0.001
+
+  0.1E-002
+FORMAT:(/, G10.1E3)
+INPUT:-0.001
+
+ -0.1E-002
+FORMAT:(/, G10.1E3)
+INPUT:0.0001
+
+  0.1E-003
+FORMAT:(/, G10.1E3)
+INPUT:-0.0001
+
+ -0.1E-003
+FORMAT:(/, G10.1E3)
+INPUT:-1.96e-16
+
+ -0.2E-015
+FORMAT:(/, G10.1E3)
+INPUT:3.14159
+
+   3.     
+FORMAT:(/, G2.2E3)
+INPUT:3.
+
+3.0     
+FORMAT:(/, G2.2E3)
+INPUT:-3.
+
+-3.0     
+FORMAT:(/, G2.2E3)
+INPUT:10.
+
+10.     
+FORMAT:(/, G2.2E3)
+INPUT:-10.
+
+-10.     
+FORMAT:(/, G2.2E3)
+INPUT:100.
+
+**
+FORMAT:(/, G2.2E3)
+INPUT:-100.
+
+**
+FORMAT:(/, G2.2E3)
+INPUT:1000.
+
+**
+FORMAT:(/, G2.2E3)
+INPUT:-1000.
+
+**
+FORMAT:(/, G2.2E3)
+INPUT:10000.
+
+**
+FORMAT:(/, G2.2E3)
+INPUT:-10000.
+
+**
+FORMAT:(/, G2.2E3)
+INPUT:100000.
+
+**
+FORMAT:(/, G2.2E3)
+INPUT:-100000.
+
+**
+FORMAT:(/, G2.2E3)
+INPUT:123456789.
+
+**
+FORMAT:(/, G2.2E3)
+INPUT:0.1
+
+.10     
+FORMAT:(/, G2.2E3)
+INPUT:-0.1
+
+-.10     
+FORMAT:(/, G2.2E3)
+INPUT:0.01
+
+**
+FORMAT:(/, G2.2E3)
+INPUT:-0.01
+
+**
+FORMAT:(/, G2.2E3)
+INPUT:0.001
+
+**
+FORMAT:(/, G2.2E3)
+INPUT:-0.001
+
+**
+FORMAT:(/, G2.2E3)
+INPUT:0.0001
+
+**
+FORMAT:(/, G2.2E3)
+INPUT:-0.0001
+
+**
+FORMAT:(/, G2.2E3)
+INPUT:-1.96e-16
+
+**
+FORMAT:(/, G2.2E3)
+INPUT:3.14159
+
+3.1     
+FORMAT:(/, G3.2E3)
+INPUT:3.
+
+3.0     
+FORMAT:(/, G3.2E3)
+INPUT:-3.
+
+-3.0     
+FORMAT:(/, G3.2E3)
+INPUT:10.
+
+10.     
+FORMAT:(/, G3.2E3)
+INPUT:-10.
+
+-10.     
+FORMAT:(/, G3.2E3)
+INPUT:100.
+
+***
+FORMAT:(/, G3.2E3)
+INPUT:-100.
+
+***
+FORMAT:(/, G3.2E3)
+INPUT:1000.
+
+***
+FORMAT:(/, G3.2E3)
+INPUT:-1000.
+
+***
+FORMAT:(/, G3.2E3)
+INPUT:10000.
+
+***
+FORMAT:(/, G3.2E3)
+INPUT:-10000.
+
+***
+FORMAT:(/, G3.2E3)
+INPUT:100000.
+
+***
+FORMAT:(/, G3.2E3)
+INPUT:-100000.
+
+***
+FORMAT:(/, G3.2E3)
+INPUT:123456789.
+
+***
+FORMAT:(/, G3.2E3)
+INPUT:0.1
+
+.10     
+FORMAT:(/, G3.2E3)
+INPUT:-0.1
+
+-.10     
+FORMAT:(/, G3.2E3)
+INPUT:0.01
+
+***
+FORMAT:(/, G3.2E3)
+INPUT:-0.01
+
+***
+FORMAT:(/, G3.2E3)
+INPUT:0.001
+
+***
+FORMAT:(/, G3.2E3)
+INPUT:-0.001
+
+***
+FORMAT:(/, G3.2E3)
+INPUT:0.0001
+
+***
+FORMAT:(/, G3.2E3)
+INPUT:-0.0001
+
+***
+FORMAT:(/, G3.2E3)
+INPUT:-1.96e-16
+
+***
+FORMAT:(/, G3.2E3)
+INPUT:3.14159
+
+3.1     
+FORMAT:(/, G4.2E3)
+INPUT:3.
+
+3.0     
+FORMAT:(/, G4.2E3)
+INPUT:-3.
+
+-3.0     
+FORMAT:(/, G4.2E3)
+INPUT:10.
+
+10.     
+FORMAT:(/, G4.2E3)
+INPUT:-10.
+
+-10.     
+FORMAT:(/, G4.2E3)
+INPUT:100.
+
+****
+FORMAT:(/, G4.2E3)
+INPUT:-100.
+
+****
+FORMAT:(/, G4.2E3)
+INPUT:1000.
+
+****
+FORMAT:(/, G4.2E3)
+INPUT:-1000.
+
+****
+FORMAT:(/, G4.2E3)
+INPUT:10000.
+
+****
+FORMAT:(/, G4.2E3)
+INPUT:-10000.
+
+****
+FORMAT:(/, G4.2E3)
+INPUT:100000.
+
+****
+FORMAT:(/, G4.2E3)
+INPUT:-100000.
+
+****
+FORMAT:(/, G4.2E3)
+INPUT:123456789.
+
+****
+FORMAT:(/, G4.2E3)
+INPUT:0.1
+
+.10     
+FORMAT:(/, G4.2E3)
+INPUT:-0.1
+
+-.10     
+FORMAT:(/, G4.2E3)
+INPUT:0.01
+
+****
+FORMAT:(/, G4.2E3)
+INPUT:-0.01
+
+****
+FORMAT:(/, G4.2E3)
+INPUT:0.001
+
+****
+FORMAT:(/, G4.2E3)
+INPUT:-0.001
+
+****
+FORMAT:(/, G4.2E3)
+INPUT:0.0001
+
+****
+FORMAT:(/, G4.2E3)
+INPUT:-0.0001
+
+****
+FORMAT:(/, G4.2E3)
+INPUT:-1.96e-16
+
+****
+FORMAT:(/, G4.2E3)
+INPUT:3.14159
+
+3.1     
+FORMAT:(/, G5.2E3)
+INPUT:3.
+
+3.0     
+FORMAT:(/, G5.2E3)
+INPUT:-3.
+
+-3.0     
+FORMAT:(/, G5.2E3)
+INPUT:10.
+
+10.     
+FORMAT:(/, G5.2E3)
+INPUT:-10.
+
+-10.     
+FORMAT:(/, G5.2E3)
+INPUT:100.
+
+*****
+FORMAT:(/, G5.2E3)
+INPUT:-100.
+
+*****
+FORMAT:(/, G5.2E3)
+INPUT:1000.
+
+*****
+FORMAT:(/, G5.2E3)
+INPUT:-1000.
+
+*****
+FORMAT:(/, G5.2E3)
+INPUT:10000.
+
+*****
+FORMAT:(/, G5.2E3)
+INPUT:-10000.
+
+*****
+FORMAT:(/, G5.2E3)
+INPUT:100000.
+
+*****
+FORMAT:(/, G5.2E3)
+INPUT:-100000.
+
+*****
+FORMAT:(/, G5.2E3)
+INPUT:123456789.
+
+*****
+FORMAT:(/, G5.2E3)
+INPUT:0.1
+
+.10     
+FORMAT:(/, G5.2E3)
+INPUT:-0.1
+
+-.10     
+FORMAT:(/, G5.2E3)
+INPUT:0.01
+
+*****
+FORMAT:(/, G5.2E3)
+INPUT:-0.01
+
+*****
+FORMAT:(/, G5.2E3)
+INPUT:0.001
+
+*****
+FORMAT:(/, G5.2E3)
+INPUT:-0.001
+
+*****
+FORMAT:(/, G5.2E3)
+INPUT:0.0001
+
+*****
+FORMAT:(/, G5.2E3)
+INPUT:-0.0001
+
+*****
+FORMAT:(/, G5.2E3)
+INPUT:-1.96e-16
+
+*****
+FORMAT:(/, G5.2E3)
+INPUT:3.14159
+
+3.1     
+FORMAT:(/, G10.2E3)
+INPUT:3.
+
+  3.0     
+FORMAT:(/, G10.2E3)
+INPUT:-3.
+
+ -3.0     
+FORMAT:(/, G10.2E3)
+INPUT:10.
+
+  10.     
+FORMAT:(/, G10.2E3)
+INPUT:-10.
+
+ -10.     
+FORMAT:(/, G10.2E3)
+INPUT:100.
+
+ 0.10E+003
+FORMAT:(/, G10.2E3)
+INPUT:-100.
+
+-0.10E+003
+FORMAT:(/, G10.2E3)
+INPUT:1000.
+
+ 0.10E+004
+FORMAT:(/, G10.2E3)
+INPUT:-1000.
+
+-0.10E+004
+FORMAT:(/, G10.2E3)
+INPUT:10000.
+
+ 0.10E+005
+FORMAT:(/, G10.2E3)
+INPUT:-10000.
+
+-0.10E+005
+FORMAT:(/, G10.2E3)
+INPUT:100000.
+
+ 0.10E+006
+FORMAT:(/, G10.2E3)
+INPUT:-100000.
+
+-0.10E+006
+FORMAT:(/, G10.2E3)
+INPUT:123456789.
+
+ 0.12E+009
+FORMAT:(/, G10.2E3)
+INPUT:0.1
+
+ 0.10     
+FORMAT:(/, G10.2E3)
+INPUT:-0.1
+
+-0.10     
+FORMAT:(/, G10.2E3)
+INPUT:0.01
+
+ 0.10E-001
+FORMAT:(/, G10.2E3)
+INPUT:-0.01
+
+-0.10E-001
+FORMAT:(/, G10.2E3)
+INPUT:0.001
+
+ 0.10E-002
+FORMAT:(/, G10.2E3)
+INPUT:-0.001
+
+-0.10E-002
+FORMAT:(/, G10.2E3)
+INPUT:0.0001
+
+ 0.10E-003
+FORMAT:(/, G10.2E3)
+INPUT:-0.0001
+
+-0.10E-003
+FORMAT:(/, G10.2E3)
+INPUT:-1.96e-16
+
+-0.20E-015
+FORMAT:(/, G10.2E3)
+INPUT:3.14159
+
+  3.1     
+FORMAT:(/, G3.3E3)
+INPUT:3.
+
+3.00     
+FORMAT:(/, G3.3E3)
+INPUT:-3.
+
+-3.00     
+FORMAT:(/, G3.3E3)
+INPUT:10.
+
+10.0     
+FORMAT:(/, G3.3E3)
+INPUT:-10.
+
+-10.0     
+FORMAT:(/, G3.3E3)
+INPUT:100.
+
+100.     
+FORMAT:(/, G3.3E3)
+INPUT:-100.
+
+-100.     
+FORMAT:(/, G3.3E3)
+INPUT:1000.
+
+***
+FORMAT:(/, G3.3E3)
+INPUT:-1000.
+
+***
+FORMAT:(/, G3.3E3)
+INPUT:10000.
+
+***
+FORMAT:(/, G3.3E3)
+INPUT:-10000.
+
+***
+FORMAT:(/, G3.3E3)
+INPUT:100000.
+
+***
+FORMAT:(/, G3.3E3)
+INPUT:-100000.
+
+***
+FORMAT:(/, G3.3E3)
+INPUT:123456789.
+
+***
+FORMAT:(/, G3.3E3)
+INPUT:0.1
+
+.100     
+FORMAT:(/, G3.3E3)
+INPUT:-0.1
+
+-.100     
+FORMAT:(/, G3.3E3)
+INPUT:0.01
+
+***
+FORMAT:(/, G3.3E3)
+INPUT:-0.01
+
+***
+FORMAT:(/, G3.3E3)
+INPUT:0.001
+
+***
+FORMAT:(/, G3.3E3)
+INPUT:-0.001
+
+***
+FORMAT:(/, G3.3E3)
+INPUT:0.0001
+
+***
+FORMAT:(/, G3.3E3)
+INPUT:-0.0001
+
+***
+FORMAT:(/, G3.3E3)
+INPUT:-1.96e-16
+
+***
+FORMAT:(/, G3.3E3)
+INPUT:3.14159
+
+3.14     
+FORMAT:(/, G4.3E3)
+INPUT:3.
+
+3.00     
+FORMAT:(/, G4.3E3)
+INPUT:-3.
+
+-3.00     
+FORMAT:(/, G4.3E3)
+INPUT:10.
+
+10.0     
+FORMAT:(/, G4.3E3)
+INPUT:-10.
+
+-10.0     
+FORMAT:(/, G4.3E3)
+INPUT:100.
+
+100.     
+FORMAT:(/, G4.3E3)
+INPUT:-100.
+
+-100.     
+FORMAT:(/, G4.3E3)
+INPUT:1000.
+
+****
+FORMAT:(/, G4.3E3)
+INPUT:-1000.
+
+****
+FORMAT:(/, G4.3E3)
+INPUT:10000.
+
+****
+FORMAT:(/, G4.3E3)
+INPUT:-10000.
+
+****
+FORMAT:(/, G4.3E3)
+INPUT:100000.
+
+****
+FORMAT:(/, G4.3E3)
+INPUT:-100000.
+
+****
+FORMAT:(/, G4.3E3)
+INPUT:123456789.
+
+****
+FORMAT:(/, G4.3E3)
+INPUT:0.1
+
+.100     
+FORMAT:(/, G4.3E3)
+INPUT:-0.1
+
+-.100     
+FORMAT:(/, G4.3E3)
+INPUT:0.01
+
+****
+FORMAT:(/, G4.3E3)
+INPUT:-0.01
+
+****
+FORMAT:(/, G4.3E3)
+INPUT:0.001
+
+****
+FORMAT:(/, G4.3E3)
+INPUT:-0.001
+
+****
+FORMAT:(/, G4.3E3)
+INPUT:0.0001
+
+****
+FORMAT:(/, G4.3E3)
+INPUT:-0.0001
+
+****
+FORMAT:(/, G4.3E3)
+INPUT:-1.96e-16
+
+****
+FORMAT:(/, G4.3E3)
+INPUT:3.14159
+
+3.14     
+FORMAT:(/, G5.3E3)
+INPUT:3.
+
+3.00     
+FORMAT:(/, G5.3E3)
+INPUT:-3.
+
+-3.00     
+FORMAT:(/, G5.3E3)
+INPUT:10.
+
+10.0     
+FORMAT:(/, G5.3E3)
+INPUT:-10.
+
+-10.0     
+FORMAT:(/, G5.3E3)
+INPUT:100.
+
+100.     
+FORMAT:(/, G5.3E3)
+INPUT:-100.
+
+-100.     
+FORMAT:(/, G5.3E3)
+INPUT:1000.
+
+*****
+FORMAT:(/, G5.3E3)
+INPUT:-1000.
+
+*****
+FORMAT:(/, G5.3E3)
+INPUT:10000.
+
+*****
+FORMAT:(/, G5.3E3)
+INPUT:-10000.
+
+*****
+FORMAT:(/, G5.3E3)
+INPUT:100000.
+
+*****
+FORMAT:(/, G5.3E3)
+INPUT:-100000.
+
+*****
+FORMAT:(/, G5.3E3)
+INPUT:123456789.
+
+*****
+FORMAT:(/, G5.3E3)
+INPUT:0.1
+
+.100     
+FORMAT:(/, G5.3E3)
+INPUT:-0.1
+
+-.100     
+FORMAT:(/, G5.3E3)
+INPUT:0.01
+
+*****
+FORMAT:(/, G5.3E3)
+INPUT:-0.01
+
+*****
+FORMAT:(/, G5.3E3)
+INPUT:0.001
+
+*****
+FORMAT:(/, G5.3E3)
+INPUT:-0.001
+
+*****
+FORMAT:(/, G5.3E3)
+INPUT:0.0001
+
+*****
+FORMAT:(/, G5.3E3)
+INPUT:-0.0001
+
+*****
+FORMAT:(/, G5.3E3)
+INPUT:-1.96e-16
+
+*****
+FORMAT:(/, G5.3E3)
+INPUT:3.14159
+
+3.14     
+FORMAT:(/, G10.3E3)
+INPUT:3.
+
+ 3.00     
+FORMAT:(/, G10.3E3)
+INPUT:-3.
+
+-3.00     
+FORMAT:(/, G10.3E3)
+INPUT:10.
+
+ 10.0     
+FORMAT:(/, G10.3E3)
+INPUT:-10.
+
+-10.0     
+FORMAT:(/, G10.3E3)
+INPUT:100.
+
+ 100.     
+FORMAT:(/, G10.3E3)
+INPUT:-100.
+
+-100.     
+FORMAT:(/, G10.3E3)
+INPUT:1000.
+
+0.100E+004
+FORMAT:(/, G10.3E3)
+INPUT:-1000.
+
+-.100E+004
+FORMAT:(/, G10.3E3)
+INPUT:10000.
+
+0.100E+005
+FORMAT:(/, G10.3E3)
+INPUT:-10000.
+
+-.100E+005
+FORMAT:(/, G10.3E3)
+INPUT:100000.
+
+0.100E+006
+FORMAT:(/, G10.3E3)
+INPUT:-100000.
+
+-.100E+006
+FORMAT:(/, G10.3E3)
+INPUT:123456789.
+
+0.123E+009
+FORMAT:(/, G10.3E3)
+INPUT:0.1
+
+0.100     
+FORMAT:(/, G10.3E3)
+INPUT:-0.1
+
+-.100     
+FORMAT:(/, G10.3E3)
+INPUT:0.01
+
+0.100E-001
+FORMAT:(/, G10.3E3)
+INPUT:-0.01
+
+-.100E-001
+FORMAT:(/, G10.3E3)
+INPUT:0.001
+
+0.100E-002
+FORMAT:(/, G10.3E3)
+INPUT:-0.001
+
+-.100E-002
+FORMAT:(/, G10.3E3)
+INPUT:0.0001
+
+0.100E-003
+FORMAT:(/, G10.3E3)
+INPUT:-0.0001
+
+-.100E-003
+FORMAT:(/, G10.3E3)
+INPUT:-1.96e-16
+
+-.196E-015
+FORMAT:(/, G10.3E3)
+INPUT:3.14159
+
+ 3.14     
+FORMAT:(/, G4.4E3)
+INPUT:3.
+
+3.000     
+FORMAT:(/, G4.4E3)
+INPUT:-3.
+
+-3.000     
+FORMAT:(/, G4.4E3)
+INPUT:10.
+
+10.00     
+FORMAT:(/, G4.4E3)
+INPUT:-10.
+
+-10.00     
+FORMAT:(/, G4.4E3)
+INPUT:100.
+
+100.0     
+FORMAT:(/, G4.4E3)
+INPUT:-100.
+
+-100.0     
+FORMAT:(/, G4.4E3)
+INPUT:1000.
+
+1000.     
+FORMAT:(/, G4.4E3)
+INPUT:-1000.
+
+-1000.     
+FORMAT:(/, G4.4E3)
+INPUT:10000.
+
+****
+FORMAT:(/, G4.4E3)
+INPUT:-10000.
+
+****
+FORMAT:(/, G4.4E3)
+INPUT:100000.
+
+****
+FORMAT:(/, G4.4E3)
+INPUT:-100000.
+
+****
+FORMAT:(/, G4.4E3)
+INPUT:123456789.
+
+****
+FORMAT:(/, G4.4E3)
+INPUT:0.1
+
+.1000     
+FORMAT:(/, G4.4E3)
+INPUT:-0.1
+
+-.1000     
+FORMAT:(/, G4.4E3)
+INPUT:0.01
+
+****
+FORMAT:(/, G4.4E3)
+INPUT:-0.01
+
+****
+FORMAT:(/, G4.4E3)
+INPUT:0.001
+
+****
+FORMAT:(/, G4.4E3)
+INPUT:-0.001
+
+****
+FORMAT:(/, G4.4E3)
+INPUT:0.0001
+
+****
+FORMAT:(/, G4.4E3)
+INPUT:-0.0001
+
+****
+FORMAT:(/, G4.4E3)
+INPUT:-1.96e-16
+
+****
+FORMAT:(/, G4.4E3)
+INPUT:3.14159
+
+3.142     
+FORMAT:(/, G5.4E3)
+INPUT:3.
+
+3.000     
+FORMAT:(/, G5.4E3)
+INPUT:-3.
+
+-3.000     
+FORMAT:(/, G5.4E3)
+INPUT:10.
+
+10.00     
+FORMAT:(/, G5.4E3)
+INPUT:-10.
+
+-10.00     
+FORMAT:(/, G5.4E3)
+INPUT:100.
+
+100.0     
+FORMAT:(/, G5.4E3)
+INPUT:-100.
+
+-100.0     
+FORMAT:(/, G5.4E3)
+INPUT:1000.
+
+1000.     
+FORMAT:(/, G5.4E3)
+INPUT:-1000.
+
+-1000.     
+FORMAT:(/, G5.4E3)
+INPUT:10000.
+
+*****
+FORMAT:(/, G5.4E3)
+INPUT:-10000.
+
+*****
+FORMAT:(/, G5.4E3)
+INPUT:100000.
+
+*****
+FORMAT:(/, G5.4E3)
+INPUT:-100000.
+
+*****
+FORMAT:(/, G5.4E3)
+INPUT:123456789.
+
+*****
+FORMAT:(/, G5.4E3)
+INPUT:0.1
+
+.1000     
+FORMAT:(/, G5.4E3)
+INPUT:-0.1
+
+-.1000     
+FORMAT:(/, G5.4E3)
+INPUT:0.01
+
+*****
+FORMAT:(/, G5.4E3)
+INPUT:-0.01
+
+*****
+FORMAT:(/, G5.4E3)
+INPUT:0.001
+
+*****
+FORMAT:(/, G5.4E3)
+INPUT:-0.001
+
+*****
+FORMAT:(/, G5.4E3)
+INPUT:0.0001
+
+*****
+FORMAT:(/, G5.4E3)
+INPUT:-0.0001
+
+*****
+FORMAT:(/, G5.4E3)
+INPUT:-1.96e-16
+
+*****
+FORMAT:(/, G5.4E3)
+INPUT:3.14159
+
+3.142     
+FORMAT:(/, G10.4E3)
+INPUT:3.
+
+3.000     
+FORMAT:(/, G10.4E3)
+INPUT:-3.
+
+*****     
+FORMAT:(/, G10.4E3)
+INPUT:10.
+
+10.00     
+FORMAT:(/, G10.4E3)
+INPUT:-10.
+
+*****     
+FORMAT:(/, G10.4E3)
+INPUT:100.
+
+100.0     
+FORMAT:(/, G10.4E3)
+INPUT:-100.
+
+*****     
+FORMAT:(/, G10.4E3)
+INPUT:1000.
+
+1000.     
+FORMAT:(/, G10.4E3)
+INPUT:-1000.
+
+*****     
+FORMAT:(/, G10.4E3)
+INPUT:10000.
+
+.1000E+005
+FORMAT:(/, G10.4E3)
+INPUT:-10000.
+
+**********
+FORMAT:(/, G10.4E3)
+INPUT:100000.
+
+.1000E+006
+FORMAT:(/, G10.4E3)
+INPUT:-100000.
+
+**********
+FORMAT:(/, G10.4E3)
+INPUT:123456789.
+
+.1235E+009
+FORMAT:(/, G10.4E3)
+INPUT:0.1
+
+.1000     
+FORMAT:(/, G10.4E3)
+INPUT:-0.1
+
+*****     
+FORMAT:(/, G10.4E3)
+INPUT:0.01
+
+.1000E-001
+FORMAT:(/, G10.4E3)
+INPUT:-0.01
+
+**********
+FORMAT:(/, G10.4E3)
+INPUT:0.001
+
+.1000E-002
+FORMAT:(/, G10.4E3)
+INPUT:-0.001
+
+**********
+FORMAT:(/, G10.4E3)
+INPUT:0.0001
+
+.1000E-003
+FORMAT:(/, G10.4E3)
+INPUT:-0.0001
+
+**********
+FORMAT:(/, G10.4E3)
+INPUT:-1.96e-16
+
+**********
+FORMAT:(/, G10.4E3)
+INPUT:3.14159
+
+3.142     
+FORMAT:(/, G5.5E3)
+INPUT:3.
+
+3.0000     
+FORMAT:(/, G5.5E3)
+INPUT:-3.
+
+-3.0000     
+FORMAT:(/, G5.5E3)
+INPUT:10.
+
+10.000     
+FORMAT:(/, G5.5E3)
+INPUT:-10.
+
+-10.000     
+FORMAT:(/, G5.5E3)
+INPUT:100.
+
+100.00     
+FORMAT:(/, G5.5E3)
+INPUT:-100.
+
+-100.00     
+FORMAT:(/, G5.5E3)
+INPUT:1000.
+
+1000.0     
+FORMAT:(/, G5.5E3)
+INPUT:-1000.
+
+-1000.0     
+FORMAT:(/, G5.5E3)
+INPUT:10000.
+
+10000.     
+FORMAT:(/, G5.5E3)
+INPUT:-10000.
+
+-10000.     
+FORMAT:(/, G5.5E3)
+INPUT:100000.
+
+*****
+FORMAT:(/, G5.5E3)
+INPUT:-100000.
+
+*****
+FORMAT:(/, G5.5E3)
+INPUT:123456789.
+
+*****
+FORMAT:(/, G5.5E3)
+INPUT:0.1
+
+.10000     
+FORMAT:(/, G5.5E3)
+INPUT:-0.1
+
+-.10000     
+FORMAT:(/, G5.5E3)
+INPUT:0.01
+
+*****
+FORMAT:(/, G5.5E3)
+INPUT:-0.01
+
+*****
+FORMAT:(/, G5.5E3)
+INPUT:0.001
+
+*****
+FORMAT:(/, G5.5E3)
+INPUT:-0.001
+
+*****
+FORMAT:(/, G5.5E3)
+INPUT:0.0001
+
+*****
+FORMAT:(/, G5.5E3)
+INPUT:-0.0001
+
+*****
+FORMAT:(/, G5.5E3)
+INPUT:-1.96e-16
+
+*****
+FORMAT:(/, G5.5E3)
+INPUT:3.14159
+
+3.1416     
+FORMAT:(/, G10.5E3)
+INPUT:3.
+
+*****     
+FORMAT:(/, G10.5E3)
+INPUT:-3.
+
+*****     
+FORMAT:(/, G10.5E3)
+INPUT:10.
+
+*****     
+FORMAT:(/, G10.5E3)
+INPUT:-10.
+
+*****     
+FORMAT:(/, G10.5E3)
+INPUT:100.
+
+*****     
+FORMAT:(/, G10.5E3)
+INPUT:-100.
+
+*****     
+FORMAT:(/, G10.5E3)
+INPUT:1000.
+
+*****     
+FORMAT:(/, G10.5E3)
+INPUT:-1000.
+
+*****     
+FORMAT:(/, G10.5E3)
+INPUT:10000.
+
+*****     
+FORMAT:(/, G10.5E3)
+INPUT:-10000.
+
+*****     
+FORMAT:(/, G10.5E3)
+INPUT:100000.
+
+**********
+FORMAT:(/, G10.5E3)
+INPUT:-100000.
+
+**********
+FORMAT:(/, G10.5E3)
+INPUT:123456789.
+
+**********
+FORMAT:(/, G10.5E3)
+INPUT:0.1
+
+*****     
+FORMAT:(/, G10.5E3)
+INPUT:-0.1
+
+*****     
+FORMAT:(/, G10.5E3)
+INPUT:0.01
+
+**********
+FORMAT:(/, G10.5E3)
+INPUT:-0.01
+
+**********
+FORMAT:(/, G10.5E3)
+INPUT:0.001
+
+**********
+FORMAT:(/, G10.5E3)
+INPUT:-0.001
+
+**********
+FORMAT:(/, G10.5E3)
+INPUT:0.0001
+
+**********
+FORMAT:(/, G10.5E3)
+INPUT:-0.0001
+
+**********
+FORMAT:(/, G10.5E3)
+INPUT:-1.96e-16
+
+**********
+FORMAT:(/, G10.5E3)
+INPUT:3.14159
+
+*****     
+FORMAT:(/, G10.10E3)
+INPUT:3.
+
+*****     
+FORMAT:(/, G10.10E3)
+INPUT:-3.
+
+*****     
+FORMAT:(/, G10.10E3)
+INPUT:10.
+
+*****     
+FORMAT:(/, G10.10E3)
+INPUT:-10.
+
+*****     
+FORMAT:(/, G10.10E3)
+INPUT:100.
+
+*****     
+FORMAT:(/, G10.10E3)
+INPUT:-100.
+
+*****     
+FORMAT:(/, G10.10E3)
+INPUT:1000.
+
+*****     
+FORMAT:(/, G10.10E3)
+INPUT:-1000.
+
+*****     
+FORMAT:(/, G10.10E3)
+INPUT:10000.
+
+*****     
+FORMAT:(/, G10.10E3)
+INPUT:-10000.
+
+*****     
+FORMAT:(/, G10.10E3)
+INPUT:100000.
+
+*****     
+FORMAT:(/, G10.10E3)
+INPUT:-100000.
+
+*****     
+FORMAT:(/, G10.10E3)
+INPUT:123456789.
+
+*****     
+FORMAT:(/, G10.10E3)
+INPUT:0.1
+
+*****     
+FORMAT:(/, G10.10E3)
+INPUT:-0.1
+
+*****     
+FORMAT:(/, G10.10E3)
+INPUT:0.01
+
+**********
+FORMAT:(/, G10.10E3)
+INPUT:-0.01
+
+**********
+FORMAT:(/, G10.10E3)
+INPUT:0.001
+
+**********
+FORMAT:(/, G10.10E3)
+INPUT:-0.001
+
+**********
+FORMAT:(/, G10.10E3)
+INPUT:0.0001
+
+**********
+FORMAT:(/, G10.10E3)
+INPUT:-0.0001
+
+**********
+FORMAT:(/, G10.10E3)
+INPUT:-1.96e-16
+
+**********
+FORMAT:(/, G10.10E3)
+INPUT:3.14159
+
+*****     
+FORMAT:(/, G1.1E4)
+INPUT:3.
+
+3.      
+FORMAT:(/, G1.1E4)
+INPUT:-3.
+
+-3.      
+FORMAT:(/, G1.1E4)
+INPUT:10.
+
+*
+FORMAT:(/, G1.1E4)
+INPUT:-10.
+
+*
+FORMAT:(/, G1.1E4)
+INPUT:100.
+
+*
+FORMAT:(/, G1.1E4)
+INPUT:-100.
+
+*
+FORMAT:(/, G1.1E4)
+INPUT:1000.
+
+*
+FORMAT:(/, G1.1E4)
+INPUT:-1000.
+
+*
+FORMAT:(/, G1.1E4)
+INPUT:10000.
+
+*
+FORMAT:(/, G1.1E4)
+INPUT:-10000.
+
+*
+FORMAT:(/, G1.1E4)
+INPUT:100000.
+
+*
+FORMAT:(/, G1.1E4)
+INPUT:-100000.
+
+*
+FORMAT:(/, G1.1E4)
+INPUT:123456789.
+
+*
+FORMAT:(/, G1.1E4)
+INPUT:0.1
+
+.1      
+FORMAT:(/, G1.1E4)
+INPUT:-0.1
+
+-.1      
+FORMAT:(/, G1.1E4)
+INPUT:0.01
+
+*
+FORMAT:(/, G1.1E4)
+INPUT:-0.01
+
+*
+FORMAT:(/, G1.1E4)
+INPUT:0.001
+
+*
+FORMAT:(/, G1.1E4)
+INPUT:-0.001
+
+*
+FORMAT:(/, G1.1E4)
+INPUT:0.0001
+
+*
+FORMAT:(/, G1.1E4)
+INPUT:-0.0001
+
+*
+FORMAT:(/, G1.1E4)
+INPUT:-1.96e-16
+
+*
+FORMAT:(/, G1.1E4)
+INPUT:3.14159
+
+3.      
+FORMAT:(/, G2.1E4)
+INPUT:3.
+
+3.      
+FORMAT:(/, G2.1E4)
+INPUT:-3.
+
+-3.      
+FORMAT:(/, G2.1E4)
+INPUT:10.
+
+**
+FORMAT:(/, G2.1E4)
+INPUT:-10.
+
+**
+FORMAT:(/, G2.1E4)
+INPUT:100.
+
+**
+FORMAT:(/, G2.1E4)
+INPUT:-100.
+
+**
+FORMAT:(/, G2.1E4)
+INPUT:1000.
+
+**
+FORMAT:(/, G2.1E4)
+INPUT:-1000.
+
+**
+FORMAT:(/, G2.1E4)
+INPUT:10000.
+
+**
+FORMAT:(/, G2.1E4)
+INPUT:-10000.
+
+**
+FORMAT:(/, G2.1E4)
+INPUT:100000.
+
+**
+FORMAT:(/, G2.1E4)
+INPUT:-100000.
+
+**
+FORMAT:(/, G2.1E4)
+INPUT:123456789.
+
+**
+FORMAT:(/, G2.1E4)
+INPUT:0.1
+
+.1      
+FORMAT:(/, G2.1E4)
+INPUT:-0.1
+
+-.1      
+FORMAT:(/, G2.1E4)
+INPUT:0.01
+
+**
+FORMAT:(/, G2.1E4)
+INPUT:-0.01
+
+**
+FORMAT:(/, G2.1E4)
+INPUT:0.001
+
+**
+FORMAT:(/, G2.1E4)
+INPUT:-0.001
+
+**
+FORMAT:(/, G2.1E4)
+INPUT:0.0001
+
+**
+FORMAT:(/, G2.1E4)
+INPUT:-0.0001
+
+**
+FORMAT:(/, G2.1E4)
+INPUT:-1.96e-16
+
+**
+FORMAT:(/, G2.1E4)
+INPUT:3.14159
+
+3.      
+FORMAT:(/, G3.1E4)
+INPUT:3.
+
+3.      
+FORMAT:(/, G3.1E4)
+INPUT:-3.
+
+-3.      
+FORMAT:(/, G3.1E4)
+INPUT:10.
+
+***
+FORMAT:(/, G3.1E4)
+INPUT:-10.
+
+***
+FORMAT:(/, G3.1E4)
+INPUT:100.
+
+***
+FORMAT:(/, G3.1E4)
+INPUT:-100.
+
+***
+FORMAT:(/, G3.1E4)
+INPUT:1000.
+
+***
+FORMAT:(/, G3.1E4)
+INPUT:-1000.
+
+***
+FORMAT:(/, G3.1E4)
+INPUT:10000.
+
+***
+FORMAT:(/, G3.1E4)
+INPUT:-10000.
+
+***
+FORMAT:(/, G3.1E4)
+INPUT:100000.
+
+***
+FORMAT:(/, G3.1E4)
+INPUT:-100000.
+
+***
+FORMAT:(/, G3.1E4)
+INPUT:123456789.
+
+***
+FORMAT:(/, G3.1E4)
+INPUT:0.1
+
+.1      
+FORMAT:(/, G3.1E4)
+INPUT:-0.1
+
+-.1      
+FORMAT:(/, G3.1E4)
+INPUT:0.01
+
+***
+FORMAT:(/, G3.1E4)
+INPUT:-0.01
+
+***
+FORMAT:(/, G3.1E4)
+INPUT:0.001
+
+***
+FORMAT:(/, G3.1E4)
+INPUT:-0.001
+
+***
+FORMAT:(/, G3.1E4)
+INPUT:0.0001
+
+***
+FORMAT:(/, G3.1E4)
+INPUT:-0.0001
+
+***
+FORMAT:(/, G3.1E4)
+INPUT:-1.96e-16
+
+***
+FORMAT:(/, G3.1E4)
+INPUT:3.14159
+
+3.      
+FORMAT:(/, G4.1E4)
+INPUT:3.
+
+3.      
+FORMAT:(/, G4.1E4)
+INPUT:-3.
+
+-3.      
+FORMAT:(/, G4.1E4)
+INPUT:10.
+
+****
+FORMAT:(/, G4.1E4)
+INPUT:-10.
+
+****
+FORMAT:(/, G4.1E4)
+INPUT:100.
+
+****
+FORMAT:(/, G4.1E4)
+INPUT:-100.
+
+****
+FORMAT:(/, G4.1E4)
+INPUT:1000.
+
+****
+FORMAT:(/, G4.1E4)
+INPUT:-1000.
+
+****
+FORMAT:(/, G4.1E4)
+INPUT:10000.
+
+****
+FORMAT:(/, G4.1E4)
+INPUT:-10000.
+
+****
+FORMAT:(/, G4.1E4)
+INPUT:100000.
+
+****
+FORMAT:(/, G4.1E4)
+INPUT:-100000.
+
+****
+FORMAT:(/, G4.1E4)
+INPUT:123456789.
+
+****
+FORMAT:(/, G4.1E4)
+INPUT:0.1
+
+.1      
+FORMAT:(/, G4.1E4)
+INPUT:-0.1
+
+-.1      
+FORMAT:(/, G4.1E4)
+INPUT:0.01
+
+****
+FORMAT:(/, G4.1E4)
+INPUT:-0.01
+
+****
+FORMAT:(/, G4.1E4)
+INPUT:0.001
+
+****
+FORMAT:(/, G4.1E4)
+INPUT:-0.001
+
+****
+FORMAT:(/, G4.1E4)
+INPUT:0.0001
+
+****
+FORMAT:(/, G4.1E4)
+INPUT:-0.0001
+
+****
+FORMAT:(/, G4.1E4)
+INPUT:-1.96e-16
+
+****
+FORMAT:(/, G4.1E4)
+INPUT:3.14159
+
+3.      
+FORMAT:(/, G5.1E4)
+INPUT:3.
+
+3.      
+FORMAT:(/, G5.1E4)
+INPUT:-3.
+
+-3.      
+FORMAT:(/, G5.1E4)
+INPUT:10.
+
+*****
+FORMAT:(/, G5.1E4)
+INPUT:-10.
+
+*****
+FORMAT:(/, G5.1E4)
+INPUT:100.
+
+*****
+FORMAT:(/, G5.1E4)
+INPUT:-100.
+
+*****
+FORMAT:(/, G5.1E4)
+INPUT:1000.
+
+*****
+FORMAT:(/, G5.1E4)
+INPUT:-1000.
+
+*****
+FORMAT:(/, G5.1E4)
+INPUT:10000.
+
+*****
+FORMAT:(/, G5.1E4)
+INPUT:-10000.
+
+*****
+FORMAT:(/, G5.1E4)
+INPUT:100000.
+
+*****
+FORMAT:(/, G5.1E4)
+INPUT:-100000.
+
+*****
+FORMAT:(/, G5.1E4)
+INPUT:123456789.
+
+*****
+FORMAT:(/, G5.1E4)
+INPUT:0.1
+
+.1      
+FORMAT:(/, G5.1E4)
+INPUT:-0.1
+
+-.1      
+FORMAT:(/, G5.1E4)
+INPUT:0.01
+
+*****
+FORMAT:(/, G5.1E4)
+INPUT:-0.01
+
+*****
+FORMAT:(/, G5.1E4)
+INPUT:0.001
+
+*****
+FORMAT:(/, G5.1E4)
+INPUT:-0.001
+
+*****
+FORMAT:(/, G5.1E4)
+INPUT:0.0001
+
+*****
+FORMAT:(/, G5.1E4)
+INPUT:-0.0001
+
+*****
+FORMAT:(/, G5.1E4)
+INPUT:-1.96e-16
+
+*****
+FORMAT:(/, G5.1E4)
+INPUT:3.14159
+
+3.      
+FORMAT:(/, G10.1E4)
+INPUT:3.
+
+  3.      
+FORMAT:(/, G10.1E4)
+INPUT:-3.
+
+ -3.      
+FORMAT:(/, G10.1E4)
+INPUT:10.
+
+ 0.1E+0002
+FORMAT:(/, G10.1E4)
+INPUT:-10.
+
+-0.1E+0002
+FORMAT:(/, G10.1E4)
+INPUT:100.
+
+ 0.1E+0003
+FORMAT:(/, G10.1E4)
+INPUT:-100.
+
+-0.1E+0003
+FORMAT:(/, G10.1E4)
+INPUT:1000.
+
+ 0.1E+0004
+FORMAT:(/, G10.1E4)
+INPUT:-1000.
+
+-0.1E+0004
+FORMAT:(/, G10.1E4)
+INPUT:10000.
+
+ 0.1E+0005
+FORMAT:(/, G10.1E4)
+INPUT:-10000.
+
+-0.1E+0005
+FORMAT:(/, G10.1E4)
+INPUT:100000.
+
+ 0.1E+0006
+FORMAT:(/, G10.1E4)
+INPUT:-100000.
+
+-0.1E+0006
+FORMAT:(/, G10.1E4)
+INPUT:123456789.
+
+ 0.1E+0009
+FORMAT:(/, G10.1E4)
+INPUT:0.1
+
+ 0.1      
+FORMAT:(/, G10.1E4)
+INPUT:-0.1
+
+-0.1      
+FORMAT:(/, G10.1E4)
+INPUT:0.01
+
+ 0.1E-0001
+FORMAT:(/, G10.1E4)
+INPUT:-0.01
+
+-0.1E-0001
+FORMAT:(/, G10.1E4)
+INPUT:0.001
+
+ 0.1E-0002
+FORMAT:(/, G10.1E4)
+INPUT:-0.001
+
+-0.1E-0002
+FORMAT:(/, G10.1E4)
+INPUT:0.0001
+
+ 0.1E-0003
+FORMAT:(/, G10.1E4)
+INPUT:-0.0001
+
+-0.1E-0003
+FORMAT:(/, G10.1E4)
+INPUT:-1.96e-16
+
+-0.2E-0015
+FORMAT:(/, G10.1E4)
+INPUT:3.14159
+
+  3.      
+FORMAT:(/, G2.2E4)
+INPUT:3.
+
+3.0      
+FORMAT:(/, G2.2E4)
+INPUT:-3.
+
+-3.0      
+FORMAT:(/, G2.2E4)
+INPUT:10.
+
+10.      
+FORMAT:(/, G2.2E4)
+INPUT:-10.
+
+-10.      
+FORMAT:(/, G2.2E4)
+INPUT:100.
+
+**
+FORMAT:(/, G2.2E4)
+INPUT:-100.
+
+**
+FORMAT:(/, G2.2E4)
+INPUT:1000.
+
+**
+FORMAT:(/, G2.2E4)
+INPUT:-1000.
+
+**
+FORMAT:(/, G2.2E4)
+INPUT:10000.
+
+**
+FORMAT:(/, G2.2E4)
+INPUT:-10000.
+
+**
+FORMAT:(/, G2.2E4)
+INPUT:100000.
+
+**
+FORMAT:(/, G2.2E4)
+INPUT:-100000.
+
+**
+FORMAT:(/, G2.2E4)
+INPUT:123456789.
+
+**
+FORMAT:(/, G2.2E4)
+INPUT:0.1
+
+.10      
+FORMAT:(/, G2.2E4)
+INPUT:-0.1
+
+-.10      
+FORMAT:(/, G2.2E4)
+INPUT:0.01
+
+**
+FORMAT:(/, G2.2E4)
+INPUT:-0.01
+
+**
+FORMAT:(/, G2.2E4)
+INPUT:0.001
+
+**
+FORMAT:(/, G2.2E4)
+INPUT:-0.001
+
+**
+FORMAT:(/, G2.2E4)
+INPUT:0.0001
+
+**
+FORMAT:(/, G2.2E4)
+INPUT:-0.0001
+
+**
+FORMAT:(/, G2.2E4)
+INPUT:-1.96e-16
+
+**
+FORMAT:(/, G2.2E4)
+INPUT:3.14159
+
+3.1      
+FORMAT:(/, G3.2E4)
+INPUT:3.
+
+3.0      
+FORMAT:(/, G3.2E4)
+INPUT:-3.
+
+-3.0      
+FORMAT:(/, G3.2E4)
+INPUT:10.
+
+10.      
+FORMAT:(/, G3.2E4)
+INPUT:-10.
+
+-10.      
+FORMAT:(/, G3.2E4)
+INPUT:100.
+
+***
+FORMAT:(/, G3.2E4)
+INPUT:-100.
+
+***
+FORMAT:(/, G3.2E4)
+INPUT:1000.
+
+***
+FORMAT:(/, G3.2E4)
+INPUT:-1000.
+
+***
+FORMAT:(/, G3.2E4)
+INPUT:10000.
+
+***
+FORMAT:(/, G3.2E4)
+INPUT:-10000.
+
+***
+FORMAT:(/, G3.2E4)
+INPUT:100000.
+
+***
+FORMAT:(/, G3.2E4)
+INPUT:-100000.
+
+***
+FORMAT:(/, G3.2E4)
+INPUT:123456789.
+
+***
+FORMAT:(/, G3.2E4)
+INPUT:0.1
+
+.10      
+FORMAT:(/, G3.2E4)
+INPUT:-0.1
+
+-.10      
+FORMAT:(/, G3.2E4)
+INPUT:0.01
+
+***
+FORMAT:(/, G3.2E4)
+INPUT:-0.01
+
+***
+FORMAT:(/, G3.2E4)
+INPUT:0.001
+
+***
+FORMAT:(/, G3.2E4)
+INPUT:-0.001
+
+***
+FORMAT:(/, G3.2E4)
+INPUT:0.0001
+
+***
+FORMAT:(/, G3.2E4)
+INPUT:-0.0001
+
+***
+FORMAT:(/, G3.2E4)
+INPUT:-1.96e-16
+
+***
+FORMAT:(/, G3.2E4)
+INPUT:3.14159
+
+3.1      
+FORMAT:(/, G4.2E4)
+INPUT:3.
+
+3.0      
+FORMAT:(/, G4.2E4)
+INPUT:-3.
+
+-3.0      
+FORMAT:(/, G4.2E4)
+INPUT:10.
+
+10.      
+FORMAT:(/, G4.2E4)
+INPUT:-10.
+
+-10.      
+FORMAT:(/, G4.2E4)
+INPUT:100.
+
+****
+FORMAT:(/, G4.2E4)
+INPUT:-100.
+
+****
+FORMAT:(/, G4.2E4)
+INPUT:1000.
+
+****
+FORMAT:(/, G4.2E4)
+INPUT:-1000.
+
+****
+FORMAT:(/, G4.2E4)
+INPUT:10000.
+
+****
+FORMAT:(/, G4.2E4)
+INPUT:-10000.
+
+****
+FORMAT:(/, G4.2E4)
+INPUT:100000.
+
+****
+FORMAT:(/, G4.2E4)
+INPUT:-100000.
+
+****
+FORMAT:(/, G4.2E4)
+INPUT:123456789.
+
+****
+FORMAT:(/, G4.2E4)
+INPUT:0.1
+
+.10      
+FORMAT:(/, G4.2E4)
+INPUT:-0.1
+
+-.10      
+FORMAT:(/, G4.2E4)
+INPUT:0.01
+
+****
+FORMAT:(/, G4.2E4)
+INPUT:-0.01
+
+****
+FORMAT:(/, G4.2E4)
+INPUT:0.001
+
+****
+FORMAT:(/, G4.2E4)
+INPUT:-0.001
+
+****
+FORMAT:(/, G4.2E4)
+INPUT:0.0001
+
+****
+FORMAT:(/, G4.2E4)
+INPUT:-0.0001
+
+****
+FORMAT:(/, G4.2E4)
+INPUT:-1.96e-16
+
+****
+FORMAT:(/, G4.2E4)
+INPUT:3.14159
+
+3.1      
+FORMAT:(/, G5.2E4)
+INPUT:3.
+
+3.0      
+FORMAT:(/, G5.2E4)
+INPUT:-3.
+
+-3.0      
+FORMAT:(/, G5.2E4)
+INPUT:10.
+
+10.      
+FORMAT:(/, G5.2E4)
+INPUT:-10.
+
+-10.      
+FORMAT:(/, G5.2E4)
+INPUT:100.
+
+*****
+FORMAT:(/, G5.2E4)
+INPUT:-100.
+
+*****
+FORMAT:(/, G5.2E4)
+INPUT:1000.
+
+*****
+FORMAT:(/, G5.2E4)
+INPUT:-1000.
+
+*****
+FORMAT:(/, G5.2E4)
+INPUT:10000.
+
+*****
+FORMAT:(/, G5.2E4)
+INPUT:-10000.
+
+*****
+FORMAT:(/, G5.2E4)
+INPUT:100000.
+
+*****
+FORMAT:(/, G5.2E4)
+INPUT:-100000.
+
+*****
+FORMAT:(/, G5.2E4)
+INPUT:123456789.
+
+*****
+FORMAT:(/, G5.2E4)
+INPUT:0.1
+
+.10      
+FORMAT:(/, G5.2E4)
+INPUT:-0.1
+
+-.10      
+FORMAT:(/, G5.2E4)
+INPUT:0.01
+
+*****
+FORMAT:(/, G5.2E4)
+INPUT:-0.01
+
+*****
+FORMAT:(/, G5.2E4)
+INPUT:0.001
+
+*****
+FORMAT:(/, G5.2E4)
+INPUT:-0.001
+
+*****
+FORMAT:(/, G5.2E4)
+INPUT:0.0001
+
+*****
+FORMAT:(/, G5.2E4)
+INPUT:-0.0001
+
+*****
+FORMAT:(/, G5.2E4)
+INPUT:-1.96e-16
+
+*****
+FORMAT:(/, G5.2E4)
+INPUT:3.14159
+
+3.1      
+FORMAT:(/, G10.2E4)
+INPUT:3.
+
+ 3.0      
+FORMAT:(/, G10.2E4)
+INPUT:-3.
+
+-3.0      
+FORMAT:(/, G10.2E4)
+INPUT:10.
+
+ 10.      
+FORMAT:(/, G10.2E4)
+INPUT:-10.
+
+-10.      
+FORMAT:(/, G10.2E4)
+INPUT:100.
+
+0.10E+0003
+FORMAT:(/, G10.2E4)
+INPUT:-100.
+
+-.10E+0003
+FORMAT:(/, G10.2E4)
+INPUT:1000.
+
+0.10E+0004
+FORMAT:(/, G10.2E4)
+INPUT:-1000.
+
+-.10E+0004
+FORMAT:(/, G10.2E4)
+INPUT:10000.
+
+0.10E+0005
+FORMAT:(/, G10.2E4)
+INPUT:-10000.
+
+-.10E+0005
+FORMAT:(/, G10.2E4)
+INPUT:100000.
+
+0.10E+0006
+FORMAT:(/, G10.2E4)
+INPUT:-100000.
+
+-.10E+0006
+FORMAT:(/, G10.2E4)
+INPUT:123456789.
+
+0.12E+0009
+FORMAT:(/, G10.2E4)
+INPUT:0.1
+
+0.10      
+FORMAT:(/, G10.2E4)
+INPUT:-0.1
+
+-.10      
+FORMAT:(/, G10.2E4)
+INPUT:0.01
+
+0.10E-0001
+FORMAT:(/, G10.2E4)
+INPUT:-0.01
+
+-.10E-0001
+FORMAT:(/, G10.2E4)
+INPUT:0.001
+
+0.10E-0002
+FORMAT:(/, G10.2E4)
+INPUT:-0.001
+
+-.10E-0002
+FORMAT:(/, G10.2E4)
+INPUT:0.0001
+
+0.10E-0003
+FORMAT:(/, G10.2E4)
+INPUT:-0.0001
+
+-.10E-0003
+FORMAT:(/, G10.2E4)
+INPUT:-1.96e-16
+
+-.20E-0015
+FORMAT:(/, G10.2E4)
+INPUT:3.14159
+
+ 3.1      
+FORMAT:(/, G3.3E4)
+INPUT:3.
+
+3.00      
+FORMAT:(/, G3.3E4)
+INPUT:-3.
+
+-3.00      
+FORMAT:(/, G3.3E4)
+INPUT:10.
+
+10.0      
+FORMAT:(/, G3.3E4)
+INPUT:-10.
+
+-10.0      
+FORMAT:(/, G3.3E4)
+INPUT:100.
+
+100.      
+FORMAT:(/, G3.3E4)
+INPUT:-100.
+
+-100.      
+FORMAT:(/, G3.3E4)
+INPUT:1000.
+
+***
+FORMAT:(/, G3.3E4)
+INPUT:-1000.
+
+***
+FORMAT:(/, G3.3E4)
+INPUT:10000.
+
+***
+FORMAT:(/, G3.3E4)
+INPUT:-10000.
+
+***
+FORMAT:(/, G3.3E4)
+INPUT:100000.
+
+***
+FORMAT:(/, G3.3E4)
+INPUT:-100000.
+
+***
+FORMAT:(/, G3.3E4)
+INPUT:123456789.
+
+***
+FORMAT:(/, G3.3E4)
+INPUT:0.1
+
+.100      
+FORMAT:(/, G3.3E4)
+INPUT:-0.1
+
+-.100      
+FORMAT:(/, G3.3E4)
+INPUT:0.01
+
+***
+FORMAT:(/, G3.3E4)
+INPUT:-0.01
+
+***
+FORMAT:(/, G3.3E4)
+INPUT:0.001
+
+***
+FORMAT:(/, G3.3E4)
+INPUT:-0.001
+
+***
+FORMAT:(/, G3.3E4)
+INPUT:0.0001
+
+***
+FORMAT:(/, G3.3E4)
+INPUT:-0.0001
+
+***
+FORMAT:(/, G3.3E4)
+INPUT:-1.96e-16
+
+***
+FORMAT:(/, G3.3E4)
+INPUT:3.14159
+
+3.14      
+FORMAT:(/, G4.3E4)
+INPUT:3.
+
+3.00      
+FORMAT:(/, G4.3E4)
+INPUT:-3.
+
+-3.00      
+FORMAT:(/, G4.3E4)
+INPUT:10.
+
+10.0      
+FORMAT:(/, G4.3E4)
+INPUT:-10.
+
+-10.0      
+FORMAT:(/, G4.3E4)
+INPUT:100.
+
+100.      
+FORMAT:(/, G4.3E4)
+INPUT:-100.
+
+-100.      
+FORMAT:(/, G4.3E4)
+INPUT:1000.
+
+****
+FORMAT:(/, G4.3E4)
+INPUT:-1000.
+
+****
+FORMAT:(/, G4.3E4)
+INPUT:10000.
+
+****
+FORMAT:(/, G4.3E4)
+INPUT:-10000.
+
+****
+FORMAT:(/, G4.3E4)
+INPUT:100000.
+
+****
+FORMAT:(/, G4.3E4)
+INPUT:-100000.
+
+****
+FORMAT:(/, G4.3E4)
+INPUT:123456789.
+
+****
+FORMAT:(/, G4.3E4)
+INPUT:0.1
+
+.100      
+FORMAT:(/, G4.3E4)
+INPUT:-0.1
+
+-.100      
+FORMAT:(/, G4.3E4)
+INPUT:0.01
+
+****
+FORMAT:(/, G4.3E4)
+INPUT:-0.01
+
+****
+FORMAT:(/, G4.3E4)
+INPUT:0.001
+
+****
+FORMAT:(/, G4.3E4)
+INPUT:-0.001
+
+****
+FORMAT:(/, G4.3E4)
+INPUT:0.0001
+
+****
+FORMAT:(/, G4.3E4)
+INPUT:-0.0001
+
+****
+FORMAT:(/, G4.3E4)
+INPUT:-1.96e-16
+
+****
+FORMAT:(/, G4.3E4)
+INPUT:3.14159
+
+3.14      
+FORMAT:(/, G5.3E4)
+INPUT:3.
+
+3.00      
+FORMAT:(/, G5.3E4)
+INPUT:-3.
+
+-3.00      
+FORMAT:(/, G5.3E4)
+INPUT:10.
+
+10.0      
+FORMAT:(/, G5.3E4)
+INPUT:-10.
+
+-10.0      
+FORMAT:(/, G5.3E4)
+INPUT:100.
+
+100.      
+FORMAT:(/, G5.3E4)
+INPUT:-100.
+
+-100.      
+FORMAT:(/, G5.3E4)
+INPUT:1000.
+
+*****
+FORMAT:(/, G5.3E4)
+INPUT:-1000.
+
+*****
+FORMAT:(/, G5.3E4)
+INPUT:10000.
+
+*****
+FORMAT:(/, G5.3E4)
+INPUT:-10000.
+
+*****
+FORMAT:(/, G5.3E4)
+INPUT:100000.
+
+*****
+FORMAT:(/, G5.3E4)
+INPUT:-100000.
+
+*****
+FORMAT:(/, G5.3E4)
+INPUT:123456789.
+
+*****
+FORMAT:(/, G5.3E4)
+INPUT:0.1
+
+.100      
+FORMAT:(/, G5.3E4)
+INPUT:-0.1
+
+-.100      
+FORMAT:(/, G5.3E4)
+INPUT:0.01
+
+*****
+FORMAT:(/, G5.3E4)
+INPUT:-0.01
+
+*****
+FORMAT:(/, G5.3E4)
+INPUT:0.001
+
+*****
+FORMAT:(/, G5.3E4)
+INPUT:-0.001
+
+*****
+FORMAT:(/, G5.3E4)
+INPUT:0.0001
+
+*****
+FORMAT:(/, G5.3E4)
+INPUT:-0.0001
+
+*****
+FORMAT:(/, G5.3E4)
+INPUT:-1.96e-16
+
+*****
+FORMAT:(/, G5.3E4)
+INPUT:3.14159
+
+3.14      
+FORMAT:(/, G10.3E4)
+INPUT:3.
+
+3.00      
+FORMAT:(/, G10.3E4)
+INPUT:-3.
+
+****      
+FORMAT:(/, G10.3E4)
+INPUT:10.
+
+10.0      
+FORMAT:(/, G10.3E4)
+INPUT:-10.
+
+****      
+FORMAT:(/, G10.3E4)
+INPUT:100.
+
+100.      
+FORMAT:(/, G10.3E4)
+INPUT:-100.
+
+****      
+FORMAT:(/, G10.3E4)
+INPUT:1000.
+
+.100E+0004
+FORMAT:(/, G10.3E4)
+INPUT:-1000.
+
+**********
+FORMAT:(/, G10.3E4)
+INPUT:10000.
+
+.100E+0005
+FORMAT:(/, G10.3E4)
+INPUT:-10000.
+
+**********
+FORMAT:(/, G10.3E4)
+INPUT:100000.
+
+.100E+0006
+FORMAT:(/, G10.3E4)
+INPUT:-100000.
+
+**********
+FORMAT:(/, G10.3E4)
+INPUT:123456789.
+
+.123E+0009
+FORMAT:(/, G10.3E4)
+INPUT:0.1
+
+.100      
+FORMAT:(/, G10.3E4)
+INPUT:-0.1
+
+****      
+FORMAT:(/, G10.3E4)
+INPUT:0.01
+
+.100E-0001
+FORMAT:(/, G10.3E4)
+INPUT:-0.01
+
+**********
+FORMAT:(/, G10.3E4)
+INPUT:0.001
+
+.100E-0002
+FORMAT:(/, G10.3E4)
+INPUT:-0.001
+
+**********
+FORMAT:(/, G10.3E4)
+INPUT:0.0001
+
+.100E-0003
+FORMAT:(/, G10.3E4)
+INPUT:-0.0001
+
+**********
+FORMAT:(/, G10.3E4)
+INPUT:-1.96e-16
+
+**********
+FORMAT:(/, G10.3E4)
+INPUT:3.14159
+
+3.14      
+FORMAT:(/, G4.4E4)
+INPUT:3.
+
+3.000      
+FORMAT:(/, G4.4E4)
+INPUT:-3.
+
+-3.000      
+FORMAT:(/, G4.4E4)
+INPUT:10.
+
+10.00      
+FORMAT:(/, G4.4E4)
+INPUT:-10.
+
+-10.00      
+FORMAT:(/, G4.4E4)
+INPUT:100.
+
+100.0      
+FORMAT:(/, G4.4E4)
+INPUT:-100.
+
+-100.0      
+FORMAT:(/, G4.4E4)
+INPUT:1000.
+
+1000.      
+FORMAT:(/, G4.4E4)
+INPUT:-1000.
+
+-1000.      
+FORMAT:(/, G4.4E4)
+INPUT:10000.
+
+****
+FORMAT:(/, G4.4E4)
+INPUT:-10000.
+
+****
+FORMAT:(/, G4.4E4)
+INPUT:100000.
+
+****
+FORMAT:(/, G4.4E4)
+INPUT:-100000.
+
+****
+FORMAT:(/, G4.4E4)
+INPUT:123456789.
+
+****
+FORMAT:(/, G4.4E4)
+INPUT:0.1
+
+.1000      
+FORMAT:(/, G4.4E4)
+INPUT:-0.1
+
+-.1000      
+FORMAT:(/, G4.4E4)
+INPUT:0.01
+
+****
+FORMAT:(/, G4.4E4)
+INPUT:-0.01
+
+****
+FORMAT:(/, G4.4E4)
+INPUT:0.001
+
+****
+FORMAT:(/, G4.4E4)
+INPUT:-0.001
+
+****
+FORMAT:(/, G4.4E4)
+INPUT:0.0001
+
+****
+FORMAT:(/, G4.4E4)
+INPUT:-0.0001
+
+****
+FORMAT:(/, G4.4E4)
+INPUT:-1.96e-16
+
+****
+FORMAT:(/, G4.4E4)
+INPUT:3.14159
+
+3.142      
+FORMAT:(/, G5.4E4)
+INPUT:3.
+
+3.000      
+FORMAT:(/, G5.4E4)
+INPUT:-3.
+
+-3.000      
+FORMAT:(/, G5.4E4)
+INPUT:10.
+
+10.00      
+FORMAT:(/, G5.4E4)
+INPUT:-10.
+
+-10.00      
+FORMAT:(/, G5.4E4)
+INPUT:100.
+
+100.0      
+FORMAT:(/, G5.4E4)
+INPUT:-100.
+
+-100.0      
+FORMAT:(/, G5.4E4)
+INPUT:1000.
+
+1000.      
+FORMAT:(/, G5.4E4)
+INPUT:-1000.
+
+-1000.      
+FORMAT:(/, G5.4E4)
+INPUT:10000.
+
+*****
+FORMAT:(/, G5.4E4)
+INPUT:-10000.
+
+*****
+FORMAT:(/, G5.4E4)
+INPUT:100000.
+
+*****
+FORMAT:(/, G5.4E4)
+INPUT:-100000.
+
+*****
+FORMAT:(/, G5.4E4)
+INPUT:123456789.
+
+*****
+FORMAT:(/, G5.4E4)
+INPUT:0.1
+
+.1000      
+FORMAT:(/, G5.4E4)
+INPUT:-0.1
+
+-.1000      
+FORMAT:(/, G5.4E4)
+INPUT:0.01
+
+*****
+FORMAT:(/, G5.4E4)
+INPUT:-0.01
+
+*****
+FORMAT:(/, G5.4E4)
+INPUT:0.001
+
+*****
+FORMAT:(/, G5.4E4)
+INPUT:-0.001
+
+*****
+FORMAT:(/, G5.4E4)
+INPUT:0.0001
+
+*****
+FORMAT:(/, G5.4E4)
+INPUT:-0.0001
+
+*****
+FORMAT:(/, G5.4E4)
+INPUT:-1.96e-16
+
+*****
+FORMAT:(/, G5.4E4)
+INPUT:3.14159
+
+3.142      
+FORMAT:(/, G10.4E4)
+INPUT:3.
+
+****      
+FORMAT:(/, G10.4E4)
+INPUT:-3.
+
+****      
+FORMAT:(/, G10.4E4)
+INPUT:10.
+
+****      
+FORMAT:(/, G10.4E4)
+INPUT:-10.
+
+****      
+FORMAT:(/, G10.4E4)
+INPUT:100.
+
+****      
+FORMAT:(/, G10.4E4)
+INPUT:-100.
+
+****      
+FORMAT:(/, G10.4E4)
+INPUT:1000.
+
+****      
+FORMAT:(/, G10.4E4)
+INPUT:-1000.
+
+****      
+FORMAT:(/, G10.4E4)
+INPUT:10000.
+
+**********
+FORMAT:(/, G10.4E4)
+INPUT:-10000.
+
+**********
+FORMAT:(/, G10.4E4)
+INPUT:100000.
+
+**********
+FORMAT:(/, G10.4E4)
+INPUT:-100000.
+
+**********
+FORMAT:(/, G10.4E4)
+INPUT:123456789.
+
+**********
+FORMAT:(/, G10.4E4)
+INPUT:0.1
+
+****      
+FORMAT:(/, G10.4E4)
+INPUT:-0.1
+
+****      
+FORMAT:(/, G10.4E4)
+INPUT:0.01
+
+**********
+FORMAT:(/, G10.4E4)
+INPUT:-0.01
+
+**********
+FORMAT:(/, G10.4E4)
+INPUT:0.001
+
+**********
+FORMAT:(/, G10.4E4)
+INPUT:-0.001
+
+**********
+FORMAT:(/, G10.4E4)
+INPUT:0.0001
+
+**********
+FORMAT:(/, G10.4E4)
+INPUT:-0.0001
+
+**********
+FORMAT:(/, G10.4E4)
+INPUT:-1.96e-16
+
+**********
+FORMAT:(/, G10.4E4)
+INPUT:3.14159
+
+****      
+FORMAT:(/, G5.5E4)
+INPUT:3.
+
+3.0000      
+FORMAT:(/, G5.5E4)
+INPUT:-3.
+
+-3.0000      
+FORMAT:(/, G5.5E4)
+INPUT:10.
+
+10.000      
+FORMAT:(/, G5.5E4)
+INPUT:-10.
+
+-10.000      
+FORMAT:(/, G5.5E4)
+INPUT:100.
+
+100.00      
+FORMAT:(/, G5.5E4)
+INPUT:-100.
+
+-100.00      
+FORMAT:(/, G5.5E4)
+INPUT:1000.
+
+1000.0      
+FORMAT:(/, G5.5E4)
+INPUT:-1000.
+
+-1000.0      
+FORMAT:(/, G5.5E4)
+INPUT:10000.
+
+10000.      
+FORMAT:(/, G5.5E4)
+INPUT:-10000.
+
+-10000.      
+FORMAT:(/, G5.5E4)
+INPUT:100000.
+
+*****
+FORMAT:(/, G5.5E4)
+INPUT:-100000.
+
+*****
+FORMAT:(/, G5.5E4)
+INPUT:123456789.
+
+*****
+FORMAT:(/, G5.5E4)
+INPUT:0.1
+
+.10000      
+FORMAT:(/, G5.5E4)
+INPUT:-0.1
+
+-.10000      
+FORMAT:(/, G5.5E4)
+INPUT:0.01
+
+*****
+FORMAT:(/, G5.5E4)
+INPUT:-0.01
+
+*****
+FORMAT:(/, G5.5E4)
+INPUT:0.001
+
+*****
+FORMAT:(/, G5.5E4)
+INPUT:-0.001
+
+*****
+FORMAT:(/, G5.5E4)
+INPUT:0.0001
+
+*****
+FORMAT:(/, G5.5E4)
+INPUT:-0.0001
+
+*****
+FORMAT:(/, G5.5E4)
+INPUT:-1.96e-16
+
+*****
+FORMAT:(/, G5.5E4)
+INPUT:3.14159
+
+3.1416      
+FORMAT:(/, G10.5E4)
+INPUT:3.
+
+****      
+FORMAT:(/, G10.5E4)
+INPUT:-3.
+
+****      
+FORMAT:(/, G10.5E4)
+INPUT:10.
+
+****      
+FORMAT:(/, G10.5E4)
+INPUT:-10.
+
+****      
+FORMAT:(/, G10.5E4)
+INPUT:100.
+
+****      
+FORMAT:(/, G10.5E4)
+INPUT:-100.
+
+****      
+FORMAT:(/, G10.5E4)
+INPUT:1000.
+
+****      
+FORMAT:(/, G10.5E4)
+INPUT:-1000.
+
+****      
+FORMAT:(/, G10.5E4)
+INPUT:10000.
+
+****      
+FORMAT:(/, G10.5E4)
+INPUT:-10000.
+
+****      
+FORMAT:(/, G10.5E4)
+INPUT:100000.
+
+**********
+FORMAT:(/, G10.5E4)
+INPUT:-100000.
+
+**********
+FORMAT:(/, G10.5E4)
+INPUT:123456789.
+
+**********
+FORMAT:(/, G10.5E4)
+INPUT:0.1
+
+****      
+FORMAT:(/, G10.5E4)
+INPUT:-0.1
+
+****      
+FORMAT:(/, G10.5E4)
+INPUT:0.01
+
+**********
+FORMAT:(/, G10.5E4)
+INPUT:-0.01
+
+**********
+FORMAT:(/, G10.5E4)
+INPUT:0.001
+
+**********
+FORMAT:(/, G10.5E4)
+INPUT:-0.001
+
+**********
+FORMAT:(/, G10.5E4)
+INPUT:0.0001
+
+**********
+FORMAT:(/, G10.5E4)
+INPUT:-0.0001
+
+**********
+FORMAT:(/, G10.5E4)
+INPUT:-1.96e-16
+
+**********
+FORMAT:(/, G10.5E4)
+INPUT:3.14159
+
+****      
+FORMAT:(/, G10.10E4)
+INPUT:3.
+
+****      
+FORMAT:(/, G10.10E4)
+INPUT:-3.
+
+****      
+FORMAT:(/, G10.10E4)
+INPUT:10.
+
+****      
+FORMAT:(/, G10.10E4)
+INPUT:-10.
+
+****      
+FORMAT:(/, G10.10E4)
+INPUT:100.
+
+****      
+FORMAT:(/, G10.10E4)
+INPUT:-100.
+
+****      
+FORMAT:(/, G10.10E4)
+INPUT:1000.
+
+****      
+FORMAT:(/, G10.10E4)
+INPUT:-1000.
+
+****      
+FORMAT:(/, G10.10E4)
+INPUT:10000.
+
+****      
+FORMAT:(/, G10.10E4)
+INPUT:-10000.
+
+****      
+FORMAT:(/, G10.10E4)
+INPUT:100000.
+
+****      
+FORMAT:(/, G10.10E4)
+INPUT:-100000.
+
+****      
+FORMAT:(/, G10.10E4)
+INPUT:123456789.
+
+****      
+FORMAT:(/, G10.10E4)
+INPUT:0.1
+
+****      
+FORMAT:(/, G10.10E4)
+INPUT:-0.1
+
+****      
+FORMAT:(/, G10.10E4)
+INPUT:0.01
+
+**********
+FORMAT:(/, G10.10E4)
+INPUT:-0.01
+
+**********
+FORMAT:(/, G10.10E4)
+INPUT:0.001
+
+**********
+FORMAT:(/, G10.10E4)
+INPUT:-0.001
+
+**********
+FORMAT:(/, G10.10E4)
+INPUT:0.0001
+
+**********
+FORMAT:(/, G10.10E4)
+INPUT:-0.0001
+
+**********
+FORMAT:(/, G10.10E4)
+INPUT:-1.96e-16
+
+**********
+FORMAT:(/, G10.10E4)
+INPUT:3.14159
+
+****      
+FORMAT:(/, G1.1E5)
+INPUT:3.
+
+3.       
+FORMAT:(/, G1.1E5)
+INPUT:-3.
+
+-3.       
+FORMAT:(/, G1.1E5)
+INPUT:10.
+
+*
+FORMAT:(/, G1.1E5)
+INPUT:-10.
+
+*
+FORMAT:(/, G1.1E5)
+INPUT:100.
+
+*
+FORMAT:(/, G1.1E5)
+INPUT:-100.
+
+*
+FORMAT:(/, G1.1E5)
+INPUT:1000.
+
+*
+FORMAT:(/, G1.1E5)
+INPUT:-1000.
+
+*
+FORMAT:(/, G1.1E5)
+INPUT:10000.
+
+*
+FORMAT:(/, G1.1E5)
+INPUT:-10000.
+
+*
+FORMAT:(/, G1.1E5)
+INPUT:100000.
+
+*
+FORMAT:(/, G1.1E5)
+INPUT:-100000.
+
+*
+FORMAT:(/, G1.1E5)
+INPUT:123456789.
+
+*
+FORMAT:(/, G1.1E5)
+INPUT:0.1
+
+.1       
+FORMAT:(/, G1.1E5)
+INPUT:-0.1
+
+-.1       
+FORMAT:(/, G1.1E5)
+INPUT:0.01
+
+*
+FORMAT:(/, G1.1E5)
+INPUT:-0.01
+
+*
+FORMAT:(/, G1.1E5)
+INPUT:0.001
+
+*
+FORMAT:(/, G1.1E5)
+INPUT:-0.001
+
+*
+FORMAT:(/, G1.1E5)
+INPUT:0.0001
+
+*
+FORMAT:(/, G1.1E5)
+INPUT:-0.0001
+
+*
+FORMAT:(/, G1.1E5)
+INPUT:-1.96e-16
+
+*
+FORMAT:(/, G1.1E5)
+INPUT:3.14159
+
+3.       
+FORMAT:(/, G2.1E5)
+INPUT:3.
+
+3.       
+FORMAT:(/, G2.1E5)
+INPUT:-3.
+
+-3.       
+FORMAT:(/, G2.1E5)
+INPUT:10.
+
+**
+FORMAT:(/, G2.1E5)
+INPUT:-10.
+
+**
+FORMAT:(/, G2.1E5)
+INPUT:100.
+
+**
+FORMAT:(/, G2.1E5)
+INPUT:-100.
+
+**
+FORMAT:(/, G2.1E5)
+INPUT:1000.
+
+**
+FORMAT:(/, G2.1E5)
+INPUT:-1000.
+
+**
+FORMAT:(/, G2.1E5)
+INPUT:10000.
+
+**
+FORMAT:(/, G2.1E5)
+INPUT:-10000.
+
+**
+FORMAT:(/, G2.1E5)
+INPUT:100000.
+
+**
+FORMAT:(/, G2.1E5)
+INPUT:-100000.
+
+**
+FORMAT:(/, G2.1E5)
+INPUT:123456789.
+
+**
+FORMAT:(/, G2.1E5)
+INPUT:0.1
+
+.1       
+FORMAT:(/, G2.1E5)
+INPUT:-0.1
+
+-.1       
+FORMAT:(/, G2.1E5)
+INPUT:0.01
+
+**
+FORMAT:(/, G2.1E5)
+INPUT:-0.01
+
+**
+FORMAT:(/, G2.1E5)
+INPUT:0.001
+
+**
+FORMAT:(/, G2.1E5)
+INPUT:-0.001
+
+**
+FORMAT:(/, G2.1E5)
+INPUT:0.0001
+
+**
+FORMAT:(/, G2.1E5)
+INPUT:-0.0001
+
+**
+FORMAT:(/, G2.1E5)
+INPUT:-1.96e-16
+
+**
+FORMAT:(/, G2.1E5)
+INPUT:3.14159
+
+3.       
+FORMAT:(/, G3.1E5)
+INPUT:3.
+
+3.       
+FORMAT:(/, G3.1E5)
+INPUT:-3.
+
+-3.       
+FORMAT:(/, G3.1E5)
+INPUT:10.
+
+***
+FORMAT:(/, G3.1E5)
+INPUT:-10.
+
+***
+FORMAT:(/, G3.1E5)
+INPUT:100.
+
+***
+FORMAT:(/, G3.1E5)
+INPUT:-100.
+
+***
+FORMAT:(/, G3.1E5)
+INPUT:1000.
+
+***
+FORMAT:(/, G3.1E5)
+INPUT:-1000.
+
+***
+FORMAT:(/, G3.1E5)
+INPUT:10000.
+
+***
+FORMAT:(/, G3.1E5)
+INPUT:-10000.
+
+***
+FORMAT:(/, G3.1E5)
+INPUT:100000.
+
+***
+FORMAT:(/, G3.1E5)
+INPUT:-100000.
+
+***
+FORMAT:(/, G3.1E5)
+INPUT:123456789.
+
+***
+FORMAT:(/, G3.1E5)
+INPUT:0.1
+
+.1       
+FORMAT:(/, G3.1E5)
+INPUT:-0.1
+
+-.1       
+FORMAT:(/, G3.1E5)
+INPUT:0.01
+
+***
+FORMAT:(/, G3.1E5)
+INPUT:-0.01
+
+***
+FORMAT:(/, G3.1E5)
+INPUT:0.001
+
+***
+FORMAT:(/, G3.1E5)
+INPUT:-0.001
+
+***
+FORMAT:(/, G3.1E5)
+INPUT:0.0001
+
+***
+FORMAT:(/, G3.1E5)
+INPUT:-0.0001
+
+***
+FORMAT:(/, G3.1E5)
+INPUT:-1.96e-16
+
+***
+FORMAT:(/, G3.1E5)
+INPUT:3.14159
+
+3.       
+FORMAT:(/, G4.1E5)
+INPUT:3.
+
+3.       
+FORMAT:(/, G4.1E5)
+INPUT:-3.
+
+-3.       
+FORMAT:(/, G4.1E5)
+INPUT:10.
+
+****
+FORMAT:(/, G4.1E5)
+INPUT:-10.
+
+****
+FORMAT:(/, G4.1E5)
+INPUT:100.
+
+****
+FORMAT:(/, G4.1E5)
+INPUT:-100.
+
+****
+FORMAT:(/, G4.1E5)
+INPUT:1000.
+
+****
+FORMAT:(/, G4.1E5)
+INPUT:-1000.
+
+****
+FORMAT:(/, G4.1E5)
+INPUT:10000.
+
+****
+FORMAT:(/, G4.1E5)
+INPUT:-10000.
+
+****
+FORMAT:(/, G4.1E5)
+INPUT:100000.
+
+****
+FORMAT:(/, G4.1E5)
+INPUT:-100000.
+
+****
+FORMAT:(/, G4.1E5)
+INPUT:123456789.
+
+****
+FORMAT:(/, G4.1E5)
+INPUT:0.1
+
+.1       
+FORMAT:(/, G4.1E5)
+INPUT:-0.1
+
+-.1       
+FORMAT:(/, G4.1E5)
+INPUT:0.01
+
+****
+FORMAT:(/, G4.1E5)
+INPUT:-0.01
+
+****
+FORMAT:(/, G4.1E5)
+INPUT:0.001
+
+****
+FORMAT:(/, G4.1E5)
+INPUT:-0.001
+
+****
+FORMAT:(/, G4.1E5)
+INPUT:0.0001
+
+****
+FORMAT:(/, G4.1E5)
+INPUT:-0.0001
+
+****
+FORMAT:(/, G4.1E5)
+INPUT:-1.96e-16
+
+****
+FORMAT:(/, G4.1E5)
+INPUT:3.14159
+
+3.       
+FORMAT:(/, G5.1E5)
+INPUT:3.
+
+3.       
+FORMAT:(/, G5.1E5)
+INPUT:-3.
+
+-3.       
+FORMAT:(/, G5.1E5)
+INPUT:10.
+
+*****
+FORMAT:(/, G5.1E5)
+INPUT:-10.
+
+*****
+FORMAT:(/, G5.1E5)
+INPUT:100.
+
+*****
+FORMAT:(/, G5.1E5)
+INPUT:-100.
+
+*****
+FORMAT:(/, G5.1E5)
+INPUT:1000.
+
+*****
+FORMAT:(/, G5.1E5)
+INPUT:-1000.
+
+*****
+FORMAT:(/, G5.1E5)
+INPUT:10000.
+
+*****
+FORMAT:(/, G5.1E5)
+INPUT:-10000.
+
+*****
+FORMAT:(/, G5.1E5)
+INPUT:100000.
+
+*****
+FORMAT:(/, G5.1E5)
+INPUT:-100000.
+
+*****
+FORMAT:(/, G5.1E5)
+INPUT:123456789.
+
+*****
+FORMAT:(/, G5.1E5)
+INPUT:0.1
+
+.1       
+FORMAT:(/, G5.1E5)
+INPUT:-0.1
+
+-.1       
+FORMAT:(/, G5.1E5)
+INPUT:0.01
+
+*****
+FORMAT:(/, G5.1E5)
+INPUT:-0.01
+
+*****
+FORMAT:(/, G5.1E5)
+INPUT:0.001
+
+*****
+FORMAT:(/, G5.1E5)
+INPUT:-0.001
+
+*****
+FORMAT:(/, G5.1E5)
+INPUT:0.0001
+
+*****
+FORMAT:(/, G5.1E5)
+INPUT:-0.0001
+
+*****
+FORMAT:(/, G5.1E5)
+INPUT:-1.96e-16
+
+*****
+FORMAT:(/, G5.1E5)
+INPUT:3.14159
+
+3.       
+FORMAT:(/, G10.1E5)
+INPUT:3.
+
+ 3.       
+FORMAT:(/, G10.1E5)
+INPUT:-3.
+
+-3.       
+FORMAT:(/, G10.1E5)
+INPUT:10.
+
+0.1E+00002
+FORMAT:(/, G10.1E5)
+INPUT:-10.
+
+-.1E+00002
+FORMAT:(/, G10.1E5)
+INPUT:100.
+
+0.1E+00003
+FORMAT:(/, G10.1E5)
+INPUT:-100.
+
+-.1E+00003
+FORMAT:(/, G10.1E5)
+INPUT:1000.
+
+0.1E+00004
+FORMAT:(/, G10.1E5)
+INPUT:-1000.
+
+-.1E+00004
+FORMAT:(/, G10.1E5)
+INPUT:10000.
+
+0.1E+00005
+FORMAT:(/, G10.1E5)
+INPUT:-10000.
+
+-.1E+00005
+FORMAT:(/, G10.1E5)
+INPUT:100000.
+
+0.1E+00006
+FORMAT:(/, G10.1E5)
+INPUT:-100000.
+
+-.1E+00006
+FORMAT:(/, G10.1E5)
+INPUT:123456789.
+
+0.1E+00009
+FORMAT:(/, G10.1E5)
+INPUT:0.1
+
+0.1       
+FORMAT:(/, G10.1E5)
+INPUT:-0.1
+
+-.1       
+FORMAT:(/, G10.1E5)
+INPUT:0.01
+
+0.1E-00001
+FORMAT:(/, G10.1E5)
+INPUT:-0.01
+
+-.1E-00001
+FORMAT:(/, G10.1E5)
+INPUT:0.001
+
+0.1E-00002
+FORMAT:(/, G10.1E5)
+INPUT:-0.001
+
+-.1E-00002
+FORMAT:(/, G10.1E5)
+INPUT:0.0001
+
+0.1E-00003
+FORMAT:(/, G10.1E5)
+INPUT:-0.0001
+
+-.1E-00003
+FORMAT:(/, G10.1E5)
+INPUT:-1.96e-16
+
+-.2E-00015
+FORMAT:(/, G10.1E5)
+INPUT:3.14159
+
+ 3.       
+FORMAT:(/, G2.2E5)
+INPUT:3.
+
+3.0       
+FORMAT:(/, G2.2E5)
+INPUT:-3.
+
+-3.0       
+FORMAT:(/, G2.2E5)
+INPUT:10.
+
+10.       
+FORMAT:(/, G2.2E5)
+INPUT:-10.
+
+-10.       
+FORMAT:(/, G2.2E5)
+INPUT:100.
+
+**
+FORMAT:(/, G2.2E5)
+INPUT:-100.
+
+**
+FORMAT:(/, G2.2E5)
+INPUT:1000.
+
+**
+FORMAT:(/, G2.2E5)
+INPUT:-1000.
+
+**
+FORMAT:(/, G2.2E5)
+INPUT:10000.
+
+**
+FORMAT:(/, G2.2E5)
+INPUT:-10000.
+
+**
+FORMAT:(/, G2.2E5)
+INPUT:100000.
+
+**
+FORMAT:(/, G2.2E5)
+INPUT:-100000.
+
+**
+FORMAT:(/, G2.2E5)
+INPUT:123456789.
+
+**
+FORMAT:(/, G2.2E5)
+INPUT:0.1
+
+.10       
+FORMAT:(/, G2.2E5)
+INPUT:-0.1
+
+-.10       
+FORMAT:(/, G2.2E5)
+INPUT:0.01
+
+**
+FORMAT:(/, G2.2E5)
+INPUT:-0.01
+
+**
+FORMAT:(/, G2.2E5)
+INPUT:0.001
+
+**
+FORMAT:(/, G2.2E5)
+INPUT:-0.001
+
+**
+FORMAT:(/, G2.2E5)
+INPUT:0.0001
+
+**
+FORMAT:(/, G2.2E5)
+INPUT:-0.0001
+
+**
+FORMAT:(/, G2.2E5)
+INPUT:-1.96e-16
+
+**
+FORMAT:(/, G2.2E5)
+INPUT:3.14159
+
+3.1       
+FORMAT:(/, G3.2E5)
+INPUT:3.
+
+3.0       
+FORMAT:(/, G3.2E5)
+INPUT:-3.
+
+-3.0       
+FORMAT:(/, G3.2E5)
+INPUT:10.
+
+10.       
+FORMAT:(/, G3.2E5)
+INPUT:-10.
+
+-10.       
+FORMAT:(/, G3.2E5)
+INPUT:100.
+
+***
+FORMAT:(/, G3.2E5)
+INPUT:-100.
+
+***
+FORMAT:(/, G3.2E5)
+INPUT:1000.
+
+***
+FORMAT:(/, G3.2E5)
+INPUT:-1000.
+
+***
+FORMAT:(/, G3.2E5)
+INPUT:10000.
+
+***
+FORMAT:(/, G3.2E5)
+INPUT:-10000.
+
+***
+FORMAT:(/, G3.2E5)
+INPUT:100000.
+
+***
+FORMAT:(/, G3.2E5)
+INPUT:-100000.
+
+***
+FORMAT:(/, G3.2E5)
+INPUT:123456789.
+
+***
+FORMAT:(/, G3.2E5)
+INPUT:0.1
+
+.10       
+FORMAT:(/, G3.2E5)
+INPUT:-0.1
+
+-.10       
+FORMAT:(/, G3.2E5)
+INPUT:0.01
+
+***
+FORMAT:(/, G3.2E5)
+INPUT:-0.01
+
+***
+FORMAT:(/, G3.2E5)
+INPUT:0.001
+
+***
+FORMAT:(/, G3.2E5)
+INPUT:-0.001
+
+***
+FORMAT:(/, G3.2E5)
+INPUT:0.0001
+
+***
+FORMAT:(/, G3.2E5)
+INPUT:-0.0001
+
+***
+FORMAT:(/, G3.2E5)
+INPUT:-1.96e-16
+
+***
+FORMAT:(/, G3.2E5)
+INPUT:3.14159
+
+3.1       
+FORMAT:(/, G4.2E5)
+INPUT:3.
+
+3.0       
+FORMAT:(/, G4.2E5)
+INPUT:-3.
+
+-3.0       
+FORMAT:(/, G4.2E5)
+INPUT:10.
+
+10.       
+FORMAT:(/, G4.2E5)
+INPUT:-10.
+
+-10.       
+FORMAT:(/, G4.2E5)
+INPUT:100.
+
+****
+FORMAT:(/, G4.2E5)
+INPUT:-100.
+
+****
+FORMAT:(/, G4.2E5)
+INPUT:1000.
+
+****
+FORMAT:(/, G4.2E5)
+INPUT:-1000.
+
+****
+FORMAT:(/, G4.2E5)
+INPUT:10000.
+
+****
+FORMAT:(/, G4.2E5)
+INPUT:-10000.
+
+****
+FORMAT:(/, G4.2E5)
+INPUT:100000.
+
+****
+FORMAT:(/, G4.2E5)
+INPUT:-100000.
+
+****
+FORMAT:(/, G4.2E5)
+INPUT:123456789.
+
+****
+FORMAT:(/, G4.2E5)
+INPUT:0.1
+
+.10       
+FORMAT:(/, G4.2E5)
+INPUT:-0.1
+
+-.10       
+FORMAT:(/, G4.2E5)
+INPUT:0.01
+
+****
+FORMAT:(/, G4.2E5)
+INPUT:-0.01
+
+****
+FORMAT:(/, G4.2E5)
+INPUT:0.001
+
+****
+FORMAT:(/, G4.2E5)
+INPUT:-0.001
+
+****
+FORMAT:(/, G4.2E5)
+INPUT:0.0001
+
+****
+FORMAT:(/, G4.2E5)
+INPUT:-0.0001
+
+****
+FORMAT:(/, G4.2E5)
+INPUT:-1.96e-16
+
+****
+FORMAT:(/, G4.2E5)
+INPUT:3.14159
+
+3.1       
+FORMAT:(/, G5.2E5)
+INPUT:3.
+
+3.0       
+FORMAT:(/, G5.2E5)
+INPUT:-3.
+
+-3.0       
+FORMAT:(/, G5.2E5)
+INPUT:10.
+
+10.       
+FORMAT:(/, G5.2E5)
+INPUT:-10.
+
+-10.       
+FORMAT:(/, G5.2E5)
+INPUT:100.
+
+*****
+FORMAT:(/, G5.2E5)
+INPUT:-100.
+
+*****
+FORMAT:(/, G5.2E5)
+INPUT:1000.
+
+*****
+FORMAT:(/, G5.2E5)
+INPUT:-1000.
+
+*****
+FORMAT:(/, G5.2E5)
+INPUT:10000.
+
+*****
+FORMAT:(/, G5.2E5)
+INPUT:-10000.
+
+*****
+FORMAT:(/, G5.2E5)
+INPUT:100000.
+
+*****
+FORMAT:(/, G5.2E5)
+INPUT:-100000.
+
+*****
+FORMAT:(/, G5.2E5)
+INPUT:123456789.
+
+*****
+FORMAT:(/, G5.2E5)
+INPUT:0.1
+
+.10       
+FORMAT:(/, G5.2E5)
+INPUT:-0.1
+
+-.10       
+FORMAT:(/, G5.2E5)
+INPUT:0.01
+
+*****
+FORMAT:(/, G5.2E5)
+INPUT:-0.01
+
+*****
+FORMAT:(/, G5.2E5)
+INPUT:0.001
+
+*****
+FORMAT:(/, G5.2E5)
+INPUT:-0.001
+
+*****
+FORMAT:(/, G5.2E5)
+INPUT:0.0001
+
+*****
+FORMAT:(/, G5.2E5)
+INPUT:-0.0001
+
+*****
+FORMAT:(/, G5.2E5)
+INPUT:-1.96e-16
+
+*****
+FORMAT:(/, G5.2E5)
+INPUT:3.14159
+
+3.1       
+FORMAT:(/, G10.2E5)
+INPUT:3.
+
+3.0       
+FORMAT:(/, G10.2E5)
+INPUT:-3.
+
+***       
+FORMAT:(/, G10.2E5)
+INPUT:10.
+
+10.       
+FORMAT:(/, G10.2E5)
+INPUT:-10.
+
+***       
+FORMAT:(/, G10.2E5)
+INPUT:100.
+
+.10E+00003
+FORMAT:(/, G10.2E5)
+INPUT:-100.
+
+**********
+FORMAT:(/, G10.2E5)
+INPUT:1000.
+
+.10E+00004
+FORMAT:(/, G10.2E5)
+INPUT:-1000.
+
+**********
+FORMAT:(/, G10.2E5)
+INPUT:10000.
+
+.10E+00005
+FORMAT:(/, G10.2E5)
+INPUT:-10000.
+
+**********
+FORMAT:(/, G10.2E5)
+INPUT:100000.
+
+.10E+00006
+FORMAT:(/, G10.2E5)
+INPUT:-100000.
+
+**********
+FORMAT:(/, G10.2E5)
+INPUT:123456789.
+
+.12E+00009
+FORMAT:(/, G10.2E5)
+INPUT:0.1
+
+.10       
+FORMAT:(/, G10.2E5)
+INPUT:-0.1
+
+***       
+FORMAT:(/, G10.2E5)
+INPUT:0.01
+
+.10E-00001
+FORMAT:(/, G10.2E5)
+INPUT:-0.01
+
+**********
+FORMAT:(/, G10.2E5)
+INPUT:0.001
+
+.10E-00002
+FORMAT:(/, G10.2E5)
+INPUT:-0.001
+
+**********
+FORMAT:(/, G10.2E5)
+INPUT:0.0001
+
+.10E-00003
+FORMAT:(/, G10.2E5)
+INPUT:-0.0001
+
+**********
+FORMAT:(/, G10.2E5)
+INPUT:-1.96e-16
+
+**********
+FORMAT:(/, G10.2E5)
+INPUT:3.14159
+
+3.1       
+FORMAT:(/, G3.3E5)
+INPUT:3.
+
+3.00       
+FORMAT:(/, G3.3E5)
+INPUT:-3.
+
+-3.00       
+FORMAT:(/, G3.3E5)
+INPUT:10.
+
+10.0       
+FORMAT:(/, G3.3E5)
+INPUT:-10.
+
+-10.0       
+FORMAT:(/, G3.3E5)
+INPUT:100.
+
+100.       
+FORMAT:(/, G3.3E5)
+INPUT:-100.
+
+-100.       
+FORMAT:(/, G3.3E5)
+INPUT:1000.
+
+***
+FORMAT:(/, G3.3E5)
+INPUT:-1000.
+
+***
+FORMAT:(/, G3.3E5)
+INPUT:10000.
+
+***
+FORMAT:(/, G3.3E5)
+INPUT:-10000.
+
+***
+FORMAT:(/, G3.3E5)
+INPUT:100000.
+
+***
+FORMAT:(/, G3.3E5)
+INPUT:-100000.
+
+***
+FORMAT:(/, G3.3E5)
+INPUT:123456789.
+
+***
+FORMAT:(/, G3.3E5)
+INPUT:0.1
+
+.100       
+FORMAT:(/, G3.3E5)
+INPUT:-0.1
+
+-.100       
+FORMAT:(/, G3.3E5)
+INPUT:0.01
+
+***
+FORMAT:(/, G3.3E5)
+INPUT:-0.01
+
+***
+FORMAT:(/, G3.3E5)
+INPUT:0.001
+
+***
+FORMAT:(/, G3.3E5)
+INPUT:-0.001
+
+***
+FORMAT:(/, G3.3E5)
+INPUT:0.0001
+
+***
+FORMAT:(/, G3.3E5)
+INPUT:-0.0001
+
+***
+FORMAT:(/, G3.3E5)
+INPUT:-1.96e-16
+
+***
+FORMAT:(/, G3.3E5)
+INPUT:3.14159
+
+3.14       
+FORMAT:(/, G4.3E5)
+INPUT:3.
+
+3.00       
+FORMAT:(/, G4.3E5)
+INPUT:-3.
+
+-3.00       
+FORMAT:(/, G4.3E5)
+INPUT:10.
+
+10.0       
+FORMAT:(/, G4.3E5)
+INPUT:-10.
+
+-10.0       
+FORMAT:(/, G4.3E5)
+INPUT:100.
+
+100.       
+FORMAT:(/, G4.3E5)
+INPUT:-100.
+
+-100.       
+FORMAT:(/, G4.3E5)
+INPUT:1000.
+
+****
+FORMAT:(/, G4.3E5)
+INPUT:-1000.
+
+****
+FORMAT:(/, G4.3E5)
+INPUT:10000.
+
+****
+FORMAT:(/, G4.3E5)
+INPUT:-10000.
+
+****
+FORMAT:(/, G4.3E5)
+INPUT:100000.
+
+****
+FORMAT:(/, G4.3E5)
+INPUT:-100000.
+
+****
+FORMAT:(/, G4.3E5)
+INPUT:123456789.
+
+****
+FORMAT:(/, G4.3E5)
+INPUT:0.1
+
+.100       
+FORMAT:(/, G4.3E5)
+INPUT:-0.1
+
+-.100       
+FORMAT:(/, G4.3E5)
+INPUT:0.01
+
+****
+FORMAT:(/, G4.3E5)
+INPUT:-0.01
+
+****
+FORMAT:(/, G4.3E5)
+INPUT:0.001
+
+****
+FORMAT:(/, G4.3E5)
+INPUT:-0.001
+
+****
+FORMAT:(/, G4.3E5)
+INPUT:0.0001
+
+****
+FORMAT:(/, G4.3E5)
+INPUT:-0.0001
+
+****
+FORMAT:(/, G4.3E5)
+INPUT:-1.96e-16
+
+****
+FORMAT:(/, G4.3E5)
+INPUT:3.14159
+
+3.14       
+FORMAT:(/, G5.3E5)
+INPUT:3.
+
+3.00       
+FORMAT:(/, G5.3E5)
+INPUT:-3.
+
+-3.00       
+FORMAT:(/, G5.3E5)
+INPUT:10.
+
+10.0       
+FORMAT:(/, G5.3E5)
+INPUT:-10.
+
+-10.0       
+FORMAT:(/, G5.3E5)
+INPUT:100.
+
+100.       
+FORMAT:(/, G5.3E5)
+INPUT:-100.
+
+-100.       
+FORMAT:(/, G5.3E5)
+INPUT:1000.
+
+*****
+FORMAT:(/, G5.3E5)
+INPUT:-1000.
+
+*****
+FORMAT:(/, G5.3E5)
+INPUT:10000.
+
+*****
+FORMAT:(/, G5.3E5)
+INPUT:-10000.
+
+*****
+FORMAT:(/, G5.3E5)
+INPUT:100000.
+
+*****
+FORMAT:(/, G5.3E5)
+INPUT:-100000.
+
+*****
+FORMAT:(/, G5.3E5)
+INPUT:123456789.
+
+*****
+FORMAT:(/, G5.3E5)
+INPUT:0.1
+
+.100       
+FORMAT:(/, G5.3E5)
+INPUT:-0.1
+
+-.100       
+FORMAT:(/, G5.3E5)
+INPUT:0.01
+
+*****
+FORMAT:(/, G5.3E5)
+INPUT:-0.01
+
+*****
+FORMAT:(/, G5.3E5)
+INPUT:0.001
+
+*****
+FORMAT:(/, G5.3E5)
+INPUT:-0.001
+
+*****
+FORMAT:(/, G5.3E5)
+INPUT:0.0001
+
+*****
+FORMAT:(/, G5.3E5)
+INPUT:-0.0001
+
+*****
+FORMAT:(/, G5.3E5)
+INPUT:-1.96e-16
+
+*****
+FORMAT:(/, G5.3E5)
+INPUT:3.14159
+
+3.14       
+FORMAT:(/, G10.3E5)
+INPUT:3.
+
+***       
+FORMAT:(/, G10.3E5)
+INPUT:-3.
+
+***       
+FORMAT:(/, G10.3E5)
+INPUT:10.
+
+***       
+FORMAT:(/, G10.3E5)
+INPUT:-10.
+
+***       
+FORMAT:(/, G10.3E5)
+INPUT:100.
+
+***       
+FORMAT:(/, G10.3E5)
+INPUT:-100.
+
+***       
+FORMAT:(/, G10.3E5)
+INPUT:1000.
+
+**********
+FORMAT:(/, G10.3E5)
+INPUT:-1000.
+
+**********
+FORMAT:(/, G10.3E5)
+INPUT:10000.
+
+**********
+FORMAT:(/, G10.3E5)
+INPUT:-10000.
+
+**********
+FORMAT:(/, G10.3E5)
+INPUT:100000.
+
+**********
+FORMAT:(/, G10.3E5)
+INPUT:-100000.
+
+**********
+FORMAT:(/, G10.3E5)
+INPUT:123456789.
+
+**********
+FORMAT:(/, G10.3E5)
+INPUT:0.1
+
+***       
+FORMAT:(/, G10.3E5)
+INPUT:-0.1
+
+***       
+FORMAT:(/, G10.3E5)
+INPUT:0.01
+
+**********
+FORMAT:(/, G10.3E5)
+INPUT:-0.01
+
+**********
+FORMAT:(/, G10.3E5)
+INPUT:0.001
+
+**********
+FORMAT:(/, G10.3E5)
+INPUT:-0.001
+
+**********
+FORMAT:(/, G10.3E5)
+INPUT:0.0001
+
+**********
+FORMAT:(/, G10.3E5)
+INPUT:-0.0001
+
+**********
+FORMAT:(/, G10.3E5)
+INPUT:-1.96e-16
+
+**********
+FORMAT:(/, G10.3E5)
+INPUT:3.14159
+
+***       
+FORMAT:(/, G4.4E5)
+INPUT:3.
+
+3.000       
+FORMAT:(/, G4.4E5)
+INPUT:-3.
+
+-3.000       
+FORMAT:(/, G4.4E5)
+INPUT:10.
+
+10.00       
+FORMAT:(/, G4.4E5)
+INPUT:-10.
+
+-10.00       
+FORMAT:(/, G4.4E5)
+INPUT:100.
+
+100.0       
+FORMAT:(/, G4.4E5)
+INPUT:-100.
+
+-100.0       
+FORMAT:(/, G4.4E5)
+INPUT:1000.
+
+1000.       
+FORMAT:(/, G4.4E5)
+INPUT:-1000.
+
+-1000.       
+FORMAT:(/, G4.4E5)
+INPUT:10000.
+
+****
+FORMAT:(/, G4.4E5)
+INPUT:-10000.
+
+****
+FORMAT:(/, G4.4E5)
+INPUT:100000.
+
+****
+FORMAT:(/, G4.4E5)
+INPUT:-100000.
+
+****
+FORMAT:(/, G4.4E5)
+INPUT:123456789.
+
+****
+FORMAT:(/, G4.4E5)
+INPUT:0.1
+
+.1000       
+FORMAT:(/, G4.4E5)
+INPUT:-0.1
+
+-.1000       
+FORMAT:(/, G4.4E5)
+INPUT:0.01
+
+****
+FORMAT:(/, G4.4E5)
+INPUT:-0.01
+
+****
+FORMAT:(/, G4.4E5)
+INPUT:0.001
+
+****
+FORMAT:(/, G4.4E5)
+INPUT:-0.001
+
+****
+FORMAT:(/, G4.4E5)
+INPUT:0.0001
+
+****
+FORMAT:(/, G4.4E5)
+INPUT:-0.0001
+
+****
+FORMAT:(/, G4.4E5)
+INPUT:-1.96e-16
+
+****
+FORMAT:(/, G4.4E5)
+INPUT:3.14159
+
+3.142       
+FORMAT:(/, G5.4E5)
+INPUT:3.
+
+3.000       
+FORMAT:(/, G5.4E5)
+INPUT:-3.
+
+-3.000       
+FORMAT:(/, G5.4E5)
+INPUT:10.
+
+10.00       
+FORMAT:(/, G5.4E5)
+INPUT:-10.
+
+-10.00       
+FORMAT:(/, G5.4E5)
+INPUT:100.
+
+100.0       
+FORMAT:(/, G5.4E5)
+INPUT:-100.
+
+-100.0       
+FORMAT:(/, G5.4E5)
+INPUT:1000.
+
+1000.       
+FORMAT:(/, G5.4E5)
+INPUT:-1000.
+
+-1000.       
+FORMAT:(/, G5.4E5)
+INPUT:10000.
+
+*****
+FORMAT:(/, G5.4E5)
+INPUT:-10000.
+
+*****
+FORMAT:(/, G5.4E5)
+INPUT:100000.
+
+*****
+FORMAT:(/, G5.4E5)
+INPUT:-100000.
+
+*****
+FORMAT:(/, G5.4E5)
+INPUT:123456789.
+
+*****
+FORMAT:(/, G5.4E5)
+INPUT:0.1
+
+.1000       
+FORMAT:(/, G5.4E5)
+INPUT:-0.1
+
+-.1000       
+FORMAT:(/, G5.4E5)
+INPUT:0.01
+
+*****
+FORMAT:(/, G5.4E5)
+INPUT:-0.01
+
+*****
+FORMAT:(/, G5.4E5)
+INPUT:0.001
+
+*****
+FORMAT:(/, G5.4E5)
+INPUT:-0.001
+
+*****
+FORMAT:(/, G5.4E5)
+INPUT:0.0001
+
+*****
+FORMAT:(/, G5.4E5)
+INPUT:-0.0001
+
+*****
+FORMAT:(/, G5.4E5)
+INPUT:-1.96e-16
+
+*****
+FORMAT:(/, G5.4E5)
+INPUT:3.14159
+
+3.142       
+FORMAT:(/, G10.4E5)
+INPUT:3.
+
+***       
+FORMAT:(/, G10.4E5)
+INPUT:-3.
+
+***       
+FORMAT:(/, G10.4E5)
+INPUT:10.
+
+***       
+FORMAT:(/, G10.4E5)
+INPUT:-10.
+
+***       
+FORMAT:(/, G10.4E5)
+INPUT:100.
+
+***       
+FORMAT:(/, G10.4E5)
+INPUT:-100.
+
+***       
+FORMAT:(/, G10.4E5)
+INPUT:1000.
+
+***       
+FORMAT:(/, G10.4E5)
+INPUT:-1000.
+
+***       
+FORMAT:(/, G10.4E5)
+INPUT:10000.
+
+**********
+FORMAT:(/, G10.4E5)
+INPUT:-10000.
+
+**********
+FORMAT:(/, G10.4E5)
+INPUT:100000.
+
+**********
+FORMAT:(/, G10.4E5)
+INPUT:-100000.
+
+**********
+FORMAT:(/, G10.4E5)
+INPUT:123456789.
+
+**********
+FORMAT:(/, G10.4E5)
+INPUT:0.1
+
+***       
+FORMAT:(/, G10.4E5)
+INPUT:-0.1
+
+***       
+FORMAT:(/, G10.4E5)
+INPUT:0.01
+
+**********
+FORMAT:(/, G10.4E5)
+INPUT:-0.01
+
+**********
+FORMAT:(/, G10.4E5)
+INPUT:0.001
+
+**********
+FORMAT:(/, G10.4E5)
+INPUT:-0.001
+
+**********
+FORMAT:(/, G10.4E5)
+INPUT:0.0001
+
+**********
+FORMAT:(/, G10.4E5)
+INPUT:-0.0001
+
+**********
+FORMAT:(/, G10.4E5)
+INPUT:-1.96e-16
+
+**********
+FORMAT:(/, G10.4E5)
+INPUT:3.14159
+
+***       
+FORMAT:(/, G5.5E5)
+INPUT:3.
+
+3.0000       
+FORMAT:(/, G5.5E5)
+INPUT:-3.
+
+-3.0000       
+FORMAT:(/, G5.5E5)
+INPUT:10.
+
+10.000       
+FORMAT:(/, G5.5E5)
+INPUT:-10.
+
+-10.000       
+FORMAT:(/, G5.5E5)
+INPUT:100.
+
+100.00       
+FORMAT:(/, G5.5E5)
+INPUT:-100.
+
+-100.00       
+FORMAT:(/, G5.5E5)
+INPUT:1000.
+
+1000.0       
+FORMAT:(/, G5.5E5)
+INPUT:-1000.
+
+-1000.0       
+FORMAT:(/, G5.5E5)
+INPUT:10000.
+
+10000.       
+FORMAT:(/, G5.5E5)
+INPUT:-10000.
+
+-10000.       
+FORMAT:(/, G5.5E5)
+INPUT:100000.
+
+*****
+FORMAT:(/, G5.5E5)
+INPUT:-100000.
+
+*****
+FORMAT:(/, G5.5E5)
+INPUT:123456789.
+
+*****
+FORMAT:(/, G5.5E5)
+INPUT:0.1
+
+.10000       
+FORMAT:(/, G5.5E5)
+INPUT:-0.1
+
+-.10000       
+FORMAT:(/, G5.5E5)
+INPUT:0.01
+
+*****
+FORMAT:(/, G5.5E5)
+INPUT:-0.01
+
+*****
+FORMAT:(/, G5.5E5)
+INPUT:0.001
+
+*****
+FORMAT:(/, G5.5E5)
+INPUT:-0.001
+
+*****
+FORMAT:(/, G5.5E5)
+INPUT:0.0001
+
+*****
+FORMAT:(/, G5.5E5)
+INPUT:-0.0001
+
+*****
+FORMAT:(/, G5.5E5)
+INPUT:-1.96e-16
+
+*****
+FORMAT:(/, G5.5E5)
+INPUT:3.14159
+
+3.1416       
+FORMAT:(/, G10.5E5)
+INPUT:3.
+
+***       
+FORMAT:(/, G10.5E5)
+INPUT:-3.
+
+***       
+FORMAT:(/, G10.5E5)
+INPUT:10.
+
+***       
+FORMAT:(/, G10.5E5)
+INPUT:-10.
+
+***       
+FORMAT:(/, G10.5E5)
+INPUT:100.
+
+***       
+FORMAT:(/, G10.5E5)
+INPUT:-100.
+
+***       
+FORMAT:(/, G10.5E5)
+INPUT:1000.
+
+***       
+FORMAT:(/, G10.5E5)
+INPUT:-1000.
+
+***       
+FORMAT:(/, G10.5E5)
+INPUT:10000.
+
+***       
+FORMAT:(/, G10.5E5)
+INPUT:-10000.
+
+***       
+FORMAT:(/, G10.5E5)
+INPUT:100000.
+
+**********
+FORMAT:(/, G10.5E5)
+INPUT:-100000.
+
+**********
+FORMAT:(/, G10.5E5)
+INPUT:123456789.
+
+**********
+FORMAT:(/, G10.5E5)
+INPUT:0.1
+
+***       
+FORMAT:(/, G10.5E5)
+INPUT:-0.1
+
+***       
+FORMAT:(/, G10.5E5)
+INPUT:0.01
+
+**********
+FORMAT:(/, G10.5E5)
+INPUT:-0.01
+
+**********
+FORMAT:(/, G10.5E5)
+INPUT:0.001
+
+**********
+FORMAT:(/, G10.5E5)
+INPUT:-0.001
+
+**********
+FORMAT:(/, G10.5E5)
+INPUT:0.0001
+
+**********
+FORMAT:(/, G10.5E5)
+INPUT:-0.0001
+
+**********
+FORMAT:(/, G10.5E5)
+INPUT:-1.96e-16
+
+**********
+FORMAT:(/, G10.5E5)
+INPUT:3.14159
+
+***       
+FORMAT:(/, G10.10E5)
+INPUT:3.
+
+***       
+FORMAT:(/, G10.10E5)
+INPUT:-3.
+
+***       
+FORMAT:(/, G10.10E5)
+INPUT:10.
+
+***       
+FORMAT:(/, G10.10E5)
+INPUT:-10.
+
+***       
+FORMAT:(/, G10.10E5)
+INPUT:100.
+
+***       
+FORMAT:(/, G10.10E5)
+INPUT:-100.
+
+***       
+FORMAT:(/, G10.10E5)
+INPUT:1000.
+
+***       
+FORMAT:(/, G10.10E5)
+INPUT:-1000.
+
+***       
+FORMAT:(/, G10.10E5)
+INPUT:10000.
+
+***       
+FORMAT:(/, G10.10E5)
+INPUT:-10000.
+
+***       
+FORMAT:(/, G10.10E5)
+INPUT:100000.
+
+***       
+FORMAT:(/, G10.10E5)
+INPUT:-100000.
+
+***       
+FORMAT:(/, G10.10E5)
+INPUT:123456789.
+
+***       
+FORMAT:(/, G10.10E5)
+INPUT:0.1
+
+***       
+FORMAT:(/, G10.10E5)
+INPUT:-0.1
+
+***       
+FORMAT:(/, G10.10E5)
+INPUT:0.01
+
+**********
+FORMAT:(/, G10.10E5)
+INPUT:-0.01
+
+**********
+FORMAT:(/, G10.10E5)
+INPUT:0.001
+
+**********
+FORMAT:(/, G10.10E5)
+INPUT:-0.001
+
+**********
+FORMAT:(/, G10.10E5)
+INPUT:0.0001
+
+**********
+FORMAT:(/, G10.10E5)
+INPUT:-0.0001
+
+**********
+FORMAT:(/, G10.10E5)
+INPUT:-1.96e-16
+
+**********
+FORMAT:(/, G10.10E5)
+INPUT:3.14159
+
+***       
