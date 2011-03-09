@@ -1,6 +1,7 @@
 from _edit_descriptors import *
 import re
 from _misc import expand_edit_descriptors, has_next_iterator
+import pdb
 
 WIDTH_OPTIONAL_EDS = [A]
 NON_WIDTH_EDS = [BN, BZ, P, SP, SS, S, X, T, TR, TL, Colon, Slash]
@@ -11,6 +12,8 @@ PROC_INCL_PLUS = False
 PROC_ALLOW_NEG_BOZ = True
 # Prcessor dependant padding character
 PROC_PAD_CHAR = ' '
+# Interpret line of blanks and '-' as a zero
+
 
 # Some problems without pre written input vars:
 #   Cannot say when reversion conditions are met
@@ -29,7 +32,7 @@ def input(eds, reversion_eds, records, num_vals=None):
         'halt_if_no_vals' : False,
         'exception_on_fail' : True,
     }
-    
+
     # Expand repeated edit decriptors
     eds = expand_edit_descriptors(eds)
     reversion_eds = expand_edit_descriptors(reversion_eds)
@@ -204,12 +207,12 @@ def _interpret_blanks(substr, state):
 def _get_substr(w, record, state):
     start = max(state['position'], 0)
     end = start + w
-    if end > len(record):
-        substr = ''
-        # TODO: test if no chars transmitted, then poition does not change
-        w = 0
-    else:
-        substr = record[start:end]
+    # if end > len(record):
+    #     substr = ''
+    #     # TODO: test if no chars transmitted, then poition does not change
+    #     w = 0
+    # else:
+    substr = record[start:end]
     state['position'] += w
     return substr, state
 
@@ -222,3 +225,10 @@ def _next(it, default=None):
     return val
 
 
+if __name__ == '__main__':
+    from _lexer import lexer
+    from _parser import parser
+    inpt = '1000'
+    fmt = '(I5.5)'
+    eds, rev_eds = parser(lexer(fmt))
+    print input(eds, rev_eds, inpt)
