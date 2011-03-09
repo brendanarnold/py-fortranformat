@@ -1,0 +1,3000 @@
+FORMAT:(Z1)
+INPUT:0
+                             0
+FORMAT:(Z1)
+INPUT:-0
+ERR
+FORMAT:(Z1)
+INPUT:1
+                             1
+FORMAT:(Z1)
+INPUT:-1
+ERR
+FORMAT:(Z1)
+INPUT:3
+                             3
+FORMAT:(Z1)
+INPUT:-3
+ERR
+FORMAT:(Z1)
+INPUT:10
+                             1
+FORMAT:(Z1)
+INPUT:-10
+ERR
+FORMAT:(Z1)
+INPUT:100
+                             1
+FORMAT:(Z1)
+INPUT:-100
+ERR
+FORMAT:(Z1)
+INPUT:1000
+                             1
+FORMAT:(Z1)
+INPUT:-1000
+ERR
+FORMAT:(Z1)
+INPUT:10000
+                             1
+FORMAT:(Z1)
+INPUT:-10000
+ERR
+FORMAT:(Z1)
+INPUT:100000
+                             1
+FORMAT:(Z1)
+INPUT:-100000
+ERR
+FORMAT:(Z1)
+INPUT:123456789
+                             1
+FORMAT:(Z1)
+INPUT:ff
+                            15
+FORMAT:(Z1)
+INPUT:F
+                            15
+FORMAT:(Z1)
+INPUT: F F F
+                             0
+FORMAT:(Z1)
+INPUT:A a 2B
+                            10
+FORMAT:(Z1)
+INPUT:A.
+                            10
+FORMAT:(Z2)
+INPUT:0
+                             0
+FORMAT:(Z2)
+INPUT:-0
+                             0
+FORMAT:(Z2)
+INPUT:1
+                             1
+FORMAT:(Z2)
+INPUT:-1
+                            -1
+FORMAT:(Z2)
+INPUT:3
+                             3
+FORMAT:(Z2)
+INPUT:-3
+                            -3
+FORMAT:(Z2)
+INPUT:10
+                            16
+FORMAT:(Z2)
+INPUT:-10
+                            -1
+FORMAT:(Z2)
+INPUT:100
+                            16
+FORMAT:(Z2)
+INPUT:-100
+                            -1
+FORMAT:(Z2)
+INPUT:1000
+                            16
+FORMAT:(Z2)
+INPUT:-1000
+                            -1
+FORMAT:(Z2)
+INPUT:10000
+                            16
+FORMAT:(Z2)
+INPUT:-10000
+                            -1
+FORMAT:(Z2)
+INPUT:100000
+                            16
+FORMAT:(Z2)
+INPUT:-100000
+                            -1
+FORMAT:(Z2)
+INPUT:123456789
+                            18
+FORMAT:(Z2)
+INPUT:ff
+                           255
+FORMAT:(Z2)
+INPUT:F
+                            15
+FORMAT:(Z2)
+INPUT: F F F
+                            15
+FORMAT:(Z2)
+INPUT:A a 2B
+                            10
+FORMAT:(Z2)
+INPUT:A.
+ERR
+FORMAT:(Z3)
+INPUT:0
+                             0
+FORMAT:(Z3)
+INPUT:-0
+                             0
+FORMAT:(Z3)
+INPUT:1
+                             1
+FORMAT:(Z3)
+INPUT:-1
+                            -1
+FORMAT:(Z3)
+INPUT:3
+                             3
+FORMAT:(Z3)
+INPUT:-3
+                            -3
+FORMAT:(Z3)
+INPUT:10
+                            16
+FORMAT:(Z3)
+INPUT:-10
+                           -16
+FORMAT:(Z3)
+INPUT:100
+                           256
+FORMAT:(Z3)
+INPUT:-100
+                           -16
+FORMAT:(Z3)
+INPUT:1000
+                           256
+FORMAT:(Z3)
+INPUT:-1000
+                           -16
+FORMAT:(Z3)
+INPUT:10000
+                           256
+FORMAT:(Z3)
+INPUT:-10000
+                           -16
+FORMAT:(Z3)
+INPUT:100000
+                           256
+FORMAT:(Z3)
+INPUT:-100000
+                           -16
+FORMAT:(Z3)
+INPUT:123456789
+                           291
+FORMAT:(Z3)
+INPUT:ff
+                           255
+FORMAT:(Z3)
+INPUT:F
+                            15
+FORMAT:(Z3)
+INPUT: F F F
+                            15
+FORMAT:(Z3)
+INPUT:A a 2B
+                           170
+FORMAT:(Z3)
+INPUT:A.
+ERR
+FORMAT:(Z4)
+INPUT:0
+                             0
+FORMAT:(Z4)
+INPUT:-0
+                             0
+FORMAT:(Z4)
+INPUT:1
+                             1
+FORMAT:(Z4)
+INPUT:-1
+                            -1
+FORMAT:(Z4)
+INPUT:3
+                             3
+FORMAT:(Z4)
+INPUT:-3
+                            -3
+FORMAT:(Z4)
+INPUT:10
+                            16
+FORMAT:(Z4)
+INPUT:-10
+                           -16
+FORMAT:(Z4)
+INPUT:100
+                           256
+FORMAT:(Z4)
+INPUT:-100
+                          -256
+FORMAT:(Z4)
+INPUT:1000
+                          4096
+FORMAT:(Z4)
+INPUT:-1000
+                          -256
+FORMAT:(Z4)
+INPUT:10000
+                          4096
+FORMAT:(Z4)
+INPUT:-10000
+                          -256
+FORMAT:(Z4)
+INPUT:100000
+                          4096
+FORMAT:(Z4)
+INPUT:-100000
+                          -256
+FORMAT:(Z4)
+INPUT:123456789
+                          4660
+FORMAT:(Z4)
+INPUT:ff
+                           255
+FORMAT:(Z4)
+INPUT:F
+                            15
+FORMAT:(Z4)
+INPUT: F F F
+                           255
+FORMAT:(Z4)
+INPUT:A a 2B
+                           170
+FORMAT:(Z4)
+INPUT:A.
+ERR
+FORMAT:(Z5)
+INPUT:0
+                             0
+FORMAT:(Z5)
+INPUT:-0
+                             0
+FORMAT:(Z5)
+INPUT:1
+                             1
+FORMAT:(Z5)
+INPUT:-1
+                            -1
+FORMAT:(Z5)
+INPUT:3
+                             3
+FORMAT:(Z5)
+INPUT:-3
+                            -3
+FORMAT:(Z5)
+INPUT:10
+                            16
+FORMAT:(Z5)
+INPUT:-10
+                           -16
+FORMAT:(Z5)
+INPUT:100
+                           256
+FORMAT:(Z5)
+INPUT:-100
+                          -256
+FORMAT:(Z5)
+INPUT:1000
+                          4096
+FORMAT:(Z5)
+INPUT:-1000
+                         -4096
+FORMAT:(Z5)
+INPUT:10000
+                         65536
+FORMAT:(Z5)
+INPUT:-10000
+                         -4096
+FORMAT:(Z5)
+INPUT:100000
+                         65536
+FORMAT:(Z5)
+INPUT:-100000
+                         -4096
+FORMAT:(Z5)
+INPUT:123456789
+                         74565
+FORMAT:(Z5)
+INPUT:ff
+                           255
+FORMAT:(Z5)
+INPUT:F
+                            15
+FORMAT:(Z5)
+INPUT: F F F
+                           255
+FORMAT:(Z5)
+INPUT:A a 2B
+                          2722
+FORMAT:(Z5)
+INPUT:A.
+ERR
+FORMAT:(Z6)
+INPUT:0
+                             0
+FORMAT:(Z6)
+INPUT:-0
+                             0
+FORMAT:(Z6)
+INPUT:1
+                             1
+FORMAT:(Z6)
+INPUT:-1
+                            -1
+FORMAT:(Z6)
+INPUT:3
+                             3
+FORMAT:(Z6)
+INPUT:-3
+                            -3
+FORMAT:(Z6)
+INPUT:10
+                            16
+FORMAT:(Z6)
+INPUT:-10
+                           -16
+FORMAT:(Z6)
+INPUT:100
+                           256
+FORMAT:(Z6)
+INPUT:-100
+                          -256
+FORMAT:(Z6)
+INPUT:1000
+                          4096
+FORMAT:(Z6)
+INPUT:-1000
+                         -4096
+FORMAT:(Z6)
+INPUT:10000
+                         65536
+FORMAT:(Z6)
+INPUT:-10000
+                        -65536
+FORMAT:(Z6)
+INPUT:100000
+                       1048576
+FORMAT:(Z6)
+INPUT:-100000
+                        -65536
+FORMAT:(Z6)
+INPUT:123456789
+                       1193046
+FORMAT:(Z6)
+INPUT:ff
+                           255
+FORMAT:(Z6)
+INPUT:F
+                            15
+FORMAT:(Z6)
+INPUT: F F F
+                          4095
+FORMAT:(Z6)
+INPUT:A a 2B
+                         43563
+FORMAT:(Z6)
+INPUT:A.
+ERR
+FORMAT:(Z7)
+INPUT:0
+                             0
+FORMAT:(Z7)
+INPUT:-0
+                             0
+FORMAT:(Z7)
+INPUT:1
+                             1
+FORMAT:(Z7)
+INPUT:-1
+                            -1
+FORMAT:(Z7)
+INPUT:3
+                             3
+FORMAT:(Z7)
+INPUT:-3
+                            -3
+FORMAT:(Z7)
+INPUT:10
+                            16
+FORMAT:(Z7)
+INPUT:-10
+                           -16
+FORMAT:(Z7)
+INPUT:100
+                           256
+FORMAT:(Z7)
+INPUT:-100
+                          -256
+FORMAT:(Z7)
+INPUT:1000
+                          4096
+FORMAT:(Z7)
+INPUT:-1000
+                         -4096
+FORMAT:(Z7)
+INPUT:10000
+                         65536
+FORMAT:(Z7)
+INPUT:-10000
+                        -65536
+FORMAT:(Z7)
+INPUT:100000
+                       1048576
+FORMAT:(Z7)
+INPUT:-100000
+                      -1048576
+FORMAT:(Z7)
+INPUT:123456789
+                      19088743
+FORMAT:(Z7)
+INPUT:ff
+                           255
+FORMAT:(Z7)
+INPUT:F
+                            15
+FORMAT:(Z7)
+INPUT: F F F
+                          4095
+FORMAT:(Z7)
+INPUT:A a 2B
+                         43563
+FORMAT:(Z7)
+INPUT:A.
+ERR
+FORMAT:(Z8)
+INPUT:0
+                             0
+FORMAT:(Z8)
+INPUT:-0
+                             0
+FORMAT:(Z8)
+INPUT:1
+                             1
+FORMAT:(Z8)
+INPUT:-1
+                            -1
+FORMAT:(Z8)
+INPUT:3
+                             3
+FORMAT:(Z8)
+INPUT:-3
+                            -3
+FORMAT:(Z8)
+INPUT:10
+                            16
+FORMAT:(Z8)
+INPUT:-10
+                           -16
+FORMAT:(Z8)
+INPUT:100
+                           256
+FORMAT:(Z8)
+INPUT:-100
+                          -256
+FORMAT:(Z8)
+INPUT:1000
+                          4096
+FORMAT:(Z8)
+INPUT:-1000
+                         -4096
+FORMAT:(Z8)
+INPUT:10000
+                         65536
+FORMAT:(Z8)
+INPUT:-10000
+                        -65536
+FORMAT:(Z8)
+INPUT:100000
+                       1048576
+FORMAT:(Z8)
+INPUT:-100000
+                      -1048576
+FORMAT:(Z8)
+INPUT:123456789
+                     305419896
+FORMAT:(Z8)
+INPUT:ff
+                           255
+FORMAT:(Z8)
+INPUT:F
+                            15
+FORMAT:(Z8)
+INPUT: F F F
+                          4095
+FORMAT:(Z8)
+INPUT:A a 2B
+                         43563
+FORMAT:(Z8)
+INPUT:A.
+ERR
+FORMAT:(Z9)
+INPUT:0
+                             0
+FORMAT:(Z9)
+INPUT:-0
+                             0
+FORMAT:(Z9)
+INPUT:1
+                             1
+FORMAT:(Z9)
+INPUT:-1
+                            -1
+FORMAT:(Z9)
+INPUT:3
+                             3
+FORMAT:(Z9)
+INPUT:-3
+                            -3
+FORMAT:(Z9)
+INPUT:10
+                            16
+FORMAT:(Z9)
+INPUT:-10
+                           -16
+FORMAT:(Z9)
+INPUT:100
+                           256
+FORMAT:(Z9)
+INPUT:-100
+                          -256
+FORMAT:(Z9)
+INPUT:1000
+                          4096
+FORMAT:(Z9)
+INPUT:-1000
+                         -4096
+FORMAT:(Z9)
+INPUT:10000
+                         65536
+FORMAT:(Z9)
+INPUT:-10000
+                        -65536
+FORMAT:(Z9)
+INPUT:100000
+                       1048576
+FORMAT:(Z9)
+INPUT:-100000
+                      -1048576
+FORMAT:(Z9)
+INPUT:123456789
+ERR
+FORMAT:(Z9)
+INPUT:ff
+                           255
+FORMAT:(Z9)
+INPUT:F
+                            15
+FORMAT:(Z9)
+INPUT: F F F
+                          4095
+FORMAT:(Z9)
+INPUT:A a 2B
+                         43563
+FORMAT:(Z9)
+INPUT:A.
+ERR
+FORMAT:(Z10)
+INPUT:0
+                             0
+FORMAT:(Z10)
+INPUT:-0
+                             0
+FORMAT:(Z10)
+INPUT:1
+                             1
+FORMAT:(Z10)
+INPUT:-1
+                            -1
+FORMAT:(Z10)
+INPUT:3
+                             3
+FORMAT:(Z10)
+INPUT:-3
+                            -3
+FORMAT:(Z10)
+INPUT:10
+                            16
+FORMAT:(Z10)
+INPUT:-10
+                           -16
+FORMAT:(Z10)
+INPUT:100
+                           256
+FORMAT:(Z10)
+INPUT:-100
+                          -256
+FORMAT:(Z10)
+INPUT:1000
+                          4096
+FORMAT:(Z10)
+INPUT:-1000
+                         -4096
+FORMAT:(Z10)
+INPUT:10000
+                         65536
+FORMAT:(Z10)
+INPUT:-10000
+                        -65536
+FORMAT:(Z10)
+INPUT:100000
+                       1048576
+FORMAT:(Z10)
+INPUT:-100000
+                      -1048576
+FORMAT:(Z10)
+INPUT:123456789
+ERR
+FORMAT:(Z10)
+INPUT:ff
+                           255
+FORMAT:(Z10)
+INPUT:F
+                            15
+FORMAT:(Z10)
+INPUT: F F F
+                          4095
+FORMAT:(Z10)
+INPUT:A a 2B
+                         43563
+FORMAT:(Z10)
+INPUT:A.
+ERR
+FORMAT:(Z1.0)
+INPUT:0
+                             0
+FORMAT:(Z1.0)
+INPUT:-0
+ERR
+FORMAT:(Z1.0)
+INPUT:1
+                             1
+FORMAT:(Z1.0)
+INPUT:-1
+ERR
+FORMAT:(Z1.0)
+INPUT:3
+                             3
+FORMAT:(Z1.0)
+INPUT:-3
+ERR
+FORMAT:(Z1.0)
+INPUT:10
+                             1
+FORMAT:(Z1.0)
+INPUT:-10
+ERR
+FORMAT:(Z1.0)
+INPUT:100
+                             1
+FORMAT:(Z1.0)
+INPUT:-100
+ERR
+FORMAT:(Z1.0)
+INPUT:1000
+                             1
+FORMAT:(Z1.0)
+INPUT:-1000
+ERR
+FORMAT:(Z1.0)
+INPUT:10000
+                             1
+FORMAT:(Z1.0)
+INPUT:-10000
+ERR
+FORMAT:(Z1.0)
+INPUT:100000
+                             1
+FORMAT:(Z1.0)
+INPUT:-100000
+ERR
+FORMAT:(Z1.0)
+INPUT:123456789
+                             1
+FORMAT:(Z1.0)
+INPUT:ff
+                            15
+FORMAT:(Z1.0)
+INPUT:F
+                            15
+FORMAT:(Z1.0)
+INPUT: F F F
+                             0
+FORMAT:(Z1.0)
+INPUT:A a 2B
+                            10
+FORMAT:(Z1.0)
+INPUT:A.
+                            10
+FORMAT:(Z2.0)
+INPUT:0
+                             0
+FORMAT:(Z2.0)
+INPUT:-0
+                             0
+FORMAT:(Z2.0)
+INPUT:1
+                             1
+FORMAT:(Z2.0)
+INPUT:-1
+                            -1
+FORMAT:(Z2.0)
+INPUT:3
+                             3
+FORMAT:(Z2.0)
+INPUT:-3
+                            -3
+FORMAT:(Z2.0)
+INPUT:10
+                            16
+FORMAT:(Z2.0)
+INPUT:-10
+                            -1
+FORMAT:(Z2.0)
+INPUT:100
+                            16
+FORMAT:(Z2.0)
+INPUT:-100
+                            -1
+FORMAT:(Z2.0)
+INPUT:1000
+                            16
+FORMAT:(Z2.0)
+INPUT:-1000
+                            -1
+FORMAT:(Z2.0)
+INPUT:10000
+                            16
+FORMAT:(Z2.0)
+INPUT:-10000
+                            -1
+FORMAT:(Z2.0)
+INPUT:100000
+                            16
+FORMAT:(Z2.0)
+INPUT:-100000
+                            -1
+FORMAT:(Z2.0)
+INPUT:123456789
+                            18
+FORMAT:(Z2.0)
+INPUT:ff
+                           255
+FORMAT:(Z2.0)
+INPUT:F
+                            15
+FORMAT:(Z2.0)
+INPUT: F F F
+                            15
+FORMAT:(Z2.0)
+INPUT:A a 2B
+                            10
+FORMAT:(Z2.0)
+INPUT:A.
+ERR
+FORMAT:(Z3.0)
+INPUT:0
+                             0
+FORMAT:(Z3.0)
+INPUT:-0
+                             0
+FORMAT:(Z3.0)
+INPUT:1
+                             1
+FORMAT:(Z3.0)
+INPUT:-1
+                            -1
+FORMAT:(Z3.0)
+INPUT:3
+                             3
+FORMAT:(Z3.0)
+INPUT:-3
+                            -3
+FORMAT:(Z3.0)
+INPUT:10
+                            16
+FORMAT:(Z3.0)
+INPUT:-10
+                           -16
+FORMAT:(Z3.0)
+INPUT:100
+                           256
+FORMAT:(Z3.0)
+INPUT:-100
+                           -16
+FORMAT:(Z3.0)
+INPUT:1000
+                           256
+FORMAT:(Z3.0)
+INPUT:-1000
+                           -16
+FORMAT:(Z3.0)
+INPUT:10000
+                           256
+FORMAT:(Z3.0)
+INPUT:-10000
+                           -16
+FORMAT:(Z3.0)
+INPUT:100000
+                           256
+FORMAT:(Z3.0)
+INPUT:-100000
+                           -16
+FORMAT:(Z3.0)
+INPUT:123456789
+                           291
+FORMAT:(Z3.0)
+INPUT:ff
+                           255
+FORMAT:(Z3.0)
+INPUT:F
+                            15
+FORMAT:(Z3.0)
+INPUT: F F F
+                            15
+FORMAT:(Z3.0)
+INPUT:A a 2B
+                           170
+FORMAT:(Z3.0)
+INPUT:A.
+ERR
+FORMAT:(Z4.0)
+INPUT:0
+                             0
+FORMAT:(Z4.0)
+INPUT:-0
+                             0
+FORMAT:(Z4.0)
+INPUT:1
+                             1
+FORMAT:(Z4.0)
+INPUT:-1
+                            -1
+FORMAT:(Z4.0)
+INPUT:3
+                             3
+FORMAT:(Z4.0)
+INPUT:-3
+                            -3
+FORMAT:(Z4.0)
+INPUT:10
+                            16
+FORMAT:(Z4.0)
+INPUT:-10
+                           -16
+FORMAT:(Z4.0)
+INPUT:100
+                           256
+FORMAT:(Z4.0)
+INPUT:-100
+                          -256
+FORMAT:(Z4.0)
+INPUT:1000
+                          4096
+FORMAT:(Z4.0)
+INPUT:-1000
+                          -256
+FORMAT:(Z4.0)
+INPUT:10000
+                          4096
+FORMAT:(Z4.0)
+INPUT:-10000
+                          -256
+FORMAT:(Z4.0)
+INPUT:100000
+                          4096
+FORMAT:(Z4.0)
+INPUT:-100000
+                          -256
+FORMAT:(Z4.0)
+INPUT:123456789
+                          4660
+FORMAT:(Z4.0)
+INPUT:ff
+                           255
+FORMAT:(Z4.0)
+INPUT:F
+                            15
+FORMAT:(Z4.0)
+INPUT: F F F
+                           255
+FORMAT:(Z4.0)
+INPUT:A a 2B
+                           170
+FORMAT:(Z4.0)
+INPUT:A.
+ERR
+FORMAT:(Z5.0)
+INPUT:0
+                             0
+FORMAT:(Z5.0)
+INPUT:-0
+                             0
+FORMAT:(Z5.0)
+INPUT:1
+                             1
+FORMAT:(Z5.0)
+INPUT:-1
+                            -1
+FORMAT:(Z5.0)
+INPUT:3
+                             3
+FORMAT:(Z5.0)
+INPUT:-3
+                            -3
+FORMAT:(Z5.0)
+INPUT:10
+                            16
+FORMAT:(Z5.0)
+INPUT:-10
+                           -16
+FORMAT:(Z5.0)
+INPUT:100
+                           256
+FORMAT:(Z5.0)
+INPUT:-100
+                          -256
+FORMAT:(Z5.0)
+INPUT:1000
+                          4096
+FORMAT:(Z5.0)
+INPUT:-1000
+                         -4096
+FORMAT:(Z5.0)
+INPUT:10000
+                         65536
+FORMAT:(Z5.0)
+INPUT:-10000
+                         -4096
+FORMAT:(Z5.0)
+INPUT:100000
+                         65536
+FORMAT:(Z5.0)
+INPUT:-100000
+                         -4096
+FORMAT:(Z5.0)
+INPUT:123456789
+                         74565
+FORMAT:(Z5.0)
+INPUT:ff
+                           255
+FORMAT:(Z5.0)
+INPUT:F
+                            15
+FORMAT:(Z5.0)
+INPUT: F F F
+                           255
+FORMAT:(Z5.0)
+INPUT:A a 2B
+                          2722
+FORMAT:(Z5.0)
+INPUT:A.
+ERR
+FORMAT:(Z6.0)
+INPUT:0
+                             0
+FORMAT:(Z6.0)
+INPUT:-0
+                             0
+FORMAT:(Z6.0)
+INPUT:1
+                             1
+FORMAT:(Z6.0)
+INPUT:-1
+                            -1
+FORMAT:(Z6.0)
+INPUT:3
+                             3
+FORMAT:(Z6.0)
+INPUT:-3
+                            -3
+FORMAT:(Z6.0)
+INPUT:10
+                            16
+FORMAT:(Z6.0)
+INPUT:-10
+                           -16
+FORMAT:(Z6.0)
+INPUT:100
+                           256
+FORMAT:(Z6.0)
+INPUT:-100
+                          -256
+FORMAT:(Z6.0)
+INPUT:1000
+                          4096
+FORMAT:(Z6.0)
+INPUT:-1000
+                         -4096
+FORMAT:(Z6.0)
+INPUT:10000
+                         65536
+FORMAT:(Z6.0)
+INPUT:-10000
+                        -65536
+FORMAT:(Z6.0)
+INPUT:100000
+                       1048576
+FORMAT:(Z6.0)
+INPUT:-100000
+                        -65536
+FORMAT:(Z6.0)
+INPUT:123456789
+                       1193046
+FORMAT:(Z6.0)
+INPUT:ff
+                           255
+FORMAT:(Z6.0)
+INPUT:F
+                            15
+FORMAT:(Z6.0)
+INPUT: F F F
+                          4095
+FORMAT:(Z6.0)
+INPUT:A a 2B
+                         43563
+FORMAT:(Z6.0)
+INPUT:A.
+ERR
+FORMAT:(Z7.0)
+INPUT:0
+                             0
+FORMAT:(Z7.0)
+INPUT:-0
+                             0
+FORMAT:(Z7.0)
+INPUT:1
+                             1
+FORMAT:(Z7.0)
+INPUT:-1
+                            -1
+FORMAT:(Z7.0)
+INPUT:3
+                             3
+FORMAT:(Z7.0)
+INPUT:-3
+                            -3
+FORMAT:(Z7.0)
+INPUT:10
+                            16
+FORMAT:(Z7.0)
+INPUT:-10
+                           -16
+FORMAT:(Z7.0)
+INPUT:100
+                           256
+FORMAT:(Z7.0)
+INPUT:-100
+                          -256
+FORMAT:(Z7.0)
+INPUT:1000
+                          4096
+FORMAT:(Z7.0)
+INPUT:-1000
+                         -4096
+FORMAT:(Z7.0)
+INPUT:10000
+                         65536
+FORMAT:(Z7.0)
+INPUT:-10000
+                        -65536
+FORMAT:(Z7.0)
+INPUT:100000
+                       1048576
+FORMAT:(Z7.0)
+INPUT:-100000
+                      -1048576
+FORMAT:(Z7.0)
+INPUT:123456789
+                      19088743
+FORMAT:(Z7.0)
+INPUT:ff
+                           255
+FORMAT:(Z7.0)
+INPUT:F
+                            15
+FORMAT:(Z7.0)
+INPUT: F F F
+                          4095
+FORMAT:(Z7.0)
+INPUT:A a 2B
+                         43563
+FORMAT:(Z7.0)
+INPUT:A.
+ERR
+FORMAT:(Z8.0)
+INPUT:0
+                             0
+FORMAT:(Z8.0)
+INPUT:-0
+                             0
+FORMAT:(Z8.0)
+INPUT:1
+                             1
+FORMAT:(Z8.0)
+INPUT:-1
+                            -1
+FORMAT:(Z8.0)
+INPUT:3
+                             3
+FORMAT:(Z8.0)
+INPUT:-3
+                            -3
+FORMAT:(Z8.0)
+INPUT:10
+                            16
+FORMAT:(Z8.0)
+INPUT:-10
+                           -16
+FORMAT:(Z8.0)
+INPUT:100
+                           256
+FORMAT:(Z8.0)
+INPUT:-100
+                          -256
+FORMAT:(Z8.0)
+INPUT:1000
+                          4096
+FORMAT:(Z8.0)
+INPUT:-1000
+                         -4096
+FORMAT:(Z8.0)
+INPUT:10000
+                         65536
+FORMAT:(Z8.0)
+INPUT:-10000
+                        -65536
+FORMAT:(Z8.0)
+INPUT:100000
+                       1048576
+FORMAT:(Z8.0)
+INPUT:-100000
+                      -1048576
+FORMAT:(Z8.0)
+INPUT:123456789
+                     305419896
+FORMAT:(Z8.0)
+INPUT:ff
+                           255
+FORMAT:(Z8.0)
+INPUT:F
+                            15
+FORMAT:(Z8.0)
+INPUT: F F F
+                          4095
+FORMAT:(Z8.0)
+INPUT:A a 2B
+                         43563
+FORMAT:(Z8.0)
+INPUT:A.
+ERR
+FORMAT:(Z9.0)
+INPUT:0
+                             0
+FORMAT:(Z9.0)
+INPUT:-0
+                             0
+FORMAT:(Z9.0)
+INPUT:1
+                             1
+FORMAT:(Z9.0)
+INPUT:-1
+                            -1
+FORMAT:(Z9.0)
+INPUT:3
+                             3
+FORMAT:(Z9.0)
+INPUT:-3
+                            -3
+FORMAT:(Z9.0)
+INPUT:10
+                            16
+FORMAT:(Z9.0)
+INPUT:-10
+                           -16
+FORMAT:(Z9.0)
+INPUT:100
+                           256
+FORMAT:(Z9.0)
+INPUT:-100
+                          -256
+FORMAT:(Z9.0)
+INPUT:1000
+                          4096
+FORMAT:(Z9.0)
+INPUT:-1000
+                         -4096
+FORMAT:(Z9.0)
+INPUT:10000
+                         65536
+FORMAT:(Z9.0)
+INPUT:-10000
+                        -65536
+FORMAT:(Z9.0)
+INPUT:100000
+                       1048576
+FORMAT:(Z9.0)
+INPUT:-100000
+                      -1048576
+FORMAT:(Z9.0)
+INPUT:123456789
+ERR
+FORMAT:(Z9.0)
+INPUT:ff
+                           255
+FORMAT:(Z9.0)
+INPUT:F
+                            15
+FORMAT:(Z9.0)
+INPUT: F F F
+                          4095
+FORMAT:(Z9.0)
+INPUT:A a 2B
+                         43563
+FORMAT:(Z9.0)
+INPUT:A.
+ERR
+FORMAT:(Z10.0)
+INPUT:0
+                             0
+FORMAT:(Z10.0)
+INPUT:-0
+                             0
+FORMAT:(Z10.0)
+INPUT:1
+                             1
+FORMAT:(Z10.0)
+INPUT:-1
+                            -1
+FORMAT:(Z10.0)
+INPUT:3
+                             3
+FORMAT:(Z10.0)
+INPUT:-3
+                            -3
+FORMAT:(Z10.0)
+INPUT:10
+                            16
+FORMAT:(Z10.0)
+INPUT:-10
+                           -16
+FORMAT:(Z10.0)
+INPUT:100
+                           256
+FORMAT:(Z10.0)
+INPUT:-100
+                          -256
+FORMAT:(Z10.0)
+INPUT:1000
+                          4096
+FORMAT:(Z10.0)
+INPUT:-1000
+                         -4096
+FORMAT:(Z10.0)
+INPUT:10000
+                         65536
+FORMAT:(Z10.0)
+INPUT:-10000
+                        -65536
+FORMAT:(Z10.0)
+INPUT:100000
+                       1048576
+FORMAT:(Z10.0)
+INPUT:-100000
+                      -1048576
+FORMAT:(Z10.0)
+INPUT:123456789
+ERR
+FORMAT:(Z10.0)
+INPUT:ff
+                           255
+FORMAT:(Z10.0)
+INPUT:F
+                            15
+FORMAT:(Z10.0)
+INPUT: F F F
+                          4095
+FORMAT:(Z10.0)
+INPUT:A a 2B
+                         43563
+FORMAT:(Z10.0)
+INPUT:A.
+ERR
+FORMAT:(Z1.1)
+INPUT:0
+                             0
+FORMAT:(Z1.1)
+INPUT:-0
+ERR
+FORMAT:(Z1.1)
+INPUT:1
+                             1
+FORMAT:(Z1.1)
+INPUT:-1
+ERR
+FORMAT:(Z1.1)
+INPUT:3
+                             3
+FORMAT:(Z1.1)
+INPUT:-3
+ERR
+FORMAT:(Z1.1)
+INPUT:10
+                             1
+FORMAT:(Z1.1)
+INPUT:-10
+ERR
+FORMAT:(Z1.1)
+INPUT:100
+                             1
+FORMAT:(Z1.1)
+INPUT:-100
+ERR
+FORMAT:(Z1.1)
+INPUT:1000
+                             1
+FORMAT:(Z1.1)
+INPUT:-1000
+ERR
+FORMAT:(Z1.1)
+INPUT:10000
+                             1
+FORMAT:(Z1.1)
+INPUT:-10000
+ERR
+FORMAT:(Z1.1)
+INPUT:100000
+                             1
+FORMAT:(Z1.1)
+INPUT:-100000
+ERR
+FORMAT:(Z1.1)
+INPUT:123456789
+                             1
+FORMAT:(Z1.1)
+INPUT:ff
+                            15
+FORMAT:(Z1.1)
+INPUT:F
+                            15
+FORMAT:(Z1.1)
+INPUT: F F F
+                             0
+FORMAT:(Z1.1)
+INPUT:A a 2B
+                            10
+FORMAT:(Z1.1)
+INPUT:A.
+                            10
+FORMAT:(Z2.1)
+INPUT:0
+                             0
+FORMAT:(Z2.1)
+INPUT:-0
+                             0
+FORMAT:(Z2.1)
+INPUT:1
+                             1
+FORMAT:(Z2.1)
+INPUT:-1
+                            -1
+FORMAT:(Z2.1)
+INPUT:3
+                             3
+FORMAT:(Z2.1)
+INPUT:-3
+                            -3
+FORMAT:(Z2.1)
+INPUT:10
+                            16
+FORMAT:(Z2.1)
+INPUT:-10
+                            -1
+FORMAT:(Z2.1)
+INPUT:100
+                            16
+FORMAT:(Z2.1)
+INPUT:-100
+                            -1
+FORMAT:(Z2.1)
+INPUT:1000
+                            16
+FORMAT:(Z2.1)
+INPUT:-1000
+                            -1
+FORMAT:(Z2.1)
+INPUT:10000
+                            16
+FORMAT:(Z2.1)
+INPUT:-10000
+                            -1
+FORMAT:(Z2.1)
+INPUT:100000
+                            16
+FORMAT:(Z2.1)
+INPUT:-100000
+                            -1
+FORMAT:(Z2.1)
+INPUT:123456789
+                            18
+FORMAT:(Z2.1)
+INPUT:ff
+                           255
+FORMAT:(Z2.1)
+INPUT:F
+                            15
+FORMAT:(Z2.1)
+INPUT: F F F
+                            15
+FORMAT:(Z2.1)
+INPUT:A a 2B
+                            10
+FORMAT:(Z2.1)
+INPUT:A.
+ERR
+FORMAT:(Z3.1)
+INPUT:0
+                             0
+FORMAT:(Z3.1)
+INPUT:-0
+                             0
+FORMAT:(Z3.1)
+INPUT:1
+                             1
+FORMAT:(Z3.1)
+INPUT:-1
+                            -1
+FORMAT:(Z3.1)
+INPUT:3
+                             3
+FORMAT:(Z3.1)
+INPUT:-3
+                            -3
+FORMAT:(Z3.1)
+INPUT:10
+                            16
+FORMAT:(Z3.1)
+INPUT:-10
+                           -16
+FORMAT:(Z3.1)
+INPUT:100
+                           256
+FORMAT:(Z3.1)
+INPUT:-100
+                           -16
+FORMAT:(Z3.1)
+INPUT:1000
+                           256
+FORMAT:(Z3.1)
+INPUT:-1000
+                           -16
+FORMAT:(Z3.1)
+INPUT:10000
+                           256
+FORMAT:(Z3.1)
+INPUT:-10000
+                           -16
+FORMAT:(Z3.1)
+INPUT:100000
+                           256
+FORMAT:(Z3.1)
+INPUT:-100000
+                           -16
+FORMAT:(Z3.1)
+INPUT:123456789
+                           291
+FORMAT:(Z3.1)
+INPUT:ff
+                           255
+FORMAT:(Z3.1)
+INPUT:F
+                            15
+FORMAT:(Z3.1)
+INPUT: F F F
+                            15
+FORMAT:(Z3.1)
+INPUT:A a 2B
+                           170
+FORMAT:(Z3.1)
+INPUT:A.
+ERR
+FORMAT:(Z4.1)
+INPUT:0
+                             0
+FORMAT:(Z4.1)
+INPUT:-0
+                             0
+FORMAT:(Z4.1)
+INPUT:1
+                             1
+FORMAT:(Z4.1)
+INPUT:-1
+                            -1
+FORMAT:(Z4.1)
+INPUT:3
+                             3
+FORMAT:(Z4.1)
+INPUT:-3
+                            -3
+FORMAT:(Z4.1)
+INPUT:10
+                            16
+FORMAT:(Z4.1)
+INPUT:-10
+                           -16
+FORMAT:(Z4.1)
+INPUT:100
+                           256
+FORMAT:(Z4.1)
+INPUT:-100
+                          -256
+FORMAT:(Z4.1)
+INPUT:1000
+                          4096
+FORMAT:(Z4.1)
+INPUT:-1000
+                          -256
+FORMAT:(Z4.1)
+INPUT:10000
+                          4096
+FORMAT:(Z4.1)
+INPUT:-10000
+                          -256
+FORMAT:(Z4.1)
+INPUT:100000
+                          4096
+FORMAT:(Z4.1)
+INPUT:-100000
+                          -256
+FORMAT:(Z4.1)
+INPUT:123456789
+                          4660
+FORMAT:(Z4.1)
+INPUT:ff
+                           255
+FORMAT:(Z4.1)
+INPUT:F
+                            15
+FORMAT:(Z4.1)
+INPUT: F F F
+                           255
+FORMAT:(Z4.1)
+INPUT:A a 2B
+                           170
+FORMAT:(Z4.1)
+INPUT:A.
+ERR
+FORMAT:(Z5.1)
+INPUT:0
+                             0
+FORMAT:(Z5.1)
+INPUT:-0
+                             0
+FORMAT:(Z5.1)
+INPUT:1
+                             1
+FORMAT:(Z5.1)
+INPUT:-1
+                            -1
+FORMAT:(Z5.1)
+INPUT:3
+                             3
+FORMAT:(Z5.1)
+INPUT:-3
+                            -3
+FORMAT:(Z5.1)
+INPUT:10
+                            16
+FORMAT:(Z5.1)
+INPUT:-10
+                           -16
+FORMAT:(Z5.1)
+INPUT:100
+                           256
+FORMAT:(Z5.1)
+INPUT:-100
+                          -256
+FORMAT:(Z5.1)
+INPUT:1000
+                          4096
+FORMAT:(Z5.1)
+INPUT:-1000
+                         -4096
+FORMAT:(Z5.1)
+INPUT:10000
+                         65536
+FORMAT:(Z5.1)
+INPUT:-10000
+                         -4096
+FORMAT:(Z5.1)
+INPUT:100000
+                         65536
+FORMAT:(Z5.1)
+INPUT:-100000
+                         -4096
+FORMAT:(Z5.1)
+INPUT:123456789
+                         74565
+FORMAT:(Z5.1)
+INPUT:ff
+                           255
+FORMAT:(Z5.1)
+INPUT:F
+                            15
+FORMAT:(Z5.1)
+INPUT: F F F
+                           255
+FORMAT:(Z5.1)
+INPUT:A a 2B
+                          2722
+FORMAT:(Z5.1)
+INPUT:A.
+ERR
+FORMAT:(Z6.1)
+INPUT:0
+                             0
+FORMAT:(Z6.1)
+INPUT:-0
+                             0
+FORMAT:(Z6.1)
+INPUT:1
+                             1
+FORMAT:(Z6.1)
+INPUT:-1
+                            -1
+FORMAT:(Z6.1)
+INPUT:3
+                             3
+FORMAT:(Z6.1)
+INPUT:-3
+                            -3
+FORMAT:(Z6.1)
+INPUT:10
+                            16
+FORMAT:(Z6.1)
+INPUT:-10
+                           -16
+FORMAT:(Z6.1)
+INPUT:100
+                           256
+FORMAT:(Z6.1)
+INPUT:-100
+                          -256
+FORMAT:(Z6.1)
+INPUT:1000
+                          4096
+FORMAT:(Z6.1)
+INPUT:-1000
+                         -4096
+FORMAT:(Z6.1)
+INPUT:10000
+                         65536
+FORMAT:(Z6.1)
+INPUT:-10000
+                        -65536
+FORMAT:(Z6.1)
+INPUT:100000
+                       1048576
+FORMAT:(Z6.1)
+INPUT:-100000
+                        -65536
+FORMAT:(Z6.1)
+INPUT:123456789
+                       1193046
+FORMAT:(Z6.1)
+INPUT:ff
+                           255
+FORMAT:(Z6.1)
+INPUT:F
+                            15
+FORMAT:(Z6.1)
+INPUT: F F F
+                          4095
+FORMAT:(Z6.1)
+INPUT:A a 2B
+                         43563
+FORMAT:(Z6.1)
+INPUT:A.
+ERR
+FORMAT:(Z7.1)
+INPUT:0
+                             0
+FORMAT:(Z7.1)
+INPUT:-0
+                             0
+FORMAT:(Z7.1)
+INPUT:1
+                             1
+FORMAT:(Z7.1)
+INPUT:-1
+                            -1
+FORMAT:(Z7.1)
+INPUT:3
+                             3
+FORMAT:(Z7.1)
+INPUT:-3
+                            -3
+FORMAT:(Z7.1)
+INPUT:10
+                            16
+FORMAT:(Z7.1)
+INPUT:-10
+                           -16
+FORMAT:(Z7.1)
+INPUT:100
+                           256
+FORMAT:(Z7.1)
+INPUT:-100
+                          -256
+FORMAT:(Z7.1)
+INPUT:1000
+                          4096
+FORMAT:(Z7.1)
+INPUT:-1000
+                         -4096
+FORMAT:(Z7.1)
+INPUT:10000
+                         65536
+FORMAT:(Z7.1)
+INPUT:-10000
+                        -65536
+FORMAT:(Z7.1)
+INPUT:100000
+                       1048576
+FORMAT:(Z7.1)
+INPUT:-100000
+                      -1048576
+FORMAT:(Z7.1)
+INPUT:123456789
+                      19088743
+FORMAT:(Z7.1)
+INPUT:ff
+                           255
+FORMAT:(Z7.1)
+INPUT:F
+                            15
+FORMAT:(Z7.1)
+INPUT: F F F
+                          4095
+FORMAT:(Z7.1)
+INPUT:A a 2B
+                         43563
+FORMAT:(Z7.1)
+INPUT:A.
+ERR
+FORMAT:(Z8.1)
+INPUT:0
+                             0
+FORMAT:(Z8.1)
+INPUT:-0
+                             0
+FORMAT:(Z8.1)
+INPUT:1
+                             1
+FORMAT:(Z8.1)
+INPUT:-1
+                            -1
+FORMAT:(Z8.1)
+INPUT:3
+                             3
+FORMAT:(Z8.1)
+INPUT:-3
+                            -3
+FORMAT:(Z8.1)
+INPUT:10
+                            16
+FORMAT:(Z8.1)
+INPUT:-10
+                           -16
+FORMAT:(Z8.1)
+INPUT:100
+                           256
+FORMAT:(Z8.1)
+INPUT:-100
+                          -256
+FORMAT:(Z8.1)
+INPUT:1000
+                          4096
+FORMAT:(Z8.1)
+INPUT:-1000
+                         -4096
+FORMAT:(Z8.1)
+INPUT:10000
+                         65536
+FORMAT:(Z8.1)
+INPUT:-10000
+                        -65536
+FORMAT:(Z8.1)
+INPUT:100000
+                       1048576
+FORMAT:(Z8.1)
+INPUT:-100000
+                      -1048576
+FORMAT:(Z8.1)
+INPUT:123456789
+                     305419896
+FORMAT:(Z8.1)
+INPUT:ff
+                           255
+FORMAT:(Z8.1)
+INPUT:F
+                            15
+FORMAT:(Z8.1)
+INPUT: F F F
+                          4095
+FORMAT:(Z8.1)
+INPUT:A a 2B
+                         43563
+FORMAT:(Z8.1)
+INPUT:A.
+ERR
+FORMAT:(Z9.1)
+INPUT:0
+                             0
+FORMAT:(Z9.1)
+INPUT:-0
+                             0
+FORMAT:(Z9.1)
+INPUT:1
+                             1
+FORMAT:(Z9.1)
+INPUT:-1
+                            -1
+FORMAT:(Z9.1)
+INPUT:3
+                             3
+FORMAT:(Z9.1)
+INPUT:-3
+                            -3
+FORMAT:(Z9.1)
+INPUT:10
+                            16
+FORMAT:(Z9.1)
+INPUT:-10
+                           -16
+FORMAT:(Z9.1)
+INPUT:100
+                           256
+FORMAT:(Z9.1)
+INPUT:-100
+                          -256
+FORMAT:(Z9.1)
+INPUT:1000
+                          4096
+FORMAT:(Z9.1)
+INPUT:-1000
+                         -4096
+FORMAT:(Z9.1)
+INPUT:10000
+                         65536
+FORMAT:(Z9.1)
+INPUT:-10000
+                        -65536
+FORMAT:(Z9.1)
+INPUT:100000
+                       1048576
+FORMAT:(Z9.1)
+INPUT:-100000
+                      -1048576
+FORMAT:(Z9.1)
+INPUT:123456789
+ERR
+FORMAT:(Z9.1)
+INPUT:ff
+                           255
+FORMAT:(Z9.1)
+INPUT:F
+                            15
+FORMAT:(Z9.1)
+INPUT: F F F
+                          4095
+FORMAT:(Z9.1)
+INPUT:A a 2B
+                         43563
+FORMAT:(Z9.1)
+INPUT:A.
+ERR
+FORMAT:(Z10.1)
+INPUT:0
+                             0
+FORMAT:(Z10.1)
+INPUT:-0
+                             0
+FORMAT:(Z10.1)
+INPUT:1
+                             1
+FORMAT:(Z10.1)
+INPUT:-1
+                            -1
+FORMAT:(Z10.1)
+INPUT:3
+                             3
+FORMAT:(Z10.1)
+INPUT:-3
+                            -3
+FORMAT:(Z10.1)
+INPUT:10
+                            16
+FORMAT:(Z10.1)
+INPUT:-10
+                           -16
+FORMAT:(Z10.1)
+INPUT:100
+                           256
+FORMAT:(Z10.1)
+INPUT:-100
+                          -256
+FORMAT:(Z10.1)
+INPUT:1000
+                          4096
+FORMAT:(Z10.1)
+INPUT:-1000
+                         -4096
+FORMAT:(Z10.1)
+INPUT:10000
+                         65536
+FORMAT:(Z10.1)
+INPUT:-10000
+                        -65536
+FORMAT:(Z10.1)
+INPUT:100000
+                       1048576
+FORMAT:(Z10.1)
+INPUT:-100000
+                      -1048576
+FORMAT:(Z10.1)
+INPUT:123456789
+ERR
+FORMAT:(Z10.1)
+INPUT:ff
+                           255
+FORMAT:(Z10.1)
+INPUT:F
+                            15
+FORMAT:(Z10.1)
+INPUT: F F F
+                          4095
+FORMAT:(Z10.1)
+INPUT:A a 2B
+                         43563
+FORMAT:(Z10.1)
+INPUT:A.
+ERR
+FORMAT:(Z2.2)
+INPUT:0
+                             0
+FORMAT:(Z2.2)
+INPUT:-0
+                             0
+FORMAT:(Z2.2)
+INPUT:1
+                             1
+FORMAT:(Z2.2)
+INPUT:-1
+                            -1
+FORMAT:(Z2.2)
+INPUT:3
+                             3
+FORMAT:(Z2.2)
+INPUT:-3
+                            -3
+FORMAT:(Z2.2)
+INPUT:10
+                            16
+FORMAT:(Z2.2)
+INPUT:-10
+                            -1
+FORMAT:(Z2.2)
+INPUT:100
+                            16
+FORMAT:(Z2.2)
+INPUT:-100
+                            -1
+FORMAT:(Z2.2)
+INPUT:1000
+                            16
+FORMAT:(Z2.2)
+INPUT:-1000
+                            -1
+FORMAT:(Z2.2)
+INPUT:10000
+                            16
+FORMAT:(Z2.2)
+INPUT:-10000
+                            -1
+FORMAT:(Z2.2)
+INPUT:100000
+                            16
+FORMAT:(Z2.2)
+INPUT:-100000
+                            -1
+FORMAT:(Z2.2)
+INPUT:123456789
+                            18
+FORMAT:(Z2.2)
+INPUT:ff
+                           255
+FORMAT:(Z2.2)
+INPUT:F
+                            15
+FORMAT:(Z2.2)
+INPUT: F F F
+                            15
+FORMAT:(Z2.2)
+INPUT:A a 2B
+                            10
+FORMAT:(Z2.2)
+INPUT:A.
+ERR
+FORMAT:(Z3.2)
+INPUT:0
+                             0
+FORMAT:(Z3.2)
+INPUT:-0
+                             0
+FORMAT:(Z3.2)
+INPUT:1
+                             1
+FORMAT:(Z3.2)
+INPUT:-1
+                            -1
+FORMAT:(Z3.2)
+INPUT:3
+                             3
+FORMAT:(Z3.2)
+INPUT:-3
+                            -3
+FORMAT:(Z3.2)
+INPUT:10
+                            16
+FORMAT:(Z3.2)
+INPUT:-10
+                           -16
+FORMAT:(Z3.2)
+INPUT:100
+                           256
+FORMAT:(Z3.2)
+INPUT:-100
+                           -16
+FORMAT:(Z3.2)
+INPUT:1000
+                           256
+FORMAT:(Z3.2)
+INPUT:-1000
+                           -16
+FORMAT:(Z3.2)
+INPUT:10000
+                           256
+FORMAT:(Z3.2)
+INPUT:-10000
+                           -16
+FORMAT:(Z3.2)
+INPUT:100000
+                           256
+FORMAT:(Z3.2)
+INPUT:-100000
+                           -16
+FORMAT:(Z3.2)
+INPUT:123456789
+                           291
+FORMAT:(Z3.2)
+INPUT:ff
+                           255
+FORMAT:(Z3.2)
+INPUT:F
+                            15
+FORMAT:(Z3.2)
+INPUT: F F F
+                            15
+FORMAT:(Z3.2)
+INPUT:A a 2B
+                           170
+FORMAT:(Z3.2)
+INPUT:A.
+ERR
+FORMAT:(Z4.2)
+INPUT:0
+                             0
+FORMAT:(Z4.2)
+INPUT:-0
+                             0
+FORMAT:(Z4.2)
+INPUT:1
+                             1
+FORMAT:(Z4.2)
+INPUT:-1
+                            -1
+FORMAT:(Z4.2)
+INPUT:3
+                             3
+FORMAT:(Z4.2)
+INPUT:-3
+                            -3
+FORMAT:(Z4.2)
+INPUT:10
+                            16
+FORMAT:(Z4.2)
+INPUT:-10
+                           -16
+FORMAT:(Z4.2)
+INPUT:100
+                           256
+FORMAT:(Z4.2)
+INPUT:-100
+                          -256
+FORMAT:(Z4.2)
+INPUT:1000
+                          4096
+FORMAT:(Z4.2)
+INPUT:-1000
+                          -256
+FORMAT:(Z4.2)
+INPUT:10000
+                          4096
+FORMAT:(Z4.2)
+INPUT:-10000
+                          -256
+FORMAT:(Z4.2)
+INPUT:100000
+                          4096
+FORMAT:(Z4.2)
+INPUT:-100000
+                          -256
+FORMAT:(Z4.2)
+INPUT:123456789
+                          4660
+FORMAT:(Z4.2)
+INPUT:ff
+                           255
+FORMAT:(Z4.2)
+INPUT:F
+                            15
+FORMAT:(Z4.2)
+INPUT: F F F
+                           255
+FORMAT:(Z4.2)
+INPUT:A a 2B
+                           170
+FORMAT:(Z4.2)
+INPUT:A.
+ERR
+FORMAT:(Z5.2)
+INPUT:0
+                             0
+FORMAT:(Z5.2)
+INPUT:-0
+                             0
+FORMAT:(Z5.2)
+INPUT:1
+                             1
+FORMAT:(Z5.2)
+INPUT:-1
+                            -1
+FORMAT:(Z5.2)
+INPUT:3
+                             3
+FORMAT:(Z5.2)
+INPUT:-3
+                            -3
+FORMAT:(Z5.2)
+INPUT:10
+                            16
+FORMAT:(Z5.2)
+INPUT:-10
+                           -16
+FORMAT:(Z5.2)
+INPUT:100
+                           256
+FORMAT:(Z5.2)
+INPUT:-100
+                          -256
+FORMAT:(Z5.2)
+INPUT:1000
+                          4096
+FORMAT:(Z5.2)
+INPUT:-1000
+                         -4096
+FORMAT:(Z5.2)
+INPUT:10000
+                         65536
+FORMAT:(Z5.2)
+INPUT:-10000
+                         -4096
+FORMAT:(Z5.2)
+INPUT:100000
+                         65536
+FORMAT:(Z5.2)
+INPUT:-100000
+                         -4096
+FORMAT:(Z5.2)
+INPUT:123456789
+                         74565
+FORMAT:(Z5.2)
+INPUT:ff
+                           255
+FORMAT:(Z5.2)
+INPUT:F
+                            15
+FORMAT:(Z5.2)
+INPUT: F F F
+                           255
+FORMAT:(Z5.2)
+INPUT:A a 2B
+                          2722
+FORMAT:(Z5.2)
+INPUT:A.
+ERR
+FORMAT:(Z6.2)
+INPUT:0
+                             0
+FORMAT:(Z6.2)
+INPUT:-0
+                             0
+FORMAT:(Z6.2)
+INPUT:1
+                             1
+FORMAT:(Z6.2)
+INPUT:-1
+                            -1
+FORMAT:(Z6.2)
+INPUT:3
+                             3
+FORMAT:(Z6.2)
+INPUT:-3
+                            -3
+FORMAT:(Z6.2)
+INPUT:10
+                            16
+FORMAT:(Z6.2)
+INPUT:-10
+                           -16
+FORMAT:(Z6.2)
+INPUT:100
+                           256
+FORMAT:(Z6.2)
+INPUT:-100
+                          -256
+FORMAT:(Z6.2)
+INPUT:1000
+                          4096
+FORMAT:(Z6.2)
+INPUT:-1000
+                         -4096
+FORMAT:(Z6.2)
+INPUT:10000
+                         65536
+FORMAT:(Z6.2)
+INPUT:-10000
+                        -65536
+FORMAT:(Z6.2)
+INPUT:100000
+                       1048576
+FORMAT:(Z6.2)
+INPUT:-100000
+                        -65536
+FORMAT:(Z6.2)
+INPUT:123456789
+                       1193046
+FORMAT:(Z6.2)
+INPUT:ff
+                           255
+FORMAT:(Z6.2)
+INPUT:F
+                            15
+FORMAT:(Z6.2)
+INPUT: F F F
+                          4095
+FORMAT:(Z6.2)
+INPUT:A a 2B
+                         43563
+FORMAT:(Z6.2)
+INPUT:A.
+ERR
+FORMAT:(Z7.2)
+INPUT:0
+                             0
+FORMAT:(Z7.2)
+INPUT:-0
+                             0
+FORMAT:(Z7.2)
+INPUT:1
+                             1
+FORMAT:(Z7.2)
+INPUT:-1
+                            -1
+FORMAT:(Z7.2)
+INPUT:3
+                             3
+FORMAT:(Z7.2)
+INPUT:-3
+                            -3
+FORMAT:(Z7.2)
+INPUT:10
+                            16
+FORMAT:(Z7.2)
+INPUT:-10
+                           -16
+FORMAT:(Z7.2)
+INPUT:100
+                           256
+FORMAT:(Z7.2)
+INPUT:-100
+                          -256
+FORMAT:(Z7.2)
+INPUT:1000
+                          4096
+FORMAT:(Z7.2)
+INPUT:-1000
+                         -4096
+FORMAT:(Z7.2)
+INPUT:10000
+                         65536
+FORMAT:(Z7.2)
+INPUT:-10000
+                        -65536
+FORMAT:(Z7.2)
+INPUT:100000
+                       1048576
+FORMAT:(Z7.2)
+INPUT:-100000
+                      -1048576
+FORMAT:(Z7.2)
+INPUT:123456789
+                      19088743
+FORMAT:(Z7.2)
+INPUT:ff
+                           255
+FORMAT:(Z7.2)
+INPUT:F
+                            15
+FORMAT:(Z7.2)
+INPUT: F F F
+                          4095
+FORMAT:(Z7.2)
+INPUT:A a 2B
+                         43563
+FORMAT:(Z7.2)
+INPUT:A.
+ERR
+FORMAT:(Z8.2)
+INPUT:0
+                             0
+FORMAT:(Z8.2)
+INPUT:-0
+                             0
+FORMAT:(Z8.2)
+INPUT:1
+                             1
+FORMAT:(Z8.2)
+INPUT:-1
+                            -1
+FORMAT:(Z8.2)
+INPUT:3
+                             3
+FORMAT:(Z8.2)
+INPUT:-3
+                            -3
+FORMAT:(Z8.2)
+INPUT:10
+                            16
+FORMAT:(Z8.2)
+INPUT:-10
+                           -16
+FORMAT:(Z8.2)
+INPUT:100
+                           256
+FORMAT:(Z8.2)
+INPUT:-100
+                          -256
+FORMAT:(Z8.2)
+INPUT:1000
+                          4096
+FORMAT:(Z8.2)
+INPUT:-1000
+                         -4096
+FORMAT:(Z8.2)
+INPUT:10000
+                         65536
+FORMAT:(Z8.2)
+INPUT:-10000
+                        -65536
+FORMAT:(Z8.2)
+INPUT:100000
+                       1048576
+FORMAT:(Z8.2)
+INPUT:-100000
+                      -1048576
+FORMAT:(Z8.2)
+INPUT:123456789
+                     305419896
+FORMAT:(Z8.2)
+INPUT:ff
+                           255
+FORMAT:(Z8.2)
+INPUT:F
+                            15
+FORMAT:(Z8.2)
+INPUT: F F F
+                          4095
+FORMAT:(Z8.2)
+INPUT:A a 2B
+                         43563
+FORMAT:(Z8.2)
+INPUT:A.
+ERR
+FORMAT:(Z9.2)
+INPUT:0
+                             0
+FORMAT:(Z9.2)
+INPUT:-0
+                             0
+FORMAT:(Z9.2)
+INPUT:1
+                             1
+FORMAT:(Z9.2)
+INPUT:-1
+                            -1
+FORMAT:(Z9.2)
+INPUT:3
+                             3
+FORMAT:(Z9.2)
+INPUT:-3
+                            -3
+FORMAT:(Z9.2)
+INPUT:10
+                            16
+FORMAT:(Z9.2)
+INPUT:-10
+                           -16
+FORMAT:(Z9.2)
+INPUT:100
+                           256
+FORMAT:(Z9.2)
+INPUT:-100
+                          -256
+FORMAT:(Z9.2)
+INPUT:1000
+                          4096
+FORMAT:(Z9.2)
+INPUT:-1000
+                         -4096
+FORMAT:(Z9.2)
+INPUT:10000
+                         65536
+FORMAT:(Z9.2)
+INPUT:-10000
+                        -65536
+FORMAT:(Z9.2)
+INPUT:100000
+                       1048576
+FORMAT:(Z9.2)
+INPUT:-100000
+                      -1048576
+FORMAT:(Z9.2)
+INPUT:123456789
+ERR
+FORMAT:(Z9.2)
+INPUT:ff
+                           255
+FORMAT:(Z9.2)
+INPUT:F
+                            15
+FORMAT:(Z9.2)
+INPUT: F F F
+                          4095
+FORMAT:(Z9.2)
+INPUT:A a 2B
+                         43563
+FORMAT:(Z9.2)
+INPUT:A.
+ERR
+FORMAT:(Z10.2)
+INPUT:0
+                             0
+FORMAT:(Z10.2)
+INPUT:-0
+                             0
+FORMAT:(Z10.2)
+INPUT:1
+                             1
+FORMAT:(Z10.2)
+INPUT:-1
+                            -1
+FORMAT:(Z10.2)
+INPUT:3
+                             3
+FORMAT:(Z10.2)
+INPUT:-3
+                            -3
+FORMAT:(Z10.2)
+INPUT:10
+                            16
+FORMAT:(Z10.2)
+INPUT:-10
+                           -16
+FORMAT:(Z10.2)
+INPUT:100
+                           256
+FORMAT:(Z10.2)
+INPUT:-100
+                          -256
+FORMAT:(Z10.2)
+INPUT:1000
+                          4096
+FORMAT:(Z10.2)
+INPUT:-1000
+                         -4096
+FORMAT:(Z10.2)
+INPUT:10000
+                         65536
+FORMAT:(Z10.2)
+INPUT:-10000
+                        -65536
+FORMAT:(Z10.2)
+INPUT:100000
+                       1048576
+FORMAT:(Z10.2)
+INPUT:-100000
+                      -1048576
+FORMAT:(Z10.2)
+INPUT:123456789
+ERR
+FORMAT:(Z10.2)
+INPUT:ff
+                           255
+FORMAT:(Z10.2)
+INPUT:F
+                            15
+FORMAT:(Z10.2)
+INPUT: F F F
+                          4095
+FORMAT:(Z10.2)
+INPUT:A a 2B
+                         43563
+FORMAT:(Z10.2)
+INPUT:A.
+ERR
+FORMAT:(Z3.3)
+INPUT:0
+                             0
+FORMAT:(Z3.3)
+INPUT:-0
+                             0
+FORMAT:(Z3.3)
+INPUT:1
+                             1
+FORMAT:(Z3.3)
+INPUT:-1
+                            -1
+FORMAT:(Z3.3)
+INPUT:3
+                             3
+FORMAT:(Z3.3)
+INPUT:-3
+                            -3
+FORMAT:(Z3.3)
+INPUT:10
+                            16
+FORMAT:(Z3.3)
+INPUT:-10
+                           -16
+FORMAT:(Z3.3)
+INPUT:100
+                           256
+FORMAT:(Z3.3)
+INPUT:-100
+                           -16
+FORMAT:(Z3.3)
+INPUT:1000
+                           256
+FORMAT:(Z3.3)
+INPUT:-1000
+                           -16
+FORMAT:(Z3.3)
+INPUT:10000
+                           256
+FORMAT:(Z3.3)
+INPUT:-10000
+                           -16
+FORMAT:(Z3.3)
+INPUT:100000
+                           256
+FORMAT:(Z3.3)
+INPUT:-100000
+                           -16
+FORMAT:(Z3.3)
+INPUT:123456789
+                           291
+FORMAT:(Z3.3)
+INPUT:ff
+                           255
+FORMAT:(Z3.3)
+INPUT:F
+                            15
+FORMAT:(Z3.3)
+INPUT: F F F
+                            15
+FORMAT:(Z3.3)
+INPUT:A a 2B
+                           170
+FORMAT:(Z3.3)
+INPUT:A.
+ERR
+FORMAT:(Z4.3)
+INPUT:0
+                             0
+FORMAT:(Z4.3)
+INPUT:-0
+                             0
+FORMAT:(Z4.3)
+INPUT:1
+                             1
+FORMAT:(Z4.3)
+INPUT:-1
+                            -1
+FORMAT:(Z4.3)
+INPUT:3
+                             3
+FORMAT:(Z4.3)
+INPUT:-3
+                            -3
+FORMAT:(Z4.3)
+INPUT:10
+                            16
+FORMAT:(Z4.3)
+INPUT:-10
+                           -16
+FORMAT:(Z4.3)
+INPUT:100
+                           256
+FORMAT:(Z4.3)
+INPUT:-100
+                          -256
+FORMAT:(Z4.3)
+INPUT:1000
+                          4096
+FORMAT:(Z4.3)
+INPUT:-1000
+                          -256
+FORMAT:(Z4.3)
+INPUT:10000
+                          4096
+FORMAT:(Z4.3)
+INPUT:-10000
+                          -256
+FORMAT:(Z4.3)
+INPUT:100000
+                          4096
+FORMAT:(Z4.3)
+INPUT:-100000
+                          -256
+FORMAT:(Z4.3)
+INPUT:123456789
+                          4660
+FORMAT:(Z4.3)
+INPUT:ff
+                           255
+FORMAT:(Z4.3)
+INPUT:F
+                            15
+FORMAT:(Z4.3)
+INPUT: F F F
+                           255
+FORMAT:(Z4.3)
+INPUT:A a 2B
+                           170
+FORMAT:(Z4.3)
+INPUT:A.
+ERR
+FORMAT:(Z5.3)
+INPUT:0
+                             0
+FORMAT:(Z5.3)
+INPUT:-0
+                             0
+FORMAT:(Z5.3)
+INPUT:1
+                             1
+FORMAT:(Z5.3)
+INPUT:-1
+                            -1
+FORMAT:(Z5.3)
+INPUT:3
+                             3
+FORMAT:(Z5.3)
+INPUT:-3
+                            -3
+FORMAT:(Z5.3)
+INPUT:10
+                            16
+FORMAT:(Z5.3)
+INPUT:-10
+                           -16
+FORMAT:(Z5.3)
+INPUT:100
+                           256
+FORMAT:(Z5.3)
+INPUT:-100
+                          -256
+FORMAT:(Z5.3)
+INPUT:1000
+                          4096
+FORMAT:(Z5.3)
+INPUT:-1000
+                         -4096
+FORMAT:(Z5.3)
+INPUT:10000
+                         65536
+FORMAT:(Z5.3)
+INPUT:-10000
+                         -4096
+FORMAT:(Z5.3)
+INPUT:100000
+                         65536
+FORMAT:(Z5.3)
+INPUT:-100000
+                         -4096
+FORMAT:(Z5.3)
+INPUT:123456789
+                         74565
+FORMAT:(Z5.3)
+INPUT:ff
+                           255
+FORMAT:(Z5.3)
+INPUT:F
+                            15
+FORMAT:(Z5.3)
+INPUT: F F F
+                           255
+FORMAT:(Z5.3)
+INPUT:A a 2B
+                          2722
+FORMAT:(Z5.3)
+INPUT:A.
+ERR
+FORMAT:(Z6.3)
+INPUT:0
+                             0
+FORMAT:(Z6.3)
+INPUT:-0
+                             0
+FORMAT:(Z6.3)
+INPUT:1
+                             1
+FORMAT:(Z6.3)
+INPUT:-1
+                            -1
+FORMAT:(Z6.3)
+INPUT:3
+                             3
+FORMAT:(Z6.3)
+INPUT:-3
+                            -3
+FORMAT:(Z6.3)
+INPUT:10
+                            16
+FORMAT:(Z6.3)
+INPUT:-10
+                           -16
+FORMAT:(Z6.3)
+INPUT:100
+                           256
+FORMAT:(Z6.3)
+INPUT:-100
+                          -256
+FORMAT:(Z6.3)
+INPUT:1000
+                          4096
+FORMAT:(Z6.3)
+INPUT:-1000
+                         -4096
+FORMAT:(Z6.3)
+INPUT:10000
+                         65536
+FORMAT:(Z6.3)
+INPUT:-10000
+                        -65536
+FORMAT:(Z6.3)
+INPUT:100000
+                       1048576
+FORMAT:(Z6.3)
+INPUT:-100000
+                        -65536
+FORMAT:(Z6.3)
+INPUT:123456789
+                       1193046
+FORMAT:(Z6.3)
+INPUT:ff
+                           255
+FORMAT:(Z6.3)
+INPUT:F
+                            15
+FORMAT:(Z6.3)
+INPUT: F F F
+                          4095
+FORMAT:(Z6.3)
+INPUT:A a 2B
+                         43563
+FORMAT:(Z6.3)
+INPUT:A.
+ERR
+FORMAT:(Z7.3)
+INPUT:0
+                             0
+FORMAT:(Z7.3)
+INPUT:-0
+                             0
+FORMAT:(Z7.3)
+INPUT:1
+                             1
+FORMAT:(Z7.3)
+INPUT:-1
+                            -1
+FORMAT:(Z7.3)
+INPUT:3
+                             3
+FORMAT:(Z7.3)
+INPUT:-3
+                            -3
+FORMAT:(Z7.3)
+INPUT:10
+                            16
+FORMAT:(Z7.3)
+INPUT:-10
+                           -16
+FORMAT:(Z7.3)
+INPUT:100
+                           256
+FORMAT:(Z7.3)
+INPUT:-100
+                          -256
+FORMAT:(Z7.3)
+INPUT:1000
+                          4096
+FORMAT:(Z7.3)
+INPUT:-1000
+                         -4096
+FORMAT:(Z7.3)
+INPUT:10000
+                         65536
+FORMAT:(Z7.3)
+INPUT:-10000
+                        -65536
+FORMAT:(Z7.3)
+INPUT:100000
+                       1048576
+FORMAT:(Z7.3)
+INPUT:-100000
+                      -1048576
+FORMAT:(Z7.3)
+INPUT:123456789
+                      19088743
+FORMAT:(Z7.3)
+INPUT:ff
+                           255
+FORMAT:(Z7.3)
+INPUT:F
+                            15
+FORMAT:(Z7.3)
+INPUT: F F F
+                          4095
+FORMAT:(Z7.3)
+INPUT:A a 2B
+                         43563
+FORMAT:(Z7.3)
+INPUT:A.
+ERR
+FORMAT:(Z8.3)
+INPUT:0
+                             0
+FORMAT:(Z8.3)
+INPUT:-0
+                             0
+FORMAT:(Z8.3)
+INPUT:1
+                             1
+FORMAT:(Z8.3)
+INPUT:-1
+                            -1
+FORMAT:(Z8.3)
+INPUT:3
+                             3
+FORMAT:(Z8.3)
+INPUT:-3
+                            -3
+FORMAT:(Z8.3)
+INPUT:10
+                            16
+FORMAT:(Z8.3)
+INPUT:-10
+                           -16
+FORMAT:(Z8.3)
+INPUT:100
+                           256
+FORMAT:(Z8.3)
+INPUT:-100
+                          -256
+FORMAT:(Z8.3)
+INPUT:1000
+                          4096
+FORMAT:(Z8.3)
+INPUT:-1000
+                         -4096
+FORMAT:(Z8.3)
+INPUT:10000
+                         65536
+FORMAT:(Z8.3)
+INPUT:-10000
+                        -65536
+FORMAT:(Z8.3)
+INPUT:100000
+                       1048576
+FORMAT:(Z8.3)
+INPUT:-100000
+                      -1048576
+FORMAT:(Z8.3)
+INPUT:123456789
+                     305419896
+FORMAT:(Z8.3)
+INPUT:ff
+                           255
+FORMAT:(Z8.3)
+INPUT:F
+                            15
+FORMAT:(Z8.3)
+INPUT: F F F
+                          4095
+FORMAT:(Z8.3)
+INPUT:A a 2B
+                         43563
+FORMAT:(Z8.3)
+INPUT:A.
+ERR
+FORMAT:(Z9.3)
+INPUT:0
+                             0
+FORMAT:(Z9.3)
+INPUT:-0
+                             0
+FORMAT:(Z9.3)
+INPUT:1
+                             1
+FORMAT:(Z9.3)
+INPUT:-1
+                            -1
+FORMAT:(Z9.3)
+INPUT:3
+                             3
+FORMAT:(Z9.3)
+INPUT:-3
+                            -3
+FORMAT:(Z9.3)
+INPUT:10
+                            16
+FORMAT:(Z9.3)
+INPUT:-10
+                           -16
+FORMAT:(Z9.3)
+INPUT:100
+                           256
+FORMAT:(Z9.3)
+INPUT:-100
+                          -256

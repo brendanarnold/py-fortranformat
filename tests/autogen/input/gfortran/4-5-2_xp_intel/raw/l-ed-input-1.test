@@ -1,0 +1,120 @@
+FORMAT:(L1)
+INPUT:.TRUE.
+ERR
+FORMAT:(L1)
+INPUT:.FALSE.
+ERR
+FORMAT:(L1)
+INPUT:T
+                             1
+FORMAT:(L1)
+INPUT:F
+                             0
+FORMAT:(L2)
+INPUT:.TRUE.
+                             1
+FORMAT:(L2)
+INPUT:.FALSE.
+                             0
+FORMAT:(L2)
+INPUT:T
+                             1
+FORMAT:(L2)
+INPUT:F
+                             0
+FORMAT:(L3)
+INPUT:.TRUE.
+                             1
+FORMAT:(L3)
+INPUT:.FALSE.
+                             0
+FORMAT:(L3)
+INPUT:T
+                             1
+FORMAT:(L3)
+INPUT:F
+                             0
+FORMAT:(L4)
+INPUT:.TRUE.
+                             1
+FORMAT:(L4)
+INPUT:.FALSE.
+                             0
+FORMAT:(L4)
+INPUT:T
+                             1
+FORMAT:(L4)
+INPUT:F
+                             0
+FORMAT:(L5)
+INPUT:.TRUE.
+                             1
+FORMAT:(L5)
+INPUT:.FALSE.
+                             0
+FORMAT:(L5)
+INPUT:T
+                             1
+FORMAT:(L5)
+INPUT:F
+                             0
+FORMAT:(L6)
+INPUT:.TRUE.
+                             1
+FORMAT:(L6)
+INPUT:.FALSE.
+                             0
+FORMAT:(L6)
+INPUT:T
+                             1
+FORMAT:(L6)
+INPUT:F
+                             0
+FORMAT:(L7)
+INPUT:.TRUE.
+                             1
+FORMAT:(L7)
+INPUT:.FALSE.
+                             0
+FORMAT:(L7)
+INPUT:T
+                             1
+FORMAT:(L7)
+INPUT:F
+                             0
+FORMAT:(L8)
+INPUT:.TRUE.
+                             1
+FORMAT:(L8)
+INPUT:.FALSE.
+                             0
+FORMAT:(L8)
+INPUT:T
+                             1
+FORMAT:(L8)
+INPUT:F
+                             0
+FORMAT:(L9)
+INPUT:.TRUE.
+                             1
+FORMAT:(L9)
+INPUT:.FALSE.
+                             0
+FORMAT:(L9)
+INPUT:T
+                             1
+FORMAT:(L9)
+INPUT:F
+                             0
+FORMAT:(L10)
+INPUT:.TRUE.
+                             1
+FORMAT:(L10)
+INPUT:.FALSE.
+                             0
+FORMAT:(L10)
+INPUT:T
+                             1
+FORMAT:(L10)
+INPUT:F
+                             0
