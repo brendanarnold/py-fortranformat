@@ -440,12 +440,15 @@ def write_unittest(infile, outfile, batch, name):
     out_fh = open(outfile, 'w')
     print 'Pythonising %s into %s ...' % (infile, outfile)
     in_fh = open(infile, 'r')
+    # Get the directory of the fortranformat for importing
+    fortranformat_dir = os.path.realpath(os.path.join(os.path.dirname(__file__), '..', '..')) 
     out_fh.write('''
 import sys
 import os
 import unittest
 
-sys.path.append(os.path.join('..', '..'))
+# To change this, re-run 'build-unittests.py'
+sys.path.append(r'%s')
 
 from _input import input as _input
 from _lexer import lexer as _lexer
@@ -453,7 +456,7 @@ from _parser import parser as _parser
 import unittest
 
 class %sEditDescriptorBatch%dTestCase(unittest.TestCase):
-''' % (name.upper(), batch))
+''' % (fortranformat_dir, name.upper(), batch))
     test_num = 0
     fmt = inpt = result = None
     for line in in_fh:
