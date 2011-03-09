@@ -5,8 +5,9 @@ glob:*.DS_Store
 glob:*.Trashes
 glob:*tags
 glob:*.exe
-glob:*.f
 glob:tests/autogen/build-input-tests/*
 glob:tests/autogen/build-output-tests/*
 glob:*.pytest
 glob:*.bak
+syntax: glob
+tests/sandbox/*
