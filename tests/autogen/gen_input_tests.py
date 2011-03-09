@@ -431,7 +431,7 @@ def output_calling_code():
 def write_py_source():
     '''Converts the tests outputs to nosetestable files'''
     for batch, name in filenames():
-        doctest_filename = DOCTEST_FILESTEM % (name, batch)
+        doctest_filename = os.path.join(BUILD_DIR, DOCTEST_FILESTEM % (name, batch))
         filename = os.path.join(BUILD_DIR, RESULT_FILESTEM % (name, batch))
         out_fh = open(doctest_filename, 'w')
         print 'Pythonising %s into %s ...' % (filename, doctest_filename)
@@ -676,8 +676,8 @@ def product(*args, **kwds):
 if __name__ == '__main__':
     import sys
     compile_str = sys.argv[1]
-    #gen_tests()
-    #compile_tests(compile_str)
+    gen_tests()
+    compile_tests(compile_str)
     execute_tests()
     # write_py_source()
     # output_calling_code()

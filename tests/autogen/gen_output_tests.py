@@ -421,7 +421,7 @@ def output_calling_code():
 def write_py_source():
     '''Converts the test output to a doctestable text file'''
     for name in names():
-        doctest_filename = DOCTEST_FILESTEM % name
+        doctest_filename = os.path.join(BUILD_DIR, DOCTEST_FILESTEM % name)
         filename = os.path.join(BUILD_DIR, RESULT_FILESTEM % name)
         out_fh = open(doctest_filename, 'w')
         print 'Pythonising %s into %s ...' % (filename, doctest_filename)
