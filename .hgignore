@@ -11,3 +11,6 @@ glob:*.pytest
 glob:*.bak
 syntax: glob
 tests/sandbox/*
+syntax: regexp
+(\w+)-input-test-(\d+)\.py
+((\w+-)?\w+)-output-test\.py

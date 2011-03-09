@@ -429,14 +429,18 @@ def output_calling_code():
         
 
 def write_py_source():
-    '''Converts the tests outputs to nosetestable files'''
+    '''Wrapper to convert Fortran output in build directory to unittest files'''
     for batch, name in filenames():
-        doctest_filename = os.path.join(BUILD_DIR, DOCTEST_FILESTEM % (name, batch))
-        filename = os.path.join(BUILD_DIR, RESULT_FILESTEM % (name, batch))
-        out_fh = open(doctest_filename, 'w')
-        print 'Pythonising %s into %s ...' % (filename, doctest_filename)
-        in_fh = open(filename, 'r')
-        out_fh.write('''
+        outfile = os.path.join(BUILD_DIR, DOCTEST_FILESTEM % (name, batch))
+        infile = os.path.join(BUILD_DIR, RESULT_FILESTEM % (name, batch))
+        write_unittest(infile, outfile, batch, name)
+
+def write_unittest(infile, outfile, batch, name):
+    '''Convert a Fortran output file to a unittest file'''
+    out_fh = open(outfile, 'w')
+    print 'Pythonising %s into %s ...' % (infile, outfile)
+    in_fh = open(infile, 'r')
+    out_fh.write('''
 import sys
 import os
 import unittest
@@ -450,61 +454,61 @@ import unittest
 
 class %sEditDescriptorBatch%dTestCase(unittest.TestCase):
 ''' % (name.upper(), batch))
-        test_num = 0
-        fmt = inpt = result = None
-        for line in in_fh:
-            if line.startswith('FORMAT:'):
-                if (fmt is not None) and (inpt is not None) and (result is not None):
-                    # Output test
-                    test_num += 1
-                    # Remove endline
-                    result = result[:-1]
-                    inpt = str(inpt)
-                    # Escape the quotes
-                    inpt = inpt.replace("'", "\\'")
-                    result = result.replace("'", "\\'")
-                    fmt = fmt.replace("'", "\\'")
-                    # Convert if necessary
-                    if result == 'ERR':
-                        result = "\'\'\'" + result + "\'\'\'"
+    test_num = 0
+    fmt = inpt = result = None
+    for line in in_fh:
+        if line.startswith('FORMAT:'):
+            if (fmt is not None) and (inpt is not None) and (result is not None):
+                # Output test
+                test_num += 1
+                # Remove endline
+                result = result[:-1]
+                inpt = str(inpt)
+                # Escape the quotes
+                inpt = inpt.replace("'", "\\'")
+                result = result.replace("'", "\\'")
+                fmt = fmt.replace("'", "\\'")
+                # Convert if necessary
+                if result == 'ERR':
+                    result = "\'\'\'" + result + "\'\'\'"
+                else:
+                    if name in ['f', 'e', 'd', 'en', 'es', 'g']:
+                        result = ('%30.16e' % float(result)).strip()
+                    elif name in ['i', 'b', 'z', 'o']:
+                        result = ('%30d' % int(result)).strip()
+                    elif name in ['l']:
+                        result = str(bool(int(result)))
                     else:
-                        if name in ['f', 'e', 'd', 'en', 'es', 'g']:
-                            result = ('%30.16e' % float(result)).strip()
-                        elif name in ['i', 'b', 'z', 'o']:
-                            result = ('%30d' % int(result)).strip()
-                        elif name in ['l']:
-                            result = str(bool(int(result)))
-                        else:
-                            result = "\'\'\'" + result.ljust(1000) + "\'\'\'"
-                    out = '''
+                        result = "\'\'\'" + result.ljust(1000) + "\'\'\'"
+                out = '''
     def test_%s_ed_input_%d(self):
         inp = \'\'\'%s\'\'\'
         fmt = \'\'\'%s\'\'\'
         result = [%s]
         eds, rev_eds = _parser(_lexer(fmt))
 ''' % (name, test_num, inpt, fmt, result)
-                    # May result in error in Fortran code
-                    if result == '\'\'\'ERR\'\'\'':
-                        out += '        self.assertRaises(ValueError, _input(eds, rev_eds, inp))\n'
-                    else:
-                        out += '        self.assertEqual(result, _input(eds, rev_eds, inp))\n'
-                    out_fh.write(out)
-                    # Reset the values for next test
-                    fmt = inpt = result = None
-                # Now read in new format
-                fmt = line[7:-1]
-            elif line.startswith('INPUT:'):
-                inpt = line[6:-1]
-            elif (fmt is not None) and (inpt is not None):
-                # Assign to result if not already declared, otherwise append
-                if result is None:
-                    result = line
+                # May result in error in Fortran code
+                if result == '\'\'\'ERR\'\'\'':
+                    out += '        self.assertRaises(ValueError, _input(eds, rev_eds, inp))\n'
                 else:
-                    result = result + line
-        in_fh.close()
-        # Write the calling code
-        out_fh.write('''\n\nif __name__ == '__main__':\n    unittest.main()''')
-        out_fh.close()
+                    out += '        self.assertEqual(result, _input(eds, rev_eds, inp))\n'
+                out_fh.write(out)
+                # Reset the values for next test
+                fmt = inpt = result = None
+            # Now read in new format
+            fmt = line[7:-1]
+        elif line.startswith('INPUT:'):
+            inpt = line[6:-1]
+        elif (fmt is not None) and (inpt is not None):
+            # Assign to result if not already declared, otherwise append
+            if result is None:
+                result = line
+            else:
+                result = result + line
+    in_fh.close()
+    # Write the calling code
+    out_fh.write('''\n\nif __name__ == '__main__':\n    unittest.main()''')
+    out_fh.close()
 
 
 def compile_tests(compile_str):
@@ -675,11 +679,11 @@ def product(*args, **kwds):
 
 if __name__ == '__main__':
     import sys
-    compile_str = sys.argv[1]
-    gen_tests()
-    compile_tests(compile_str)
-    execute_tests()
-    # write_py_source()
+    # compile_str = sys.argv[1]
+    # gen_tests()
+    # compile_tests(compile_str)
+    # execute_tests()
+    write_py_source()
     # output_calling_code()
 
 

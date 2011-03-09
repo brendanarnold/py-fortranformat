@@ -417,52 +417,55 @@ def output_calling_code():
             globs=globs)''' % doctest_filename
         print snippet
         
-
 def write_py_source():
-    '''Converts the test output to a doctestable text file'''
+    '''Wrapper to convert Fortran output in build directory to unittest files'''
     for name in names():
-        doctest_filename = os.path.join(BUILD_DIR, DOCTEST_FILESTEM % name)
-        filename = os.path.join(BUILD_DIR, RESULT_FILESTEM % name)
-        out_fh = open(doctest_filename, 'w')
-        print 'Pythonising %s into %s ...' % (filename, doctest_filename)
-        in_fh = open(filename, 'r')
-        fmt = inpt = result = None
-        for line in in_fh:
-            if line.startswith('FORMAT:'):
-                if (fmt is not None) and (inpt is not None) and (result is not None):
-                    result = result[:-1]
-                    # inpt = inpt.split(',')
-                    inpt = str(inpt)
-                    if inpt[0] == inpt[-1] == "'":
-                        inpt = "'" + inpt[1:-1].replace("''", "\\'") + "'"
-                    else:
-                        inpt = inpt.replace("''", "\\'")
-                    inpt = inpt.replace(".TRUE.", 'True')
-                    inpt = inpt.replace(".FALSE.", 'False')
-                    out = '''>>> eds, reversion_eds = parser(lexer(\'\'\'%s\'\'\'))
+        outfile = os.path.join(BUILD_DIR, DOCTEST_FILESTEM % name)
+        infile = os.path.join(BUILD_DIR, RESULT_FILESTEM % name)
+        write_unittest(infile, outfile, name)
+
+def write_unittest(infile, outfile, name):
+    '''Convert a Fortran output file to a unittest file'''
+    out_fh = open(outfile, 'w')
+    print 'Pythonising %s into %s ...' % (infile, outfile)
+    in_fh = open(infile, 'r')
+    fmt = inpt = result = None
+    for line in in_fh:
+        if line.startswith('FORMAT:'):
+            if (fmt is not None) and (inpt is not None) and (result is not None):
+                result = result[:-1]
+                # inpt = inpt.split(',')
+                inpt = str(inpt)
+                if inpt[0] == inpt[-1] == "'":
+                    inpt = "'" + inpt[1:-1].replace("''", "\\'") + "'"
+                else:
+                    inpt = inpt.replace("''", "\\'")
+                inpt = inpt.replace(".TRUE.", 'True')
+                inpt = inpt.replace(".FALSE.", 'False')
+                out = '''>>> eds, reversion_eds = parser(lexer(\'\'\'%s\'\'\'))
 >>> vals = [%s]
 >>> print '[' + output(eds, reversion_eds, vals) + ']'
 [%s]
 ''' % (fmt, inpt, result)
-                    out_fh.write(out)
-                    fmt = inpt = result = None
-                # Now read in new format
-                fmt = line[7:-1]
-            elif line.startswith('INPUT:'):
-                inpt = line[6:-1]
-            elif (fmt is not None) and (inpt is not None):
-                # If line is empty, input doctests <BLANKLINE> statement
-                if line[:-1] == '':
-                    if (result is not None) and (len(result) > 0):
-                        line = '<BLANKLINE>\n'
-                    else:
-                        line = '\n'
-                if result is None:
-                    result = line
+                out_fh.write(out)
+                fmt = inpt = result = None
+            # Now read in new format
+            fmt = line[7:-1]
+        elif line.startswith('INPUT:'):
+            inpt = line[6:-1]
+        elif (fmt is not None) and (inpt is not None):
+            # If line is empty, input doctests <BLANKLINE> statement
+            if line[:-1] == '':
+                if (result is not None) and (len(result) > 0):
+                    line = '<BLANKLINE>\n'
                 else:
-                    result = result + line
-        in_fh.close()
-        out_fh.close()
+                    line = '\n'
+            if result is None:
+                result = line
+            else:
+                result = result + line
+    in_fh.close()
+    out_fh.close()
 
 
 def compile_tests(compile_str):
@@ -580,11 +583,11 @@ def product(*args, **kwds):
 
 if __name__ == '__main__':
     import sys
-    compile_str = sys.argv[1]
-    gen_tests()
-    compile_tests(compile_str)
-    execute_tests()
-    # write_py_source()
+    # compile_str = sys.argv[1]
+    # gen_tests()
+    # compile_tests(compile_str)
+    # execute_tests()
+    write_py_source()
     # output_calling_code()
 
 
