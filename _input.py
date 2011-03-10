@@ -34,7 +34,7 @@ def input(eds, reversion_eds, records, num_vals=None):
         'exception_on_fail' : True,
     }
 
-    pdb.set_trace()
+    # pdb.set_trace()
 
     # Expand repeated edit decriptors
     eds = expand_edit_descriptors(eds)
@@ -76,6 +76,7 @@ def input(eds, reversion_eds, records, num_vals=None):
     finish_up = False
     ed_ind = -1
     while True:
+        print 'h'
         ed_ind += 1
         # Signal to stop when Colon edit descriptor or end of format or end of
         # reversion format reached. Also not to output any more data
