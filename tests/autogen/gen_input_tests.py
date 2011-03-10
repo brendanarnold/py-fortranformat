@@ -418,15 +418,6 @@ SPECIAL['formats'] = []
 SPECIAL['name'] = 'special'
 SPECIAL['inputs'] = []
 
-def output_calling_code():
-    '''Outputs to conosle the Python necessary to call all the tests from
-    _output.py'''
-    for batch, name in filenames():
-        doctest_filename = DOCTEST_FILESTEM % (name, batch)
-        snippet = '''        doctest.testfile(os.path.join(TEST_PATH, '%s'), \\
-            globs=globs)''' % doctest_filename
-        print snippet
-        
 
 def write_py_source():
     '''Wrapper to convert Fortran output in build directory to unittest files'''
@@ -687,7 +678,6 @@ if __name__ == '__main__':
     # compile_tests(compile_str)
     # execute_tests()
     write_py_source()
-    # output_calling_code()
 
 
 # Note: test comma-less p use

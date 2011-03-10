@@ -14,7 +14,7 @@ OUTPUT_EDS = ['A', 'B', 'D', 'EN', 'ES', 'E', 'F', 'G', 'I', 'L', 'O', 'Z', 'Sla
 SOURCE_FILESTEM = '%s-ed-output.f'
 EXECUTABLE_FILESTEM = '%s-ed-output.exe'
 RESULT_FILESTEM = '%s-ed-output.test'
-DOCTEST_FILESTEM = '%s-output-test.pytest'
+UNITTEST_FILESTEM = '%s-output-test.py'
 BUILD_DIR = r'build-output-tests'
 
 I = dict()
@@ -408,19 +408,10 @@ SPECIAL['formats'] = []
 SPECIAL['name'] = 'special'
 SPECIAL['inputs'] = []
 
-def output_calling_code():
-    '''Outputs to conosle the Python necessary to call all the tests from
-    _output.py'''
-    for name in names():
-        doctest_filename = DOCTEST_FILESTEM % name
-        snippet = '''        doctest.testfile(os.path.join(TEST_PATH, '%s'), \\
-            globs=globs)''' % doctest_filename
-        print snippet
-        
 def write_py_source():
     '''Wrapper to convert Fortran output in build directory to unittest files'''
     for name in names():
-        outfile = os.path.join(BUILD_DIR, DOCTEST_FILESTEM % name)
+        outfile = os.path.join(BUILD_DIR, UNITTEST_FILENAME % name)
         infile = os.path.join(BUILD_DIR, RESULT_FILESTEM % name)
         write_unittest(infile, outfile, name)
 
@@ -429,24 +420,52 @@ def write_unittest(infile, outfile, name):
     out_fh = open(outfile, 'w')
     print 'Pythonising %s into %s ...' % (infile, outfile)
     in_fh = open(infile, 'r')
+    # Get the directory of the fortranformat for importing
+    fortranformat_dir = os.path.realpath(os.path.join(os.path.dirname(__file__), '..', '..')) 
+    out_fh.write('''
+import sys
+import os
+import unittest
+
+# To change this, re-run 'build-unittests.py'
+sys.path.append(r'%s')
+
+from _output import output as _output
+from _lexer import lexer as _lexer
+from _parser import parser as _parser
+import unittest
+
+class %sEditDescriptorBatchTestCase(unittest.TestCase):
+''' % (fortranformat_dir, name.upper().replace('-', '_')))
+    test_num = 0
     fmt = inpt = result = None
     for line in in_fh:
         if line.startswith('FORMAT:'):
             if (fmt is not None) and (inpt is not None) and (result is not None):
-                result = result[:-1]
-                # inpt = inpt.split(',')
-                inpt = str(inpt)
+                # Output a test
+                test_num += 1
+                # Trim final endline from result
+                if result[-1] == '\n':
+                    result = result[:-1]
+                # Escape single quotes in result
+                result = result.replace("'", "\\'")
+                # Escape single quotes in input
                 if inpt[0] == inpt[-1] == "'":
-                    inpt = "'" + inpt[1:-1].replace("''", "\\'") + "'"
+                    # Is string, need enclosing quotes
+                    inpt = "\'\'\'" + inpt[1:-1].replace("''", "\\'") + "\'\'\'"
                 else:
-                    inpt = inpt.replace("''", "\\'")
+                    inpt = inpt.replace("'", "\\'")
                 inpt = inpt.replace(".TRUE.", 'True')
                 inpt = inpt.replace(".FALSE.", 'False')
-                out = '''>>> eds, reversion_eds = parser(lexer(\'\'\'%s\'\'\'))
->>> vals = [%s]
->>> print '[' + output(eds, reversion_eds, vals) + ']'
-[%s]
-''' % (fmt, inpt, result)
+
+                out = '''
+    def test_%s_ed_input_%d(self):
+        vals = [%s]
+        fmt = \'\'\'%s\'\'\'
+        result = \'\'\'%s\'\'\'
+        eds, rev_eds = _parser(_lexer(fmt))
+        self.assertEqual(result, _output(eds, rev_eds, vals))
+''' % (name.replace('-', '_'), test_num, inpt, fmt, result)
                 out_fh.write(out)
                 fmt = inpt = result = None
             # Now read in new format
@@ -454,17 +473,13 @@ def write_unittest(infile, outfile, name):
         elif line.startswith('INPUT:'):
             inpt = line[6:-1]
         elif (fmt is not None) and (inpt is not None):
-            # If line is empty, input doctests <BLANKLINE> statement
-            if line[:-1] == '':
-                if (result is not None) and (len(result) > 0):
-                    line = '<BLANKLINE>\n'
-                else:
-                    line = '\n'
             if result is None:
                 result = line
             else:
                 result = result + line
     in_fh.close()
+    # Write calling code
+    out_fh.write('''\n\nif __name__ == '__main__':\n    unittest.main()''')
     out_fh.close()
 
 
@@ -588,7 +603,6 @@ if __name__ == '__main__':
     # compile_tests(compile_str)
     # execute_tests()
     write_py_source()
-    # output_calling_code()
 
 
 # Note: test comma-less p use
