@@ -76,7 +76,6 @@ def input(eds, reversion_eds, records, num_vals=None):
     finish_up = False
     ed_ind = -1
     while True:
-        print 'h'
         ed_ind += 1
         # Signal to stop when Colon edit descriptor or end of format or end of
         # reversion format reached. Also not to output any more data
