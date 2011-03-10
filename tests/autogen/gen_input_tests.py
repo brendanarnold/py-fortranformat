@@ -660,8 +660,8 @@ if __name__ == '__main__':
     compile_str = sys.argv[1]
     # gen_tests()
     # compile_tests(compile_str)
-    # execute_tests()
-    write_py_source()
+    execute_tests()
+    # write_py_source()
 
 
 # Note: test comma-less p use
