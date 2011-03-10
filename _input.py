@@ -9,7 +9,7 @@ NON_WIDTH_EDS = [BN, BZ, P, SP, SS, S, X, T, TR, TL, Colon, Slash]
 # Processor dependant default for including leading plus or not
 PROC_INCL_PLUS = False 
 # Option to allow signed binary, octal and hex on input (not a FORTRAN feature)
-PROC_ALLOW_NEG_BOZ = True
+PROC_ALLOW_NEG_BOZ = False
 # Prcessor dependant padding character
 PROC_PAD_CHAR = ' '
 # Interpret blanks or jsut a negative as a zero, as in ifort behaviour
@@ -150,8 +150,8 @@ def input(eds, reversion_eds, records, num_vals=None):
             if re.match(r'^ *- +$', substr):
                 substr = '0'
             # If a negative or negative and blanks, ifort interprets as
-            # zero
-            if PROC_NEG_AS_ZERO and re.match(r'^( *- *| +)$', substr):
+            # zero for an I edit descriptor
+            if PROC_NEG_AS_ZERO and isinstance(ed, I) and re.match(r'^( *- *| +)$', substr):
                 substr = '0'
             teststr = _interpret_blanks(substr, state)
             try:
@@ -168,7 +168,9 @@ def input(eds, reversion_eds, records, num_vals=None):
         elif isinstance(ed, L):
             # Remove preceding whitespace and take the first two letters as
             # uppercase for testing
-            teststr = substr.upper().lstrip().lstrip('.')[0]
+            teststr = substr.upper().lstrip().lstrip('.')
+            if len(teststr):
+                teststr = teststr[0]
             if teststr == 'T':
                 vals.append(True)
             elif teststr == 'F':
@@ -178,13 +180,19 @@ def input(eds, reversion_eds, records, num_vals=None):
                     raise ValueError('%s is not a valid boolean input' % substr)
                 else:
                     vals.append(None)
-        elif isinstance(ed, (E, D, EN, ES)):
+        elif isinstance(ed, (F, E, D, EN, ES)):
             teststr = _interpret_blanks(substr, state)
             # Python only understands 'E' as an exponential letter
             teststr = teststr.upper().replace('D', 'E')
             # Prepend an exponential letter if only a '-' or '+' denotes an exponent
             if 'E' not in teststr:
                 teststr = teststr[0] + teststr[1:].replace('+', 'E+').replace('-', 'E-')
+            # ifort allows '.' to be interpreted as 0
+            if re.match(r'^ *\. *$', teststr):
+                teststr = '0'
+            # ifort allows '-' to be interpreted as 0
+            if re.match(r'^ *- *$', teststr):
+                teststr = '0'
             try:
                 val = float(teststr)
             except ValueError:
