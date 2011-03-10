@@ -440,7 +440,10 @@ class %sEditDescriptorBatch%dTestCase(unittest.TestCase):
                 # Output test
                 test_num += 1
                 # Remove endline
-                result = result[:-1]
+                if result[-2:] == '\r\n':
+                    result = result[:-2]
+                else:
+                    result = result[:-1]
                 inpt = str(inpt)
                 # Escape the quotes
                 inpt = inpt.replace("'", "\\'")
@@ -657,11 +660,11 @@ def product(*args, **kwds):
 
 if __name__ == '__main__':
     import sys
-    compile_str = sys.argv[1]
+    # compile_str = sys.argv[1]
     # gen_tests()
     # compile_tests(compile_str)
-    execute_tests()
-    # write_py_source()
+    # execute_tests()
+    write_py_source()
 
 
 # Note: test comma-less p use
