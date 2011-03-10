@@ -1,0 +1,3000 @@
+FORMAT:(B1)
+INPUT:0
+                             0
+FORMAT:(B1)
+INPUT:-0
+ERR
+FORMAT:(B1)
+INPUT:1
+                             1
+FORMAT:(B1)
+INPUT:-1
+ERR
+FORMAT:(B1)
+INPUT:2
+ERR
+FORMAT:(B1)
+INPUT:10
+                             1
+FORMAT:(B1)
+INPUT:-10
+ERR
+FORMAT:(B1)
+INPUT:100
+                             1
+FORMAT:(B1)
+INPUT:-100
+ERR
+FORMAT:(B1)
+INPUT:1000
+                             1
+FORMAT:(B1)
+INPUT:-1000
+ERR
+FORMAT:(B1)
+INPUT:10000
+                             1
+FORMAT:(B1)
+INPUT:-10000
+ERR
+FORMAT:(B1)
+INPUT:100000
+                             1
+FORMAT:(B1)
+INPUT:-100000
+ERR
+FORMAT:(B1)
+INPUT:10 0 00 10  0 0 1
+                             1
+FORMAT:(B1)
+INPUT:10101000
+                             1
+FORMAT:(B2)
+INPUT:0
+                             0
+FORMAT:(B2)
+INPUT:-0
+                             0
+FORMAT:(B2)
+INPUT:1
+                             1
+FORMAT:(B2)
+INPUT:-1
+                            -1
+FORMAT:(B2)
+INPUT:2
+ERR
+FORMAT:(B2)
+INPUT:10
+                             2
+FORMAT:(B2)
+INPUT:-10
+                            -1
+FORMAT:(B2)
+INPUT:100
+                             2
+FORMAT:(B2)
+INPUT:-100
+                            -1
+FORMAT:(B2)
+INPUT:1000
+                             2
+FORMAT:(B2)
+INPUT:-1000
+                            -1
+FORMAT:(B2)
+INPUT:10000
+                             2
+FORMAT:(B2)
+INPUT:-10000
+                            -1
+FORMAT:(B2)
+INPUT:100000
+                             2
+FORMAT:(B2)
+INPUT:-100000
+                            -1
+FORMAT:(B2)
+INPUT:10 0 00 10  0 0 1
+                             2
+FORMAT:(B2)
+INPUT:10101000
+                             2
+FORMAT:(B3)
+INPUT:0
+                             0
+FORMAT:(B3)
+INPUT:-0
+                             0
+FORMAT:(B3)
+INPUT:1
+                             1
+FORMAT:(B3)
+INPUT:-1
+                            -1
+FORMAT:(B3)
+INPUT:2
+ERR
+FORMAT:(B3)
+INPUT:10
+                             2
+FORMAT:(B3)
+INPUT:-10
+                            -2
+FORMAT:(B3)
+INPUT:100
+                             4
+FORMAT:(B3)
+INPUT:-100
+                            -2
+FORMAT:(B3)
+INPUT:1000
+                             4
+FORMAT:(B3)
+INPUT:-1000
+                            -2
+FORMAT:(B3)
+INPUT:10000
+                             4
+FORMAT:(B3)
+INPUT:-10000
+                            -2
+FORMAT:(B3)
+INPUT:100000
+                             4
+FORMAT:(B3)
+INPUT:-100000
+                            -2
+FORMAT:(B3)
+INPUT:10 0 00 10  0 0 1
+                             2
+FORMAT:(B3)
+INPUT:10101000
+                             5
+FORMAT:(B4)
+INPUT:0
+                             0
+FORMAT:(B4)
+INPUT:-0
+                             0
+FORMAT:(B4)
+INPUT:1
+                             1
+FORMAT:(B4)
+INPUT:-1
+                            -1
+FORMAT:(B4)
+INPUT:2
+ERR
+FORMAT:(B4)
+INPUT:10
+                             2
+FORMAT:(B4)
+INPUT:-10
+                            -2
+FORMAT:(B4)
+INPUT:100
+                             4
+FORMAT:(B4)
+INPUT:-100
+                            -4
+FORMAT:(B4)
+INPUT:1000
+                             8
+FORMAT:(B4)
+INPUT:-1000
+                            -4
+FORMAT:(B4)
+INPUT:10000
+                             8
+FORMAT:(B4)
+INPUT:-10000
+                            -4
+FORMAT:(B4)
+INPUT:100000
+                             8
+FORMAT:(B4)
+INPUT:-100000
+                            -4
+FORMAT:(B4)
+INPUT:10 0 00 10  0 0 1
+                             4
+FORMAT:(B4)
+INPUT:10101000
+                            10
+FORMAT:(B5)
+INPUT:0
+                             0
+FORMAT:(B5)
+INPUT:-0
+                             0
+FORMAT:(B5)
+INPUT:1
+                             1
+FORMAT:(B5)
+INPUT:-1
+                            -1
+FORMAT:(B5)
+INPUT:2
+ERR
+FORMAT:(B5)
+INPUT:10
+                             2
+FORMAT:(B5)
+INPUT:-10
+                            -2
+FORMAT:(B5)
+INPUT:100
+                             4
+FORMAT:(B5)
+INPUT:-100
+                            -4
+FORMAT:(B5)
+INPUT:1000
+                             8
+FORMAT:(B5)
+INPUT:-1000
+                            -8
+FORMAT:(B5)
+INPUT:10000
+                            16
+FORMAT:(B5)
+INPUT:-10000
+                            -8
+FORMAT:(B5)
+INPUT:100000
+                            16
+FORMAT:(B5)
+INPUT:-100000
+                            -8
+FORMAT:(B5)
+INPUT:10 0 00 10  0 0 1
+                             4
+FORMAT:(B5)
+INPUT:10101000
+                            21
+FORMAT:(B6)
+INPUT:0
+                             0
+FORMAT:(B6)
+INPUT:-0
+                             0
+FORMAT:(B6)
+INPUT:1
+                             1
+FORMAT:(B6)
+INPUT:-1
+                            -1
+FORMAT:(B6)
+INPUT:2
+ERR
+FORMAT:(B6)
+INPUT:10
+                             2
+FORMAT:(B6)
+INPUT:-10
+                            -2
+FORMAT:(B6)
+INPUT:100
+                             4
+FORMAT:(B6)
+INPUT:-100
+                            -4
+FORMAT:(B6)
+INPUT:1000
+                             8
+FORMAT:(B6)
+INPUT:-1000
+                            -8
+FORMAT:(B6)
+INPUT:10000
+                            16
+FORMAT:(B6)
+INPUT:-10000
+                           -16
+FORMAT:(B6)
+INPUT:100000
+                            32
+FORMAT:(B6)
+INPUT:-100000
+                           -16
+FORMAT:(B6)
+INPUT:10 0 00 10  0 0 1
+                             8
+FORMAT:(B6)
+INPUT:10101000
+                            42
+FORMAT:(B7)
+INPUT:0
+                             0
+FORMAT:(B7)
+INPUT:-0
+                             0
+FORMAT:(B7)
+INPUT:1
+                             1
+FORMAT:(B7)
+INPUT:-1
+                            -1
+FORMAT:(B7)
+INPUT:2
+ERR
+FORMAT:(B7)
+INPUT:10
+                             2
+FORMAT:(B7)
+INPUT:-10
+                            -2
+FORMAT:(B7)
+INPUT:100
+                             4
+FORMAT:(B7)
+INPUT:-100
+                            -4
+FORMAT:(B7)
+INPUT:1000
+                             8
+FORMAT:(B7)
+INPUT:-1000
+                            -8
+FORMAT:(B7)
+INPUT:10000
+                            16
+FORMAT:(B7)
+INPUT:-10000
+                           -16
+FORMAT:(B7)
+INPUT:100000
+                            32
+FORMAT:(B7)
+INPUT:-100000
+                           -32
+FORMAT:(B7)
+INPUT:10 0 00 10  0 0 1
+                            16
+FORMAT:(B7)
+INPUT:10101000
+                            84
+FORMAT:(B8)
+INPUT:0
+                             0
+FORMAT:(B8)
+INPUT:-0
+                             0
+FORMAT:(B8)
+INPUT:1
+                             1
+FORMAT:(B8)
+INPUT:-1
+                            -1
+FORMAT:(B8)
+INPUT:2
+ERR
+FORMAT:(B8)
+INPUT:10
+                             2
+FORMAT:(B8)
+INPUT:-10
+                            -2
+FORMAT:(B8)
+INPUT:100
+                             4
+FORMAT:(B8)
+INPUT:-100
+                            -4
+FORMAT:(B8)
+INPUT:1000
+                             8
+FORMAT:(B8)
+INPUT:-1000
+                            -8
+FORMAT:(B8)
+INPUT:10000
+                            16
+FORMAT:(B8)
+INPUT:-10000
+                           -16
+FORMAT:(B8)
+INPUT:100000
+                            32
+FORMAT:(B8)
+INPUT:-100000
+                           -32
+FORMAT:(B8)
+INPUT:10 0 00 10  0 0 1
+                            16
+FORMAT:(B8)
+INPUT:10101000
+                           168
+FORMAT:(B9)
+INPUT:0
+                             0
+FORMAT:(B9)
+INPUT:-0
+                             0
+FORMAT:(B9)
+INPUT:1
+                             1
+FORMAT:(B9)
+INPUT:-1
+                            -1
+FORMAT:(B9)
+INPUT:2
+ERR
+FORMAT:(B9)
+INPUT:10
+                             2
+FORMAT:(B9)
+INPUT:-10
+                            -2
+FORMAT:(B9)
+INPUT:100
+                             4
+FORMAT:(B9)
+INPUT:-100
+                            -4
+FORMAT:(B9)
+INPUT:1000
+                             8
+FORMAT:(B9)
+INPUT:-1000
+                            -8
+FORMAT:(B9)
+INPUT:10000
+                            16
+FORMAT:(B9)
+INPUT:-10000
+                           -16
+FORMAT:(B9)
+INPUT:100000
+                            32
+FORMAT:(B9)
+INPUT:-100000
+                           -32
+FORMAT:(B9)
+INPUT:10 0 00 10  0 0 1
+                            33
+FORMAT:(B9)
+INPUT:10101000
+                           168
+FORMAT:(B10)
+INPUT:0
+                             0
+FORMAT:(B10)
+INPUT:-0
+                             0
+FORMAT:(B10)
+INPUT:1
+                             1
+FORMAT:(B10)
+INPUT:-1
+                            -1
+FORMAT:(B10)
+INPUT:2
+ERR
+FORMAT:(B10)
+INPUT:10
+                             2
+FORMAT:(B10)
+INPUT:-10
+                            -2
+FORMAT:(B10)
+INPUT:100
+                             4
+FORMAT:(B10)
+INPUT:-100
+                            -4
+FORMAT:(B10)
+INPUT:1000
+                             8
+FORMAT:(B10)
+INPUT:-1000
+                            -8
+FORMAT:(B10)
+INPUT:10000
+                            16
+FORMAT:(B10)
+INPUT:-10000
+                           -16
+FORMAT:(B10)
+INPUT:100000
+                            32
+FORMAT:(B10)
+INPUT:-100000
+                           -32
+FORMAT:(B10)
+INPUT:10 0 00 10  0 0 1
+                            66
+FORMAT:(B10)
+INPUT:10101000
+                           168
+FORMAT:(B1.0)
+INPUT:0
+                             0
+FORMAT:(B1.0)
+INPUT:-0
+ERR
+FORMAT:(B1.0)
+INPUT:1
+                             1
+FORMAT:(B1.0)
+INPUT:-1
+ERR
+FORMAT:(B1.0)
+INPUT:2
+ERR
+FORMAT:(B1.0)
+INPUT:10
+                             1
+FORMAT:(B1.0)
+INPUT:-10
+ERR
+FORMAT:(B1.0)
+INPUT:100
+                             1
+FORMAT:(B1.0)
+INPUT:-100
+ERR
+FORMAT:(B1.0)
+INPUT:1000
+                             1
+FORMAT:(B1.0)
+INPUT:-1000
+ERR
+FORMAT:(B1.0)
+INPUT:10000
+                             1
+FORMAT:(B1.0)
+INPUT:-10000
+ERR
+FORMAT:(B1.0)
+INPUT:100000
+                             1
+FORMAT:(B1.0)
+INPUT:-100000
+ERR
+FORMAT:(B1.0)
+INPUT:10 0 00 10  0 0 1
+                             1
+FORMAT:(B1.0)
+INPUT:10101000
+                             1
+FORMAT:(B2.0)
+INPUT:0
+                             0
+FORMAT:(B2.0)
+INPUT:-0
+                             0
+FORMAT:(B2.0)
+INPUT:1
+                             1
+FORMAT:(B2.0)
+INPUT:-1
+                            -1
+FORMAT:(B2.0)
+INPUT:2
+ERR
+FORMAT:(B2.0)
+INPUT:10
+                             2
+FORMAT:(B2.0)
+INPUT:-10
+                            -1
+FORMAT:(B2.0)
+INPUT:100
+                             2
+FORMAT:(B2.0)
+INPUT:-100
+                            -1
+FORMAT:(B2.0)
+INPUT:1000
+                             2
+FORMAT:(B2.0)
+INPUT:-1000
+                            -1
+FORMAT:(B2.0)
+INPUT:10000
+                             2
+FORMAT:(B2.0)
+INPUT:-10000
+                            -1
+FORMAT:(B2.0)
+INPUT:100000
+                             2
+FORMAT:(B2.0)
+INPUT:-100000
+                            -1
+FORMAT:(B2.0)
+INPUT:10 0 00 10  0 0 1
+                             2
+FORMAT:(B2.0)
+INPUT:10101000
+                             2
+FORMAT:(B3.0)
+INPUT:0
+                             0
+FORMAT:(B3.0)
+INPUT:-0
+                             0
+FORMAT:(B3.0)
+INPUT:1
+                             1
+FORMAT:(B3.0)
+INPUT:-1
+                            -1
+FORMAT:(B3.0)
+INPUT:2
+ERR
+FORMAT:(B3.0)
+INPUT:10
+                             2
+FORMAT:(B3.0)
+INPUT:-10
+                            -2
+FORMAT:(B3.0)
+INPUT:100
+                             4
+FORMAT:(B3.0)
+INPUT:-100
+                            -2
+FORMAT:(B3.0)
+INPUT:1000
+                             4
+FORMAT:(B3.0)
+INPUT:-1000
+                            -2
+FORMAT:(B3.0)
+INPUT:10000
+                             4
+FORMAT:(B3.0)
+INPUT:-10000
+                            -2
+FORMAT:(B3.0)
+INPUT:100000
+                             4
+FORMAT:(B3.0)
+INPUT:-100000
+                            -2
+FORMAT:(B3.0)
+INPUT:10 0 00 10  0 0 1
+                             2
+FORMAT:(B3.0)
+INPUT:10101000
+                             5
+FORMAT:(B4.0)
+INPUT:0
+                             0
+FORMAT:(B4.0)
+INPUT:-0
+                             0
+FORMAT:(B4.0)
+INPUT:1
+                             1
+FORMAT:(B4.0)
+INPUT:-1
+                            -1
+FORMAT:(B4.0)
+INPUT:2
+ERR
+FORMAT:(B4.0)
+INPUT:10
+                             2
+FORMAT:(B4.0)
+INPUT:-10
+                            -2
+FORMAT:(B4.0)
+INPUT:100
+                             4
+FORMAT:(B4.0)
+INPUT:-100
+                            -4
+FORMAT:(B4.0)
+INPUT:1000
+                             8
+FORMAT:(B4.0)
+INPUT:-1000
+                            -4
+FORMAT:(B4.0)
+INPUT:10000
+                             8
+FORMAT:(B4.0)
+INPUT:-10000
+                            -4
+FORMAT:(B4.0)
+INPUT:100000
+                             8
+FORMAT:(B4.0)
+INPUT:-100000
+                            -4
+FORMAT:(B4.0)
+INPUT:10 0 00 10  0 0 1
+                             4
+FORMAT:(B4.0)
+INPUT:10101000
+                            10
+FORMAT:(B5.0)
+INPUT:0
+                             0
+FORMAT:(B5.0)
+INPUT:-0
+                             0
+FORMAT:(B5.0)
+INPUT:1
+                             1
+FORMAT:(B5.0)
+INPUT:-1
+                            -1
+FORMAT:(B5.0)
+INPUT:2
+ERR
+FORMAT:(B5.0)
+INPUT:10
+                             2
+FORMAT:(B5.0)
+INPUT:-10
+                            -2
+FORMAT:(B5.0)
+INPUT:100
+                             4
+FORMAT:(B5.0)
+INPUT:-100
+                            -4
+FORMAT:(B5.0)
+INPUT:1000
+                             8
+FORMAT:(B5.0)
+INPUT:-1000
+                            -8
+FORMAT:(B5.0)
+INPUT:10000
+                            16
+FORMAT:(B5.0)
+INPUT:-10000
+                            -8
+FORMAT:(B5.0)
+INPUT:100000
+                            16
+FORMAT:(B5.0)
+INPUT:-100000
+                            -8
+FORMAT:(B5.0)
+INPUT:10 0 00 10  0 0 1
+                             4
+FORMAT:(B5.0)
+INPUT:10101000
+                            21
+FORMAT:(B6.0)
+INPUT:0
+                             0
+FORMAT:(B6.0)
+INPUT:-0
+                             0
+FORMAT:(B6.0)
+INPUT:1
+                             1
+FORMAT:(B6.0)
+INPUT:-1
+                            -1
+FORMAT:(B6.0)
+INPUT:2
+ERR
+FORMAT:(B6.0)
+INPUT:10
+                             2
+FORMAT:(B6.0)
+INPUT:-10
+                            -2
+FORMAT:(B6.0)
+INPUT:100
+                             4
+FORMAT:(B6.0)
+INPUT:-100
+                            -4
+FORMAT:(B6.0)
+INPUT:1000
+                             8
+FORMAT:(B6.0)
+INPUT:-1000
+                            -8
+FORMAT:(B6.0)
+INPUT:10000
+                            16
+FORMAT:(B6.0)
+INPUT:-10000
+                           -16
+FORMAT:(B6.0)
+INPUT:100000
+                            32
+FORMAT:(B6.0)
+INPUT:-100000
+                           -16
+FORMAT:(B6.0)
+INPUT:10 0 00 10  0 0 1
+                             8
+FORMAT:(B6.0)
+INPUT:10101000
+                            42
+FORMAT:(B7.0)
+INPUT:0
+                             0
+FORMAT:(B7.0)
+INPUT:-0
+                             0
+FORMAT:(B7.0)
+INPUT:1
+                             1
+FORMAT:(B7.0)
+INPUT:-1
+                            -1
+FORMAT:(B7.0)
+INPUT:2
+ERR
+FORMAT:(B7.0)
+INPUT:10
+                             2
+FORMAT:(B7.0)
+INPUT:-10
+                            -2
+FORMAT:(B7.0)
+INPUT:100
+                             4
+FORMAT:(B7.0)
+INPUT:-100
+                            -4
+FORMAT:(B7.0)
+INPUT:1000
+                             8
+FORMAT:(B7.0)
+INPUT:-1000
+                            -8
+FORMAT:(B7.0)
+INPUT:10000
+                            16
+FORMAT:(B7.0)
+INPUT:-10000
+                           -16
+FORMAT:(B7.0)
+INPUT:100000
+                            32
+FORMAT:(B7.0)
+INPUT:-100000
+                           -32
+FORMAT:(B7.0)
+INPUT:10 0 00 10  0 0 1
+                            16
+FORMAT:(B7.0)
+INPUT:10101000
+                            84
+FORMAT:(B8.0)
+INPUT:0
+                             0
+FORMAT:(B8.0)
+INPUT:-0
+                             0
+FORMAT:(B8.0)
+INPUT:1
+                             1
+FORMAT:(B8.0)
+INPUT:-1
+                            -1
+FORMAT:(B8.0)
+INPUT:2
+ERR
+FORMAT:(B8.0)
+INPUT:10
+                             2
+FORMAT:(B8.0)
+INPUT:-10
+                            -2
+FORMAT:(B8.0)
+INPUT:100
+                             4
+FORMAT:(B8.0)
+INPUT:-100
+                            -4
+FORMAT:(B8.0)
+INPUT:1000
+                             8
+FORMAT:(B8.0)
+INPUT:-1000
+                            -8
+FORMAT:(B8.0)
+INPUT:10000
+                            16
+FORMAT:(B8.0)
+INPUT:-10000
+                           -16
+FORMAT:(B8.0)
+INPUT:100000
+                            32
+FORMAT:(B8.0)
+INPUT:-100000
+                           -32
+FORMAT:(B8.0)
+INPUT:10 0 00 10  0 0 1
+                            16
+FORMAT:(B8.0)
+INPUT:10101000
+                           168
+FORMAT:(B9.0)
+INPUT:0
+                             0
+FORMAT:(B9.0)
+INPUT:-0
+                             0
+FORMAT:(B9.0)
+INPUT:1
+                             1
+FORMAT:(B9.0)
+INPUT:-1
+                            -1
+FORMAT:(B9.0)
+INPUT:2
+ERR
+FORMAT:(B9.0)
+INPUT:10
+                             2
+FORMAT:(B9.0)
+INPUT:-10
+                            -2
+FORMAT:(B9.0)
+INPUT:100
+                             4
+FORMAT:(B9.0)
+INPUT:-100
+                            -4
+FORMAT:(B9.0)
+INPUT:1000
+                             8
+FORMAT:(B9.0)
+INPUT:-1000
+                            -8
+FORMAT:(B9.0)
+INPUT:10000
+                            16
+FORMAT:(B9.0)
+INPUT:-10000
+                           -16
+FORMAT:(B9.0)
+INPUT:100000
+                            32
+FORMAT:(B9.0)
+INPUT:-100000
+                           -32
+FORMAT:(B9.0)
+INPUT:10 0 00 10  0 0 1
+                            33
+FORMAT:(B9.0)
+INPUT:10101000
+                           168
+FORMAT:(B10.0)
+INPUT:0
+                             0
+FORMAT:(B10.0)
+INPUT:-0
+                             0
+FORMAT:(B10.0)
+INPUT:1
+                             1
+FORMAT:(B10.0)
+INPUT:-1
+                            -1
+FORMAT:(B10.0)
+INPUT:2
+ERR
+FORMAT:(B10.0)
+INPUT:10
+                             2
+FORMAT:(B10.0)
+INPUT:-10
+                            -2
+FORMAT:(B10.0)
+INPUT:100
+                             4
+FORMAT:(B10.0)
+INPUT:-100
+                            -4
+FORMAT:(B10.0)
+INPUT:1000
+                             8
+FORMAT:(B10.0)
+INPUT:-1000
+                            -8
+FORMAT:(B10.0)
+INPUT:10000
+                            16
+FORMAT:(B10.0)
+INPUT:-10000
+                           -16
+FORMAT:(B10.0)
+INPUT:100000
+                            32
+FORMAT:(B10.0)
+INPUT:-100000
+                           -32
+FORMAT:(B10.0)
+INPUT:10 0 00 10  0 0 1
+                            66
+FORMAT:(B10.0)
+INPUT:10101000
+                           168
+FORMAT:(B1.1)
+INPUT:0
+                             0
+FORMAT:(B1.1)
+INPUT:-0
+ERR
+FORMAT:(B1.1)
+INPUT:1
+                             1
+FORMAT:(B1.1)
+INPUT:-1
+ERR
+FORMAT:(B1.1)
+INPUT:2
+ERR
+FORMAT:(B1.1)
+INPUT:10
+                             1
+FORMAT:(B1.1)
+INPUT:-10
+ERR
+FORMAT:(B1.1)
+INPUT:100
+                             1
+FORMAT:(B1.1)
+INPUT:-100
+ERR
+FORMAT:(B1.1)
+INPUT:1000
+                             1
+FORMAT:(B1.1)
+INPUT:-1000
+ERR
+FORMAT:(B1.1)
+INPUT:10000
+                             1
+FORMAT:(B1.1)
+INPUT:-10000
+ERR
+FORMAT:(B1.1)
+INPUT:100000
+                             1
+FORMAT:(B1.1)
+INPUT:-100000
+ERR
+FORMAT:(B1.1)
+INPUT:10 0 00 10  0 0 1
+                             1
+FORMAT:(B1.1)
+INPUT:10101000
+                             1
+FORMAT:(B2.1)
+INPUT:0
+                             0
+FORMAT:(B2.1)
+INPUT:-0
+                             0
+FORMAT:(B2.1)
+INPUT:1
+                             1
+FORMAT:(B2.1)
+INPUT:-1
+                            -1
+FORMAT:(B2.1)
+INPUT:2
+ERR
+FORMAT:(B2.1)
+INPUT:10
+                             2
+FORMAT:(B2.1)
+INPUT:-10
+                            -1
+FORMAT:(B2.1)
+INPUT:100
+                             2
+FORMAT:(B2.1)
+INPUT:-100
+                            -1
+FORMAT:(B2.1)
+INPUT:1000
+                             2
+FORMAT:(B2.1)
+INPUT:-1000
+                            -1
+FORMAT:(B2.1)
+INPUT:10000
+                             2
+FORMAT:(B2.1)
+INPUT:-10000
+                            -1
+FORMAT:(B2.1)
+INPUT:100000
+                             2
+FORMAT:(B2.1)
+INPUT:-100000
+                            -1
+FORMAT:(B2.1)
+INPUT:10 0 00 10  0 0 1
+                             2
+FORMAT:(B2.1)
+INPUT:10101000
+                             2
+FORMAT:(B3.1)
+INPUT:0
+                             0
+FORMAT:(B3.1)
+INPUT:-0
+                             0
+FORMAT:(B3.1)
+INPUT:1
+                             1
+FORMAT:(B3.1)
+INPUT:-1
+                            -1
+FORMAT:(B3.1)
+INPUT:2
+ERR
+FORMAT:(B3.1)
+INPUT:10
+                             2
+FORMAT:(B3.1)
+INPUT:-10
+                            -2
+FORMAT:(B3.1)
+INPUT:100
+                             4
+FORMAT:(B3.1)
+INPUT:-100
+                            -2
+FORMAT:(B3.1)
+INPUT:1000
+                             4
+FORMAT:(B3.1)
+INPUT:-1000
+                            -2
+FORMAT:(B3.1)
+INPUT:10000
+                             4
+FORMAT:(B3.1)
+INPUT:-10000
+                            -2
+FORMAT:(B3.1)
+INPUT:100000
+                             4
+FORMAT:(B3.1)
+INPUT:-100000
+                            -2
+FORMAT:(B3.1)
+INPUT:10 0 00 10  0 0 1
+                             2
+FORMAT:(B3.1)
+INPUT:10101000
+                             5
+FORMAT:(B4.1)
+INPUT:0
+                             0
+FORMAT:(B4.1)
+INPUT:-0
+                             0
+FORMAT:(B4.1)
+INPUT:1
+                             1
+FORMAT:(B4.1)
+INPUT:-1
+                            -1
+FORMAT:(B4.1)
+INPUT:2
+ERR
+FORMAT:(B4.1)
+INPUT:10
+                             2
+FORMAT:(B4.1)
+INPUT:-10
+                            -2
+FORMAT:(B4.1)
+INPUT:100
+                             4
+FORMAT:(B4.1)
+INPUT:-100
+                            -4
+FORMAT:(B4.1)
+INPUT:1000
+                             8
+FORMAT:(B4.1)
+INPUT:-1000
+                            -4
+FORMAT:(B4.1)
+INPUT:10000
+                             8
+FORMAT:(B4.1)
+INPUT:-10000
+                            -4
+FORMAT:(B4.1)
+INPUT:100000
+                             8
+FORMAT:(B4.1)
+INPUT:-100000
+                            -4
+FORMAT:(B4.1)
+INPUT:10 0 00 10  0 0 1
+                             4
+FORMAT:(B4.1)
+INPUT:10101000
+                            10
+FORMAT:(B5.1)
+INPUT:0
+                             0
+FORMAT:(B5.1)
+INPUT:-0
+                             0
+FORMAT:(B5.1)
+INPUT:1
+                             1
+FORMAT:(B5.1)
+INPUT:-1
+                            -1
+FORMAT:(B5.1)
+INPUT:2
+ERR
+FORMAT:(B5.1)
+INPUT:10
+                             2
+FORMAT:(B5.1)
+INPUT:-10
+                            -2
+FORMAT:(B5.1)
+INPUT:100
+                             4
+FORMAT:(B5.1)
+INPUT:-100
+                            -4
+FORMAT:(B5.1)
+INPUT:1000
+                             8
+FORMAT:(B5.1)
+INPUT:-1000
+                            -8
+FORMAT:(B5.1)
+INPUT:10000
+                            16
+FORMAT:(B5.1)
+INPUT:-10000
+                            -8
+FORMAT:(B5.1)
+INPUT:100000
+                            16
+FORMAT:(B5.1)
+INPUT:-100000
+                            -8
+FORMAT:(B5.1)
+INPUT:10 0 00 10  0 0 1
+                             4
+FORMAT:(B5.1)
+INPUT:10101000
+                            21
+FORMAT:(B6.1)
+INPUT:0
+                             0
+FORMAT:(B6.1)
+INPUT:-0
+                             0
+FORMAT:(B6.1)
+INPUT:1
+                             1
+FORMAT:(B6.1)
+INPUT:-1
+                            -1
+FORMAT:(B6.1)
+INPUT:2
+ERR
+FORMAT:(B6.1)
+INPUT:10
+                             2
+FORMAT:(B6.1)
+INPUT:-10
+                            -2
+FORMAT:(B6.1)
+INPUT:100
+                             4
+FORMAT:(B6.1)
+INPUT:-100
+                            -4
+FORMAT:(B6.1)
+INPUT:1000
+                             8
+FORMAT:(B6.1)
+INPUT:-1000
+                            -8
+FORMAT:(B6.1)
+INPUT:10000
+                            16
+FORMAT:(B6.1)
+INPUT:-10000
+                           -16
+FORMAT:(B6.1)
+INPUT:100000
+                            32
+FORMAT:(B6.1)
+INPUT:-100000
+                           -16
+FORMAT:(B6.1)
+INPUT:10 0 00 10  0 0 1
+                             8
+FORMAT:(B6.1)
+INPUT:10101000
+                            42
+FORMAT:(B7.1)
+INPUT:0
+                             0
+FORMAT:(B7.1)
+INPUT:-0
+                             0
+FORMAT:(B7.1)
+INPUT:1
+                             1
+FORMAT:(B7.1)
+INPUT:-1
+                            -1
+FORMAT:(B7.1)
+INPUT:2
+ERR
+FORMAT:(B7.1)
+INPUT:10
+                             2
+FORMAT:(B7.1)
+INPUT:-10
+                            -2
+FORMAT:(B7.1)
+INPUT:100
+                             4
+FORMAT:(B7.1)
+INPUT:-100
+                            -4
+FORMAT:(B7.1)
+INPUT:1000
+                             8
+FORMAT:(B7.1)
+INPUT:-1000
+                            -8
+FORMAT:(B7.1)
+INPUT:10000
+                            16
+FORMAT:(B7.1)
+INPUT:-10000
+                           -16
+FORMAT:(B7.1)
+INPUT:100000
+                            32
+FORMAT:(B7.1)
+INPUT:-100000
+                           -32
+FORMAT:(B7.1)
+INPUT:10 0 00 10  0 0 1
+                            16
+FORMAT:(B7.1)
+INPUT:10101000
+                            84
+FORMAT:(B8.1)
+INPUT:0
+                             0
+FORMAT:(B8.1)
+INPUT:-0
+                             0
+FORMAT:(B8.1)
+INPUT:1
+                             1
+FORMAT:(B8.1)
+INPUT:-1
+                            -1
+FORMAT:(B8.1)
+INPUT:2
+ERR
+FORMAT:(B8.1)
+INPUT:10
+                             2
+FORMAT:(B8.1)
+INPUT:-10
+                            -2
+FORMAT:(B8.1)
+INPUT:100
+                             4
+FORMAT:(B8.1)
+INPUT:-100
+                            -4
+FORMAT:(B8.1)
+INPUT:1000
+                             8
+FORMAT:(B8.1)
+INPUT:-1000
+                            -8
+FORMAT:(B8.1)
+INPUT:10000
+                            16
+FORMAT:(B8.1)
+INPUT:-10000
+                           -16
+FORMAT:(B8.1)
+INPUT:100000
+                            32
+FORMAT:(B8.1)
+INPUT:-100000
+                           -32
+FORMAT:(B8.1)
+INPUT:10 0 00 10  0 0 1
+                            16
+FORMAT:(B8.1)
+INPUT:10101000
+                           168
+FORMAT:(B9.1)
+INPUT:0
+                             0
+FORMAT:(B9.1)
+INPUT:-0
+                             0
+FORMAT:(B9.1)
+INPUT:1
+                             1
+FORMAT:(B9.1)
+INPUT:-1
+                            -1
+FORMAT:(B9.1)
+INPUT:2
+ERR
+FORMAT:(B9.1)
+INPUT:10
+                             2
+FORMAT:(B9.1)
+INPUT:-10
+                            -2
+FORMAT:(B9.1)
+INPUT:100
+                             4
+FORMAT:(B9.1)
+INPUT:-100
+                            -4
+FORMAT:(B9.1)
+INPUT:1000
+                             8
+FORMAT:(B9.1)
+INPUT:-1000
+                            -8
+FORMAT:(B9.1)
+INPUT:10000
+                            16
+FORMAT:(B9.1)
+INPUT:-10000
+                           -16
+FORMAT:(B9.1)
+INPUT:100000
+                            32
+FORMAT:(B9.1)
+INPUT:-100000
+                           -32
+FORMAT:(B9.1)
+INPUT:10 0 00 10  0 0 1
+                            33
+FORMAT:(B9.1)
+INPUT:10101000
+                           168
+FORMAT:(B10.1)
+INPUT:0
+                             0
+FORMAT:(B10.1)
+INPUT:-0
+                             0
+FORMAT:(B10.1)
+INPUT:1
+                             1
+FORMAT:(B10.1)
+INPUT:-1
+                            -1
+FORMAT:(B10.1)
+INPUT:2
+ERR
+FORMAT:(B10.1)
+INPUT:10
+                             2
+FORMAT:(B10.1)
+INPUT:-10
+                            -2
+FORMAT:(B10.1)
+INPUT:100
+                             4
+FORMAT:(B10.1)
+INPUT:-100
+                            -4
+FORMAT:(B10.1)
+INPUT:1000
+                             8
+FORMAT:(B10.1)
+INPUT:-1000
+                            -8
+FORMAT:(B10.1)
+INPUT:10000
+                            16
+FORMAT:(B10.1)
+INPUT:-10000
+                           -16
+FORMAT:(B10.1)
+INPUT:100000
+                            32
+FORMAT:(B10.1)
+INPUT:-100000
+                           -32
+FORMAT:(B10.1)
+INPUT:10 0 00 10  0 0 1
+                            66
+FORMAT:(B10.1)
+INPUT:10101000
+                           168
+FORMAT:(B2.2)
+INPUT:0
+                             0
+FORMAT:(B2.2)
+INPUT:-0
+                             0
+FORMAT:(B2.2)
+INPUT:1
+                             1
+FORMAT:(B2.2)
+INPUT:-1
+                            -1
+FORMAT:(B2.2)
+INPUT:2
+ERR
+FORMAT:(B2.2)
+INPUT:10
+                             2
+FORMAT:(B2.2)
+INPUT:-10
+                            -1
+FORMAT:(B2.2)
+INPUT:100
+                             2
+FORMAT:(B2.2)
+INPUT:-100
+                            -1
+FORMAT:(B2.2)
+INPUT:1000
+                             2
+FORMAT:(B2.2)
+INPUT:-1000
+                            -1
+FORMAT:(B2.2)
+INPUT:10000
+                             2
+FORMAT:(B2.2)
+INPUT:-10000
+                            -1
+FORMAT:(B2.2)
+INPUT:100000
+                             2
+FORMAT:(B2.2)
+INPUT:-100000
+                            -1
+FORMAT:(B2.2)
+INPUT:10 0 00 10  0 0 1
+                             2
+FORMAT:(B2.2)
+INPUT:10101000
+                             2
+FORMAT:(B3.2)
+INPUT:0
+                             0
+FORMAT:(B3.2)
+INPUT:-0
+                             0
+FORMAT:(B3.2)
+INPUT:1
+                             1
+FORMAT:(B3.2)
+INPUT:-1
+                            -1
+FORMAT:(B3.2)
+INPUT:2
+ERR
+FORMAT:(B3.2)
+INPUT:10
+                             2
+FORMAT:(B3.2)
+INPUT:-10
+                            -2
+FORMAT:(B3.2)
+INPUT:100
+                             4
+FORMAT:(B3.2)
+INPUT:-100
+                            -2
+FORMAT:(B3.2)
+INPUT:1000
+                             4
+FORMAT:(B3.2)
+INPUT:-1000
+                            -2
+FORMAT:(B3.2)
+INPUT:10000
+                             4
+FORMAT:(B3.2)
+INPUT:-10000
+                            -2
+FORMAT:(B3.2)
+INPUT:100000
+                             4
+FORMAT:(B3.2)
+INPUT:-100000
+                            -2
+FORMAT:(B3.2)
+INPUT:10 0 00 10  0 0 1
+                             2
+FORMAT:(B3.2)
+INPUT:10101000
+                             5
+FORMAT:(B4.2)
+INPUT:0
+                             0
+FORMAT:(B4.2)
+INPUT:-0
+                             0
+FORMAT:(B4.2)
+INPUT:1
+                             1
+FORMAT:(B4.2)
+INPUT:-1
+                            -1
+FORMAT:(B4.2)
+INPUT:2
+ERR
+FORMAT:(B4.2)
+INPUT:10
+                             2
+FORMAT:(B4.2)
+INPUT:-10
+                            -2
+FORMAT:(B4.2)
+INPUT:100
+                             4
+FORMAT:(B4.2)
+INPUT:-100
+                            -4
+FORMAT:(B4.2)
+INPUT:1000
+                             8
+FORMAT:(B4.2)
+INPUT:-1000
+                            -4
+FORMAT:(B4.2)
+INPUT:10000
+                             8
+FORMAT:(B4.2)
+INPUT:-10000
+                            -4
+FORMAT:(B4.2)
+INPUT:100000
+                             8
+FORMAT:(B4.2)
+INPUT:-100000
+                            -4
+FORMAT:(B4.2)
+INPUT:10 0 00 10  0 0 1
+                             4
+FORMAT:(B4.2)
+INPUT:10101000
+                            10
+FORMAT:(B5.2)
+INPUT:0
+                             0
+FORMAT:(B5.2)
+INPUT:-0
+                             0
+FORMAT:(B5.2)
+INPUT:1
+                             1
+FORMAT:(B5.2)
+INPUT:-1
+                            -1
+FORMAT:(B5.2)
+INPUT:2
+ERR
+FORMAT:(B5.2)
+INPUT:10
+                             2
+FORMAT:(B5.2)
+INPUT:-10
+                            -2
+FORMAT:(B5.2)
+INPUT:100
+                             4
+FORMAT:(B5.2)
+INPUT:-100
+                            -4
+FORMAT:(B5.2)
+INPUT:1000
+                             8
+FORMAT:(B5.2)
+INPUT:-1000
+                            -8
+FORMAT:(B5.2)
+INPUT:10000
+                            16
+FORMAT:(B5.2)
+INPUT:-10000
+                            -8
+FORMAT:(B5.2)
+INPUT:100000
+                            16
+FORMAT:(B5.2)
+INPUT:-100000
+                            -8
+FORMAT:(B5.2)
+INPUT:10 0 00 10  0 0 1
+                             4
+FORMAT:(B5.2)
+INPUT:10101000
+                            21
+FORMAT:(B6.2)
+INPUT:0
+                             0
+FORMAT:(B6.2)
+INPUT:-0
+                             0
+FORMAT:(B6.2)
+INPUT:1
+                             1
+FORMAT:(B6.2)
+INPUT:-1
+                            -1
+FORMAT:(B6.2)
+INPUT:2
+ERR
+FORMAT:(B6.2)
+INPUT:10
+                             2
+FORMAT:(B6.2)
+INPUT:-10
+                            -2
+FORMAT:(B6.2)
+INPUT:100
+                             4
+FORMAT:(B6.2)
+INPUT:-100
+                            -4
+FORMAT:(B6.2)
+INPUT:1000
+                             8
+FORMAT:(B6.2)
+INPUT:-1000
+                            -8
+FORMAT:(B6.2)
+INPUT:10000
+                            16
+FORMAT:(B6.2)
+INPUT:-10000
+                           -16
+FORMAT:(B6.2)
+INPUT:100000
+                            32
+FORMAT:(B6.2)
+INPUT:-100000
+                           -16
+FORMAT:(B6.2)
+INPUT:10 0 00 10  0 0 1
+                             8
+FORMAT:(B6.2)
+INPUT:10101000
+                            42
+FORMAT:(B7.2)
+INPUT:0
+                             0
+FORMAT:(B7.2)
+INPUT:-0
+                             0
+FORMAT:(B7.2)
+INPUT:1
+                             1
+FORMAT:(B7.2)
+INPUT:-1
+                            -1
+FORMAT:(B7.2)
+INPUT:2
+ERR
+FORMAT:(B7.2)
+INPUT:10
+                             2
+FORMAT:(B7.2)
+INPUT:-10
+                            -2
+FORMAT:(B7.2)
+INPUT:100
+                             4
+FORMAT:(B7.2)
+INPUT:-100
+                            -4
+FORMAT:(B7.2)
+INPUT:1000
+                             8
+FORMAT:(B7.2)
+INPUT:-1000
+                            -8
+FORMAT:(B7.2)
+INPUT:10000
+                            16
+FORMAT:(B7.2)
+INPUT:-10000
+                           -16
+FORMAT:(B7.2)
+INPUT:100000
+                            32
+FORMAT:(B7.2)
+INPUT:-100000
+                           -32
+FORMAT:(B7.2)
+INPUT:10 0 00 10  0 0 1
+                            16
+FORMAT:(B7.2)
+INPUT:10101000
+                            84
+FORMAT:(B8.2)
+INPUT:0
+                             0
+FORMAT:(B8.2)
+INPUT:-0
+                             0
+FORMAT:(B8.2)
+INPUT:1
+                             1
+FORMAT:(B8.2)
+INPUT:-1
+                            -1
+FORMAT:(B8.2)
+INPUT:2
+ERR
+FORMAT:(B8.2)
+INPUT:10
+                             2
+FORMAT:(B8.2)
+INPUT:-10
+                            -2
+FORMAT:(B8.2)
+INPUT:100
+                             4
+FORMAT:(B8.2)
+INPUT:-100
+                            -4
+FORMAT:(B8.2)
+INPUT:1000
+                             8
+FORMAT:(B8.2)
+INPUT:-1000
+                            -8
+FORMAT:(B8.2)
+INPUT:10000
+                            16
+FORMAT:(B8.2)
+INPUT:-10000
+                           -16
+FORMAT:(B8.2)
+INPUT:100000
+                            32
+FORMAT:(B8.2)
+INPUT:-100000
+                           -32
+FORMAT:(B8.2)
+INPUT:10 0 00 10  0 0 1
+                            16
+FORMAT:(B8.2)
+INPUT:10101000
+                           168
+FORMAT:(B9.2)
+INPUT:0
+                             0
+FORMAT:(B9.2)
+INPUT:-0
+                             0
+FORMAT:(B9.2)
+INPUT:1
+                             1
+FORMAT:(B9.2)
+INPUT:-1
+                            -1
+FORMAT:(B9.2)
+INPUT:2
+ERR
+FORMAT:(B9.2)
+INPUT:10
+                             2
+FORMAT:(B9.2)
+INPUT:-10
+                            -2
+FORMAT:(B9.2)
+INPUT:100
+                             4
+FORMAT:(B9.2)
+INPUT:-100
+                            -4
+FORMAT:(B9.2)
+INPUT:1000
+                             8
+FORMAT:(B9.2)
+INPUT:-1000
+                            -8
+FORMAT:(B9.2)
+INPUT:10000
+                            16
+FORMAT:(B9.2)
+INPUT:-10000
+                           -16
+FORMAT:(B9.2)
+INPUT:100000
+                            32
+FORMAT:(B9.2)
+INPUT:-100000
+                           -32
+FORMAT:(B9.2)
+INPUT:10 0 00 10  0 0 1
+                            33
+FORMAT:(B9.2)
+INPUT:10101000
+                           168
+FORMAT:(B10.2)
+INPUT:0
+                             0
+FORMAT:(B10.2)
+INPUT:-0
+                             0
+FORMAT:(B10.2)
+INPUT:1
+                             1
+FORMAT:(B10.2)
+INPUT:-1
+                            -1
+FORMAT:(B10.2)
+INPUT:2
+ERR
+FORMAT:(B10.2)
+INPUT:10
+                             2
+FORMAT:(B10.2)
+INPUT:-10
+                            -2
+FORMAT:(B10.2)
+INPUT:100
+                             4
+FORMAT:(B10.2)
+INPUT:-100
+                            -4
+FORMAT:(B10.2)
+INPUT:1000
+                             8
+FORMAT:(B10.2)
+INPUT:-1000
+                            -8
+FORMAT:(B10.2)
+INPUT:10000
+                            16
+FORMAT:(B10.2)
+INPUT:-10000
+                           -16
+FORMAT:(B10.2)
+INPUT:100000
+                            32
+FORMAT:(B10.2)
+INPUT:-100000
+                           -32
+FORMAT:(B10.2)
+INPUT:10 0 00 10  0 0 1
+                            66
+FORMAT:(B10.2)
+INPUT:10101000
+                           168
+FORMAT:(B3.3)
+INPUT:0
+                             0
+FORMAT:(B3.3)
+INPUT:-0
+                             0
+FORMAT:(B3.3)
+INPUT:1
+                             1
+FORMAT:(B3.3)
+INPUT:-1
+                            -1
+FORMAT:(B3.3)
+INPUT:2
+ERR
+FORMAT:(B3.3)
+INPUT:10
+                             2
+FORMAT:(B3.3)
+INPUT:-10
+                            -2
+FORMAT:(B3.3)
+INPUT:100
+                             4
+FORMAT:(B3.3)
+INPUT:-100
+                            -2
+FORMAT:(B3.3)
+INPUT:1000
+                             4
+FORMAT:(B3.3)
+INPUT:-1000
+                            -2
+FORMAT:(B3.3)
+INPUT:10000
+                             4
+FORMAT:(B3.3)
+INPUT:-10000
+                            -2
+FORMAT:(B3.3)
+INPUT:100000
+                             4
+FORMAT:(B3.3)
+INPUT:-100000
+                            -2
+FORMAT:(B3.3)
+INPUT:10 0 00 10  0 0 1
+                             2
+FORMAT:(B3.3)
+INPUT:10101000
+                             5
+FORMAT:(B4.3)
+INPUT:0
+                             0
+FORMAT:(B4.3)
+INPUT:-0
+                             0
+FORMAT:(B4.3)
+INPUT:1
+                             1
+FORMAT:(B4.3)
+INPUT:-1
+                            -1
+FORMAT:(B4.3)
+INPUT:2
+ERR
+FORMAT:(B4.3)
+INPUT:10
+                             2
+FORMAT:(B4.3)
+INPUT:-10
+                            -2
+FORMAT:(B4.3)
+INPUT:100
+                             4
+FORMAT:(B4.3)
+INPUT:-100
+                            -4
+FORMAT:(B4.3)
+INPUT:1000
+                             8
+FORMAT:(B4.3)
+INPUT:-1000
+                            -4
+FORMAT:(B4.3)
+INPUT:10000
+                             8
+FORMAT:(B4.3)
+INPUT:-10000
+                            -4
+FORMAT:(B4.3)
+INPUT:100000
+                             8
+FORMAT:(B4.3)
+INPUT:-100000
+                            -4
+FORMAT:(B4.3)
+INPUT:10 0 00 10  0 0 1
+                             4
+FORMAT:(B4.3)
+INPUT:10101000
+                            10
+FORMAT:(B5.3)
+INPUT:0
+                             0
+FORMAT:(B5.3)
+INPUT:-0
+                             0
+FORMAT:(B5.3)
+INPUT:1
+                             1
+FORMAT:(B5.3)
+INPUT:-1
+                            -1
+FORMAT:(B5.3)
+INPUT:2
+ERR
+FORMAT:(B5.3)
+INPUT:10
+                             2
+FORMAT:(B5.3)
+INPUT:-10
+                            -2
+FORMAT:(B5.3)
+INPUT:100
+                             4
+FORMAT:(B5.3)
+INPUT:-100
+                            -4
+FORMAT:(B5.3)
+INPUT:1000
+                             8
+FORMAT:(B5.3)
+INPUT:-1000
+                            -8
+FORMAT:(B5.3)
+INPUT:10000
+                            16
+FORMAT:(B5.3)
+INPUT:-10000
+                            -8
+FORMAT:(B5.3)
+INPUT:100000
+                            16
+FORMAT:(B5.3)
+INPUT:-100000
+                            -8
+FORMAT:(B5.3)
+INPUT:10 0 00 10  0 0 1
+                             4
+FORMAT:(B5.3)
+INPUT:10101000
+                            21
+FORMAT:(B6.3)
+INPUT:0
+                             0
+FORMAT:(B6.3)
+INPUT:-0
+                             0
+FORMAT:(B6.3)
+INPUT:1
+                             1
+FORMAT:(B6.3)
+INPUT:-1
+                            -1
+FORMAT:(B6.3)
+INPUT:2
+ERR
+FORMAT:(B6.3)
+INPUT:10
+                             2
+FORMAT:(B6.3)
+INPUT:-10
+                            -2
+FORMAT:(B6.3)
+INPUT:100
+                             4
+FORMAT:(B6.3)
+INPUT:-100
+                            -4
+FORMAT:(B6.3)
+INPUT:1000
+                             8
+FORMAT:(B6.3)
+INPUT:-1000
+                            -8
+FORMAT:(B6.3)
+INPUT:10000
+                            16
+FORMAT:(B6.3)
+INPUT:-10000
+                           -16
+FORMAT:(B6.3)
+INPUT:100000
+                            32
+FORMAT:(B6.3)
+INPUT:-100000
+                           -16
+FORMAT:(B6.3)
+INPUT:10 0 00 10  0 0 1
+                             8
+FORMAT:(B6.3)
+INPUT:10101000
+                            42
+FORMAT:(B7.3)
+INPUT:0
+                             0
+FORMAT:(B7.3)
+INPUT:-0
+                             0
+FORMAT:(B7.3)
+INPUT:1
+                             1
+FORMAT:(B7.3)
+INPUT:-1
+                            -1
+FORMAT:(B7.3)
+INPUT:2
+ERR
+FORMAT:(B7.3)
+INPUT:10
+                             2
+FORMAT:(B7.3)
+INPUT:-10
+                            -2
+FORMAT:(B7.3)
+INPUT:100
+                             4
+FORMAT:(B7.3)
+INPUT:-100
+                            -4
+FORMAT:(B7.3)
+INPUT:1000
+                             8
+FORMAT:(B7.3)
+INPUT:-1000
+                            -8
+FORMAT:(B7.3)
+INPUT:10000
+                            16
+FORMAT:(B7.3)
+INPUT:-10000
+                           -16
+FORMAT:(B7.3)
+INPUT:100000
+                            32
+FORMAT:(B7.3)
+INPUT:-100000
+                           -32
+FORMAT:(B7.3)
+INPUT:10 0 00 10  0 0 1
+                            16
+FORMAT:(B7.3)
+INPUT:10101000
+                            84
+FORMAT:(B8.3)
+INPUT:0
+                             0
+FORMAT:(B8.3)
+INPUT:-0
+                             0
+FORMAT:(B8.3)
+INPUT:1
+                             1
+FORMAT:(B8.3)
+INPUT:-1
+                            -1
+FORMAT:(B8.3)
+INPUT:2
+ERR
+FORMAT:(B8.3)
+INPUT:10
+                             2
+FORMAT:(B8.3)
+INPUT:-10
+                            -2
+FORMAT:(B8.3)
+INPUT:100
+                             4
+FORMAT:(B8.3)
+INPUT:-100
+                            -4
+FORMAT:(B8.3)
+INPUT:1000
+                             8
+FORMAT:(B8.3)
+INPUT:-1000
+                            -8
+FORMAT:(B8.3)
+INPUT:10000
+                            16
+FORMAT:(B8.3)
+INPUT:-10000
+                           -16
+FORMAT:(B8.3)
+INPUT:100000
+                            32
+FORMAT:(B8.3)
+INPUT:-100000
+                           -32
+FORMAT:(B8.3)
+INPUT:10 0 00 10  0 0 1
+                            16
+FORMAT:(B8.3)
+INPUT:10101000
+                           168
+FORMAT:(B9.3)
+INPUT:0
+                             0
+FORMAT:(B9.3)
+INPUT:-0
+                             0
+FORMAT:(B9.3)
+INPUT:1
+                             1
+FORMAT:(B9.3)
+INPUT:-1
+                            -1
+FORMAT:(B9.3)
+INPUT:2
+ERR
+FORMAT:(B9.3)
+INPUT:10
+                             2
+FORMAT:(B9.3)
+INPUT:-10
+                            -2
+FORMAT:(B9.3)
+INPUT:100
+                             4
+FORMAT:(B9.3)
+INPUT:-100
+                            -4
+FORMAT:(B9.3)
+INPUT:1000
+                             8
+FORMAT:(B9.3)
+INPUT:-1000
+                            -8
+FORMAT:(B9.3)
+INPUT:10000
+                            16
+FORMAT:(B9.3)
+INPUT:-10000
+                           -16
+FORMAT:(B9.3)
+INPUT:100000
+                            32
+FORMAT:(B9.3)
+INPUT:-100000
+                           -32
+FORMAT:(B9.3)
+INPUT:10 0 00 10  0 0 1
+                            33
+FORMAT:(B9.3)
+INPUT:10101000
+                           168
+FORMAT:(B10.3)
+INPUT:0
+                             0
+FORMAT:(B10.3)
+INPUT:-0
+                             0
+FORMAT:(B10.3)
+INPUT:1
+                             1
+FORMAT:(B10.3)
+INPUT:-1
+                            -1
+FORMAT:(B10.3)
+INPUT:2
+ERR
+FORMAT:(B10.3)
+INPUT:10
+                             2
+FORMAT:(B10.3)
+INPUT:-10
+                            -2
+FORMAT:(B10.3)
+INPUT:100
+                             4
+FORMAT:(B10.3)
+INPUT:-100
+                            -4
+FORMAT:(B10.3)
+INPUT:1000
+                             8
+FORMAT:(B10.3)
+INPUT:-1000
+                            -8
+FORMAT:(B10.3)
+INPUT:10000
+                            16
+FORMAT:(B10.3)
+INPUT:-10000
+                           -16
+FORMAT:(B10.3)
+INPUT:100000
+                            32
+FORMAT:(B10.3)
+INPUT:-100000
+                           -32
+FORMAT:(B10.3)
+INPUT:10 0 00 10  0 0 1
+                            66
+FORMAT:(B10.3)
+INPUT:10101000
+                           168
+FORMAT:(B5.5)
+INPUT:0
+                             0
+FORMAT:(B5.5)
+INPUT:-0
+                             0
+FORMAT:(B5.5)
+INPUT:1
+                             1
+FORMAT:(B5.5)
+INPUT:-1
+                            -1
+FORMAT:(B5.5)
+INPUT:2
+ERR
+FORMAT:(B5.5)
+INPUT:10
+                             2
+FORMAT:(B5.5)
+INPUT:-10
+                            -2
+FORMAT:(B5.5)
+INPUT:100
+                             4
+FORMAT:(B5.5)
+INPUT:-100
+                            -4
+FORMAT:(B5.5)
+INPUT:1000
+                             8
+FORMAT:(B5.5)
+INPUT:-1000
+                            -8
+FORMAT:(B5.5)
+INPUT:10000
+                            16
+FORMAT:(B5.5)
+INPUT:-10000
+                            -8
+FORMAT:(B5.5)
+INPUT:100000
+                            16
+FORMAT:(B5.5)
+INPUT:-100000
+                            -8
+FORMAT:(B5.5)
+INPUT:10 0 00 10  0 0 1
+                             4
+FORMAT:(B5.5)
+INPUT:10101000
+                            21
+FORMAT:(B6.5)
+INPUT:0
+                             0
+FORMAT:(B6.5)
+INPUT:-0
+                             0
+FORMAT:(B6.5)
+INPUT:1
+                             1
+FORMAT:(B6.5)
+INPUT:-1
+                            -1
+FORMAT:(B6.5)
+INPUT:2
+ERR
+FORMAT:(B6.5)
+INPUT:10
+                             2
+FORMAT:(B6.5)
+INPUT:-10
+                            -2
+FORMAT:(B6.5)
+INPUT:100
+                             4
+FORMAT:(B6.5)
+INPUT:-100
+                            -4
+FORMAT:(B6.5)
+INPUT:1000
+                             8
+FORMAT:(B6.5)
+INPUT:-1000
+                            -8
+FORMAT:(B6.5)
+INPUT:10000
+                            16
+FORMAT:(B6.5)
+INPUT:-10000
+                           -16
+FORMAT:(B6.5)
+INPUT:100000
+                            32
+FORMAT:(B6.5)
+INPUT:-100000
+                           -16
+FORMAT:(B6.5)
+INPUT:10 0 00 10  0 0 1
+                             8
+FORMAT:(B6.5)
+INPUT:10101000
+                            42
+FORMAT:(B7.5)
+INPUT:0
+                             0
+FORMAT:(B7.5)
+INPUT:-0
+                             0
+FORMAT:(B7.5)
+INPUT:1
+                             1
+FORMAT:(B7.5)
+INPUT:-1
+                            -1
+FORMAT:(B7.5)
+INPUT:2
+ERR
+FORMAT:(B7.5)
+INPUT:10
+                             2
+FORMAT:(B7.5)
+INPUT:-10
+                            -2
+FORMAT:(B7.5)
+INPUT:100
+                             4
+FORMAT:(B7.5)
+INPUT:-100
+                            -4
+FORMAT:(B7.5)
+INPUT:1000
+                             8
+FORMAT:(B7.5)
+INPUT:-1000
+                            -8
+FORMAT:(B7.5)
+INPUT:10000
+                            16
+FORMAT:(B7.5)
+INPUT:-10000
+                           -16
+FORMAT:(B7.5)
+INPUT:100000
+                            32
+FORMAT:(B7.5)
+INPUT:-100000
+                           -32
+FORMAT:(B7.5)
+INPUT:10 0 00 10  0 0 1
+                            16
+FORMAT:(B7.5)
+INPUT:10101000
+                            84
+FORMAT:(B8.5)
+INPUT:0
+                             0
+FORMAT:(B8.5)
+INPUT:-0
+                             0
+FORMAT:(B8.5)
+INPUT:1
+                             1
+FORMAT:(B8.5)
+INPUT:-1
+                            -1
+FORMAT:(B8.5)
+INPUT:2
+ERR
+FORMAT:(B8.5)
+INPUT:10
+                             2
+FORMAT:(B8.5)
+INPUT:-10
+                            -2
+FORMAT:(B8.5)
+INPUT:100
+                             4
+FORMAT:(B8.5)
+INPUT:-100
+                            -4
+FORMAT:(B8.5)
+INPUT:1000
+                             8
+FORMAT:(B8.5)
+INPUT:-1000
+                            -8
+FORMAT:(B8.5)
+INPUT:10000
+                            16
+FORMAT:(B8.5)
+INPUT:-10000
+                           -16
+FORMAT:(B8.5)
+INPUT:100000
+                            32
+FORMAT:(B8.5)
+INPUT:-100000
+                           -32
+FORMAT:(B8.5)
+INPUT:10 0 00 10  0 0 1
+                            16
+FORMAT:(B8.5)
+INPUT:10101000
+                           168
+FORMAT:(B9.5)
+INPUT:0
+                             0
+FORMAT:(B9.5)
+INPUT:-0
+                             0
+FORMAT:(B9.5)
+INPUT:1
+                             1
+FORMAT:(B9.5)
+INPUT:-1
+                            -1
+FORMAT:(B9.5)
+INPUT:2
+ERR
+FORMAT:(B9.5)
+INPUT:10
+                             2
+FORMAT:(B9.5)
+INPUT:-10
+                            -2
+FORMAT:(B9.5)
+INPUT:100
+                             4
+FORMAT:(B9.5)
+INPUT:-100
+                            -4
+FORMAT:(B9.5)
+INPUT:1000
+                             8
+FORMAT:(B9.5)
+INPUT:-1000
+                            -8
+FORMAT:(B9.5)
+INPUT:10000
+                            16
+FORMAT:(B9.5)
+INPUT:-10000
+                           -16
+FORMAT:(B9.5)
+INPUT:100000
+                            32
+FORMAT:(B9.5)
+INPUT:-100000
+                           -32
+FORMAT:(B9.5)
+INPUT:10 0 00 10  0 0 1
+                            33
+FORMAT:(B9.5)
+INPUT:10101000
+                           168
+FORMAT:(B10.5)
+INPUT:0
+                             0
+FORMAT:(B10.5)
+INPUT:-0
+                             0
+FORMAT:(B10.5)
+INPUT:1
+                             1
+FORMAT:(B10.5)
+INPUT:-1
+                            -1
+FORMAT:(B10.5)
+INPUT:2
+ERR
+FORMAT:(B10.5)
+INPUT:10
+                             2
+FORMAT:(B10.5)
+INPUT:-10
+                            -2
+FORMAT:(B10.5)
+INPUT:100
+                             4
+FORMAT:(B10.5)
+INPUT:-100
+                            -4
+FORMAT:(B10.5)
+INPUT:1000
+                             8
+FORMAT:(B10.5)
+INPUT:-1000
+                            -8
+FORMAT:(B10.5)
+INPUT:10000
+                            16
+FORMAT:(B10.5)
+INPUT:-10000
+                           -16
+FORMAT:(B10.5)
+INPUT:100000
+                            32
+FORMAT:(B10.5)
+INPUT:-100000
+                           -32
+FORMAT:(B10.5)
+INPUT:10 0 00 10  0 0 1
+                            66
+FORMAT:(B10.5)
+INPUT:10101000
+                           168
+FORMAT:(1B1)
+INPUT:0
+                             0
+FORMAT:(1B1)
+INPUT:-0
+ERR
+FORMAT:(1B1)
+INPUT:1
+                             1
+FORMAT:(1B1)
+INPUT:-1
+ERR
+FORMAT:(1B1)
+INPUT:2
+ERR
+FORMAT:(1B1)
+INPUT:10
+                             1
+FORMAT:(1B1)
+INPUT:-10
+ERR
+FORMAT:(1B1)
+INPUT:100
+                             1
+FORMAT:(1B1)
+INPUT:-100
+ERR
+FORMAT:(1B1)
+INPUT:1000
+                             1
+FORMAT:(1B1)
+INPUT:-1000
+ERR
+FORMAT:(1B1)
+INPUT:10000
+                             1
+FORMAT:(1B1)
+INPUT:-10000
+ERR
+FORMAT:(1B1)
+INPUT:100000
+                             1
+FORMAT:(1B1)
+INPUT:-100000
+ERR
+FORMAT:(1B1)
+INPUT:10 0 00 10  0 0 1
+                             1
+FORMAT:(1B1)
+INPUT:10101000
+                             1
+FORMAT:(1B2)
+INPUT:0
+                             0
+FORMAT:(1B2)
+INPUT:-0
+                             0
+FORMAT:(1B2)
+INPUT:1
+                             1
+FORMAT:(1B2)
+INPUT:-1
+                            -1
+FORMAT:(1B2)
+INPUT:2
+ERR
+FORMAT:(1B2)
+INPUT:10
+                             2
+FORMAT:(1B2)
+INPUT:-10
+                            -1
+FORMAT:(1B2)
+INPUT:100
+                             2
+FORMAT:(1B2)
+INPUT:-100
+                            -1
+FORMAT:(1B2)
+INPUT:1000
+                             2
+FORMAT:(1B2)
+INPUT:-1000
+                            -1
+FORMAT:(1B2)
+INPUT:10000
+                             2
+FORMAT:(1B2)
+INPUT:-10000
+                            -1
+FORMAT:(1B2)
+INPUT:100000
+                             2
+FORMAT:(1B2)
+INPUT:-100000
+                            -1
+FORMAT:(1B2)
+INPUT:10 0 00 10  0 0 1
+                             2
+FORMAT:(1B2)
+INPUT:10101000
+                             2
+FORMAT:(1B3)
+INPUT:0
+                             0
+FORMAT:(1B3)
+INPUT:-0
+                             0
+FORMAT:(1B3)
+INPUT:1
+                             1
+FORMAT:(1B3)
+INPUT:-1
+                            -1
+FORMAT:(1B3)
+INPUT:2
+ERR
+FORMAT:(1B3)
+INPUT:10
+                             2
+FORMAT:(1B3)
+INPUT:-10
+                            -2
+FORMAT:(1B3)
+INPUT:100
+                             4
+FORMAT:(1B3)
+INPUT:-100
+                            -2
+FORMAT:(1B3)
+INPUT:1000
+                             4
+FORMAT:(1B3)
+INPUT:-1000
+                            -2
+FORMAT:(1B3)
+INPUT:10000
+                             4
+FORMAT:(1B3)
+INPUT:-10000
+                            -2
+FORMAT:(1B3)
+INPUT:100000
+                             4
+FORMAT:(1B3)
+INPUT:-100000
+                            -2
+FORMAT:(1B3)
+INPUT:10 0 00 10  0 0 1
+                             2
+FORMAT:(1B3)
+INPUT:10101000
+                             5
+FORMAT:(1B5)
+INPUT:0
+                             0
+FORMAT:(1B5)
+INPUT:-0
+                             0
+FORMAT:(1B5)
+INPUT:1
+                             1
+FORMAT:(1B5)
+INPUT:-1
+                            -1
+FORMAT:(1B5)
+INPUT:2
+ERR
+FORMAT:(1B5)
+INPUT:10
+                             2
+FORMAT:(1B5)
+INPUT:-10
+                            -2
+FORMAT:(1B5)
+INPUT:100
+                             4
+FORMAT:(1B5)
+INPUT:-100
+                            -4
+FORMAT:(1B5)
+INPUT:1000
+                             8
+FORMAT:(1B5)
+INPUT:-1000
+                            -8
+FORMAT:(1B5)
+INPUT:10000
+                            16
+FORMAT:(1B5)
+INPUT:-10000
+                            -8
+FORMAT:(1B5)
+INPUT:100000
+                            16
+FORMAT:(1B5)
+INPUT:-100000
+                            -8
+FORMAT:(1B5)
+INPUT:10 0 00 10  0 0 1
+                             4
+FORMAT:(1B5)
+INPUT:10101000
+                            21
+FORMAT:(1B10)
+INPUT:0
+                             0
+FORMAT:(1B10)
+INPUT:-0
+                             0
+FORMAT:(1B10)
+INPUT:1
+                             1
+FORMAT:(1B10)
+INPUT:-1
+                            -1
+FORMAT:(1B10)
+INPUT:2
+ERR
+FORMAT:(1B10)
+INPUT:10
+                             2
+FORMAT:(1B10)
+INPUT:-10
+                            -2
+FORMAT:(1B10)
+INPUT:100
+                             4
+FORMAT:(1B10)
+INPUT:-100
+                            -4
+FORMAT:(1B10)
+INPUT:1000
+                             8
+FORMAT:(1B10)
+INPUT:-1000
+                            -8
+FORMAT:(1B10)
+INPUT:10000
+                            16
+FORMAT:(1B10)
+INPUT:-10000
+                           -16
+FORMAT:(1B10)
+INPUT:100000
+                            32
+FORMAT:(1B10)
+INPUT:-100000
+                           -32
+FORMAT:(1B10)
+INPUT:10 0 00 10  0 0 1
+                            66
+FORMAT:(1B10)
+INPUT:10101000
+                           168
+FORMAT:(1B1.0)
+INPUT:0
+                             0
+FORMAT:(1B1.0)
+INPUT:-0
+ERR
+FORMAT:(1B1.0)
+INPUT:1
+                             1
+FORMAT:(1B1.0)
+INPUT:-1
+ERR
+FORMAT:(1B1.0)
+INPUT:2
+ERR
+FORMAT:(1B1.0)
+INPUT:10
+                             1
+FORMAT:(1B1.0)
+INPUT:-10
+ERR
+FORMAT:(1B1.0)
+INPUT:100
+                             1
+FORMAT:(1B1.0)
+INPUT:-100
+ERR
+FORMAT:(1B1.0)
+INPUT:1000
+                             1
+FORMAT:(1B1.0)
+INPUT:-1000
+ERR
+FORMAT:(1B1.0)
+INPUT:10000
+                             1
+FORMAT:(1B1.0)
+INPUT:-10000
+ERR
+FORMAT:(1B1.0)
+INPUT:100000
+                             1
