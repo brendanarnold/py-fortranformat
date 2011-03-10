@@ -12,7 +12,8 @@ PROC_INCL_PLUS = False
 PROC_ALLOW_NEG_BOZ = True
 # Prcessor dependant padding character
 PROC_PAD_CHAR = ' '
-# Interpret line of blanks and '-' as a zero
+# Interpret blanks or jsut a negative as a zero, as in ifort behaviour
+PROC_NEG_AS_ZERO = True
 
 
 # Some problems without pre written input vars:
@@ -32,6 +33,8 @@ def input(eds, reversion_eds, records, num_vals=None):
         'halt_if_no_vals' : False,
         'exception_on_fail' : True,
     }
+
+    pdb.set_trace()
 
     # Expand repeated edit decriptors
     eds = expand_edit_descriptors(eds)
@@ -142,6 +145,14 @@ def input(eds, reversion_eds, records, num_vals=None):
                 base = 8
             elif isinstance(ed, B):
                 base = 2
+            # If a negative is followed by blanks, Gfortran and ifort
+            # interpret as a zero
+            if re.match(r'^ *- +$', substr):
+                substr = '0'
+            # If a negative or negative and blanks, ifort interprets as
+            # zero
+            if PROC_NEG_AS_ZERO and re.match(r'^( *- *| +)$', substr):
+                substr = '0'
             teststr = _interpret_blanks(substr, state)
             try:
                 val = int(teststr, base)
