@@ -1,6 +1,6 @@
-from _output import output
-from _lexer import lexer
-from _parser import parser
+from _output import output as _output
+from _lexer import lexer as _lexer
+from _parser import parser as _parser
 
 class FortranRecordWriter(object):
     '''
@@ -8,7 +8,7 @@ class FortranRecordWriter(object):
 
     Typical use case ...
 
-    >>> header_line = FortranRecordWriter("(A15, A15, A15)")
+    >>> header_line = FortranRecordWriter('(A15, A15, A15)')
     >>> header_line.write(['x', 'y', 'z'])
     '              x              y              z'
     >>> line = FortranRecordWriter('(3F15.3)')
@@ -22,10 +22,8 @@ class FortranRecordWriter(object):
     performance
     '''
     def __init__(self, format):
-        self._lexer = lexer
-        self._parser = parser
-        self._edit_descriptors = []
-        self._overflow_edit_descriptors = []
+        self._eds = []
+        self._rev_eds = []
         self.format = format
 
     def __eq__(self, other):
@@ -39,7 +37,7 @@ class FortranRecordWriter(object):
         Pass a list of values correspoding to the FORTRAN format specified
         to generate a string
         '''
-        return output(self._edit_descriptors, self._overflow_edit_descriptors, values)
+        return _output(self._eds, self._rev_eds, values)
 
     def get_format(self):
         return self._format
@@ -51,8 +49,7 @@ class FortranRecordWriter(object):
     format = property(get_format, set_format)
 
     def _parse_format(self):
-        tokens = self._lexer(self.format)
-        self._edit_descriptors, self._overflow_edit_descriptors = self._parser(tokens)
+        self._eds, self._rev_eds = _parser(_lexer(self.format))
 
 
 if __name__ == '__main__':

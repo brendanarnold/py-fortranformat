@@ -1,20 +1,36 @@
-from _input import input
-from _parser import parser
+from _input import input as _input
+from _parser import parser as _parser
+from _lexer import lexer as _lexer
 
 class FortranRecordReader(object):
     '''
     Generate a reader object for FORTRAN format strings
+
+    Typical use case ...
+
+    >>> header_line = FortranRecordReader('(A15, A15, A15)')
+    >>> header_line.read('              x              y              z')
+    ['              x', '              y', '              z']
+    >>> line = FortranRecordReader('(3F15.3)')
+    >>> line.read('          1.000          0.000          0.500')
+    [1.0, 0.0, 0.5]
+    >>> line.read('          1.100          0.100          0.600')
+    [1.1, 0.1, 0.6]
+
+    Note: it is best to create a new object for each format, changing the format
+    causes the parser to reevalute the format string which is costly in terms of
+    performance
     '''
-    def __init__(self, format, version=None):
-        self.version = version
+    
+    def __init__(self, format):
         self.format = format
-        self._parser = parser
-        self._edit_descriptors = []
+        self._eds = []
+        self._rev_eds = []
         self._parse_format()
 
     def __eq__(self, other):
-        if type(other) == str:
-            return self.match(other) 
+        if isinstance(other, FortranRecordReader):
+            return self.format == other.format
         else:
             return object.__eq__(self, other)
 
@@ -31,7 +47,7 @@ class FortranRecordReader(object):
         Pass a string representing a FORTRAN record to obtain the relevent
         values
         '''
-        return input(self.edit_descriptors)
+        return _input(self._eds, self._rev_eds, record)
 
     def get_format(self):
         return self._format
@@ -40,15 +56,8 @@ class FortranRecordReader(object):
         self._parse_format()
     format = property(get_format, set_format)
 
-    def get_version(self):
-        return self._version
-    def set_version(self, version):
-        self._version = version
-        self._parse_format()
-    version = property(get_version, set_version)
-
     def _parse_format(self):
-        self._edit_descriptors = self._parser(self.format, self.version)
+        self._eds, self._rev_eds = _parser(_lexer(self.format))
 
 
 if __name__ == '__main__':
