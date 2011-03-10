@@ -8,9 +8,16 @@ glob:*.exe
 glob:tests/autogen/build-input-tests/*
 glob:tests/autogen/build-output-tests/*
 glob:*.pytest
+<<<<<<< local
+<<<<<<< local
+spec/examples/gcc-4\.4\.0/libgfortran/io/write_float\.def\.orig
+=======
+glob:*.bak>>>>>>> other
+=======
 glob:*.bak
 syntax: glob
 tests/sandbox/*
 syntax: regexp
 (\w+)-input-test-(\d+)\.py
 ((\w+-)?\w+)-output-test\.py
+>>>>>>> other
