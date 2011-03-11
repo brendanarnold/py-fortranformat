@@ -4,11 +4,11 @@ setup(
     name = 'fortranformat',
     packages = ['fortranformat'],
     version = '0.1.0',
-    description = 'Mimics FORTRAN textual IO in Python',
+    description = 'Mimics Fortran textual IO in Python',
     author = 'Brendan Arnold',
     author_email = 'brendanarnold@gmail.com',
     url = 'http://bitbucket.org/brendanarnold/py-fortranformat',
-    download_url = 'http://bitbucket.org/brendanarnold/py-fortranformat',
+    download_url = 'https://bitbucket.org/brendanarnold/py-fortranformat/downloads/fortranformat-0.1.0.tar.gz',
     keywords = ['fortran', 'io', 'interface', 'format'],
     classifiers = [
         'Development Status :: 3 - Alpha',
