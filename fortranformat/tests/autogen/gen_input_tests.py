@@ -8,9 +8,9 @@ import os
 
 # MODIFIER_EDS = ['SP']
 # OUTPUT_EDS = ['F']
-EDS = ['BN', 'BZ', 'Slash', 'SP', 'SS', 'T', 'TL', 'TR', 'X', 'Colon', 'A', 'B', 'D', 'EN', 'ES', 'E', 'F', 'G', 'I', 'L', 'O', 'Z']
+EDS = ['BN', 'BZ', 'Slash', 'SP', 'SS', 'T', 'TL', 'TR', 'X', 'Colon', 'B', 'D', 'EN', 'ES', 'E', 'F', 'G', 'I', 'L', 'O', 'Z']
 MODIFIER_EDS = ['BN', 'BZ', 'Slash', 'SP', 'SS', 'T', 'TL', 'TR', 'X', 'Colon']
-OUTPUT_EDS = ['A', 'B', 'D', 'EN', 'ES', 'E', 'F', 'G', 'I', 'L', 'O', 'Z', 'Slash']
+OUTPUT_EDS = ['B', 'D', 'EN', 'ES', 'E', 'F', 'G', 'I', 'L', 'O', 'Z', 'Slash']
 SOURCE_FILESTEM = '%s-ed-input-%d.f'
 EXECUTABLE_FILESTEM = '%s-ed-input-%d.exe'
 RESULT_FILESTEM = '%s-ed-input-%d.test'
@@ -175,25 +175,6 @@ G['inputs'] = [
 ]
 G['name'] = 'g'
 
-A = dict()
-A['formats'] = [
-  "A", "A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A25", "A50", "A100"
-]
-A['inputs'] = [
-  "'The quick brown fox jumps the lazy dog.'",
-  "'\"It doesn''t matter anyway\" - said Alice'",
-  "''''''"
-]
-A['name'] = 'a'
-
-StringLiteral = dict()
-StringLiteral['formats'] = [
-  "'The quick brown fox jumps the lazy dog.'",
-  "'\"It doesn''t matter anyway\" - said Alice'",
-  "''''''"
-]
-StringLiteral['inputs'] = [""]
-StringLiteral['name'] = 'stringliteral'
 
 EN = dict()
 EN['formats'] = [
@@ -397,11 +378,6 @@ X['formats'] = ['1X', '2X', '3X', '4X', '5X', '6X', '7X', '8X', '9X', '10X', '25
 X['name'] = 'x'
 X['inputs'] = []
 
-SPECIAL = {}
-SPECIAL['formats'] = []
-SPECIAL['name'] = 'special'
-SPECIAL['inputs'] = []
-
 
 def write_py_source():
     '''Wrapper to convert Fortran output in build directory to unittest files'''
@@ -527,7 +503,7 @@ def write_fortran_source(formats, inputs, name):
         header = '''      PROGRAM %sEDIT
 
           IMPLICIT NONE
-          CHARACTER(LEN=1000) :: INP, C
+          CHARACTER(LEN=1000) :: INP
           DOUBLE PRECISION D
           INTEGER I
           LOGICAL ERR
@@ -564,10 +540,6 @@ def write_fortran_source(formats, inputs, name):
                 # Read into a double precision float
                 inp_var = 'D'
                 out_fmt = 'E30.16E4'
-            else:
-                # Read into a character array
-                inp_var = 'C'
-                out_fmt = 'A'
             lines.append("""      READ(INP, %d, ERR=%d) %s""" % (lbl, errlbl, inp_var))
             lines.append("""      ERR = .FALSE.""")
             lines.append("""%-6dIF (ERR) THEN""" % errlbl)
@@ -617,9 +589,6 @@ def gen_tests():
     #                 formats.append(mfmt + ', ' + ofmt)
     #         write_fortran_source(formats, inputs, name)
     #         # Store the name for later compilation
-    # Finally write the special case extra tests, there should be one to one
-    # relationship between the formats and the inputs
-    write_fortran_source(SPECIAL['formats'], SPECIAL['inputs'], 'special')
         
 def filenames():
     '''Generates a list of all the filenames'''
@@ -660,11 +629,11 @@ def product(*args, **kwds):
 
 if __name__ == '__main__':
     import sys
-    # compile_str = sys.argv[1]
-    # gen_tests()
+    compile_str = sys.argv[1]
+    gen_tests()
     # compile_tests(compile_str)
     # execute_tests()
-    write_py_source()
+    # write_py_source()
 
 
 # Note: test comma-less p use

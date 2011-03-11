@@ -129,8 +129,8 @@ def input(eds, reversion_eds, records, num_vals=None):
             # if ed.width is None:
             #     ed.width = max(len(record) - state['position'], 0)
             raise NotImplemented('Cannot guess width of character input for A edit descriptor, please supply the width')
-        substr, state = _get_substr(ed.width, record, state)
-        if isinstance(ed, (Z, O, B, I)):
+        elif isinstance(ed, (Z, O, B, I)):
+            substr, state = _get_substr(ed.width, record, state)
             if ('-' in substr) and (not PROC_ALLOW_NEG_BOZ) and isinstance(ed, (Z, O, B)):
                 if state['exception_on_fail']:
                     raise ValueError('Negative numbers not permitted for binary, octal or hex')
@@ -164,8 +164,10 @@ def input(eds, reversion_eds, records, num_vals=None):
                     continue
             vals.append(val)
         elif isinstance(ed, A):
+            substr, state = _get_substr(ed.width, record, state)
             vals.append(substr.rjust(ed.width, PROC_PAD_CHAR))
         elif isinstance(ed, L):
+            substr, state = _get_substr(ed.width, record, state)
             # Remove preceding whitespace and take the first two letters as
             # uppercase for testing
             teststr = substr.upper().lstrip().lstrip('.')
@@ -181,6 +183,7 @@ def input(eds, reversion_eds, records, num_vals=None):
                 else:
                     vals.append(None)
         elif isinstance(ed, (F, E, D, EN, ES)):
+            substr, state = _get_substr(ed.width, record, state)
             teststr = _interpret_blanks(substr, state)
             # Python only understands 'E' as an exponential letter
             teststr = teststr.upper().replace('D', 'E')
@@ -247,7 +250,7 @@ def _next(it, default=None):
 if __name__ == '__main__':
     from _lexer import lexer
     from _parser import parser
-    inpt = '1000'
-    fmt = '(I5.5)'
+    inpt = '123456789123456789'
+    fmt = '(TR14, A15)'
     eds, rev_eds = parser(lexer(fmt))
     print input(eds, rev_eds, inpt)
