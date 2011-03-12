@@ -8,7 +8,7 @@ setup(
     author = 'Brendan Arnold',
     author_email = 'brendanarnold@gmail.com',
     url = 'http://bitbucket.org/brendanarnold/py-fortranformat',
-    download_url = 'https://bitbucket.org/brendanarnold/py-fortranformat/downloads/fortranformat-0.1.0.tar.gz',
+    download_url = 'https://bitbucket.org/brendanarnold/py-fortranformat/downloads/fortranformat-0.1.1.tar.gz',
     keywords = ['fortran', 'io', 'interface', 'format'],
     classifiers = [
         'Development Status :: 3 - Alpha',

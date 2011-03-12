@@ -149,6 +149,9 @@ def input(eds, reversion_eds, records, num_vals=None):
             # zero for an I edit descriptor
             if PROC_NEG_AS_ZERO and isinstance(ed, I) and re.match(r'^( *- *| +)$', substr):
                 substr = '0'
+            # If string is zero length (reading off end of record?), interpret as zero
+            if substr == '':
+                substr = '0'
             teststr = _interpret_blanks(substr, state)
             try:
                 val = int(teststr, base)
@@ -185,6 +188,10 @@ def input(eds, reversion_eds, records, num_vals=None):
         elif isinstance(ed, (F, E, D, EN, ES)):
             substr, state = _get_substr(ed.width, record, state)
             teststr = _interpret_blanks(substr, state)
+            # When reading off end fo record, get empty string,
+            # interpret as 0
+            if teststr == '':
+                teststr = '0'
             # Python only understands 'E' as an exponential letter
             teststr = teststr.upper().replace('D', 'E')
             # Prepend an exponential letter if only a '-' or '+' denotes an exponent

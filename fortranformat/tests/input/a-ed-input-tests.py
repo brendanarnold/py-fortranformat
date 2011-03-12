@@ -64,7 +64,6 @@ class AEditDescriptorTests(unittest.TestCase):
         self.assertEqual(result, _input(eds, rev_eds, inpt))
         
     
-    
     # Test with TR
 
     def a_tr_test_1(self):
