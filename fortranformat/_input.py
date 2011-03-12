@@ -120,15 +120,6 @@ def input(eds, reversion_eds, records, num_vals=None):
             # Break if input value satisfied
             if finish_up:
                 break
-        elif isinstance(ed, A) and (ed.width is None):
-            # Cannot get width of A edit descripor from allocated input
-            # array so must use specified widths, or failing that the rest
-            # of the record
-            # if a_widths is not None:
-            #     ed.width = _next(a_widths, None)
-            # if ed.width is None:
-            #     ed.width = max(len(record) - state['position'], 0)
-            raise NotImplemented('Cannot guess width of character input for A edit descriptor, please supply the width')
         elif isinstance(ed, (Z, O, B, I)):
             substr, state = _get_substr(ed.width, record, state)
             if ('-' in substr) and (not PROC_ALLOW_NEG_BOZ) and isinstance(ed, (Z, O, B)):
@@ -164,6 +155,10 @@ def input(eds, reversion_eds, records, num_vals=None):
                     continue
             vals.append(val)
         elif isinstance(ed, A):
+            if ed.width is None:
+                # Will assume rest of record is fair game for the
+                # unsized A edit descriptor
+                ed.width = len(record) - state['position']
             substr, state = _get_substr(ed.width, record, state)
             vals.append(substr.rjust(ed.width, PROC_PAD_CHAR))
         elif isinstance(ed, L):
