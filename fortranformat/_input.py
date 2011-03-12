@@ -188,7 +188,7 @@ def input(eds, reversion_eds, records, num_vals=None):
         elif isinstance(ed, (F, E, D, EN, ES)):
             substr, state = _get_substr(ed.width, record, state)
             teststr = _interpret_blanks(substr, state)
-            # When reading off end fo record, get empty string,
+            # When reading off end of record, get empty string,
             # interpret as 0
             if teststr == '':
                 teststr = '0'
