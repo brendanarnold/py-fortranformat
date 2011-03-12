@@ -13,6 +13,7 @@ syntax: glob
 build/*
 tests/sandbox/*
 tests/autogen/sandbox/*
+tests/input/raw/lib/*
 syntax: regexp
 (\w+)-input-test-(\d+)\.py
 ((\w+-)?\w+)-output-test\.py
