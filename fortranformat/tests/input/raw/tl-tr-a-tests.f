@@ -1,6 +1,8 @@
       PROGRAM TLTRATEST
 
-      CHARACTER(LEN=100) :: C, C2, INPT
+      IMPLICIT NONE
+
+      CHARACTER(LEN=50) :: C, C2, INPT
 
 ! Test file some_records.txt contains:
 ! 1234567890
@@ -93,5 +95,7 @@
       CLOSE(10)
 
 
+
       STOP
       END
+

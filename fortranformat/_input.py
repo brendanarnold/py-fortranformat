@@ -106,11 +106,16 @@ def input(eds, reversion_eds, records, num_vals=None):
         elif isinstance(ed, S):
             state['incl_plus'] = PROC_INCL_PLUS
         elif isinstance(ed, (X, TR)):
-            state['position'] += ed.num_chars
+            state['position'] = min(state['position'] + ed.num_chars, len(record))
         elif isinstance(ed, TL):
             state['position'] = max(state['position'] - ed.num_chars, 0)
         elif isinstance(ed, T):
-            state['position'] = max(ed.num_chars, 0)
+            if (ed.num_chars - 1) < 0:
+                state['position'] = 0
+            elif ed.num_chars > len(record):
+                state['position'] = len(record)
+            else:
+                state['position'] = ed.num_chars - 1
         elif isinstance(ed, Slash):
             # End of record
             record = _next(records, None)
@@ -160,7 +165,7 @@ def input(eds, reversion_eds, records, num_vals=None):
                 # unsized A edit descriptor
                 ed.width = len(record) - state['position']
             substr, state = _get_substr(ed.width, record, state)
-            vals.append(substr.rjust(ed.width, PROC_PAD_CHAR))
+            vals.append(substr.ljust(ed.width, PROC_PAD_CHAR))
         elif isinstance(ed, L):
             substr, state = _get_substr(ed.width, record, state)
             # Remove preceding whitespace and take the first two letters as
@@ -230,7 +235,7 @@ def _get_substr(w, record, state):
     #     w = 0
     # else:
     substr = record[start:end]
-    state['position'] += w
+    state['position'] = min(state['position'] + w, len(record))
     return substr, state
 
 

@@ -54,6 +54,15 @@ class AEditDescriptorTests(unittest.TestCase):
         eds, rev_eds = _parser(_lexer(fmt))
         result = ['']
         self.assertEqual(result, _input(eds, rev_eds, inpt))
+
+    def a_test_7(self):
+        # Should pad string with blanks at end
+        inpt = '1234567890'
+        fmt = '(A15)'
+        eds, rev_eds = _parser(_lexer(fmt))
+        result = ['1234567890     ']
+        self.assertEqual(result, _input(eds, rev_eds, inpt))
+        
     
     
     # Test with TR
@@ -97,7 +106,8 @@ class AEditDescriptorTests(unittest.TestCase):
         inpt = '1234567890'
         fmt = '(TR11, A1)'
         eds, rev_eds = _parser(_lexer(fmt))
-        result = ['']
+        # Make the call that width will be respected always
+        result = [' ']
         self.assertEqual(result, _input(eds, rev_eds, inpt))
 
     # Test with X (shoud be same as TR)
@@ -141,7 +151,8 @@ class AEditDescriptorTests(unittest.TestCase):
         inpt = '1234567890'
         fmt = '(11X, A1)'
         eds, rev_eds = _parser(_lexer(fmt))
-        result = ['']
+        # Make the call that width will be respected always
+        result = [' ']
         self.assertEqual(result, _input(eds, rev_eds, inpt))
 
     # Test with TL
@@ -255,6 +266,13 @@ class AEditDescriptorTests(unittest.TestCase):
     def a_t_tl_test_1(self):
         inpt = '1234567890'
         fmt = '(T15, TL1, A1)'
+        eds, rev_eds = _parser(_lexer(fmt))
+        result = ['0']
+        self.assertEqual(result, _input(eds, rev_eds, inpt))
+
+    def a_t_tl_test_2(self):
+        inpt = '1234567890'
+        fmt = '(T15, TL1, A)'
         eds, rev_eds = _parser(_lexer(fmt))
         result = ['0']
         self.assertEqual(result, _input(eds, rev_eds, inpt))
