@@ -12,3 +12,4 @@ fortranformat/_lexer.py
 fortranformat/_misc.py
 fortranformat/_output.py
 fortranformat/_parser.py
+fortranformat/config.py
