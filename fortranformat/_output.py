@@ -3,14 +3,13 @@ import itertools
 from _edit_descriptors import *
 from _misc import expand_edit_descriptors, has_next_iterator
 import sys
+import fortranformat.config as config
 
-SIGN_ZERO = False # Show a sign at all for zero?
-OPTIONAL_PLUS = False # If not specified, show the plus sign?
-MIN_FIELD_WIDTH = 46
-DECIMAL_CHAR = '.'
-G0_NO_BLANKS = False
-NO_LEADING_BLANK = False
-
+PROC_SIGN_ZERO = config.PROC_SIGN_ZERO
+PROC_MIN_FIELD_WIDTH = config.PROC_MIN_FIELD_WIDTH
+PROC_DECIMAL_CHAR = config.PROC_DECIMAL_CHAR
+G0_NO_BLANKS = config.G0_NO_BLANKS
+PROC_NO_LEADING_BLANK = config.PROC_NO_LEADING_BLANK
 
 def output(eds, reversion_eds, values):
     '''
@@ -206,15 +205,15 @@ def _compose_float_string(w, e, d, state, val, ftype):
     if (ftype in ['F', 'EN', 'G']) or \
         ((ftype in ['D', 'E']) and (state['scale'] != 0)):
         # Convert with full possible precision
-        ndigits = MIN_FIELD_WIDTH - 4 - edigits
+        ndigits = PROC_MIN_FIELD_WIDTH - 4 - edigits
     else:
         # Otherwise convert knowing what the required precision is (i.e. knowing d)
         if ftype == 'ES':
             ndigits = d + 1
         else:
             ndigits = d
-        if ndigits > (MIN_FIELD_WIDTH - 4 - edigits):
-            ndigits = MIN_FIELD_WIDTH - 4 - edigits
+        if ndigits > (PROC_MIN_FIELD_WIDTH - 4 - edigits):
+            ndigits = PROC_MIN_FIELD_WIDTH - 4 - edigits
     # ==== WRITE_FLOAT ==== (macro)
     # Determine sign of value
     if val == 0.0:
@@ -237,9 +236,9 @@ def _compose_float_string(w, e, d, state, val, ftype):
     # write the tmp value to the string buffer
     # sprintf seems to allow negative number of decimal places, need to correct for this
     if ndigits <= 0:
-        fmt = '%+-#' + str(MIN_FIELD_WIDTH) + 'e'
+        fmt = '%+-#' + str(PROC_MIN_FIELD_WIDTH) + 'e'
     else:
-        fmt = '%+-#' + str(MIN_FIELD_WIDTH) + '.' + str(ndigits - 1) + 'e'
+        fmt = '%+-#' + str(PROC_MIN_FIELD_WIDTH) + '.' + str(ndigits - 1) + 'e'
     buff = fmt % tmp
     # === WRITE_FLOAT === (macro)
     if ftype != 'G':
@@ -328,7 +327,7 @@ def _output_float(w, d, e, state, ft, buff, sign_bit, zero_flag, ndigits, edigit
     # Handle zero case
     if zero_flag:
         ex = 0
-        if SIGN_ZERO:
+        if PROC_SIGN_ZERO:
             sign = _calculate_sign(state, sign_bit)
         else:
             sign = _calculate_sign(state, False)
@@ -471,7 +470,7 @@ def _output_float(w, d, e, state, ft, buff, sign_bit, zero_flag, ndigits, edigit
         i = i + 1
     if i == ndigits:
         # The output is zero so set sign accordingly
-        if SIGN_ZERO:
+        if PROC_SIGN_ZERO:
             sign = _calculate_sign(state, sign_bit)
         else:
             sign = _calculate_sign(state, False)
@@ -497,7 +496,7 @@ def _output_float(w, d, e, state, ft, buff, sign_bit, zero_flag, ndigits, edigit
         leadzero = False
     out = ''
     # Pad to full field width
-    if (nblanks > 0) and not NO_LEADING_BLANK: # dtp->u.p.no_leading_blank
+    if (nblanks > 0) and not PROC_NO_LEADING_BLANK: # dtp->u.p.no_leading_blank
         out = out + ' ' * nblanks
     # Attach the sign
     out = out + sign
@@ -516,7 +515,7 @@ def _output_float(w, d, e, state, ft, buff, sign_bit, zero_flag, ndigits, edigit
             digits = digits[i:]
             ndigits = ndigits - i
     # Output the decimal point
-    out = out + DECIMAL_CHAR
+    out = out + PROC_DECIMAL_CHAR
     # Output the leading zeros after the decimal point
     if nzero > 0:
         out = out + ('0' * nzero)
@@ -538,7 +537,7 @@ def _output_float(w, d, e, state, ft, buff, sign_bit, zero_flag, ndigits, edigit
         fmt = '%+0' + str(edigits) + 'd'
         tmp_buff = fmt % ex
         # if not state['collapse_blanks']:
-        if NO_LEADING_BLANK:
+        if PROC_NO_LEADING_BLANK:
             tmp_buf = tmp_buff + (nblanks * ' ')
         out = out + tmp_buff
     return out

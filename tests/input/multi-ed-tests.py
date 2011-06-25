@@ -55,20 +55,20 @@ class MultiEditDescriptorTests(unittest.TestCase):
 
     def multi_test_6(self):
         # More edit descriptors than the input string specifies
-        # Section 13.3 of F77 spec. details that format control
-        # terminates, does not raise an error.
+        # Should give default values for variables that aren't 'read'
+        # into
         inpt = '1'
         fmt = '(3I1)'
         eds, rev_eds = _parser(_lexer(fmt))
-        result = [1]
+        result = [1, 0, 0]
         self.assertEqual(result, _input(eds, rev_eds, inpt))
 
     def multi_test_7(self):
         # More edit descriptors than the input string specifies
-        # Section 13.3 of F77 spec. details that format control
-        # terminates, does not raise an error.
+        # Should give default values for variables that aren't 'read'
+        # into
         inpt = '1'
         fmt = '(I1, I1, I1)'
         eds, rev_eds = _parser(_lexer(fmt))
-        result = [1]
+        result = [1, 0, 0]
         self.assertEqual(result, _input(eds, rev_eds, inpt))

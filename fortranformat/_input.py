@@ -2,18 +2,19 @@ from _edit_descriptors import *
 import re
 from _misc import expand_edit_descriptors, has_next_iterator
 import pdb
+import fortranformat.config as config
 
 WIDTH_OPTIONAL_EDS = [A]
 NON_WIDTH_EDS = [BN, BZ, P, SP, SS, S, X, T, TR, TL, Colon, Slash]
 
 # Processor dependant default for including leading plus or not
-PROC_INCL_PLUS = False 
+PROC_INCL_PLUS = config.PROC_INCL_PLUS
 # Option to allow signed binary, octal and hex on input (not a FORTRAN feature)
-PROC_ALLOW_NEG_BOZ = False
+PROC_ALLOW_NEG_BOZ = config.PROC_ALLOW_NEG_BOZ
 # Prcessor dependant padding character
-PROC_PAD_CHAR = ' '
+PROC_PAD_CHAR = config.PROC_PAD_CHAR
 # Interpret blanks or jsut a negative as a zero, as in ifort behaviour
-PROC_NEG_AS_ZERO = True
+PROC_NEG_AS_ZERO = config.PROC_NEG_AS_ZERO
 
 
 # Some problems without pre written input vars:
