@@ -9,8 +9,8 @@ import re
 from gen_input_tests import write_unittest as write_input_unittest
 from gen_output_tests import write_unittest as write_output_unittest
 
-INPUT_DIR = r'input'
-OUTPUT_DIR = r'output'
+INPUT_DIR = r'../input'
+OUTPUT_DIR = r'../output'
 # Input tests are 'batched' hence the integer at the end
 INPUT_TEST_FILESTEM = r'(\w+)-ed-input-(\d+)\.test'
 # Output tests may have one or two edit descriptors hence the weird
@@ -26,6 +26,7 @@ for filepath, subdirs, dummy in os.walk(INPUT_DIR):
     if 'raw' not in subdirs:
         continue
     raw_filepath = os.path.join(filepath, 'raw')
+    platform = os.path.split(filepath)[-1]
     # Raw subdirectory contains the Fortran output
     for fn in os.listdir(raw_filepath):
         res = re.match(INPUT_TEST_FILESTEM, fn)
@@ -35,7 +36,7 @@ for filepath, subdirs, dummy in os.walk(INPUT_DIR):
         batch = int(res.group(2))
         infile = os.path.join(raw_filepath, fn)
         outfile = os.path.join(filepath, INPUT_UNITTEST_FILESTEM % (name, batch))
-        write_input_unittest(infile, outfile, batch, name)
+        write_input_unittest(infile, outfile, batch, name, platform)
         
 # Now output tests
 for filepath, subdirs, dummy in os.walk(OUTPUT_DIR):
@@ -43,6 +44,7 @@ for filepath, subdirs, dummy in os.walk(OUTPUT_DIR):
     if 'raw' not in subdirs:
         continue
     raw_filepath = os.path.join(filepath, 'raw')
+    platform = os.path.split(filepath)[-1]
     # Raw subdirectory contains the Fortran output
     for fn in os.listdir(raw_filepath):
         res = re.match(OUTPUT_TEST_FILESTEM, fn)
@@ -51,5 +53,5 @@ for filepath, subdirs, dummy in os.walk(OUTPUT_DIR):
         name = res.group(1)
         infile = os.path.join(raw_filepath, fn)
         outfile = os.path.join(filepath, OUTPUT_UNITTEST_FILESTEM % name)
-        write_output_unittest(infile, outfile, name)
+        write_output_unittest(infile, outfile, name, platform)
     

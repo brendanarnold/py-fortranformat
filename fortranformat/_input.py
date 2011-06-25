@@ -7,16 +7,6 @@ import fortranformat.config as config
 WIDTH_OPTIONAL_EDS = [A]
 NON_WIDTH_EDS = [BN, BZ, P, SP, SS, S, X, T, TR, TL, Colon, Slash]
 
-# Processor dependant default for including leading plus or not
-PROC_INCL_PLUS = config.PROC_INCL_PLUS
-# Option to allow signed binary, octal and hex on input (not a FORTRAN feature)
-PROC_ALLOW_NEG_BOZ = config.PROC_ALLOW_NEG_BOZ
-# Prcessor dependant padding character
-PROC_PAD_CHAR = config.PROC_PAD_CHAR
-# Interpret blanks or jsut a negative as a zero, as in ifort behaviour
-PROC_NEG_AS_ZERO = config.PROC_NEG_AS_ZERO
-
-
 # Some problems without pre written input vars:
 #   Cannot say when reversion conditions are met
 #   Cannot determine width of A edit descriptor
@@ -30,7 +20,8 @@ def input(eds, reversion_eds, records, num_vals=None):
         'position' : 0,
         'scale' : 0,
         'incl_plus' : False,
-        'collapse_blanks' : True,
+        'collapse_blanks' : config.PROC_COLLAPSE_BLANKS,
+        # TODO: Implement halt if no more record input
         'halt_if_no_vals' : False,
         'exception_on_fail' : True,
     }
@@ -97,7 +88,7 @@ def input(eds, reversion_eds, records, num_vals=None):
         elif isinstance(ed, BN):
             state['collapse_blanks'] = True
         elif isinstance(ed, BZ):
-            state['collapse_blanks'] = True
+            state['collapse_blanks'] = False
         elif isinstance(ed, P):
             state['scale'] = ed.scale
         elif isinstance(ed, SP):
@@ -105,7 +96,7 @@ def input(eds, reversion_eds, records, num_vals=None):
         elif isinstance(ed, SS):
             state['incl_plus'] = False
         elif isinstance(ed, S):
-            state['incl_plus'] = PROC_INCL_PLUS
+            state['incl_plus'] = config.PROC_INCL_PLUS
         elif isinstance(ed, (X, TR)):
             state['position'] = min(state['position'] + ed.num_chars, len(record))
         elif isinstance(ed, TL):
@@ -128,7 +119,7 @@ def input(eds, reversion_eds, records, num_vals=None):
                 break
         elif isinstance(ed, (Z, O, B, I)):
             substr, state = _get_substr(ed.width, record, state)
-            if ('-' in substr) and (not PROC_ALLOW_NEG_BOZ) and isinstance(ed, (Z, O, B)):
+            if ('-' in substr) and (not config.PROC_ALLOW_NEG_BOZ) and isinstance(ed, (Z, O, B)):
                 if state['exception_on_fail']:
                     raise ValueError('Negative numbers not permitted for binary, octal or hex')
                 else:
@@ -148,11 +139,17 @@ def input(eds, reversion_eds, records, num_vals=None):
                 substr = '0'
             # If a negative or negative and blanks, ifort interprets as
             # zero for an I edit descriptor
-            if PROC_NEG_AS_ZERO and isinstance(ed, I) and re.match(r'^( *- *| +)$', substr):
+            if config.PROC_NEG_AS_ZERO and isinstance(ed, I) and re.match(r'^( *- *| +)$', substr):
                 substr = '0'
-            # If string is zero length (reading off end of record?), interpret as zero
+            # If string is zero length (reading off end of record?),
+            # interpret as zero so as to match what would be found in an
+            # unwritten FORTRAN variable
             if substr == '':
-                substr = '0'
+                if config.RET_UNWRITTEN_VARS_NONE or config.RET_WRITTEN_VARS_ONLY:
+                    vals.append(None)
+                    continue
+                else:
+                    substr = '0'
             teststr = _interpret_blanks(substr, state)
             try:
                 val = int(teststr, base)
@@ -169,7 +166,7 @@ def input(eds, reversion_eds, records, num_vals=None):
                 # unsized A edit descriptor
                 ed.width = len(record) - state['position']
             substr, state = _get_substr(ed.width, record, state)
-            vals.append(substr.ljust(ed.width, PROC_PAD_CHAR))
+            vals.append(substr.ljust(ed.width, config.PROC_PAD_CHAR))
         elif isinstance(ed, L):
             substr, state = _get_substr(ed.width, record, state)
             # Remove preceding whitespace and take the first two letters as
@@ -182,17 +179,21 @@ def input(eds, reversion_eds, records, num_vals=None):
             elif teststr == 'F':
                 vals.append(False)
             else:
-                if state['exception_on_fail']:
-                    raise ValueError('%s is not a valid boolean input' % substr)
-                else:
+                if config.RET_UNWRITTEN_VARS_NONE or config.RET_WRITTEN_VARS_ONLY or not state['exception_on_fail']:
                     vals.append(None)
+                else:
+                    raise ValueError('%s is not a valid boolean input' % substr)
         elif isinstance(ed, (F, E, D, EN, ES)):
             substr, state = _get_substr(ed.width, record, state)
             teststr = _interpret_blanks(substr, state)
             # When reading off end of record, get empty string,
             # interpret as 0
             if teststr == '':
-                teststr = '0'
+                if config.RET_UNWRITTEN_VARS_NONE or config.RET_WRITTEN_VARS_ONLY:
+                    vals.append(None)
+                    continue
+                else:
+                    teststr = '0'
             # Python only understands 'E' as an exponential letter
             teststr = teststr.upper().replace('D', 'E')
             # Prepend an exponential letter if only a '-' or '+' denotes an exponent
@@ -204,6 +205,11 @@ def input(eds, reversion_eds, records, num_vals=None):
             # ifort allows '-' to be interpreted as 0
             if re.match(r'^ *- *$', teststr):
                 teststr = '0'
+            # ifort allows numbers to end with 'E', 'E+', 'E-' and 'D'
+            # equivalents
+            res = re.match(r'(.*)(E|E\+|E\-)$', teststr)
+            if res:
+                teststr = res.group(1)
             try:
                 val = float(teststr)
             except ValueError:
@@ -222,16 +228,22 @@ def input(eds, reversion_eds, records, num_vals=None):
         elif isinstance(ed, G):
             # Difficult to know what wanted since do not know type of input variable
             raise NotImplemented('G edit descriptor not implemented for input as cannot guess input type from predifined variable: Use Aw edit descriptor instead and process the string manually')
+    if config.RET_WRITTEN_VARS_ONLY:
+        vals = [val for val in vals if val is not None]
     return vals[:num_vals]
 
 def _interpret_blanks(substr, state):
     # Save leading blanks
+    len_str = len(substr)
     if state['collapse_blanks']:
         # TODO: Are tabs blank characters?
         substr = substr.replace(' ', '')
     else:
         substr = substr.lstrip(' ')
-        substr = substr.replace(' ', '0')
+        substr = substr.rjust(len_str, '0')
+    # If were blanks but have been stripped away, replace with a zero
+    if len(substr) == 0 and (len_str > 0):
+        substr = '0'
     return substr
 
 def _get_substr(w, record, state):

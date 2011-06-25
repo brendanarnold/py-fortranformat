@@ -408,37 +408,38 @@ SPECIAL['formats'] = []
 SPECIAL['name'] = 'special'
 SPECIAL['inputs'] = []
 
-def write_py_source():
+def write_py_source(platform):
     '''Wrapper to convert Fortran output in build directory to unittest files'''
     for name in names():
         outfile = os.path.join(BUILD_DIR, UNITTEST_FILENAME % name)
         infile = os.path.join(BUILD_DIR, RESULT_FILESTEM % name)
-        write_unittest(infile, outfile, name)
+        write_unittest(infile, outfile, name, platform)
 
-def write_unittest(infile, outfile, name):
+def write_unittest(infile, outfile, name, platform):
     '''Convert a Fortran output file to a unittest file'''
     out_fh = open(outfile, 'w')
     print 'Pythonising %s into %s ...' % (infile, outfile)
     in_fh = open(infile, 'r')
     # Get the directory of the fortranformat for importing
-    fortranformat_dir = os.path.realpath(os.path.join(os.path.dirname(__file__), '..', '..')) 
+    # fortranformat_dir = os.path.realpath(os.path.join(os.path.dirname(__file__), '..', '..')) 
     out_fh.write('''
 import sys
 import os
 import unittest
+from nose.plugins.attrib import attr
 
 # To change this, re-run 'build-unittests.py'
-sys.path.append(r'%s')
 
-from _output import output as _output
-from _lexer import lexer as _lexer
-from _parser import parser as _parser
+from fortranformat._output import output as _output
+from fortranformat._lexer import lexer as _lexer
+from fortranformat._parser import parser as _parser
 import unittest
 
 class %sEditDescriptorBatchTestCase(unittest.TestCase):
-''' % (fortranformat_dir, name.upper().replace('-', '_')))
+''' % (name.upper().replace('-', '_')))
     test_num = 0
     fmt = inpt = result = None
+    test_count = 0
     for line in in_fh:
         if line.startswith('FORMAT:'):
             if (fmt is not None) and (inpt is not None) and (result is not None):
@@ -459,15 +460,19 @@ class %sEditDescriptorBatchTestCase(unittest.TestCase):
                 inpt = inpt.replace(".FALSE.", 'False')
 
                 out = '''
+    @attr(platform='%s')
+    @attr('output')
+    @attr(ed='%s')
     def test_%s_ed_input_%d(self):
         vals = [%s]
         fmt = \'\'\'%s\'\'\'
         result = \'\'\'%s\'\'\'
         eds, rev_eds = _parser(_lexer(fmt))
         self.assertEqual(result, _output(eds, rev_eds, vals))
-''' % (name.replace('-', '_'), test_num, inpt, fmt, result)
+''' % (platform, name.upper(), name.replace('-', '_'), test_num, inpt, fmt, result)
                 out_fh.write(out)
                 fmt = inpt = result = None
+                test_count += 1
             # Now read in new format
             fmt = line[7:-1]
         elif line.startswith('INPUT:'):
@@ -478,6 +483,8 @@ class %sEditDescriptorBatchTestCase(unittest.TestCase):
             else:
                 result = result + line
     in_fh.close()
+    if test_count == 0:
+        out_fh.write('''    pass\n\n''')
     # Write calling code
     out_fh.write('''\n\nif __name__ == '__main__':\n    unittest.main()''')
     out_fh.close()

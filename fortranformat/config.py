@@ -1,6 +1,6 @@
 # Should all edit descriptor values be returned even if they were not
 # written to?
-RET_UNWRITTEN_VARS = True
+RET_WRITTEN_VARS_ONLY = False
 # Should 'None' values be returned when no record is available to read
 # from or the FORTRAN 'default'?
 RET_UNWRITTEN_VARS_NONE = True
@@ -20,4 +20,24 @@ PROC_MIN_FIELD_WIDTH = 46
 PROC_DECIMAL_CHAR = '.'
 G0_NO_BLANKS = False
 PROC_NO_LEADING_BLANK = False
+# The default value if BN, BZ edit descriptors are not specified
+PROC_COLLAPSE_BLANKS = True
 
+def reset():
+    global RET_WRITTEN_VARS_ONLY, RET_UNWRITTEN_VARS_NONE, PROC_INCL_PLUS, \
+        PROC_ALLOW_NEG_BOZ, PROC_PAD_CHAR, PROC_NEG_AS_ZERO, PROC_SIGN_ZERO, \
+        PROC_MIN_FIELD_WIDTH, PROC_DECIMAL_CHAR, G0_NO_BLANKS, \
+        PROC_NO_LEADING_BLANK, PROC_COLLAPSE_BLANKS
+
+    RET_WRITTEN_VARS_ONLY = False
+    RET_UNWRITTEN_VARS_NONE = True
+    PROC_INCL_PLUS = False
+    PROC_ALLOW_NEG_BOZ = False
+    PROC_PAD_CHAR = ' '
+    PROC_NEG_AS_ZERO = True
+    PROC_SIGN_ZERO = False
+    PROC_MIN_FIELD_WIDTH = 46
+    PROC_DECIMAL_CHAR = '.'
+    G0_NO_BLANKS = False
+    PROC_NO_LEADING_BLANK = False
+    PROC_COLLAPSE_BLANKS = True

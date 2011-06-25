@@ -1,5 +1,5 @@
 # call with
-# python gen_tests.py 'COMPILER %s -o %s'
+# python gen_tests.py 'COMPILER %s -o %s' 'PLATFORM'
 # where first %s is the input file and the second is the output 
 
 import itertools
@@ -379,37 +379,38 @@ X['name'] = 'x'
 X['inputs'] = []
 
 
-def write_py_source():
+def write_py_source(platform):
     '''Wrapper to convert Fortran output in build directory to unittest files'''
     for batch, name in filenames():
         outfile = os.path.join(BUILD_DIR, DOCTEST_FILESTEM % (name, batch))
         infile = os.path.join(BUILD_DIR, RESULT_FILESTEM % (name, batch))
-        write_unittest(infile, outfile, batch, name)
+        write_unittest(infile, outfile, batch, name, platform)
 
-def write_unittest(infile, outfile, batch, name):
+def write_unittest(infile, outfile, batch, name, platform):
     '''Convert a Fortran output file to a unittest file'''
     out_fh = open(outfile, 'w')
     print 'Pythonising %s into %s ...' % (infile, outfile)
     in_fh = open(infile, 'r')
     # Get the directory of the fortranformat for importing
-    fortranformat_dir = os.path.realpath(os.path.join(os.path.dirname(__file__), '..', '..')) 
+    # fortranformat_dir = os.path.realpath(os.path.join(os.path.dirname(__file__), '..', '..')) 
     out_fh.write('''
 import sys
 import os
 import unittest
+from nose.plugins.attrib import attr
 
 # To change this, re-run 'build-unittests.py'
-sys.path.append(r'%s')
 
-from _input import input as _input
-from _lexer import lexer as _lexer
-from _parser import parser as _parser
+from fortranformat._input import input as _input
+from fortranformat._lexer import lexer as _lexer
+from fortranformat._parser import parser as _parser
 import unittest
 
 class %sEditDescriptorBatch%dTestCase(unittest.TestCase):
-''' % (fortranformat_dir, name.upper(), batch))
+''' % (name.upper(), batch))
     test_num = 0
     fmt = inpt = result = None
+    test_count = 0
     for line in in_fh:
         if line.startswith('FORMAT:'):
             if (fmt is not None) and (inpt is not None) and (result is not None):
@@ -438,12 +439,15 @@ class %sEditDescriptorBatch%dTestCase(unittest.TestCase):
                     else:
                         result = "\'\'\'" + result.ljust(1000) + "\'\'\'"
                 out = '''
+    @attr(platform='%s')
+    @attr('input')
+    @attr(ed='%s')
     def test_%s_ed_input_%d(self):
         inp = \'\'\'%s\'\'\'
         fmt = \'\'\'%s\'\'\'
         result = [%s]
         eds, rev_eds = _parser(_lexer(fmt))
-''' % (name, test_num, inpt, fmt, result)
+''' % (platform, name.upper(), name, test_num, inpt, fmt, result)
                 # May result in error in Fortran code
                 if result == '\'\'\'ERR\'\'\'':
                     out += '        self.assertRaises(ValueError, _input, eds, rev_eds, inp)\n'
@@ -452,6 +456,7 @@ class %sEditDescriptorBatch%dTestCase(unittest.TestCase):
                 out_fh.write(out)
                 # Reset the values for next test
                 fmt = inpt = result = None
+                test_count += 1
             # Now read in new format
             fmt = line[7:-1]
         elif line.startswith('INPUT:'):
@@ -463,6 +468,8 @@ class %sEditDescriptorBatch%dTestCase(unittest.TestCase):
             else:
                 result = result + line
     in_fh.close()
+    if test_count == 0:
+        out_fh.write('''    pass\n\n''')
     # Write the calling code
     out_fh.write('''\n\nif __name__ == '__main__':\n    unittest.main()''')
     out_fh.close()
@@ -630,6 +637,7 @@ def product(*args, **kwds):
 if __name__ == '__main__':
     import sys
     compile_str = sys.argv[1]
+    platform = sys.argv[2]
     # gen_tests()
     # compile_tests(compile_str)
     # execute_tests()

@@ -2,11 +2,9 @@ import unittest
 import os
 import sys
 
-sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
-
-from _input import input as _input
-from _lexer import lexer as _lexer
-from _parser import parser as _parser
+from fortranformat._input import input as _input
+from fortranformat._lexer import lexer as _lexer
+from fortranformat._parser import parser as _parser
 
 class AEditDescriptorTests(unittest.TestCase):
 
