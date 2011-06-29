@@ -1,8 +1,16 @@
-from _edit_descriptors import *
 import re
-from _misc import expand_edit_descriptors, has_next_iterator
 import pdb
-import fortranformat.config as config
+import sys
+IS_PYTHON3 = sys.version_info[0] >= 3
+
+if IS_PYTHON3:
+    exec('from ._edit_descriptors import *')
+    exec('from ._misc import expand_edit_descriptors, has_next_iterator')
+    exec('from . import config')
+else:
+    exec('from _edit_descriptors import *')
+    exec('from _misc import expand_edit_descriptors, has_next_iterator')
+    exec('import config')
 
 WIDTH_OPTIONAL_EDS = [A]
 NON_WIDTH_EDS = [BN, BZ, P, SP, SS, S, X, T, TR, TL, Colon, Slash]
@@ -261,16 +269,11 @@ def _get_substr(w, record, state):
 
 def _next(it, default=None):
     try:
-        val = it.next()
+        if IS_PYTHON3:
+            val = next(it)
+        else:
+            val = it.next()
     except StopIteration:
         val = default
     return val
 
-
-if __name__ == '__main__':
-    from _lexer import lexer
-    from _parser import parser
-    inpt = '123456789123456789'
-    fmt = '(TR14, A15)'
-    eds, rev_eds = parser(lexer(fmt))
-    print input(eds, rev_eds, inpt)

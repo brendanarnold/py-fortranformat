@@ -1,6 +1,8 @@
 '''
 Miscellaneous functions, classes etc
 '''
+import sys
+IS_PYTHON3 = sys.version_info[0] >= 3
 
 class has_next_iterator(object):
   '''
@@ -12,16 +14,23 @@ class has_next_iterator(object):
     self.it = iter(it)
     self._has_next = None
   def __iter__(self): return self
-  def next(self):
+  def __next__(self):
     if self._has_next:
       result = self._the_next
     else:
-      result = self.it.next()
+      if IS_PYTHON3:
+        result = next(self.it)
+      else:
+        result = self.it.next()
     self._has_next = None
     return result
   def has_next(self):
     if self._has_next is None:
-      try: self._the_next = self.it.next()
+      try: 
+        if IS_PYTHON3:
+          self._the_next = next(self.it)
+        else:
+          self._the_next = self.it.next()
       except StopIteration: self._has_next = False
       else: self._has_next = True
     return self._has_next

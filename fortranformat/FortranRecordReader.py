@@ -1,6 +1,14 @@
-from _input import input as _input
-from _parser import parser as _parser
-from _lexer import lexer as _lexer
+import sys
+IS_PYTHON3 = sys.version_info[0] >= 3
+
+if IS_PYTHON3:
+    exec('from ._input import input as _input')
+    exec('from ._parser import parser as _parser')
+    exec('from ._lexer import lexer as _lexer')
+else:
+    exec('from _input import input as _input')
+    exec('from _parser import parser as _parser')
+    exec('from _lexer import lexer as _lexer')
 
 class FortranRecordReader(object):
     '''
@@ -62,6 +70,4 @@ class FortranRecordReader(object):
 
 if __name__ == '__main__':
     import doctest
-    import os
     doctest.testmod()
-    doctest.testfile(os.path.join('tests', 'FortranRecordReader_test.txt'))

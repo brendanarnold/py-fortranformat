@@ -1,9 +1,17 @@
 import math
 import itertools
-from _edit_descriptors import *
-from _misc import expand_edit_descriptors, has_next_iterator
 import sys
-import fortranformat.config as config
+IS_PYTHON3 = sys.version_info[0] >= 3
+
+if IS_PYTHON3:
+    exec('from ._edit_descriptors import *')
+    exec('from ._misc import expand_edit_descriptors, has_next_iterator')
+    exec('from . import config')
+else:
+    exec('from _edit_descriptors import *')
+    exec('from _misc import expand_edit_descriptors, has_next_iterator')
+    exec('import fortranformat.config as config')
+
 
 PROC_SIGN_ZERO = config.PROC_SIGN_ZERO
 PROC_MIN_FIELD_WIDTH = config.PROC_MIN_FIELD_WIDTH
@@ -49,15 +57,24 @@ def output(eds, reversion_eds, values):
             break
         # take a edit descriptor off the queue if there is any
         if get_ed.has_next():
-            ed = get_ed.next()
+            if IS_PYTHON3:
+                ed = next(get_ed)
+            else:
+                ed = get_ed.next()
         else:
             if reversion_contains_output_ed == True:
                 # take from reversion edit descriptors if there is a value
                 # requiring output still
-                ed = get_reversion_ed.next()
+                if IS_PYTHON3:
+                    ed = next(get_reversion_ed)
+                else:
+                    ed = get_reversion_ed.next()
                 # these edit descriptors are ignored in reversion state
                 while isinstance(ed, NON_REVERSION_EDS):
-                    ed = get_reversion_ed.next()
+                    if IS_PYTHON3:
+                        ed = next(get_reversion_ed)
+                    else:
+                        ed = get_reversion_ed.next()
             else:
                 # ignore the revsion edit descriptors as cannot output the
                 # final value
@@ -65,7 +82,10 @@ def output(eds, reversion_eds, values):
         # check if edit descriptor requires a value
         if isinstance(ed, OUTPUT_EDS):
             if get_value.has_next():
-                val = get_value.next()
+                if IS_PYTHON3:
+                    val = next(get_value)
+                else:
+                    val = get_value.next()
             else:
                 # is a edit descriptor that requires a value but no value
                 # todo: does it stop gracefully or raise error?
@@ -665,10 +685,10 @@ def _compose_boz_string(w, m, state, val, ftype):
         # however this is not perfoect as sys.maxint is Pythons build maximum
         # rather than the systems bit size which is difficult to find reliably
         # across platforms
-        if abs(val) > sys.maxint:
+        if abs(val) > config.PROC_MAXINT:
             return '*' * w
         if val < 0:
-            s = '%X' % ((sys.maxint * 2) + 2 + val)
+            s = '%X' % ((config.PROC_MAXINT * 2) + 2 + val)
         else:
             s = '%X' % val
     if m is None:
@@ -695,9 +715,3 @@ def _write_string(record, sub_string, pos):
     return (new_pos, out)
 
 
-# allow for self testing
-if __name__ == '__main__':
-    # from IPython.Debugger import Tracer; here = Tracer()
-    import os
-    TEST_PATH = os.path.join('tests', 'autogen', 'output', 'ifort', '9-1_linux_intel')
-    # TODO, call the test path code
