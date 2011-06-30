@@ -1,4 +1,4 @@
-__version__ = '0.1.5'
+__version__ = '0.1.6'
 
 import sys
 IS_PYTHON3 = sys.version_info[0] >= 3
