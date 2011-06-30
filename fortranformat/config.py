@@ -8,7 +8,7 @@ RET_WRITTEN_VARS_ONLY = False
 RET_UNWRITTEN_VARS_NONE = True
 # The order in which edit desciptors are tried by default when G edit
 # descriptor encountered on input
-G_INPUT_TRIAL_EDS = ['F', 'I', 'L', 'A']
+G_INPUT_TRIAL_EDS = ['F', 'L', 'A']
 
 # The maximum size for an integer
 if sys.version_info[0] >= 3:
@@ -37,7 +37,7 @@ def reset():
         PROC_ALLOW_NEG_BOZ, PROC_PAD_CHAR, PROC_NEG_AS_ZERO, PROC_SIGN_ZERO, \
         PROC_MIN_FIELD_WIDTH, PROC_DECIMAL_CHAR, G0_NO_BLANKS, \
         PROC_NO_LEADING_BLANK, PROC_COLLAPSE_BLANKS, PROC_MAXINT, G_INPUT_TRIAL_EDS
-    G_INPUT_TRIAL_EDS = ['F', 'I', 'L', 'A']
+    G_INPUT_TRIAL_EDS = ['F', 'L', 'A']
     if sys.version_info[0] >= 3:
         PROC_MAXINT = sys.maxsize
     else:
