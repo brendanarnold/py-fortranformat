@@ -126,116 +126,57 @@ def input(eds, reversion_eds, records, num_vals=None):
             if finish_up:
                 break
         elif isinstance(ed, (Z, O, B, I)):
-            substr, state = _get_substr(ed.width, record, state)
-            if ('-' in substr) and (not config.PROC_ALLOW_NEG_BOZ) and isinstance(ed, (Z, O, B)):
-                if state['exception_on_fail']:
-                    raise ValueError('Negative numbers not permitted for binary, octal or hex')
-                else:
-                    vals.append(None)
-                    continue
-            if isinstance(ed, Z):
-                base = 16
-            elif isinstance(ed, I):
-                base = 10
-            elif isinstance(ed, O):
-                base = 8
-            elif isinstance(ed, B):
-                base = 2
-            # If a negative is followed by blanks, Gfortran and ifort
-            # interpret as a zero
-            if re.match(r'^ *- +$', substr):
-                substr = '0'
-            # If a negative or negative and blanks, ifort interprets as
-            # zero for an I edit descriptor
-            if config.PROC_NEG_AS_ZERO and isinstance(ed, I) and re.match(r'^( *- *| +)$', substr):
-                substr = '0'
-            # If string is zero length (reading off end of record?),
-            # interpret as zero so as to match what would be found in an
-            # unwritten FORTRAN variable
-            if substr == '':
-                if config.RET_UNWRITTEN_VARS_NONE or config.RET_WRITTEN_VARS_ONLY:
-                    vals.append(None)
-                    continue
-                else:
-                    substr = '0'
-            teststr = _interpret_blanks(substr, state)
-            try:
-                val = int(teststr, base)
-            except ValueError:
-                if state['exception_on_fail']:
-                    raise ValueError('%s is not a valid input for one of integer, octal, hex or binary' % substr)
-                else:
-                    vals.append(None)
-                    continue
-            vals.append(val)
+            vals = read_integer(ed, state, record, vals)
         elif isinstance(ed, A):
-            if ed.width is None:
-                # Will assume rest of record is fair game for the
-                # unsized A edit descriptor
-                ed.width = len(record) - state['position']
-            substr, state = _get_substr(ed.width, record, state)
-            vals.append(substr.ljust(ed.width, config.PROC_PAD_CHAR))
+            vals = read_string(ed, state, record, vals)
         elif isinstance(ed, L):
-            substr, state = _get_substr(ed.width, record, state)
-            # Remove preceding whitespace and take the first two letters as
-            # uppercase for testing
-            teststr = substr.upper().lstrip().lstrip('.')
-            if len(teststr):
-                teststr = teststr[0]
-            if teststr == 'T':
-                vals.append(True)
-            elif teststr == 'F':
-                vals.append(False)
-            else:
-                if config.RET_UNWRITTEN_VARS_NONE or config.RET_WRITTEN_VARS_ONLY or not state['exception_on_fail']:
-                    vals.append(None)
-                else:
-                    raise ValueError('%s is not a valid boolean input' % substr)
+            vals = read_logical(ed, state, record, vals)
         elif isinstance(ed, (F, E, D, EN, ES)):
-            substr, state = _get_substr(ed.width, record, state)
-            teststr = _interpret_blanks(substr, state)
-            # When reading off end of record, get empty string,
-            # interpret as 0
-            if teststr == '':
-                if config.RET_UNWRITTEN_VARS_NONE or config.RET_WRITTEN_VARS_ONLY:
-                    vals.append(None)
-                    continue
-                else:
-                    teststr = '0'
-            # Python only understands 'E' as an exponential letter
-            teststr = teststr.upper().replace('D', 'E')
-            # Prepend an exponential letter if only a '-' or '+' denotes an exponent
-            if 'E' not in teststr:
-                teststr = teststr[0] + teststr[1:].replace('+', 'E+').replace('-', 'E-')
-            # ifort allows '.' to be interpreted as 0
-            if re.match(r'^ *\. *$', teststr):
-                teststr = '0'
-            # ifort allows '-' to be interpreted as 0
-            if re.match(r'^ *- *$', teststr):
-                teststr = '0'
-            # ifort allows numbers to end with 'E', 'E+', 'E-' and 'D'
-            # equivalents
-            res = re.match(r'(.*)(E|E\+|E\-)$', teststr)
-            if res:
-                teststr = res.group(1)
-            try:
-                val = float(teststr)
-            except ValueError:
-                if state['exception_on_fail']:
-                    raise ValueError('%s is not a valid input as for an E, ES, EN or D edit descriptor' % substr)
-                else:
-                    vals.append(None)
-                    continue
-            # Special cases: insert a decimal if none specified
-            if ('.' not in teststr) and (ed.decimal_places is not None):
-                val = val / 10 ** ed.decimal_places
-            # Apply scale factor if exponent not supplied
-            if 'E' not in teststr:
-                val = val / 10 ** state['scale'] 
-            vals.append(val) 
+            vals = read_float(ed, state, record, vals)
         elif isinstance(ed, G):
             # Difficult to know what wanted since do not know type of input variable
-            raise NotImplemented('G edit descriptor not implemented for input as cannot guess input type from predifined variable: Use Aw edit descriptor instead and process the string manually')
+            # Use the G_INPUT_TRIAL_EDS variable to try the variables
+            # until one sticks
+            for ed_name in config.G_INPUT_TRIAL_EDS:
+                if ed_name.upper() in ('F', 'E', 'D', 'EN', 'ES'):
+                    trial_ed = F()
+                    trial_ed.width = ed.width
+                    trial_ed.decimal_places = ed.decimal_places
+                    try:
+                        trial_vals = read_float(trial_ed, state, record, vals)
+                        vals = trial_vals
+                    except ValueError:
+                        continue
+                elif ed_name.upper() in ('Z', 'O', 'B', 'I'):
+                    trial_ed = globals()[ed_name]()
+                    trial_ed.width = ed.width
+                    trial_ed.min_digits = ed.decimal_places
+                    try:
+                        trial_vals = read_integer(trial_ed, state, record, vals)
+                        vals = trial_vals
+                    except ValueError:
+                        continue
+                elif ed_name.upper() in ('L'):
+                    trial_ed = L()
+                    trial_ed.width = ed.width
+                    try:
+                        trial_vals = read_logical(trial_ed, state, record, vals)
+                        vals = trial_vals
+                    except ValueError:
+                        continue
+                elif ed_name.upper() in ('A'):
+                    trial_ed = A()
+                    trial_ed.width = ed.width
+                    try:
+                        trial_vals = read_string(trial_ed, state, record, vals)
+                        vals = trial_vals
+                    except ValueError:
+                        continue
+                elif ed_name in ('G'):
+                    raise ValueError('G edit descriptor not permitted in config.G_INPUT_TRIAL_EDS')
+                else:
+                    raise ValueError('Unrecognised trial edit descriptor string in config.G_INPUT_TRIAL_EDS')
+                    
     if config.RET_WRITTEN_VARS_ONLY:
         vals = [val for val in vals if val is not None]
     return vals[:num_vals]
@@ -277,3 +218,129 @@ def _next(it, default=None):
         val = default
     return val
 
+
+def read_string(ed, state, record, vals):
+    if ed.width is None:
+        # Will assume rest of record is fair game for the
+        # unsized A edit descriptor
+        ed.width = len(record) - state['position']
+    substr, state = _get_substr(ed.width, record, state)
+    vals.append(substr.ljust(ed.width, config.PROC_PAD_CHAR))
+    return vals
+
+
+def read_integer(ed, state, record, vals):
+    substr, state = _get_substr(ed.width, record, state)
+    if ('-' in substr) and (not config.PROC_ALLOW_NEG_BOZ) and isinstance(ed, (Z, O, B)):
+        if state['exception_on_fail']:
+            raise ValueError('Negative numbers not permitted for binary, octal or hex')
+        else:
+            vals.append(None)
+            return vals
+    if isinstance(ed, Z):
+        base = 16
+    elif isinstance(ed, I):
+        base = 10
+    elif isinstance(ed, O):
+        base = 8
+    elif isinstance(ed, B):
+        base = 2
+    # If a negative is followed by blanks, Gfortran and ifort
+    # interpret as a zero
+    if re.match(r'^ *- +$', substr):
+        substr = '0'
+    # If a negative or negative and blanks, ifort interprets as
+    # zero for an I edit descriptor
+    if config.PROC_NEG_AS_ZERO and isinstance(ed, I) and re.match(r'^( *- *| +)$', substr):
+        substr = '0'
+    # If string is zero length (reading off end of record?),
+    # interpret as zero so as to match what would be found in an
+    # unwritten FORTRAN variable
+    if substr == '':
+        if config.RET_UNWRITTEN_VARS_NONE or config.RET_WRITTEN_VARS_ONLY:
+            vals.append(None)
+            return vals
+        else:
+            substr = '0'
+    teststr = _interpret_blanks(substr, state)
+    try:
+        val = int(teststr, base)
+    except ValueError:
+        if state['exception_on_fail']:
+            raise ValueError('%s is not a valid input for one of integer, octal, hex or binary' % substr)
+        else:
+            vals.append(None)
+            return vals
+    vals.append(val)
+    return vals
+
+
+def read_logical(ed, state, record, vals):
+    substr, state = _get_substr(ed.width, record, state)
+    # Deal with case where there is no more input to read from
+    if (substr == '') and (config.RET_UNWRITTEN_VARS_NONE or config.RET_WRITTEN_VARS_ONLY):
+        vals.append(None)
+        return vals
+    # Remove preceding whitespace and take the first two letters as
+    # uppercase for testing
+    teststr = substr.upper().lstrip().lstrip('.')
+    if len(teststr):
+        teststr = teststr[0]
+    else:
+        # This is case where just a preceding period is read in
+        raise ValueError('%s is not a valid boolean input' % substr)
+    if teststr == 'T':
+        vals.append(True)
+    elif teststr == 'F':
+        vals.append(False)
+    else:
+        if state['exception_on_fail']:
+            raise ValueError('%s is not a valid boolean input' % substr)
+        else:
+            vals.append(None)
+    return vals
+
+
+def read_float(ed, state, record, vals):
+    substr, state = _get_substr(ed.width, record, state)
+    teststr = _interpret_blanks(substr, state)
+    # When reading off end of record, get empty string,
+    # interpret as 0
+    if teststr == '':
+        if config.RET_UNWRITTEN_VARS_NONE or config.RET_WRITTEN_VARS_ONLY:
+            vals.append(None)
+            return vals
+        else:
+            teststr = '0'
+    # Python only understands 'E' as an exponential letter
+    teststr = teststr.upper().replace('D', 'E')
+    # Prepend an exponential letter if only a '-' or '+' denotes an exponent
+    if 'E' not in teststr:
+        teststr = teststr[0] + teststr[1:].replace('+', 'E+').replace('-', 'E-')
+    # ifort allows '.' to be interpreted as 0
+    if re.match(r'^ *\. *$', teststr):
+        teststr = '0'
+    # ifort allows '-' to be interpreted as 0
+    if re.match(r'^ *- *$', teststr):
+        teststr = '0'
+    # ifort allows numbers to end with 'E', 'E+', 'E-' and 'D'
+    # equivalents
+    res = re.match(r'(.*)(E|E\+|E\-)$', teststr)
+    if res:
+        teststr = res.group(1)
+    try:
+        val = float(teststr)
+    except ValueError:
+        if state['exception_on_fail']:
+            raise ValueError('%s is not a valid input as for an E, ES, EN or D edit descriptor' % substr)
+        else:
+            vals.append(None)
+            return vals
+    # Special cases: insert a decimal if none specified
+    if ('.' not in teststr) and (ed.decimal_places is not None):
+        val = val / 10 ** ed.decimal_places
+    # Apply scale factor if exponent not supplied
+    if 'E' not in teststr:
+        val = val / 10 ** state['scale'] 
+    vals.append(val) 
+    return vals
