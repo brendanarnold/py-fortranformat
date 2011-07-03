@@ -28,7 +28,7 @@ def input(eds, reversion_eds, records, num_vals=None):
         'position' : 0,
         'scale' : 0,
         'incl_plus' : False,
-        'collapse_blanks' : config.PROC_COLLAPSE_BLANKS,
+        'blanks_as_zeros' : config.PROC_BLANKS_AS_ZEROS,
         # TODO: Implement halt if no more record input
         'halt_if_no_vals' : False,
         'exception_on_fail' : True,
@@ -94,9 +94,9 @@ def input(eds, reversion_eds, records, num_vals=None):
         if isinstance(ed, QuotedString):
             raise InvalidFormat('Cannot have string literal in an input format')
         elif isinstance(ed, BN):
-            state['collapse_blanks'] = True
+            state['blanks_as_zeros'] = False
         elif isinstance(ed, BZ):
-            state['collapse_blanks'] = False
+            state['blanks_as_zeros'] = True
         elif isinstance(ed, P):
             state['scale'] = ed.scale
         elif isinstance(ed, SP):
@@ -184,12 +184,11 @@ def input(eds, reversion_eds, records, num_vals=None):
 def _interpret_blanks(substr, state):
     # Save leading blanks
     len_str = len(substr)
-    if state['collapse_blanks']:
+    if state['blanks_as_zeros']:
         # TODO: Are tabs blank characters?
-        substr = substr.replace(' ', '')
+        substr = substr.replace(' ', '0')
     else:
-        substr = substr.lstrip(' ')
-        substr = substr.rjust(len_str, '0')
+        substr = substr.replace(' ', '')
     # If were blanks but have been stripped away, replace with a zero
     if len(substr) == 0 and (len_str > 0):
         substr = '0'

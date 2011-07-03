@@ -29,7 +29,7 @@ def output(eds, reversion_eds, values):
         'position' : 0,
         'scale' : 0,
         'incl_plus' : False,
-        'collapse_blanks' : False,
+        'blanks_as_zeros' : False,
         'halt_if_no_vals' : False,
     }
 
@@ -149,9 +149,9 @@ def output(eds, reversion_eds, values):
                 state['scale'] = ed.scale
             elif isinstance(ed, BN):
                 # This is moot since for output, this does not do anything
-                state['collapse_blanks'] = True
+                state['blanks_as_zeros'] = False
             elif isinstance(ed, BZ):
-                state['collapse_blanks'] = False
+                state['blanks_as_zeros'] = True
             elif isinstance(ed, Colon):
                 state['halt_if_no_vals'] = True
             elif isinstance(ed, Slash):
@@ -556,7 +556,7 @@ def _output_float(w, d, e, state, ft, buff, sign_bit, zero_flag, ndigits, edigit
             edigits = edigits - 1
         fmt = '%+0' + str(edigits) + 'd'
         tmp_buff = fmt % ex
-        # if not state['collapse_blanks']:
+        # if not state['blanks_as_zeros']:
         if PROC_NO_LEADING_BLANK:
             tmp_buf = tmp_buff + (nblanks * ' ')
         out = out + tmp_buff

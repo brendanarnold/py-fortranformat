@@ -127,3 +127,34 @@ class MultiEditDescriptorTests(unittest.TestCase):
         eds, rev_eds = _parser(_lexer(fmt))
         result = [1, None, None]
         self.assertEqual(result, _input(eds, rev_eds, inpt))
+
+    def multi_test_12(self):
+        # Test behaviour of BN, BZ
+        inpt = '12  '
+        fmt = '(BZ, I4)'
+        eds, rev_eds = _parser(_lexer(fmt))
+        result = [1200]
+        self.assertEqual(result, _input(eds, rev_eds, inpt))
+
+    def multi_test_13(self):
+        # Test behaviour of BN, BZ
+        inpt = '12  '
+        fmt = '(BZ, BN, I4)'
+        eds, rev_eds = _parser(_lexer(fmt))
+        result = [12]
+        self.assertEqual(result, _input(eds, rev_eds, inpt))
+
+    def multi_test_14(self):
+        # Test behaviour of BN, BZ
+        inpt = '12 1'
+        fmt = '(BZ, I4)'
+        eds, rev_eds = _parser(_lexer(fmt))
+        result = [1201]
+        self.assertEqual(result, _input(eds, rev_eds, inpt))
+
+    def multi_test_15(self):
+        # Test behaviour of BN, BZ
+        inpt = '12 1'
+        fmt = '(I3, BZ, I1)'
+        eds, rev_eds = _parser(_lexer(fmt))
+        result = [12, 1]
