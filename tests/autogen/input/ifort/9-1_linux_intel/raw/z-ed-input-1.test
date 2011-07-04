@@ -576,7 +576,7 @@ INPUT:-100000
 ERR
 FORMAT:(Z9)
 INPUT:123456789
-ERR
+                    4886718345
 FORMAT:(Z9)
 INPUT:ff
                            255
@@ -642,7 +642,7 @@ INPUT:-100000
 ERR
 FORMAT:(Z10)
 INPUT:123456789
-ERR
+                    4886718345
 FORMAT:(Z10)
 INPUT:ff
                            255
@@ -1236,7 +1236,7 @@ INPUT:-100000
 ERR
 FORMAT:(Z9.0)
 INPUT:123456789
-ERR
+                    4886718345
 FORMAT:(Z9.0)
 INPUT:ff
                            255
@@ -1302,7 +1302,7 @@ INPUT:-100000
 ERR
 FORMAT:(Z10.0)
 INPUT:123456789
-ERR
+                    4886718345
 FORMAT:(Z10.0)
 INPUT:ff
                            255
@@ -1896,7 +1896,7 @@ INPUT:-100000
 ERR
 FORMAT:(Z9.1)
 INPUT:123456789
-ERR
+                    4886718345
 FORMAT:(Z9.1)
 INPUT:ff
                            255
@@ -1962,7 +1962,7 @@ INPUT:-100000
 ERR
 FORMAT:(Z10.1)
 INPUT:123456789
-ERR
+                    4886718345
 FORMAT:(Z10.1)
 INPUT:ff
                            255
@@ -2490,7 +2490,7 @@ INPUT:-100000
 ERR
 FORMAT:(Z9.2)
 INPUT:123456789
-ERR
+                    4886718345
 FORMAT:(Z9.2)
 INPUT:ff
                            255
@@ -2556,7 +2556,7 @@ INPUT:-100000
 ERR
 FORMAT:(Z10.2)
 INPUT:123456789
-ERR
+                    4886718345
 FORMAT:(Z10.2)
 INPUT:ff
                            255

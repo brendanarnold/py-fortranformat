@@ -8,6 +8,7 @@ import os
 
 # MODIFIER_EDS = ['SP']
 # OUTPUT_EDS = ['F']
+# EDS = ['Z']
 EDS = ['BN', 'BZ', 'Slash', 'SP', 'SS', 'T', 'TL', 'TR', 'X', 'Colon', 'B', 'D', 'EN', 'ES', 'E', 'F', 'G', 'I', 'L', 'O', 'Z']
 MODIFIER_EDS = ['BN', 'BZ', 'Slash', 'SP', 'SS', 'T', 'TL', 'TR', 'X', 'Colon']
 OUTPUT_EDS = ['B', 'D', 'EN', 'ES', 'E', 'F', 'G', 'I', 'L', 'O', 'Z', 'Slash']
@@ -512,7 +513,7 @@ def write_fortran_source(formats, inputs, name):
           IMPLICIT NONE
           CHARACTER(LEN=1000) :: INP
           DOUBLE PRECISION D
-          INTEGER I
+          INTEGER*8 I
           LOGICAL ERR
 
 ''' % name.upper().replace('-', '_')
@@ -638,10 +639,10 @@ if __name__ == '__main__':
     import sys
     compile_str = sys.argv[1]
     platform = sys.argv[2]
-    # gen_tests()
-    # compile_tests(compile_str)
-    # execute_tests()
-    # write_py_source()
+    gen_tests()
+    compile_tests(compile_str)
+    execute_tests()
+    # write_py_source(platform)
 
 
 # Note: test comma-less p use
