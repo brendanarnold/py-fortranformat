@@ -158,3 +158,20 @@ class MultiEditDescriptorTests(unittest.TestCase):
         fmt = '(I3, BZ, I1)'
         eds, rev_eds = _parser(_lexer(fmt))
         result = [12, 1]
+        self.assertEqual(result, _input(eds, rev_eds, inpt))
+
+    def multi_test_16(self):
+        # Test behaviour of Slash edit descriptor
+        inpt = '1234  AB\n4567  CD'
+        fmt = '(I4, /, I4)'
+        eds, rev_eds = _parser(_lexer(fmt))
+        result = [1234, 4567]
+        self.assertEqual(result, _input(eds, rev_eds, inpt))
+
+    def multi_test_17(self):
+        # Test behaviour of Slash edit descriptor
+        inpt = '1234  AB4567  CD'
+        fmt = '(I4, /, I4)'
+        eds, rev_eds = _parser(_lexer(fmt))
+        result = [1234]
+        self.assertEqual(result, _input(eds, rev_eds, inpt))

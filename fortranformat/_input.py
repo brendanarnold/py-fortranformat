@@ -119,6 +119,7 @@ def input(eds, reversion_eds, records, num_vals=None):
         elif isinstance(ed, Slash):
             # End of record
             record = _next(records, None)
+            state['position'] = 0
             if record is None:
                 break
         elif isinstance(ed, Colon):
