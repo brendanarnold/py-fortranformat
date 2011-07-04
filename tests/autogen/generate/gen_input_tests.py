@@ -8,8 +8,8 @@ import os
 
 # MODIFIER_EDS = ['SP']
 # OUTPUT_EDS = ['F']
-# EDS = ['Z']
-EDS = ['BN', 'BZ', 'Slash', 'SP', 'SS', 'T', 'TL', 'TR', 'X', 'Colon', 'B', 'D', 'EN', 'ES', 'E', 'F', 'G', 'I', 'L', 'O', 'Z']
+EDS = ['Z']
+# EDS = ['BN', 'BZ', 'Slash', 'SP', 'SS', 'T', 'TL', 'TR', 'X', 'Colon', 'B', 'D', 'EN', 'ES', 'E', 'F', 'G', 'I', 'L', 'O', 'Z']
 MODIFIER_EDS = ['BN', 'BZ', 'Slash', 'SP', 'SS', 'T', 'TL', 'TR', 'X', 'Colon']
 OUTPUT_EDS = ['B', 'D', 'EN', 'ES', 'E', 'F', 'G', 'I', 'L', 'O', 'Z', 'Slash']
 SOURCE_FILESTEM = '%s-ed-input-%d.f'
@@ -27,7 +27,7 @@ I['formats'] = [
   "I1", "I2", "I3", "I4", "I5", "I6", "I7", "I8", "I9", "I10",
   "I1.0", "I2.0", "I3.0", "I4.0", "I5.0", "I6.0", "I7.0", "I8.0", "I9.0", "I10.0",
   "I1.1", "I2.1", "I3.1", "I4.1", "I5.1", "I6.1", "I7.1", "I8.1", "I9.1", "I10.1",
-  "I2.2", "I3.2", "I4.2", "I5.2", "I6.2", "I7.2", "I8.2", "I9.2", "I10.2",
+  "I2.2", "I3.2", "I4.2", "I5.2", "I6.2", "I7.2", "I8.2", "I9.2", "I10.2", 
   "I3.3", "I4.3", "I5.3", "I6.3", "I7.3", "I8.3", "I9.3", "I10.3",
   "I5.5", "I6.5", "I7.5", "I8.5", "I9.5", "I10.5",
   "1I1", "1I2", "1I3", "1I5", "1I10",
@@ -638,6 +638,7 @@ def product(*args, **kwds):
 if __name__ == '__main__':
     import sys
     compile_str = sys.argv[1]
+    print compile_str
     platform = sys.argv[2]
     gen_tests()
     compile_tests(compile_str)
