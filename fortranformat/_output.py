@@ -623,7 +623,7 @@ def _compose_i_string(w, m, state, val):
     int_string = '%d' % int(round(math.fabs(val)))
     # pad if necessary
     if m is not None:
-        int_string = int_string.rjust(m, '0')
+        int_string = left_pad(int_string, m, '0')
         # weird case where if zero width specified and is zero, can have zero space
         if (val == 0) and (m == 0):
             int_string = ''
@@ -635,7 +635,7 @@ def _compose_i_string(w, m, state, val):
     if len(int_string) > w:
         int_string = '*' * w
     else:
-        int_string = int_string.rjust(w, ' ')
+        int_string = int_string.rjust(w)
     return int_string
 
 def _get_sign(val, incl_plus):
@@ -661,7 +661,7 @@ def _compose_boz_string(w, m, state, val, ftype):
         elif m == 0:
             return w * ' '
         else:
-            s = '0'.rjust(m, '0').rjust(w, ' ')
+            s = left_pad('0', m, '0').rjust(w)
             if len(s) > w:
                 return w * '*'
     # Normal cases
@@ -694,7 +694,7 @@ def _compose_boz_string(w, m, state, val, ftype):
     if m is None:
         s = s.rjust(w)
     else:
-        s = s.rjust(m, '0').rjust(w)
+        s = left_pad(s, m, '0').rjust(w)
     if len(s) > w:
         return w * '*'
     else:
@@ -706,7 +706,7 @@ def _write_string(record, sub_string, pos):
     # pad if required with blanks - i.e. input after a tr edit descriptor - see
     # f77 format sec. 13.5.3
     if pos > len(record):
-        record = record.ljust(pos, ' ')
+        record = record.ljust(pos)
         out =  record + sub_string
     elif pos == len(record):
         out = record + sub_string
@@ -714,4 +714,9 @@ def _write_string(record, sub_string, pos):
         out = record[:pos] + sub_string + record[new_pos:]
     return (new_pos, out)
 
+
+def left_pad(sub_string, width, pad_char):
+    # Python 2.3 does not have the character argument to rjust
+    padding = pad_char * (width - len(sub_string))
+    return padding + sub_string
 
