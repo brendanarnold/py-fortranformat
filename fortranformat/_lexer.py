@@ -82,8 +82,10 @@ def lexer(format):
             val = int(buff)
             if buff[0] in SIGNS:
                 tokens.append(Token('INT', val))
-            else:
+            elif val == 0:
                 tokens.append(Token('UINT', val))
+            else:
+                tokens.append(Token('NZUINT', val))
         # Read in a comma
         elif c0 in COMMA:
             tokens.append(Token('COMMA', None))

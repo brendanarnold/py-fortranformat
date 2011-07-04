@@ -638,12 +638,11 @@ def product(*args, **kwds):
 if __name__ == '__main__':
     import sys
     compile_str = sys.argv[1]
-    print compile_str
     platform = sys.argv[2]
-    gen_tests()
-    compile_tests(compile_str)
-    execute_tests()
-    # write_py_source(platform)
+    # gen_tests()
+    # compile_tests(compile_str)
+    # execute_tests()
+    write_py_source(platform)
 
 
 # Note: test comma-less p use

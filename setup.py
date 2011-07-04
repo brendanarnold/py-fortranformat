@@ -3,15 +3,15 @@ from distutils.core import setup
 setup(
     name = 'fortranformat',
     packages = ['fortranformat'],
-    version = '0.1.9',
+    version = '0.2.0',
     description = 'Mimics Fortran textual IO in Python',
     author = 'Brendan Arnold',
     author_email = 'brendanarnold@gmail.com',
     url = 'http://bitbucket.org/brendanarnold/py-fortranformat',
-    download_url = 'https://bitbucket.org/brendanarnold/py-fortranformat/downloads/fortranformat-0.1.9.tar.gz',
+    download_url = 'https://bitbucket.org/brendanarnold/py-fortranformat/downloads/fortranformat-0.2.0.tar.gz',
     keywords = ['fortran', 'io', 'interface', 'format'],
     classifiers = [
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Beta',
         'Environment :: Console',
         'Intended Audience :: Science/Research',
         'Intended Audience :: Developers',

@@ -5,10 +5,12 @@ if IS_PYTHON3:
     exec('from ._lexer import Token')
     exec('from ._edit_descriptors import *')
     exec('from ._exceptions import *')
+    exec('from . import config')
 else:
     exec('from _lexer import Token')
     exec('from _edit_descriptors import *')
     exec('from _exceptions import *')
+    exec('import config')
 
 def parser(tokens, version=None):
     # Parse the full edit descriptors
@@ -50,7 +52,7 @@ def _parse_tokens(tokens, reversion=False, version=None):
             continue
         # If repeatable and first token is repeat number then cache
         repeat = None
-        if ed_value in REPEATABLE_EDS and (token_set[0].type == 'UINT'):
+        if ed_value in REPEATABLE_EDS and (token_set[0].type in ['NZUINT', 'UINT']):
             repeat = token_set[0].value
             token_set = token_set[1:]
         # Process the edit descriptor
@@ -114,9 +116,9 @@ def _expand_parens(tokens):
             # Remove last right paren
             paren_tokens = paren_tokens[:-1]
             # If repeated, then repeat the tokens accordingly
-            if (len(new_tokens) > 0) and (new_tokens[-1].type == 'UINT'):
+            if (len(new_tokens) > 0) and (new_tokens[-1].type in ['NZUINT', 'UINT']):
                 repeat = new_tokens[-1].value
-                # Remove the repeat UINT
+                # Remove the repeat NZUINT, UINT
                 new_tokens = new_tokens[:-1]
                 new_tokens.extend(repeat * (_expand_parens(paren_tokens) + [Token('COMMA', None)]))
             else:
@@ -163,7 +165,7 @@ def _split_on_ed10(token_sets):
     new_token_sets = []
     for token_set in token_sets:
         # May have a repeat on the slash if preceded by a comma
-        if (len(token_set) > 2) and ((token_set[0].type == 'UINT') and (token_set[1].type == 'ED10')):
+        if (len(token_set) > 2) and ((token_set[0].type in ['UINT', 'NZUINT']) and (token_set[1].type == 'ED10')):
             new_token_sets.append(token_set[:2])
             token_set = token_set[2:]
         buff = []
@@ -188,7 +190,7 @@ def _split_on_ed8(token_sets):
         if 'ED8' not in [t.type for t in token_set]:
             new_token_sets.append(token_set)
         # Otherwise split string on ED9
-        elif (token_set[0].type in ['INT', 'UINT']) and (token_set[1].type == 'ED8'):
+        elif (token_set[0].type in ['INT', 'UINT', 'NZUINT']) and (token_set[1].type == 'ED8'):
             new_token_sets.append(token_set[:2])
             new_token_sets.append(token_set[2:])
         else:
@@ -205,7 +207,7 @@ def _get_reversion_tokens(tokens):
         # End of loop condition
         if (nesting is not None) and (nesting < 1):
             # Parens may have a repeat number
-            if token.type == 'UINT':
+            if token.type in ['UINT', 'NZUINT']:
                 reversion_tokens.append(token)
             break
         # Read till the first right parens
@@ -246,7 +248,7 @@ def _read_ed1(tokens):
 def _read_ed2(tokens):
     # Of form nX only
     type_string = ",".join([t.type for t in tokens])
-    if type_string != "UINT,ED2":
+    if type_string != "NZUINT,ED2":
         raise InvalidFormat('Token %s has invalid neighbouring token' % tokens[0])
     ed = get_edit_descriptor_obj(tokens[1].value)
     ed.num_chars = tokens[0].value
@@ -255,7 +257,7 @@ def _read_ed2(tokens):
 def _read_ed3(tokens):
     # Of form Xn only
     type_string = ",".join([t.type for t in tokens])
-    if type_string != "ED3,UINT":
+    if type_string != "ED3,NZUINT":
         raise InvalidFormat('Token %s has invalid neighbouring token' % tokens[0])
     ed = get_edit_descriptor_obj(tokens[0].value)
     # L edit descriptor has a width rather than num_chars
@@ -268,31 +270,39 @@ def _read_ed3(tokens):
 def _read_ed4(tokens):
     # Of form X or Xn
     type_string = ",".join([t.type for t in tokens])
-    if type_string not in ["ED4", "ED4,UINT"]:
+    if type_string in ["ED4", "ED4,NZUINT"] or \
+        (config.ALLOW_ZERO_WIDTH_EDS and (type_string == "ED4,UINT")):
+        ed = get_edit_descriptor_obj(tokens[0].value)
+        if len(tokens) > 1:
+            ed.width = tokens[1].value
+    else:
         raise InvalidFormat('Token %s has invalid neighbouring token' % tokens[0])
-    ed = get_edit_descriptor_obj(tokens[0].value)
-    if len(tokens) > 1:
-        ed.width = tokens[1].value
     return ed
 
 def _read_ed5(tokens):
     # Of form Xn.m only
     type_string = ",".join([t.type for t in tokens])
-    if type_string != "ED5,UINT,DOT,UINT":
+    if type_string in ["ED5,NZUINT,DOT,UINT", "ED5,NZUINT,DOT,NZUINT"] or \
+      (config.ALLOW_ZERO_WIDTH_EDS and (type_string in \
+      ["ED5,UINT,DOT,UINT", "ED5,UINT,DOT,NZUINT"])):
+        ed = get_edit_descriptor_obj(tokens[0].value)
+        ed.width = tokens[1].value
+        ed.decimal_places = tokens[3].value
+    else:
         raise InvalidFormat('%s has invalid neighbouring token' % tokens[0])
-    ed = get_edit_descriptor_obj(tokens[0].value)
-    ed.width = tokens[1].value
-    ed.decimal_places = tokens[3].value
     return ed
 
 def _read_ed6(tokens):
     # Of form Xn or Xn.m
     type_string = ",".join([t.type for t in tokens])
-    if type_string == "ED6,UINT":
+    if type_string == "ED6,NZUINT" or \
+        (config.ALLOW_ZERO_WIDTH_EDS and (type_string == "ED6,UINT")):
         ed = get_edit_descriptor_obj(tokens[0].value)
         ed.width = tokens[1].value
         ed.min_digits = None
-    elif type_string == "ED6,UINT,DOT,UINT":
+    elif type_string in ["ED6,NZUINT,DOT,UINT", "ED6,NZUINT,DOT,NZUINT"] or \
+      (config.ALLOW_ZERO_WIDTH_EDS and (type_string in \
+      ["ED6,UINT,DOT,UINT", "ED6,UINT,DOT,NZUINT"])):
         ed = get_edit_descriptor_obj(tokens[0].value)
         ed.width = tokens[1].value
         ed.min_digits = tokens[3].value
@@ -303,12 +313,26 @@ def _read_ed6(tokens):
 def _read_ed7(tokens):
     # Of form Xn.m or Xn.mEe
     type_string = ",".join([t.type for t in tokens])
-    if type_string == "ED7,UINT,DOT,UINT":
+    if type_string in ["ED7,NZUINT,DOT,UINT", "ED7,NZUINT,DOT,NZUINT"] or \
+      (config.ALLOW_ZERO_WIDTH_EDS and (type_string in \
+      ["ED7,UINT,DOT,UINT", "ED7,UINT,DOT,NZUINT"])):
         ed = get_edit_descriptor_obj(tokens[0].value)
         ed.width = tokens[1].value
         ed.decimal_places = tokens[3].value
         ed.exponent = None
-    elif type_string in ['ED7,UINT,DOT,UINT,ED7,UINT', 'ED7,UINT,DOT,UINT,ED7,INT']:
+    elif type_string in ['ED7,NZUINT,DOT,NZUINT,ED7,NZUINT', \
+            'ED7,NZUINT,DOT,NZUINT,ED7,UINT', \
+            'ED7,NZUINT,DOT,NZUINT,ED7,INT', \
+            'ED7,NZUINT,DOT,UINT,ED7,NZUINT', \
+            'ED7,NZUINT,DOT,UINT,ED7,UINT', \
+            'ED7,NZUINT,DOT,UINT,ED7,INT'] or \
+        (config.ALLOW_ZERO_WIDTH_EDS and (type_string in \
+            ['ED7,UINT,DOT,NZUINT,ED7,NZUINT', \
+            'ED7,UINT,DOT,NZUINT,ED7,UINT', \
+            'ED7,UINT,DOT,NZUINT,ED7,INT', \
+            'ED7,UINT,DOT,UINT,ED7,NZUINT', \
+            'ED7,UINT,DOT,UINT,ED7,UINT', \
+            'ED7,UINT,DOT,UINT,ED7,INT'])):
         ed = get_edit_descriptor_obj(tokens[0].value)
         ed.width = tokens[1].value
         ed.decimal_places = tokens[3].value
@@ -321,7 +345,7 @@ def _read_ed8(tokens):
     # Of form kX only, where k is a signed integer, may omit comma if followed
     # by Type 5 or 7 edit descriptor
     type_string = ",".join([t.type for t in tokens])
-    if type_string in ["UINT,ED8", "INT,ED8"]:
+    if type_string in ["NZUINT,ED8", "UINT,ED8", "INT,ED8"]:
         ed = get_edit_descriptor_obj(tokens[1].value)
         ed.scale = tokens[0].value
     else:

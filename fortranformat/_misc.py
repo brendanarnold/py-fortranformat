@@ -24,6 +24,16 @@ class has_next_iterator(object):
         result = self.it.next()
     self._has_next = None
     return result
+  def next(self):
+    if self._has_next:
+      result = self._the_next
+    else:
+      if IS_PYTHON3:
+        result = next(self.it)
+      else:
+        result = self.it.next()
+    self._has_next = None
+    return result
   def has_next(self):
     if self._has_next is None:
       try: 
