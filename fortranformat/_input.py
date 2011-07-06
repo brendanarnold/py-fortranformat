@@ -127,25 +127,36 @@ def input(eds, reversion_eds, records, num_vals=None):
             if finish_up:
                 break
         elif isinstance(ed, (Z, O, B, I)):
-            vals = read_integer(ed, state, record, vals)
+            val, state = read_integer(ed, state, record)
+            vals.append(val)
         elif isinstance(ed, A):
-            vals = read_string(ed, state, record, vals)
+            val, state = read_string(ed, state, record)
+            vals.append(val)
         elif isinstance(ed, L):
-            vals = read_logical(ed, state, record, vals)
+            val, state = read_logical(ed, state, record)
+            vals.append(val)
         elif isinstance(ed, (F, E, D, EN, ES)):
-            vals = read_float(ed, state, record, vals)
+            val, state = read_float(ed, state, record)
+            vals.append(val)
         elif isinstance(ed, G):
             # Difficult to know what wanted since do not know type of input variable
             # Use the G_INPUT_TRIAL_EDS variable to try the variables
             # until one sticks
-            for ed_name in config.G_INPUT_TRIAL_EDS:
+            # n.b. vals and state do not get written to if
+            # exception id raised
+            resolved = False
+            g_trial_eds = iter(config.G_INPUT_TRIAL_EDS)
+            while not resolved:
+                ed_name = _next(g_trial_eds, '')
                 if ed_name.upper() in ('F', 'E', 'D', 'EN', 'ES'):
                     trial_ed = F()
                     trial_ed.width = ed.width
                     trial_ed.decimal_places = ed.decimal_places
+                    # pdb.set_trace()
                     try:
-                        trial_vals = read_float(trial_ed, state, record, vals)
-                        vals = trial_vals
+                        val, state = read_float(trial_ed, state.copy(), record)
+                        vals.append(val)
+                        resolved = True
                     except ValueError:
                         continue
                 elif ed_name.upper() in ('Z', 'O', 'B', 'I'):
@@ -153,24 +164,27 @@ def input(eds, reversion_eds, records, num_vals=None):
                     trial_ed.width = ed.width
                     trial_ed.min_digits = ed.decimal_places
                     try:
-                        trial_vals = read_integer(trial_ed, state, record, vals)
-                        vals = trial_vals
+                        val, state = read_integer(trial_ed, state.copy(), record)
+                        vals.append(val)
+                        resolved = True
                     except ValueError:
                         continue
                 elif ed_name.upper() in ('L'):
                     trial_ed = L()
                     trial_ed.width = ed.width
                     try:
-                        trial_vals = read_logical(trial_ed, state, record, vals)
-                        vals = trial_vals
+                        val, state = read_logical(trial_ed, state.copy(), record)
+                        vals.append(val)
+                        resolved = True
                     except ValueError:
                         continue
                 elif ed_name.upper() in ('A'):
                     trial_ed = A()
                     trial_ed.width = ed.width
                     try:
-                        trial_vals = read_string(trial_ed, state, record, vals)
-                        vals = trial_vals
+                        val, state = read_string(trial_ed, state.copy(), record)
+                        vals.append(val)
+                        resolved = True
                     except ValueError:
                         continue
                 elif ed_name in ('G'):
@@ -219,24 +233,23 @@ def _next(it, default=None):
     return val
 
 
-def read_string(ed, state, record, vals):
+def read_string(ed, state, record):
     if ed.width is None:
         # Will assume rest of record is fair game for the
         # unsized A edit descriptor
         ed.width = len(record) - state['position']
     substr, state = _get_substr(ed.width, record, state)
-    vals.append(substr.ljust(ed.width, config.PROC_PAD_CHAR))
-    return vals
+    val = substr.ljust(ed.width, config.PROC_PAD_CHAR)
+    return (val, state)
 
 
-def read_integer(ed, state, record, vals):
+def read_integer(ed, state, record):
     substr, state = _get_substr(ed.width, record, state)
     if ('-' in substr) and (not config.PROC_ALLOW_NEG_BOZ) and isinstance(ed, (Z, O, B)):
         if state['exception_on_fail']:
             raise ValueError('Negative numbers not permitted for binary, octal or hex')
         else:
-            vals.append(None)
-            return vals
+            return (None, state)
     if isinstance(ed, Z):
         base = 16
     elif isinstance(ed, I):
@@ -258,8 +271,7 @@ def read_integer(ed, state, record, vals):
     # unwritten FORTRAN variable
     if substr == '':
         if config.RET_UNWRITTEN_VARS_NONE or config.RET_WRITTEN_VARS_ONLY:
-            vals.append(None)
-            return vals
+            return (None, state)
         else:
             substr = '0'
     teststr = _interpret_blanks(substr, state)
@@ -269,18 +281,15 @@ def read_integer(ed, state, record, vals):
         if state['exception_on_fail']:
             raise ValueError('%s is not a valid input for one of integer, octal, hex or binary' % substr)
         else:
-            vals.append(None)
-            return vals
-    vals.append(val)
-    return vals
+            return (None, state)
+    return (val, state)
 
 
-def read_logical(ed, state, record, vals):
+def read_logical(ed, state, record):
     substr, state = _get_substr(ed.width, record, state)
     # Deal with case where there is no more input to read from
     if (substr == '') and (config.RET_UNWRITTEN_VARS_NONE or config.RET_WRITTEN_VARS_ONLY):
-        vals.append(None)
-        return vals
+        return (None, state)
     # Remove preceding whitespace and take the first two letters as
     # uppercase for testing
     teststr = substr.upper().lstrip().lstrip('.')
@@ -290,26 +299,25 @@ def read_logical(ed, state, record, vals):
         # This is case where just a preceding period is read in
         raise ValueError('%s is not a valid boolean input' % substr)
     if teststr == 'T':
-        vals.append(True)
+        val = True
     elif teststr == 'F':
-        vals.append(False)
+        val = False
     else:
         if state['exception_on_fail']:
             raise ValueError('%s is not a valid boolean input' % substr)
         else:
-            vals.append(None)
-    return vals
+            val = None
+    return (val, state)
 
 
-def read_float(ed, state, record, vals):
+def read_float(ed, state, record):
     substr, state = _get_substr(ed.width, record, state)
     teststr = _interpret_blanks(substr, state)
     # When reading off end of record, get empty string,
     # interpret as 0
     if teststr == '':
         if config.RET_UNWRITTEN_VARS_NONE or config.RET_WRITTEN_VARS_ONLY:
-            vals.append(None)
-            return vals
+            return (None, state)
         else:
             teststr = '0'
     # Python only understands 'E' as an exponential letter
@@ -334,13 +342,11 @@ def read_float(ed, state, record, vals):
         if state['exception_on_fail']:
             raise ValueError('%s is not a valid input as for an E, ES, EN or D edit descriptor' % substr)
         else:
-            vals.append(None)
-            return vals
+            return (None, state)
     # Special cases: insert a decimal if none specified
     if ('.' not in teststr) and (ed.decimal_places is not None):
         val = val / 10 ** ed.decimal_places
     # Apply scale factor if exponent not supplied
     if 'E' not in teststr:
         val = val / 10 ** state['scale'] 
-    vals.append(val) 
-    return vals
+    return (val, state)
