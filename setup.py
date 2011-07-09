@@ -3,12 +3,12 @@ from distutils.core import setup
 setup(
     name = 'fortranformat',
     packages = ['fortranformat'],
-    version = '0.2.1',
+    version = '0.2.2',
     description = 'Mimics Fortran textual IO in Python',
     author = 'Brendan Arnold',
     author_email = 'brendanarnold@gmail.com',
     url = 'http://bitbucket.org/brendanarnold/py-fortranformat',
-    download_url = 'https://bitbucket.org/brendanarnold/py-fortranformat/downloads/fortranformat-0.2.1.tar.gz',
+    download_url = 'https://bitbucket.org/brendanarnold/py-fortranformat/downloads/fortranformat-0.2.2.tar.gz',
     keywords = ['fortran', 'io', 'interface', 'format'],
     classifiers = [
         'Development Status :: 4 - Beta',

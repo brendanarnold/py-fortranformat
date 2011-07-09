@@ -1,0 +1,742 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<base href="ftp://ftp.liv.ac.uk/pub/fortran_std/is1539-2.html"><div style="margin:-1px -1px 0;padding:0;border:1px solid #999;background:#fff"><div style="margin:12px;padding:8px;border:1px solid #999;background:#ddd;font:13px arial,sans-serif;color:#000;font-weight:normal;text-align:left">This is Google&#39;s cache of <a href="ftp://ftp.liv.ac.uk/pub/fortran_std/is1539-2.html" style="text-decoration:underline;color:#00c">ftp://ftp.liv.ac.uk/pub/fortran_std/is1539-2.html</a>. It is a snapshot of the page as it appeared on 3 Mar 2011 03:44:06 GMT. The <a href="ftp://ftp.liv.ac.uk/pub/fortran_std/is1539-2.html" style="text-decoration:underline;color:#00c">current page</a> could have changed in the meantime. <a href="http://www.google.com/intl/en/help/features_list.html#cached" style="text-decoration:underline;color:#00c">Learn more</a><br><br><div style="float:right"><a href="http://webcache.googleusercontent.com/search?q=cache:FVTyW2zOT5oJ:ftp://ftp.liv.ac.uk/pub/fortran_std/is1539-2.html+ISO_VARYING_STRING.&amp;hl=en&amp;client=safari&amp;gl=uk&strip=1" style="text-decoration:underline;color:#00c">Text-only version</a></div>
+<div>These search terms are highlighted: <span style="background:#ffff66;color:black;font-weight:bold">iso_varying_string</span>&nbsp;&nbsp;</div></div></div><div style="position:relative">
+<HTML>
+<HEAD>
+<TITLE>ISO/IEC 1539-2:1994 "Varying Length Character Strings in Fortran</TITLE>
+</HEAD>
+<BODY>
+<H1>Varying Length Character Strings in Fortran
+<BR><BR>
+ISO/IEC 1539-2 : 1994(E)</H1>
+<B>{Auxiliary to ISO/IEC 1539 : 1991 &quotProgramming Language Fortran&quot}</B>
+<HR>
+<H1>Contents</H1>
+<OL>
+<A HREF="#INTRO"><LI>Introduction</A><P>
+<A HREF="#GEN"><LI>General</A>
+    <OL>
+    <A HREF="#SCOPE"><LI>Scope</A>
+    <A HREF="#NORM"><LI>Normative References</A> 
+    </OL><P>
+<A HREF="#REQ"><LI>Requirements</A> 
+    <OL> 
+    <A HREF="#NAME"><LI>The Name of the Module</A>
+    <A HREF="#TYPE"><LI>The Type</A>
+    <A HREF="#INTOP"><LI>Extended Meanings for Intrinsic Operators</A>
+         <OL>
+         <A HREF="#ASSIG"><LI>Assignment</A>
+         <A HREF="#CONCAT"><LI>Concatenation</A>
+         <A HREF="#COMP"><LI>Comparisons</A>
+         </OL>
+    <A HREF="#GENINT"><LI>Extended Meanings for Generic Intrinsic Procedures</A>
+          <OL>
+          <A HREF="#LEN"><LI>The LEN procedure</A>
+          <A HREF="#CHAR"><LI>The CHAR procedure</A>
+          <A HREF="#ICHAR"><LI>The ICHAR procedure</A>
+          <A HREF="#IACHAR"><LI>The IACHAR procedure</A>
+          <A HREF="#TRIM"><LI>The TRIM procedure</A>
+          <A HREF="#LEN_TRIM"><LI>The LEN_TRIM procedure</A>
+          <A HREF="#ADJUSTL"><LI>The ADJUSTL procedure</A>
+          <A HREF="#ADJUSTR"><LI>The ADJUSTR procedure</A>
+          <A HREF="#REPEAT"><LI>The REPEAT procedure</A>
+          <A HREF="#COMPPROC"><LI>Comparison procedures</A>
+          <A HREF="#INDEX"><LI>The INDEX procedure</A>
+          <A HREF="#SCAN"><LI>The SCAN procedure</A>
+          <A HREF="#VERIFY"><LI>The VERIFY procedure</A>
+          </OL>
+     <A HREF="#TYPCONV"><LI>Additional Generic Procedure for Type Conversion</A>
+          <OL>
+          <A HREF="#VAR_STR"><LI>The VAR_STR procedure</A>
+          </OL>
+     <A HREF="#IO"><LI>Additional Generic Procedures for Input/Output
+          <OL>
+          <A HREF="#GET"><LI>The GET procedure</A>
+          <A HREF="#PUT"><LI>The PUT procedure</A>
+          <A HREF="#PUT_LINE"><LI>The PUT_LINE procedure </A>
+          </OL>
+     <A HREF="#SUBSTR"><LI>Additional Generic Procedures for Substring Manipulation</A>
+          <OL>
+          <A HREF="#INSERT"><LI>The INSERT procedure </A>
+          <A HREF="#REPLACE"><LI>The REPLACE procedure</A>
+          <A HREF="#REMOVE"><LI>The REMOVE procedure </A>
+          <A HREF="#EXTRACT"><LI>The EXTRACT procedure</A>
+          <A HREF="#SPLIT"><LI>The SPLIT procedure</A>
+          </OL>
+     </OL>
+</OL><P>
+<A HREF="#MOD">Annex A : Module <b style="color:black;background-color:#ffff66">ISO_varying_string</b></A><P>
+<A HREF="#EXMP">Annex B : Examples</A>
+<HR>
+<OL>
+<H1><LI><A NAME="INTRO">Introduction</A></H1>
+This part of ISO/IEC 1539 has been prepared by ISO/IEC JTC1/SC22/WG5, the technical working group 
+for the Fortran language.  This part of ISO/IEC 1539 is an auxiliary standard to ISO/IEC 1539 : 1991, 
+which defines the latest revision of the Fortran language, and is the first part of the multipart 
+Fortran family of standards; this part of ISO/IEC 1539 is the second part. The revised language 
+defined by the above standard is informally known as Fortran 90.<P>
+<P>
+This part of ISO/IEC 1539 defines the interface and semantics for a module that provides facilities 
+for the manipulation of character strings of arbitrary and dynamically variable length. Annex A 
+includes a possible implementation, in Fortran 90, of a module that conforms to this part of ISO/IEC 
+1539.  It should be noted, however, that this is purely for purposes of demonstrating the feasibility 
+and portability of this standard.  The actual code shown in this annex is not intended in any way to 
+prescribe the method of implementation, nor is there any implication that this is in any way an 
+optimal portable implementation.  The module is merely a fairly straightforward demonstration that 
+a portable implementation is possible.
+<HR>
+<H1><A NAME="GEN"><LI>General</A></H1>
+<OL>
+<H2><A NAME="SCOPE"><LI>Scope</A></H2>
+This part of ISO/IEC 1539 defines facilities for use in Fortran for the manipulation of character 
+strings of dynamically variable length.  This part of ISO/IEC 1539 provides an auxiliary standard for 
+the version of the Fortran language informally known as Fortran 90.  The International Standard 
+defining this revision of the Fortran language is
+<BR><BR>
+<TT>    </TT><B>ISO/IEC 1539 : 1991  &quot;Programming Language Fortran&quot;</B>
+<BR><BR>
+This part of ISO/IEC 1539 is an auxiliary standard to that defining Fortran 90 in that it defines 
+additional facilities to those defined intrinsically in the primary language standard. A processor 
+conforming to the Fortran 90 standard is not required to also conform to this part of ISO/IEC 1539.  
+However, conformance to this part of ISO/IEC 1539 assumes conformance to the primary Fortran 90 
+standard.<P>
+<P>
+This part of ISO/IEC 1539 prescribes the name of a Fortran module, the name of a derived data type 
+to be used to represent varying-length strings, the interfaces for the procedures and operators to 
+be provided to manipulate objects of this type, and the semantics that are required for each of the 
+entities made accessible by this module.    <P>
+<P>
+This part of ISO/IEC 1539 does not prescribe the details of any implementation. Neither the method 
+used to represent the data entities of the defined type nor the algorithms used to implement the 
+procedures or operators whose interfaces are defined by this part of ISO/IEC 1539 are prescribed.  
+A conformant implementation may use any representation and any algorithms, subject only to the 
+requirement that the publicly accessible names and interfaces conform to this part of ISO/IEC 1539, 
+and that the semantics are as required by this part of ISO/IEC 1539 and those of ISO/IEC 1539 : 1991.<P>
+<P>
+It should be noted that a processor is not required to implement this part of ISO/IEC 1539 in order 
+to be a standard conforming Fortran processor, but if a processor implements facilities for 
+manipulating varying length character strings, it is recommended that this be done in a manner that 
+is conformant with this part of ISO/IEC 1539.  <P>
+<P>
+A processor conforming to this part of ISO/IEC 1539 may extend the facilities provided for the 
+manipulation of varying length character strings as long as such extensions do not conflict with this 
+part of ISO/IEC 1539 or with ISO/IEC 1539 : 1991.<P>
+<P>
+A module, written in standard conforming Fortran, is included in Annex A.  This module illustrates 
+one way in which the facilities described in this part of ISO/IEC 1539 could be provided. This module 
+is both conformant with the requirements of this part of ISO/IEC 1539 and, because it is written in 
+standard conforming Fortran, it provides a portable implementation of the required facilities. This 
+module is included for information only and is not intended to constrain implementations in any way.  
+This module is a demonstration that at least one implementation, in standard conforming and hence 
+portable Fortran, is possible. <P>
+<P>
+It should be noted that this part of ISO/IEC 1539 defines facilities for dynamically varying length 
+strings of characters of default kind only.  Throughout this part of ISO/IEC 1539 all references to 
+intrinsic type  <TT> CHARACTER</TT> should be read as meaning characters of default kind.  Similar facilities 
+could be defined for non-default kind characters by a separate, if similar, module for each such 
+character kind. <P>
+<P>
+This part of ISO/IEC 1539 has been designed, as far as is reasonable, to provide for varying length 
+character strings the facilities that are available for intrinsic fixed length character strings.  All the 
+intrinsic operations and functions that apply to fixed length character strings have extended 
+meanings defined by this part of ISO/IEC 1539 for varying length character strings.  Also a small 
+number of additional facilities are defined that are appropriate because of the essential differences 
+between the intrinsic type and the varying length derived data type.  <P>
+<P>
+<H2><A NAME="NORM"><LI>Normative References</A></H2> 
+The following standards contain provisions which, through reference in this text, constitute provisions 
+of this part of ISO/IEC 1539.  At the time of publication, the editions indicated were valid.  All 
+standards are subject to revision, and parties to agreements based on this part of ISO/IEC 1539 are 
+encouraged to investigate the possibility of applying the most recent editions of the standards 
+indicated below.  Members of IEC and ISO maintain registers of currently valid International 
+Standards.<P>
+<P>
+ISO/IEC  646 : 1991,  <I>Information technology - ISO 7-bit Coded character set for information interchange.</I>
+<P> 
+ISO/IEC 1539 : 1991,  <I>Information technology - Programming Languages - Fortran.</I>
+</OL>
+<HR>
+<H1><A NAME="REQ"><LI>Requirements</A></H1>
+<OL>
+<H2><A NAME="NAME"><LI>The Name of the Module</A></H2>
+The name of the module shall be <P>
+<TT><b style="color:black;background-color:#ffff66">ISO_VARYING_STRING</b></TT><P>
+Programs shall be able to access the facilities defined by this part of ISO/IEC 1539 by the inclusion 
+of <TT>USE</TT> statements of the form<P>
+<TT>USE <b style="color:black;background-color:#ffff66">ISO_VARYING_STRING</b></TT><P>
+<H2><A NAME="TYPE"><LI>The Type</A></H2>
+The type shall have the name<P>
+<TT>VARYING_STRING</TT><P>
+Entities of this type shall represent values that are strings of characters of default kind.  These 
+character strings may be of any non-negative length and this length may vary dynamically during 
+the execution of a program.  There shall be no arbitrary upper length limit other than that imposed 
+by the size of the processor and the complexity of the programs it is able to process. The characters 
+representing the value of the string have positions 1,2,...,N, where N is the length of the string. The 
+internal structure of the type shall be <TT>PRIVATE</TT> to the module.<P>
+<H2><A NAME="INTOP"><LI>Extended Meanings for Intrinsic Operators</A></H2>
+The meanings for the intrinsic operators of:<P>
+assignment <TT>=</TT><P>
+concatenation <TT>//</TT><P>
+comparisons <TT>==, /=, &lt;, &lt;=, &gt;=, &gt;</TT><P>
+shall be extended to accept any combination of scalar operands of type <TT>VARYING_STRING</TT> and type 
+ <TT>CHARACTER</TT>. Note that the equivalent comparison operator forms  <TT>.EQ.</TT>,  <TT>.NE.</TT>,  <TT>.LT.</TT>,  <TT>.LE.</TT>,  <TT>.GE.</TT>, and 
+ <TT>.GT.</TT> also have their meanings extended in this manner.<P>
+<OL>
+<H3><A NAME="ASSIG"><LI>Assignment</A></H3>
+An assignment of the form<P>
+<TT>var = expr</TT><P>
+shall be defined for scalars with the following type combinations:
+<XMP>      VARYING_STRING = VARYING_STRING
+      VARYING_STRING = CHARACTER
+           CHARACTER = VARYING_STRING </XMP>
+<B>Action</B>: The characters that are the value of the expression  <TT>expr</TT> become the value 
+of the variable  <TT>var</TT>. There are two cases:<P>
+Case(i): Where the variable is of type  <TT>VARYING_STRING</TT>, the length of the 
+variable becomes that of the expression.<P>
+Case(ii): Where the variable is of type  <TT>CHARACTER</TT>, the rules of 
+intrinsic assignment to a Fortran character variable apply.  
+Namely, if the expression string is longer than the declared 
+length of the character variable, only the left-most 
+characters are assigned.  If the character variable is longer 
+than that of the string expression, it is padded on the right 
+with blanks.<P>
+<H3><A NAME="CONCAT"><LI>Concatenation</A></H3>
+The concatenation operation<P>
+<TT>string_a // string_b</TT><P>
+shall be defined for scalars with the following type combinations:<P>
+<XMP>      VARYING_STRING // VARYING_STRING
+      VARYING_STRING // CHARACTER
+           CHARACTER // VARYING_STRING </XMP>
+The values of the operands are unchanged by the operation.<P>
+<B>Result Attributes</B>: scalar of type  <TT>VARYING_STRING</TT>.<P>
+<B>Result Value</B>: The result value is a new string whose characters are the same as those 
+produced by concatenating the operand character strings in the order given.  <P>
+<H3><A NAME="COMP"><LI>Comparisons</A></H3>
+Comparisons of the form<P>
+<TT>string_a .OP. string_b</TT><P>
+where  <TT>.OP.</TT> represents any of the operators  <TT>==</TT>,  <TT>/=</TT>,  <TT>&lt;</TT>,  <TT>&lt;=</TT>, 
+ <TT>&gt;=</TT>, or <TT>&gt;</TT> shall be defined 
+for scalar operands with the following type combinations:<P>
+<XMP>      VARYING_STRING .OP. VARYING_STRING 
+      VARYING_STRING .OP. CHARACTER 
+           CHARACTER .OP. VARYING_STRING </XMP>
+The values of the operands are unchanged by the operation.<P>
+Note that the equivalent operator forms  <TT>.EQ.</TT>,  <TT>.NE.</TT>,  <TT>.LT.</TT>,  <TT>.LE.</TT>,
+  <TT>.GE.</TT>, and  <TT>.GT.</TT> also 
+have their meanings extended in this manner.<P>
+<B>Result Attributes</B>: scalar of type default  <TT>LOGICAL</TT>. <P>
+<B>Result Value</B>: The result value is true if  <TT>string_a</TT> stands in the indicated relation to 
+ <TT>string_b</TT> and is false otherwise.  The collating sequence used for the inequality 
+comparisons is that defined by the processor for characters of default kind.  If 
+ <TT>string_a</TT> and  <TT>string_b</TT> are of different lengths, the comparison is done as if the 
+shorter string were padded on the right with blanks.  <P>
+</OL>
+<H2><A NAME="GENINT"><LI>Extended Meanings for Generic Intrinsic Procedures</A></H2>
+The generic intrinsic procedures  <TT>LEN</TT>,  <TT>CHAR</TT>,  <TT>ICHAR</TT>,  <TT>IACHAR</TT>,  
+<TT>TRIM</TT>,  <TT>LEN_TRIM</TT>,  <TT>ADJUSTL</TT>,  <TT>ADJUSTR</TT>, 
+ <TT>REPEAT</TT>,  <TT>LLT</TT>,  <TT>LLE</TT>,  <TT>LGE</TT>,  <TT>LGT</TT>,  
+<TT>INDEX</TT>,  <TT>SCAN</TT>, and  <TT>VERIFY</TT> shall have their meanings extended to include 
+the appropriate scalar argument type combinations involving  <TT>VARYING_STRING</TT> and  <TT>CHARACTER</TT>. The 
+results produced in each case are also scalar.<P>
+<OL>
+<H3><A NAME="LEN"><LI>The LEN procedure</A></H3>
+The generic function reference of the form<P>
+<TT>LEN(string)</TT><P>
+shall be added.<P>
+<B>Description</B>: returns the length of a character string.<P>
+<B>Argument</B>:  <TT>string</TT> is a scalar of type  <TT>VARYING_STRING</TT>. The argument is unchanged 
+by the procedure.<P>
+<B>Result Attributes</B>: scalar of type default  <TT>INTEGER</TT>.<P>
+<B>Result Value</B>: The result value is the number of characters in  <TT>string</TT>. <P>
+<H3><A NAME="CHAR"><LI>The CHAR procedure</A></H3>
+The generic function references of the form <P>
+<XMP>CHAR(string)
+CHAR(string,length)</XMP>
+shall be added.<P>
+<B>Description</B>: converts a varying string value to default character.<P>
+<B>Arguments</B>:<P>
+<TT>string</TT> - is of type  <TT>VARYING_STRING</TT><P>
+<TT>length</TT> - is of type default <TT>INTEGER</TT>.<P>
+The arguments are scalars and are unchanged by the procedure.<P>
+<B>Result Attributes</B>: scalar of type default  <TT>CHARACTER</TT>.  If  <TT>length</TT> is absent, the result 
+has the same length as  <TT>string</TT>.  If  <TT>length</TT> is present, the result has the length 
+specified by the argument  <TT>length</TT>.<P>
+<B>Result Value</B>:<P>
+Case(i): If  <TT>length</TT> is absent, the result is a copy of the characters in the 
+argument  <TT>string</TT>. <P>
+Case(ii): If  <TT>length</TT> is present, the result is a copy of the characters 
+in the argument  <TT>string</TT> that may have been truncated or 
+padded.  If  <TT>string</TT> is longer than  <TT>length</TT>, the result is 
+truncated on the right. If  <TT>string</TT> is shorter than  <TT>length</TT>, the 
+result is padded on the right with blanks.  If  <TT>length</TT> is less 
+than one, the result is of zero length. <P>
+<H3><A NAME="ICHAR"><LI>The ICHAR procedure</A></H3>
+The generic function reference of the form<P>
+<TT>ICHAR(c)</TT><P>
+shall be added.<P>
+<B>Description</B>: returns the position of a character in the processor defined collating 
+sequence.<P>
+<B>Argument</B>:  <TT>c</TT> is a scalar of type  <TT>VARYING_STRING</TT> and of length exactly one.  The 
+argument is unchanged by the procedure.<P>
+<B>Result Attributes</B>: scalar of type default  <TT>INTEGER</TT>.<P>
+<B>Result Value</B>: The result value is the position of the character  <TT>c</TT> in the processor 
+defined collating sequence for default characters. That is, the result value is 
+<TT>ICHAR(CHAR(c))</TT>.<P>
+<H3><A NAME="IACHAR"><LI>The IACHAR procedure</A></H3>
+The generic function reference of the form<P>
+<TT>IACHAR(c)</TT><P>
+shall be added.<P>
+<B>Description</B>: returns the position of a character in the collating sequence defined by 
+the International Standard ISO 646 : 1991.<P>
+<B>Argument</B>:  <TT>c</TT> is a scalar of type  <TT>VARYING_STRING</TT> and of length exactly one.  The 
+argument is unchanged by the procedure.<P>
+<B>Result Attributes</B>: scalar of type default  <TT>INTEGER</TT>.<P>
+<B>Result Value</B>: The result value is the position of the character  <TT>c</TT> in the collating 
+sequence defined by the International Standard ISO 646 : 1991 for default characters. 
+If the character  <TT>c</TT> is not defined in the standard set, the result is processor 
+dependent but is always equal to   <TT>IACHAR(CHAR(c)</TT>.<P>
+<H3><A NAME="TRIM"><LI>The TRIM procedure</A></H3>
+The generic function reference of the form<P>
+<TT>TRIM(string)</TT><P>
+shall be added.<P>
+<B>Description</B>: removes trailing blanks from a string.<P>
+<B>Argument</B>:  <TT>string</TT> is a scalar of type  <TT>VARYING_STRING</TT>. The argument is unchanged 
+by the procedure.<P>
+<B>Result Attributes</B>: scalar of type  <TT>VARYING_STRING</TT>. <P>
+<B>Result Value</B>: The result value is the same as  <TT>string</TT> except that any trailing blanks 
+have been deleted.  If the argument  <TT>string</TT> contains only blank characters or is of 
+zero length, the result is a zero-length string. <P>
+<H3><A NAME="LEN_TRIM"><LI>The LEN_TRIM procedure</A></H3>
+The generic function reference of the form<P>
+<TT>LEN_TRIM(string)</TT><P>
+shall be added.<P>
+<B>Description</B>: returns the length of a string not counting any trailing blanks.<P>
+<B>Argument</B>:  <TT>string</TT> is a scalar of type  <TT>VARYING_STRING</TT>. The argument is unchanged 
+by the procedure.<P>
+<B>Result Attributes</B>: scalar of type default  <TT>INTEGER</TT>. <P>
+<B>Result Value</B>: The result value is the position of the last non-blank character in 
+ <TT>string</TT>. If the argument  <TT>string</TT> contains only blank characters or is of zero length, 
+the result is zero. <P>
+<H3><A NAME="ADJUSTL"><LI>The ADJUSTL procedure</A></H3>
+The generic function reference of the form<P>
+<TT>ADJUSTL(string)</TT><P>
+shall be added.<P>
+<B>Description</B>: adjusts to the left, removing any leading blanks and inserting trailing 
+blanks.<P>
+<B>Argument</B>:  <TT>string</TT> is a scalar of type  <TT>VARYING_STRING</TT>. The argument is unchanged 
+by the procedure.<P>
+<B>Result Attributes</B>: scalar of type  <TT>VARYING_STRING</TT>.<P>
+<B>Result Value</B>: The result value is the same as  <TT>string</TT> except that any leading blanks 
+have been deleted and the same number of trailing blanks inserted. <P>
+<H3><A NAME="ADJUSTR"><LI>The ADJUSTR procedure</A></H3>
+The generic function reference of the form<P>
+<TT>ADJUSTR(string)</TT><P>
+shall be added.<P>
+<B>Description</B>: adjusts to the right, removing any trailing blanks and inserting leading 
+blanks.<P>
+<B>Argument</B>:  <TT>string</TT> is a scalar of type  <TT>VARYING_STRING</TT>. The argument is unchanged 
+by the procedure.<P>
+<B>Result Attributes</B>: scalar of type  <TT>VARYING_STRING</TT>.<P>
+<B>Result Value</B>:  The result value is the same as  <TT>string</TT> except that any trailing blanks 
+have been deleted and the same number of leading blanks inserted.<P>
+<H3><A NAME="REPEAT"><LI>The REPEAT procedure</A></H3>
+The generic function reference of the form<P>
+<TT>REPEAT(string,ncopies)</TT><P>
+shall be added.<P>
+<B>Description</B>: concatenates several copies of a string.<P>
+<B>Arguments</B>:<P>
+<TT>string</TT> - is a scalar of type  <TT>VARYING_STRING</TT>,<P>
+<TT>ncopies</TT> - is a scalar of type default  <TT>INTEGER</TT>.<P>
+The value of  <TT>ncopies</TT> must not be negative. The arguments are unchanged by the 
+procedure.<P>
+<B>Result Attributes</B>: scalar of type  <TT>VARYING_STRING</TT>.<P>
+<B>Result Value</B>: The result value is the string produced by repeated concatenation of the 
+argument  <TT>string</TT>, producing a string containing  <TT>ncopies</TT> copies of  <TT>string</TT>. If 
+ <TT>ncopies</TT> is zero, the result is of zero length. <P>
+<H3><A NAME="COMPPROC"><LI>Comparison procedures</A></H3>
+The set of generic function references of the form<P>
+<TT>L<I>op</I>(string_a,string_b)</TT><P>
+shall be added, where  <TT><I>op</I></TT> stands for one of: <P>
+<TT>LT</TT> - less than<P>
+<TT>LE</TT> - less than or equal to<P>
+<TT>GE</TT> - greater than or equal to<P>
+<TT>GT</TT> - greater than<P>
+<B>Description</B>: compares the lexical ordering of two strings based on the ISO 646 : 1991 
+collating sequence.<P>
+<B>Arguments</B>:  <TT>string_a</TT> and  <TT>string_b</TT> are scalars of one of the type combinations:<P>
+<XMP>        VARYING_STRING and VARYING_STRING 
+        VARYING_STRING and CHARACTER 
+             CHARACTER and VARYING_STRING </XMP>
+The arguments are unchanged by the procedure.<P>
+<B>Result Attributes</B>: scalar of type default  <TT>LOGICAL</TT>.<P>
+<B>Result Value</B>: The result value is true if  <TT>string_a</TT> stands in the indicated relationship 
+to  <TT>string_b</TT>, and is false otherwise.  The collating sequence used to establish the 
+ordering of characters for these procedures is that of the International Standard ISO 
+646 : 1991.  If  <TT>string_a</TT> and  <TT>string_b</TT> are of different lengths, the comparison is 
+done as if the shorter string were padded on the right with blanks. If either argument 
+contains a character  <TT>c</TT> not defined by the standard, the result value is processor 
+dependent and based on the collating value for  <TT>IACHAR(c</TT>. Zero length strings are 
+considered to be lexically equal. <P>
+<H3><A NAME="INDEX"><LI>The INDEX procedure</A></H3>
+The generic function reference of the form<P>
+<TT>INDEX(string,substring,back)</TT><P>
+shall be added.<P>
+<B>Description</B>: returns an integer that is the starting position of a substring within a 
+string.<P>
+<B>Arguments</B>:  <TT>string</TT> and  <TT>substring</TT> are scalars of one of the type combinations:<P>
+<XMP>        VARYING_STRING and VARYING_STRING 
+        VARYING_STRING and CHARACTER 
+             CHARACTER and VARYING_STRING </XMP>
+<TT>back</TT> - is a scalar of type default  <TT>LOGICAL</TT> and is  <TT>OPTIONAL</TT>.<P>
+The arguments are unchanged by the procedure.<P>
+<B>Result Attributes</B>: scalar of type default  <TT>INTEGER</TT>.<P>
+<B>Result value</B>:<P>
+Case(i): If  <TT>back</TT> is absent or is present with the value false, the result is the 
+minimum positive value of  <TT>I</TT> such that, <P>
+<TT>EXTRACT(string,I,I+LEN(substring)-1)==substring</TT>, or zero if there is no such value. <P>
+Zero is returned if  <TT>LEN(string)&lt;LEN(substring)</TT>, and one 
+is returned if  <TT>LEN(substring)==0</TT>.<P>
+Case(ii): If  <TT>back</TT> is present with the value true, the result is the 
+maximum value of  <TT>I</TT> less than or equal to 
+ <TT>LEN(string)-LEN(substring)+1</TT> such that 
+ <TT>EXTRACT(string,I,I+LEN(substring)-1)==substring</TT>, or zero if there is no such value.  <P>
+Zero is returned if  <TT>LEN(string)&lt;LEN(substring)</TT>, and 
+ <TT>LEN(string)+1</TT> is returned if  <TT>LEN(substring)==0</TT>.<P>
+<H3><A NAME="SCAN"><LI>The SCAN procedure</A></H3>
+The generic function reference of the form<P>
+<TT>SCAN(string,set,back)</TT><P>
+shall be added.<P>
+<B>Description</B>: scans a string for any one of the characters in a set of characters.<P>
+<B>Arguments</B>:  <TT>string</TT> and  <TT>set</TT> are scalars of one of the type combinations:<P>
+<XMP>        VARYING_STRING and VARYING_STRING 
+        VARYING_STRING and CHARACTER 
+             CHARACTER and VARYING_STRING </XMP>
+<TT>back</TT> - is a scalar of type default  <TT>LOGICAL</TT> and is  <TT>OPTIONAL</TT>.<P>
+The arguments are unchanged by the procedure.<P>
+<B>Result Attributes</B>: scalar of type default  <TT>INTEGER</TT>.<P>
+<B>Result Value</B>:<P>
+Case(i): If  <TT>back</TT> is absent or is present with the value false and if  <TT>string</TT> 
+contains at least one character that is in  <TT>set</TT>, the value of the result 
+is the position of the left-most character of  <TT>string</TT> that is in  <TT>set</TT>.<P>
+Case(ii): If  <TT>back</TT> is present with the value true and if  <TT>string</TT> contains 
+at least one character that is in  <TT>set</TT>, the value of the result 
+is the position of the right-most character of  <TT>string</TT> that 
+is in  <TT>set</TT>.<P>
+Case(iii): The value of the result is zero if no character of  <TT>string</TT> is 
+in  <TT>set</TT> or if the length of either  <TT>string</TT> or  <TT>set</TT> is zero.<P>
+<H3><A NAME="VERIFY"><LI>The VERIFY procedure</A></H3>
+The generic function reference of the form<P>
+<TT>VERIFY(string,set,back)</TT><P>
+shall be added.<P>
+<B>Description</B>: verifies that a string contains only characters from a given set by 
+scanning for any character not in the set.<P>
+<B>Arguments</B>:  <TT>string</TT> and  <TT>set</TT> are scalars of one of the type combinations:<P>
+<XMP>        VARYING_STRING and VARYING_STRING 
+        VARYING_STRING and CHARACTER 
+             CHARACTER and VARYING_STRING </XMP>
+<TT>back</TT> - is a scalar of type default  <TT>LOGICAL</TT> and is  <TT>OPTIONAL</TT>.<P>
+The arguments are unchanged by the procedure.<P>
+<B>Result Attributes</B>: scalar of type default  <TT>INTEGER</TT>.<P>
+<B>Result Value</B>:<P>
+Case(i): If  <TT>back</TT> is absent or is present with the value false and if  <TT>string</TT> 
+contains at least one character that is not in  <TT>set</TT>, the value of the 
+result is the position of the left-most character of  <TT>string</TT> that is 
+not in  <TT>set</TT>.<P>
+Case(ii): If  <TT>back</TT> is present with the value true and if  <TT>string</TT> contains 
+at least one character that is not in  <TT>set</TT>, the value of the 
+result is the position of the right-most character of  <TT>string</TT> 
+that is not in  <TT>set</TT>.<P>
+Case(iii): The value of the result is zero if each character of  <TT>string</TT> is 
+in  <TT>set</TT> or if the length of  <TT>string</TT> is zero.<P>
+</OL>
+<H2><A NAME="TYPCONV"><LI>Additional Generic Procedure for Type Conversion</A></H2>
+<OL>
+An additional generic procedure shall be added to convert scalar intrinsic fixed-length character 
+values into scalar varying-length string values.<P>
+<H3><A NAME="VAR_STR"><LI>The VAR_STR procedure</A></H3>
+The generic function reference of the form<P>
+<TT>VAR_STR(char)</TT><P>
+shall be provided.<P>
+<B>Description</B>: converts an intrinsic fixed-length character value into the equivalent 
+varying-length string value.<P>
+<B>Argument</B>:  <TT>char</TT> is a scalar of type default  <TT>CHARACTER</TT> and may be of any length.  The 
+argument is unchanged by the procedure.<P>
+<B>Result Attributes</B>: scalar of type  <TT>VARYING_STRING</TT>.<P>
+<B>Result Value</B>: The result value is the same string of characters as the argument. <P>
+</OL>
+<H2><A NAME="IO"><LI>Additional Generic Procedures for Input/Output</A></H2>
+<OL>
+The following additional generic procedures shall be provided to support input and output of 
+varying-length string values with formatted sequential files.<P>
+<TT>GET     </TT> - input part or all of a record into a string<P>
+<TT>PUT     </TT> - append a string to an output record<P>
+<TT>PUT_LINE</TT> - append a string to an output record and end the record<P>
+<H3><A NAME="GET"><LI>The GET procedure</A></H3>
+The generic subroutine references of the forms<P>
+<XMP>CALL GET(string,maxlen,iostat)
+CALL GET(unit,string,maxlen,iostat)
+CALL GET(string,set,separator,maxlen,iostat)
+CALL GET(unit,string,set,separator,maxlen,iostat)</XMP>
+shall be provided.<P>
+<B>Description</B>: reads characters from an external file into a string.<P> 
+<B>Arguments</B>:<P>
+<TT>string   </TT> - is of type  <TT>VARYING_STRING</TT>,<P>
+<TT>maxlen   </TT> - is of type default  <TT>INTEGER</TT> and is  <TT>OPTIONAL</TT>,<P>
+<TT>unit     </TT> - is of type default  <TT>INTEGER</TT>,<P>
+<TT>set      </TT> - is either of type  <TT>VARYING_STRING</TT> or of type  <TT>CHARACTER</TT>,<P>
+<TT>separator</TT> - is of type  <TT>VARYING_STRING</TT> and is  <TT>OPTIONAL</TT>,<P>
+<TT>iostat   </TT> - is of type default  <TT>INTEGER</TT> and is  <TT>OPTIONAL</TT>.<P>
+All arguments are scalar. The argument  <TT>unit</TT> specifies the input unit to be used. It 
+must be connected to a formatted file for sequential read access. If the argument 
+ <TT>unit</TT> is omitted, the default input unit is used. The arguments  <TT>maxlen</TT>,  <TT>unit</TT>, 
+and  <TT>set</TT> are unchanged by the procedure.<P>
+<B>Action</B>: The  <TT>GET</TT> procedure causes characters from the connected file, starting with 
+the next character in the current record if there is a current record or the first 
+character of the next record if not, to be read and stored in the variable  <TT>string</TT>. The 
+end of record always terminates the input but input may be terminated before this.  
+If  <TT>maxlen</TT> is present, its value indicates the maximum number of characters that will 
+be read. If  <TT>maxlen</TT> is less than or equal to zero, no characters will be read and 
+ <TT>string</TT> will be set to zero length. If  <TT>maxlen</TT> is absent, a maximum of  <TT>HUGE(1)</TT> is used. 
+If the argument  <TT>set</TT> is provided, this specifies a set of characters the occurrence of 
+any of which will terminate the input.  This terminal character, although read from 
+the input file, will not be included in the result string. The file position after the data 
+transfer is complete, is after the last character that was read.  If the argument 
+ <TT>separator</TT> is present, the actual character found which terminates the transfer is 
+returned in  <TT>separator</TT>.  If the transfer is terminated other than by the occurrence 
+of a character in  <TT>set</TT>, a zero length string is returned in  <TT>separator</TT>. If the transfer 
+is terminated by the end of record being reached, the file is positioned after the 
+record just read. If present, the argument  <TT>iostat</TT> is used to return the status 
+resulting from the data transfer.  A zero value is returned if a valid read operation 
+occurs and the end-of-record is not reached, a positive value if an error occurs, and 
+a negative value if an end-of-file or end-of-record condition  occurs. Note, the 
+negative value returned for an end-of-file condition must be different from that 
+returned for an end-of-record condition. If  <TT>iostat</TT> is absent and an error or 
+end-of-file condition occurs, the program execution is terminated.<P>
+<H3><A NAME="PUT"><LI>The PUT procedure</A></H3>
+The generic subroutine references of the forms<P>
+<TT>CALL PUT(string,iostat)</TT><P>
+<TT>CALL PUT(unit,string,iostat)</TT><P>
+shall be provided.<P>
+<B>Description</B>: writes a string to an external file.<P>
+<B>Arguments</B>:<P>
+<TT>string</TT> - is either of type  <TT>VARYING_STRING</TT> or type  <TT>CHARACTER</TT>,<P>
+<TT>unit  </TT> - is of type default  <TT>INTEGER</TT>,<P>
+<TT>iostat</TT> - is of type default  <TT>INTEGER</TT> and is  <TT>OPTIONAL</TT>.<P>
+All arguments are scalar. The argument  <TT>unit</TT> specifies the output unit to be used. It 
+must be connected to a formatted file for sequential write access. If the argument 
+ <TT>unit</TT> is omitted, the default output unit is used. The arguments  <TT>unit</TT> and  <TT>string</TT> are 
+unchanged by the procedure.<P>
+<B>Action</B>: The  <TT>PUT</TT> procedure causes the characters of  <TT>string</TT> to be appended to the 
+current record, if there is a current record, or to the start of the next record if 
+there is no current record. The last character transferred becomes the last character 
+of the current record, which is the last record of the file. If present, the argument 
+ <TT>iostat</TT> is used to return the status resulting from the data transfer.  A zero value 
+is returned if a valid write operation occurs, and a positive value if an error occurs. 
+If  <TT>iostat</TT> is absent and anything other than a valid write operation occurs, the 
+program execution is terminated.<P>
+<H3><A NAME="PUT_LINE"><LI>The PUT_LINE procedure</A></H3>
+The generic subroutine references of the forms<P>
+<TT>CALL PUT_LINE(string,iostat)</TT><P>
+<TT>CALL PUT_LINE(unit,string,iostat)</TT><P>
+shall be provided. <P>
+<B>Description</B>: writes a string to an external file and ends the record.<P>
+<B>Arguments</B>:<P>
+<TT>string</TT> - is either of type  <TT>VARYING_STRING</TT> or type  <TT>CHARACTER</TT><P>
+<TT>unit  </TT> - is of type default  <TT>INTEGER</TT><P>
+<TT>iostat</TT> - is of type default  <TT>INTEGER</TT> and is  <TT>OPTIONAL</TT>.<P>
+All arguments are scalar. The argument  <TT>unit</TT> specifies the output unit to be used. It 
+must be connected to a formatted file for sequential write access. If the argument 
+ <TT>unit</TT> is omitted, the default output unit is used. The arguments  <TT>unit</TT> and  <TT>string</TT> are 
+unchanged by the procedure.<P>
+<B>Action</B>: The  <TT>PUT_LINE</TT> procedure causes the characters of  <TT>string</TT> to be appended to 
+the current record, if there is a current record, or to the start of the next record 
+if there is no current record. Following completion of the data transfer, the file is 
+positioned after the record just written, which becomes the previous and last record 
+of the file. If present, the argument  <TT>iostat</TT> is used to return the status resulting 
+from the data transfer. A zero value is returned if a valid write operation occurs, and 
+a positive value if an error occurs. If  <TT>iostat</TT> is absent and anything other than a 
+valid write operation occurs, the program execution is terminated.<P>
+</OL>
+<H2><A NAME="SUBSTR"><LI>Additional Generic Procedures for Substring Manipulation</A></H2>
+<OL>
+The following additional generic procedures shall be provided to support the manipulation of scalar 
+substrings of scalar varying-length strings.<P>
+<TT>INSERT </TT> - insert a substring into a string<P>
+<TT>REPLACE</TT> - replace a substring in a string<P>
+<TT>REMOVE </TT> - remove a section of a string<P>
+<TT>EXTRACT</TT> - extract a section from a string<P>
+<TT>SPLIT  </TT> - split a string into two at the occurrence of a separator <P>
+<H3><A NAME="INSERT"><LI>The INSERT procedure</A></H3>
+The generic function reference of the form<P>
+<TT>INSERT(string,start,substring)</TT><P>
+shall be provided.<P>
+<B>Description</B>: inserts a substring into a string at a specified position.<P>
+<B>Arguments</B>:<P>
+<TT>string   </TT> - is either type  <TT>VARYING_STRING</TT> or type default  <TT>CHARACTER</TT>,<P>
+<TT>start    </TT> - is type default  <TT>INTEGER</TT>,<P>
+<TT>substring</TT> - is either type  <TT>VARYING_STRING</TT> or type default  <TT>CHARACTER</TT>.<P>
+All arguments are scalars. The arguments are unchanged by the procedure.<P>
+<B>Result Attributes</B>: scalar of type  <TT>VARYING_STRING</TT>. <P>
+<B>Result Value</B>: The result value is a copy of the characters of the argument  <TT>string</TT> 
+with the characters of  <TT>substring</TT> inserted into the copy of  <TT>string</TT> before the 
+character at the character position  <TT>start</TT>. If  <TT>start</TT> is greater than  <TT>LEN(string</TT>, the 
+value  <TT>LEN(string)+1)</TT> is used for  <TT>start</TT> and  <TT>substring</TT> is appended to the copy of 
+ <TT>string</TT>. If  <TT>start</TT> is less than one, the value one is used for  <TT>start</TT> and  <TT>substring</TT> is 
+inserted before the first character of the copy of  <TT>string</TT>. <P>
+<H3><A NAME="REPLACE"><LI>The REPLACE procedure</A></H3>
+The generic function references of the forms<P>
+<XMP>REPLACE(string,start,substring)
+REPLACE(string,start,finish,substring)
+REPLACE(string,target,substring,every,back)</XMP>
+shall be provided.<P>
+<B>Description</B>: replaces a subset of the characters in a string by a given substring. The 
+subset may be specified either by position or by content.<P>
+<B>Arguments</B>:<P>
+<TT>string   </TT> - is either of type  <TT>VARYING_STRING</TT> or type default  <TT>CHARACTER</TT>,<P>
+<TT>start    </TT> - is of type default  <TT>INTEGER</TT>,<P>
+<TT>finish   </TT> - is of type default  <TT>INTEGER</TT>,<P>
+<TT>substring</TT> - is either of type  <TT>VARYING_STRING</TT> or type default  <TT>CHARACTER</TT>,<P>
+<TT>target   </TT> - is either of type  <TT>VARYING_STRING</TT> or type default  <TT>CHARACTER</TT>,<P>
+<TT>every    </TT> - is of type default  <TT>LOGICAL</TT>, and is  <TT>OPTIONAL</TT>,<P>
+<TT>back     </TT> - is of type default  <TT>LOGICAL</TT>, and is  <TT>OPTIONAL</TT>. <P>
+All arguments are scalar. The argument  <TT>target</TT> must not be of zero length. In all 
+cases the arguments are unchanged by the procedure.<P>
+<B>Result Attributes</B>: scalar of type  <TT>VARYING_STRING</TT>. <P>
+<B>Result Value</B>: The result value is a copy of the characters in  <TT>string</TT> modified as per 
+one of the cases below. <P>
+Case(i): For a reference of the form <P>
+<TT>REPLACE(string,start,substring)</TT><P>
+the characters of the argument  <TT>substring</TT> are inserted into 
+the copy of  <TT>string</TT> beginning with the character at the 
+character position  <TT>start</TT>. The characters in positions from <P>
+<TT>start</TT> to <TT>MIN(start+LEN(substring)-1,LEN(string))</TT><P>
+are deleted. If <TT>start</TT> is greater than  <TT>LEN(string)</TT>, the value 
+ <TT>LEN(string)+1</TT> is used for  <TT>start</TT> and  <TT>substring</TT> is 
+appended to the copy of  <TT>string</TT>. If  <TT>start</TT> is less than one, 
+the value one is used for  <TT>start</TT>.<P>
+Case(ii): For a reference of the form<P>
+<TT>REPLACE(string,start,finish,substring)</TT><P>
+the characters in the copy of  <TT>string</TT> between positions 
+ <TT>start</TT> and  <TT>finish</TT>, including those at  <TT>start</TT> and  <TT>finish</TT>, are 
+deleted and replaced by the characters of  <TT>substring</TT>. If 
+ <TT>start</TT> is less than one, the value one is used for  <TT>start</TT>. If 
+ <TT>finish</TT> is greater than  <TT>LEN(string</TT>, the value  <TT>LEN(string)</TT> 
+is used for  <TT>finish</TT>. If  <TT>finish</TT> is less than  <TT>start</TT>, the 
+characters of  <TT>substring</TT> are inserted before the character 
+at  <TT>start</TT> and no characters are deleted.<P>
+Case(iii): For a reference of the form<P>
+<TT>REPLACE(string,target,substring,every,back)</TT><P>
+the copy of  <TT>string</TT> is searched for occurrences of  <TT>target</TT>. 
+The search is done in the backward direction if the argument 
+ <TT>back</TT> is present with the value true, and in the forward 
+direction otherwise. If  <TT>target</TT> is found, it is replaced by 
+ <TT>substring</TT>. If  <TT>every</TT> is present with the value true, the 
+search and replace is continued from the character following 
+ <TT>target</TT> in the search direction specified until all occurrences 
+of  <TT>target</TT> in the copy string are replaced; otherwise only the 
+first occurrence of  <TT>target</TT> is replaced. <P>
+<H3><A NAME="REMOVE"><LI>The REMOVE procedure</A></H3>
+The generic function reference of the form<P>
+<TT>REMOVE(string,start,finish)</TT><P>
+shall be provided.<P>
+<B>Description</B>: removes a specified substring from a string.<P>
+<B>Arguments</B>:<P>
+<TT>string</TT> - is either of type  <TT>VARYING_STRING</TT> or type default  <TT>CHARACTER</TT>,<P>
+<TT>start </TT> - is of type default  <TT>INTEGER</TT>, and is <TT> OPTIONAL</TT>,<P>
+<TT>finish</TT> - is of type default  <TT>INTEGER</TT>, and is  <TT>OPTIONAL</TT>.<P>
+All arguments are scalars. The arguments are unchanged by the procedure.<P>
+<B>Result Attributes</B>: scalar of type  <TT>VARYING_STRING</TT>. <P>
+<B>Result Value</B>: The result value is a copy of the characters of  <TT>string</TT> with the 
+characters between positions  <TT>start</TT> and  <TT>finish</TT>, inclusive, removed. If  <TT>start</TT> is 
+absent or less than one, the value one is used for  <TT>start</TT>. If  <TT>finish</TT> is absent or 
+greater than  <TT>LEN(string</TT>, the value  <TT>LEN(string)</TT> is used for  <TT>finish</TT>. If  <TT>finish</TT> is 
+less than  <TT>start</TT>, the characters of  <TT>string</TT> are delivered unchanged as the result. <P>
+<H3><A NAME="EXTRACT"><LI>The EXTRACT procedure</A></H3>
+The generic function reference of the form<P>
+<TT>EXTRACT(string,start,finish)</TT><P>
+shall be provided.<P>
+<B>Description</B>: extracts a specified substring from a string.<P>
+<B>Arguments</B>:<P>
+<TT>string</TT> - is either of type  <TT>VARYING_STRING</TT> or type default  <TT>CHARACTER</TT>,<P>
+<TT>start </TT> - is of type default  <TT>INTEGER</TT>, and is <TT> OPTIONAL</TT>,<P>
+<TT>finish</TT> - is of type default  <TT>INTEGER</TT>, and is  <TT>OPTIONAL</TT>.<P>
+All arguments are scalars. The arguments are unchanged by the procedure.<P>
+<B>Result Attributes</B>: scalar of type  <TT>VARYING_STRING</TT>. <P>
+<B>Result Value</B>: The result value is a copy of the characters of the argument  <TT>string</TT> 
+between positions  <TT>start</TT> and  <TT>finish</TT>, inclusive. If  <TT>start</TT> is absent or less than one, 
+the value one is used for  <TT>start</TT>. If  <TT>finish</TT> is absent or greater than  <TT>LEN(string)</TT>, 
+the value  <TT>LEN(string</TT> is used for  <TT>finish</TT>. If  <TT>finish</TT> is less than  <TT>start</TT>, the result 
+is a zero-length string. <P>
+<H3><A NAME="SPLIT"><LI>The SPLIT procedure</A></H3>
+The generic subroutine reference of the form<P>
+<TT>CALL SPLIT(string,word,set,separator,back)</TT><P>
+shall be provided.<P>
+<B>Description</B>: splits a string into a two substrings with the substrings separated by the 
+occurrence of a character from a specified separator set. <P>
+<B>Arguments</B>:<P>
+<TT>string   </TT> - is of type  <TT>VARYING_STRING</TT>,<P>
+<TT>word     </TT> - is of type  <TT>VARYING_STRING</TT>,<P>
+<TT>set      </TT> - is either of type  <TT>VARYING_STRING</TT> or type default  <TT>CHARACTER</TT>,<P>
+<TT>separator</TT> - is of type  <TT>VARYING_STRING</TT>, and is  <TT>OPTIONAL,</TT><P>
+<TT>back     </TT> - is of type default  <TT>LOGICAL</TT>, and is  <TT>OPTIONAL</TT>,<P>
+All arguments are scalar. The arguments  <TT>set</TT> and  <TT>back</TT> are unchanged by the 
+procedure. <P>
+<B>Action</B>: The effect of the procedure is to divide the string at the first occurrence of 
+a character that is in  <TT>set</TT>.  The  <TT>string</TT> is searched in the forward direction unless 
+ <TT>back</TT> is present with the value true, in which case the search is in the backward 
+direction.  The characters passed over in the search are returned in the argument 
+ <TT>word</TT> and the remainder of the string, not including the separator character, is 
+returned in the argument  <TT>string</TT>. If no character from  <TT>set</TT> is found or  <TT>set</TT> is of zero 
+length, the whole string is returned in  <TT>word</TT> and  <TT>string</TT> is returned as zero length.  
+ If the argument  <TT>separator</TT> is present, the actual character found which separates 
+the  <TT>word</TT> from the remainder of the  <TT>string</TT> is returned in  <TT>separator</TT>.  The effect of 
+the procedure is such that, on return, either<P>
+<TT>word//separator//string</TT><P>
+is the same as the initial string for a forward search, or<P>
+<TT>string//separator//word</TT> <P>
+is the same as the initial string for a backward search.<P>
+</OL>
+</OL>
+<HR>
+<H1><A NAME="MOD">Annex A</A></H1>
+(informative)<P>
+<P>
+<H2><A HREF="iso_vst.f90">Module <b style="color:black;background-color:#ffff66">ISO_varying_string</b></A></H2>
+The module <b style="color:black;background-color:#ffff66">ISO_varying_string</b> is written in Fortran 90, 
+conformant with the language as specified in the standard ISO/IEC 1539 : 1991.  
+It is intended to be a portable implementation of a module conformant 
+with this part of ISO/IEC 1539 family of standards. It is not intended to be prescriptive of 
+how facilities consistent with 
+this part of ISO/IEC 1539 should be provided. This module is intended primarily to demonstrate that 
+portable facilities consistent with the interfaces and semantics required by this part of ISO/IEC 1539 
+could be provided within the confines of the Fortran language. It is also included as a guide for users 
+of processors which do not have supplier-provided facilities implementing this part of ISO/IEC 1539.<P>
+<P>
+It should be noted that while every care has been taken by the technical working group to ensure 
+that this module is a correct implementation of this part of ISO/IEC 1539 in valid Fortran code, no 
+guarantee is given or implied that this code will produce correct results, or even that it will execute 
+on any particular processor.  Neither is there any implication that this illustrative module is in any 
+way an optimal implementation of this standard; it is merely one fairly straightforward portable 
+module that is known to provide a functionally conformant implementation on a few processors.<P>
+<H1><A NAME="EXMP">Annex B</A></H1>
+(informative)<P>
+This annex includes links to some examples illustrating the use of facilities conformant with this part of
+ISO/IEC 1539.  It should be noted that while every care has been taken by the technical working
+group to ensure that these example programs are a correct implementation of the stated
+problems using this part of ISO/IEC 1539 and in valid Fortran code, no guarantee is given or
+implied that this code will produce correct results, or even that it will execute on any particular
+processor. <P>
+The first example performs a <A HREF="wrdcnt.f90">word count</A>.  Note, it is not claimed that this
+program is the best way to code this problem, nor even that it is a good way, merely that it is a 
+way of solving this simple problem using the facilities
+defined by use of the facilities defined in this part of ISO/IEC 1539.<P>
+A second and rather more realistic example is one which extends the above trivial example by
+producing a full <A HREF="vocab.f90">vocabulary list</A> along with frequency of occurrence 
+for each different word. Again there is no claim that this is in anyway an optimal coding of this problem.
+It is merely an example that uses some of the facilities defined by this part of ISO/IEC 1539.<P>
+<HR>
+This document was produced from the maintenance text of the published standard as an experiment in using 
+HTML and the WWW for standards work. This version was last reviewed on 12-May-95.
+<Address>Lawrie Schonfelder (J.L.Schonfelder@liv.ac.uk)</ADDRESS>
+</BODY>
+</HTML>
