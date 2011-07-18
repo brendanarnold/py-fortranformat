@@ -8,8 +8,8 @@ import os
 
 # MODIFIER_EDS = ['SP']
 # OUTPUT_EDS = ['F']
-EDS = ['Z']
-# EDS = ['BN', 'BZ', 'Slash', 'SP', 'SS', 'T', 'TL', 'TR', 'X', 'Colon', 'B', 'D', 'EN', 'ES', 'E', 'F', 'G', 'I', 'L', 'O', 'Z']
+# EDS = ['Z']
+EDS = ['BN', 'BZ', 'Slash', 'SP', 'SS', 'T', 'TL', 'TR', 'X', 'Colon', 'B', 'D', 'EN', 'ES', 'E', 'F', 'G', 'I', 'L', 'O', 'Z']
 MODIFIER_EDS = ['BN', 'BZ', 'Slash', 'SP', 'SS', 'T', 'TL', 'TR', 'X', 'Colon']
 OUTPUT_EDS = ['B', 'D', 'EN', 'ES', 'E', 'F', 'G', 'I', 'L', 'O', 'Z', 'Slash']
 SOURCE_FILESTEM = '%s-ed-input-%d.f'
@@ -563,11 +563,15 @@ def write_fortran_source(formats, inputs, name):
                     line = '     +' + line[72:]
                 fh.write(line[:72] + '\n')
         # Output the format statements
+        fh.write("\n")
         for ind, fmt in enumerate(formats):
             lbl = ind + 1
             fh.write("%-6dFORMAT (%s)\n" % (lbl, fmt))
         # Ouptut the closing source
-        fh.write("\n      STOP\n      END\n")
+        fh.write("""
+      STOP
+      END
+""")
         fh.close()
         batch += 1
 

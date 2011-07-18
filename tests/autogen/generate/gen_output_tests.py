@@ -518,29 +518,47 @@ def write_fortran_source(formats, inputs, name):
         # Generate all the combinations
         fmt_inp_pairs = product(enumerate(formats), inputs)
     # Output the start of the source file
-    fh.write("      PROGRAM %sEDIT\n\n\n" % name.upper().replace('-', '_'))
+    errlbl = len(formats) + 10
+    fh.write("""      PROGRAM %sEDIT
+
+      IMPLICIT NONE
+      LOGICAL ERR
+
+""" % name.upper().replace('-', '_'))
     for fmt_tup, inp in fmt_inp_pairs:
         lbl = fmt_tup[0] + 1
+        lines = []
         # Quote the format so FORTRAN displays correctly
         quoted_fmt = fmt_tup[1].replace("'", "''")
+        lines.append("""      ERR = .TRUE.""")
         # Quote the input so FORTRAN displays correctly
         quoted_inp = inp.replace("'", "''")
         if inp == '':
-            line = """      WRITE (*, %d) 'FORMAT:(%s)', 'INPUT:'""" % (lbl, quoted_fmt)
+            lines.append("""      WRITE (*, %d, ERR=%d) 'FORMAT:(%s)', 'INPUT:'""" % (lbl, errlbl, quoted_fmt))
         else:
-            line = """      WRITE (*, %d) 'FORMAT:(%s)', 'INPUT:%s', %s""" % (lbl, quoted_fmt, quoted_inp, inp)
+            lines.append("""      WRITE (*, %d, ERR=%d) 'FORMAT:(%s)', 'INPUT:%s', %s""" % (lbl, errlbl, quoted_fmt, quoted_inp, inp))
+        lines.append("""      ERR = .FALSE.""")
+        lines.append("""%-6dIF (ERR) THEN""" % errlbl)
+        lines.append("""        WRITE (*, '(A, /, A, /, ''ERR'')') 'FORMAT:(%s)', 'INPUT:%s'""" % (quoted_fmt, quoted_inp))
+        lines.append("""      ENDIF""")
+        lines.append("")
+        errlbl += 1
         # Continue the lines if necessary
-        while len(line) > 72:
+        for line in lines:
+            while len(line) > 72:
+                fh.write(line[:72] + '\n')
+                line = '     +' + line[72:]
             fh.write(line[:72] + '\n')
-            line = '     +' + line[72:]
-        fh.write(line[:72] + '\n')
     # Output the format statements
     fh.write("\n")
     for ind, fmt in enumerate(formats):
         lbl = ind + 1
         fh.write("%-6dFORMAT (A, /, A, /, %s)\n" % (lbl, fmt))
     # Ouptut the closing source
-    fh.write("\n      STOP\n      END\n")
+    fh.write("""
+      STOP
+      END
+""")
     fh.close()
 
 
@@ -605,11 +623,11 @@ def product(*args, **kwds):
 
 if __name__ == '__main__':
     import sys
-    # compile_str = sys.argv[1]
-    # gen_tests()
-    # compile_tests(compile_str)
-    # execute_tests()
-    write_py_source()
+    compile_str = sys.argv[1]
+    gen_tests()
+    compile_tests(compile_str)
+    execute_tests()
+    # write_py_source()
 
 
 # Note: test comma-less p use
