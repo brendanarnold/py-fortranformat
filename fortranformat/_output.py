@@ -48,11 +48,11 @@ def output(eds, reversion_eds, values):
     # use iterators
     get_ed = has_next_iterator(eds)
     get_value = has_next_iterator(values)
-    get_reversion_ed = itertools.cycle(reversion_eds)
+    tmp_reversion_eds = []
     # continue until out of edit descriptors or values
     while True:
         # no more edit descriptors, no more values, stop output, 
-        # todo: this will cut short an reversion edit descriptor section - is this right?
+        # todo: this will cut short a reversion edit descriptor section - is this right?
         if not get_ed.has_next() and not get_value.has_next():
             break
         # take a edit descriptor off the queue if there is any
@@ -65,16 +65,18 @@ def output(eds, reversion_eds, values):
             if reversion_contains_output_ed == True:
                 # take from reversion edit descriptors if there is a value
                 # requiring output still
-                if IS_PYTHON3:
-                    ed = next(get_reversion_ed)
-                else:
-                    ed = get_reversion_ed.next()
-                # these edit descriptors are ignored in reversion state
-                while isinstance(ed, NON_REVERSION_EDS):
-                    if IS_PYTHON3:
-                        ed = next(get_reversion_ed)
+                while True:
+                    if len(tmp_reversion_eds):
+                        ed = tmp_reversion_eds.pop()
+                        # these edit descriptors are ignored in reversion state
+                        if not isinstance(ed, NON_REVERSION_EDS):
+                            break
                     else:
-                        ed = get_reversion_ed.next()
+                        # Regardless of where cursor is, is moved to the
+                        # next record
+                        record = record + '\n'
+                        state['position'] = len(record)
+                        tmp_reversion_eds = reversion_eds[::-1]
             else:
                 # ignore the revsion edit descriptors as cannot output the
                 # final value
