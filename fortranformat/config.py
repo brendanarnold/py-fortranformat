@@ -1,4 +1,5 @@
 import sys
+import os
 
 # Should all edit descriptor values be returned even if they were not
 # written to?
@@ -12,6 +13,8 @@ G_INPUT_TRIAL_EDS = ['F', 'L', 'A']
 # Contrary to specification, many compilers allow zero width edit
 # descriptors
 ALLOW_ZERO_WIDTH_EDS = True
+# Set the characters that separate the records
+RECORD_SEPARATOR = '\n'
 
 # The maximum size for an integer
 if sys.version_info[0] >= 3:

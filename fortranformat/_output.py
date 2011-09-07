@@ -74,7 +74,7 @@ def output(eds, reversion_eds, values):
                     else:
                         # Regardless of where cursor is, is moved to the
                         # next record
-                        record = record + '\n'
+                        record = record + config.RECORD_SEPARATOR
                         state['position'] = len(record)
                         tmp_reversion_eds = reversion_eds[::-1]
             else:
@@ -157,7 +157,7 @@ def output(eds, reversion_eds, values):
             elif isinstance(ed, Colon):
                 state['halt_if_no_vals'] = True
             elif isinstance(ed, Slash):
-                state['position'], record = _write_string(record, '\n', state['position'])
+                state['position'], record = _write_string(record, config.RECORD_SEPARATOR, state['position'])
             elif isinstance(ed, (X, TR)):
                 state['position'] = state['position'] + ed.num_chars
             elif isinstance(ed, TL):
