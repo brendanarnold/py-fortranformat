@@ -3,7 +3,7 @@ from distutils.core import setup
 setup(
     name = 'fortranformat',
     packages = ['fortranformat'],
-    version = '0.2.3',
+    version = '0.2.4',
     description = 'Mimics Fortran textual IO in Python',
     author = 'Brendan Arnold',
     author_email = 'brendanarnold@gmail.com',
