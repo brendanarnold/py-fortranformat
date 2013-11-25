@@ -99,7 +99,7 @@ def lexer(format):
             s = s + 1
         # Read in an H edit descriptor
         elif c0.upper() in H_EDIT_DESCRIPTOR:
-            if (len(tokens) > 0) and (tokens[-1].type == 'UINT'):
+            if (len(tokens) > 0) and (tokens[-1].type in ('NZUINT', 'UINT')):
                 h_chars = tokens[-1].value
                 tokens = tokens[:-1]
             else:

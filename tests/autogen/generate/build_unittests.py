@@ -1,7 +1,7 @@
 '''
-Run this on cloning the Hg source which only contains the Fortran test results
+Run this on cloning the Hg source which only contains the Fortran *.test results
 
-This will generate the unittest .py files that are stored in the test hierarchy
+This will generate the unittest *_test_*.py files that are stored in the test hierarchy
 '''
 
 import os

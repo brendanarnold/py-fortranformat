@@ -3,7 +3,7 @@ from distutils.core import setup
 setup(
     name = 'fortranformat',
     packages = ['fortranformat'],
-    version = '0.2.4',
+    version = '0.2.3',
     description = 'Mimics Fortran textual IO in Python',
     author = 'Brendan Arnold',
     author_email = 'brendanarnold@gmail.com',
@@ -35,10 +35,12 @@ Licensed under the MIT license
 
 The library is extensively unit-tested (but not yet extensively user-tested, `please report bugs <https://bitbucket.org/brendanarnold/py-fortranformat/issues>`_!) against the Intel FORTRAN compiler on a Linux platform. Differences between platforms/compilers are generally minor.
 
+The following is a quistart, full docs are found at `the project page wiki <https://bitbucket.org/brendanarnold/py-fortranformat/wiki/Home>`_!.
+
 To read Fortran records,:
 
-  >>> from fortranformat import FortranRecordReader
-  >>> header_line = FortranRecordReader('(A15, A15, A15)')
+  >>> import fortranformat as ff
+  >>> header_line = ff.FortranRecordReader('(A15, A15, A15)')
   >>> header_line.read('              x              y              z')
     ['              x', '              y', '              z']
   >>> line = FortranRecordReader('(3F15.3)')
@@ -49,8 +51,8 @@ To read Fortran records,:
 
 To write Fortran records,:
 
-  >>> from fortranformat import FortranRecordWriter
-  >>> header_line = FortranRecordWriter('(A15, A15, A15)')
+  >>> import fortranformat as ff
+  >>> header_line = ff.FortranRecordWriter('(A15, A15, A15)')
   >>> header_line.write(['x', 'y', 'z'])
     '              x              y              z'
   >>> line = FortranRecordWriter('(3F15.3)')

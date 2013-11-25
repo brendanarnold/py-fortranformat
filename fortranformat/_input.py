@@ -14,6 +14,7 @@ else:
 
 WIDTH_OPTIONAL_EDS = [A]
 NON_WIDTH_EDS = [BN, BZ, P, SP, SS, S, X, T, TR, TL, Colon, Slash]
+FORBIDDEN_EDS = [QuotedString, H]
 
 # Some problems without pre written input vars:
 #   Cannot say when reversion conditions are met
@@ -35,6 +36,10 @@ def input(eds, reversion_eds, records, num_vals=None):
     }
 
     # pdb.set_trace()
+
+    for ed in eds + reversion_eds:
+        if isinstance(ed, tuple(FORBIDDEN_EDS)):
+            raise InvalidFormat("%d edit descriptr not permitted on input")
 
     # Expand repeated edit decriptors
     eds = expand_edit_descriptors(eds)

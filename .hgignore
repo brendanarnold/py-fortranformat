@@ -14,7 +14,8 @@ build/*
 tests/sandbox/*
 tests/autogen/sandbox/*
 tests/input/raw/lib/*
+dist/*
+2to3.txt
 syntax: regexp
 (\w+)-input-test-(\d+)\.py
 ((\w+-)?\w+)-output-test\.py
->>>>>>> other

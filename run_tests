@@ -1,2 +1,0 @@
-nosetests tests/autogen/input/ifort/9-1_linux_intel/*.py
-#nosetests tests/autogen/output/ifort/9-1_linux_intel/*.py
