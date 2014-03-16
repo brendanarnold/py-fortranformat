@@ -287,11 +287,9 @@ def _compose_float_string(w, e, d, state, val, ftype):
         nb = 0
         save_scale_factor = state['scale']
         exp_d = 10 ** d
-        if (0.0 < tmp < (0.1 - 0.05 / exp_d)) or \
+        if (0.0 <= tmp < (0.1 - 0.05 / exp_d)) or \
             (tmp >= (exp_d - 0.5)):
             ftype = 'E'
-        elif tmp == 0.0:
-            pass
         else:
             mag = int(abs(round(math.log10(tmp))))
             low = lambda mag, d : 10 ** (mag - 1) - 5 * 10 ** (-d - 1 + mag) 
