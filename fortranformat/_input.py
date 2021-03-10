@@ -4,13 +4,13 @@ import sys
 IS_PYTHON3 = sys.version_info[0] >= 3
 
 if IS_PYTHON3:
-    exec('from ._edit_descriptors import *')
-    exec('from ._misc import expand_edit_descriptors, has_next_iterator')
-    exec('from . import config')
+  from ._edit_descriptors import *
+  from ._misc import expand_edit_descriptors, has_next_iterator
+  from . import config
 else:
-    exec('from _edit_descriptors import *')
-    exec('from _misc import expand_edit_descriptors, has_next_iterator')
-    exec('import config')
+ from _edit_descriptors import *
+ from _misc import expand_edit_descriptors, has_next_iterator
+ import config
 
 WIDTH_OPTIONAL_EDS = [A]
 NON_WIDTH_EDS = [BN, BZ, P, SP, SS, S, X, T, TR, TL, Colon, Slash]

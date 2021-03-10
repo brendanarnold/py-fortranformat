@@ -2,15 +2,15 @@ import sys
 IS_PYTHON3 = sys.version_info[0] >= 3
 
 if IS_PYTHON3:
-    exec('from ._lexer import Token')
-    exec('from ._edit_descriptors import *')
-    exec('from ._exceptions import *')
-    exec('from . import config')
+    from ._lexer import Token
+    from ._edit_descriptors import *
+    from ._exceptions import *
+    from . import config
 else:
-    exec('from _lexer import Token')
-    exec('from _edit_descriptors import *')
-    exec('from _exceptions import *')
-    exec('import config')
+    from _lexer import Token
+    from _edit_descriptors import *
+    from _exceptions import *
+    import config
 
 def parser(tokens, version=None):
     # Parse the full edit descriptors
