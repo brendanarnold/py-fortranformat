@@ -1,0 +1,6 @@
+*.pyc
+*.out
+*.swp
+*.DS_Store
+*.Trashes
+.vscode
