@@ -41,19 +41,22 @@ def output(eds, reversion_eds, values):
     get_ed = has_next_iterator(eds)
     get_value = has_next_iterator(values)
     tmp_reversion_eds = []
+    is_complete = False
     # continue until out of edit descriptors or values
     while True:
-        # no more edit descriptors, no more values, stop output, 
-        # todo: this will cut short a reversion edit descriptor section - is this right?
-        if not get_ed.has_next() and not get_value.has_next():
+        # no more edit descriptors, no more values, stop output
+        if not get_ed.has_next() \
+            and not get_value.has_next() \
+            and (not reversion_contains_output_ed or not len(tmp_reversion_eds)):
             break
         # take a edit descriptor off the queue if there is any
         if get_ed.has_next():
             ed = next(get_ed)
         else:
-            if reversion_contains_output_ed == True:
+            if reversion_contains_output_ed:
                 # take from reversion edit descriptors if there is a value
                 # requiring output still
+
                 while True:
                     if len(tmp_reversion_eds):
                         ed = tmp_reversion_eds.pop()
@@ -65,9 +68,17 @@ def output(eds, reversion_eds, values):
                         # next record
                         record = record + config.RECORD_SEPARATOR
                         state['position'] = len(record)
-                        tmp_reversion_eds = reversion_eds[::-1]
+                        if get_value.has_next():
+                            # Only reset the reversion if we have more values to output
+                            tmp_reversion_eds = reversion_eds[::-1]
+                        else:
+                            # ... otherwise we are done
+                            is_complete = True
+                            break
+                if is_complete:
+                    break
             else:
-                # ignore the revsion edit descriptors as cannot output the
+                # ignore the revsersion edit descriptors as cannot output the
                 # final value
                 break
         # check if edit descriptor requires a value
@@ -76,8 +87,8 @@ def output(eds, reversion_eds, values):
                 val = next(get_value)
             else:
                 # is a edit descriptor that requires a value but no value
-                # todo: does it stop gracefully or raise error?
-                break   
+                # we simply ignore at this point - likely this is an incomplete reversion
+                break
             if isinstance(ed, I):
                 sub_string = _compose_i_string(ed.width, ed.min_digits, state, val)
             elif isinstance(ed, B):
