@@ -282,7 +282,7 @@ class Z(object):
                 ' width=' + str(self.width) + \
                 ' min_digits=' + str(self.min_digits) + '>'
 
-# Categorise the edit descriptors depnding on how they should be parsed
+# Categorise the edit descriptors depending on how they should be parsed
 
 ED1 = ['BN', 'BZ', 'SP', 'SS', 'S'] # Of form X only
 ED2 = ['X'] # Of form nX only
