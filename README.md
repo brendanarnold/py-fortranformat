@@ -58,7 +58,7 @@ The bulk of the tests are auto generated using Python scripts located in `tests/
 
 Make sure that nose tests is installed and run using
 
-`nosetests tests/autogen/input/ifort/9-1_linux_intel tests/autogen/output/ifort/9-1_linux_intel tests/misc`
+`sh scripts/runtests.sh`
 
 Note some of the Z input edit descriptor tests fail because in FORTRAN they overflow whereas Python can handle arbitrarily large integers
 
