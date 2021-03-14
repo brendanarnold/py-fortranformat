@@ -364,9 +364,9 @@ def _output_float(w, d, e, state, ft, buff, sign_bit, zero_flag, ndigits, edigit
         expchar = None
     elif ft in ['E', 'D']:
         i = state['scale']
-        if (d <= 0) and (i == 0):
-            raise InvalidFormat("Precision not greater than zero in format specifier 'E' or 'D'")
-        if (i <= -d) or (i >= (d + 2)):
+        if (d < 0) and (i == 0):
+            raise InvalidFormat("Precision less than zero in format specifier 'E' or 'D'")
+        if (i < -d) or (i >= (d + 2)):
             raise InvalidFormat("Scale factor out of range in format specifier 'E' or 'D'")
         if not zero_flag:
             ex = ex - i

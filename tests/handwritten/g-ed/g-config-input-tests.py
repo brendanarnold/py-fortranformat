@@ -78,5 +78,10 @@ class GConfigTests(unittest.TestCase):
         eds, rev_eds = _parser(_lexer(fmt))
         result = [' L0']
         self.assertEqual(result, _input(eds, rev_eds, inpt))
-        
-        
+
+    def g_config_test_8(self):
+        inpt = "    0.E+00"
+        fmt = '(G10.0)'
+        eds, rev_eds = _parser(_lexer(fmt))
+        result = [0.0]
+        self.assertEqual(result, _input(eds, rev_eds, inpt))
