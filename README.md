@@ -84,7 +84,7 @@ welcome!
 
 Please report bugs to,
 
-https://bitbucket.org/brendanarnold/py-fortranformat/issues
+https://github.com/brendanarnold/py-fortranformat/issues
 
 
 
