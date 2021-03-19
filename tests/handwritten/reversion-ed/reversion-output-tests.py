@@ -10,7 +10,7 @@ from fortranformat._parser import parser as _parser
 import fortranformat.config as config
 from fortranformat import FortranRecordWriter
 
-class GOutputTests(unittest.TestCase):
+class ReversionOutputTests(unittest.TestCase):
 
     def setUp(self):
         config.reset()

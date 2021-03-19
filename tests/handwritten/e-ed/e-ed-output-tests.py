@@ -9,29 +9,22 @@ from fortranformat._lexer import lexer as _lexer
 from fortranformat._parser import parser as _parser
 import fortranformat.config as config
 
-class GOutputTests(unittest.TestCase):
+class EOutputTests(unittest.TestCase):
 
     def setUp(self):
         config.reset()
 
-    def g_output_test_1(self):
-        inpt = [0.0]
-        fmt = '(G10.2)'
-        eds, rev_eds = _parser(_lexer(fmt))
-        result = "  0.00E+00"
-        self.assertEqual(result, _output(eds, rev_eds, inpt))
-
-    def g_output_test_2(self):
+    def e_output_test_1(self):
         '''Test where exponent is zero - note that GFortran actually crashes in this case'''
-        inpt = [0.0]
-        fmt = '(G10.0)'
+        inpt = [1.0]
+        fmt = '(E10.0)'
         eds, rev_eds = _parser(_lexer(fmt))
         result = "    0.E+00"
         self.assertEqual(result, _output(eds, rev_eds, inpt))
 
-    def g_output_test_3(self):
-        inpt = [1.1]
-        fmt = '(G12.4)'
+    def e_output_test_2(self):
+        inpt = [1.0]
+        fmt = '(E10.1)'
         eds, rev_eds = _parser(_lexer(fmt))
-        result = "   1.100    "
+        result = "   0.1E+01"
         self.assertEqual(result, _output(eds, rev_eds, inpt))

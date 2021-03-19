@@ -296,7 +296,7 @@ def _compose_float_string(w, e, d, state, val, ftype):
             while tmp >= high(mag, d):
                 mag = mag + 1
             assert(low(mag, d) <= tmp < high(mag, d))
-            if e < 0:
+            if e is None:
                 nb = 4
             else:
                 nb = e + 2
