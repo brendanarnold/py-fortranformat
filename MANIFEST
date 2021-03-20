@@ -1,5 +1,5 @@
 COPYING.txt
-README.txt
+README.md
 setup.py
 fortranformat/FortranRecordReader.py
 fortranformat/FortranRecordWriter.py
