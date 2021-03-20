@@ -3,12 +3,11 @@ from distutils.core import setup
 setup(
     name = 'fortranformat',
     packages = ['fortranformat'],
-    version = '0.2.5',
+    version = '0.2.6',
     description = 'Mimics Fortran textual IO in Python',
     author = 'Brendan Arnold',
     author_email = 'brendanarnold@gmail.com',
-    url = 'http://bitbucket.org/brendanarnold/py-fortranformat',
-    download_url = 'https://bitbucket.org/brendanarnold/py-fortranformat/downloads/fortranformat-0.2.4.tar.gz',
+    url = 'https://github.com/brendanarnold/py-fortranformat',
     keywords = ['fortran', 'io', 'interface', 'format'],
     classifiers = [
         'Development Status :: 4 - Beta',
@@ -33,9 +32,7 @@ Generates text from a Python list of variables or will read a line of text into 
 
 Licensed under the MIT license
 
-The library is extensively unit-tested (but not yet extensively user-tested, `please report bugs <https://bitbucket.org/brendanarnold/py-fortranformat/issues>`_!) against the Intel FORTRAN compiler on a Linux platform. Differences between platforms/compilers are generally minor.
-
-The following is a quistart, full docs are found at `the project page wiki <https://bitbucket.org/brendanarnold/py-fortranformat/wiki/Home>`_!.
+The library is extensively unit-tested (but not yet extensively user-tested, `please report bugs <https://github.com/brendanarnold/py-fortranformat/issues>`_!) against the Intel FORTRAN compiler on a Linux platform. Differences between platforms/compilers are generally minor.
 
 To read Fortran records,:
 
