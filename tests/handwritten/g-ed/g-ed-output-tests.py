@@ -26,7 +26,7 @@ class GOutputTests(unittest.TestCase):
         inpt = [0.0]
         fmt = '(G10.0)'
         eds, rev_eds = _parser(_lexer(fmt))
-        result = "    0.E+00"
+        result = "**********"
         self.assertEqual(result, _output(eds, rev_eds, inpt))
 
     def g_output_test_3a(self):

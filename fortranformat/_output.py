@@ -207,7 +207,7 @@ def _compose_inf_string(w, ftype, sign_bit):
 
 def _compose_float_string(w, e, d, state, val, ftype):
     '''
-    Adapted from code in glibfortran which is written in C so is somwhat
+    Adapted from code in glibfortran which is written in C so is somewhat
     'bit-pushy' in nature. Writes the value to an initial string (buffer)
     and then pulls the subsequent strings from that
     '''
@@ -281,6 +281,14 @@ def _compose_float_string(w, e, d, state, val, ftype):
         # 
         # notes: for Gw.d ,  n' ' means 4 blanks
         #        for Gw.dEe, n' ' means e+2 blanks
+
+        # ^^^^ no longer where the above is from, possibly the source of GFortran originally and was included
+        # to illuminate the direct ported code below. However it's clear from other sources that a 'd' value
+        # of zero is not valid for some magnitudes of data. The ifort compiler handles this by returning asterisks
+        # for all cases when outputting e.g. 'G14.0'. For this reasons we exit early when d=0
+        if d == 0:
+            return '*' * w
+
         nb = 0
         save_scale_factor = state['scale']
         exp_d = 10 ** d
