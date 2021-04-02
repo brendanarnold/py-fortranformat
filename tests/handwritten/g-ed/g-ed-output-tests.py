@@ -37,7 +37,7 @@ class GOutputTests(unittest.TestCase):
         fmt = '(G14.0)'
         eds, rev_eds = _parser(_lexer(fmt))
         result = "**************"
-        self.assertRaises(Exception, lambda: _parser(_lexer(fmt)))
+        self.assertEqual(result, _output(eds, rev_eds, inpt))
 
     def g_output_test_3b(self):
         '''This is an invalid format for output since if value is between 0.1 and 1 it will make the exponent negative
@@ -47,7 +47,7 @@ class GOutputTests(unittest.TestCase):
         fmt = '(G14.0)'
         eds, rev_eds = _parser(_lexer(fmt))
         result = "**************"
-        self.assertRaises(Exception, lambda: _parser(_lexer(fmt)))
+        self.assertEqual(result, _output(eds, rev_eds, inpt))
 
     def g_output_test_3c(self):
         '''This is an invalid format for output since if value is between 0.1 and 1 it will make the exponent negative
@@ -57,7 +57,7 @@ class GOutputTests(unittest.TestCase):
         fmt = '(G14.0)'
         eds, rev_eds = _parser(_lexer(fmt))
         result = "**************"
-        self.assertRaises(Exception, lambda: _parser(_lexer(fmt)))
+        self.assertEqual(result, _output(eds, rev_eds, inpt))
 
     def g_output_test_3d(self):
         '''This is an invalid format for output since if value is between 0.1 and 1 it will make the exponent negative
@@ -67,7 +67,7 @@ class GOutputTests(unittest.TestCase):
         fmt = '(G14.0)'
         eds, rev_eds = _parser(_lexer(fmt))
         result = "**************"
-        self.assertRaises(Exception, lambda: _parser(_lexer(fmt)))
+        self.assertEqual(result, _output(eds, rev_eds, inpt))
 
     def g_output_test_4(self):
         inpt = [1.1]
