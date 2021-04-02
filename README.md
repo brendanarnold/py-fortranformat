@@ -34,6 +34,7 @@ line.write([1.1, 0.1, 0.6])
 # Results in '          1.100          0.100          0.600'
 ```
 
+For more detailed usage, see [./docs/wiki/guide.md](the guide).
 
 ## Notes
 
