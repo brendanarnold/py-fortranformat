@@ -25,5 +25,15 @@ c      WRITE (*, 103) 1.1
 106   FORMAT ('[', 8G10.3, ']')
       WRITE (*, 106) 30.0
 
+c This should be equivalent to G10.0 with value 0.0
+107   FORMAT ('[', F6.0, '    ', ']')
+      WRITE (*, 107) 0.0
+
+c Make sure that any other values of G with 0 precision might work
+108   FORMAT ('[', G14.0, ']')
+      WRITE (*, 108) 0.0
+      WRITE (*, 108) 0.01
+      WRITE (*, 108) 0.11
+      WRITE (*, 108) 1.11
       STOP
       END

@@ -29,13 +29,45 @@ class GOutputTests(unittest.TestCase):
         result = "    0.E+00"
         self.assertEqual(result, _output(eds, rev_eds, inpt))
 
-    # def g_output_test_3(self):
-    #     '''This is an invalid format/value combination'''
-    #     inpt = [1.1]
-    #     fmt = '(G10.0)'
-    #     eds, rev_eds = _parser(_lexer(fmt))
-    #     result = "    0.E+00"
-    #     self.assertEqual(result, _output(eds, rev_eds, inpt))
+    def g_output_test_3a(self):
+        '''This is an invalid format for output since if value is between 0.1 and 1 it will make the exponent negative
+        However it is fine on input. Making the lexer/parser aware of the context is complex and the Intel compiler actually
+        handles this by accepting the format on compilation but outputting asterisks on output.'''
+        inpt = [0.0]
+        fmt = '(G14.0)'
+        eds, rev_eds = _parser(_lexer(fmt))
+        result = "**************"
+        self.assertRaises(Exception, lambda: _parser(_lexer(fmt)))
+
+    def g_output_test_3b(self):
+        '''This is an invalid format for output since if value is between 0.1 and 1 it will make the exponent negative
+        However it is fine on input. Making the lexer/parser aware of the context is complex and the Intel compiler actually
+        handles this by accepting the format on compilation but outputting asterisks on output.'''
+        inpt = [0.01]
+        fmt = '(G14.0)'
+        eds, rev_eds = _parser(_lexer(fmt))
+        result = "**************"
+        self.assertRaises(Exception, lambda: _parser(_lexer(fmt)))
+
+    def g_output_test_3c(self):
+        '''This is an invalid format for output since if value is between 0.1 and 1 it will make the exponent negative
+        However it is fine on input. Making the lexer/parser aware of the context is complex and the Intel compiler actually
+        handles this by accepting the format on compilation but outputting asterisks on output.'''
+        inpt = [0.11]
+        fmt = '(G14.0)'
+        eds, rev_eds = _parser(_lexer(fmt))
+        result = "**************"
+        self.assertRaises(Exception, lambda: _parser(_lexer(fmt)))
+
+    def g_output_test_3d(self):
+        '''This is an invalid format for output since if value is between 0.1 and 1 it will make the exponent negative
+        However it is fine on input. Making the lexer/parser aware of the context is complex and the Intel compiler actually
+        handles this by accepting the format on compilation but outputting asterisks on output.'''
+        inpt = [1.11]
+        fmt = '(G14.0)'
+        eds, rev_eds = _parser(_lexer(fmt))
+        result = "**************"
+        self.assertRaises(Exception, lambda: _parser(_lexer(fmt)))
 
     def g_output_test_4(self):
         inpt = [1.1]
