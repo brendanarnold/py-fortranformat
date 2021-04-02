@@ -7,7 +7,7 @@ RET_WRITTEN_VARS_ONLY = False
 # Should 'None' values be returned when no record is available to read
 # from or the FORTRAN 'default'?
 RET_UNWRITTEN_VARS_NONE = True
-# The order in which edit desciptors are tried by default when G edit
+# The order in which edit descriptors are tried by default when G edit
 # descriptor encountered on input
 G_INPUT_TRIAL_EDS = ['F', 'L', 'A']
 # Contrary to specification, many compilers allow zero width edit
