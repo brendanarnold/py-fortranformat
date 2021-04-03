@@ -5,3 +5,4 @@
 *.Trashes
 .vscode
 *.exe
+build/*
