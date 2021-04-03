@@ -213,6 +213,12 @@ def _compose_float_string(w, e, d, state, val, ftype):
     '''
     if (d < 0) or (d is None):
         raise InvalidFormat('Unspecified precision')
+
+    # It seems that 0 is not actually permitted as the number of decimal places for an E format
+    # This returns asterisks in the Intel compiler
+    if (d == 0):
+        return '*' * w
+
     # Make sure they are ints
     d = int(round(d))
     if e is not None:

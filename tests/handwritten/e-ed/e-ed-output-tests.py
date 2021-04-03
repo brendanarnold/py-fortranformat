@@ -19,7 +19,23 @@ class EOutputTests(unittest.TestCase):
         inpt = [1.0]
         fmt = '(E10.0)'
         eds, rev_eds = _parser(_lexer(fmt))
-        result = "    0.E+00"
+        result = "**********"
+        self.assertEqual(result, _output(eds, rev_eds, inpt))
+
+    def e_output_test_1a(self):
+        '''Test where exponent is zero - note that GFortran actually crashes in this case'''
+        inpt = [0.0]
+        fmt = '(E10.0)'
+        eds, rev_eds = _parser(_lexer(fmt))
+        result = "**********"
+        self.assertEqual(result, _output(eds, rev_eds, inpt))
+
+    def e_output_test_1b(self):
+        '''Test where exponent is zero - note that GFortran actually crashes in this case'''
+        inpt = [0.01]
+        fmt = '(E10.0)'
+        eds, rev_eds = _parser(_lexer(fmt))
+        result = "**********"
         self.assertEqual(result, _output(eds, rev_eds, inpt))
 
     def e_output_test_2(self):
@@ -27,4 +43,28 @@ class EOutputTests(unittest.TestCase):
         fmt = '(E10.1)'
         eds, rev_eds = _parser(_lexer(fmt))
         result = "   0.1E+01"
+        self.assertEqual(result, _output(eds, rev_eds, inpt))
+
+    def e_output_test_2(self):
+        '''Test where exponent is zero - note that GFortran actually crashes in this case'''
+        inpt = [1.0]
+        fmt = '(E14.0)'
+        eds, rev_eds = _parser(_lexer(fmt))
+        result = "**************"
+        self.assertEqual(result, _output(eds, rev_eds, inpt))
+
+    def e_output_test_2a(self):
+        '''Test where exponent is zero - note that GFortran actually crashes in this case'''
+        inpt = [0.0]
+        fmt = '(E14.0)'
+        eds, rev_eds = _parser(_lexer(fmt))
+        result = "**************"
+        self.assertEqual(result, _output(eds, rev_eds, inpt))
+
+    def e_output_test_2b(self):
+        '''Test where exponent is zero - note that GFortran actually crashes in this case'''
+        inpt = [0.01]
+        fmt = '(E14.0)'
+        eds, rev_eds = _parser(_lexer(fmt))
+        result = "**************"
         self.assertEqual(result, _output(eds, rev_eds, inpt))
