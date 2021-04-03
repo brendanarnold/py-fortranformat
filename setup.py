@@ -1,4 +1,10 @@
-from distutils.core import setup
+import os
+from setuptools import setup
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+README = ''
+with open(HERE + '/readme.md') as fh:
+    README = fh.read()
 
 setup(
     name = 'fortranformat',
@@ -24,38 +30,6 @@ setup(
         'Topic :: Software Development :: Interpreters',
         'Topic :: Scientific/Engineering',
     ],
-    long_description = '''
-FORTRAN format interpreter for Python
--------------------------------------    
-
-Generates text from a Python list of variables or will read a line of text into Python variables according  to the FORTRAN format statement passed.
-
-Licensed under the MIT license
-
-The library is extensively unit-tested (but not yet extensively user-tested, `please report bugs <https://github.com/brendanarnold/py-fortranformat/issues>`_!) against the Intel FORTRAN compiler on a Linux platform. Differences between platforms/compilers are generally minor.
-
-To read Fortran records,:
-
-  >>> import fortranformat as ff
-  >>> header_line = ff.FortranRecordReader('(A15, A15, A15)')
-  >>> header_line.read('              x              y              z')
-    ['              x', '              y', '              z']
-  >>> line = FortranRecordReader('(3F15.3)')
-  >>> line.read('          1.000          0.000          0.500')
-    [1.0, 0.0, 0.5]
-  >>> line.read('          1.100          0.100          0.600')
-    [1.1, 0.1, 0.6]
-
-To write Fortran records,:
-
-  >>> import fortranformat as ff
-  >>> header_line = ff.FortranRecordWriter('(A15, A15, A15)')
-  >>> header_line.write(['x', 'y', 'z'])
-    '              x              y              z'
-  >>> line = FortranRecordWriter('(3F15.3)')
-  >>> line.write([1.0, 0.0, 0.5])
-    '          1.000          0.000          0.500'
-  >>> line.write([1.1, 0.1, 0.6])
-    '          1.100          0.100          0.600'
-'''
+    long_description = README,
+    long_description_content_type = "text/markdown"
 )
