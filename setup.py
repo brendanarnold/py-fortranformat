@@ -9,7 +9,7 @@ with open(HERE + '/readme.md') as fh:
 setup(
     name = 'fortranformat',
     packages = ['fortranformat'],
-    version = '0.2.6',
+    version = '1.0.0',
     description = 'Mimics Fortran textual IO in Python',
     author = 'Brendan Arnold',
     author_email = 'brendanarnold@gmail.com',

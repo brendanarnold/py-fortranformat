@@ -34,7 +34,7 @@ line.write([1.1, 0.1, 0.6])
 # Results in '          1.100          0.100          0.600'
 ```
 
-For more detailed usage, see [the guide](docs/wiki/guide.md).
+For more detailed usage, see [the guide](https://github.com/brendanarnold/py-fortranformat/blob/master/docs/wiki/guide.md).
 
 ## Notes
 
