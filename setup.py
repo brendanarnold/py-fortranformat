@@ -3,7 +3,7 @@ from setuptools import setup
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 README = ''
-with open(HERE + '/readme.md') as fh:
+with open(HERE + '/README.md') as fh:
     README = fh.read()
 
 setup(
