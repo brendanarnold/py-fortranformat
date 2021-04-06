@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: fortranformat
-Version: 1.0.0
+Version: 1.0.1
 Summary: Mimics Fortran textual IO in Python
 Home-page: https://github.com/brendanarnold/py-fortranformat
 Author: Brendan Arnold
