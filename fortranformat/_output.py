@@ -216,7 +216,7 @@ def _compose_float_string(w, e, d, state, val, ftype):
 
     # It seems that 0 is not actually permitted as the number of decimal places for an E format
     # This returns asterisks in the Intel compiler
-    if (d == 0):
+    if (d == 0) and (ftype =='E'):
         return '*' * w
 
     # Make sure they are ints
