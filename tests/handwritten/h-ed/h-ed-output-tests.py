@@ -1,10 +1,6 @@
 
 
 import unittest
-import os
-import sys
-
-# sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
 
 from fortranformat._output import output as _output
 from fortranformat._lexer import lexer as _lexer

@@ -1,5 +1,3 @@
-import sys
-
 from ._input import input as _input
 from ._parser import parser as _parser
 from ._lexer import lexer as _lexer

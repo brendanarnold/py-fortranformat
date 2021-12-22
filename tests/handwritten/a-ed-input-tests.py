@@ -1,6 +1,4 @@
 import unittest
-import os
-import sys
 
 from fortranformat._input import input as _input
 from fortranformat._lexer import lexer as _lexer

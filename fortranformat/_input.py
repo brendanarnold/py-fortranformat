@@ -1,8 +1,6 @@
 import re
-import pdb
-import sys
 from ._edit_descriptors import *
-from ._misc import expand_edit_descriptors, has_next_iterator
+from ._misc import expand_edit_descriptors
 from . import config
 
 WIDTH_OPTIONAL_EDS = [A]

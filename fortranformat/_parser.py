@@ -1,6 +1,3 @@
-import sys
-IS_PYTHON3 = sys.version_info[0] >= 3
-
 from ._lexer import Token
 from ._edit_descriptors import *
 from ._exceptions import *

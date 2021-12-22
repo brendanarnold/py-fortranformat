@@ -1,4 +1,3 @@
-import sys
 from ._exceptions import *
 
 def get_edit_descriptor_obj(name):

@@ -1,8 +1,6 @@
 
 
 import unittest
-import os
-import sys
 
 from fortranformat import FortranRecordWriter, FortranRecordReader
 import fortranformat.config as config

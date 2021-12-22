@@ -1,4 +1,3 @@
-import sys
 from ._edit_descriptors import *
 from ._exceptions import *
 
