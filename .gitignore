@@ -6,3 +6,6 @@
 .vscode
 *.exe
 build/*
+tests/autogen/input/**/*.py
+tests/autogen/output/**/*.py
+tests/autogen/generate/build-*
