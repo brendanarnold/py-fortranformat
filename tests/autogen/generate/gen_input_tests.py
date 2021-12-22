@@ -390,7 +390,7 @@ def write_py_source(platform):
 def write_unittest(infile, outfile, batch, name, platform):
     '''Convert a Fortran output file to a unittest file'''
     out_fh = open(outfile, 'w')
-    print 'Pythonising %s into %s ...' % (infile, outfile)
+    print('Pythonising %s into %s ...' % (infile, outfile))
     in_fh = open(infile, 'r')
     # Get the directory of the fortranformat for importing
     # fortranformat_dir = os.path.realpath(os.path.join(os.path.dirname(__file__), '..', '..')) 
@@ -481,7 +481,7 @@ def compile_tests(compile_str):
     for batch, name in filenames():
         infile = os.path.join(BUILD_DIR, SOURCE_FILESTEM % (name, batch))
         outfile = os.path.join(BUILD_DIR, EXECUTABLE_FILESTEM % (name, batch))
-        print 'Compiling %s to %s ...' % (infile, outfile)
+        print('Compiling %s to %s ...' % (infile, outfile))
         os.system(compile_str % (infile, outfile))
 
 def execute_tests():
@@ -489,7 +489,7 @@ def execute_tests():
     for batch, name in filenames():
         executable_file = os.path.join(BUILD_DIR, EXECUTABLE_FILESTEM % (name, batch))
         result_file = os.path.join(BUILD_DIR, RESULT_FILESTEM % (name, batch))
-        print 'Executing %s > %s' % (executable_file, result_file)
+        print('Executing %s > %s' % (executable_file, result_file))
         os.system('%s > %s' % (executable_file, result_file))
 
 def write_fortran_source(formats, inputs, name):
@@ -504,7 +504,7 @@ def write_fortran_source(formats, inputs, name):
     batch = 1
     while tests_remain:
         filename = os.path.join(BUILD_DIR, SOURCE_FILESTEM % (name, batch))
-        print 'Generating %s ...' % filename
+        print('Generating %s ...' % filename)
         fh = open(filename, 'w')
         # Output the start of the source file
         errlbl = BATCH_SIZE + 1 # Assumes no more format labels than tests
