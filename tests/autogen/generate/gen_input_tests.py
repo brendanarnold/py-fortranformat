@@ -446,14 +446,14 @@ class %sEditDescriptorBatch%dTestCase(unittest.TestCase):
     def test_%s_ed_input_%d(self):
         inp = \'\'\'%s\'\'\'
         fmt = \'\'\'%s\'\'\'
-        result = [%s]
+        expected = [%s]
         eds, rev_eds = _parser(_lexer(fmt))
 ''' % (platform, name.upper(), name, test_num, inpt, fmt, result)
                 # May result in error in Fortran code
                 if result == '\'\'\'ERR\'\'\'':
                     out += '        self.assertRaises(ValueError, _input, eds, rev_eds, inp)\n'
                 else:
-                    out += '        self.assertEqual(result, _input(eds, rev_eds, inp))\n'
+                    out += '        self.assertEqual(expected, _input(eds, rev_eds, inp))\n'
                 out_fh.write(out)
                 # Reset the values for next test
                 fmt = inpt = result = None
