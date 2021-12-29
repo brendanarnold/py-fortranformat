@@ -8,12 +8,13 @@ from fortranformat._parser import parser as _parser
 import fortranformat.config as config
 from fortranformat._exceptions import *
 
+
 class AllowZeroWidthEdsConfigTests(unittest.TestCase):
 
     def setUp(self):
         config.reset()
 
-    def azwe_config_test_1(self):
+    def test_1(self):
         # By default zero width edit descriptor that is not positional
         # should raise no exception (although spec says it should!)
         fmt = '(F0.1)'
@@ -23,7 +24,7 @@ class AllowZeroWidthEdsConfigTests(unittest.TestCase):
         except InvalidFormat:
             self.assertFail()
 
-    def azwe_config_test_2(self):
+    def test_2(self):
         # Explicitly specifying zero width edit descriptor that is not positional
         # should raise no exception
         config.ALLOW_ZERO_WIDTH_EDS = True
@@ -34,43 +35,43 @@ class AllowZeroWidthEdsConfigTests(unittest.TestCase):
         except InvalidFormat:
             self.assertFail()
 
-    def azwe_config_test_3(self):
+    def test_3(self):
         # Setting the ALLOW_ZERO_WIDTH_EDS to False should now raise
         # exceptions as specified in spec
         config.ALLOW_ZERO_WIDTH_EDS = False
         fmt = '(F0.1)'
         toks = _lexer(fmt)
         self.assertRaises(InvalidFormat, _parser, toks)
-    
-    def azwe_config_test_4(self):
+
+    def test_4(self):
         # Positional editdescriptors always raise error when passed a
         # zero argument
         fmt = ('T0')
         toks = _lexer(fmt)
         self.assertRaises(InvalidFormat, _parser, toks)
 
-    def azwe_config_test_5(self):
+    def test_5(self):
         # Positional editdescriptors always raise error when passed a
         # zero argument
         fmt = ('TL0')
         toks = _lexer(fmt)
         self.assertRaises(InvalidFormat, _parser, toks)
 
-    def azwe_config_test_6(self):
+    def test_6(self):
         # Positional editdescriptors always raise error when passed a
         # zero argument
         fmt = ('TR0')
         toks = _lexer(fmt)
         self.assertRaises(InvalidFormat, _parser, toks)
 
-    def azwe_config_test_7(self):
+    def test_7(self):
         # Positional editdescriptors always raise error when passed a
         # zero argument
         fmt = ('0X')
         toks = _lexer(fmt)
         self.assertRaises(InvalidFormat, _parser, toks)
 
-    def azwe_config_test_8(self):
+    def test_8(self):
         # Positional editdescriptors always raise error when passed a
         # zero argument, even when ALLOW_ZERO_WIDTH_EDS is explictly
         # specified
@@ -79,7 +80,7 @@ class AllowZeroWidthEdsConfigTests(unittest.TestCase):
         toks = _lexer(fmt)
         self.assertRaises(InvalidFormat, _parser, toks)
 
-    def azwe_config_test_9(self):
+    def test_9(self):
         # Positional editdescriptors always raise error when passed a
         # zero argument, even when ALLOW_ZERO_WIDTH_EDS is explictly
         # not specified
@@ -87,4 +88,3 @@ class AllowZeroWidthEdsConfigTests(unittest.TestCase):
         config.ALLOW_ZERO_WIDTH_EDS = False
         toks = _lexer(fmt)
         self.assertRaises(InvalidFormat, _parser, toks)
-
