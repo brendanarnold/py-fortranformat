@@ -1,4 +1,3 @@
-
 # FortranFormat usage
 
 ## Basic usage
@@ -10,7 +9,6 @@
 >>> output
 '         0         1'
 ```
-
 
 ```
 >>> from FortranFormat import FortranRecordReader
@@ -45,7 +43,6 @@ To return FORTRAN default values rather than `None` see `RET_UNWRITTEN_VARS_NONE
 [0.0, 1.0]
 ```
 
-
 ### `RET_UNWRITTEN_VARS_NONE`
 
 Default: `True`
@@ -73,7 +70,6 @@ Default: `['F', 'L', 'A']`
 
 There are cases where using the `G` descriptor on input can be ambiguous (e.g. is it a string or a boolean?). FORTRAN is okay with this because the variable used to capture the value has a type which Python doesn't really do. We specify here a preferential ordering of edit descriptors to try until we find something that fits. By default it tries reading it as a number, then a boolean, then a string. If you don't want to interpret the input, for example, as a string then you can set this to `['F', 'L']` and it will raise an error otherwise.
 
-
 ### `RECORD_SEPARATOR`
 
 Default: `'\n'`
@@ -88,6 +84,23 @@ When wrapping the records, this string is used to delimit the lines.
 >>> output = format.write([0, 0, 0, 0])
 >>> output
 '         0         0|         0         0'
+```
+
+### `PROC_MAXINT`
+
+Default: `2**31` (32bit signed)
+
+This mimics the overflow behaviour of FORTRAN as well as the encoding of negative number which is twos complement. Set this to the size of the maximum positive integer value for your platform. If you don't want overflow behaviour then set this to `None`
+
+#### Example
+
+```
+>>> format = FortranRecordWriter('(Z10)')
+>>> format.write([-10])
+'  FFFFFFF6'
+>>> config.PROC_MAXINT = None
+>>> format.write([-10])
+'        -A'
 ```
 
 ## `reset()`
@@ -105,3 +118,4 @@ Call this to reset the configuration to its defaults
 >>> output
 '         0         0\n         0         0'
 
+```

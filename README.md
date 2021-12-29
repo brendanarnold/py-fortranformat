@@ -2,10 +2,6 @@
 
 Generates text from a Python list of variables or will read a line of text into Python variables according to the FORTRAN format statement passed.
 
-Licensed under the MIT license
-
-The library is extensively unit-tested against the Intel FORTRAN compiler on a Linux platform. Differences between platforms/compilers are generally minor.
-
 To read Fortran records,
 
 ```
@@ -70,6 +66,8 @@ Note that some of the F output edit descriptors fail due to limitations in float
 ### Deploying a new package version
 
 Update versions in `setup.py` and `__init__.py`
+
+Update `CHANGELOG.md`
 
 To create a local build to test run ...
 
