@@ -7,15 +7,15 @@ with open(HERE + '/README.md') as fh:
     README = fh.read()
 
 setup(
-    name = 'fortranformat',
-    packages = ['fortranformat'],
-    version = '1.0.2',
-    description = 'Mimics Fortran textual IO in Python',
-    author = 'Brendan Arnold',
-    author_email = 'brendanarnold@gmail.com',
-    url = 'https://github.com/brendanarnold/py-fortranformat',
-    keywords = ['fortran', 'io', 'interface', 'format'],
-    classifiers = [
+    name='fortranformat',
+    packages=['fortranformat'],
+    version='1.0.2',
+    description='Mimics Fortran textual IO in Python',
+    author='Brendan Arnold',
+    author_email='brendanarnold@gmail.com',
+    url='https://github.com/brendanarnold/py-fortranformat',
+    keywords=['fortran', 'io', 'interface', 'format'],
+    classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Console',
         'Intended Audience :: Science/Research',
@@ -30,6 +30,6 @@ setup(
         'Topic :: Software Development :: Interpreters',
         'Topic :: Scientific/Engineering',
     ],
-    long_description = README,
-    long_description_content_type = "text/markdown"
+    long_description=README,
+    long_description_content_type="text/markdown"
 )

@@ -2,6 +2,7 @@ from ._output import output as _output
 from ._lexer import lexer as _lexer
 from ._parser import parser as _parser
 
+
 class FortranRecordWriter(object):
     '''
     Generate a writer object for FORTRAN format strings
@@ -21,6 +22,7 @@ class FortranRecordWriter(object):
     causes the parser to reevalute the format string which is costly in terms of
     performance
     '''
+
     def __init__(self, format):
         self._eds = []
         self._rev_eds = []
@@ -34,7 +36,7 @@ class FortranRecordWriter(object):
 
     def write(self, values):
         '''
-        Pass a list of values correspoding to the FORTRAN format specified
+        Pass a list of values corresponding to the FORTRAN format specified
         to generate a string
         '''
         return _output(self._eds, self._rev_eds, values)
@@ -55,4 +57,3 @@ class FortranRecordWriter(object):
 if __name__ == '__main__':
     import doctest
     doctest.testmod()
-

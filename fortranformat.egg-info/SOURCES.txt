@@ -1,4 +1,3 @@
-COPYING.txt
 MANIFEST.in
 README.md
 setup.py
