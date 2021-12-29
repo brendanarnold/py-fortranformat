@@ -73,11 +73,11 @@ Update versions in `setup.py` and `__init__.py`
 
 To create a local build to test run ...
 
-`python setup.py build sdist --formats=gztar bdist_wininst`
+`python setup.py build sdist --formats=gztar`
 
 To upload a version to PyPI run ...
 
-`python setup.py sdist --formats=gztar bdist_wininst upload`
+`python setup.py sdist --formats=gztar upload`
 
 ## Bugs
 

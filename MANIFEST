@@ -1,4 +1,4 @@
-COPYING.txt
+LICENSE
 README.md
 setup.py
 fortranformat/FortranRecordReader.py

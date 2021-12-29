@@ -1,5 +1,12 @@
 # Changelog
 
+## V 1.1.0
+
+- Bug: Fixed overflow behaviour in tests, in particular fixing the PROC_MAXINT behaviour
+- Bug: [Issue 17](https://github.com/brendanarnold/py-fortranformat/issues/17) Properly outputs zero dp floating point numbers
+- Migrated to development on Python 3 (non-test code still compatible with Python 2)
+- Generally used more standard project structure as detailed at [https://docs.python-guide.org/writing/structure/](https://docs.python-guide.org/writing/structure/)
+
 ## V 1.0.1
 
 - Bug: Incorrect case on filename prevented `setup.py` executing on case-sensitive filesystems
