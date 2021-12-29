@@ -2,6 +2,7 @@ from ._input import input as _input
 from ._parser import parser as _parser
 from ._lexer import lexer as _lexer
 
+
 class FortranRecordReader(object):
     '''
     Generate a reader object for FORTRAN format strings
@@ -18,10 +19,10 @@ class FortranRecordReader(object):
     [1.1, 0.1, 0.6]
 
     Note: it is best to create a new object for each format, changing the format
-    causes the parser to reevalute the format string which is costly in terms of
+    causes the parser to reevaluate the format string which is costly in terms of
     performance
     '''
-    
+
     def __init__(self, format):
         self.format = format
         self._eds = []
@@ -44,13 +45,14 @@ class FortranRecordReader(object):
 
     def read(self, record):
         '''
-        Pass a string representing a FORTRAN record to obtain the relevent
+        Pass a string representing a FORTRAN record to obtain the relevant
         values
         '''
         return _input(self._eds, self._rev_eds, record)
 
     def get_format(self):
         return self._format
+
     def set_format(self, format):
         self._format = format
         self._parse_format()

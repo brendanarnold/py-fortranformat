@@ -19,7 +19,7 @@ class FortranRecordWriter(object):
     '          1.100          0.100          0.600'
 
     Note: it is best to create a new object for each format, changing the format
-    causes the parser to reevalute the format string which is costly in terms of
+    causes the parser to reevaluate the format string which is costly in terms of
     performance
     '''
 
