@@ -77,7 +77,10 @@ To create a local build to test run ...
 
 To upload a version to PyPI run ...
 
-`python setup.py sdist --formats=gztar upload`
+```
+python setup.py sdist
+twine upload dist/<new version>
+```
 
 ## Bugs
 

@@ -1,6 +1,7 @@
 LICENSE
 MANIFEST.in
 README.md
+setup.cfg
 setup.py
 fortranformat/FortranRecordReader.py
 fortranformat/FortranRecordWriter.py
