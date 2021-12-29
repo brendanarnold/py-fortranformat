@@ -9,8 +9,8 @@ import re
 from gen_input_tests import write_unittest as write_input_unittest
 from gen_output_tests import write_unittest as write_output_unittest
 
-INPUT_DIR = r'../input'
-OUTPUT_DIR = r'../output'
+INPUT_DIR = r'./tests/autogen/input'
+OUTPUT_DIR = r'./tests/autogen/output'
 # Input tests are 'batched' hence the integer at the end
 INPUT_TEST_FILESTEM = r'(\w+)-ed-input-(\d+)\.test'
 # Output tests may have one or two edit descriptors hence the weird
