@@ -38,7 +38,7 @@ class FortranRecordReader(object):
     def match(self, record):
         try:
             self.read(record)
-        except RecordError:
+        except Exception:
             return False
         else:
             return True
