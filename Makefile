@@ -1,8 +1,19 @@
 help:
-	echo "See the Makefile for possible commands"
+	@echo "See the Makefile for possible commands"
+
+
+compilertests:
+	cd tests/autogen/generate; \
+	python gen_input_tests.py "gfortran %s -o %s" "10_2_0_osx_intel"; \
+	python gen_output_tests.py "gfortran %s -o %s" "10_2_0_osx_intel"; \
+	cd ../../..
+
 
 buildtests:
 	python tests/autogen/generate/build_unittests.py
 
 runtests:
-	nosetests tests/autogen/output/ifort/9-1_linux_intel tests/autogen/input/ifort/9-1_linux_intel test/handwritten
+  # This takes a few minutes to run
+	python -m pytest tests/handwritten
+	python -m pytest tests/autogen/input/ifort/9_1_linux_intel
+	python -m pytest tests/autogen/output/ifort/9_1_linux_intel
