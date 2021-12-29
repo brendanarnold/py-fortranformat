@@ -16,14 +16,14 @@ FORBIDDEN_EDS = [QuotedString, H]
 
 def input(eds, reversion_eds, records, num_vals=None):
 
-    state = { \
-        'position' : 0,
-        'scale' : 0,
-        'incl_plus' : False,
-        'blanks_as_zeros' : config.PROC_BLANKS_AS_ZEROS,
+    state = {
+        'position': 0,
+        'scale': 0,
+        'incl_plus': False,
+        'blanks_as_zeros': config.PROC_BLANKS_AS_ZEROS,
         # TODO: Implement halt if no more record input
-        'halt_if_no_vals' : False,
-        'exception_on_fail' : True,
+        'halt_if_no_vals': False,
+        'exception_on_fail': True,
     }
 
     # pdb.set_trace()
@@ -36,7 +36,7 @@ def input(eds, reversion_eds, records, num_vals=None):
     eds = expand_edit_descriptors(eds)
     reversion_eds = expand_edit_descriptors(reversion_eds)
     # Assume one-to-one correspondance between edit descriptors and output
-    # values if number of output values is not defined 
+    # values if number of output values is not defined
     num_out_eds = 0
     for ed in eds:
         if isinstance(ed, OUTPUT_EDS):
@@ -48,23 +48,23 @@ def input(eds, reversion_eds, records, num_vals=None):
         if isinstance(ed, OUTPUT_EDS):
             num_rev_out_eds += 1
 
-    
     # Will loop forever is no output edit descriptors
     if (num_out_eds == 0):
         return []
     # Will loop forever if no output eds in reversion format and is more values
     # requested than in the format
     if (num_vals > num_out_eds) and (num_rev_out_eds == 0):
-        raise ValueError('Not enough output edit descriptors in reversion format to output %d values' % num_vals)
+        raise ValueError(
+            'Not enough output edit descriptors in reversion format to output %d values' % num_vals)
 
     # May need to process multiple records, down to a higher function to supply
     # appropriate string for format
     if not hasattr(records, 'next'):
         records = iter(re.split('\r\n|\r|\n', records))
-    record = _next(records, None)
+    record = next_with_default(records, None)
     if record is None:
-        return [] 
-    
+        return []
+
     # if a_widths is not None:
     #     a_widths = itertools.cycle(a_widths)
 
@@ -88,7 +88,8 @@ def input(eds, reversion_eds, records, num_vals=None):
             ed = reversion_eds[rev_ed_ind]
 
         if isinstance(ed, QuotedString):
-            raise InvalidFormat('Cannot have string literal in an input format')
+            raise InvalidFormat(
+                'Cannot have string literal in an input format')
         elif isinstance(ed, BN):
             state['blanks_as_zeros'] = False
         elif isinstance(ed, BZ):
@@ -102,7 +103,8 @@ def input(eds, reversion_eds, records, num_vals=None):
         elif isinstance(ed, S):
             state['incl_plus'] = config.PROC_INCL_PLUS
         elif isinstance(ed, (X, TR)):
-            state['position'] = min(state['position'] + ed.num_chars, len(record))
+            state['position'] = min(
+                state['position'] + ed.num_chars, len(record))
         elif isinstance(ed, TL):
             state['position'] = max(state['position'] - ed.num_chars, 0)
         elif isinstance(ed, T):
@@ -114,7 +116,7 @@ def input(eds, reversion_eds, records, num_vals=None):
                 state['position'] = ed.num_chars - 1
         elif isinstance(ed, Slash):
             # End of record
-            record = _next(records, None)
+            record = next_with_default(records, None)
             state['position'] = 0
             if record is None:
                 break
@@ -143,8 +145,11 @@ def input(eds, reversion_eds, records, num_vals=None):
             resolved = False
             g_trial_eds = iter(config.G_INPUT_TRIAL_EDS)
             while not resolved:
-                ed_name = _next(g_trial_eds, '')
-                if ed_name.upper() in ('F', 'E', 'D', 'EN', 'ES'):
+                ed_name = next_with_default(g_trial_eds, None)
+                if ed_name is None:
+                    raise ValueError(
+                        'No suitable edit descriptor in config.G_INPUT_TRIAL_EDS')
+                elif ed_name.upper() in ('F', 'E', 'D', 'EN', 'ES'):
                     trial_ed = F()
                     trial_ed.width = ed.width
                     trial_ed.decimal_places = ed.decimal_places
@@ -160,7 +165,8 @@ def input(eds, reversion_eds, records, num_vals=None):
                     trial_ed.width = ed.width
                     trial_ed.min_digits = ed.decimal_places
                     try:
-                        val, state = read_integer(trial_ed, state.copy(), record)
+                        val, state = read_integer(
+                            trial_ed, state.copy(), record)
                         vals.append(val)
                         resolved = True
                     except ValueError:
@@ -169,7 +175,8 @@ def input(eds, reversion_eds, records, num_vals=None):
                     trial_ed = L()
                     trial_ed.width = ed.width
                     try:
-                        val, state = read_logical(trial_ed, state.copy(), record)
+                        val, state = read_logical(
+                            trial_ed, state.copy(), record)
                         vals.append(val)
                         resolved = True
                     except ValueError:
@@ -178,19 +185,23 @@ def input(eds, reversion_eds, records, num_vals=None):
                     trial_ed = A()
                     trial_ed.width = ed.width
                     try:
-                        val, state = read_string(trial_ed, state.copy(), record)
+                        val, state = read_string(
+                            trial_ed, state.copy(), record)
                         vals.append(val)
                         resolved = True
                     except ValueError:
                         continue
                 elif ed_name in ('G'):
-                    raise ValueError('G edit descriptor not permitted in config.G_INPUT_TRIAL_EDS')
+                    raise ValueError(
+                        'G edit descriptor not permitted in config.G_INPUT_TRIAL_EDS')
                 else:
-                    raise ValueError('Unrecognised trial edit descriptor string in config.G_INPUT_TRIAL_EDS')
-                    
+                    raise ValueError(
+                        'Unrecognised trial edit descriptor string in config.G_INPUT_TRIAL_EDS')
+
     if config.RET_WRITTEN_VARS_ONLY:
         vals = [val for val in vals if val is not None]
     return vals[:num_vals]
+
 
 def _interpret_blanks(substr, state):
     # Save leading blanks
@@ -205,6 +216,7 @@ def _interpret_blanks(substr, state):
         substr = '0'
     return substr
 
+
 def _get_substr(w, record, state):
     start = max(state['position'], 0)
     end = start + w
@@ -218,7 +230,7 @@ def _get_substr(w, record, state):
     return substr, state
 
 
-def _next(it, default=None):
+def next_with_default(it, default=None):
     try:
         val = next(it)
     except StopIteration:
@@ -240,7 +252,8 @@ def read_integer(ed, state, record):
     substr, state = _get_substr(ed.width, record, state)
     if ('-' in substr) and (not config.PROC_ALLOW_NEG_BOZ) and isinstance(ed, (Z, O, B)):
         if state['exception_on_fail']:
-            raise ValueError('Negative numbers not permitted for binary, octal or hex')
+            raise ValueError(
+                'Negative numbers not permitted for binary, octal or hex')
         else:
             return (None, state)
     if isinstance(ed, Z):
@@ -272,7 +285,8 @@ def read_integer(ed, state, record):
         val = int(teststr, base)
     except ValueError:
         if state['exception_on_fail']:
-            raise ValueError('%s is not a valid input for one of integer, octal, hex or binary' % substr)
+            raise ValueError(
+                '%s is not a valid input for one of integer, octal, hex or binary' % substr)
         else:
             return (None, state)
     return (val, state)
@@ -317,7 +331,8 @@ def read_float(ed, state, record):
     teststr = teststr.upper().replace('D', 'E')
     # Prepend an exponential letter if only a '-' or '+' denotes an exponent
     if 'E' not in teststr:
-        teststr = teststr[0] + teststr[1:].replace('+', 'E+').replace('-', 'E-')
+        teststr = teststr[0] + \
+            teststr[1:].replace('+', 'E+').replace('-', 'E-')
     # ifort allows '.' to be interpreted as 0
     if re.match(r'^ *\. *$', teststr):
         teststr = '0'
@@ -333,7 +348,8 @@ def read_float(ed, state, record):
         val = float(teststr)
     except ValueError:
         if state['exception_on_fail']:
-            raise ValueError('%s is not a valid input as for an E, ES, EN or D edit descriptor' % substr)
+            raise ValueError(
+                '%s is not a valid input as for an E, ES, EN or D edit descriptor' % substr)
         else:
             return (None, state)
     # Special cases: insert a decimal if none specified
@@ -341,5 +357,5 @@ def read_float(ed, state, record):
         val = val / 10 ** ed.decimal_places
     # Apply scale factor if exponent not supplied
     if 'E' not in teststr:
-        val = val / 10 ** state['scale'] 
+        val = val / 10 ** state['scale']
     return (val, state)

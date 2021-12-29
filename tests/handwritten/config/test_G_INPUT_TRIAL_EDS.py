@@ -43,10 +43,9 @@ class ConfigTests(unittest.TestCase):
         self.assertEqual(result, ['         0'])
 
     def test_6(self):
-        self.skipTest(
-            'hangs, issue logged at https://github.com/brendanarnold/py-fortranformat/issues/15')
+        # self.skipTest(
+            # 'hangs, issue logged at https://github.com/brendanarnold/py-fortranformat/issues/15')
         '''Custom G_INPUT_TRIAL_EDS'''
         config.G_INPUT_TRIAL_EDS = ['L']
         ff = FortranRecordReader('(G10.2)')
-        result = ff.read('         0')
-        self.assertEqual(result, [None])
+        self.assertRaises(ValueError, ff.read, '         0')

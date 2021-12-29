@@ -1,5 +1,9 @@
 # Changelog
 
+## V 1.1.1
+
+- Bug: [Issue 15](https://github.com/brendanarnold/py-fortranformat/issues/15) Fix hanging when no suitable edit descriptor specified for `G_INPUT_TRIAL_EDS`. Now raises `ValueError`
+
 ## V 1.1.0
 
 - Bug: Fixed overflow behaviour in tests, in particular fixing the PROC_MAXINT behaviour

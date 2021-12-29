@@ -7,7 +7,9 @@
       WRITE (*, 100) 0.0
       WRITE (*, 100) 0.01
       WRITE (*, 100) 0.1
+      WRITE (*, 100) 1
       WRITE (*, 100) 1.1
+      WRITE (*, 100) 1000.0
 
       STOP
       END
