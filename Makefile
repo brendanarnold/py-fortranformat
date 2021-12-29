@@ -1,13 +1,11 @@
 help:
 	@echo "See the Makefile for possible commands"
 
-
 compilertests:
 	cd tests/autogen/generate; \
 	python gen_input_tests.py "gfortran %s -o %s" "10_2_0_osx_intel"; \
 	python gen_output_tests.py "gfortran %s -o %s" "10_2_0_osx_intel"; \
 	cd ../../..
-
 
 buildtests:
 	python tests/autogen/generate/build_unittests.py
