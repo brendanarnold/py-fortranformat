@@ -10,5 +10,7 @@ tests/autogen/input/**/*.py
 tests/autogen/output/**/*.py
 tests/autogen/generate/build-input-tests/*.exe
 tests/autogen/generate/build-input-tests/*.f
+tests/autogen/generate/build-input-tests/*.test
 tests/autogen/generate/build-output-tests/*.exe
 tests/autogen/generate/build-output-tests/*.f
+tests/autogen/generate/build-output-tests/*.test

@@ -47,22 +47,25 @@ For more detailed usage, see [the guide](https://github.com/brendanarnold/py-for
 
 ### Generating the tests for a FORTRAN compiler
 
-The bulk of the tests are auto generated using Python scripts located in `tests/autogen/generate`. The tests were generated as follows ...
+Characterisations for a selection of FORTRAN compilers already exists, but if you want to characterise a new compiler, do the following ...
 
-1. Configure `gen_input_tests.py` for your particular FORTRAN compiler
-2. Run the above scripts to generate the `.test` files in the relevant `raw` directory under the `tests/autogen/input` directory. These generate, compile and execute hundreds of combinations of edit descriptor in the FORTRAN compiler under test and saves the results in the `.test` files
-3. Repeat for the 'output' tests
-4. Run `build_unittests.py` to generate Python test files based on the generated `.test` files
+1. Configure the compile string under `compilertests` target for your particular FORTRAN compiler e.g. `gfortran %s -o %s` where `%s` is the input and output file placeholders respectively
+2. Configure the compiler tag under `compilertests` e.g. `gfortran_10_2_0_osx_intel` this is just used for naming although would advise to sticking to alphanumerics and underscores
+3. Run `make compilertests`. This generates, compiles and executes hundreds of combinations of edit descriptor in the FORTRAN compiler under test and saves the results in the `.test` files under the build directories.
+4. Move the `.test` files to an appropriate new location under `tests/autogen/[input/output]` into directories named `raw`
+5. Run `make buildtests` to generate Python test files based on the generated `.test` files
 
 ### Running tests
 
-Make sure that nose tests is installed and run using
+Build the tests using
+
+`make buildtests`
+
+Make sure that pytest is installed and run using
 
 `make runtests`
 
-Note some of the Z input edit descriptor tests fail because in FORTRAN they overflow whereas Python can handle arbitrarily large integers
-
-Some of the F output edit descriptors fail due to limitations in floating point number representation
+Note that some of the F output edit descriptors fail due to limitations in floating point number representation
 
 ### Deploying a new package version
 
