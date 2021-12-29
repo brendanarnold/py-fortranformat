@@ -30,7 +30,7 @@ def input(eds, reversion_eds, records, num_vals=None):
 
     for ed in eds + reversion_eds:
         if isinstance(ed, tuple(FORBIDDEN_EDS)):
-            raise InvalidFormat("%d edit descriptr not permitted on input")
+            raise InvalidFormat("%d edit descriptor not permitted on input")
 
     # Expand repeated edit decriptors
     eds = expand_edit_descriptors(eds)
