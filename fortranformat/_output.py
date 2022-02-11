@@ -90,53 +90,77 @@ def output(eds, reversion_eds, values):
                 # we simply ignore at this point - likely this is an incomplete reversion
                 break
             if isinstance(ed, I):
+                if val is None:
+                    val = 0
                 sub_string = _compose_i_string(
                     ed.width, ed.min_digits, state, val)
             elif isinstance(ed, B):
+                if val is None:
+                    val = 0
                 w = ed.width
                 m = ed.min_digits
                 sub_string = _compose_boz_string(w, m, state, val, 'B')
             if isinstance(ed, O):
+                if val is None:
+                    val = 0
                 w = ed.width
                 m = ed.min_digits
                 sub_string = _compose_boz_string(w, m, state, val, 'O')
             if isinstance(ed, Z):
+                if val is None:
+                    val = 0
                 w = ed.width
                 m = ed.min_digits
                 sub_string = _compose_boz_string(w, m, state, val, 'Z')
             elif isinstance(ed, F):
+                if val is None:
+                    val = 0.0
                 w = ed.width
                 e = None
                 d = ed.decimal_places
                 sub_string = _compose_float_string(w, e, d, state, val, 'F')
             elif isinstance(ed, E):
+                if val is None:
+                    val = 0.0
                 w = ed.width
                 e = ed.exponent
                 d = ed.decimal_places
                 sub_string = _compose_float_string(w, e, d, state, val, 'E')
             elif isinstance(ed, D):
+                if val is None:
+                    val = 0.0
                 w = ed.width
                 e = None
                 d = ed.decimal_places
                 sub_string = _compose_float_string(w, e, d, state, val, 'D')
             elif isinstance(ed, G):
+                if val is None:
+                    val = 0.0
                 w = ed.width
                 e = ed.exponent
                 d = ed.decimal_places
                 sub_string = _compose_float_string(w, e, d, state, val, 'G')
             elif isinstance(ed, EN):
+                if val is None:
+                    val = 0.0
                 w = ed.width
                 e = ed.exponent
                 d = ed.decimal_places
                 sub_string = _compose_float_string(w, e, d, state, val, 'EN')
             elif isinstance(ed, ES):
+                if val is None:
+                    val = 0.0
                 w = ed.width
                 e = ed.exponent
                 d = ed.decimal_places
                 sub_string = _compose_float_string(w, e, d, state, val, 'ES')
             elif isinstance(ed, L):
+                if val is None:
+                    val = True
                 sub_string = _compose_l_string(ed.width, state, val)
             elif isinstance(ed, A):
+                if val is None:
+                    val = ''
                 sub_string = _compose_a_string(ed.width, state, val)
             state['position'], record = _write_string(
                 record, sub_string, state['position'])

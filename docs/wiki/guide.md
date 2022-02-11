@@ -7,7 +7,7 @@
 >>> format = FortranRecordWriter('(3I10)')
 >>> output = format.write([0.0, 1.0, None])
 >>> output
-'         0         1'
+'         0         1         0'
 ```
 
 ```
