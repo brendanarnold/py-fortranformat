@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: fortranformat
-Version: 1.1.1
+Version: 1.2.0
 Summary: Mimics Fortran textual IO in Python
 Home-page: https://github.com/brendanarnold/py-fortranformat
 Author: Brendan Arnold
@@ -9,10 +9,6 @@ License: UNKNOWN
 Description: # FORTRAN format interpreter for Python
         
         Generates text from a Python list of variables or will read a line of text into Python variables according to the FORTRAN format statement passed.
-        
-        Licensed under the MIT license
-        
-        The library is extensively unit-tested against the Intel FORTRAN compiler on a Linux platform. Differences between platforms/compilers are generally minor.
         
         To read Fortran records,
         
@@ -78,6 +74,8 @@ Description: # FORTRAN format interpreter for Python
         ### Deploying a new package version
         
         Update versions in `setup.py` and `__init__.py`
+        
+        Update `CHANGELOG.md`
         
         To create a local build to test run ...
         

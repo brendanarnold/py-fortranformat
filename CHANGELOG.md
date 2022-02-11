@@ -1,5 +1,9 @@
 # Changelog
 
+## V 1.2.0
+
+- Bug: [Issue 21](https://github.com/brendanarnold/py-fortranformat/issues/21) Now outputs FORTRAN default values when `None` is passed.
+
 ## V 1.1.1
 
 - Bug: [Issue 15](https://github.com/brendanarnold/py-fortranformat/issues/15) Fix hanging when no suitable edit descriptor specified for `G_INPUT_TRIAL_EDS`. Now raises `ValueError`
