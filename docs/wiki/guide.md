@@ -3,7 +3,7 @@
 ## Basic usage
 
 ```
->>> from FortranFormat import FortranRecordWriter
+>>> from fortranformat import FortranRecordWriter
 >>> format = FortranRecordWriter('(3I10)')
 >>> output = format.write([0.0, 1.0, None])
 >>> output
@@ -11,7 +11,7 @@
 ```
 
 ```
->>> from FortranFormat import FortranRecordReader
+>>> from fortranformat import FortranRecordReader
 >>> format = FortranRecordReader('(3I10)')
 >>> output = format.read('         0         1')
 >>> output
