@@ -90,8 +90,7 @@ def output(eds, reversion_eds, values):
                 # we simply ignore at this point - likely this is an incomplete reversion
                 break
             if isinstance(ed, I):
-                sub_string = _compose_i_string(
-                    ed.width, ed.min_digits, state, val)
+                sub_string = _compose_i_string(ed.width, ed.min_digits, state, val)
             elif isinstance(ed, B):
                 w = ed.width
                 m = ed.min_digits
@@ -637,6 +636,9 @@ def _compose_i_string(w, m, state, val):
     null_field = False
     # be pythonic in what values to accept, if it looks like an integer, then
     # so be it
+    if val is None:
+        return ' '*w
+
     try:
         val = int(val)
     except ValueError:
