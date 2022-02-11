@@ -225,6 +225,9 @@ def _compose_float_string(w, e, d, state, val, ftype):
     if (d == 0) and (ftype == 'E'):
         return '*' * w
 
+    if val is None:
+        return ' '*w
+
     # Make sure they are ints
     d = int(round(d))
     if e is not None:
