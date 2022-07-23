@@ -11,7 +11,7 @@ from gen_output_tests import write_unittest as write_output_unittest
 
 INPUT_DIR = r'./tests/autogen/input'
 OUTPUT_DIR = r'./tests/autogen/output'
-# Minimal tests are a reduced set of tests used for rapid testing in e.g. pipelines
+# Minimal tests are a reduced set of tests used for when resources are limited e.g. pipelines
 MINIMAL_TESTS_DIR = r'./tests/minimal'
 MINIMAL_TEST_LIMIT = 10
 # Input tests are 'batched' hence the integer at the end

@@ -17,6 +17,6 @@ runtests:
 	python -m pytest tests/autogen/output/ifort/9_1_linux_intel
 
 runminimaltests:
-	# A reduced test suite run for running in e.g. pipelines
+	# A reduced test suite run for when resources are limited e.g. in pipeline builds
 	python -m pytest tests/handwritten
 	python -m pytest tests/minimal

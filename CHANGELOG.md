@@ -1,5 +1,9 @@
 # Changelog
 
+## V 1.2.1
+
+- Feature: [Issue 25](https://github.com/brendanarnold/py-fortranformat/issues/25) Include a minimal test suite for use where resources are limited e.g. pipeline builds
+
 ## V 1.2.0
 
 - Bug: [Issue 21](https://github.com/brendanarnold/py-fortranformat/issues/21) Now outputs FORTRAN default values when `None` is passed.
