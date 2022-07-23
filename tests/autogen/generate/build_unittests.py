@@ -11,6 +11,9 @@ from gen_output_tests import write_unittest as write_output_unittest
 
 INPUT_DIR = r'./tests/autogen/input'
 OUTPUT_DIR = r'./tests/autogen/output'
+# Minimal tests are a reduced set of tests used for rapid testing in e.g. pipelines
+MINIMAL_TESTS_DIR = r'./tests/minimal'
+MINIMAL_TEST_LIMIT = 10
 # Input tests are 'batched' hence the integer at the end
 INPUT_TEST_FILESTEM = r'(\w+)-ed-input-(\d+)\.test'
 # Output tests may have one or two edit descriptors hence the weird
@@ -36,7 +39,12 @@ for filepath, subdirs, dummy in os.walk(INPUT_DIR):
         infile = os.path.join(raw_filepath, fn)
         outfile = os.path.join(
             filepath, INPUT_UNITTEST_FILESTEM % (name, batch))
-        write_input_unittest(infile, outfile, batch, name, platform)
+        write_input_unittest(infile, outfile, batch, name,
+                             platform)
+        minimal_outfile = os.path.join(
+            MINIMAL_TESTS_DIR, INPUT_UNITTEST_FILESTEM % (name, batch))
+        write_input_unittest(infile, minimal_outfile, batch, name,
+                             platform, test_limit=MINIMAL_TEST_LIMIT)
 
 # Now output tests
 for filepath, subdirs, dummy in os.walk(OUTPUT_DIR):
@@ -53,4 +61,9 @@ for filepath, subdirs, dummy in os.walk(OUTPUT_DIR):
         name = res.group(1)
         infile = os.path.join(raw_filepath, fn)
         outfile = os.path.join(filepath, OUTPUT_UNITTEST_FILESTEM % name)
-        write_output_unittest(infile, outfile, name, platform)
+        write_output_unittest(infile, outfile, name,
+                              platform)
+        minimal_outfile = os.path.join(
+            MINIMAL_TESTS_DIR, OUTPUT_UNITTEST_FILESTEM % name)
+        write_output_unittest(infile, minimal_outfile, name,
+                              platform, test_limit=MINIMAL_TEST_LIMIT)
