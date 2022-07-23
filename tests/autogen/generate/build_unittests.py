@@ -14,6 +14,7 @@ OUTPUT_DIR = r'./tests/autogen/output'
 # Minimal tests are a reduced set of tests used for when resources are limited e.g. pipelines
 MINIMAL_TESTS_DIR = r'./tests/minimal'
 MINIMAL_TEST_LIMIT = 10
+MINIMAL_TEST_PLATFORM = '9_1_linux_intel'
 # Input tests are 'batched' hence the integer at the end
 INPUT_TEST_FILESTEM = r'(\w+)-ed-input-(\d+)\.test'
 # Output tests may have one or two edit descriptors hence the weird
@@ -41,10 +42,11 @@ for filepath, subdirs, dummy in os.walk(INPUT_DIR):
             filepath, INPUT_UNITTEST_FILESTEM % (name, batch))
         write_input_unittest(infile, outfile, batch, name,
                              platform)
-        minimal_outfile = os.path.join(
-            MINIMAL_TESTS_DIR, INPUT_UNITTEST_FILESTEM % (name, batch))
-        write_input_unittest(infile, minimal_outfile, batch, name,
-                             platform, test_limit=MINIMAL_TEST_LIMIT)
+        if platform == MINIMAL_TEST_PLATFORM:
+            minimal_outfile = os.path.join(
+                MINIMAL_TESTS_DIR, INPUT_UNITTEST_FILESTEM % (name, batch))
+            write_input_unittest(infile, minimal_outfile, batch, name,
+                                 platform, test_limit=MINIMAL_TEST_LIMIT)
 
 # Now output tests
 for filepath, subdirs, dummy in os.walk(OUTPUT_DIR):
@@ -63,7 +65,8 @@ for filepath, subdirs, dummy in os.walk(OUTPUT_DIR):
         outfile = os.path.join(filepath, OUTPUT_UNITTEST_FILESTEM % name)
         write_output_unittest(infile, outfile, name,
                               platform)
-        minimal_outfile = os.path.join(
-            MINIMAL_TESTS_DIR, OUTPUT_UNITTEST_FILESTEM % name)
-        write_output_unittest(infile, minimal_outfile, name,
-                              platform, test_limit=MINIMAL_TEST_LIMIT)
+        if platform == MINIMAL_TEST_PLATFORM:
+            minimal_outfile = os.path.join(
+                MINIMAL_TESTS_DIR, OUTPUT_UNITTEST_FILESTEM % name)
+            write_output_unittest(infile, minimal_outfile, name,
+                                  platform, test_limit=MINIMAL_TEST_LIMIT)
