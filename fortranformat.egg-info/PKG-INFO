@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: fortranformat
-Version: 1.2.0
+Version: 1.2.1
 Summary: Mimics Fortran textual IO in Python
 Home-page: https://github.com/brendanarnold/py-fortranformat
 Author: Brendan Arnold
@@ -65,11 +65,15 @@ Description: # FORTRAN format interpreter for Python
         
         `make buildtests`
         
-        Make sure that pytest is installed and run using
+        Make sure that pytest is installed then run using
         
         `make runtests`
         
         Note that some of the F output edit descriptors fail due to limitations in floating point number representation
+        
+        To run a reduced test suite where time and resources are limited, use the following
+        
+        `make runminimaltests`
         
         ### Deploying a new package version
         
