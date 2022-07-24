@@ -57,11 +57,15 @@ Build the tests using
 
 `make buildtests`
 
-Make sure that pytest is installed and run using
+Make sure that pytest is installed then run using
 
 `make runtests`
 
 Note that some of the F output edit descriptors fail due to limitations in floating point number representation
+
+To run a reduced test suite where time and resources are limited, use the following
+
+`make runminimaltests`
 
 ### Deploying a new package version
 

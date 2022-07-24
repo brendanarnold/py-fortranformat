@@ -423,7 +423,7 @@ def write_py_source(platform):
         write_unittest(infile, outfile, name, platform)
 
 
-def write_unittest(infile, outfile, name, platform):
+def write_unittest(infile, outfile, name, platform, test_limit=None):
     '''Convert a Fortran output file to a unittest file'''
     out_fh = open(outfile, 'w')
     print('Pythonising %s into %s ...' % (infile, outfile))
@@ -449,6 +449,9 @@ class %sEditDescriptorBatchTestCase(unittest.TestCase):
     fmt = inpt = result = None
     test_count = 0
     for line in in_fh:
+        # Cut short if there is a limit on the number of tests per file
+        if (test_limit is not None) and (test_count >= test_limit):
+            break
         if line.startswith('FORMAT:'):
             if (fmt is not None) and (inpt is not None) and (result is not None):
                 # Output a test
