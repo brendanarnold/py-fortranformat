@@ -1,5 +1,9 @@
 # Changelog
 
+## V 1.2.2
+
+- Bug: [Issue 28](https://github.com/brendanarnold/py-fortranformat/issues/28) Fix a bug where crash occurs on outputting infinity or NaN for a floating point number type.
+
 ## V 1.2.1
 
 - Feature: [Issue 25](https://github.com/brendanarnold/py-fortranformat/issues/25) Include a minimal test suite for use where resources are limited e.g. pipeline builds
