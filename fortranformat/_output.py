@@ -97,66 +97,14 @@ def output(eds, reversion_eds, values):
                     val = 0
                 sub_string = _compose_i_string(
                     ed.width, ed.min_digits, state, val)
-            elif isinstance(ed, B):
+            elif isinstance(ed, (B, O, Z)):
                 if val is None:
                     val = 0
-                w = ed.width
-                m = ed.min_digits
-                sub_string = _compose_boz_string(w, m, state, val, 'B')
-            if isinstance(ed, O):
-                if val is None:
-                    val = 0
-                w = ed.width
-                m = ed.min_digits
-                sub_string = _compose_boz_string(w, m, state, val, 'O')
-            if isinstance(ed, Z):
-                if val is None:
-                    val = 0
-                w = ed.width
-                m = ed.min_digits
-                sub_string = _compose_boz_string(w, m, state, val, 'Z')
-            elif isinstance(ed, F):
+                sub_string = _compose_boz_string(ed.width, ed.min_digits, state, val, ed.name)
+            elif isinstance(ed, (D, E, EN, ES, F, G)):
                 if val is None:
                     val = 0.0
-                w = ed.width
-                e = None
-                d = ed.decimal_places
-                sub_string = _compose_float_string(w, e, d, state, val, 'F')
-            elif isinstance(ed, E):
-                if val is None:
-                    val = 0.0
-                w = ed.width
-                e = ed.exponent
-                d = ed.decimal_places
-                sub_string = _compose_float_string(w, e, d, state, val, 'E')
-            elif isinstance(ed, D):
-                if val is None:
-                    val = 0.0
-                w = ed.width
-                e = None
-                d = ed.decimal_places
-                sub_string = _compose_float_string(w, e, d, state, val, 'D')
-            elif isinstance(ed, G):
-                if val is None:
-                    val = 0.0
-                w = ed.width
-                e = ed.exponent
-                d = ed.decimal_places
-                sub_string = _compose_float_string(w, e, d, state, val, 'G')
-            elif isinstance(ed, EN):
-                if val is None:
-                    val = 0.0
-                w = ed.width
-                e = ed.exponent
-                d = ed.decimal_places
-                sub_string = _compose_float_string(w, e, d, state, val, 'EN')
-            elif isinstance(ed, ES):
-                if val is None:
-                    val = 0.0
-                w = ed.width
-                e = ed.exponent
-                d = ed.decimal_places
-                sub_string = _compose_float_string(w, e, d, state, val, 'ES')
+                sub_string = _compose_float_string(ed.width, ed.exponent, ed.decimal_places, state, val, ed.name)
             elif isinstance(ed, L):
                 if val is None:
                     val = True

@@ -59,6 +59,7 @@ def get_edit_descriptor_obj(name):
 # All the tokens defined in the F77 specification unless specified
 
 class A(object):
+    name = "A"
     is_non_reversion = False
     is_output = True
 
@@ -70,6 +71,7 @@ class A(object):
                 ' width=' + str(self.width) + '>'
 
 class QuotedString(object):
+    name = "QuotedString"
     is_non_reversion = False
     is_output = False
     def __init__(self, char_string=None):
@@ -82,6 +84,7 @@ class QuotedString(object):
 
 # Only in F95
 class B(object):
+    name = "B"
     is_non_reversion = False
     is_output = True
     base = 2
@@ -97,6 +100,7 @@ class B(object):
                 ' min_digits=' + str(self.min_digits) + '>'
     
 class BN(object):
+    name = "BN"
     is_non_reversion = True
     is_output = False
     def __init__(self):
@@ -105,6 +109,7 @@ class BN(object):
         return '<BN>'
 
 class BZ(object):
+    name = "BZ"
     is_non_reversion = True
     is_output = False
     def __init__(self):
@@ -113,6 +118,7 @@ class BZ(object):
         return '<BZ>'
 
 class Colon(object):
+    name = "Colon"
     is_non_reversion = False
     is_output = False
     def __init__(self):
@@ -121,12 +127,14 @@ class Colon(object):
         return '<Colon>'
     
 class D(object):
+    name = "D"
     is_non_reversion = False
     is_output = True
 
     def __init__(self):
         self.repeat = None
         self.width = None
+        self.exponent = None
         self.decimal_places = None
     def __repr__(self):
         return '<D repeat=' + str(self.repeat) + \
@@ -134,6 +142,7 @@ class D(object):
                 ' decimal_places=' + str(self.decimal_places) + '>'
 
 class E(object):
+    name = "E"
     is_non_reversion = False
     is_output = True
 
@@ -150,6 +159,7 @@ class E(object):
     
 # Only in F95
 class EN(object):
+    name = "EN"
     is_non_reversion = False
     is_output = True
 
@@ -166,6 +176,7 @@ class EN(object):
 
 # Only in F95
 class ES(object):
+    name = "ES"
     is_non_reversion = False
     is_output = True
 
@@ -181,12 +192,14 @@ class ES(object):
                 ' exponent=' + str(self.exponent) + '>'
 
 class F(object):
+    name = "F"
     is_non_reversion = False
     is_output = True
 
     def __init__(self):
         self.repeat = None
         self.width = None
+        self.exponent = None
         self.decimal_places = None
     def __repr__(self):
         return '<F repeat=' + str(self.repeat) + \
@@ -194,11 +207,13 @@ class F(object):
                 ' decimal_places=' + str(self.decimal_places) + '>'
     
 class FormatGroup(object):
+    name = "FormatGroup"
     is_non_reversion = False
     is_output = False
     pass
 
 class G(object):
+    name = "G"
     is_non_reversion = False
     is_output = True
 
@@ -215,6 +230,7 @@ class G(object):
 
 # Only in F77
 class H(object):
+    name = "H"
     is_non_reversion = False
     is_output = False
     def __init__(self):
@@ -225,6 +241,7 @@ class H(object):
                 ' char_string=' + str(self.char_string) + '>'
     
 class I(object):
+    name = "I"
     is_non_reversion = False
     is_output = True
     base = 10
@@ -240,6 +257,7 @@ class I(object):
                 ' min_digits=' + str(self.min_digits) + '>'
     
 class L(object):
+    name = "L"
     is_non_reversion = False
     is_output = True
 
@@ -252,6 +270,7 @@ class L(object):
 
 # Only in F95
 class O(object):
+    name = "O"
     is_non_reversion = False
     is_output = True
     base = 8
@@ -267,6 +286,7 @@ class O(object):
                 ' min_digits=' + str(self.min_digits) + '>'
 
 class P(object):
+    name = "P"
     is_non_reversion = True
     is_output = False
     def __init__(self):
@@ -275,6 +295,7 @@ class P(object):
         return '<P scale=' + str(self.scale) + '>'
     
 class S(object):
+    name = "S"
     is_non_reversion = True
     is_output = False
     def __init__(self):
@@ -283,6 +304,7 @@ class S(object):
         return '<S>'
     
 class Slash(object):
+    name = "Slash"
     is_non_reversion = False
     is_output = False
     def __init__(self):
@@ -292,6 +314,7 @@ class Slash(object):
         return '<Slash repeat=' + str(self.repeat) + '>'
     
 class SP(object):
+    name = "SP"
     is_non_reversion = True
     is_output = False
     def __init__(self):
@@ -300,6 +323,7 @@ class SP(object):
         return '<SP>'
     
 class SS(object):
+    name = "SS"
     is_non_reversion = True
     is_output = False
     def __init__(self):
@@ -308,6 +332,7 @@ class SS(object):
         return '<SS>'
     
 class T(object):
+    name = "T"
     is_non_reversion = False
     is_output = False
     def __init__(self):
@@ -316,6 +341,7 @@ class T(object):
         return '<T num_chars=' + str(self.num_chars) + '>'
     
 class TL(object):
+    name = "TL"
     is_non_reversion = False
     is_output = False
     def __init__(self):
@@ -324,6 +350,7 @@ class TL(object):
         return '<TL num_chars=' + str(self.num_chars) + '>'
     
 class TR(object):
+    name = "TR"
     is_non_reversion = False
     is_output = False
     def __init__(self):
@@ -332,6 +359,7 @@ class TR(object):
         return '<TR num_chars=' + str(self.num_chars) + '>'
 
 class X(object):
+    name = "X"
     is_non_reversion = False
     is_output = False
     def __init__(self):
@@ -341,6 +369,7 @@ class X(object):
 
 # Only in F95
 class Z(object):
+    name = "Z"
     is_non_reversion = False
     is_output = True
     base = 16
