@@ -1,4 +1,6 @@
 import math
+from io import StringIO
+
 from ._edit_descriptors import *
 from ._exceptions import InvalidFormat
 from ._misc import expand_edit_descriptors, has_next_iterator
@@ -17,7 +19,7 @@ def output(eds, reversion_eds, values):
     a function to take a list of valid f77 edit descriptors and respective values
     and output the corresponding string
     '''
-    record = ''
+    record = StringIO()
     state = {
         'position': 0,
         'scale': 0,
@@ -67,8 +69,8 @@ def output(eds, reversion_eds, values):
                     else:
                         # Regardless of where cursor is, is moved to the
                         # next record
-                        record = record + config.RECORD_SEPARATOR
-                        state['position'] = len(record)
+                        record.write(config.RECORD_SEPARATOR)
+                        state['position'] = record.tell()
                         if get_value.has_next():
                             # Only reset the reversion if we have more values to output
                             tmp_reversion_eds = reversion_eds[::-1]
@@ -194,7 +196,7 @@ def output(eds, reversion_eds, values):
                 state['position'], record = _write_string(
                     record, sub_string, state['position'])
     # output the final record
-    return record
+    return record.getvalue()
 
 
 def _compose_nan_string(w, ftype):
@@ -753,19 +755,19 @@ def _compose_boz_string(w, m, state, val, ftype):
         return s
 
 
-def _write_string(record, sub_string, pos):
+def _write_string(record: StringIO, sub_string: str, pos: int):
     '''Function that actually writes the generated strings to a 'stream'''''
-    new_pos = pos + len(sub_string)
     # pad if required with blanks - i.e. input after a tr edit descriptor - see
     # f77 format sec. 13.5.3
-    if pos > len(record):
-        record = record.ljust(pos)
-        out = record + sub_string
-    elif pos == len(record):
-        out = record + sub_string
-    elif pos < len(record):
-        out = record[:pos] + sub_string + record[new_pos:]
-    return (new_pos, out)
+    record_len = record.tell()
+    if pos > record_len:
+        blanks = " " * (pos - record_len)
+        record.write(blanks)
+    elif pos < record_len:
+        record.seek(max(0, pos))
+
+    record.write(sub_string)
+    return (record.tell(), record)
 
 
 def left_pad(sub_string, width, pad_char):
