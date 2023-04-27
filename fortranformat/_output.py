@@ -473,18 +473,7 @@ def _output_float(w, d, e, state, ft, buff, sign_bit, zero_flag, ndigits, edigit
                 edigits = e + 2
     else:
         edigits = 0
-    # Zero values always output as positive, even if the value was egative before rounding
-    i = 0
-    while i < ndigits:
-        if digits[i] != '0':
-            break
-        i = i + 1
-    if i == ndigits:
-        # The output is zero so set sign accordingly
-        if PROC_SIGN_ZERO:
-            sign = _calculate_sign(state, sign_bit)
-        else:
-            sign = _calculate_sign(state, False)
+
     # Pick a field size if none was specified
     if w <= 0:
         w = nbefore + nzero + nafter + 1 + len(sign)
