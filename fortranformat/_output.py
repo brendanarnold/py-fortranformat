@@ -546,14 +546,11 @@ def _output_float(w, d, e, state, ft, buff, sign_bit, zero_flag, ndigits, edigit
 
 
 def _calculate_sign(state, negative_flag):
-    s = ''
     if negative_flag:
-        s = '-'
-    elif state['incl_plus']:
-        s = '+'
-    else:
-        s = ''
-    return s
+        return '-'
+    if state['incl_plus']:
+        return '+'
+    return ''
 
 
 def _swapchar(s, ind, newch):
