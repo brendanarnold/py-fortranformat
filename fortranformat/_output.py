@@ -1,5 +1,6 @@
 import math
 from ._edit_descriptors import *
+from ._exceptions import InvalidFormat
 from ._misc import expand_edit_descriptors, has_next_iterator
 from . import config
 

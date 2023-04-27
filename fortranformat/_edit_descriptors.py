@@ -1,4 +1,4 @@
-from ._exceptions import *
+from ._exceptions import InvalidFormat
 
 def get_edit_descriptor_obj(name):
     '''Returns a new object instance from a string'''
