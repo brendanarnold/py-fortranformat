@@ -492,11 +492,9 @@ def _output_float(w, d, e, state, ft, buff, sign_bit, zero_flag, ndigits, edigit
     if (nblanks < 0) or (edigits == -1):
         return '*' * w
     # See if we have space for a zero before the decimal point
-    if (nbefore == 0) and (nblanks > 0):
-        leadzero = True
+    leadzero = (nbefore == 0) and (nblanks > 0)
+    if leadzero:
         nblanks = nblanks - 1
-    else:
-        leadzero = False
 
     out = StringIO()
     # Pad to full field width
