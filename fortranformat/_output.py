@@ -497,53 +497,52 @@ def _output_float(w, d, e, state, ft, buff, sign_bit, zero_flag, ndigits, edigit
         nblanks = nblanks - 1
     else:
         leadzero = False
-    out = ''
+
+    out = StringIO()
     # Pad to full field width
     if (nblanks > 0) and not PROC_NO_LEADING_BLANK:  # dtp->u.p.no_leading_blank
-        out = out + ' ' * nblanks
+        out.write(' ' * nblanks)
     # Attach the sign
-    out = out + sign
+    out.write(sign)
     # Add the lead zero if necessary
     if leadzero:
-        out = out + '0'
+        out.write('0')
     # Output portion before the decimal point padded with zeros
     if nbefore > 0:
         if nbefore > ndigits:
-            out = out + digits[:ndigits] + (' ' * (nbefore - ndigits))
+            out.write(digits[:ndigits] + (' ' * (nbefore - ndigits)))
             digits = digits[ndigits:]
             ndigits = 0
         else:
             i = nbefore
-            out = out + digits[:i]
+            out.write(digits[:i])
             digits = digits[i:]
             ndigits = ndigits - i
+
     # Output the decimal point
-    out = out + PROC_DECIMAL_CHAR
+    out.write(PROC_DECIMAL_CHAR)
+
     # Output the leading zeros after the decimal point
     if nzero > 0:
-        out = out + ('0' * nzero)
+        out.write(('0' * nzero))
+
     # Output the digits after the decimal point, padded with zeros
     if nafter > 0:
-        if nafter > ndigits:
-            i = ndigits
-        else:
-            i = nafter
-        zeros = '0' * (nafter - i)
-        out = out + digits[:i] + zeros
-        digits = digits[nafter:]
-        ndigits = ndigits - nafter
+        i = min(nafter, ndigits)
+        out.write(digits[:i])
+        out.write('0' * (nafter - i))
+
     # Output the exponent
     if expchar is not None:
         if expchar != ' ':
-            out = out + expchar
+            out.write(expchar)
             edigits = edigits - 1
-        fmt = '%+0' + str(edigits) + 'd'
-        tmp_buff = fmt % ex
+        tmp_buff = f'{ex:+0{edigits}d}'
         # if not state['blanks_as_zeros']:
         if PROC_NO_LEADING_BLANK:
-            tmp_buf = tmp_buff + (nblanks * ' ')
-        out = out + tmp_buff
-    return out
+            tmp_buff = tmp_buff + (nblanks * ' ')
+        out.write(tmp_buff)
+    return out.getvalue()
 
 
 def _calculate_sign(state, negative_flag):
