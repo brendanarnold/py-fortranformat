@@ -240,12 +240,7 @@ def _compose_float_string(w, e, d, state, val, ftype):
     zero_flag = (tmp == 0)
     # === DTOA === (macro)
     # write the tmp value to the string buffer
-    # sprintf seems to allow negative number of decimal places, need to correct for this
-    if ndigits <= 0:
-        fmt = '%+-#' + str(PROC_MIN_FIELD_WIDTH) + 'e'
-    else:
-        fmt = '%+-#' + str(PROC_MIN_FIELD_WIDTH) + '.' + str(ndigits - 1) + 'e'
-    buff = fmt % tmp
+    buff = f"{tmp:<+#{PROC_MIN_FIELD_WIDTH}.{max(0, ndigits - 1)}e}"
     # === WRITE_FLOAT === (macro)
     if ftype != 'G':
         return _output_float(w, d, e, state, ftype, buff, sign_bit, zero_flag, ndigits, edigits)
