@@ -59,6 +59,7 @@ def get_edit_descriptor_obj(name):
 # All the tokens defined in the F77 specification unless specified
 
 class A(object):
+    is_non_reversion = False
     is_output = True
 
     def __init__(self):
@@ -69,6 +70,7 @@ class A(object):
                 ' width=' + str(self.width) + '>'
 
 class QuotedString(object):
+    is_non_reversion = False
     is_output = False
     def __init__(self, char_string=None):
         self.char_string = char_string
@@ -80,6 +82,7 @@ class QuotedString(object):
 
 # Only in F95
 class B(object):
+    is_non_reversion = False
     is_output = True
     base = 2
 
@@ -94,6 +97,7 @@ class B(object):
                 ' min_digits=' + str(self.min_digits) + '>'
     
 class BN(object):
+    is_non_reversion = True
     is_output = False
     def __init__(self):
         pass
@@ -101,6 +105,7 @@ class BN(object):
         return '<BN>'
 
 class BZ(object):
+    is_non_reversion = True
     is_output = False
     def __init__(self):
         pass
@@ -108,6 +113,7 @@ class BZ(object):
         return '<BZ>'
 
 class Colon(object):
+    is_non_reversion = False
     is_output = False
     def __init__(self):
         pass
@@ -115,6 +121,7 @@ class Colon(object):
         return '<Colon>'
     
 class D(object):
+    is_non_reversion = False
     is_output = True
 
     def __init__(self):
@@ -127,6 +134,7 @@ class D(object):
                 ' decimal_places=' + str(self.decimal_places) + '>'
 
 class E(object):
+    is_non_reversion = False
     is_output = True
 
     def __init__(self):
@@ -142,6 +150,7 @@ class E(object):
     
 # Only in F95
 class EN(object):
+    is_non_reversion = False
     is_output = True
 
     def __init__(self):
@@ -157,6 +166,7 @@ class EN(object):
 
 # Only in F95
 class ES(object):
+    is_non_reversion = False
     is_output = True
 
     def __init__(self):
@@ -171,6 +181,7 @@ class ES(object):
                 ' exponent=' + str(self.exponent) + '>'
 
 class F(object):
+    is_non_reversion = False
     is_output = True
 
     def __init__(self):
@@ -183,10 +194,12 @@ class F(object):
                 ' decimal_places=' + str(self.decimal_places) + '>'
     
 class FormatGroup(object):
+    is_non_reversion = False
     is_output = False
     pass
 
 class G(object):
+    is_non_reversion = False
     is_output = True
 
     def __init__(self):
@@ -202,6 +215,7 @@ class G(object):
 
 # Only in F77
 class H(object):
+    is_non_reversion = False
     is_output = False
     def __init__(self):
         self.num_chars = None
@@ -211,6 +225,7 @@ class H(object):
                 ' char_string=' + str(self.char_string) + '>'
     
 class I(object):
+    is_non_reversion = False
     is_output = True
     base = 10
 
@@ -225,6 +240,7 @@ class I(object):
                 ' min_digits=' + str(self.min_digits) + '>'
     
 class L(object):
+    is_non_reversion = False
     is_output = True
 
     def __init__(self):
@@ -236,6 +252,7 @@ class L(object):
 
 # Only in F95
 class O(object):
+    is_non_reversion = False
     is_output = True
     base = 8
 
@@ -250,6 +267,7 @@ class O(object):
                 ' min_digits=' + str(self.min_digits) + '>'
 
 class P(object):
+    is_non_reversion = True
     is_output = False
     def __init__(self):
         self.scale = None
@@ -257,6 +275,7 @@ class P(object):
         return '<P scale=' + str(self.scale) + '>'
     
 class S(object):
+    is_non_reversion = True
     is_output = False
     def __init__(self):
         pass
@@ -264,6 +283,7 @@ class S(object):
         return '<S>'
     
 class Slash(object):
+    is_non_reversion = False
     is_output = False
     def __init__(self):
         self.repeat = None
@@ -272,6 +292,7 @@ class Slash(object):
         return '<Slash repeat=' + str(self.repeat) + '>'
     
 class SP(object):
+    is_non_reversion = True
     is_output = False
     def __init__(self):
         pass
@@ -279,6 +300,7 @@ class SP(object):
         return '<SP>'
     
 class SS(object):
+    is_non_reversion = True
     is_output = False
     def __init__(self):
         pass
@@ -286,6 +308,7 @@ class SS(object):
         return '<SS>'
     
 class T(object):
+    is_non_reversion = False
     is_output = False
     def __init__(self):
         self.num_chars = None
@@ -293,6 +316,7 @@ class T(object):
         return '<T num_chars=' + str(self.num_chars) + '>'
     
 class TL(object):
+    is_non_reversion = False
     is_output = False
     def __init__(self):
         self.num_chars = None
@@ -300,6 +324,7 @@ class TL(object):
         return '<TL num_chars=' + str(self.num_chars) + '>'
     
 class TR(object):
+    is_non_reversion = False
     is_output = False
     def __init__(self):
         self.num_chars = None
@@ -307,6 +332,7 @@ class TR(object):
         return '<TR num_chars=' + str(self.num_chars) + '>'
 
 class X(object):
+    is_non_reversion = False
     is_output = False
     def __init__(self):
         self.num_chars = None
@@ -315,6 +341,7 @@ class X(object):
 
 # Only in F95
 class Z(object):
+    is_non_reversion = False
     is_output = True
     base = 16
 
@@ -342,6 +369,5 @@ ED9 = [':'] # Of form X only, may omit comma either side
 ED10 = ['/'] # Of form X only, may omit following comma and leading comma if no repeat
 REPEATABLE_EDS = ['L', 'A', 'D', 'F', 'B', 'I', 'O', 'Z', 'E', 'EN', 'ES', 'G', '/']
 CONTROL_EDS = (BN, BZ, P, SP, SS, S, X, T, TR, TL, Colon, Slash)
-NON_REVERSION_EDS = (P, S, SP, SS, BN, BZ)
 ALL_ED = ED1 + ED2 + ED3 + ED4 + ED5 + ED6 + ED7 + ED8 + ED9 + ED10
 

@@ -62,7 +62,7 @@ def output(eds, reversion_eds, values):
                     if len(tmp_reversion_eds):
                         ed = tmp_reversion_eds.pop()
                         # these edit descriptors are ignored in reversion state
-                        if not isinstance(ed, NON_REVERSION_EDS):
+                        if not ed.is_non_reversion:
                             break
                     else:
                         # Regardless of where cursor is, is moved to the
