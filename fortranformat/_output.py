@@ -325,13 +325,11 @@ def _output_float(w, d, e, state, ft, buff, sign_bit, zero_flag, ndigits, edigit
     if e is None:
         e = -1
     nzero_real = -1
-    sign = _calculate_sign(state, sign_bit)
+
     # Some debug
     if d != 0:
         assert(buff[2] in ['.', ','])
         assert(buff[ndigits + 2] == 'e')
-    # Read in the exponent
-    ex = int(buff[ndigits + 3:]) + 1
     # Handle zero case
     if zero_flag:
         ex = 0
@@ -348,6 +346,11 @@ def _output_float(w, d, e, state, ft, buff, sign_bit, zero_flag, ndigits, edigit
                 return '*'  # This is ifort behaviour
             else:
                 return '.'  # CHANGED: Was '0'
+    else:
+        # Read in the exponent
+        ex = int(buff[ndigits + 3:]) + 1
+        sign = _calculate_sign(state, sign_bit)
+
     # Get rid of the decimal and the initial sign i.e. normalise the digits
     digits = buff[1] + buff[3:]
     # Find out where to place the decimal point
