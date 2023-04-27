@@ -431,10 +431,10 @@ def _output_float(w, d, e, state, ft, buff, sign_bit, zero_flag, ndigits, edigit
             while i >= 0:
                 digit = int(digits[i])
                 if digit != 9:
-                    digits = _swapchar(digits, i, str(digit + 1))
+                    digits = _swapchar(digits, i, digit + 1)
                     break
                 else:
-                    digits = _swapchar(digits, i, '0')
+                    digits = _swapchar(digits, i, 0)
                 i = i - 1
             # Did the carry overflow?
             if i < 0:
@@ -553,13 +553,11 @@ def _calculate_sign(state, negative_flag):
     return ''
 
 
-def _swapchar(s, ind, newch):
+def _swapchar(s: str, ind: int, newch: int):
     '''
     Helper function to make chars in a string mutableish
     '''
-    if 0 < ind >= len(s):
-        raise IndexError('index out of range')
-    return s[:ind] + newch + s[ind+1:]
+    return f"{s[:ind]}{newch}{s[ind+1:]}"
 
 
 def _compose_a_string(w, state, val):
