@@ -40,13 +40,13 @@ def input(eds, reversion_eds, records, num_vals=None):
     # values if number of output values is not defined
     num_out_eds = 0
     for ed in eds:
-        if isinstance(ed, OUTPUT_EDS):
+        if ed.is_output:
             num_out_eds += 1
     num_rev_out_eds = 0
     if num_vals is None:
         num_vals = num_out_eds
     for ed in reversion_eds:
-        if isinstance(ed, OUTPUT_EDS):
+        if ed.is_output:
             num_rev_out_eds += 1
 
     # Will loop forever is no output edit descriptors

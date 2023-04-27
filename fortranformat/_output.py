@@ -32,7 +32,7 @@ def output(eds, reversion_eds, values):
     # check that if there is a reversion, that values can be output
     reversion_contains_output_ed = False
     for ed in reversion_eds:
-        if isinstance(ed, OUTPUT_EDS):
+        if ed.is_output:
             reversion_contains_output_ed = True
             break
     # Get full list of edit descriptors
@@ -83,7 +83,7 @@ def output(eds, reversion_eds, values):
                 # final value
                 break
         # check if edit descriptor requires a value
-        if isinstance(ed, OUTPUT_EDS):
+        if ed.is_output:
             if get_value.has_next():
                 val = next(get_value)
             else:

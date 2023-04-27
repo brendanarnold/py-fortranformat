@@ -59,6 +59,8 @@ def get_edit_descriptor_obj(name):
 # All the tokens defined in the F77 specification unless specified
 
 class A(object):
+    is_output = True
+
     def __init__(self):
         self.repeat = None
         self.width = None
@@ -67,6 +69,7 @@ class A(object):
                 ' width=' + str(self.width) + '>'
 
 class QuotedString(object):
+    is_output = False
     def __init__(self, char_string=None):
         self.char_string = char_string
     def get_width(self):
@@ -77,6 +80,7 @@ class QuotedString(object):
 
 # Only in F95
 class B(object):
+    is_output = True
     base = 2
 
     def __init__(self):
@@ -90,24 +94,29 @@ class B(object):
                 ' min_digits=' + str(self.min_digits) + '>'
     
 class BN(object):
+    is_output = False
     def __init__(self):
         pass
     def __repr__(self):
         return '<BN>'
 
 class BZ(object):
+    is_output = False
     def __init__(self):
         pass
     def __repr__(self):
         return '<BZ>'
 
 class Colon(object):
+    is_output = False
     def __init__(self):
         pass
     def __repr__(self):
         return '<Colon>'
     
 class D(object):
+    is_output = True
+
     def __init__(self):
         self.repeat = None
         self.width = None
@@ -118,6 +127,8 @@ class D(object):
                 ' decimal_places=' + str(self.decimal_places) + '>'
 
 class E(object):
+    is_output = True
+
     def __init__(self):
         self.repeat = None
         self.width = None
@@ -131,6 +142,8 @@ class E(object):
     
 # Only in F95
 class EN(object):
+    is_output = True
+
     def __init__(self):
         self.repeat = None
         self.width = None
@@ -144,6 +157,8 @@ class EN(object):
 
 # Only in F95
 class ES(object):
+    is_output = True
+
     def __init__(self):
         self.repeat = None
         self.width = None
@@ -156,6 +171,8 @@ class ES(object):
                 ' exponent=' + str(self.exponent) + '>'
 
 class F(object):
+    is_output = True
+
     def __init__(self):
         self.repeat = None
         self.width = None
@@ -166,9 +183,12 @@ class F(object):
                 ' decimal_places=' + str(self.decimal_places) + '>'
     
 class FormatGroup(object):
+    is_output = False
     pass
 
 class G(object):
+    is_output = True
+
     def __init__(self):
         self.repeat = None
         self.width = None
@@ -182,6 +202,7 @@ class G(object):
 
 # Only in F77
 class H(object):
+    is_output = False
     def __init__(self):
         self.num_chars = None
         self.char_string = None
@@ -190,6 +211,7 @@ class H(object):
                 ' char_string=' + str(self.char_string) + '>'
     
 class I(object):
+    is_output = True
     base = 10
 
     def __init__(self):
@@ -203,6 +225,8 @@ class I(object):
                 ' min_digits=' + str(self.min_digits) + '>'
     
 class L(object):
+    is_output = True
+
     def __init__(self):
         self.repeat = None
         self.width = None
@@ -212,6 +236,7 @@ class L(object):
 
 # Only in F95
 class O(object):
+    is_output = True
     base = 8
 
     def __init__(self):
@@ -225,18 +250,21 @@ class O(object):
                 ' min_digits=' + str(self.min_digits) + '>'
 
 class P(object):
+    is_output = False
     def __init__(self):
         self.scale = None
     def __repr__(self):
         return '<P scale=' + str(self.scale) + '>'
     
 class S(object):
+    is_output = False
     def __init__(self):
         pass
     def __repr__(self):
         return '<S>'
     
 class Slash(object):
+    is_output = False
     def __init__(self):
         self.repeat = None
         pass
@@ -244,36 +272,42 @@ class Slash(object):
         return '<Slash repeat=' + str(self.repeat) + '>'
     
 class SP(object):
+    is_output = False
     def __init__(self):
         pass
     def __repr__(self):
         return '<SP>'
     
 class SS(object):
+    is_output = False
     def __init__(self):
         pass
     def __repr__(self):
         return '<SS>'
     
 class T(object):
+    is_output = False
     def __init__(self):
         self.num_chars = None
     def __repr__(self):
         return '<T num_chars=' + str(self.num_chars) + '>'
     
 class TL(object):
+    is_output = False
     def __init__(self):
         self.num_chars = None
     def __repr__(self):
         return '<TL num_chars=' + str(self.num_chars) + '>'
     
 class TR(object):
+    is_output = False
     def __init__(self):
         self.num_chars = None
     def __repr__(self):
         return '<TR num_chars=' + str(self.num_chars) + '>'
 
 class X(object):
+    is_output = False
     def __init__(self):
         self.num_chars = None
     def __repr__(self):
@@ -281,6 +315,7 @@ class X(object):
 
 # Only in F95
 class Z(object):
+    is_output = True
     base = 16
 
     def __init__(self):
@@ -306,7 +341,6 @@ ED8 = ['P'] # Of form kX only, where k is a signed integer, may omit comma if fo
 ED9 = [':'] # Of form X only, may omit comma either side
 ED10 = ['/'] # Of form X only, may omit following comma and leading comma if no repeat
 REPEATABLE_EDS = ['L', 'A', 'D', 'F', 'B', 'I', 'O', 'Z', 'E', 'EN', 'ES', 'G', '/']
-OUTPUT_EDS = (L, A, D, F, B, I, O, Z, E, EN, ES, G)
 CONTROL_EDS = (BN, BZ, P, SP, SS, S, X, T, TR, TL, Colon, Slash)
 NON_REVERSION_EDS = (P, S, SP, SS, BN, BZ)
 ALL_ED = ED1 + ED2 + ED3 + ED4 + ED5 + ED6 + ED7 + ED8 + ED9 + ED10
