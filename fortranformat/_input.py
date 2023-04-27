@@ -257,14 +257,6 @@ def read_integer(ed, state, record):
                 'Negative numbers not permitted for binary, octal or hex')
         else:
             return (None, state)
-    if isinstance(ed, Z):
-        base = 16
-    elif isinstance(ed, I):
-        base = 10
-    elif isinstance(ed, O):
-        base = 8
-    elif isinstance(ed, B):
-        base = 2
     # If a negative is followed by blanks, Gfortran and ifort
     # interpret as a zero
     if re.match(r'^ *- +$', substr):
@@ -283,7 +275,7 @@ def read_integer(ed, state, record):
             substr = '0'
     teststr = _interpret_blanks(substr, state)
     try:
-        val = int(teststr, base)
+        val = int(teststr, ed.base)
     except ValueError:
         if state['exception_on_fail']:
             raise ValueError(

@@ -77,10 +77,13 @@ class QuotedString(object):
 
 # Only in F95
 class B(object):
+    base = 2
+
     def __init__(self):
         self.repeat = None
         self.width = None
         self.min_digits = None
+
     def __repr__(self):
         return '<B repeat=' + str(self.repeat) + \
                 ' width=' + str(self.width) + \
@@ -187,10 +190,13 @@ class H(object):
                 ' char_string=' + str(self.char_string) + '>'
     
 class I(object):
+    base = 10
+
     def __init__(self):
         self.repeat = None
         self.width = None
         self.min_digits = None
+
     def __repr__(self):
         return '<I repeat=' + str(self.repeat) + \
                 ' width=' + str(self.width) + \
@@ -206,10 +212,13 @@ class L(object):
 
 # Only in F95
 class O(object):
+    base = 8
+
     def __init__(self):
         self.repeat = None
         self.width = None
         self.min_digits = None
+
     def __repr__(self):
         return '<O repeat=' + str(self.repeat) + \
                 ' width=' + str(self.width) + \
@@ -272,10 +281,13 @@ class X(object):
 
 # Only in F95
 class Z(object):
+    base = 16
+
     def __init__(self):
         self.repeat = None
         self.width = None
         self.min_digits = None
+
     def __repr__(self):
         return '<Z repeat=' + str(self.repeat) + \
                 ' width=' + str(self.width) + \
