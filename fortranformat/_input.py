@@ -51,16 +51,10 @@ def input(eds, reversion_eds, records, num_vals=None):
     reversion_eds = expand_edit_descriptors(reversion_eds)
     # Assume one-to-one correspondance between edit descriptors and output
     # values if number of output values is not defined
-    num_out_eds = 0
-    for ed in eds:
-        if ed.is_output:
-            num_out_eds += 1
-    num_rev_out_eds = 0
+    num_out_eds = sum((ed.is_output for ed in eds))
+    num_rev_out_eds = sum((ed.is_output for ed in reversion_eds))
     if num_vals is None:
         num_vals = num_out_eds
-    for ed in reversion_eds:
-        if ed.is_output:
-            num_rev_out_eds += 1
 
     # Will loop forever is no output edit descriptors
     if (num_out_eds == 0):
