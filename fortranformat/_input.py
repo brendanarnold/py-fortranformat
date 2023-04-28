@@ -74,9 +74,11 @@ def input(eds, reversion_eds, records, num_vals=None):
     # May need to process multiple records, down to a higher function to supply
     # appropriate string for format
     if not hasattr(records, 'next'):
-        records = iter(re.split('\r\n|\r|\n', records))
-    record = next_with_default(records, None)
-    if record is None:
+        records = iter(records.splitlines() or [""])
+
+    try:
+        record = next(records)
+    except StopIteration:
         return []
 
     # if a_widths is not None:
