@@ -109,7 +109,7 @@ def input(eds, reversion_eds, records, num_vals=None):
             state.update(func(state["position"], ed, record))
         elif isinstance(ed, Slash):
             # End of record
-            record = next_with_default(records, None)
+            record = next(records, None)
             state['position'] = 0
             if record is None:
                 break
@@ -138,7 +138,7 @@ def input(eds, reversion_eds, records, num_vals=None):
             resolved = False
             g_trial_eds = iter(config.G_INPUT_TRIAL_EDS)
             while not resolved:
-                ed_name = next_with_default(g_trial_eds, None)
+                ed_name = next(g_trial_eds, None)
                 if ed_name is None:
                     raise ValueError(
                         'No suitable edit descriptor in config.G_INPUT_TRIAL_EDS')
@@ -221,14 +221,6 @@ def _get_substr(w, record, state):
     substr = record[start:end]
     state['position'] = min(state['position'] + w, len(record))
     return substr, state
-
-
-def next_with_default(it, default=None):
-    try:
-        val = next(it)
-    except StopIteration:
-        val = default
-    return val
 
 
 def read_string(ed, state, record):
