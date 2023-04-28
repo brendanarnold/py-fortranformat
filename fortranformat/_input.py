@@ -294,6 +294,10 @@ def read_logical(ed, state, record):
     return (val, state)
 
 
+DECIMAL_RE = re.compile(r"^ *\. *$")
+MINUS_RE = re.compile(r"^ *- *$")
+EXPONENT_RE = re.compile(r"(.*)E[-+]?$")
+
 def read_float(ed, state, record):
     substr, state = _get_substr(ed.width, record, state)
     teststr = _interpret_blanks(substr, state)
@@ -311,14 +315,14 @@ def read_float(ed, state, record):
         teststr = teststr[0] + \
             teststr[1:].replace('+', 'E+').replace('-', 'E-')
     # ifort allows '.' to be interpreted as 0
-    if re.match(r'^ *\. *$', teststr):
+    if DECIMAL_RE.match(teststr):
         teststr = '0'
     # ifort allows '-' to be interpreted as 0
-    if re.match(r'^ *- *$', teststr):
+    if MINUS_RE.match(teststr):
         teststr = '0'
     # ifort allows numbers to end with 'E', 'E+', 'E-' and 'D'
     # equivalents
-    res = re.match(r'(.*)(E|E\+|E\-)$', teststr)
+    res = EXPONENT_RE.match(teststr)
     if res:
         teststr = res.group(1)
     try:
