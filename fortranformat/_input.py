@@ -15,6 +15,19 @@ FORBIDDEN_EDS = [QuotedString, H]
 #   Cannot determine proper input for G edit descriptors
 
 
+CONTROL_COMMANDS = {
+    "BN": lambda position, ed, record: {'blanks_as_zeros': False},
+    "BZ": lambda position, ed, record: {'blanks_as_zeros': True},
+    "P": lambda position, ed, record: {'scale': ed.scale},
+    "SP": lambda position, ed, record: {'incl_plus': True},
+    "SS": lambda position, ed, record: {'incl_plus': False},
+    "S": lambda position, ed, record: {'incl_plus': config.PROC_INCL_PLUS},
+    "X": lambda position, ed, record: {'position': min(position + ed.num_chars, len(record))},
+    "TR": lambda position, ed, record: {'position': min(position + ed.num_chars, len(record))},
+    "TL": lambda position, ed, record: {'position': max(position - ed.num_chars, 0)},
+    "T": lambda position, ed, record: {'position': max(0, min(ed.num_chars - 1, len(record)))},
+}
+
 def input(eds, reversion_eds, records, num_vals=None):
 
     state = {
@@ -91,30 +104,9 @@ def input(eds, reversion_eds, records, num_vals=None):
         if isinstance(ed, QuotedString):
             raise InvalidFormat(
                 'Cannot have string literal in an input format')
-        elif isinstance(ed, BN):
-            state['blanks_as_zeros'] = False
-        elif isinstance(ed, BZ):
-            state['blanks_as_zeros'] = True
-        elif isinstance(ed, P):
-            state['scale'] = ed.scale
-        elif isinstance(ed, SP):
-            state['incl_plus'] = True
-        elif isinstance(ed, SS):
-            state['incl_plus'] = False
-        elif isinstance(ed, S):
-            state['incl_plus'] = config.PROC_INCL_PLUS
-        elif isinstance(ed, (X, TR)):
-            state['position'] = min(
-                state['position'] + ed.num_chars, len(record))
-        elif isinstance(ed, TL):
-            state['position'] = max(state['position'] - ed.num_chars, 0)
-        elif isinstance(ed, T):
-            if (ed.num_chars - 1) < 0:
-                state['position'] = 0
-            elif ed.num_chars > len(record):
-                state['position'] = len(record)
-            else:
-                state['position'] = ed.num_chars - 1
+        elif ed.name in CONTROL_COMMANDS:
+            func = CONTROL_COMMANDS[ed.name]
+            state.update(func(state["position"], ed, record))
         elif isinstance(ed, Slash):
             # End of record
             record = next_with_default(records, None)
