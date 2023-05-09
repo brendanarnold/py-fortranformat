@@ -92,24 +92,24 @@ def output(eds, reversion_eds, values):
                 # is a edit descriptor that requires a value but no value
                 # we simply ignore at this point - likely this is an incomplete reversion
                 break
-            if isinstance(ed, I):
+            if ed.name == "I":
                 if val is None:
                     val = 0
                 sub_string = _compose_i_string(
                     ed.width, ed.min_digits, state, val)
-            elif isinstance(ed, (B, O, Z)):
+            elif ed.name in ("B", "O", "Z"):
                 if val is None:
                     val = 0
                 sub_string = _compose_boz_string(ed.width, ed.min_digits, state, val, ed.name)
-            elif isinstance(ed, (D, E, EN, ES, F, G)):
+            elif ed.name in ("D", "E", "EN", "ES", "F", "G"):
                 if val is None:
                     val = 0.0
                 sub_string = _compose_float_string(ed.width, ed.exponent, ed.decimal_places, state, val, ed.name)
-            elif isinstance(ed, L):
+            elif ed.name == "L":
                 if val is None:
                     val = True
                 sub_string = _compose_l_string(ed.width, state, val)
-            elif isinstance(ed, A):
+            elif ed.name == "A":
                 if val is None:
                     val = ''
                 sub_string = _compose_a_string(ed.width, state, val)
@@ -117,29 +117,29 @@ def output(eds, reversion_eds, values):
                 record, sub_string, state['position'])
         else:
             # token does not require a value
-            if isinstance(ed, (S, SS)):
+            if ed.name in ("S", "SS"):
                 state['incl_plus'] = False
-            if isinstance(ed, SP):
+            if ed.name == "SP":
                 state['incl_plus'] = True
-            elif isinstance(ed, P):
+            elif ed.name == "P":
                 state['scale'] = ed.scale
-            elif isinstance(ed, BN):
+            elif ed.name == "BN":
                 # This is moot since for output, this does not do anything
                 state['blanks_as_zeros'] = False
-            elif isinstance(ed, BZ):
+            elif ed.name == "BZ":
                 state['blanks_as_zeros'] = True
-            elif isinstance(ed, Colon):
+            elif ed.name == "Colon":
                 state['halt_if_no_vals'] = True
-            elif isinstance(ed, Slash):
+            elif ed.name == "Slash":
                 state['position'], record = _write_string(
                     record, config.RECORD_SEPARATOR, state['position'])
-            elif isinstance(ed, (X, TR)):
+            elif ed.name in ("X", "TR"):
                 state['position'] = state['position'] + ed.num_chars
-            elif isinstance(ed, TL):
+            elif ed.name == "TL":
                 state['position'] = state['position'] - ed.num_chars
-            elif isinstance(ed, T):
+            elif ed.name == "T":
                 state['position'] = ed.num_chars - 1
-            elif isinstance(ed, QuotedString):
+            elif ed.name == "QuotedString":
                 sub_string = ed.char_string
                 state['position'], record = _write_string(
                     record, sub_string, state['position'])
