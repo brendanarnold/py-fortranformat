@@ -67,6 +67,10 @@ To run a reduced test suite where time and resources are limited, use the follow
 
 `make runminimaltests`
 
+To run a performance test, which currently only covers the reading and writing of floats, use the following
+
+`make runperformancetests`
+
 ### Deploying a new package version
 
 Update versions in `setup.py` and `__init__.py`
