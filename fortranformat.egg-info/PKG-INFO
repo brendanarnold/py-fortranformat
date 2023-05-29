@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: fortranformat
-Version: 1.2.2
+Version: 2.0.0
 Summary: Mimics Fortran textual IO in Python
 Home-page: https://github.com/brendanarnold/py-fortranformat
 Author: Brendan Arnold
@@ -75,6 +75,10 @@ Description: # FORTRAN format interpreter for Python
         
         `make runminimaltests`
         
+        To run a performance test, which currently only covers the reading and writing of floats, use the following
+        
+        `make runperformancetests`
+        
         ### Deploying a new package version
         
         Update versions in `setup.py` and `__init__.py`
@@ -112,7 +116,6 @@ Classifier: License :: OSI Approved :: MIT License
 Classifier: Natural Language :: English
 Classifier: Operating System :: OS Independent
 Classifier: Programming Language :: Fortran
-Classifier: Programming Language :: Python :: 2
 Classifier: Programming Language :: Python :: 3
 Classifier: Topic :: Text Processing :: General
 Classifier: Topic :: Software Development :: Interpreters

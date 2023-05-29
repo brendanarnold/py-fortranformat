@@ -1,5 +1,10 @@
 # Changelog
 
+## V 2.0.0
+
+- Feature: [Issue 6](https://github.com/brendanarnold/py-fortranformat/issues/6) Improve performance of reading and writing of `F` format by x10 - @ZedThree
+- BREAKING: Python 3.6 now required
+
 ## V 1.2.2
 
 - Bug: [Issue 28](https://github.com/brendanarnold/py-fortranformat/issues/28) Fix a bug where crash occurs on outputting infinity or NaN for a floating point number type.
