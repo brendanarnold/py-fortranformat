@@ -20,3 +20,7 @@ runminimaltests:
 	# A reduced test suite run for when resources are limited e.g. in pipeline builds
 	python -m pytest tests/handwritten
 	python -m pytest tests/minimal
+
+runperformancetests:
+	# Tests to monitor performance
+	python tests/performance/test.py
