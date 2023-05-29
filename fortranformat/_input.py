@@ -1,5 +1,6 @@
 import re
 from ._edit_descriptors import *
+from ._exceptions import InvalidFormat
 from ._misc import expand_edit_descriptors
 from . import config
 
@@ -13,6 +14,19 @@ FORBIDDEN_EDS = [QuotedString, H]
 #   Cannot determine complex input
 #   Cannot determine proper input for G edit descriptors
 
+
+CONTROL_COMMANDS = {
+    "BN": lambda position, ed, record: {'blanks_as_zeros': False},
+    "BZ": lambda position, ed, record: {'blanks_as_zeros': True},
+    "P": lambda position, ed, record: {'scale': ed.scale},
+    "SP": lambda position, ed, record: {'incl_plus': True},
+    "SS": lambda position, ed, record: {'incl_plus': False},
+    "S": lambda position, ed, record: {'incl_plus': config.PROC_INCL_PLUS},
+    "X": lambda position, ed, record: {'position': min(position + ed.num_chars, len(record))},
+    "TR": lambda position, ed, record: {'position': min(position + ed.num_chars, len(record))},
+    "TL": lambda position, ed, record: {'position': max(position - ed.num_chars, 0)},
+    "T": lambda position, ed, record: {'position': max(0, min(ed.num_chars - 1, len(record)))},
+}
 
 def input(eds, reversion_eds, records, num_vals=None):
 
@@ -37,16 +51,10 @@ def input(eds, reversion_eds, records, num_vals=None):
     reversion_eds = expand_edit_descriptors(reversion_eds)
     # Assume one-to-one correspondance between edit descriptors and output
     # values if number of output values is not defined
-    num_out_eds = 0
-    for ed in eds:
-        if isinstance(ed, OUTPUT_EDS):
-            num_out_eds += 1
-    num_rev_out_eds = 0
+    num_out_eds = sum((ed.is_output for ed in eds))
+    num_rev_out_eds = sum((ed.is_output for ed in reversion_eds))
     if num_vals is None:
         num_vals = num_out_eds
-    for ed in reversion_eds:
-        if isinstance(ed, OUTPUT_EDS):
-            num_rev_out_eds += 1
 
     # Will loop forever is no output edit descriptors
     if (num_out_eds == 0):
@@ -60,9 +68,11 @@ def input(eds, reversion_eds, records, num_vals=None):
     # May need to process multiple records, down to a higher function to supply
     # appropriate string for format
     if not hasattr(records, 'next'):
-        records = iter(re.split('\r\n|\r|\n', records))
-    record = next_with_default(records, None)
-    if record is None:
+        records = iter(records.splitlines() or [""])
+
+    try:
+        record = next(records)
+    except StopIteration:
         return []
 
     # if a_widths is not None:
@@ -90,33 +100,12 @@ def input(eds, reversion_eds, records, num_vals=None):
         if isinstance(ed, QuotedString):
             raise InvalidFormat(
                 'Cannot have string literal in an input format')
-        elif isinstance(ed, BN):
-            state['blanks_as_zeros'] = False
-        elif isinstance(ed, BZ):
-            state['blanks_as_zeros'] = True
-        elif isinstance(ed, P):
-            state['scale'] = ed.scale
-        elif isinstance(ed, SP):
-            state['incl_plus'] = True
-        elif isinstance(ed, SS):
-            state['incl_plus'] = False
-        elif isinstance(ed, S):
-            state['incl_plus'] = config.PROC_INCL_PLUS
-        elif isinstance(ed, (X, TR)):
-            state['position'] = min(
-                state['position'] + ed.num_chars, len(record))
-        elif isinstance(ed, TL):
-            state['position'] = max(state['position'] - ed.num_chars, 0)
-        elif isinstance(ed, T):
-            if (ed.num_chars - 1) < 0:
-                state['position'] = 0
-            elif ed.num_chars > len(record):
-                state['position'] = len(record)
-            else:
-                state['position'] = ed.num_chars - 1
+        elif ed.name in CONTROL_COMMANDS:
+            func = CONTROL_COMMANDS[ed.name]
+            state.update(func(state["position"], ed, record))
         elif isinstance(ed, Slash):
             # End of record
-            record = next_with_default(records, None)
+            record = next(records, None)
             state['position'] = 0
             if record is None:
                 break
@@ -145,7 +134,7 @@ def input(eds, reversion_eds, records, num_vals=None):
             resolved = False
             g_trial_eds = iter(config.G_INPUT_TRIAL_EDS)
             while not resolved:
-                ed_name = next_with_default(g_trial_eds, None)
+                ed_name = next(g_trial_eds, None)
                 if ed_name is None:
                     raise ValueError(
                         'No suitable edit descriptor in config.G_INPUT_TRIAL_EDS')
@@ -230,14 +219,6 @@ def _get_substr(w, record, state):
     return substr, state
 
 
-def next_with_default(it, default=None):
-    try:
-        val = next(it)
-    except StopIteration:
-        val = default
-    return val
-
-
 def read_string(ed, state, record):
     if ed.width is None:
         # Will assume rest of record is fair game for the
@@ -256,14 +237,6 @@ def read_integer(ed, state, record):
                 'Negative numbers not permitted for binary, octal or hex')
         else:
             return (None, state)
-    if isinstance(ed, Z):
-        base = 16
-    elif isinstance(ed, I):
-        base = 10
-    elif isinstance(ed, O):
-        base = 8
-    elif isinstance(ed, B):
-        base = 2
     # If a negative is followed by blanks, Gfortran and ifort
     # interpret as a zero
     if re.match(r'^ *- +$', substr):
@@ -282,7 +255,7 @@ def read_integer(ed, state, record):
             substr = '0'
     teststr = _interpret_blanks(substr, state)
     try:
-        val = int(teststr, base)
+        val = int(teststr, ed.base)
     except ValueError:
         if state['exception_on_fail']:
             raise ValueError(
@@ -317,6 +290,10 @@ def read_logical(ed, state, record):
     return (val, state)
 
 
+DECIMAL_RE = re.compile(r"^ *\. *$")
+MINUS_RE = re.compile(r"^ *- *$")
+EXPONENT_RE = re.compile(r"(.*)E[-+]?$")
+
 def read_float(ed, state, record):
     substr, state = _get_substr(ed.width, record, state)
     teststr = _interpret_blanks(substr, state)
@@ -334,14 +311,14 @@ def read_float(ed, state, record):
         teststr = teststr[0] + \
             teststr[1:].replace('+', 'E+').replace('-', 'E-')
     # ifort allows '.' to be interpreted as 0
-    if re.match(r'^ *\. *$', teststr):
+    if DECIMAL_RE.match(teststr):
         teststr = '0'
     # ifort allows '-' to be interpreted as 0
-    if re.match(r'^ *- *$', teststr):
+    if MINUS_RE.match(teststr):
         teststr = '0'
     # ifort allows numbers to end with 'E', 'E+', 'E-' and 'D'
     # equivalents
-    res = re.match(r'(.*)(E|E\+|E\-)$', teststr)
+    res = EXPONENT_RE.match(teststr)
     if res:
         teststr = res.group(1)
     try:

@@ -1,6 +1,6 @@
 from ._lexer import Token
 from ._edit_descriptors import *
-from ._exceptions import *
+from ._exceptions import InvalidFormat
 from . import config
 
 def parser(tokens, version=None):

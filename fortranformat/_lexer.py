@@ -1,5 +1,5 @@
 from ._edit_descriptors import *
-from ._exceptions import *
+from ._exceptions import InvalidFormat
 
 # Some lexer tokens to look out for
 DIGITS = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']

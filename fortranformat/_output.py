@@ -1,5 +1,8 @@
 import math
+from io import StringIO
+
 from ._edit_descriptors import *
+from ._exceptions import InvalidFormat
 from ._misc import expand_edit_descriptors, has_next_iterator
 from . import config
 
@@ -16,7 +19,7 @@ def output(eds, reversion_eds, values):
     a function to take a list of valid f77 edit descriptors and respective values
     and output the corresponding string
     '''
-    record = ''
+    record = StringIO()
     state = {
         'position': 0,
         'scale': 0,
@@ -31,7 +34,7 @@ def output(eds, reversion_eds, values):
     # check that if there is a reversion, that values can be output
     reversion_contains_output_ed = False
     for ed in reversion_eds:
-        if isinstance(ed, OUTPUT_EDS):
+        if ed.is_output:
             reversion_contains_output_ed = True
             break
     # Get full list of edit descriptors
@@ -61,13 +64,13 @@ def output(eds, reversion_eds, values):
                     if len(tmp_reversion_eds):
                         ed = tmp_reversion_eds.pop()
                         # these edit descriptors are ignored in reversion state
-                        if not isinstance(ed, NON_REVERSION_EDS):
+                        if not ed.is_non_reversion:
                             break
                     else:
                         # Regardless of where cursor is, is moved to the
                         # next record
-                        record = record + config.RECORD_SEPARATOR
-                        state['position'] = len(record)
+                        record.write(config.RECORD_SEPARATOR)
+                        state['position'] = record.tell()
                         if get_value.has_next():
                             # Only reset the reversion if we have more values to output
                             tmp_reversion_eds = reversion_eds[::-1]
@@ -82,83 +85,31 @@ def output(eds, reversion_eds, values):
                 # final value
                 break
         # check if edit descriptor requires a value
-        if isinstance(ed, OUTPUT_EDS):
+        if ed.is_output:
             if get_value.has_next():
                 val = next(get_value)
             else:
                 # is a edit descriptor that requires a value but no value
                 # we simply ignore at this point - likely this is an incomplete reversion
                 break
-            if isinstance(ed, I):
+            if ed.name == "I":
                 if val is None:
                     val = 0
                 sub_string = _compose_i_string(
                     ed.width, ed.min_digits, state, val)
-            elif isinstance(ed, B):
+            elif ed.name in ("B", "O", "Z"):
                 if val is None:
                     val = 0
-                w = ed.width
-                m = ed.min_digits
-                sub_string = _compose_boz_string(w, m, state, val, 'B')
-            if isinstance(ed, O):
-                if val is None:
-                    val = 0
-                w = ed.width
-                m = ed.min_digits
-                sub_string = _compose_boz_string(w, m, state, val, 'O')
-            if isinstance(ed, Z):
-                if val is None:
-                    val = 0
-                w = ed.width
-                m = ed.min_digits
-                sub_string = _compose_boz_string(w, m, state, val, 'Z')
-            elif isinstance(ed, F):
+                sub_string = _compose_boz_string(ed.width, ed.min_digits, state, val, ed.name)
+            elif ed.name in ("D", "E", "EN", "ES", "F", "G"):
                 if val is None:
                     val = 0.0
-                w = ed.width
-                e = None
-                d = ed.decimal_places
-                sub_string = _compose_float_string(w, e, d, state, val, 'F')
-            elif isinstance(ed, E):
-                if val is None:
-                    val = 0.0
-                w = ed.width
-                e = ed.exponent
-                d = ed.decimal_places
-                sub_string = _compose_float_string(w, e, d, state, val, 'E')
-            elif isinstance(ed, D):
-                if val is None:
-                    val = 0.0
-                w = ed.width
-                e = None
-                d = ed.decimal_places
-                sub_string = _compose_float_string(w, e, d, state, val, 'D')
-            elif isinstance(ed, G):
-                if val is None:
-                    val = 0.0
-                w = ed.width
-                e = ed.exponent
-                d = ed.decimal_places
-                sub_string = _compose_float_string(w, e, d, state, val, 'G')
-            elif isinstance(ed, EN):
-                if val is None:
-                    val = 0.0
-                w = ed.width
-                e = ed.exponent
-                d = ed.decimal_places
-                sub_string = _compose_float_string(w, e, d, state, val, 'EN')
-            elif isinstance(ed, ES):
-                if val is None:
-                    val = 0.0
-                w = ed.width
-                e = ed.exponent
-                d = ed.decimal_places
-                sub_string = _compose_float_string(w, e, d, state, val, 'ES')
-            elif isinstance(ed, L):
+                sub_string = _compose_float_string(ed.width, ed.exponent, ed.decimal_places, state, val, ed.name)
+            elif ed.name == "L":
                 if val is None:
                     val = True
                 sub_string = _compose_l_string(ed.width, state, val)
-            elif isinstance(ed, A):
+            elif ed.name == "A":
                 if val is None:
                     val = ''
                 sub_string = _compose_a_string(ed.width, state, val)
@@ -166,34 +117,34 @@ def output(eds, reversion_eds, values):
                 record, sub_string, state['position'])
         else:
             # token does not require a value
-            if isinstance(ed, (S, SS)):
+            if ed.name in ("S", "SS"):
                 state['incl_plus'] = False
-            if isinstance(ed, SP):
+            if ed.name == "SP":
                 state['incl_plus'] = True
-            elif isinstance(ed, P):
+            elif ed.name == "P":
                 state['scale'] = ed.scale
-            elif isinstance(ed, BN):
+            elif ed.name == "BN":
                 # This is moot since for output, this does not do anything
                 state['blanks_as_zeros'] = False
-            elif isinstance(ed, BZ):
+            elif ed.name == "BZ":
                 state['blanks_as_zeros'] = True
-            elif isinstance(ed, Colon):
+            elif ed.name == "Colon":
                 state['halt_if_no_vals'] = True
-            elif isinstance(ed, Slash):
+            elif ed.name == "Slash":
                 state['position'], record = _write_string(
                     record, config.RECORD_SEPARATOR, state['position'])
-            elif isinstance(ed, (X, TR)):
+            elif ed.name in ("X", "TR"):
                 state['position'] = state['position'] + ed.num_chars
-            elif isinstance(ed, TL):
+            elif ed.name == "TL":
                 state['position'] = state['position'] - ed.num_chars
-            elif isinstance(ed, T):
+            elif ed.name == "T":
                 state['position'] = ed.num_chars - 1
-            elif isinstance(ed, QuotedString):
+            elif ed.name == "QuotedString":
                 sub_string = ed.char_string
                 state['position'], record = _write_string(
                     record, sub_string, state['position'])
     # output the final record
-    return record
+    return record.getvalue()
 
 
 def _compose_nan_string(w, ftype):
@@ -289,12 +240,7 @@ def _compose_float_string(w, e, d, state, val, ftype):
     zero_flag = (tmp == 0)
     # === DTOA === (macro)
     # write the tmp value to the string buffer
-    # sprintf seems to allow negative number of decimal places, need to correct for this
-    if ndigits <= 0:
-        fmt = '%+-#' + str(PROC_MIN_FIELD_WIDTH) + 'e'
-    else:
-        fmt = '%+-#' + str(PROC_MIN_FIELD_WIDTH) + '.' + str(ndigits - 1) + 'e'
-    buff = fmt % tmp
+    buff = f"{tmp:<+#{PROC_MIN_FIELD_WIDTH}.{max(0, ndigits - 1)}e}"
     # === WRITE_FLOAT === (macro)
     if ftype != 'G':
         return _output_float(w, d, e, state, ftype, buff, sign_bit, zero_flag, ndigits, edigits)
@@ -379,13 +325,11 @@ def _output_float(w, d, e, state, ft, buff, sign_bit, zero_flag, ndigits, edigit
     if e is None:
         e = -1
     nzero_real = -1
-    sign = _calculate_sign(state, sign_bit)
+
     # Some debug
     if d != 0:
         assert(buff[2] in ['.', ','])
         assert(buff[ndigits + 2] == 'e')
-    # Read in the exponent
-    ex = int(buff[ndigits + 3:]) + 1
     # Handle zero case
     if zero_flag:
         ex = 0
@@ -402,6 +346,11 @@ def _output_float(w, d, e, state, ft, buff, sign_bit, zero_flag, ndigits, edigit
                 return '*'  # This is ifort behaviour
             else:
                 return '.'  # CHANGED: Was '0'
+    else:
+        # Read in the exponent
+        ex = int(buff[ndigits + 3:]) + 1
+        sign = _calculate_sign(state, sign_bit)
+
     # Get rid of the decimal and the initial sign i.e. normalise the digits
     digits = buff[1] + buff[3:]
     # Find out where to place the decimal point
@@ -482,10 +431,10 @@ def _output_float(w, d, e, state, ft, buff, sign_bit, zero_flag, ndigits, edigit
             while i >= 0:
                 digit = int(digits[i])
                 if digit != 9:
-                    digits = _swapchar(digits, i, str(digit + 1))
+                    digits = _swapchar(digits, i, digit + 1)
                     break
                 else:
-                    digits = _swapchar(digits, i, '0')
+                    digits = _swapchar(digits, i, 0)
                 i = i - 1
             # Did the carry overflow?
             if i < 0:
@@ -527,18 +476,7 @@ def _output_float(w, d, e, state, ft, buff, sign_bit, zero_flag, ndigits, edigit
                 edigits = e + 2
     else:
         edigits = 0
-    # Zero values always output as positive, even if the value was egative before rounding
-    i = 0
-    while i < ndigits:
-        if digits[i] != '0':
-            break
-        i = i + 1
-    if i == ndigits:
-        # The output is zero so set sign accordingly
-        if PROC_SIGN_ZERO:
-            sign = _calculate_sign(state, sign_bit)
-        else:
-            sign = _calculate_sign(state, False)
+
     # Pick a field size if none was specified
     if w <= 0:
         w = nbefore + nzero + nafter + 1 + len(sign)
@@ -554,78 +492,70 @@ def _output_float(w, d, e, state, ft, buff, sign_bit, zero_flag, ndigits, edigit
     if (nblanks < 0) or (edigits == -1):
         return '*' * w
     # See if we have space for a zero before the decimal point
-    if (nbefore == 0) and (nblanks > 0):
-        leadzero = True
+    leadzero = (nbefore == 0) and (nblanks > 0)
+    if leadzero:
         nblanks = nblanks - 1
-    else:
-        leadzero = False
-    out = ''
+
+    out = StringIO()
     # Pad to full field width
     if (nblanks > 0) and not PROC_NO_LEADING_BLANK:  # dtp->u.p.no_leading_blank
-        out = out + ' ' * nblanks
+        out.write(' ' * nblanks)
     # Attach the sign
-    out = out + sign
+    out.write(sign)
     # Add the lead zero if necessary
     if leadzero:
-        out = out + '0'
+        out.write('0')
     # Output portion before the decimal point padded with zeros
     if nbefore > 0:
         if nbefore > ndigits:
-            out = out + digits[:ndigits] + (' ' * (nbefore - ndigits))
+            out.write(digits[:ndigits] + (' ' * (nbefore - ndigits)))
             digits = digits[ndigits:]
             ndigits = 0
         else:
             i = nbefore
-            out = out + digits[:i]
+            out.write(digits[:i])
             digits = digits[i:]
             ndigits = ndigits - i
+
     # Output the decimal point
-    out = out + PROC_DECIMAL_CHAR
+    out.write(PROC_DECIMAL_CHAR)
+
     # Output the leading zeros after the decimal point
     if nzero > 0:
-        out = out + ('0' * nzero)
+        out.write(('0' * nzero))
+
     # Output the digits after the decimal point, padded with zeros
     if nafter > 0:
-        if nafter > ndigits:
-            i = ndigits
-        else:
-            i = nafter
-        zeros = '0' * (nafter - i)
-        out = out + digits[:i] + zeros
-        digits = digits[nafter:]
-        ndigits = ndigits - nafter
+        i = min(nafter, ndigits)
+        out.write(digits[:i])
+        out.write('0' * (nafter - i))
+
     # Output the exponent
     if expchar is not None:
         if expchar != ' ':
-            out = out + expchar
+            out.write(expchar)
             edigits = edigits - 1
-        fmt = '%+0' + str(edigits) + 'd'
-        tmp_buff = fmt % ex
+        tmp_buff = f'{ex:+0{edigits}d}'
         # if not state['blanks_as_zeros']:
         if PROC_NO_LEADING_BLANK:
-            tmp_buf = tmp_buff + (nblanks * ' ')
-        out = out + tmp_buff
-    return out
+            tmp_buff = tmp_buff + (nblanks * ' ')
+        out.write(tmp_buff)
+    return out.getvalue()
 
 
 def _calculate_sign(state, negative_flag):
-    s = ''
     if negative_flag:
-        s = '-'
-    elif state['incl_plus']:
-        s = '+'
-    else:
-        s = ''
-    return s
+        return '-'
+    if state['incl_plus']:
+        return '+'
+    return ''
 
 
-def _swapchar(s, ind, newch):
+def _swapchar(s: str, ind: int, newch: int):
     '''
     Helper function to make chars in a string mutableish
     '''
-    if 0 < ind >= len(s):
-        raise IndexError('index out of range')
-    return s[:ind] + newch + s[ind+1:]
+    return f"{s[:ind]}{newch}{s[ind+1:]}"
 
 
 def _compose_a_string(w, state, val):
@@ -752,19 +682,19 @@ def _compose_boz_string(w, m, state, val, ftype):
         return s
 
 
-def _write_string(record, sub_string, pos):
+def _write_string(record: StringIO, sub_string: str, pos: int):
     '''Function that actually writes the generated strings to a 'stream'''''
-    new_pos = pos + len(sub_string)
     # pad if required with blanks - i.e. input after a tr edit descriptor - see
     # f77 format sec. 13.5.3
-    if pos > len(record):
-        record = record.ljust(pos)
-        out = record + sub_string
-    elif pos == len(record):
-        out = record + sub_string
-    elif pos < len(record):
-        out = record[:pos] + sub_string + record[new_pos:]
-    return (new_pos, out)
+    record_len = record.tell()
+    if pos > record_len:
+        blanks = " " * (pos - record_len)
+        record.write(blanks)
+    elif pos < record_len:
+        record.seek(max(0, pos))
+
+    record.write(sub_string)
+    return (record.tell(), record)
 
 
 def left_pad(sub_string, width, pad_char):
