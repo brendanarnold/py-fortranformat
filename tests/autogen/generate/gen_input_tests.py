@@ -402,7 +402,6 @@ def write_unittest(infile, outfile, batch, name, platform, test_limit=None):
 import sys
 import os
 import unittest
-from nose.plugins.attrib import attr
 
 # To change this, re-run 'build-unittests.py'
 
@@ -447,15 +446,12 @@ class %sEditDescriptorBatch%dTestCase(unittest.TestCase):
                     else:
                         result = "\'\'\'" + result.ljust(1000) + "\'\'\'"
                 out = '''
-    @attr(platform='%s')
-    @attr('input')
-    @attr(ed='%s')
     def test_%s_ed_input_%d(self):
         inp = \'\'\'%s\'\'\'
         fmt = \'\'\'%s\'\'\'
         expected = [%s]
         eds, rev_eds = _parser(_lexer(fmt))
-''' % (platform, name.upper(), name, test_num, inpt, fmt, result)
+''' % (name, test_num, inpt, fmt, result)
                 # May result in error in Fortran code
                 if result == '\'\'\'ERR\'\'\'':
                     out += '        self.assertRaises(ValueError, _input, eds, rev_eds, inp)\n'
