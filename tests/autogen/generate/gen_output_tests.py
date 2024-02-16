@@ -434,7 +434,6 @@ def write_unittest(infile, outfile, name, platform, test_limit=None):
 import sys
 import os
 import unittest
-from nose.plugins.attrib import attr
 
 # To change this, re-run 'build-unittests.py'
 
@@ -472,16 +471,13 @@ class %sEditDescriptorBatchTestCase(unittest.TestCase):
                 inpt = inpt.replace(".FALSE.", 'False')
 
                 out = '''
-    @attr(platform='%s')
-    @attr('output')
-    @attr(ed='%s')
     def test_%s_ed_input_%d(self):
         vals = [%s]
         fmt = \'\'\'%s\'\'\'
         result = \'\'\'%s\'\'\'
         eds, rev_eds = _parser(_lexer(fmt))
         self.assertEqual(result, _output(eds, rev_eds, vals))
-''' % (platform, name.upper(), name.replace('-', '_'), test_num, inpt, fmt, result)
+''' % (name.replace('-', '_'), test_num, inpt, fmt, result)
                 out_fh.write(out)
                 fmt = inpt = result = None
                 test_count += 1
