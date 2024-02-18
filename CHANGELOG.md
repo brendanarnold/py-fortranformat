@@ -1,5 +1,9 @@
 # Changelog
 
+## Next
+
+- Next version changes here ...
+
 ## V 2.0.0
 
 - Feature: [Issue 6](https://github.com/brendanarnold/py-fortranformat/issues/6) Improve performance of reading and writing of `F` format by x10 - @ZedThree
