@@ -88,6 +88,8 @@ python setup.py sdist
 twine upload dist/<new version>
 ```
 
+Create a semantic versioned Git tag for the commit
+
 ## Bugs
 
 Although the library has a large body of automatically generated test
