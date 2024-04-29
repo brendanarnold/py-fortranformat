@@ -37,7 +37,7 @@ For more detailed usage, see [the guide](https://github.com/brendanarnold/py-for
 - At present the library mimics the IO of the Intel FORTRAN compiler
   v.9.1 run on a Linux system. Differences to other FORTRAN compilers
   and platforms are generally minor.
-- The library should run on Python versions from at least 2.7
+- The library should run on Python versions from at least 3.6
 
 ## Development
 
@@ -87,6 +87,8 @@ To upload a version to PyPI run ...
 python setup.py sdist
 twine upload dist/<new version>
 ```
+
+Create a semantic versioned Git tag for the commit
 
 ## Bugs
 
