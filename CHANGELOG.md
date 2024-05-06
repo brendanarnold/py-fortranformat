@@ -2,7 +2,8 @@
 
 ## Next
 
-- Next version changes here ...
+- Cleanup: [pull 34](https://github.com/brendanarnold/py-fortranformat/pull/34) Remove dependency on nose - @davidsch
+
 
 ## V 2.0.0
 
