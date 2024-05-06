@@ -3,6 +3,7 @@
 ## [Unreleased]
 
 - Cleanup: [pull 33](https://github.com/brendanarnold/py-fortranformat/pull/33) Remove unused setup.cfg - @davidsch
+- Cleanup: [pull 34](https://github.com/brendanarnold/py-fortranformat/pull/34) Remove dependency on nose - @davidsch
 
 ## V 2.0.0
 
