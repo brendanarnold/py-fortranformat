@@ -14,11 +14,11 @@ ALLOW_ZERO_WIDTH_EDS = True
 RECORD_SEPARATOR = '\n'
 # Set this to emulate FORTRAN overflow behaviour in Z and I edit descriptors. None means no overflow, 2**31 for 32bit signed int
 PROC_MAXINT = 2**31
-# Processor dependant default for including leading plus or not
+# Processor dependent default for including leading plus or not
 PROC_INCL_PLUS = False
 # Option to allow signed binary, octal and hex on input (not a FORTRAN feature)
 PROC_ALLOW_NEG_BOZ = False
-# Processor dependant padding character
+# Processor dependent padding character
 PROC_PAD_CHAR = ' '
 # Interpret blanks or just a negative as a zero, as in ifort behaviour
 PROC_NEG_AS_ZERO = True

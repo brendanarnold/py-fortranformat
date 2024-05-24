@@ -105,7 +105,7 @@ class AEditDescriptorTests(unittest.TestCase):
         result = [' ']
         self.assertEqual(result, _input(eds, rev_eds, inpt))
 
-    # Test with X (shoud be same as TR)
+    # Test with X (should be same as TR)
 
     def test_x_1(self):
         inpt = '1234567890'

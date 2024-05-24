@@ -11,7 +11,7 @@ buildtests:
 	python tests/autogen/generate/build_unittests.py
 
 runtests:
-  # This takes a few minutes to run
+	# This takes a few minutes to run
 	python -m pytest tests/handwritten
 	python -m pytest tests/autogen/input/ifort/9_1_linux_intel
 	python -m pytest tests/autogen/output/ifort/9_1_linux_intel

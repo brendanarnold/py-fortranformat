@@ -14,7 +14,7 @@
 ! abcdefghij
 
 
-! Test where intial read starts beyond left tab-limit, do blanks get
+! Test where initial read starts beyond left tab-limit, do blanks get
 ! read in until position becomes positive?
 ! Gfortran->12345
       C = ''
@@ -23,7 +23,7 @@
       WRITE(*, '(''Left of left-tab-limit:'', A)') C
       CLOSE(10)
 
-! Test where intial read starts beyond end of record
+! Test where initial read starts beyond end of record
 ! Gfortran:-><blank>
       C = ''
       OPEN(10, FILE='a-ed-input-records.txt', STATUS='old')

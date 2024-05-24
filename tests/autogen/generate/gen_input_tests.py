@@ -576,7 +576,7 @@ def write_fortran_source(formats, inputs, name):
         for ind, fmt in enumerate(formats):
             lbl = ind + 1
             fh.write("%-6dFORMAT (%s)\n" % (lbl, fmt))
-        # Ouptut the closing source
+        # Output the closing source
         fh.write("""
       STOP
       END

@@ -2,20 +2,18 @@
 
 ## Basic usage
 
-```
+```pycon
 >>> from fortranformat import FortranRecordWriter
 >>> format = FortranRecordWriter('(3I10)')
->>> output = format.write([0.0, 1.0, None])
->>> output
+>>> format.write([0, 1, None])
 '         0         1         0'
 ```
 
-```
+```pycon
 >>> from fortranformat import FortranRecordReader
 >>> format = FortranRecordReader('(3I10)')
->>> output = format.read('         0         1')
->>> output
-[0.0, 1.0, None]
+>>> format.read('         0         1')
+[0, 1, None]
 ```
 
 It supports all the edit descriptors found in F77 as well as repeat formats.
@@ -32,15 +30,15 @@ To return FORTRAN default values rather than `None` see `RET_UNWRITTEN_VARS_NONE
 
 #### Example
 
-```
+```pycon
+>>> from fortranformat import config
 >>> format = FortranRecordReader('(3I10)')
->>> output = format.read('         0         1')
->>> output
-[0.0, 1.0, None]
+>>> config.RET_WRITTEN_VARS_ONLY = False  # default
+>>> format.read('         0         1')
+[0, 1, None]
 >>> config.RET_WRITTEN_VARS_ONLY = True
->>> output = format.read('         0         1')
->>> output
-[0.0, 1.0]
+>>> format.read('         0         1')
+[0, 1]
 ```
 
 ### `RET_UNWRITTEN_VARS_NONE`
@@ -53,15 +51,14 @@ To only return written values see `RET_WRITTEN_VARS_ONLY`.
 
 #### Example
 
-```
+```pycon
 >>> format = FortranRecordReader('(3I10)')
->>> output = format.read('         0         1')
->>> output
-[0.0, 1.0, None]
+>>> config.RET_UNWRITTEN_VARS_NONE = True  # default
+>>> format.read('         0         1')
+[0, 1]
 >>> config.RET_UNWRITTEN_VARS_NONE = False
->>> output = format.read('         0         1')
->>> output
-[0.0, 1.0, 0.0]
+>>> format.read('         0         1')
+[0, 1]
 ```
 
 ### `G_INPUT_TRIAL_EDS`
@@ -78,11 +75,9 @@ When wrapping the records, this string is used to delimit the lines.
 
 #### Example
 
-```
+```pycon
 >>> config.RECORD_SEPARATOR = '|'
->>> format = FortranRecordWriter('(2I10)')
->>> output = format.write([0, 0, 0, 0])
->>> output
+>>> FortranRecordWriter('(2I10)').write([0, 0, 0, 0])
 '         0         0|         0         0'
 ```
 
@@ -94,7 +89,7 @@ This mimics the overflow behaviour of FORTRAN as well as the encoding of negativ
 
 #### Example
 
-```
+```pycon
 >>> format = FortranRecordWriter('(Z10)')
 >>> format.write([-10])
 '  FFFFFFF6'
@@ -107,15 +102,12 @@ This mimics the overflow behaviour of FORTRAN as well as the encoding of negativ
 
 Call this to reset the configuration to its defaults
 
-```
+```pycon
 >>> config.RECORD_SEPARATOR = '|'
 >>> format = FortranRecordWriter('(2I10)')
->>> output = format.write([0, 0, 0, 0])
->>> output
+>>> format.write([0, 0, 0, 0])
 '         0         0|         0         0'
 >>> config.reset()
->>> output = format.write([0, 0, 0, 0])
->>> output
+>>> format.write([0, 0, 0, 0])
 '         0         0\n         0         0'
-
 ```

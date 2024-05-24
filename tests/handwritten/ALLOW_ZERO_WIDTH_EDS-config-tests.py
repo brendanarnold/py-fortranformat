@@ -73,7 +73,7 @@ class AllowZeroWidthEdsConfigTests(unittest.TestCase):
 
     def test_8(self):
         # Positional editdescriptors always raise error when passed a
-        # zero argument, even when ALLOW_ZERO_WIDTH_EDS is explictly
+        # zero argument, even when ALLOW_ZERO_WIDTH_EDS is explicitly
         # specified
         fmt = ('0X')
         config.ALLOW_ZERO_WIDTH_EDS = True
@@ -82,7 +82,7 @@ class AllowZeroWidthEdsConfigTests(unittest.TestCase):
 
     def test_9(self):
         # Positional editdescriptors always raise error when passed a
-        # zero argument, even when ALLOW_ZERO_WIDTH_EDS is explictly
+        # zero argument, even when ALLOW_ZERO_WIDTH_EDS is explicitly
         # not specified
         fmt = ('0X')
         config.ALLOW_ZERO_WIDTH_EDS = False
