@@ -48,7 +48,7 @@ class MultiEditDescriptorTests(unittest.TestCase):
 
     def test_4(self):
         # Can change behaviour using configuration. Setting
-        # RET_WRITTEN_VARS_ONLY should remove unwritten varibles from
+        # RET_WRITTEN_VARS_ONLY should remove unwritten variables from
         # returned output (i.e. if run out of record, return only the
         # FORTRAN variables that have been read into)
         inpt = '1'
@@ -61,7 +61,7 @@ class MultiEditDescriptorTests(unittest.TestCase):
 
     def test_5(self):
         # Can change behaviour using configuration. Setting
-        # RET_WRITTEN_VARS_ONLY should remove unwritten varibles from
+        # RET_WRITTEN_VARS_ONLY should remove unwritten variables from
         # returned output (i.e. if run out of record, return only the
         # FORTRAN variables that have been read into)
         inpt = '1'

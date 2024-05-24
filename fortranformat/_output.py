@@ -317,7 +317,7 @@ def _output_float(w, d, e, state, ft, buff, sign_bit, zero_flag, ndigits, edigit
     # nbefore - number of digits before the decimal point
     # nzero - number of zeros after the decimal point
     # nafter - number of digits after the decimal point
-    # nzero_real - number of zeros after the decimal point regardles of the precision
+    # nzero_real - number of zeros after the decimal point regardless of the precision
 
     # Some hacks to change None to -1 (C convention)
     if w is None:
