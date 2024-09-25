@@ -4,30 +4,30 @@ Generates text from a Python list of variables or will read a line of text into 
 
 To read Fortran records,
 
-```
-import fortranformat as ff
-header_line = FortranRecordReader('(A15, A15, A15)')
-header_line.read('              x              y              z')
+```pycon
+>>> from fortranformat import FortranRecordReader
+>>> header_line = FortranRecordReader('(A15, A15, A15)')
+>>> header_line.read('              x              y              z')
 ['              x', '              y', '              z']
-line = FortranRecordReader('(3F15.3)')
-line.read('          1.000          0.000          0.500')
-# Returns [1.0, 0.0, 0.5]
-line.read('          1.100          0.100          0.600')
-# Returns [1.1, 0.1, 0.6]
+>>> line = FortranRecordReader('(3F15.3)')
+>>> line.read('          1.000          0.000          0.500')
+[1.0, 0.0, 0.5]
+>>> line.read('          1.100          0.100          0.600')
+[1.1, 0.1, 0.6]
 ```
 
 To write Fortran records,
 
-```
-import fortranformat as ff
-header_line = FortranRecordWriter('(A15, A15, A15)')
-header_line.write(['x', 'y', 'z'])
-# Results in '              x              y              z'
-line = FortranRecordWriter('(3F15.3)')
-line.write([1.0, 0.0, 0.5])
-# Results in '          1.000          0.000          0.500'
-line.write([1.1, 0.1, 0.6])
-# Results in '          1.100          0.100          0.600'
+```pycon
+>>> from fortranformat import FortranRecordWriter
+>>> header_line = FortranRecordWriter('(A15, A15, A15)')
+>>> header_line.write(['x', 'y', 'z'])
+'              x              y              z'
+>>> line = FortranRecordWriter('(3F15.3)')
+>>> line.write([1.0, 0.0, 0.5])
+'          1.000          0.000          0.500'
+>>> line.write([1.1, 0.1, 0.6])
+'          1.100          0.100          0.600'
 ```
 
 For more detailed usage, see [the guide](https://github.com/brendanarnold/py-fortranformat/blob/master/docs/wiki/guide.md).
@@ -55,21 +55,29 @@ Characterisations for a selection of FORTRAN compilers already exists, but if yo
 
 Build the tests using
 
-`make buildtests`
+```
+make buildtests
+```
 
 Make sure that pytest is installed then run using
 
-`make runtests`
+```
+make runtests
+```
 
 Note that some of the F output edit descriptors fail due to limitations in floating point number representation
 
 To run a reduced test suite where time and resources are limited, use the following
 
-`make runminimaltests`
+```
+make runminimaltests
+```
 
 To run a performance test, which currently only covers the reading and writing of floats, use the following
 
-`make runperformancetests`
+```
+make runperformancetests
+```
 
 ### Deploying a new package version
 
