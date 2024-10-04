@@ -1,0 +1,91 @@
+# This workflow will install Python dependencies and run tests with a variety of Python versions
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: workflow_actions
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "master" branch
+  pull_request: []
+  push:
+    tags:
+      - '*'
+    branches:
+      - 'master'
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+    tag: "Manual run"
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.9', '3.10', '3.11', '3.12']  # should test the versions we allow for in pyproject.toml
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Setup
+        run: |
+          python -m pip install --upgrade pip
+          pip install '.[test,build]'
+
+      - name: Tests
+        run: pytest tests
+
+      - name: Test package
+        run: |
+          python -m build
+          python -m venv test_env
+          source ./test_env/bin/activate
+          pip install $(find ./dist -name "*.whl")
+          # enter tempdir so import fortranformat doesn't find the fortranformat directory
+          mkdir tmp_dir && cd tmp_dir
+          python -c "from fortranformat import FortranRecordReader as FReader; assert FReader('(2f10.5)').read('1.0000000 2.0000000') == [1.0, 2.0]"
+          
+  build_release:
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
+    needs: build
+    runs-on: ubuntu-22.04
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup
+        run: |
+          python -m pip install --upgrade pip
+          pip install '.[test,build]'
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pypi-build
+          path: ./dist
+
+  publish:
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
+    needs: build_release
+    runs-on: ubuntu-22.04
+    environment:
+      name: pypi-publish
+      url: https://pypi.org/project/fortranformat/
+    permissions:
+      id-token: write  # IMPORTANT: this permission is mandatory for trusted publishing
+    steps:
+      - uses: actions/download-artifact@v4
+
+      - name: Publish package distributions to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: pypi-build/
