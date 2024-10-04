@@ -41,6 +41,19 @@ For more detailed usage, see [the guide](https://github.com/brendanarnold/py-for
 
 ## Development
 
+### Installing locally
+
+```
+cd path/to/fortranformat
+# Make and activate a virtual environment (recommended)
+python3 -m venv .venv
+source .venv/bin/activate
+# Install the project locally, with the optional test and build dependencies
+pip install '.[test,build]'
+# Run pytest and make sure these pass
+pytest
+```
+
 ### Generating the tests for a FORTRAN compiler
 
 Characterisations for a selection of FORTRAN compilers already exists, but if you want to characterise a new compiler, do the following ...
@@ -81,22 +94,29 @@ make runperformancetests
 
 ### Deploying a new package version
 
-Update versions in `setup.py` and `__init__.py`
+Update version in `__init__.py`
 
 Update `CHANGELOG.md`
 
 To create a local build to test run ...
 
-`python setup.py build sdist --formats=gztar`
-
-To upload a version to PyPI run ...
-
 ```
-python setup.py sdist
-twine upload dist/<new version>
+# Build a local distribution
+python -m build
+# Make a new virtual environment
+python -m venv test_env
+# Activate the test_env
+source ./test_env/bin/activate
+# Install the local build into the test_env
+pip install $(find ./dist -name "*.whl")
+# Make and enter a tempdir so import fortranformat doesn't find the fortranformat directory
+mkdir tmp_dir && cd tmp_dir
+# Try run a simple command to make sure that the project installed correctly.
+python -c "from fortranformat import FortranRecordReader as FReader; assert FReader(f"(2f10.5)").read("1.0000000 2.0000000")== [1.0, 2.0]"
 ```
 
-Create a semantic versioned Git tag for the commit
+To upload a version to PyPI, create a semantic versioned Git tag for the commit.
+This will trigger a Github pipeline publish to PyPI.
 
 ## Bugs
 

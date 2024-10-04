@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "fortranformat"
-version = "2.0.1"
+dynamic = ["version"]
 dependencies = []
 requires-python = ">=3.9"
 authors = [
@@ -50,6 +50,11 @@ build = [
 [project.urls]
 Repository = "https://github.com/brendanarnold/py-fortranformat"
 Documentation = "https://github.com/brendanarnold/py-fortranformat/blob/master/docs/wiki/guide.md"
+
+[tool.hatch.version]
+# This tells hatch to look in the in __init__.py for the __version__ tag
+# See https://hatch.pypa.io/1.12/version/
+path = "fortranformat/__init__.py"
 
 [tool.pytest.ini_options]
 testpaths = [
