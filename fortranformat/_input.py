@@ -46,10 +46,10 @@ def input(eds, reversion_eds, records, num_vals=None):
         if isinstance(ed, tuple(FORBIDDEN_EDS)):
             raise InvalidFormat("%d edit descriptor not permitted on input")
 
-    # Expand repeated edit decriptors
+    # Expand repeated edit descriptors
     eds = expand_edit_descriptors(eds)
     reversion_eds = expand_edit_descriptors(reversion_eds)
-    # Assume one-to-one correspondance between edit descriptors and output
+    # Assume one-to-one correspondence between edit descriptors and output
     # values if number of output values is not defined
     num_out_eds = sum((ed.is_output for ed in eds))
     num_rev_out_eds = sum((ed.is_output for ed in reversion_eds))
