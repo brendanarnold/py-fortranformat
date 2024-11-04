@@ -37,7 +37,7 @@ For more detailed usage, see [the guide](https://github.com/brendanarnold/py-for
 - At present the library mimics the IO of the Intel FORTRAN compiler
   v.9.1 run on a Linux system. Differences to other FORTRAN compilers
   and platforms are generally minor.
-- The library should run on Python versions from at least 3.6
+- `pytest` requires at least Python 3.8.
 
 ## Development
 
@@ -97,7 +97,7 @@ make runperformancetests
 
 ### Deploying a new package version
 
-Update version in `__init__.py`
+Update version in `pyproject.toml`
 
 Update `CHANGELOG.md`
 
