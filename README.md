@@ -43,15 +43,18 @@ For more detailed usage, see [the guide](https://github.com/brendanarnold/py-for
 
 ### Installing locally
 
+First, make sure that you have installed `poetry`. You can find the build instructions at [python-poetry.org/docs](https://python-poetry.org/docs/#installing-with-the-official-installer). For most users on Linux/UNIX, you can run the following in a terminal
+```
+curl -sSL https://install.python-poetry.org | python3 -
+```
+Then, start a new terminal window and try run `poetry --version` to make sure that `poetry` has been linked correctly. 
+
 ```
 cd path/to/fortranformat
-# Make and activate a virtual environment (recommended)
-python3 -m venv .venv
-source .venv/bin/activate
-# Install the project locally, with the optional test and build dependencies
-pip install '.[test,build]'
+# Install the project
+poetry install
 # Run pytest and make sure these pass
-pytest
+poetry run pytest
 ```
 
 ### Generating the tests for a FORTRAN compiler
@@ -102,7 +105,7 @@ To create a local build to test run ...
 
 ```
 # Build a local distribution
-python -m build
+poetry build
 # Make a new virtual environment
 python -m venv test_env
 # Activate the test_env
@@ -112,7 +115,7 @@ pip install $(find ./dist -name "*.whl")
 # Make and enter a tempdir so import fortranformat doesn't find the fortranformat directory
 mkdir tmp_dir && cd tmp_dir
 # Try run a simple command to make sure that the project installed correctly.
-python -c "from fortranformat import FortranRecordReader as FReader; assert FReader(f"(2f10.5)").read("1.0000000 2.0000000")== [1.0, 2.0]"
+python -c "from fortranformat import FortranRecordReader as FReader; assert FReader('(2f10.5)').read('1.0000000 2.0000000') == [1.0, 2.0]"
 ```
 
 To upload a version to PyPI, create a semantic versioned Git tag for the commit.
