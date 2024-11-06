@@ -5,7 +5,7 @@ from . import config
 
 # Read in the 'version' tag of the installed package
 import importlib.metadata
-__version__ = importlib.metadata.version("fortranformat")
+__version__ = importlib.metadata.version(__package__)
 
 __all__ = [
     "FortranRecordReader",
