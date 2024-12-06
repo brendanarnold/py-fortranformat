@@ -49,10 +49,12 @@ curl -sSL https://install.python-poetry.org | python3 -
 ```
 Then, start a new terminal window and try run `poetry --version` to make sure that `poetry` has been linked correctly. 
 
-```
+```bash
 cd path/to/fortranformat
+
 # Install the project
 poetry install
+
 # Run pytest and make sure these pass
 poetry run pytest
 ```
