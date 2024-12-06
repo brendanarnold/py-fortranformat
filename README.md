@@ -108,14 +108,19 @@ To create a local build to test run ...
 ```bash
 # Build a local distribution
 poetry build
+
 # Make a new virtual environment
 python -m venv test_env
+
 # Activate the test_env
 source ./test_env/bin/activate
+
 # Install the local build into the test_env
 pip install $(find ./dist -name "*.whl")
+
 # Make and enter a tempdir so import fortranformat doesn't find the fortranformat directory
 mkdir tmp_dir && cd tmp_dir
+
 # Try run a simple command to make sure that the project installed correctly.
 python -c "from fortranformat import FortranRecordReader as FReader; assert FReader('(2f10.5)').read('1.0000000 2.0000000') == [1.0, 2.0]"
 ```
