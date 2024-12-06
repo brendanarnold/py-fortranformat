@@ -6,6 +6,7 @@
 - Cleanup: [pull 34](https://github.com/brendanarnold/py-fortranformat/pull/34) Remove dependency on nose - @davidsch
 - Cleanup: [pull 36](https://github.com/brendanarnold/py-fortranformat/pull/36) Remove extra files from repo - @mwtoews
 - Cleanup: [pull 37](https://github.com/brendanarnold/py-fortranformat/pull/37) Fix typos, fix Markdown formatting, refactor examples - @mwtoews
+- Feature: [pull 39](https://github.com/brendanarnold/py-fortranformat/pull/39) Add `poetry` build tool and Github Action for deployment - @tbody-cfs
 
 ## V 2.0.0
 
