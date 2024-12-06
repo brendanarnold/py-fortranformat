@@ -103,7 +103,7 @@ Update `CHANGELOG.md`
 
 To create a local build to test run ...
 
-```
+```bash
 # Build a local distribution
 poetry build
 # Make a new virtual environment
