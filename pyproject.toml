@@ -1,0 +1,47 @@
+[tool.poetry]
+name = "fortranformat"
+version = "2.0.1"
+description = "Mimics Fortran textual IO in Python."
+authors = ["Brendan Arnold <brendanarnold@gmail.com>"]
+repository = "https://github.com/brendanarnold/py-fortranformat"
+keywords=['fortran', 'io', 'interface', 'format']
+classifiers = [
+    'Development Status :: 4 - Beta',
+    'Environment :: Console',
+    # Indicate who your project is intended for
+    'Intended Audience :: Science/Research',
+    'Intended Audience :: Developers',
+    'Topic :: Text Processing :: General',
+    'Topic :: Software Development :: Interpreters',
+    'Topic :: Scientific/Engineering',
+    # Software license
+    'License :: OSI Approved :: MIT License',
+    'Natural Language :: English',
+    'Operating System :: OS Independent',
+    # Specify supported Python versions here.
+    'Programming Language :: Fortran',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.8',
+    'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
+    'Programming Language :: Python :: 3.12',
+]
+packages = [
+    { include = "fortranformat" }
+]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.13"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+
+[tool.pytest.ini_options]
+testpaths = [
+  "tests",
+]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

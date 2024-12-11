@@ -37,9 +37,27 @@ For more detailed usage, see [the guide](https://github.com/brendanarnold/py-for
 - At present the library mimics the IO of the Intel FORTRAN compiler
   v.9.1 run on a Linux system. Differences to other FORTRAN compilers
   and platforms are generally minor.
-- The library should run on Python versions from at least 3.6
+- `pytest` requires at least Python 3.8.
 
 ## Development
+
+### Installing locally
+
+First, make sure that you have installed `poetry`. You can find the build instructions at [python-poetry.org/docs](https://python-poetry.org/docs/#installing-with-the-official-installer). For most users on Linux/UNIX, you can run the following in a terminal
+```
+curl -sSL https://install.python-poetry.org | python3 -
+```
+Then, start a new terminal window and try run `poetry --version` to make sure that `poetry` has been linked correctly. 
+
+```bash
+cd path/to/fortranformat
+
+# Install the project
+poetry install
+
+# Run pytest and make sure these pass
+poetry run pytest
+```
 
 ### Generating the tests for a FORTRAN compiler
 
@@ -81,22 +99,34 @@ make runperformancetests
 
 ### Deploying a new package version
 
-Update versions in `setup.py` and `__init__.py`
+Update version in `pyproject.toml`
 
 Update `CHANGELOG.md`
 
 To create a local build to test run ...
 
-`python setup.py build sdist --formats=gztar`
+```bash
+# Build a local distribution
+poetry build
 
-To upload a version to PyPI run ...
+# Make a new virtual environment
+python -m venv test_env
 
+# Activate the test_env
+source ./test_env/bin/activate
+
+# Install the local build into the test_env
+pip install $(find ./dist -name "*.whl")
+
+# Make and enter a tempdir so import fortranformat doesn't find the fortranformat directory
+mkdir tmp_dir && cd tmp_dir
+
+# Try run a simple command to make sure that the project installed correctly.
+python -c "from fortranformat import FortranRecordReader as FReader; assert FReader('(2f10.5)').read('1.0000000 2.0000000') == [1.0, 2.0]"
 ```
-python setup.py sdist
-twine upload dist/<new version>
-```
 
-Create a semantic versioned Git tag for the commit
+To upload a version to PyPI, create a semantic versioned Git tag for the commit.
+This will trigger a Github pipeline publish to PyPI.
 
 ## Bugs
 
