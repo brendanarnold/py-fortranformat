@@ -55,7 +55,7 @@ To only return written values see `RET_WRITTEN_VARS_ONLY`.
 >>> format = FortranRecordReader('(3I10)')
 >>> config.RET_UNWRITTEN_VARS_NONE = True  # default
 >>> format.read('         0         1')
-[0, 1]
+[0, 1, None]
 >>> config.RET_UNWRITTEN_VARS_NONE = False
 >>> format.read('         0         1')
 [0, 1]
