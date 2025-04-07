@@ -1,6 +1,12 @@
 # Changelog
 
-## [Unreleased]
+## UNRELEASED
+
+## [V2.0.2]
+
+- Cleanup: Further removal of nose dependencies, legacy files
+
+## [V2.0.1]
 
 - Cleanup: [pull 33](https://github.com/brendanarnold/py-fortranformat/pull/33) Remove unused setup.cfg - @davidsch
 - Cleanup: [pull 34](https://github.com/brendanarnold/py-fortranformat/pull/34) Remove dependency on nose - @davidsch
