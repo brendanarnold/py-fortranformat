@@ -2,6 +2,10 @@
 
 ## UNRELEASED
 
+## [V2.0.3]
+
+- Cleanup: Set deployment version
+
 ## [V2.0.2]
 
 - Cleanup: Further removal of nose dependencies, legacy files
