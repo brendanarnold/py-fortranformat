@@ -7,13 +7,6 @@ from ._misc import expand_edit_descriptors, has_next_iterator
 from . import config
 
 
-PROC_SIGN_ZERO = config.PROC_SIGN_ZERO
-PROC_MIN_FIELD_WIDTH = config.PROC_MIN_FIELD_WIDTH
-PROC_DECIMAL_CHAR = config.PROC_DECIMAL_CHAR
-G0_NO_BLANKS = config.G0_NO_BLANKS
-PROC_NO_LEADING_BLANK = config.PROC_NO_LEADING_BLANK
-
-
 def output(eds, reversion_eds, values):
     '''
     a function to take a list of valid f77 edit descriptors and respective values
@@ -211,15 +204,15 @@ def _compose_float_string(w, e, d, state, val, ftype):
     if (ftype in ['F', 'EN', 'G']) or \
             ((ftype in ['D', 'E']) and (state['scale'] != 0)):
         # Convert with full possible precision
-        ndigits = PROC_MIN_FIELD_WIDTH - 4 - edigits
+        ndigits = config.PROC_MIN_FIELD_WIDTH - 4 - edigits
     else:
         # Otherwise convert knowing what the required precision is (i.e. knowing d)
         if ftype == 'ES':
             ndigits = d + 1
         else:
             ndigits = d
-        if ndigits > (PROC_MIN_FIELD_WIDTH - 4 - edigits):
-            ndigits = PROC_MIN_FIELD_WIDTH - 4 - edigits
+        if ndigits > (config.PROC_MIN_FIELD_WIDTH - 4 - edigits):
+            ndigits = config.PROC_MIN_FIELD_WIDTH - 4 - edigits
     # ==== WRITE_FLOAT ==== (macro)
     # Determine sign of value
     if val == 0.0:
@@ -240,7 +233,7 @@ def _compose_float_string(w, e, d, state, val, ftype):
     zero_flag = (tmp == 0)
     # === DTOA === (macro)
     # write the tmp value to the string buffer
-    buff = f"{tmp:<+#{PROC_MIN_FIELD_WIDTH}.{max(0, ndigits - 1)}e}"
+    buff = f"{tmp:<+#{config.PROC_MIN_FIELD_WIDTH}.{max(0, ndigits - 1)}e}"
     # === WRITE_FLOAT === (macro)
     if ftype != 'G':
         return _output_float(w, d, e, state, ftype, buff, sign_bit, zero_flag, ndigits, edigits)
@@ -333,7 +326,7 @@ def _output_float(w, d, e, state, ft, buff, sign_bit, zero_flag, ndigits, edigit
     # Handle zero case
     if zero_flag:
         ex = 0
-        if PROC_SIGN_ZERO:
+        if config.PROC_SIGN_ZERO:
             sign = _calculate_sign(state, sign_bit)
         else:
             sign = _calculate_sign(state, False)
@@ -485,7 +478,7 @@ def _output_float(w, d, e, state, ft, buff, sign_bit, zero_flag, ndigits, edigit
     if sign != '':
         nblanks = nblanks - 1
     # TODO: Find out what this is
-    if G0_NO_BLANKS:  # dtp->u.p.g0_no_blanks
+    if config.G0_NO_BLANKS:  # dtp->u.p.g0_no_blanks
         w = w - nblanks
         nblanks = 0
     # Check value fits in specified width
@@ -498,7 +491,7 @@ def _output_float(w, d, e, state, ft, buff, sign_bit, zero_flag, ndigits, edigit
 
     out = StringIO()
     # Pad to full field width
-    if (nblanks > 0) and not PROC_NO_LEADING_BLANK:  # dtp->u.p.no_leading_blank
+    if (nblanks > 0) and not config.PROC_NO_LEADING_BLANK:  # dtp->u.p.no_leading_blank
         out.write(' ' * nblanks)
     # Attach the sign
     out.write(sign)
@@ -518,7 +511,7 @@ def _output_float(w, d, e, state, ft, buff, sign_bit, zero_flag, ndigits, edigit
             ndigits = ndigits - i
 
     # Output the decimal point
-    out.write(PROC_DECIMAL_CHAR)
+    out.write(config.PROC_DECIMAL_CHAR)
 
     # Output the leading zeros after the decimal point
     if nzero > 0:
@@ -537,7 +530,7 @@ def _output_float(w, d, e, state, ft, buff, sign_bit, zero_flag, ndigits, edigit
             edigits = edigits - 1
         tmp_buff = f'{ex:+0{edigits}d}'
         # if not state['blanks_as_zeros']:
-        if PROC_NO_LEADING_BLANK:
+        if config.PROC_NO_LEADING_BLANK:
             tmp_buff = tmp_buff + (nblanks * ' ')
         out.write(tmp_buff)
     return out.getvalue()
